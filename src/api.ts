@@ -1,6 +1,5 @@
 import { StockQuote, Dividend } from './types';
 
-const ALPHA_VANTAGE_API_KEY = 'demo';
 const YAHOO_FINANCE_PROXY = 'https://query1.finance.yahoo.com/v8/finance/chart/';
 
 export class StockAPI {
@@ -11,11 +10,17 @@ export class StockAPI {
       const response = await fetch(`${YAHOO_FINANCE_PROXY}${osloTicker}`);
       
       if (!response.ok) {
-        console.error(`Failed to fetch price for ${ticker}`);
-        return this.getMockPrice(ticker);
+        console.error(`Failed to fetch price for ${ticker}:`, response.status);
+        return null;
       }
 
       const data = await response.json();
+      
+      if (!data.chart?.result?.[0]?.meta) {
+        console.error(`Invalid data structure for ${ticker}`);
+        return null;
+      }
+      
       const quote = data.chart.result[0].meta;
       const previousClose = quote.previousClose || quote.regularMarketPrice;
       
@@ -28,7 +33,7 @@ export class StockAPI {
       };
     } catch (error) {
       console.error(`Error fetching stock price for ${ticker}:`, error);
-      return this.getMockPrice(ticker);
+      return null;
     }
   }
 
@@ -37,16 +42,23 @@ export class StockAPI {
       const osloTicker = ticker.includes('.OL') ? ticker : `${ticker}.OL`;
       
       const endDate = Math.floor(Date.now() / 1000);
-      const startDate = endDate - (365 * 5 * 24 * 60 * 60);
+      const startDate = endDate - (365 * 5 * 24 * 60 * 60); // 5 years of history
       
       const url = `${YAHOO_FINANCE_PROXY}${osloTicker}?period1=${startDate}&period2=${endDate}&interval=1d&events=div`;
       const response = await fetch(url);
       
       if (!response.ok) {
-        return this.getMockDividends(ticker);
+        console.error(`Failed to fetch dividends for ${ticker}:`, response.status);
+        return [];
       }
 
       const data = await response.json();
+      
+      if (!data.chart?.result?.[0]) {
+        console.error(`Invalid dividend data structure for ${ticker}`);
+        return [];
+      }
+      
       const events = data.chart.result[0].events?.dividends || {};
       
       return Object.values(events).map((div: any) => ({
@@ -56,43 +68,8 @@ export class StockAPI {
       }));
     } catch (error) {
       console.error(`Error fetching dividend history for ${ticker}:`, error);
-      return this.getMockDividends(ticker);
+      return [];
     }
-  }
-
-  private static getMockPrice(ticker: string): StockQuote {
-    const basePrice = 100 + Math.random() * 400;
-    const change = (Math.random() - 0.5) * 10;
-    
-    return {
-      ticker,
-      price: basePrice,
-      change,
-      changePercent: (change / basePrice) * 100,
-      timestamp: new Date().toISOString()
-    };
-  }
-
-  private static getMockDividends(ticker: string): Dividend[] {
-    const dividends: Dividend[] = [];
-    const currentYear = new Date().getFullYear();
-    
-    for (let year = currentYear - 2; year <= currentYear; year++) {
-      for (let quarter = 0; quarter < 4; quarter++) {
-        if (Math.random() > 0.3) {
-          const month = quarter * 3 + 3;
-          const amount = Math.random() * 5 + 1;
-          
-          dividends.push({
-            date: `${year}-${String(month).padStart(2, '0')}-15`,
-            amount,
-            perShare: amount
-          });
-        }
-      }
-    }
-    
-    return dividends;
   }
 
   static getNorwegianStocks(): Array<{ticker: string, name: string, sector?: string}> {

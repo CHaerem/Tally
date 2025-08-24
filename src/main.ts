@@ -6,7 +6,6 @@ import { PortfolioCalculator } from './portfolio';
 
 class App {
   private portfolio: Portfolio;
-  private selectedStockId: string | null = null;
 
   constructor() {
     this.portfolio = StorageService.loadPortfolio() || { stocks: [], lastUpdated: new Date().toISOString() };
@@ -227,7 +226,7 @@ class App {
 
     const searchInput = document.getElementById('stock-search');
     if (searchInput) {
-      let searchTimeout: number;
+      let searchTimeout: ReturnType<typeof setTimeout>;
       
       searchInput.addEventListener('input', (e) => {
         const query = (e.target as HTMLInputElement).value;
