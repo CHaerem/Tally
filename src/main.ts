@@ -147,7 +147,7 @@ class App {
           </td>
           <td>${stock.shares}</td>
           <td>${PortfolioCalculator.formatCurrency(stock.purchasePrice)}</td>
-          <td>${stock.currentPrice ? PortfolioCalculator.formatCurrency(stock.currentPrice) : '-'}</td>
+          <td>${stock.currentPrice && stock.currentPrice > 0 ? PortfolioCalculator.formatCurrency(stock.currentPrice) : '<span class="text-muted" title="Price data not available">N/A</span>'}</td>
           <td>${PortfolioCalculator.formatCurrency(calc.invested)}</td>
           <td>${PortfolioCalculator.formatCurrency(calc.currentValue)}</td>
           <td>${PortfolioCalculator.formatCurrency(calc.dividends)}</td>
