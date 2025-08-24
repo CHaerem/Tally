@@ -74,7 +74,7 @@ npm run type-check
 npm run deploy
 ```
 
-The app will be available at: `https://[your-username].github.io/Tally/`
+The app will be available at: `https://chaerem.github.io/Tally/`
 
 ## 🛠️ Tech Stack
 
