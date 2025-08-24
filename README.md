@@ -130,12 +130,21 @@ Priority areas for contribution:
 - Additional API integrations
 - UI/UX improvements
 
-## 🐛 Known Issues
+## 🐛 Known Issues & Limitations
 
-- Yahoo Finance API may have rate limits during market hours
-- Some newer Oslo Børs listings might not appear in search
-- Dividend data might be incomplete for some stocks
-- CORS issues may occur with certain API endpoints (fallback to mock data)
+### API Limitations
+- **Only major Norwegian stocks have live prices** - The following stocks work with Yahoo Finance:
+  - EQNR, DNB, TEL, MOWI, YAR, ORK, SALM, NHY, AKRBP, GJF, STB, KOG, TOM, SCATC, SUBC, FRO, GOGL, NAS, BAKKA, LSG, AUSS, GSF
+- **Smaller stocks (like SENTI) show "N/A" for prices** - These stocks are not available on free APIs
+- **Manual price updates** - For stocks without live data, you can still track them using purchase price
+- **CORS restrictions** - Browser security may block some API requests
+- **Rate limiting** - Too many requests may temporarily block API access
+
+### Workarounds
+- Focus on major Norwegian stocks for live price tracking
+- Use the app primarily for portfolio overview and dividend tracking
+- Consider running locally with `npm run dev` for better API access
+- For comprehensive Norwegian market data, consider professional data services
 
 ## 📧 Support
 
