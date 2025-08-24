@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser API Test</title>
+    <style>
+        body { font-family: monospace; padding: 20px; }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+    </style>
+</head>
+<body>
+    <h1>Testing Stock APIs in Browser</h1>
+    <button onclick="runTests()">Run Tests</button>
+    <div id="results"></div>
+    
+    <script>
+        const log = (message, type = 'info') => {
+            const div = document.createElement('div');
+            div.className = type;
+            div.textContent = message;
+            document.getElementById('results').appendChild(div);
+            console.log(message);
+        };
+
+        async function testYahooWithProxy() {
+            log('=== Testing Yahoo Finance with CORS Proxies ===', 'info');
+            
+            const ticker = 'EQNR.OL';
+            const url = `https://query1.finance.yahoo.com/v8/finance/chart/${ticker}`;
+            
+            // Test different CORS proxies
+            const proxies = [
+                { name: 'corsproxy.io', url: 'https://corsproxy.io/?' },
+                { name: 'allorigins', url: 'https://api.allorigins.win/get?url=' },
+                { name: 'cors-anywhere', url: 'https://cors-anywhere.herokuapp.com/' },
+            ];
+            
+            for (const proxy of proxies) {
+                try {
+                    log(`Testing ${proxy.name}...`);
+                    const response = await fetch(proxy.url + encodeURIComponent(url));
+                    
+                    if (response.ok) {
+                        let data;
+                        if (proxy.name === 'allorigins') {
+                            const wrapper = await response.json();
+                            data = JSON.parse(wrapper.contents);
+                        } else {
+                            data = await response.json();
+                        }
+                        
+                        if (data?.chart?.result?.[0]?.meta?.regularMarketPrice) {
+                            log(`✅ ${proxy.name} works! Price: ${data.chart.result[0].meta.regularMarketPrice}`, 'success');
+                            return true;
+                        } else {
+                            log(`⚠️ ${proxy.name}: Got response but no price data`, 'error');
+                        }
+                    } else {
+                        log(`❌ ${proxy.name}: HTTP ${response.status}`, 'error');
+                    }
+                } catch (error) {
+                    log(`❌ ${proxy.name}: ${error.message}`, 'error');
+                }
+            }
+            
+            return false;
+        }
+
+        async function testFinnhub() {
+            log('=== Testing Finnhub API (Free tier for Nordic stocks) ===', 'info');
+            
+            // Finnhub has a free API key
+            const apiKey = 'sandbox_c3q3o2iad3icelik6pt0'; // Sandbox key for testing
+            const symbol = 'EQNR';
+            const url = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${apiKey}`;
+            
+            try {
+                const response = await fetch(url);
+                if (response.ok) {
+                    const data = await response.json();
+                    log(`Finnhub response: ${JSON.stringify(data)}`, 'success');
+                    if (data.c) {
+                        log(`✅ Finnhub works! Current price: ${data.c}`, 'success');
+                        return true;
+                    }
+                }
+            } catch (error) {
+                log(`❌ Finnhub: ${error.message}`, 'error');
+            }
+            
+            return false;
+        }
+
+        async function testPolygon() {
+            log('=== Testing Polygon.io API ===', 'info');
+            
+            // Polygon has free tier
+            const apiKey = 'YOUR_API_KEY'; // Need to sign up for free key
+            const ticker = 'EQNR';
+            const url = `https://api.polygon.io/v2/aggs/ticker/${ticker}/prev?apiKey=${apiKey}`;
+            
+            log('Polygon.io requires free API key from polygon.io', 'info');
+        }
+
+        async function testIEX() {
+            log('=== Testing IEX Cloud ===', 'info');
+            
+            // IEX Cloud sandbox
+            const token = 'Tpk_d1db537e8c4f4b80adc2c2e30a12e836'; // Sandbox token
+            const symbol = 'EQNR';
+            const url = `https://sandbox.iexapis.com/stable/stock/${symbol}/quote?token=${token}`;
+            
+            try {
+                const response = await fetch(url);
+                if (response.ok) {
+                    const data = await response.json();
+                    log(`IEX response: ${JSON.stringify(data).substring(0, 100)}...`, 'info');
+                }
+            } catch (error) {
+                log(`❌ IEX: ${error.message}`, 'error');
+            }
+        }
+
+        async function runTests() {
+            document.getElementById('results').innerHTML = '';
+            log('Starting browser API tests...', 'info');
+            
+            const yahooWorks = await testYahooWithProxy();
+            const finnhubWorks = await testFinnhub();
+            await testPolygon();
+            await testIEX();
+            
+            log('=== SUMMARY ===', 'info');
+            if (yahooWorks) {
+                log('✅ Yahoo Finance with CORS proxy is working', 'success');
+            }
+            if (finnhubWorks) {
+                log('✅ Finnhub API is working (good for Nordic stocks)', 'success');
+            }
+        }
+    </script>
+</body>
+</html>

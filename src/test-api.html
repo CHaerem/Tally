@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Test</title>
+</head>
+<body>
+    <h1>Testing Stock API</h1>
+    <div id="results"></div>
+    
+    <script>
+        const resultsDiv = document.getElementById('results');
+        
+        async function log(message) {
+            console.log(message);
+            resultsDiv.innerHTML += `<p>${message}</p>`;
+        }
+        
+        async function testDirectYahoo() {
+            log('--- Testing Direct Yahoo Finance ---');
+            const tickers = ['EQNR.OL', 'DNB.OL', 'MOWI.OL', 'SENTI.OL'];
+            
+            for (const ticker of tickers) {
+                try {
+                    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${ticker}`;
+                    const response = await fetch(url);
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data?.chart?.result?.[0]?.meta?.regularMarketPrice) {
+                            log(`✅ ${ticker}: ${data.chart.result[0].meta.regularMarketPrice} (DIRECT WORKS!)`);
+                        } else {
+                            log(`❌ ${ticker}: No price data in response`);
+                        }
+                    } else {
+                        log(`❌ ${ticker}: HTTP ${response.status}`);
+                    }
+                } catch (error) {
+                    log(`❌ ${ticker}: CORS blocked - ${error.message}`);
+                }
+            }
+        }
+        
+        async function testCorsProxy() {
+            log('--- Testing CORS Proxies ---');
+            const proxies = [
+                'https://corsproxy.io/?',
+                'https://api.allorigins.win/raw?url=',
+                'https://cors-anywhere.herokuapp.com/',
+                'https://cors.bridged.cc/',
+                'https://cors-proxy.htmldriven.com/?url='
+            ];
+            
+            const testTicker = 'EQNR.OL';
+            const url = `https://query1.finance.yahoo.com/v8/finance/chart/${testTicker}`;
+            
+            for (const proxy of proxies) {
+                try {
+                    const response = await fetch(proxy + encodeURIComponent(url));
+                    if (response.ok) {
+                        const data = await response.json();
+                        if (data?.chart?.result?.[0]?.meta?.regularMarketPrice) {
+                            log(`✅ ${proxy}: Works! Price = ${data.chart.result[0].meta.regularMarketPrice}`);
+                        } else {
+                            log(`⚠️ ${proxy}: Response OK but no price data`);
+                        }
+                    } else {
+                        log(`❌ ${proxy}: HTTP ${response.status}`);
+                    }
+                } catch (error) {
+                    log(`❌ ${proxy}: ${error.message}`);
+                }
+            }
+        }
+        
+        async function testAlternativeAPIs() {
+            log('--- Testing Alternative APIs ---');
+            
+            // Test Alpha Vantage
+            try {
+                const url = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=EQNR.OSE&apikey=demo';
+                const response = await fetch(url);
+                if (response.ok) {
+                    const data = await response.json();
+                    log(`Alpha Vantage: ${JSON.stringify(data).substring(0, 100)}...`);
+                }
+            } catch (error) {
+                log(`❌ Alpha Vantage: ${error.message}`);
+            }
+            
+            // Test Twelve Data
+            try {
+                const url = 'https://api.twelvedata.com/price?symbol=EQNR&exchange=OSE&apikey=demo';
+                const response = await fetch(url);
+                if (response.ok) {
+                    const data = await response.json();
+                    log(`Twelve Data: ${JSON.stringify(data)}`);
+                }
+            } catch (error) {
+                log(`❌ Twelve Data: ${error.message}`);
+            }
+        }
+        
+        async function runAllTests() {
+            await testDirectYahoo();
+            await testCorsProxy();
+            await testAlternativeAPIs();
+            log('--- Tests Complete ---');
+        }
+        
+        runAllTests();
+    </script>
+</body>
+</html>
