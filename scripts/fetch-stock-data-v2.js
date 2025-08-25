@@ -161,11 +161,11 @@ async function discoverOsloSymbols() {
             throw new Error('Invalid symbol list response');
         }
         
-        // Filter and map symbols
+        // Filter and map symbols - remove .OL suffix if present
         const osloSymbols = symbols
-            .filter(s => s.symbol && !s.symbol.includes('.'))
+            .filter(s => s.symbol && s.currency === 'NOK') // Only NOK stocks
             .map(s => ({
-                symbol: s.symbol,
+                symbol: s.symbol.replace('.OL', ''), // Remove .OL suffix for consistency
                 name: s.description || s.symbol,
                 type: s.type || 'EQS',
                 currency: s.currency || 'NOK',
@@ -173,7 +173,7 @@ async function discoverOsloSymbols() {
                 mic: s.mic || 'XOSL'
             }));
         
-        console.log(`Found ${osloSymbols.length} symbols on Oslo Børs`);
+        console.log(`Found ${osloSymbols.length} NOK symbols on Oslo Børs`);
         return osloSymbols;
     } catch (error) {
         console.error('Failed to discover symbols:', error.message);
@@ -201,7 +201,13 @@ function getHardcodedSymbols() {
 // Fetch quote for a single stock
 async function fetchStockQuote(symbol) {
     try {
-        const quote = await fetchFromFinnhub(`/quote?symbol=${symbol}`);
+        // For Oslo stocks, try with .OL suffix first for NOK prices
+        let quote = await fetchFromFinnhub(`/quote?symbol=${symbol}.OL`);
+        
+        // If .OL doesn't work, try without suffix (might give USD)
+        if (!quote || quote.c === 0) {
+            quote = await fetchFromFinnhub(`/quote?symbol=${symbol}`);
+        }
         
         if (quote && quote.c > 0) {
             return {

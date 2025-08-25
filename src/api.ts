@@ -45,8 +45,30 @@ export class StockAPI {
     }
 
     try {
-      // In Vite dev server and production, files in public/ are served at root
-      // So we always fetch from /stock-data.json
+      // Try new structure first (index + per-symbol files)
+      const indexResponse = await fetch('/data/index.json');
+      
+      if (indexResponse.ok) {
+        // New structure exists, we'll load symbols on demand
+        const index = await indexResponse.json();
+        // Convert to old format for compatibility
+        this.cachedData = {
+          metadata: {
+            lastUpdated: index.lastIncrementalUpdate || index.lastFullUpdate || new Date().toISOString(),
+            totalStocks: Object.keys(index.symbols).length,
+            successfulFetches: Object.values(index.symbols).filter((s: any) => s.hasQuote).length,
+            failedFetches: Object.values(index.symbols).filter((s: any) => !s.hasQuote).length,
+            source: 'Finnhub',
+            nextUpdate: new Date(Date.now() + 6 * 60 * 60 * 1000).toISOString()
+          },
+          stocks: {}, // Will be loaded on demand
+          errors: []
+        };
+        this.lastFetch = Date.now();
+        return this.cachedData;
+      }
+      
+      // Fallback to old single file
       const response = await fetch('/stock-data.json');
       
       if (!response.ok) {
@@ -61,9 +83,39 @@ export class StockAPI {
       return null;
     }
   }
+  
+  private static async loadSymbolData(ticker: string): Promise<any> {
+    try {
+      // Try loading from per-symbol file
+      const response = await fetch(`/data/${ticker.toUpperCase()}.json`);
+      
+      if (!response.ok) {
+        return null;
+      }
+      
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      return null;
+    }
+  }
 
   static async fetchStockPrice(ticker: string): Promise<StockQuote | null> {
     try {
+      // First check if we have the new structure
+      const symbolData = await this.loadSymbolData(ticker);
+      
+      if (symbolData && symbolData.quote) {
+        return {
+          ticker: symbolData.symbol,
+          price: symbolData.quote.price,
+          change: symbolData.quote.change,
+          changePercent: symbolData.quote.changePercent,
+          timestamp: symbolData.quote.timestamp
+        };
+      }
+      
+      // Fallback to old structure
       const data = await this.loadStockData();
       
       if (!data || !data.stocks) {
@@ -93,6 +145,18 @@ export class StockAPI {
 
   static async fetchDividendHistory(ticker: string): Promise<Dividend[]> {
     try {
+      // First check if we have the new structure
+      const symbolData = await this.loadSymbolData(ticker);
+      
+      if (symbolData && symbolData.dividends) {
+        return symbolData.dividends.map((div: any) => ({
+          date: div.exDate || div.payDate || div.date || '',
+          amount: div.amount || 0,
+          perShare: div.amount || 0
+        }));
+      }
+      
+      // Fallback to old structure
       const data = await this.loadStockData();
       
       if (!data || !data.stocks) {
