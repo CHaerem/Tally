@@ -1,0 +1,93 @@
+{
+  "version": "2.0.0",
+  "lastFullUpdate": null,
+  "lastIncrementalUpdate": "2025-08-25T06:24:14.871Z",
+  "symbols": {
+    "DNB": {
+      "name": "DNB Bank ASA",
+      "type": "EQS",
+      "currency": "NOK",
+      "lastUpdate": "2025-08-25T06:24:06.888Z",
+      "hasQuote": true,
+      "hasDividends": false,
+      "dataQuality": "good"
+    },
+    "TEL": {
+      "name": "Telenor ASA",
+      "type": "EQS",
+      "currency": "NOK",
+      "lastUpdate": "2025-08-25T06:24:06.914Z",
+      "hasQuote": true,
+      "hasDividends": false,
+      "dataQuality": "good"
+    },
+    "MOWI": {
+      "name": "Mowi ASA",
+      "type": "EQS",
+      "currency": "NOK",
+      "lastUpdate": "2025-08-25T06:24:06.921Z",
+      "hasQuote": false,
+      "hasDividends": false,
+      "dataQuality": "stale"
+    },
+    "EQNR": {
+      "name": "Equinor ASA",
+      "type": "EQS",
+      "currency": "NOK",
+      "lastUpdate": "2025-08-25T06:24:06.955Z",
+      "hasQuote": true,
+      "hasDividends": false,
+      "dataQuality": "good"
+    },
+    "YAR": {
+      "name": "Yara International ASA",
+      "type": "EQS",
+      "currency": "NOK",
+      "lastUpdate": "2025-08-25T06:24:07.134Z",
+      "hasQuote": false,
+      "hasDividends": false,
+      "dataQuality": "stale"
+    },
+    "NHY": {
+      "name": "Norsk Hydro ASA",
+      "type": "EQS",
+      "currency": "NOK",
+      "lastUpdate": "2025-08-25T06:24:14.721Z",
+      "hasQuote": false,
+      "hasDividends": false,
+      "dataQuality": "stale"
+    },
+    "SNTIA": {
+      "name": "Sentia Group ASA",
+      "type": "EQS",
+      "currency": "NOK",
+      "lastUpdate": "2025-08-25T06:24:14.725Z",
+      "hasQuote": false,
+      "hasDividends": false,
+      "dataQuality": "stale"
+    },
+    "ORK": {
+      "name": "Orkla ASA",
+      "type": "EQS",
+      "currency": "NOK",
+      "lastUpdate": "2025-08-25T06:24:14.780Z",
+      "hasQuote": false,
+      "hasDividends": false,
+      "dataQuality": "stale"
+    },
+    "SALM": {
+      "name": "SalMar ASA",
+      "type": "EQS",
+      "currency": "NOK",
+      "lastUpdate": "2025-08-25T06:24:14.871Z",
+      "hasQuote": true,
+      "hasDividends": false,
+      "dataQuality": "good"
+    }
+  },
+  "metadata": {
+    "exchange": "Oslo Børs",
+    "source": "Finnhub",
+    "updateSchedule": "Pre-market and post-close on weekdays"
+  }
+}
