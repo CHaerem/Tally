@@ -12,7 +12,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/fetch-stock-data.js'
-      - '.github/workflows/fetch-stock-data.yml'
+      # Remove workflow file from triggers to prevent recursive runs
 
 jobs:
   fetch-data:

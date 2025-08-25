@@ -27,6 +27,10 @@ export class PortfolioCalculator {
     
     const totalReturn = unrealizedGain + totalDividends;
     const totalReturnPercent = totalInvested > 0 ? (totalReturn / totalInvested) * 100 : 0;
+    
+    // Net profit is the same as total return (includes dividends)
+    const netProfit = totalReturn;
+    const netProfitPercent = totalReturnPercent;
 
     return {
       totalInvested,
@@ -35,7 +39,9 @@ export class PortfolioCalculator {
       totalReturn,
       totalReturnPercent,
       unrealizedGain,
-      unrealizedGainPercent
+      unrealizedGainPercent,
+      netProfit,
+      netProfitPercent
     };
   }
 

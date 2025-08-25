@@ -37,4 +37,6 @@ export interface PortfolioSummary {
   totalReturnPercent: number;
   unrealizedGain: number;
   unrealizedGainPercent: number;
+  netProfit: number;
+  netProfitPercent: number;
 }

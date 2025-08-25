@@ -119,7 +119,8 @@ export class StockAPIv2 {
       
       // Convert stocks to index entries
       if (legacyData.stocks) {
-        for (const [symbol, data] of Object.entries(legacyData.stocks as any)) {
+        for (const [symbol, stockData] of Object.entries(legacyData.stocks as any)) {
+          const data = stockData as any;
           index.symbols[symbol] = {
             name: symbol,
             type: 'EQS',
