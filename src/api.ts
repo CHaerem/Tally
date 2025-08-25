@@ -1,131 +1,130 @@
 import { StockQuote, Dividend } from './types';
 
+interface StockDataCache {
+  metadata: {
+    lastUpdated: string;
+    totalStocks: number;
+    successfulFetches: number;
+    failedFetches: number;
+    source: string;
+    nextUpdate: string;
+  };
+  stocks: {
+    [ticker: string]: {
+      symbol: string;
+      price: number;
+      change: number;
+      changePercent: number;
+      high: number;
+      low: number;
+      open: number;
+      previousClose: number;
+      timestamp: string;
+      source: string;
+      dividends: Array<{
+        exDate: string;
+        paymentDate: string;
+        recordDate: string;
+        amount: number;
+        currency: string;
+      }>;
+    };
+  };
+  errors: string[];
+}
+
 export class StockAPI {
-  // List of major Norwegian stocks that are available on Yahoo Finance
-  private static AVAILABLE_TICKERS = new Set([
-    'EQNR', 'DNB', 'TEL', 'MOWI', 'YAR', 'ORK', 'SALM', 'NHY', 
-    'AKRBP', 'GJF', 'STB', 'KOG', 'TOM', 'SCATC', 'SUBC', 'FRO',
-    'GOGL', 'NAS', 'BAKKA', 'LSG', 'AUSS', 'GSF'
-  ]);
+  private static cachedData: StockDataCache | null = null;
+  private static lastFetch: number = 0;
+  private static CACHE_DURATION = 5 * 60 * 1000; // 5 minutes cache
 
-  private static isLikelyAvailable(ticker: string): boolean {
-    // Check if ticker is in our known list of available stocks
-    return this.AVAILABLE_TICKERS.has(ticker.toUpperCase());
-  }
+  private static async loadStockData(): Promise<StockDataCache | null> {
+    // Check if we have cached data that's still fresh
+    if (this.cachedData && Date.now() - this.lastFetch < this.CACHE_DURATION) {
+      return this.cachedData;
+    }
 
-  private static async fetchFromYahoo(ticker: string): Promise<any> {
-    // Only try to fetch if we know the stock is likely available
-    if (!this.isLikelyAvailable(ticker)) {
+    try {
+      // In Vite dev server and production, files in public/ are served at root
+      // So we always fetch from /stock-data.json
+      const response = await fetch('/stock-data.json');
+      
+      if (!response.ok) {
+        throw new Error(`Stock data not available: ${response.status}`);
+      }
+      
+      this.cachedData = await response.json();
+      this.lastFetch = Date.now();
+      return this.cachedData;
+    } catch (error) {
+      console.error('Failed to load stock data:', error);
       return null;
     }
-
-    const osloTicker = ticker.includes('.') ? ticker : `${ticker}.OL`;
-    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${osloTicker}`;
-    
-    try {
-      // Try direct fetch first (works in some environments)
-      const response = await fetch(url);
-      if (response.ok) {
-        const data = await response.json();
-        if (data?.chart?.result?.[0]) {
-          return data;
-        }
-      }
-    } catch (error) {
-      // Direct fetch failed, try with CORS proxy
-      try {
-        const proxy = 'https://corsproxy.io/?';
-        const response = await fetch(proxy + encodeURIComponent(url));
-        if (response.ok) {
-          const data = await response.json();
-          if (data?.chart?.result?.[0]) {
-            return data;
-          }
-        }
-      } catch (proxyError) {
-        // Both methods failed
-      }
-    }
-    
-    return null;
   }
 
   static async fetchStockPrice(ticker: string): Promise<StockQuote | null> {
     try {
-      const data = await this.fetchFromYahoo(ticker);
+      const data = await this.loadStockData();
       
-      if (!data?.chart?.result?.[0]?.meta) {
-        // Return null for unavailable stocks - UI will show N/A
+      if (!data || !data.stocks) {
         return null;
       }
       
-      const quote = data.chart.result[0].meta;
-      const price = quote.regularMarketPrice || 0;
-      const previousClose = quote.previousClose || price;
+      // Convert ticker to uppercase to match the data format
+      const upperTicker = ticker.toUpperCase();
+      const stockData = data.stocks[upperTicker];
+      
+      if (!stockData) {
+        return null;
+      }
       
       return {
-        ticker,
-        price,
-        change: price - previousClose,
-        changePercent: previousClose > 0 ? ((price - previousClose) / previousClose) * 100 : 0,
-        timestamp: new Date().toISOString()
+        ticker: upperTicker,
+        price: stockData.price,
+        change: stockData.change,
+        changePercent: stockData.changePercent,
+        timestamp: stockData.timestamp
       };
     } catch (error) {
+      console.error(`Failed to fetch price for ${ticker}:`, error);
       return null;
     }
   }
 
   static async fetchDividendHistory(ticker: string): Promise<Dividend[]> {
-    // Only try for stocks we know are available
-    if (!this.isLikelyAvailable(ticker)) {
-      return [];
-    }
-
     try {
-      const endDate = Math.floor(Date.now() / 1000);
-      const startDate = endDate - (365 * 5 * 24 * 60 * 60); // 5 years of history
+      const data = await this.loadStockData();
       
-      const osloTicker = ticker.includes('.') ? ticker : `${ticker}.OL`;
-      const url = `https://query1.finance.yahoo.com/v8/finance/chart/${osloTicker}?period1=${startDate}&period2=${endDate}&interval=1d&events=div`;
-      
-      try {
-        // Try direct first
-        const response = await fetch(url);
-        if (response.ok) {
-          const data = await response.json();
-          if (data?.chart?.result?.[0]?.events?.dividends) {
-            const events = data.chart.result[0].events.dividends;
-            return Object.values(events).map((div: any) => ({
-              date: new Date(div.date * 1000).toISOString().split('T')[0],
-              amount: div.amount,
-              perShare: div.amount
-            }));
-          }
-        }
-      } catch (error) {
-        // Try with proxy
-        try {
-          const proxy = 'https://corsproxy.io/?';
-          const response = await fetch(proxy + encodeURIComponent(url));
-          if (response.ok) {
-            const data = await response.json();
-            if (data?.chart?.result?.[0]?.events?.dividends) {
-              const events = data.chart.result[0].events.dividends;
-              return Object.values(events).map((div: any) => ({
-                date: new Date(div.date * 1000).toISOString().split('T')[0],
-                amount: div.amount,
-                perShare: div.amount
-              }));
-            }
-          }
-        } catch (proxyError) {
-          // Both failed
-        }
+      if (!data || !data.stocks) {
+        return [];
       }
       
-      return [];
+      // Convert ticker to uppercase to match the data format
+      const upperTicker = ticker.toUpperCase();
+      const stockData = data.stocks[upperTicker];
+      
+      if (!stockData || !stockData.dividends) {
+        return [];
+      }
+      
+      // Convert Finnhub dividend format to our app format
+      return stockData.dividends.map(div => ({
+        date: div.exDate || div.paymentDate || div.recordDate,
+        amount: div.amount,
+        perShare: div.amount
+      }));
     } catch (error) {
+      console.error(`Failed to fetch dividends for ${ticker}:`, error);
       return [];
+    }
+  }
+
+  static async getLastUpdateTime(): Promise<string | null> {
+    try {
+      const data = await this.loadStockData();
+      return data?.metadata?.lastUpdated || null;
+    } catch (error) {
+      return null;
     }
   }
 

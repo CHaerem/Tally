@@ -64,9 +64,12 @@ class App {
         <div class="card">
           <div class="card-header">
             <h2>Holdings</h2>
-            <button class="btn btn-primary btn-small" id="refresh-prices-btn">
-              Refresh Prices
-            </button>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+              <button class="btn btn-primary btn-small" id="refresh-prices-btn">
+                Refresh Prices
+              </button>
+              <small id="last-update-time" class="text-muted"></small>
+            </div>
           </div>
           
           ${this.renderPortfolioTable()}
@@ -428,6 +431,20 @@ class App {
 
     for (const stock of this.portfolio.stocks) {
       await this.refreshStockData(stock.id);
+    }
+
+    // Get the last update time from the data source
+    const lastUpdateTime = await StockAPI.getLastUpdateTime();
+    if (lastUpdateTime) {
+      this.portfolio.lastUpdated = lastUpdateTime;
+      StorageService.savePortfolio(this.portfolio);
+      
+      // Update the display
+      const lastUpdateEl = document.getElementById('last-update-time');
+      if (lastUpdateEl) {
+        const date = new Date(lastUpdateTime);
+        lastUpdateEl.textContent = `Data last updated: ${date.toLocaleString('no-NO')}`;
+      }
     }
 
     if (btn) {

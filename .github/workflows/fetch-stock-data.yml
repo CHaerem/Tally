@@ -1,0 +1,62 @@
+name: Fetch Stock Data
+
+on:
+  schedule:
+    # Run every 6 hours during market days
+    # Oslo Børs hours: 9:00 - 16:20 CET (08:00 - 15:20 UTC)
+    - cron: '0 6,12,18 * * 1-5'  # 6:00, 12:00, 18:00 UTC on weekdays
+  
+  workflow_dispatch:  # Allow manual trigger
+  
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch-stock-data.js'
+      - '.github/workflows/fetch-stock-data.yml'
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Fetch stock data from Finnhub
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        run: |
+          echo "Starting stock data fetch at $(date)"
+          node scripts/fetch-stock-data.js
+      
+      - name: Check if data changed
+        id: check_changes
+        run: |
+          if git diff --quiet public/stock-data.json; then
+            echo "No changes in stock data"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "Stock data has changed"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add public/stock-data.json
+          git commit -m "Update stock data - $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
+      
+      - name: Trigger site rebuild
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          echo "Stock data updated, site will be rebuilt automatically"

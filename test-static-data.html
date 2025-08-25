@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Static Data Loading</title>
+</head>
+<body>
+    <h1>Testing Static Stock Data Loading</h1>
+    <div id="results"></div>
+    
+    <script>
+        async function testDataLoading() {
+            const results = document.getElementById('results');
+            
+            try {
+                // Test loading from /stock-data.json (production path)
+                console.log('Testing /stock-data.json...');
+                const response1 = await fetch('/stock-data.json');
+                if (response1.ok) {
+                    const data1 = await response1.json();
+                    results.innerHTML += '<p style="color: green;">✅ /stock-data.json loaded successfully</p>';
+                    results.innerHTML += '<pre>' + JSON.stringify(data1.metadata, null, 2) + '</pre>';
+                    results.innerHTML += '<p>Stocks found: ' + Object.keys(data1.stocks).join(', ') + '</p>';
+                } else {
+                    results.innerHTML += '<p style="color: red;">❌ /stock-data.json not found</p>';
+                }
+            } catch (e) {
+                results.innerHTML += '<p style="color: red;">❌ Error loading /stock-data.json: ' + e.message + '</p>';
+            }
+            
+            try {
+                // Test loading from /public/stock-data.json (dev path)
+                console.log('Testing /public/stock-data.json...');
+                const response2 = await fetch('/public/stock-data.json');
+                if (response2.ok) {
+                    const data2 = await response2.json();
+                    results.innerHTML += '<p style="color: green;">✅ /public/stock-data.json loaded successfully</p>';
+                } else {
+                    results.innerHTML += '<p style="color: orange;">⚠️ /public/stock-data.json not found (this is normal in production)</p>';
+                }
+            } catch (e) {
+                results.innerHTML += '<p style="color: orange;">⚠️ Error loading /public/stock-data.json: ' + e.message + '</p>';
+            }
+        }
+        
+        testDataLoading();
+    </script>
+</body>
+</html>

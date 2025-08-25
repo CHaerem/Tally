@@ -1,0 +1,52 @@
+{
+  "metadata": {
+    "lastUpdated": "2025-01-20T12:00:00.000Z",
+    "totalStocks": 3,
+    "successfulFetches": 3,
+    "failedFetches": 0,
+    "source": "Finnhub",
+    "nextUpdate": "2025-01-20T18:00:00.000Z"
+  },
+  "stocks": {
+    "EQNR": {
+      "symbol": "EQNR",
+      "price": 280.50,
+      "change": -2.30,
+      "changePercent": -0.81,
+      "high": 283.20,
+      "low": 279.10,
+      "open": 282.80,
+      "previousClose": 282.80,
+      "timestamp": "2025-01-20T12:00:00.000Z",
+      "source": "finnhub",
+      "dividends": []
+    },
+    "DNB": {
+      "symbol": "DNB",
+      "price": 235.60,
+      "change": 1.40,
+      "changePercent": 0.60,
+      "high": 236.80,
+      "low": 234.00,
+      "open": 234.20,
+      "previousClose": 234.20,
+      "timestamp": "2025-01-20T12:00:00.000Z",
+      "source": "finnhub",
+      "dividends": []
+    },
+    "SNTIA": {
+      "symbol": "SNTIA",
+      "price": 45.20,
+      "change": 0.30,
+      "changePercent": 0.67,
+      "high": 45.50,
+      "low": 44.90,
+      "open": 44.90,
+      "previousClose": 44.90,
+      "timestamp": "2025-01-20T12:00:00.000Z",
+      "source": "finnhub",
+      "dividends": []
+    }
+  },
+  "errors": []
+}
