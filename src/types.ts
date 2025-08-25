@@ -7,6 +7,7 @@ export interface Stock {
   purchaseDate: string;
   currentPrice?: number;
   dividends?: Dividend[];
+  lastUpdated?: string;
 }
 
 export interface Dividend {

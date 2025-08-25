@@ -1,0 +1,171 @@
+name: Fetch Stock Data v2
+
+on:
+  schedule:
+    # Pre-market update: 8:00 AM CET (07:00 UTC) on weekdays
+    - cron: '0 7 * * 1-5'
+    # Post-close update: 5:00 PM CET (16:00 UTC) on weekdays  
+    - cron: '0 16 * * 1-5'
+    # Weekly dividend update: Sunday 2:00 AM CET (01:00 UTC)
+    - cron: '0 1 * * 0'
+    # Weekly symbol discovery: Sunday 3:00 AM CET (02:00 UTC)
+    - cron: '0 2 * * 0'
+  
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Update mode'
+        required: true
+        default: 'incremental'
+        type: choice
+        options:
+          - incremental
+          - full
+          - dividends-only
+          - discover-symbols
+      symbols:
+        description: 'Specific symbols (comma-separated, optional)'
+        required: false
+        type: string
+
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/fetch-stock-data-v2.js'
+      - '.github/workflows/fetch-stock-data-v2.yml'
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Determine update mode
+        id: mode
+        run: |
+          # Check if this is a scheduled run
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            HOUR=$(date -u +%H)
+            DAY=$(date -u +%u)
+            
+            # Sunday runs
+            if [[ $DAY -eq 7 ]]; then
+              if [[ $HOUR -eq 1 ]]; then
+                echo "mode=dividends-only" >> $GITHUB_OUTPUT
+                echo "Running weekly dividend update"
+              else
+                echo "mode=discover-symbols" >> $GITHUB_OUTPUT
+                echo "Running weekly symbol discovery"
+              fi
+            # Weekday runs
+            else
+              echo "mode=incremental" >> $GITHUB_OUTPUT
+              if [[ $HOUR -eq 7 ]]; then
+                echo "Running pre-market update"
+              else
+                echo "Running post-close update"
+              fi
+            fi
+          # Manual trigger
+          elif [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
+            echo "symbols=${{ github.event.inputs.symbols }}" >> $GITHUB_OUTPUT
+          # Push trigger
+          else
+            echo "mode=incremental" >> $GITHUB_OUTPUT
+            echo "Running incremental update after push"
+          fi
+      
+      - name: Run stock data fetcher
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          YAHOO_FALLBACK: ${{ secrets.YAHOO_FALLBACK || 'false' }}
+        run: |
+          echo "Starting stock data fetch at $(date)"
+          
+          # Build command based on mode
+          COMMAND="node scripts/fetch-stock-data-v2.js"
+          
+          if [[ "${{ steps.mode.outputs.mode }}" == "full" ]]; then
+            COMMAND="$COMMAND --full-update"
+          elif [[ "${{ steps.mode.outputs.mode }}" == "dividends-only" ]]; then
+            COMMAND="$COMMAND --dividends-only"
+          elif [[ "${{ steps.mode.outputs.mode }}" == "discover-symbols" ]]; then
+            COMMAND="$COMMAND --full-update"
+          fi
+          
+          # Add specific symbols if provided
+          if [[ -n "${{ steps.mode.outputs.symbols }}" ]]; then
+            COMMAND="$COMMAND --symbols=${{ steps.mode.outputs.symbols }}"
+          fi
+          
+          echo "Running: $COMMAND"
+          $COMMAND
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes in stock data"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "Stock data has changed"
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            
+            # Count changed files
+            CHANGED_COUNT=$(git diff --cached --name-only | wc -l)
+            echo "changed_count=$CHANGED_COUNT" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Create informative commit message
+          MODE="${{ steps.mode.outputs.mode }}"
+          CHANGED="${{ steps.check_changes.outputs.changed_count }}"
+          TIME=$(date -u +'%Y-%m-%d %H:%M UTC')
+          
+          if [[ "$MODE" == "dividends-only" ]]; then
+            MESSAGE="📊 Weekly dividend update - $TIME"
+          elif [[ "$MODE" == "discover-symbols" ]]; then
+            MESSAGE="🔍 Symbol discovery update - $TIME"
+          elif [[ $(date -u +%H) -eq 7 ]]; then
+            MESSAGE="🌅 Pre-market data update ($CHANGED files) - $TIME"
+          elif [[ $(date -u +%H) -eq 16 ]]; then
+            MESSAGE="🌆 Post-close data update ($CHANGED files) - $TIME"
+          else
+            MESSAGE="📈 Stock data update ($CHANGED files) - $TIME"
+          fi
+          
+          git commit -m "$MESSAGE"
+          git push
+      
+      - name: Report status
+        if: always()
+        run: |
+          if [[ "${{ steps.check_changes.outputs.has_changes }}" == "true" ]]; then
+            echo "✅ Successfully updated ${{ steps.check_changes.outputs.changed_count }} files"
+          else
+            echo "ℹ️ No updates needed"
+          fi
+          
+          # Show index summary if it exists
+          if [[ -f "public/data/index.json" ]]; then
+            echo "📊 Index summary:"
+            jq '.metadata' public/data/index.json
+            echo "Total symbols: $(jq '.symbols | length' public/data/index.json)"
+          fi
