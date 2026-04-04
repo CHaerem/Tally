@@ -22,12 +22,37 @@ const https = require('https');
 const DATA_DIR = path.join(__dirname, '..', 'public', 'data');
 const INDEX_FILE = path.join(DATA_DIR, 'index.json');
 
-// Major Norwegian stocks on Oslo Børs
+// Norwegian stocks on Oslo Børs (OBX, main list, Euronext Growth)
+// This is a comprehensive list — Yahoo Finance will return errors for
+// delisted or invalid tickers, which are silently skipped.
 const DEFAULT_SYMBOLS = [
-  'EQNR', 'DNB', 'TEL', 'MOWI', 'YAR', 'ORK', 'SALM', 'NHY',
-  'AKRBP', 'GJF', 'STB', 'KOG', 'TOM', 'SCATC', 'SUBC', 'FRO',
-  'GOGL', 'NAS', 'BAKKA', 'LSG', 'AUSS', 'GSF', 'AKER', 'HAFNI',
-  'SCHA', 'RECSI', 'VOW', 'NHYDRO', 'KAHOT', 'FLNG',
+  // OBX 25 (most traded)
+  'EQNR', 'DNB', 'TEL', 'MOWI', 'YAR', 'ORK', 'NHY', 'AKRBP',
+  'GJF', 'SALM', 'STB', 'KOG', 'SUBC', 'FRO', 'GOGL', 'NAS',
+  'AKER', 'BAKKA', 'LSG', 'SCATC', 'TOM', 'AUSS', 'GSF', 'VOW',
+  'HAFNI',
+  // Large & mid cap
+  'ABG', 'AKSO', 'ATEA', 'ADE', 'AFC', 'AMSC', 'ARCH', 'ASTK',
+  'AUTO', 'BELCO', 'BEWI', 'BGBIO', 'BONHR', 'BORR', 'BRG',
+  'BWO', 'CADLR', 'CLOUD', 'CONTX', 'CRAYN', 'DNO', 'DOFG',
+  'ELK', 'ELMRA', 'ENTRA', 'EPR', 'FLNG', 'FORTE', 'FROY',
+  'GIG', 'GOLDEN', 'GRIEG', 'HAUTO', 'HAVI', 'HBC', 'HDLY',
+  'HYON', 'IDEX', 'KAHOT', 'KIT', 'KOA', 'KOMPX', 'KVLP',
+  'LINK', 'MPCC', 'MPC', 'MULTI', 'NAPA', 'NASS', 'NEXT',
+  'NHPC', 'NOD', 'NORBT', 'NSKOG', 'OET', 'OLT', 'ORK',
+  'PARB', 'PCIB', 'PEN', 'PEXIP', 'PHO', 'PGS', 'PLCS',
+  'POL', 'PROT', 'PSE', 'QFR', 'RAKP', 'RECSI', 'SACAM',
+  'SATS', 'SBO', 'SCHA', 'SDRL', 'SHLF', 'SIKRI', 'SKUE',
+  'SMCRT', 'SNI', 'SOFR', 'SRBNK', 'SSO', 'STATT', 'SUBC',
+  'TEKNA', 'THIN', 'TGS', 'ULTI', 'VAR', 'VEI', 'VERDE',
+  'VOLUE', 'VGM', 'WAWI', 'WSTEP', 'WWI', 'ZAPTEC',
+  // Euronext Growth (smaller companies)
+  'AASB', 'AGLX', 'AIRX', 'ALCOA', 'AYFIE', 'BFISH', 'BMEDI',
+  'CXENSE', 'ECIT', 'EFUEL', 'ENDUR', 'EXACT', 'FKRAFT', 'HPUR',
+  'HUDYA', 'ICG', 'INIFY', 'KALERA', 'KMCP', 'KOLR', 'LUMI',
+  'MORPOL', 'MSEIS', 'NORAM', 'NYKD', 'ODF', 'OKEA', 'OTEC',
+  'OTOVO', 'RANA', 'RIVER', 'SALMON', 'SENTI', 'SPOL', 'TECO',
+  'WBULK',
 ];
 
 // --- Helpers ---
@@ -228,8 +253,8 @@ async function main() {
       errorCount++;
     }
 
-    // Rate limiting — be polite to Yahoo
-    await sleep(500);
+    // Rate limiting — be polite to Yahoo (300ms between requests)
+    await sleep(300);
   }
 
   // Load any existing tickers not in this run
