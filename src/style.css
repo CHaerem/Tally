@@ -596,6 +596,14 @@ header h1 {
   text-align: center;
 }
 
+.price-date-hint {
+  display: block;
+  font-size: 12px;
+  color: var(--secondary-color);
+  margin-top: 3px;
+  min-height: 16px;
+}
+
 /* Form */
 /* Trade modal */
 .trade-type-tabs {

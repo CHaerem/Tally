@@ -138,3 +138,26 @@ export async function fetchPriceHistory(
   const data = await fetchStockData(ticker);
   return data?.prices || [];
 }
+
+/**
+ * Get the closing price for a ticker on or closest before a given date.
+ * Returns null if no data available.
+ */
+export async function fetchPriceForDate(
+  ticker: string,
+  date: string
+): Promise<number | null> {
+  const data = await fetchStockData(ticker);
+  if (!data || data.prices.length === 0) return null;
+
+  // Prices are sorted chronologically. Find the last price on or before the date.
+  let best: number | null = null;
+  for (const p of data.prices) {
+    if (p.date <= date) {
+      best = p.close;
+    } else {
+      break;
+    }
+  }
+  return best;
+}
