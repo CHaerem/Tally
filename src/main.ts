@@ -10,7 +10,54 @@ interface StockSuggestion {
   ticker: string;
   name: string;
   currentPrice: number | null;
+  type: 'STOCK' | 'FUND';
 }
+
+// Popular Norwegian mutual funds with Yahoo Finance Morningstar IDs
+const NORWEGIAN_FUNDS: StockSuggestion[] = [
+  // DNB
+  { ticker: '0P00009QQ2.IR', name: 'DNB Norge Indeks', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000G0T.IR', name: 'DNB Norge', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00009QQ1.IR', name: 'DNB Global Indeks', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000G0L.IR', name: 'DNB Teknologi', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000G0R.IR', name: 'DNB Miljøinvest', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000G0P.IR', name: 'DNB Health Care', currentPrice: null, type: 'FUND' },
+  // KLP
+  { ticker: '0P0001OPC5.IR', name: 'KLP AksjeVerden Indeks', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00018V9L.IR', name: 'KLP AksjeGlobal Indeks', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001OPBV.IR', name: 'KLP AksjeNorden Indeks', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001OPC2.IR', name: 'KLP AksjeUSA Indeks', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001OPBA.IR', name: 'KLP AksjeEuropa Indeks', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001OPBE.IR', name: 'KLP AksjeFremvoksende Markeder Indeks', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001OPBN.IR', name: 'KLP AksjeGlobal Mer Samfunnsansvar', currentPrice: null, type: 'FUND' },
+  // Nordnet
+  { ticker: '0P000134K7.IR', name: 'Nordnet Indeksfond Norge', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001A8PS.IR', name: 'Nordnet Indeksfond Global', currentPrice: null, type: 'FUND' },
+  // Storebrand
+  { ticker: '0P0000A3RB.IR', name: 'Storebrand Norge Indeks', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0000A3RC.IR', name: 'Storebrand Global Indeks', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001GSHL.IR', name: 'Storebrand Global ESG Plus', currentPrice: null, type: 'FUND' },
+  // ODIN
+  { ticker: '0P000161CO.IR', name: 'ODIN Aksje', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0000061Y.IR', name: 'ODIN Norge', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000620.IR', name: 'ODIN Norden', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0000061Z.IR', name: 'ODIN Europa', currentPrice: null, type: 'FUND' },
+  // Skagen
+  { ticker: '0P00009402.IR', name: 'Skagen Global', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00009404.IR', name: 'Skagen Kon-Tiki', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00009403.IR', name: 'Skagen Focus', currentPrice: null, type: 'FUND' },
+  // Holberg
+  { ticker: '0P0000B5KY.IR', name: 'Holberg Norge', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0000B5L0.IR', name: 'Holberg Norden', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0000B5KZ.IR', name: 'Holberg Global', currentPrice: null, type: 'FUND' },
+  // Alfred Berg
+  { ticker: '0P000000U2.IR', name: 'Alfred Berg Norge Classic', currentPrice: null, type: 'FUND' },
+  { ticker: '0P000000U1.IR', name: 'Alfred Berg Gambak', currentPrice: null, type: 'FUND' },
+  // Handelsbanken
+  { ticker: '0P00005RWE.IR', name: 'Handelsbanken Norge', currentPrice: null, type: 'FUND' },
+  // Pareto
+  { ticker: '0P0000A50Q.IR', name: 'Pareto Aksje Norge', currentPrice: null, type: 'FUND' },
+];
 
 class TallyApp {
   private ledger: LedgerState;
@@ -35,12 +82,15 @@ class TallyApp {
 
   private async loadStockIndex(): Promise<void> {
     const index = await fetchStockIndex();
-    if (!index) return;
-    this.stockList = Object.entries(index.symbols).map(([ticker, info]) => ({
-      ticker,
-      name: info.name,
-      currentPrice: info.currentPrice,
-    }));
+    const stocks: StockSuggestion[] = index
+      ? Object.entries(index.symbols).map(([ticker, info]) => ({
+          ticker,
+          name: info.name,
+          currentPrice: info.currentPrice,
+          type: 'STOCK' as const,
+        }))
+      : [];
+    this.stockList = [...stocks, ...NORWEGIAN_FUNDS];
   }
 
   private checkShareUrl(): void {
@@ -216,7 +266,7 @@ class TallyApp {
 
     return '<div class="card"><div class="card-header"><h2>Beholdning</h2>' + refreshBtn + '</div>'
       + '<div class="table-responsive"><table class="portfolio-table"><thead><tr>'
-      + '<th>Aksje</th>'
+      + '<th>Navn</th>'
       + '<th class="text-right">Antall</th>'
       + '<th class="text-right">Snittpris</th>'
       + '<th class="text-right">Kurs</th>'
@@ -229,9 +279,14 @@ class TallyApp {
         const priceValue = h.currentPrice > 0 ? h.currentPrice.toFixed(2) : '';
         const priceInput = '<input type="number" class="price-input" data-isin="' + h.isin
           + '" value="' + priceValue + '" placeholder="—" step="0.01" min="0">';
+        const inst = this.ledger.instruments.find(i => i.isin === h.isin);
+        const isFund = inst?.instrumentType === 'FUND';
+        const displayName = isFund
+          ? '<strong>' + h.name + '</strong>'
+          : '<strong>' + h.ticker + '</strong><br><span class="text-muted text-small">' + h.name + '</span>';
         return '<tr>'
-          + '<td><strong>' + h.ticker + '</strong><br><span class="text-muted text-small">' + h.name + '</span></td>'
-          + '<td class="text-right">' + h.quantity + '</td>'
+          + '<td>' + displayName + (isFund ? '<br><span class="text-muted text-small">Fond</span>' : '') + '</td>'
+          + '<td class="text-right">' + (Number.isInteger(h.quantity) ? h.quantity : h.quantity.toFixed(4)) + '</td>'
           + '<td class="text-right">' + formatCurrency(h.averageCostPerShare, 2) + '</td>'
           + '<td class="text-right">' + priceInput + '</td>'
           + '<td class="text-right">' + formatCurrency(h.marketValue) + '</td>'
@@ -264,11 +319,12 @@ class TallyApp {
       + '<button class="trade-tab" data-type="DIVIDEND">Utbytte</button>'
       + '</div>'
       + '<input type="hidden" id="trade-type" value="TRADE_BUY">'
-      + '<div class="form-group"><label for="trade-ticker">Aksje</label><div class="search-wrapper"><input type="text" id="trade-ticker" class="form-control" placeholder="Søk etter aksje..." autocapitalize="characters" autocorrect="off" spellcheck="false" autocomplete="off"><div class="search-suggestions" id="search-suggestions"></div></div></div>'
+      + '<div class="form-group"><label for="trade-ticker">Aksje eller fond</label><div class="search-wrapper"><input type="text" id="trade-ticker" class="form-control" placeholder="Søk etter aksje eller fond..." autocapitalize="characters" autocorrect="off" spellcheck="false" autocomplete="off"><div class="search-suggestions" id="search-suggestions"></div></div></div>'
       + '<div class="form-group"><label for="trade-name">Selskapsnavn</label><input type="text" id="trade-name" class="form-control" placeholder="Fylles inn automatisk" readonly></div>'
       + '<input type="hidden" id="trade-isin" value="">'
+      + '<input type="hidden" id="trade-instrument-type" value="STOCK">'
       + '<div class="form-group"><label for="trade-date">Dato</label><input type="date" id="trade-date" class="form-control" value="' + today + '"></div>'
-      + '<div class="form-row"><div class="form-group"><label for="trade-qty">Antall aksjer</label><input type="number" id="trade-qty" class="form-control" placeholder="100" step="1" min="1" inputmode="numeric"></div>'
+      + '<div class="form-row"><div class="form-group"><label for="trade-qty">Antall aksjer</label><input type="number" id="trade-qty" class="form-control" placeholder="100" step="any" min="0.001" inputmode="decimal"></div>'
       + '<div class="form-group"><label for="trade-price" id="trade-price-label">Kurs per aksje</label><input type="number" id="trade-price" class="form-control" placeholder="280,50" step="0.01" min="0" inputmode="decimal"><span class="price-date-hint" id="price-date-hint"></span></div></div>'
       + '<div class="form-group"><label for="trade-fee">Kurtasje (valgfritt)</label><input type="number" id="trade-fee" class="form-control" placeholder="29" step="0.01" min="0" inputmode="decimal"></div>'
       + '<div id="trade-total" class="trade-total"></div>'
@@ -277,16 +333,18 @@ class TallyApp {
 
   private submitTrade(): void {
     const type = (document.getElementById('trade-type') as HTMLSelectElement).value;
-    const ticker = (document.getElementById('trade-ticker') as HTMLInputElement).value.trim().toUpperCase();
+    const tickerRaw = (document.getElementById('trade-ticker') as HTMLInputElement).value.trim();
+    const ticker = tickerRaw.includes('.') ? tickerRaw : tickerRaw.toUpperCase(); // Don't uppercase Morningstar IDs
     const name = (document.getElementById('trade-name') as HTMLInputElement).value.trim();
     const isinInput = (document.getElementById('trade-isin') as HTMLInputElement).value.trim();
+    const instrumentType = ((document.getElementById('trade-instrument-type') as HTMLInputElement)?.value || 'STOCK') as 'STOCK' | 'FUND';
     const date = (document.getElementById('trade-date') as HTMLInputElement).value;
     const qty = parseFloat((document.getElementById('trade-qty') as HTMLInputElement).value);
     const price = parseFloat((document.getElementById('trade-price') as HTMLInputElement).value);
     const fee = parseFloat((document.getElementById('trade-fee') as HTMLInputElement).value) || 0;
 
     if (!ticker || !date || isNaN(qty) || qty <= 0 || isNaN(price) || price <= 0) {
-      alert('Fyll inn ticker, dato, antall og kurs.');
+      alert('Fyll inn ' + (instrumentType === 'FUND' ? 'fond' : 'ticker') + ', dato, antall og kurs.');
       return;
     }
 
@@ -296,7 +354,7 @@ class TallyApp {
     const now = new Date().toISOString();
 
     // Upsert instrument
-    LedgerStorage.upsertInstrument({ isin, ticker, name: name || ticker, currency: 'NOK' });
+    LedgerStorage.upsertInstrument({ isin, ticker, name: name || ticker, currency: 'NOK', instrumentType });
 
     if (type === 'DIVIDEND') {
       const event = {
@@ -328,10 +386,21 @@ class TallyApp {
     const tickerInput = document.getElementById('trade-ticker') as HTMLInputElement;
     const nameInput = document.getElementById('trade-name') as HTMLInputElement;
     const suggestionsEl = document.getElementById('search-suggestions') as HTMLElement;
+    const isinInput = document.getElementById('trade-isin') as HTMLInputElement;
+    const instrumentTypeInput = document.getElementById('trade-instrument-type') as HTMLInputElement;
 
     tickerInput.value = stock.ticker;
     nameInput.value = stock.name;
     nameInput.readOnly = false;
+    if (isinInput) isinInput.value = '';
+    if (instrumentTypeInput) instrumentTypeInput.value = stock.type;
+
+    // Adapt labels for funds
+    const isFund = stock.type === 'FUND';
+    const qtyLabel = document.querySelector('label[for="trade-qty"]');
+    const priceLabel = document.getElementById('trade-price-label');
+    if (qtyLabel) qtyLabel.textContent = isFund ? 'Antall andeler' : 'Antall aksjer';
+    if (priceLabel) priceLabel.textContent = isFund ? 'NAV per andel' : 'Kurs per aksje';
 
     suggestionsEl.innerHTML = '';
     suggestionsEl.classList.remove('active');
@@ -344,7 +413,8 @@ class TallyApp {
   }
 
   private async updatePriceForSelectedStock(): Promise<void> {
-    const ticker = (document.getElementById('trade-ticker') as HTMLInputElement)?.value.trim().toUpperCase();
+    const tickerRaw = (document.getElementById('trade-ticker') as HTMLInputElement)?.value.trim();
+    const ticker = tickerRaw.includes('.') ? tickerRaw : tickerRaw.toUpperCase();
     const date = (document.getElementById('trade-date') as HTMLInputElement)?.value;
     const priceInput = document.getElementById('trade-price') as HTMLInputElement | null;
     const tradeType = (document.getElementById('trade-type') as HTMLInputElement)?.value;
@@ -401,7 +471,14 @@ class TallyApp {
       if (el) el.value = '';
     }
     const nameInput = document.getElementById('trade-name') as HTMLInputElement | null;
-    if (nameInput) nameInput.readOnly = true;
+    if (nameInput) { nameInput.readOnly = true; nameInput.placeholder = 'Fylles inn automatisk'; }
+    const instrumentType = document.getElementById('trade-instrument-type') as HTMLInputElement | null;
+    if (instrumentType) instrumentType.value = 'STOCK';
+    // Reset labels
+    const qtyLabel = document.querySelector('label[for="trade-qty"]');
+    const priceLabel = document.getElementById('trade-price-label');
+    if (qtyLabel) qtyLabel.textContent = 'Antall aksjer';
+    if (priceLabel) priceLabel.textContent = 'Kurs per aksje';
     const suggestions = document.getElementById('search-suggestions') as HTMLElement | null;
     if (suggestions) { suggestions.innerHTML = ''; suggestions.classList.remove('active'); }
     this.selectedSuggestionIndex = -1;
@@ -502,13 +579,17 @@ class TallyApp {
           return;
         }
 
-        suggestionsEl.innerHTML = matches.map((s, i) =>
-          '<button class="suggestion-item' + (i === this.selectedSuggestionIndex ? ' selected' : '') + '" data-index="' + i + '" type="button">'
-          + '<span class="suggestion-ticker">' + s.ticker + '</span>'
-          + '<span class="suggestion-name">' + s.name + '</span>'
-          + (s.currentPrice ? '<span class="suggestion-price">' + s.currentPrice.toFixed(2) + '</span>' : '')
-          + '</button>'
-        ).join('');
+        suggestionsEl.innerHTML = matches.map((s, i) => {
+          const isFund = s.type === 'FUND';
+          const badge = isFund ? '<span class="suggestion-badge">Fond</span>' : '';
+          const label = isFund ? s.name : s.ticker;
+          const sublabel = isFund ? '' : '<span class="suggestion-name">' + s.name + '</span>';
+          return '<button class="suggestion-item' + (i === this.selectedSuggestionIndex ? ' selected' : '') + '" data-index="' + i + '" type="button">'
+            + '<span class="suggestion-ticker">' + label + '</span>'
+            + badge + sublabel
+            + (s.currentPrice ? '<span class="suggestion-price">' + s.currentPrice.toFixed(2) + '</span>' : '')
+            + '</button>';
+        }).join('');
         suggestionsEl.classList.add('active');
 
         suggestionsEl.querySelectorAll('.suggestion-item').forEach(item => {
