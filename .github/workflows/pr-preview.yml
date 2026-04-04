@@ -2,10 +2,10 @@ name: PR Preview
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [opened, synchronize, reopened]
 
 permissions:
-  contents: write
+  contents: read
   pull-requests: write
 
 concurrency:
@@ -17,28 +17,50 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        if: github.event.action != 'closed'
         uses: actions/checkout@v4
 
       - name: Setup Node
-        if: github.event.action != 'closed'
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
-        if: github.event.action != 'closed'
         run: npm ci
 
-      - name: Build preview
-        if: github.event.action != 'closed'
-        run: npm run build -- --base /Tally/pr-preview/pr-${{ github.event.number }}/
+      - name: Build
+        run: npx vite build --base /
 
-      - name: Deploy preview
-        uses: rossjrw/pr-preview-action@v1
+      - name: Install Surge
+        run: npm install -g surge
+
+      - name: Deploy to Surge
+        run: surge ./dist tally-pr-${{ github.event.number }}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+
+      - name: Comment preview URL
+        uses: actions/github-script@v7
         with:
-          source-dir: ./dist
-          preview-branch: gh-pages
-          umbrella-dir: pr-preview
-          action: auto
+          script: |
+            const url = `https://tally-pr-${{ github.event.number }}.surge.sh`;
+            const body = `**Preview:** ${url}`;
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find(c => c.body.startsWith('**Preview:**'));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
