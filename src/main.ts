@@ -17,10 +17,71 @@ class TallyApp {
   constructor() {
     this.ledger = LedgerStorage.initializeLedger();
     this.currentPrices = LedgerStorage.loadPrices();
+    this.checkShareUrl();
     this.updateDerivedData();
     this.render();
     this.attachEventListeners();
     this.refreshPrices();
+  }
+
+  private checkShareUrl(): void {
+    const hash = window.location.hash;
+    if (!hash.startsWith('#share=')) return;
+
+    try {
+      const encoded = hash.substring(7);
+      const json = decodeURIComponent(atob(encoded));
+      const shared = JSON.parse(json) as { events: LedgerState['events']; instruments: LedgerState['instruments'] };
+
+      if (!shared.events?.length) return;
+
+      const count = shared.events.length;
+      const tickers = shared.instruments?.map(i => i.ticker).join(', ') || '';
+      if (!confirm('Du har mottatt en portefølje med ' + count + ' transaksjoner' + (tickers ? ' (' + tickers + ')' : '') + '.\n\nVil du importere den?')) {
+        window.history.replaceState(null, '', window.location.pathname);
+        return;
+      }
+
+      LedgerStorage.addEvents(shared.events);
+      for (const inst of shared.instruments || []) {
+        LedgerStorage.upsertInstrument(inst);
+      }
+      this.ledger = LedgerStorage.loadLedger() || this.ledger;
+
+      // Clean URL
+      window.history.replaceState(null, '', window.location.pathname);
+    } catch {
+      // Invalid share data — ignore silently
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+  }
+
+  private async shareData(): Promise<void> {
+    const payload = {
+      events: this.ledger.events,
+      instruments: this.ledger.instruments,
+    };
+    const json = JSON.stringify(payload);
+    const encoded = btoa(encodeURIComponent(json));
+    const url = window.location.origin + window.location.pathname + '#share=' + encoded;
+
+    // Use native share on mobile, clipboard on desktop
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: 'Tally portefølje', url });
+        return;
+      } catch {
+        // User cancelled or share failed — fall through to clipboard
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(url);
+      alert('Lenke kopiert! Åpne den på en annen enhet for å importere porteføljen.');
+    } catch {
+      // Clipboard failed — show URL in prompt as fallback
+      prompt('Kopier denne lenken:', url);
+    }
   }
 
   private async refreshPrices(): Promise<void> {
@@ -70,8 +131,8 @@ class TallyApp {
     const actions = hasData
       ? '<div class="header-actions">'
         + '<button class="btn btn-header" id="add-trade">+ Legg til</button>'
+        + '<button class="btn btn-header" id="share-data">Del</button>'
         + '<button class="btn btn-header" id="import-csv">Importer</button>'
-        + '<button class="btn btn-header" id="export-json">Eksporter</button>'
         + '</div>'
       : '';
     return '<header><div class="container header-inner"><div><h1>Tally</h1><p class="header-subtitle">Din porteføljeoversikt</p></div>' + actions + '</div></header>';
@@ -168,7 +229,10 @@ class TallyApp {
       + this.ledger.events.length + ' transaksjoner'
       + (this.ledger.lastModified ? ' &middot; Sist oppdatert ' + formatDateShort(this.ledger.lastModified) : '')
       + '</span>'
-      + '<button class="btn btn-small btn-danger-outline" id="clear-data">Slett alle data</button>'
+      + '<div class="footer-buttons">'
+      + '<button class="btn btn-small" id="export-json" style="background:var(--background-color);color:var(--text-muted)">Eksporter JSON</button>'
+      + '<button class="btn btn-small btn-danger-outline" id="clear-data">Slett data</button>'
+      + '</div>'
       + '</div>';
   }
 
@@ -265,6 +329,7 @@ class TallyApp {
     document.getElementById('confirm-import')?.addEventListener('click', () => this.confirmImport());
     document.getElementById('export-json')?.addEventListener('click', () => this.exportData());
     document.getElementById('clear-data')?.addEventListener('click', () => this.clearAllData());
+    document.getElementById('share-data')?.addEventListener('click', () => this.shareData());
     document.getElementById('csv-file')?.addEventListener('change', (e) => {
       const file = (e.target as HTMLInputElement).files?.[0];
       if (file) this.handleFileSelect(file);

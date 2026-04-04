@@ -384,6 +384,13 @@ header h1 {
   justify-content: space-between;
   align-items: center;
   padding: 8px 0 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer-buttons {
+  display: flex;
+  gap: 6px;
 }
 
 /* Modal */
