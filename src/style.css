@@ -648,6 +648,26 @@ header h1 {
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
+.modal-mode-toggle {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--secondary-color);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 4px 0;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.btn-link:active {
+  opacity: 0.6;
+}
+
 .trade-total {
   font-size: 15px;
   font-weight: 600;
