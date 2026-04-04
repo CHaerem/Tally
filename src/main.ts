@@ -68,6 +68,7 @@ class TallyApp {
   private isFetchingPrices = false;
   private stockList: StockSuggestion[] = [];
   private selectedSuggestionIndex = -1;
+  private tradeModalMode: 'simple' | 'full' = 'simple';
 
   constructor() {
     this.ledger = LedgerStorage.initializeLedger();
@@ -312,23 +313,38 @@ class TallyApp {
 
   private renderTradeModal(): string {
     const today = new Date().toISOString().split('T')[0];
-    return '<div class="modal" id="trade-modal"><div class="modal-content"><div class="modal-header"><h3>Legg til transaksjon</h3></div>'
-      + '<div class="trade-type-tabs">'
+    const isSimple = this.tradeModalMode === 'simple';
+    const title = isSimple ? 'Legg til beholdning' : 'Registrer transaksjon';
+
+    const typeTabs = isSimple ? '' : '<div class="trade-type-tabs">'
       + '<button class="trade-tab active" data-type="TRADE_BUY">Kjøp</button>'
       + '<button class="trade-tab" data-type="TRADE_SELL">Salg</button>'
       + '<button class="trade-tab" data-type="DIVIDEND">Utbytte</button>'
-      + '</div>'
+      + '</div>';
+
+    const dateField = isSimple ? '' : '<div class="form-group"><label for="trade-date">Dato</label><input type="date" id="trade-date" class="form-control" value="' + today + '"></div>';
+    const feeField = isSimple ? '' : '<div class="form-group"><label for="trade-fee">Kurtasje (valgfritt)</label><input type="number" id="trade-fee" class="form-control" placeholder="29" step="0.01" min="0" inputmode="decimal"></div>';
+
+    const modeToggle = isSimple
+      ? '<button class="btn-link" id="toggle-trade-mode" type="button">Registrer en spesifikk transaksjon i stedet</button>'
+      : '<button class="btn-link" id="toggle-trade-mode" type="button">Legg til beholdning enkelt i stedet</button>';
+
+    return '<div class="modal" id="trade-modal"><div class="modal-content"><div class="modal-header"><h3>' + title + '</h3>'
+      + (isSimple ? '<p class="text-muted text-small">Legg inn hva du eier — kurs hentes automatisk</p>' : '') + '</div>'
+      + typeTabs
       + '<input type="hidden" id="trade-type" value="TRADE_BUY">'
       + '<div class="form-group"><label for="trade-ticker">Aksje eller fond</label><div class="search-wrapper"><input type="text" id="trade-ticker" class="form-control" placeholder="Søk etter aksje eller fond..." autocapitalize="characters" autocorrect="off" spellcheck="false" autocomplete="off"><div class="search-suggestions" id="search-suggestions"></div></div></div>'
       + '<div class="form-group"><label for="trade-name">Selskapsnavn</label><input type="text" id="trade-name" class="form-control" placeholder="Fylles inn automatisk" readonly></div>'
       + '<input type="hidden" id="trade-isin" value="">'
       + '<input type="hidden" id="trade-instrument-type" value="STOCK">'
-      + '<div class="form-group"><label for="trade-date">Dato</label><input type="date" id="trade-date" class="form-control" value="' + today + '"></div>'
+      + dateField
       + '<div class="form-row"><div class="form-group"><label for="trade-qty">Antall aksjer</label><input type="number" id="trade-qty" class="form-control" placeholder="100" step="any" min="0.001" inputmode="decimal"></div>'
-      + '<div class="form-group"><label for="trade-price" id="trade-price-label">Kurs per aksje</label><input type="number" id="trade-price" class="form-control" placeholder="280,50" step="0.01" min="0" inputmode="decimal"><span class="price-date-hint" id="price-date-hint"></span></div></div>'
-      + '<div class="form-group"><label for="trade-fee">Kurtasje (valgfritt)</label><input type="number" id="trade-fee" class="form-control" placeholder="29" step="0.01" min="0" inputmode="decimal"></div>'
+      + '<div class="form-group"><label for="trade-price" id="trade-price-label">' + (isSimple ? 'Snittpris' : 'Kurs per aksje') + '</label><input type="number" id="trade-price" class="form-control" placeholder="280,50" step="0.01" min="0" inputmode="decimal"><span class="price-date-hint" id="price-date-hint"></span></div></div>'
+      + feeField
       + '<div id="trade-total" class="trade-total"></div>'
-      + '<div class="modal-footer"><button class="btn" id="cancel-trade">Avbryt</button><button class="btn btn-success" id="submit-trade">Legg til</button></div></div></div>';
+      + '<div class="modal-footer"><button class="btn" id="cancel-trade">Avbryt</button><button class="btn btn-success" id="submit-trade">' + (isSimple ? 'Legg til' : 'Registrer') + '</button></div>'
+      + '<div class="modal-mode-toggle">' + modeToggle + '</div>'
+      + '</div></div>';
   }
 
   private submitTrade(): void {
@@ -338,12 +354,14 @@ class TallyApp {
     const name = (document.getElementById('trade-name') as HTMLInputElement).value.trim();
     const isinInput = (document.getElementById('trade-isin') as HTMLInputElement).value.trim();
     const instrumentType = ((document.getElementById('trade-instrument-type') as HTMLInputElement)?.value || 'STOCK') as 'STOCK' | 'FUND';
-    const date = (document.getElementById('trade-date') as HTMLInputElement).value;
+    const dateEl = document.getElementById('trade-date') as HTMLInputElement | null;
+    const date = dateEl?.value || new Date().toISOString().split('T')[0];
     const qty = parseFloat((document.getElementById('trade-qty') as HTMLInputElement).value);
     const price = parseFloat((document.getElementById('trade-price') as HTMLInputElement).value);
-    const fee = parseFloat((document.getElementById('trade-fee') as HTMLInputElement).value) || 0;
+    const feeEl = document.getElementById('trade-fee') as HTMLInputElement | null;
+    const fee = parseFloat(feeEl?.value || '0') || 0;
 
-    if (!ticker || !date || isNaN(qty) || qty <= 0 || isNaN(price) || price <= 0) {
+    if (!ticker || isNaN(qty) || qty <= 0 || isNaN(price) || price <= 0) {
       alert('Fyll inn ' + (instrumentType === 'FUND' ? 'fond' : 'ticker') + ', dato, antall og kurs.');
       return;
     }
@@ -461,53 +479,14 @@ class TallyApp {
     });
   }
 
-  private showTradeModal(): void { document.getElementById('trade-modal')?.classList.add('active'); }
-  private hideTradeModal(): void {
-    document.getElementById('trade-modal')?.classList.remove('active');
-    // Reset form
-    const fields = ['trade-ticker', 'trade-name', 'trade-isin', 'trade-qty', 'trade-price', 'trade-fee'];
-    for (const id of fields) {
-      const el = document.getElementById(id) as HTMLInputElement | null;
-      if (el) el.value = '';
-    }
-    const nameInput = document.getElementById('trade-name') as HTMLInputElement | null;
-    if (nameInput) { nameInput.readOnly = true; nameInput.placeholder = 'Fylles inn automatisk'; }
-    const instrumentType = document.getElementById('trade-instrument-type') as HTMLInputElement | null;
-    if (instrumentType) instrumentType.value = 'STOCK';
-    // Reset labels
-    const qtyLabel = document.querySelector('label[for="trade-qty"]');
-    const priceLabel = document.getElementById('trade-price-label');
-    if (qtyLabel) qtyLabel.textContent = 'Antall aksjer';
-    if (priceLabel) priceLabel.textContent = 'Kurs per aksje';
-    const suggestions = document.getElementById('search-suggestions') as HTMLElement | null;
-    if (suggestions) { suggestions.innerHTML = ''; suggestions.classList.remove('active'); }
-    this.selectedSuggestionIndex = -1;
-  }
-
-  private renderImportModal(): string {
-    return '<div class="modal" id="import-modal"><div class="modal-content"><div class="modal-header"><h3>Importer transaksjoner</h3><p class="text-muted">Last opp CSV-fil fra megleren din (Nordnet, DNB, Sbanken m.fl.)</p></div>'
-      + '<div class="form-group"><label class="file-upload" id="file-upload-label"><input type="file" id="csv-file" accept=".csv,.txt"><span class="file-upload-text">Velg fil eller dra den hit</span></label></div>'
-      + '<div id="import-preview" style="display:none"><div id="import-stats" class="import-stats"></div><div id="import-warnings"></div></div>'
-      + '<div class="modal-footer"><button class="btn" id="cancel-import">Avbryt</button><button class="btn btn-success" id="confirm-import" disabled>Importer</button></div></div></div>';
-  }
-
-  private attachEventListeners(): void {
-    document.getElementById('import-csv')?.addEventListener('click', () => this.showModal());
-    document.getElementById('cancel-import')?.addEventListener('click', () => this.hideModal());
-    document.getElementById('confirm-import')?.addEventListener('click', () => this.confirmImport());
-    document.getElementById('export-json')?.addEventListener('click', () => this.exportData());
-    document.getElementById('clear-data')?.addEventListener('click', () => this.clearAllData());
-    document.getElementById('share-data')?.addEventListener('click', () => this.shareData());
-    document.getElementById('csv-file')?.addEventListener('change', (e) => {
-      const file = (e.target as HTMLInputElement).files?.[0];
-      if (file) this.handleFileSelect(file);
-    });
-    document.getElementById('refresh-prices')?.addEventListener('click', () => this.refreshPrices());
-
-    // Trade modal
-    document.getElementById('add-trade')?.addEventListener('click', () => this.showTradeModal());
+  private attachTradeModalListeners(): void {
     document.getElementById('cancel-trade')?.addEventListener('click', () => this.hideTradeModal());
     document.getElementById('submit-trade')?.addEventListener('click', () => this.submitTrade());
+
+    // Mode toggle
+    document.getElementById('toggle-trade-mode')?.addEventListener('click', () => {
+      this.showTradeModal(this.tradeModalMode === 'simple' ? 'full' : 'simple');
+    });
 
     // Date change → fetch historical price
     document.getElementById('trade-date')?.addEventListener('change', () => {
@@ -560,20 +539,18 @@ class TallyApp {
           return;
         }
         const matches = this.stockList
-          .filter(s => s.ticker.includes(query) || s.name.toUpperCase().includes(query))
+          .filter(s => s.ticker.toUpperCase().includes(query) || s.name.toUpperCase().includes(query))
           .sort((a, b) => {
-            // Exact ticker start first, then name match
-            const aStartsTicker = a.ticker.startsWith(query) ? 0 : 1;
-            const bStartsTicker = b.ticker.startsWith(query) ? 0 : 1;
+            const aStartsTicker = a.ticker.toUpperCase().startsWith(query) ? 0 : 1;
+            const bStartsTicker = b.ticker.toUpperCase().startsWith(query) ? 0 : 1;
             if (aStartsTicker !== bStartsTicker) return aStartsTicker - bStartsTicker;
-            return a.ticker.localeCompare(b.ticker);
+            return a.name.localeCompare(b.name);
           })
           .slice(0, 8);
 
         if (matches.length === 0) {
           suggestionsEl.innerHTML = '<div class="suggestion-empty">Ingen treff — skriv ticker og fyll inn resten selv</div>';
           suggestionsEl.classList.add('active');
-          // Unlock name field for manual entry
           const nameInput = document.getElementById('trade-name') as HTMLInputElement | null;
           if (nameInput) { nameInput.readOnly = false; nameInput.placeholder = 'Skriv inn selskapsnavn'; }
           return;
@@ -603,7 +580,6 @@ class TallyApp {
       tickerInput.addEventListener('keydown', (e) => {
         const items = suggestionsEl.querySelectorAll('.suggestion-item');
         if (items.length === 0) return;
-
         if (e.key === 'ArrowDown') {
           e.preventDefault();
           this.selectedSuggestionIndex = Math.min(this.selectedSuggestionIndex + 1, items.length - 1);
@@ -618,7 +594,6 @@ class TallyApp {
         }
       });
 
-      // Close suggestions when clicking outside
       document.addEventListener('click', (e) => {
         if (!(e.target as HTMLElement).closest('.search-wrapper')) {
           suggestionsEl.innerHTML = '';
@@ -627,12 +602,72 @@ class TallyApp {
       });
     }
 
-    // Close modals on backdrop click
-    document.getElementById('import-modal')?.addEventListener('click', (e) => {
-      if ((e.target as HTMLElement).id === 'import-modal') this.hideModal();
-    });
+    // Close trade modal on backdrop
     document.getElementById('trade-modal')?.addEventListener('click', (e) => {
       if ((e.target as HTMLElement).id === 'trade-modal') this.hideTradeModal();
+    });
+  }
+
+  private showTradeModal(mode: 'simple' | 'full' = 'simple'): void {
+    this.tradeModalMode = mode;
+    // Re-render modal with correct mode, then show it
+    const modal = document.getElementById('trade-modal');
+    if (modal) {
+      modal.outerHTML = this.renderTradeModal();
+      this.attachTradeModalListeners();
+      document.getElementById('trade-modal')?.classList.add('active');
+    }
+  }
+  private hideTradeModal(): void {
+    document.getElementById('trade-modal')?.classList.remove('active');
+    // Reset form
+    const fields = ['trade-ticker', 'trade-name', 'trade-isin', 'trade-qty', 'trade-price', 'trade-fee'];
+    for (const id of fields) {
+      const el = document.getElementById(id) as HTMLInputElement | null;
+      if (el) el.value = '';
+    }
+    const nameInput = document.getElementById('trade-name') as HTMLInputElement | null;
+    if (nameInput) { nameInput.readOnly = true; nameInput.placeholder = 'Fylles inn automatisk'; }
+    const instrumentType = document.getElementById('trade-instrument-type') as HTMLInputElement | null;
+    if (instrumentType) instrumentType.value = 'STOCK';
+    // Reset labels
+    const qtyLabel = document.querySelector('label[for="trade-qty"]');
+    const priceLabel = document.getElementById('trade-price-label');
+    if (qtyLabel) qtyLabel.textContent = 'Antall aksjer';
+    if (priceLabel) priceLabel.textContent = 'Kurs per aksje';
+    const suggestions = document.getElementById('search-suggestions') as HTMLElement | null;
+    if (suggestions) { suggestions.innerHTML = ''; suggestions.classList.remove('active'); }
+    this.selectedSuggestionIndex = -1;
+  }
+
+  private renderImportModal(): string {
+    return '<div class="modal" id="import-modal"><div class="modal-content"><div class="modal-header"><h3>Importer transaksjoner</h3><p class="text-muted">Last opp CSV-fil fra megleren din (Nordnet, DNB, Sbanken m.fl.)</p></div>'
+      + '<div class="form-group"><label class="file-upload" id="file-upload-label"><input type="file" id="csv-file" accept=".csv,.txt"><span class="file-upload-text">Velg fil eller dra den hit</span></label></div>'
+      + '<div id="import-preview" style="display:none"><div id="import-stats" class="import-stats"></div><div id="import-warnings"></div></div>'
+      + '<div class="modal-footer"><button class="btn" id="cancel-import">Avbryt</button><button class="btn btn-success" id="confirm-import" disabled>Importer</button></div></div></div>';
+  }
+
+  private attachEventListeners(): void {
+    document.getElementById('import-csv')?.addEventListener('click', () => this.showModal());
+    document.getElementById('cancel-import')?.addEventListener('click', () => this.hideModal());
+    document.getElementById('confirm-import')?.addEventListener('click', () => this.confirmImport());
+    document.getElementById('export-json')?.addEventListener('click', () => this.exportData());
+    document.getElementById('clear-data')?.addEventListener('click', () => this.clearAllData());
+    document.getElementById('share-data')?.addEventListener('click', () => this.shareData());
+    document.getElementById('csv-file')?.addEventListener('change', (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0];
+      if (file) this.handleFileSelect(file);
+    });
+    document.getElementById('refresh-prices')?.addEventListener('click', () => this.refreshPrices());
+
+    // Trade modal — open in simple mode from empty state, full mode from header
+    const hasData = this.ledger.events.length > 0;
+    document.getElementById('add-trade')?.addEventListener('click', () => this.showTradeModal(hasData ? 'full' : 'simple'));
+    this.attachTradeModalListeners();
+
+    // Close import modal on backdrop click
+    document.getElementById('import-modal')?.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).id === 'import-modal') this.hideModal();
     });
 
     document.querySelectorAll('.price-input').forEach(input => {
