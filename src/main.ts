@@ -61,6 +61,7 @@ class TallyApp {
       + '<main class="container">'
       + (hasData ? this.renderSummary() + this.renderWarnings() + this.renderHoldings() + this.renderFooter() : this.renderEmptyState())
       + '</main>'
+      + this.renderTradeModal()
       + this.renderImportModal();
   }
 
@@ -68,6 +69,7 @@ class TallyApp {
     const hasData = this.ledger.events.length > 0;
     const actions = hasData
       ? '<div class="header-actions">'
+        + '<button class="btn btn-header" id="add-trade">+ Legg til</button>'
         + '<button class="btn btn-header" id="import-csv">Importer</button>'
         + '<button class="btn btn-header" id="export-json">Eksporter</button>'
         + '</div>'
@@ -79,14 +81,16 @@ class TallyApp {
     return '<div class="card empty-state">'
       + '<div class="empty-icon">&#x1F4CA;</div>'
       + '<h2>Velkommen til Tally</h2>'
-      + '<p>Beregn din reelle investeringsavkastning basert på transaksjonshistorikk fra megleren din.</p>'
+      + '<p>Beregn din reelle investeringsavkastning basert på transaksjonshistorikk.</p>'
       + '<div class="empty-steps">'
-      + '<div class="step"><span class="step-number">1</span><span>Eksporter transaksjonshistorikk som CSV fra nettbanken</span></div>'
-      + '<div class="step"><span class="step-number">2</span><span>Importer filen her</span></div>'
+      + '<div class="step"><span class="step-number">1</span><span>Legg til aksjer manuelt eller importer CSV fra megleren</span></div>'
+      + '<div class="step"><span class="step-number">2</span><span>Kurser hentes automatisk fra Yahoo Finance</span></div>'
       + '<div class="step"><span class="step-number">3</span><span>Se din faktiske avkastning (XIRR) med utbytte inkludert</span></div>'
       + '</div>'
-      + '<button class="btn btn-primary btn-large" id="import-csv">Importer transaksjoner</button>'
-      + '<p class="empty-hint">Støtter CSV fra Nordnet, DNB, Sbanken og andre norske meglere</p>'
+      + '<div class="empty-buttons">'
+      + '<button class="btn btn-primary btn-large" id="add-trade">Legg til aksje</button>'
+      + '<button class="btn btn-large" id="import-csv" style="background:var(--background-color);color:var(--text-color)">Importer CSV</button>'
+      + '</div>'
       + '</div>';
   }
 
@@ -168,6 +172,86 @@ class TallyApp {
       + '</div>';
   }
 
+  private renderTradeModal(): string {
+    const today = new Date().toISOString().split('T')[0];
+    return '<div class="modal" id="trade-modal"><div class="modal-content"><div class="modal-header"><h3>Legg til transaksjon</h3></div>'
+      + '<div class="trade-type-tabs">'
+      + '<button class="trade-tab active" data-type="TRADE_BUY">Kjøp</button>'
+      + '<button class="trade-tab" data-type="TRADE_SELL">Salg</button>'
+      + '<button class="trade-tab" data-type="DIVIDEND">Utbytte</button>'
+      + '</div>'
+      + '<input type="hidden" id="trade-type" value="TRADE_BUY">'
+      + '<div class="form-group"><label for="trade-ticker">Ticker</label><input type="text" id="trade-ticker" class="form-control" placeholder="EQNR, DNB, MOWI..." autocapitalize="characters" autocorrect="off" spellcheck="false"></div>'
+      + '<div class="form-group"><label for="trade-name">Selskapsnavn (valgfritt)</label><input type="text" id="trade-name" class="form-control" placeholder="Equinor ASA"></div>'
+      + '<input type="hidden" id="trade-isin" value="">'
+      + '<div class="form-group"><label for="trade-date">Dato</label><input type="date" id="trade-date" class="form-control" value="' + today + '"></div>'
+      + '<div class="form-row"><div class="form-group"><label for="trade-qty">Antall aksjer</label><input type="number" id="trade-qty" class="form-control" placeholder="100" step="1" min="1" inputmode="numeric"></div>'
+      + '<div class="form-group"><label for="trade-price" id="trade-price-label">Kurs per aksje</label><input type="number" id="trade-price" class="form-control" placeholder="280,50" step="0.01" min="0" inputmode="decimal"></div></div>'
+      + '<div class="form-group"><label for="trade-fee">Kurtasje (valgfritt)</label><input type="number" id="trade-fee" class="form-control" placeholder="29" step="0.01" min="0" inputmode="decimal"></div>'
+      + '<div id="trade-total" class="trade-total"></div>'
+      + '<div class="modal-footer"><button class="btn" id="cancel-trade">Avbryt</button><button class="btn btn-success" id="submit-trade">Legg til</button></div></div></div>';
+  }
+
+  private submitTrade(): void {
+    const type = (document.getElementById('trade-type') as HTMLSelectElement).value;
+    const ticker = (document.getElementById('trade-ticker') as HTMLInputElement).value.trim().toUpperCase();
+    const name = (document.getElementById('trade-name') as HTMLInputElement).value.trim();
+    const isinInput = (document.getElementById('trade-isin') as HTMLInputElement).value.trim();
+    const date = (document.getElementById('trade-date') as HTMLInputElement).value;
+    const qty = parseFloat((document.getElementById('trade-qty') as HTMLInputElement).value);
+    const price = parseFloat((document.getElementById('trade-price') as HTMLInputElement).value);
+    const fee = parseFloat((document.getElementById('trade-fee') as HTMLInputElement).value) || 0;
+
+    if (!ticker || !date || isNaN(qty) || qty <= 0 || isNaN(price) || price <= 0) {
+      alert('Fyll inn ticker, dato, antall og kurs.');
+      return;
+    }
+
+    const isin = isinInput || ('MANUAL_' + ticker);
+    const amount = qty * price;
+    const accountId = this.ledger.accounts[0]?.id || 'default';
+    const now = new Date().toISOString();
+
+    // Upsert instrument
+    LedgerStorage.upsertInstrument({ isin, ticker, name: name || ticker, currency: 'NOK' });
+
+    if (type === 'DIVIDEND') {
+      const event = {
+        id: 'evt_' + Date.now().toString(36) + '_' + Math.random().toString(36).substring(2, 8),
+        accountId, date, type: 'DIVIDEND' as const, amount, currency: 'NOK' as const,
+        createdAt: now, source: 'MANUAL' as const,
+        isin, quantity: qty, perShare: price,
+      };
+      LedgerStorage.addEvents([event]);
+    } else {
+      const event = {
+        id: 'evt_' + Date.now().toString(36) + '_' + Math.random().toString(36).substring(2, 8),
+        accountId, date, type: type as 'TRADE_BUY' | 'TRADE_SELL', amount, currency: 'NOK' as const,
+        createdAt: now, source: 'MANUAL' as const,
+        isin, quantity: qty, pricePerShare: price, fee: fee > 0 ? fee : undefined,
+      };
+      LedgerStorage.addEvents([event]);
+    }
+
+    this.ledger = LedgerStorage.loadLedger() || this.ledger;
+    this.updateDerivedData();
+    this.hideTradeModal();
+    this.render();
+    this.attachEventListeners();
+    this.refreshPrices();
+  }
+
+  private showTradeModal(): void { document.getElementById('trade-modal')?.classList.add('active'); }
+  private hideTradeModal(): void {
+    document.getElementById('trade-modal')?.classList.remove('active');
+    // Reset form
+    const fields = ['trade-ticker', 'trade-name', 'trade-isin', 'trade-qty', 'trade-price', 'trade-fee'];
+    for (const id of fields) {
+      const el = document.getElementById(id) as HTMLInputElement | null;
+      if (el) el.value = '';
+    }
+  }
+
   private renderImportModal(): string {
     return '<div class="modal" id="import-modal"><div class="modal-content"><div class="modal-header"><h3>Importer transaksjoner</h3><p class="text-muted">Last opp CSV-fil fra megleren din (Nordnet, DNB, Sbanken m.fl.)</p></div>'
       + '<div class="form-group"><label class="file-upload" id="file-upload-label"><input type="file" id="csv-file" accept=".csv,.txt"><span class="file-upload-text">Velg fil eller dra den hit</span></label></div>'
@@ -187,9 +271,50 @@ class TallyApp {
     });
     document.getElementById('refresh-prices')?.addEventListener('click', () => this.refreshPrices());
 
-    // Close modal on backdrop click
+    // Trade modal
+    document.getElementById('add-trade')?.addEventListener('click', () => this.showTradeModal());
+    document.getElementById('cancel-trade')?.addEventListener('click', () => this.hideTradeModal());
+    document.getElementById('submit-trade')?.addEventListener('click', () => this.submitTrade());
+
+    // Trade type tabs
+    document.querySelectorAll('.trade-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.trade-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const type = (tab as HTMLElement).dataset.type || 'TRADE_BUY';
+        (document.getElementById('trade-type') as HTMLInputElement).value = type;
+        const priceLabel = document.getElementById('trade-price-label');
+        if (priceLabel) {
+          priceLabel.textContent = type === 'DIVIDEND' ? 'Utbytte per aksje' : 'Kurs per aksje';
+        }
+      });
+    });
+
+    // Live total calculation
+    const qtyInput = document.getElementById('trade-qty') as HTMLInputElement | null;
+    const priceInput = document.getElementById('trade-price') as HTMLInputElement | null;
+    const feeInput = document.getElementById('trade-fee') as HTMLInputElement | null;
+    const updateTotal = () => {
+      const q = parseFloat(qtyInput?.value || '0');
+      const p = parseFloat(priceInput?.value || '0');
+      const f = parseFloat(feeInput?.value || '0');
+      const total = document.getElementById('trade-total');
+      if (total && q > 0 && p > 0) {
+        total.textContent = 'Total: ' + formatCurrency(q * p + f);
+      } else if (total) {
+        total.textContent = '';
+      }
+    };
+    qtyInput?.addEventListener('input', updateTotal);
+    priceInput?.addEventListener('input', updateTotal);
+    feeInput?.addEventListener('input', updateTotal);
+
+    // Close modals on backdrop click
     document.getElementById('import-modal')?.addEventListener('click', (e) => {
       if ((e.target as HTMLElement).id === 'import-modal') this.hideModal();
+    });
+    document.getElementById('trade-modal')?.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).id === 'trade-modal') this.hideTradeModal();
     });
 
     document.querySelectorAll('.price-input').forEach(input => {
