@@ -236,13 +236,13 @@ class TallyApp {
     const totalReturnClass = totalReturn >= 0 ? 'text-success' : 'text-danger';
 
     return '<div class="card">'
+      + '<div class="summary-hero"><div class="label">Markedsverdi</div><div class="value">' + formatCurrency(m.currentValue) + '</div>'
+      + '<div class="sub-value ' + xirrClass + '">' + formatXIRRPercent(m.xirr) + ' årlig (XIRR)</div></div>'
       + '<div class="summary-grid">'
-      + '<div class="summary-item summary-highlight"><div class="label">Årlig avkastning (XIRR)</div><div class="value ' + xirrClass + '">' + formatXIRRPercent(m.xirr) + '</div></div>'
-      + '<div class="summary-item"><div class="label">Markedsverdi</div><div class="value">' + formatCurrency(m.currentValue) + '</div></div>'
       + '<div class="summary-item"><div class="label">Total avkastning</div><div class="value ' + totalReturnClass + '">' + formatCurrency(totalReturn) + '</div></div>'
-      + '<div class="summary-item"><div class="label">Investert (netto)</div><div class="value">' + formatCurrency(m.netCashFlow) + '</div></div>'
-      + '<div class="summary-item"><div class="label">Urealisert gevinst</div><div class="value ' + unrealizedClass + '">' + formatCurrency(unrealizedGain) + '</div></div>'
-      + '<div class="summary-item"><div class="label">Mottatt utbytte</div><div class="value">' + formatCurrency(m.totalDividends) + '</div></div>'
+      + '<div class="summary-item"><div class="label">Investert</div><div class="value">' + formatCurrency(m.netCashFlow) + '</div></div>'
+      + '<div class="summary-item"><div class="label">Urealisert</div><div class="value ' + unrealizedClass + '">' + formatCurrency(unrealizedGain) + '</div></div>'
+      + '<div class="summary-item"><div class="label">Utbytte</div><div class="value">' + formatCurrency(m.totalDividends) + '</div></div>'
       + '</div></div>';
   }
 
@@ -256,46 +256,41 @@ class TallyApp {
   private renderHoldings(): string {
     if (this.holdings.length === 0) return '';
     const refreshLabel = this.isFetchingPrices
-      ? '<span class="loading"></span> Henter kurser...'
-      : 'Oppdater kurser';
+      ? '<span class="loading"></span> Henter...'
+      : 'Oppdater';
     const refreshBtn = '<button class="btn btn-small btn-primary" id="refresh-prices"'
       + (this.isFetchingPrices ? ' disabled' : '') + '>' + refreshLabel + '</button>';
-    const missingPrices = this.holdings.some(h => h.currentPrice === 0);
-    const priceHint = missingPrices
-      ? '<p class="price-hint">Kurser som ikke ble hentet automatisk kan fylles inn manuelt i kurs-kolonnen.</p>'
-      : '';
 
-    return '<div class="card"><div class="card-header"><h2>Beholdning</h2>' + refreshBtn + '</div>'
-      + '<div class="table-responsive"><table class="portfolio-table"><thead><tr>'
-      + '<th>Navn</th>'
-      + '<th class="text-right">Antall</th>'
-      + '<th class="text-right">Snittpris</th>'
-      + '<th class="text-right">Kurs</th>'
-      + '<th class="text-right">Verdi</th>'
-      + '<th class="text-right">Gevinst</th>'
-      + '<th class="text-right">Utbytte</th>'
-      + '</tr></thead><tbody>'
+    return '<div class="card-header"><h2>Beholdning</h2>' + refreshBtn + '</div>'
+      + '<div class="holdings-list">'
       + this.holdings.map(h => {
         const gainClass = h.unrealizedGain >= 0 ? 'text-success' : 'text-danger';
-        const priceValue = h.currentPrice > 0 ? h.currentPrice.toFixed(2) : '';
-        const priceInput = '<input type="number" class="price-input" data-isin="' + h.isin
-          + '" value="' + priceValue + '" placeholder="—" step="0.01" min="0">';
+        const gainSign = h.unrealizedGain >= 0 ? '+' : '';
         const inst = this.ledger.instruments.find(i => i.isin === h.isin);
         const isFund = inst?.instrumentType === 'FUND';
-        const displayName = isFund
-          ? '<strong>' + h.name + '</strong>'
-          : '<strong>' + h.ticker + '</strong><br><span class="text-muted text-small">' + h.name + '</span>';
-        return '<tr>'
-          + '<td>' + displayName + (isFund ? '<br><span class="text-muted text-small">Fond</span>' : '') + '</td>'
-          + '<td class="text-right">' + (Number.isInteger(h.quantity) ? h.quantity : h.quantity.toFixed(4)) + '</td>'
-          + '<td class="text-right">' + formatCurrency(h.averageCostPerShare, 2) + '</td>'
-          + '<td class="text-right">' + priceInput + '</td>'
-          + '<td class="text-right">' + formatCurrency(h.marketValue) + '</td>'
-          + '<td class="text-right ' + gainClass + '">' + formatCurrency(h.unrealizedGain) + '<br><span class="text-small">' + formatPercent(h.unrealizedGainPercent) + '</span></td>'
-          + '<td class="text-right">' + formatCurrency(h.totalDividendsReceived) + '</td>'
-          + '</tr>';
+        const label = isFund ? h.name : h.ticker;
+        const sublabel = isFund ? 'Fond' : h.name;
+        const qty = Number.isInteger(h.quantity) ? h.quantity.toString() : h.quantity.toFixed(4);
+        const priceValue = h.currentPrice > 0 ? h.currentPrice.toFixed(2) : '';
+
+        return '<div class="holding-card" data-isin="' + h.isin + '">'
+          + '<div class="holding-info">'
+          + '<div class="holding-ticker">' + label + '</div>'
+          + '<div class="holding-name">' + sublabel + '</div>'
+          + '</div>'
+          + '<div class="holding-values">'
+          + '<div class="holding-market-value">' + formatCurrency(h.marketValue) + '</div>'
+          + '<div class="holding-gain ' + gainClass + '">' + gainSign + formatPercent(h.unrealizedGainPercent) + '</div>'
+          + '</div></div>'
+          + '<div class="holding-details" id="details-' + h.isin + '">'
+          + '<div class="holding-detail"><div class="label">Antall</div><div class="value">' + qty + '</div></div>'
+          + '<div class="holding-detail"><div class="label">Snittpris</div><div class="value">' + formatCurrency(h.averageCostPerShare, 2) + '</div></div>'
+          + '<div class="holding-detail"><div class="label">Kurs</div><input type="number" class="price-input" data-isin="' + h.isin + '" value="' + priceValue + '" placeholder="—" step="0.01" min="0"></div>'
+          + '<div class="holding-detail"><div class="label">Gevinst</div><div class="value ' + gainClass + '">' + formatCurrency(h.unrealizedGain) + '</div></div>'
+          + (h.totalDividendsReceived > 0 ? '<div class="holding-detail"><div class="label">Utbytte</div><div class="value">' + formatCurrency(h.totalDividendsReceived) + '</div></div>' : '')
+          + '</div>';
       }).join('')
-      + '</tbody></table></div>' + priceHint + '</div>';
+      + '</div>';
   }
 
   private renderFooter(): string {
@@ -668,6 +663,17 @@ class TallyApp {
     // Close import modal on backdrop click
     document.getElementById('import-modal')?.addEventListener('click', (e) => {
       if ((e.target as HTMLElement).id === 'import-modal') this.hideModal();
+    });
+
+    // Holding cards — click to expand details
+    document.querySelectorAll('.holding-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        // Don't toggle if clicking a price input
+        if ((e.target as HTMLElement).classList.contains('price-input')) return;
+        const isin = (card as HTMLElement).dataset.isin;
+        const details = document.getElementById('details-' + isin);
+        if (details) details.classList.toggle('active');
+      });
     });
 
     document.querySelectorAll('.price-input').forEach(input => {
