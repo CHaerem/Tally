@@ -2,7 +2,7 @@ import './style.css';
 import { LedgerStorage } from './ledger';
 import { parseCSV, validateCSV } from './import';
 import { deriveHoldings, derivePortfolioMetrics, formatXIRRPercent, formatCurrency, formatPercent, formatDateShort } from './calculations';
-import { fetchPricesForHoldings, fetchStockIndex } from './api';
+import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate } from './api';
 import type { LedgerState, Holding, PortfolioMetrics } from './types';
 import type { CSVParseResult } from './import';
 
@@ -269,7 +269,7 @@ class TallyApp {
       + '<input type="hidden" id="trade-isin" value="">'
       + '<div class="form-group"><label for="trade-date">Dato</label><input type="date" id="trade-date" class="form-control" value="' + today + '"></div>'
       + '<div class="form-row"><div class="form-group"><label for="trade-qty">Antall aksjer</label><input type="number" id="trade-qty" class="form-control" placeholder="100" step="1" min="1" inputmode="numeric"></div>'
-      + '<div class="form-group"><label for="trade-price" id="trade-price-label">Kurs per aksje</label><input type="number" id="trade-price" class="form-control" placeholder="280,50" step="0.01" min="0" inputmode="decimal"></div></div>'
+      + '<div class="form-group"><label for="trade-price" id="trade-price-label">Kurs per aksje</label><input type="number" id="trade-price" class="form-control" placeholder="280,50" step="0.01" min="0" inputmode="decimal"><span class="price-date-hint" id="price-date-hint"></span></div></div>'
       + '<div class="form-group"><label for="trade-fee">Kurtasje (valgfritt)</label><input type="number" id="trade-fee" class="form-control" placeholder="29" step="0.01" min="0" inputmode="decimal"></div>'
       + '<div id="trade-total" class="trade-total"></div>'
       + '<div class="modal-footer"><button class="btn" id="cancel-trade">Avbryt</button><button class="btn btn-success" id="submit-trade">Legg til</button></div></div></div>';
@@ -327,26 +327,59 @@ class TallyApp {
   private selectStock(stock: StockSuggestion): void {
     const tickerInput = document.getElementById('trade-ticker') as HTMLInputElement;
     const nameInput = document.getElementById('trade-name') as HTMLInputElement;
-    const priceInput = document.getElementById('trade-price') as HTMLInputElement;
     const suggestionsEl = document.getElementById('search-suggestions') as HTMLElement;
-    const tradeType = (document.getElementById('trade-type') as HTMLInputElement).value;
 
     tickerInput.value = stock.ticker;
     nameInput.value = stock.name;
-    nameInput.readOnly = false; // Allow editing after selection
-
-    // Pre-fill price for buy orders
-    if (stock.currentPrice && tradeType !== 'DIVIDEND') {
-      priceInput.value = stock.currentPrice.toFixed(2);
-      // Trigger total update
-      priceInput.dispatchEvent(new Event('input'));
-    }
+    nameInput.readOnly = false;
 
     suggestionsEl.innerHTML = '';
     suggestionsEl.classList.remove('active');
 
+    // Fetch price for the selected date (historical or current)
+    this.updatePriceForSelectedStock();
+
     // Focus quantity field so user can continue quickly
     document.getElementById('trade-qty')?.focus();
+  }
+
+  private async updatePriceForSelectedStock(): Promise<void> {
+    const ticker = (document.getElementById('trade-ticker') as HTMLInputElement)?.value.trim().toUpperCase();
+    const date = (document.getElementById('trade-date') as HTMLInputElement)?.value;
+    const priceInput = document.getElementById('trade-price') as HTMLInputElement | null;
+    const tradeType = (document.getElementById('trade-type') as HTMLInputElement)?.value;
+    if (!ticker || !date || !priceInput || tradeType === 'DIVIDEND') return;
+
+    const today = new Date().toISOString().split('T')[0];
+    const isToday = date === today;
+
+    // For today's date, use the current price from stock list (already loaded)
+    if (isToday) {
+      const stock = this.stockList.find(s => s.ticker === ticker);
+      if (stock?.currentPrice) {
+        priceInput.value = stock.currentPrice.toFixed(2);
+        priceInput.dispatchEvent(new Event('input'));
+      }
+      return;
+    }
+
+    // For historical dates, fetch from per-ticker data file
+    const priceHint = document.getElementById('price-date-hint');
+    if (priceHint) priceHint.textContent = 'Henter kurs...';
+
+    const price = await fetchPriceForDate(ticker, date);
+    if (price !== null) {
+      priceInput.value = price.toFixed(2);
+      priceInput.dispatchEvent(new Event('input'));
+      if (priceHint) priceHint.textContent = 'Kurs fra ' + date;
+    } else {
+      if (priceHint) priceHint.textContent = 'Ingen historisk kurs funnet';
+    }
+
+    // Clear hint after a few seconds
+    if (priceHint) {
+      setTimeout(() => { priceHint.textContent = ''; }, 3000);
+    }
   }
 
   private updateSuggestionHighlight(items: NodeListOf<Element>): void {
@@ -398,6 +431,11 @@ class TallyApp {
     document.getElementById('add-trade')?.addEventListener('click', () => this.showTradeModal());
     document.getElementById('cancel-trade')?.addEventListener('click', () => this.hideTradeModal());
     document.getElementById('submit-trade')?.addEventListener('click', () => this.submitTrade());
+
+    // Date change → fetch historical price
+    document.getElementById('trade-date')?.addEventListener('change', () => {
+      this.updatePriceForSelectedStock();
+    });
 
     // Trade type tabs
     document.querySelectorAll('.trade-tab').forEach(tab => {
