@@ -589,6 +589,19 @@ header h1 {
   font-variant-numeric: tabular-nums;
 }
 
+.suggestion-badge {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  background: #e8f0fe;
+  color: var(--secondary-color);
+  flex-shrink: 0;
+}
+
 .suggestion-empty {
   padding: 14px;
   color: var(--text-muted);

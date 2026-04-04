@@ -69,7 +69,8 @@ interface YahooChartResult {
 }
 
 async function fetchLivePrice(ticker: string): Promise<number | null> {
-  const symbol = ticker.endsWith('.OL') ? ticker : ticker + '.OL';
+  // Fund tickers already have .IR suffix (Morningstar), stocks use .OL (Oslo)
+  const symbol = (ticker.includes('.')) ? ticker : ticker + '.OL';
   try {
     const response = await fetch(YAHOO_BASE + encodeURIComponent(symbol) + '?range=1d&interval=1d');
     if (!response.ok) return null;
