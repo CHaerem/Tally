@@ -333,10 +333,10 @@ class TallyApp {
       + '<input type="hidden" id="trade-isin" value="">'
       + '<input type="hidden" id="trade-instrument-type" value="STOCK">'
       + dateField
-      + '<div class="form-row"><div class="form-group"><label for="trade-qty">Antall aksjer</label><input type="number" id="trade-qty" class="form-control" placeholder="100" step="any" min="0.001" inputmode="decimal"></div>'
-      + '<div class="form-group"><label for="trade-price" id="trade-price-label">' + (isSimple ? 'Snittpris' : 'Kurs per aksje') + '</label><input type="number" id="trade-price" class="form-control" placeholder="280,50" step="0.01" min="0" inputmode="decimal"><span class="price-date-hint" id="price-date-hint"></span></div></div>'
+      + '<div class="form-row"><div class="form-group"><label for="trade-price" id="trade-price-label">' + (isSimple ? 'Kurs' : 'Kurs per aksje') + '</label><input type="number" id="trade-price" class="form-control" placeholder="280,50" step="0.01" min="0" inputmode="decimal"><span class="price-date-hint" id="price-date-hint"></span></div>'
+      + '<div class="form-group"><label for="trade-qty" id="trade-qty-label">Antall</label><input type="number" id="trade-qty" class="form-control" placeholder="100" step="any" min="0.001" inputmode="decimal"></div></div>'
+      + '<div class="form-group"><label for="trade-total-input">Total investert</label><input type="number" id="trade-total-input" class="form-control" placeholder="50 000" step="0.01" min="0" inputmode="decimal"><span class="text-muted text-small" id="trade-calc-hint"></span></div>'
       + feeField
-      + '<div id="trade-total" class="trade-total"></div>'
       + '<div class="modal-footer"><button class="btn" id="cancel-trade">Avbryt</button><button class="btn btn-success" id="submit-trade">' + (isSimple ? 'Legg til' : 'Registrer') + '</button></div>'
       + '<div class="modal-mode-toggle">' + modeToggle + '</div>'
       + '</div></div>';
@@ -502,24 +502,43 @@ class TallyApp {
       });
     });
 
-    // Live total calculation
+    // Three-way calculation: price × qty = total (any field drives the others)
     const qtyInput = document.getElementById('trade-qty') as HTMLInputElement | null;
     const priceInput = document.getElementById('trade-price') as HTMLInputElement | null;
-    const feeInput = document.getElementById('trade-fee') as HTMLInputElement | null;
-    const updateTotal = () => {
-      const q = parseFloat(qtyInput?.value || '0');
+    const totalInput = document.getElementById('trade-total-input') as HTMLInputElement | null;
+    const calcHint = document.getElementById('trade-calc-hint') as HTMLElement | null;
+
+    const calcFrom = (source: 'price' | 'qty' | 'total') => {
       const p = parseFloat(priceInput?.value || '0');
-      const f = parseFloat(feeInput?.value || '0');
-      const total = document.getElementById('trade-total');
-      if (total && q > 0 && p > 0) {
-        total.textContent = 'Total: ' + formatCurrency(q * p + f);
-      } else if (total) {
-        total.textContent = '';
+      const q = parseFloat(qtyInput?.value || '0');
+      const t = parseFloat(totalInput?.value || '0');
+
+      if (source === 'total' && t > 0 && p > 0 && qtyInput) {
+        // Total + price → calculate qty
+        qtyInput.value = (t / p).toFixed(4).replace(/\.?0+$/, '');
+        if (calcHint) calcHint.textContent = formatCurrency(t) + ' ÷ ' + formatCurrency(p, 2) + ' = ' + qtyInput.value + ' andeler';
+      } else if (source === 'qty' && q > 0 && p > 0 && totalInput) {
+        // Qty + price → calculate total
+        totalInput.value = (q * p).toFixed(2);
+        if (calcHint) calcHint.textContent = '';
+      } else if (source === 'price' && p > 0) {
+        if (q > 0 && totalInput) {
+          // Price + qty → calculate total
+          totalInput.value = (q * p).toFixed(2);
+          if (calcHint) calcHint.textContent = '';
+        } else if (t > 0 && qtyInput) {
+          // Price + total → calculate qty
+          qtyInput.value = (t / p).toFixed(4).replace(/\.?0+$/, '');
+          if (calcHint) calcHint.textContent = formatCurrency(t) + ' ÷ ' + formatCurrency(p, 2) + ' = ' + qtyInput.value + ' andeler';
+        }
+      } else {
+        if (calcHint) calcHint.textContent = '';
       }
     };
-    qtyInput?.addEventListener('input', updateTotal);
-    priceInput?.addEventListener('input', updateTotal);
-    feeInput?.addEventListener('input', updateTotal);
+
+    priceInput?.addEventListener('input', () => calcFrom('price'));
+    qtyInput?.addEventListener('input', () => calcFrom('qty'));
+    totalInput?.addEventListener('input', () => calcFrom('total'));
 
     // Stock search autocomplete
     const tickerInput = document.getElementById('trade-ticker') as HTMLInputElement | null;
