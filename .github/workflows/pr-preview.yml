@@ -6,6 +6,8 @@ on:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
   pull-requests: write
 
 concurrency:
@@ -15,6 +17,9 @@ concurrency:
 jobs:
   preview:
     runs-on: ubuntu-latest
+    environment:
+      name: pr-preview-${{ github.event.number }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,19 +34,25 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npx vite build --base /
+        run: npm run build
 
-      - name: Install Surge
-        run: npm install -g surge
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-      - name: Deploy to Surge
-        run: surge ./dist tally-pr-${{ github.event.number }}.surge.sh --token ${{ secrets.SURGE_TOKEN }}
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
       - name: Comment preview URL
         uses: actions/github-script@v7
         with:
           script: |
-            const url = `https://tally-pr-${{ github.event.number }}.surge.sh`;
+            const url = '${{ steps.deployment.outputs.page_url }}';
             const body = `**Preview:** ${url}`;
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,
