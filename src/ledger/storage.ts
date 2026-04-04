@@ -2,6 +2,7 @@ import type { LedgerState, LedgerEvent, Instrument, DataQualityWarning } from '.
 import { createEmptyLedger } from '../types';
 
 const STORAGE_KEY = 'tally_ledger_v2';
+const PRICES_KEY = 'tally_prices';
 
 export class LedgerStorage {
   static saveLedger(state: LedgerState): void {
@@ -61,5 +62,20 @@ export class LedgerStorage {
   static exportAsJSON(): string {
     const ledger = this.loadLedger();
     return JSON.stringify(ledger || createEmptyLedger(), null, 2);
+  }
+
+  static savePrices(prices: Map<string, number>): void {
+    const obj: Record<string, number> = {};
+    for (const [isin, price] of prices) {
+      obj[isin] = price;
+    }
+    localStorage.setItem(PRICES_KEY, JSON.stringify(obj));
+  }
+
+  static loadPrices(): Map<string, number> {
+    const data = localStorage.getItem(PRICES_KEY);
+    if (!data) return new Map();
+    const obj = JSON.parse(data) as Record<string, number>;
+    return new Map(Object.entries(obj));
   }
 }
