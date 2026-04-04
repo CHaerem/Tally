@@ -205,22 +205,16 @@ class TallyApp {
         + '<button class="btn btn-header" id="import-csv">Importer</button>'
         + '</div>'
       : '';
-    return '<header><div class="container header-inner"><div><h1>Tally</h1><p class="header-subtitle">Din porteføljeoversikt</p></div>' + actions + '</div></header>';
+    return '<header><div class="container header-inner"><div><h1>Tally</h1></div>' + actions + '</div></header>';
   }
 
   private renderEmptyState(): string {
     return '<div class="card empty-state">'
-      + '<div class="empty-icon">&#x1F4CA;</div>'
       + '<h2>Velkommen til Tally</h2>'
-      + '<p>Beregn din reelle investeringsavkastning basert på transaksjonshistorikk.</p>'
-      + '<div class="empty-steps">'
-      + '<div class="step"><span class="step-number">1</span><span>Legg til aksjer manuelt eller importer CSV fra megleren</span></div>'
-      + '<div class="step"><span class="step-number">2</span><span>Kurser hentes automatisk fra Yahoo Finance</span></div>'
-      + '<div class="step"><span class="step-number">3</span><span>Se din faktiske avkastning (XIRR) med utbytte inkludert</span></div>'
-      + '</div>'
+      + '<p>Spor investeringene dine og se din faktiske avkastning.</p>'
       + '<div class="empty-buttons">'
-      + '<button class="btn btn-primary btn-large" id="add-trade">Legg til aksje</button>'
-      + '<button class="btn btn-large" id="import-csv" style="background:var(--background-color);color:var(--text-color)">Importer CSV</button>'
+      + '<button class="btn btn-primary btn-large" id="add-trade">Legg til beholdning</button>'
+      + '<button class="btn btn-large btn-secondary" id="import-csv">Importer fra megler</button>'
       + '</div>'
       + '</div>';
   }
@@ -300,7 +294,7 @@ class TallyApp {
       + (this.ledger.lastModified ? ' &middot; Sist oppdatert ' + formatDateShort(this.ledger.lastModified) : '')
       + '</span>'
       + '<div class="footer-buttons">'
-      + '<button class="btn btn-small" id="export-json" style="background:var(--background-color);color:var(--text-muted)">Eksporter JSON</button>'
+      + '<button class="btn btn-small btn-ghost" id="export-json">Eksporter</button>'
       + '<button class="btn btn-small btn-danger-outline" id="clear-data">Slett data</button>'
       + '</div>'
       + '</div>';
@@ -325,17 +319,17 @@ class TallyApp {
       : '<button class="btn-link" id="toggle-trade-mode" type="button">Legg til beholdning enkelt i stedet</button>';
 
     return '<div class="modal" id="trade-modal"><div class="modal-content"><div class="modal-header"><h3>' + title + '</h3>'
-      + (isSimple ? '<p class="text-muted text-small">Legg inn hva du eier — kurs hentes automatisk</p>' : '') + '</div>'
+      + (isSimple ? '<p class="text-muted text-small">Søk og velg — kurs hentes automatisk</p>' : '') + '</div>'
       + typeTabs
       + '<input type="hidden" id="trade-type" value="TRADE_BUY">'
       + '<div class="form-group"><label for="trade-ticker">Aksje eller fond</label><div class="search-wrapper"><input type="text" id="trade-ticker" class="form-control" placeholder="Søk etter aksje eller fond..." autocapitalize="characters" autocorrect="off" spellcheck="false" autocomplete="off"><div class="search-suggestions" id="search-suggestions"></div></div></div>'
-      + '<div class="form-group"><label for="trade-name">Selskapsnavn</label><input type="text" id="trade-name" class="form-control" placeholder="Fylles inn automatisk" readonly></div>'
+      + '<input type="hidden" id="trade-name" value="">'
       + '<input type="hidden" id="trade-isin" value="">'
       + '<input type="hidden" id="trade-instrument-type" value="STOCK">'
       + dateField
-      + '<div class="form-row"><div class="form-group"><label for="trade-price" id="trade-price-label">' + (isSimple ? 'Kurs' : 'Kurs per aksje') + '</label><input type="number" id="trade-price" class="form-control" placeholder="280,50" step="0.01" min="0" inputmode="decimal"><span class="price-date-hint" id="price-date-hint"></span></div>'
+      + '<div class="form-row"><div class="form-group"><label for="trade-price" id="trade-price-label">Kurs</label><input type="number" id="trade-price" class="form-control" placeholder="280,50" step="0.01" min="0" inputmode="decimal"><span class="price-date-hint" id="price-date-hint"></span></div>'
       + '<div class="form-group"><label for="trade-qty" id="trade-qty-label">Antall</label><input type="number" id="trade-qty" class="form-control" placeholder="100" step="any" min="0.001" inputmode="decimal"></div></div>'
-      + '<div class="form-group"><label for="trade-total-input">Total investert</label><input type="number" id="trade-total-input" class="form-control" placeholder="50 000" step="0.01" min="0" inputmode="decimal"><span class="text-muted text-small" id="trade-calc-hint"></span></div>'
+      + '<div class="form-group"><label for="trade-total-input">Totalbeløp</label><input type="number" id="trade-total-input" class="form-control" placeholder="50 000" step="0.01" min="0" inputmode="decimal"><span class="text-muted text-small" id="trade-calc-hint"></span></div>'
       + feeField
       + '<div class="modal-footer"><button class="btn" id="cancel-trade">Avbryt</button><button class="btn btn-success" id="submit-trade">' + (isSimple ? 'Legg til' : 'Registrer') + '</button></div>'
       + '<div class="modal-mode-toggle">' + modeToggle + '</div>'
@@ -404,7 +398,6 @@ class TallyApp {
 
     tickerInput.value = stock.ticker;
     nameInput.value = stock.name;
-    nameInput.readOnly = false;
     if (isinInput) isinInput.value = '';
     if (instrumentTypeInput) instrumentTypeInput.value = stock.type;
 
@@ -512,24 +505,22 @@ class TallyApp {
       const p = parseFloat(priceInput?.value || '0');
       const q = parseFloat(qtyInput?.value || '0');
       const t = parseFloat(totalInput?.value || '0');
+      const instType = (document.getElementById('trade-instrument-type') as HTMLInputElement)?.value;
+      const unitLabel = instType === 'FUND' ? 'andeler' : 'aksjer';
 
       if (source === 'total' && t > 0 && p > 0 && qtyInput) {
-        // Total + price → calculate qty
         qtyInput.value = (t / p).toFixed(4).replace(/\.?0+$/, '');
-        if (calcHint) calcHint.textContent = formatCurrency(t) + ' ÷ ' + formatCurrency(p, 2) + ' = ' + qtyInput.value + ' andeler';
+        if (calcHint) calcHint.textContent = formatCurrency(t) + ' ÷ ' + formatCurrency(p, 2) + ' = ' + qtyInput.value + ' ' + unitLabel;
       } else if (source === 'qty' && q > 0 && p > 0 && totalInput) {
-        // Qty + price → calculate total
         totalInput.value = (q * p).toFixed(2);
         if (calcHint) calcHint.textContent = '';
       } else if (source === 'price' && p > 0) {
         if (q > 0 && totalInput) {
-          // Price + qty → calculate total
           totalInput.value = (q * p).toFixed(2);
           if (calcHint) calcHint.textContent = '';
         } else if (t > 0 && qtyInput) {
-          // Price + total → calculate qty
           qtyInput.value = (t / p).toFixed(4).replace(/\.?0+$/, '');
-          if (calcHint) calcHint.textContent = formatCurrency(t) + ' ÷ ' + formatCurrency(p, 2) + ' = ' + qtyInput.value + ' andeler';
+          if (calcHint) calcHint.textContent = formatCurrency(t) + ' ÷ ' + formatCurrency(p, 2) + ' = ' + qtyInput.value + ' ' + unitLabel;
         }
       } else {
         if (calcHint) calcHint.textContent = '';
@@ -563,10 +554,8 @@ class TallyApp {
           .slice(0, 8);
 
         if (matches.length === 0) {
-          suggestionsEl.innerHTML = '<div class="suggestion-empty">Ingen treff — skriv ticker og fyll inn resten selv</div>';
+          suggestionsEl.innerHTML = '<div class="suggestion-empty">Ingen treff — skriv ticker manuelt</div>';
           suggestionsEl.classList.add('active');
-          const nameInput = document.getElementById('trade-name') as HTMLInputElement | null;
-          if (nameInput) { nameInput.readOnly = false; nameInput.placeholder = 'Skriv inn selskapsnavn'; }
           return;
         }
 
@@ -641,7 +630,7 @@ class TallyApp {
       if (el) el.value = '';
     }
     const nameInput = document.getElementById('trade-name') as HTMLInputElement | null;
-    if (nameInput) { nameInput.readOnly = true; nameInput.placeholder = 'Fylles inn automatisk'; }
+    if (nameInput) nameInput.value = '';
     const instrumentType = document.getElementById('trade-instrument-type') as HTMLInputElement | null;
     if (instrumentType) instrumentType.value = 'STOCK';
     // Reset labels
