@@ -1,19 +1,24 @@
 :root {
-  --primary-color: #1a1a2e;
-  --accent-color: #007aff;
-  --success-color: #34c759;
-  --danger-color: #ff3b30;
-  --background-color: #f2f2f7;
-  --card-background: #ffffff;
-  --text-color: #1c1c1e;
-  --text-secondary: #636366;
-  --text-muted: #aeaeb2;
-  --border-color: #e5e5ea;
-  --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-lg: 0 4px 12px rgba(0,0,0,0.08);
-  --warning-bg: #fff9e6;
-  --warning-border: #ffd60a;
-  --warning-text: #7a6100;
+  --accent: #00c896;
+  --accent-dim: rgba(0, 200, 150, 0.12);
+  --accent-text: #00b386;
+  --success: #00c896;
+  --danger: #ef4444;
+  --bg: #0b0f1a;
+  --bg-card: #141927;
+  --bg-elevated: #1c2235;
+  --bg-input: #1c2235;
+  --text: #f0f0f5;
+  --text-secondary: #8b8fa3;
+  --text-muted: #555a6e;
+  --border: rgba(255, 255, 255, 0.06);
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --warning-bg: rgba(250, 204, 21, 0.08);
+  --warning-border: rgba(250, 204, 21, 0.2);
+  --warning-text: #fbbf24;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
@@ -28,9 +33,9 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -40,18 +45,17 @@ body {
 .container {
   max-width: 600px;
   margin: 0 auto;
-  padding: 0 16px;
-  padding-left: calc(16px + var(--safe-left));
-  padding-right: calc(16px + var(--safe-right));
+  padding: 0 20px;
+  padding-left: calc(20px + var(--safe-left));
+  padding-right: calc(20px + var(--safe-right));
 }
 
-/* Header — clean, minimal */
+/* Header */
 header {
-  background: var(--card-background);
-  border-bottom: 1px solid var(--border-color);
-  padding-top: calc(12px + var(--safe-top));
+  background: var(--bg);
+  padding-top: calc(16px + var(--safe-top));
   padding-bottom: 12px;
-  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
 }
 
 .header-inner {
@@ -61,63 +65,63 @@ header {
 }
 
 header h1 {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.3px;
-  color: var(--text-color);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text);
 }
-
 
 .header-actions {
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .btn-header {
-  background: var(--background-color);
-  color: var(--accent-color);
-  border: none;
+  background: var(--bg-elevated);
+  color: var(--accent);
+  border: 1px solid var(--border);
   padding: 7px 14px;
   border-radius: 20px;
   cursor: pointer;
   font-size: 13px;
   font-weight: 600;
   transition: background 0.15s;
+  font-family: inherit;
 }
 
 .btn-header:active {
-  background: var(--border-color);
+  background: var(--bg-card);
 }
 
 /* Cards */
 .card {
-  background: var(--card-background);
-  border-radius: 14px;
-  padding: 16px;
-  margin-bottom: 10px;
-  box-shadow: var(--shadow);
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
 }
 
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .card-header h2 {
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.3px;
-  color: var(--text-secondary);
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
 }
 
 /* Buttons */
 .btn {
   padding: 10px 18px;
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
   font-size: 15px;
   font-weight: 600;
@@ -128,6 +132,7 @@ header h1 {
   justify-content: center;
   gap: 6px;
   min-height: 44px;
+  font-family: inherit;
 }
 
 .btn:active {
@@ -136,23 +141,24 @@ header h1 {
 }
 
 .btn-primary {
-  background-color: var(--accent-color);
-  color: white;
+  background: var(--accent);
+  color: #0b0f1a;
 }
 
 .btn-success {
-  background-color: var(--success-color);
-  color: white;
+  background: var(--accent);
+  color: #0b0f1a;
 }
 
 .btn-danger {
-  background-color: var(--danger-color);
+  background: var(--danger);
   color: white;
 }
 
 .btn-secondary {
-  background: var(--background-color);
-  color: var(--text-color);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
 }
 
 .btn-ghost {
@@ -164,19 +170,19 @@ header h1 {
 }
 
 .btn-ghost:active {
-  background: var(--background-color);
+  background: var(--bg-elevated);
 }
 
 .btn-danger-outline {
   background: transparent;
-  color: var(--danger-color);
+  color: var(--danger);
   font-size: 13px;
   min-height: 36px;
   padding: 6px 12px;
 }
 
 .btn-danger-outline:active {
-  background: rgba(255, 59, 48, 0.1);
+  background: rgba(239, 68, 68, 0.1);
 }
 
 .btn-small {
@@ -189,36 +195,39 @@ header h1 {
 .btn-large {
   padding: 14px 32px;
   font-size: 17px;
+  font-weight: 700;
   width: 100%;
   border-radius: 14px;
 }
 
 .btn:disabled {
-  opacity: 0.4;
+  opacity: 0.3;
   pointer-events: none;
 }
 
 /* Empty state */
 .empty-state {
   text-align: center;
-  padding: 80px 20px 48px;
+  padding: 100px 20px 48px;
   background: none;
+  border: none;
   box-shadow: none;
 }
 
 .empty-state h2 {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 8px;
-  letter-spacing: -0.5px;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -0.8px;
+  color: var(--text);
 }
 
 .empty-state > p {
   color: var(--text-secondary);
-  max-width: 280px;
-  margin: 0 auto 40px;
+  max-width: 260px;
+  margin: 0 auto 48px;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .empty-buttons {
@@ -229,52 +238,57 @@ header h1 {
   margin: 0 auto;
 }
 
-/* Summary — hero number + compact grid */
+/* Summary */
 .summary-hero {
   text-align: center;
-  padding: 20px 16px 8px;
+  padding: 24px 16px 12px;
 }
 
 .summary-hero .label {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+  font-weight: 500;
 }
 
 .summary-hero .value {
-  font-size: 36px;
-  font-weight: 800;
-  letter-spacing: -1px;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
   font-variant-numeric: tabular-nums;
+  color: var(--text);
 }
 
 .summary-hero .sub-value {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .summary-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
-  background: var(--border-color);
-  border-radius: 10px;
+  background: var(--border);
+  border-radius: var(--radius-sm);
   overflow: hidden;
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .summary-item {
-  background: var(--card-background);
-  padding: 12px 14px;
+  background: var(--bg-elevated);
+  padding: 14px 16px;
 }
 
 .summary-item .label {
   font-size: 11px;
   color: var(--text-muted);
-  margin-bottom: 2px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-weight: 500;
 }
 
 .summary-item .value {
@@ -301,27 +315,27 @@ header h1 {
   font-size: 13px;
 }
 
-/* Holding cards — mobile-first, no table */
+/* Holdings */
 .holdings-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .holding-card {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 16px;
-  background: var(--card-background);
-  border-radius: 14px;
-  box-shadow: var(--shadow);
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
   cursor: default;
-  transition: background 0.1s;
+  transition: background 0.15s;
 }
 
 .holding-card:active {
-  background: var(--background-color);
+  background: var(--bg-elevated);
 }
 
 .holding-info {
@@ -333,14 +347,16 @@ header h1 {
   font-size: 16px;
   font-weight: 700;
   letter-spacing: -0.2px;
+  color: var(--text);
 }
 
 .holding-name {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-top: 1px;
 }
 
 .holding-values {
@@ -352,20 +368,22 @@ header h1 {
   font-size: 16px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
+  color: var(--text);
 }
 
 .holding-gain {
   font-size: 13px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
+  margin-top: 1px;
 }
 
 .holding-details {
   display: none;
   grid-template-columns: 1fr 1fr;
   gap: 1px;
-  background: var(--border-color);
-  border-radius: 10px;
+  background: var(--border);
+  border-radius: var(--radius-sm);
   overflow: hidden;
   margin-top: 10px;
 }
@@ -375,21 +393,23 @@ header h1 {
 }
 
 .holding-detail {
-  background: var(--background-color);
-  padding: 10px 12px;
+  background: var(--bg-elevated);
+  padding: 12px 14px;
 }
 
 .holding-detail .label {
   font-size: 10px;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
+  font-weight: 500;
 }
 
 .holding-detail .value {
   font-size: 14px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
+  margin-top: 2px;
 }
 
 .holding-detail .price-input {
@@ -401,11 +421,12 @@ header h1 {
   width: 100%;
   text-align: right;
   padding: 6px 8px;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 14px;
   font-family: inherit;
-  background: var(--card-background);
+  background: var(--bg-input);
+  color: var(--text);
   min-height: 34px;
   -webkit-appearance: none;
   appearance: none;
@@ -414,8 +435,8 @@ header h1 {
 
 .price-input:focus {
   outline: none;
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.12);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
 }
 
 .price-input::placeholder {
@@ -436,8 +457,8 @@ header h1 {
 }
 
 /* Text utilities */
-.text-success { color: var(--success-color); }
-.text-danger { color: var(--danger-color); }
+.text-success { color: var(--success); }
+.text-danger { color: var(--danger); }
 .text-muted { color: var(--text-muted); }
 .text-right { text-align: right; }
 .text-small { font-size: 12px; }
@@ -447,7 +468,7 @@ header h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 4px 24px;
+  padding: 20px 4px 28px;
   flex-wrap: wrap;
   gap: 8px;
 }
@@ -457,7 +478,7 @@ header h1 {
   gap: 4px;
 }
 
-/* Modal — bottom sheet */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -465,10 +486,10 @@ header h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 1000;
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 
 .modal.active {
@@ -478,15 +499,16 @@ header h1 {
 }
 
 .modal-content {
-  background: var(--card-background);
-  border-radius: 20px 20px 0 0;
-  padding: 24px;
-  padding-bottom: calc(24px + var(--safe-bottom));
+  background: var(--bg-card);
+  border-radius: 24px 24px 0 0;
+  padding: 28px 24px;
+  padding-bottom: calc(28px + var(--safe-bottom));
   width: 100%;
   max-width: 520px;
   max-height: 90vh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  border-top: 1px solid var(--border);
 }
 
 .modal-content::before {
@@ -494,20 +516,22 @@ header h1 {
   display: block;
   width: 36px;
   height: 4px;
-  background: var(--border-color);
+  background: var(--text-muted);
   border-radius: 2px;
-  margin: 0 auto 16px;
+  margin: 0 auto 20px;
+  opacity: 0.5;
 }
 
 .modal-header {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .modal-header h3 {
-  font-size: 20px;
-  font-weight: 800;
+  font-size: 22px;
+  font-weight: 700;
   margin-bottom: 4px;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.5px;
+  color: var(--text);
 }
 
 .modal-header p {
@@ -516,7 +540,7 @@ header h1 {
 }
 
 .modal-footer {
-  margin-top: 20px;
+  margin-top: 24px;
   display: flex;
   gap: 10px;
 }
@@ -526,8 +550,9 @@ header h1 {
 }
 
 .modal-footer .btn:first-child {
-  background: var(--background-color);
+  background: var(--bg-elevated);
   color: var(--text-secondary);
+  border: 1px solid var(--border);
 }
 
 /* File upload */
@@ -536,15 +561,15 @@ header h1 {
   align-items: center;
   justify-content: center;
   padding: 36px 20px;
-  border: 2px dashed var(--border-color);
-  border-radius: 14px;
+  border: 2px dashed var(--text-muted);
+  border-radius: var(--radius);
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
 }
 
 .file-upload:active {
-  border-color: var(--accent-color);
-  background: rgba(0, 122, 255, 0.05);
+  border-color: var(--accent);
+  background: var(--accent-dim);
 }
 
 .file-upload input[type="file"] {
@@ -552,7 +577,7 @@ header h1 {
 }
 
 .file-upload-text {
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 15px;
 }
 
@@ -566,16 +591,16 @@ header h1 {
 
 .stat {
   text-align: center;
-  padding: 8px 2px;
-  background: var(--background-color);
-  border-radius: 10px;
+  padding: 10px 2px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-sm);
 }
 
 .stat-value {
   display: block;
   font-size: 18px;
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--text);
 }
 
 .stat-label {
@@ -588,7 +613,7 @@ header h1 {
 .import-warnings {
   background: var(--warning-bg);
   border: 1px solid var(--warning-border);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   padding: 10px 12px;
   margin-top: 8px;
 }
@@ -598,7 +623,7 @@ header h1 {
   color: var(--warning-text);
 }
 
-/* Stock search autocomplete */
+/* Search autocomplete */
 .search-wrapper {
   position: relative;
 }
@@ -610,8 +635,8 @@ header h1 {
   left: 0;
   right: 0;
   z-index: 1010;
-  background: var(--card-background);
-  border: 1px solid var(--border-color);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
   border-top: none;
   border-radius: 0 0 14px 14px;
   box-shadow: var(--shadow-lg);
@@ -627,7 +652,7 @@ header h1 {
 .suggestion-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   width: 100%;
   padding: 12px 14px;
   border: none;
@@ -636,7 +661,8 @@ header h1 {
   font-family: inherit;
   font-size: 15px;
   text-align: left;
-  border-bottom: 1px solid var(--border-color);
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
   min-height: 44px;
 }
 
@@ -646,12 +672,12 @@ header h1 {
 
 .suggestion-item:active,
 .suggestion-item.selected {
-  background: var(--background-color);
+  background: var(--bg-card);
 }
 
 .suggestion-ticker {
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--text);
   min-width: 48px;
   font-size: 15px;
 }
@@ -667,7 +693,7 @@ header h1 {
 
 .suggestion-price {
   font-weight: 600;
-  color: var(--accent-color);
+  color: var(--accent-text);
   font-size: 14px;
   font-variant-numeric: tabular-nums;
 }
@@ -680,8 +706,8 @@ header h1 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.3px;
-  background: rgba(0, 122, 255, 0.1);
-  color: var(--accent-color);
+  background: var(--accent-dim);
+  color: var(--accent-text);
   flex-shrink: 0;
 }
 
@@ -695,7 +721,7 @@ header h1 {
 .price-date-hint {
   display: block;
   font-size: 12px;
-  color: var(--accent-color);
+  color: var(--accent-text);
   margin-top: 3px;
   min-height: 16px;
 }
@@ -704,9 +730,9 @@ header h1 {
 .trade-type-tabs {
   display: flex;
   gap: 0;
-  margin-bottom: 16px;
-  background: var(--background-color);
-  border-radius: 10px;
+  margin-bottom: 20px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
   padding: 3px;
 }
 
@@ -726,22 +752,21 @@ header h1 {
 }
 
 .trade-tab.active {
-  background: var(--card-background);
-  color: var(--text-color);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  background: var(--bg-elevated);
+  color: var(--text);
 }
 
 .modal-mode-toggle {
   text-align: center;
-  margin-top: 14px;
-  padding-top: 14px;
-  border-top: 1px solid var(--border-color);
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
 }
 
 .btn-link {
   background: none;
   border: none;
-  color: var(--accent-color);
+  color: var(--accent-text);
   font-size: 13px;
   cursor: pointer;
   padding: 4px 0;
@@ -756,7 +781,7 @@ header h1 {
 .trade-total {
   font-size: 15px;
   font-weight: 700;
-  color: var(--text-color);
+  color: var(--text);
   text-align: right;
   min-height: 22px;
   font-variant-numeric: tabular-nums;
@@ -769,7 +794,7 @@ header h1 {
 }
 
 .form-group {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 
 .form-group label {
@@ -782,32 +807,32 @@ header h1 {
 
 .form-control {
   width: 100%;
-  padding: 11px 14px;
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   font-size: 16px;
   min-height: 44px;
   font-family: inherit;
-  background: var(--card-background);
-  color: var(--text-color);
+  background: var(--bg-input);
+  color: var(--text);
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .form-control:focus {
   outline: none;
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
 }
 
 .form-control[readonly] {
-  background: var(--background-color);
+  background: var(--bg);
   color: var(--text-muted);
 }
 
 select.form-control {
   -webkit-appearance: none;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23aeaeb2' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23555a6e' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   padding-right: 34px;
@@ -818,8 +843,8 @@ select.form-control {
   display: inline-block;
   width: 14px;
   height: 14px;
-  border: 2px solid rgba(0,122,255,0.2);
-  border-top-color: var(--accent-color);
+  border: 2px solid var(--accent-dim);
+  border-top-color: var(--accent);
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
   vertical-align: middle;
@@ -845,8 +870,8 @@ select.form-control {
   }
 
   .modal-content {
-    border-radius: 20px;
-    padding-bottom: 24px;
+    border-radius: 24px;
+    padding-bottom: 28px;
     max-width: 520px;
     width: 90%;
   }
