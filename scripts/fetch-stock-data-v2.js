@@ -26,33 +26,64 @@ const INDEX_FILE = path.join(DATA_DIR, 'index.json');
 // This is a comprehensive list — Yahoo Finance will return errors for
 // delisted or invalid tickers, which are silently skipped.
 const DEFAULT_SYMBOLS = [
-  // OBX 25 (most traded)
+  // === Oslo Børs (XOSL) — Main list ===
+  // OBX 25
   'EQNR', 'DNB', 'TEL', 'MOWI', 'YAR', 'ORK', 'NHY', 'AKRBP',
   'GJF', 'SALM', 'STB', 'KOG', 'SUBC', 'FRO', 'GOGL', 'NAS',
   'AKER', 'BAKKA', 'LSG', 'SCATC', 'TOM', 'AUSS', 'GSF', 'VOW',
   'HAFNI',
-  // Large & mid cap
-  'ABG', 'AKSO', 'ATEA', 'ADE', 'AFC', 'AMSC', 'ARCH', 'ASTK',
-  'AUTO', 'BELCO', 'BEWI', 'BGBIO', 'BONHR', 'BORR', 'BRG',
-  'BWO', 'CADLR', 'CLOUD', 'CONTX', 'CRAYN', 'DNO', 'DOFG',
-  'ELK', 'ELMRA', 'ENTRA', 'EPR', 'FLNG', 'FORTE', 'FROY',
-  'GIG', 'GOLDEN', 'GRIEG', 'HAUTO', 'HAVI', 'HBC', 'HDLY',
-  'HYON', 'IDEX', 'KAHOT', 'KIT', 'KOA', 'KOMPX', 'KVLP',
-  'LINK', 'MPCC', 'MPC', 'MULTI', 'NAPA', 'NASS', 'NEXT',
-  'NHPC', 'NOD', 'NORBT', 'NSKOG', 'OET', 'OLT', 'ORK',
-  'PARB', 'PCIB', 'PEN', 'PEXIP', 'PHO', 'PGS', 'PLCS',
-  'POL', 'PROT', 'PSE', 'QFR', 'RAKP', 'RECSI', 'SACAM',
-  'SATS', 'SBO', 'SCHA', 'SDRL', 'SHLF', 'SIKRI', 'SKUE',
-  'SMCRT', 'SNI', 'SOFR', 'SRBNK', 'SSO', 'STATT', 'SUBC',
-  'TEKNA', 'THIN', 'TGS', 'ULTI', 'VAR', 'VEI', 'VERDE',
-  'VOLUE', 'VGM', 'WAWI', 'WSTEP', 'WWI', 'ZAPTEC',
-  // Euronext Growth (smaller companies)
-  'AASB', 'AGLX', 'AIRX', 'ALCOA', 'AYFIE', 'BFISH', 'BMEDI',
-  'CXENSE', 'ECIT', 'EFUEL', 'ENDUR', 'EXACT', 'FKRAFT', 'HPUR',
-  'HUDYA', 'ICG', 'INIFY', 'KALERA', 'KMCP', 'KOLR', 'LUMI',
-  'MORPOL', 'MSEIS', 'NORAM', 'NYKD', 'ODF', 'OKEA', 'OTEC',
-  'OTOVO', 'RANA', 'RIVER', 'SALMON', 'SENTI', 'SPOL', 'TECO',
-  'WBULK',
+  // Large cap
+  'AUTO', 'HAUTO', 'VAR', 'DOFG', 'ELK', 'ENTRA', 'EPR', 'CADLR',
+  'MPCC', 'BEWI', 'BRG', 'PROT', 'KID', 'WAWI', 'LINK', 'PARB',
+  'SOFF', 'BWO', 'BWLPG', 'FLNG', 'NEL', 'HEX', 'BORR',
+  // Mid cap
+  'ABG', 'ACR', 'ADE', 'AFC', 'AFG', 'AFK', 'AKBM', 'AKSO',
+  'AKVA', 'AMSC', 'ARCH', 'ASTK', 'ATEA', 'AZT', 'BELCO', 'BGBIO',
+  'BIEN', 'BMA', 'BNOR', 'BONHR', 'BOUV', 'BWE', 'CLOUD',
+  'CONTX', 'CRAYN', 'DDRIL', 'DNO', 'DVD', 'EAM', 'EIOF',
+  'ELMRA', 'ELO', 'EMGS', 'ENDUR', 'EQVA',
+  'FORTE', 'FROY', 'GENO', 'GENT', 'GIG', 'GOLDEN', 'GRIEG',
+  'HAVI', 'HBC', 'HDLY', 'HYON', 'IDEX', 'ITERA', 'KAHOT',
+  'KCC', 'KIT', 'KOA', 'KOMPX', 'KVLP', 'MEDI', 'MGN',
+  'MPC', 'MULTI', 'NAPA', 'NASS', 'NEXT', 'NHPC', 'NOD',
+  'NORBT', 'NORCO', 'NRC', 'NSKOG', 'OET', 'OKEA', 'OLT',
+  'PCIB', 'PEN', 'PEXIP', 'PGS', 'PHO', 'PLCS', 'POL',
+  'PSE', 'QFR', 'RAKP', 'RECSI', 'SACAM', 'SADG', 'SATS',
+  'SBO', 'SCHA', 'SDRL', 'SEA1', 'SHLF', 'SIKRI', 'SKUE',
+  'SMCRT', 'SNI', 'SNTIA', 'SOFR', 'SOR', 'SPOL', 'SRBNK',
+  'SSO', 'STATT', 'SVEG', 'TECH', 'TEKNA', 'TGS', 'THIN',
+  'ULTI', 'VEI', 'VERDE', 'VISTN', 'VOLUE', 'VGM', 'WBULK',
+  'WSTEP', 'WWI', 'XXL', 'ZAPTEC',
+  // Small cap / remaining main list
+  'ABL', 'ABS', 'ABTEC', 'ACED', 'ADS', 'AFISH', 'AGLX', 'AIX',
+  'AKH', 'AKOBO', 'ALNG', 'ANDF', 'APR', 'ARR', 'ASA', 'AURG',
+  'B2I', 'BALT', 'BARRA', 'BCS', 'BOR', 'BRUT', 'BSP', 'CAMBI',
+  'CAPSL', 'CAPT', 'CAVEN', 'CMBTO', 'CODE', 'COSH', 'CRNA',
+  'CYVIZ', 'DELIA', 'DFENS', 'DSRT', 'EISP', 'ELABS', 'ELIMP',
+  'ELOO', 'ENERG', 'ENH', 'ENSU', 'ENVIP', 'EXTX', 'FFSB',
+  'GEM', 'GEOS', 'GIGA', 'INSTA', 'IWS', 'JACK', 'MORG', 'NKR',
+  'NOM', 'NORSE', 'OPRA', 'PRS', 'PROXI', 'SCANA', 'SMOP', 'WEST',
+  // === Euronext Expand (MERK) ===
+  'AASB', 'AKAST', 'AIRX', 'BFISH', 'BMEDI', 'ECIT', 'EFUEL',
+  'EXACT', 'FKRAFT', 'HPUR', 'HUDYA', 'ICG', 'INIFY', 'KALERA',
+  'KMCP', 'KOLR', 'LUMI', 'MORPOL', 'MSEIS', 'NORAM', 'NYKD',
+  'ODF', 'OTEC', 'OTOVO', 'RANA', 'RIVER', 'SALMON', 'TECO',
+  // === Euronext Growth Oslo (XOAS) + additional listings ===
+  '2020', '5PG', 'AYFIE', 'CXENSE', 'DLTX', 'GKP', 'GOD', 'GRONG',
+  'GYL', 'HAV', 'HELG', 'HERMA', 'HGSB', 'HKY', 'HLNG', 'HSHP',
+  'HSPG', 'HUDL', 'HUNT', 'HYN', 'HYPRO', 'IFISH', 'INDCT', 'ININ',
+  'IOX', 'ISLAX', 'JAREN', 'JIN', 'KING', 'KLDVK', 'KOMPL', 'KRAB',
+  'LIFE', 'LOKO', 'LYTIX', 'MAS', 'MELG', 'MING', 'MNTR', 'MORLD',
+  'MPCES', 'MVE', 'MVW', 'NAVA', 'NBX', 'NCOD', 'NISB', 'NOAP',
+  'NOFIN', 'NOHAL', 'NOL', 'NONG', 'NORDH', 'NORTH', 'NSOL', 'NTG',
+  'NTI', 'OBSRV', 'OCEAN', 'ODFB', 'ODL', 'OMDA', 'ONCIN', 'OSUN',
+  'OTL', 'PLGC', 'PLSV', 'PLT', 'PNOR', 'PPG', 'PRYME', 'PUBLI',
+  'PYRUM', 'QEC', 'REACH', 'REFL', 'RING', 'ROGS', 'ROM', 'ROMER',
+  'SAGA', 'SALME', 'SB1NO', 'SB68', 'SBNOR', 'SCOIN', 'SDSD',
+  'SKAND', 'SNOR', 'SOAG', 'SOFTX', 'SOGN', 'SOLON', 'SOMA', 'SPIR',
+  'SPOG', 'STECH', 'STRO', 'STST', 'SWON', 'TIETO', 'TINDE', 'TRBO',
+  'TRMED', 'TRSB', 'TYVEK', 'VDI', 'VEND', 'VOLUP', 'VTURA', 'VVL',
+  'WWIB', 'XPLRA', 'ZAL', 'ZAP', 'ZENA', 'ZLNA',
 ];
 
 // --- Helpers ---
