@@ -494,8 +494,11 @@ class TallyApp {
           .slice(0, 8);
 
         if (matches.length === 0) {
-          suggestionsEl.innerHTML = '<div class="suggestion-empty">Ingen treff. Du kan skrive inn ticker manuelt.</div>';
+          suggestionsEl.innerHTML = '<div class="suggestion-empty">Ingen treff — skriv ticker og fyll inn resten selv</div>';
           suggestionsEl.classList.add('active');
+          // Unlock name field for manual entry
+          const nameInput = document.getElementById('trade-name') as HTMLInputElement | null;
+          if (nameInput) { nameInput.readOnly = false; nameInput.placeholder = 'Skriv inn selskapsnavn'; }
           return;
         }
 

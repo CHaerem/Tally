@@ -51,7 +51,7 @@ const DEFAULT_SYMBOLS = [
   'CXENSE', 'ECIT', 'EFUEL', 'ENDUR', 'EXACT', 'FKRAFT', 'HPUR',
   'HUDYA', 'ICG', 'INIFY', 'KALERA', 'KMCP', 'KOLR', 'LUMI',
   'MORPOL', 'MSEIS', 'NORAM', 'NYKD', 'ODF', 'OKEA', 'OTEC',
-  'OTOVO', 'RANA', 'RIVER', 'SALMON', 'SENTI', 'SPOL', 'TECO',
+  'OTOVO', 'RANA', 'RIVER', 'SALMON', 'SNTIA', 'SPOL', 'TECO',
   'WBULK',
 ];
 
