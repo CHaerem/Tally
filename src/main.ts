@@ -317,7 +317,7 @@ class TallyApp {
       + '<button class="trade-tab" data-type="DIVIDEND">Utbytte</button>'
       + '</div>';
 
-    const dateField = isSimple ? '' : '<div class="form-group"><label for="trade-date">Dato</label><input type="date" id="trade-date" class="form-control" value="' + today + '"></div>';
+    const dateField = '<div class="form-group"><label for="trade-date">' + (isSimple ? 'Kjøpsdato' : 'Dato') + '</label><input type="date" id="trade-date" class="form-control" value="' + today + '"></div>';
     const feeField = isSimple ? '' : '<div class="form-group"><label for="trade-fee">Kurtasje (valgfritt)</label><input type="number" id="trade-fee" class="form-control" placeholder="29" step="0.01" min="0" inputmode="decimal"></div>';
 
     const modeToggle = isSimple
