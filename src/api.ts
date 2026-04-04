@@ -30,6 +30,11 @@ interface StockIndex {
 
 let indexCache: StockIndex | null = null;
 
+/** Reset module cache (for testing) */
+export function _resetIndexCache(): void {
+  indexCache = null;
+}
+
 export async function fetchStockIndex(): Promise<StockIndex | null> {
   if (indexCache) return indexCache;
   try {

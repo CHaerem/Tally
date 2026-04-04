@@ -2,9 +2,15 @@ import './style.css';
 import { LedgerStorage } from './ledger';
 import { parseCSV, validateCSV } from './import';
 import { deriveHoldings, derivePortfolioMetrics, formatXIRRPercent, formatCurrency, formatPercent, formatDateShort } from './calculations';
-import { fetchPricesForHoldings } from './api';
+import { fetchPricesForHoldings, fetchStockIndex } from './api';
 import type { LedgerState, Holding, PortfolioMetrics } from './types';
 import type { CSVParseResult } from './import';
+
+interface StockSuggestion {
+  ticker: string;
+  name: string;
+  currentPrice: number | null;
+}
 
 class TallyApp {
   private ledger: LedgerState;
@@ -13,6 +19,8 @@ class TallyApp {
   private currentPrices: Map<string, number> = new Map();
   private pendingImport: CSVParseResult | null = null;
   private isFetchingPrices = false;
+  private stockList: StockSuggestion[] = [];
+  private selectedSuggestionIndex = -1;
 
   constructor() {
     this.ledger = LedgerStorage.initializeLedger();
@@ -22,6 +30,17 @@ class TallyApp {
     this.render();
     this.attachEventListeners();
     this.refreshPrices();
+    this.loadStockIndex();
+  }
+
+  private async loadStockIndex(): Promise<void> {
+    const index = await fetchStockIndex();
+    if (!index) return;
+    this.stockList = Object.entries(index.symbols).map(([ticker, info]) => ({
+      ticker,
+      name: info.name,
+      currentPrice: info.currentPrice,
+    }));
   }
 
   private checkShareUrl(): void {
@@ -245,8 +264,8 @@ class TallyApp {
       + '<button class="trade-tab" data-type="DIVIDEND">Utbytte</button>'
       + '</div>'
       + '<input type="hidden" id="trade-type" value="TRADE_BUY">'
-      + '<div class="form-group"><label for="trade-ticker">Ticker</label><input type="text" id="trade-ticker" class="form-control" placeholder="EQNR, DNB, MOWI..." autocapitalize="characters" autocorrect="off" spellcheck="false"></div>'
-      + '<div class="form-group"><label for="trade-name">Selskapsnavn (valgfritt)</label><input type="text" id="trade-name" class="form-control" placeholder="Equinor ASA"></div>'
+      + '<div class="form-group"><label for="trade-ticker">Aksje</label><div class="search-wrapper"><input type="text" id="trade-ticker" class="form-control" placeholder="Søk etter aksje..." autocapitalize="characters" autocorrect="off" spellcheck="false" autocomplete="off"><div class="search-suggestions" id="search-suggestions"></div></div></div>'
+      + '<div class="form-group"><label for="trade-name">Selskapsnavn</label><input type="text" id="trade-name" class="form-control" placeholder="Fylles inn automatisk" readonly></div>'
       + '<input type="hidden" id="trade-isin" value="">'
       + '<div class="form-group"><label for="trade-date">Dato</label><input type="date" id="trade-date" class="form-control" value="' + today + '"></div>'
       + '<div class="form-row"><div class="form-group"><label for="trade-qty">Antall aksjer</label><input type="number" id="trade-qty" class="form-control" placeholder="100" step="1" min="1" inputmode="numeric"></div>'
@@ -305,6 +324,40 @@ class TallyApp {
     this.refreshPrices();
   }
 
+  private selectStock(stock: StockSuggestion): void {
+    const tickerInput = document.getElementById('trade-ticker') as HTMLInputElement;
+    const nameInput = document.getElementById('trade-name') as HTMLInputElement;
+    const priceInput = document.getElementById('trade-price') as HTMLInputElement;
+    const suggestionsEl = document.getElementById('search-suggestions') as HTMLElement;
+    const tradeType = (document.getElementById('trade-type') as HTMLInputElement).value;
+
+    tickerInput.value = stock.ticker;
+    nameInput.value = stock.name;
+    nameInput.readOnly = false; // Allow editing after selection
+
+    // Pre-fill price for buy orders
+    if (stock.currentPrice && tradeType !== 'DIVIDEND') {
+      priceInput.value = stock.currentPrice.toFixed(2);
+      // Trigger total update
+      priceInput.dispatchEvent(new Event('input'));
+    }
+
+    suggestionsEl.innerHTML = '';
+    suggestionsEl.classList.remove('active');
+
+    // Focus quantity field so user can continue quickly
+    document.getElementById('trade-qty')?.focus();
+  }
+
+  private updateSuggestionHighlight(items: NodeListOf<Element>): void {
+    items.forEach((item, i) => {
+      item.classList.toggle('selected', i === this.selectedSuggestionIndex);
+      if (i === this.selectedSuggestionIndex) {
+        (item as HTMLElement).scrollIntoView({ block: 'nearest' });
+      }
+    });
+  }
+
   private showTradeModal(): void { document.getElementById('trade-modal')?.classList.add('active'); }
   private hideTradeModal(): void {
     document.getElementById('trade-modal')?.classList.remove('active');
@@ -314,6 +367,11 @@ class TallyApp {
       const el = document.getElementById(id) as HTMLInputElement | null;
       if (el) el.value = '';
     }
+    const nameInput = document.getElementById('trade-name') as HTMLInputElement | null;
+    if (nameInput) nameInput.readOnly = true;
+    const suggestions = document.getElementById('search-suggestions') as HTMLElement | null;
+    if (suggestions) { suggestions.innerHTML = ''; suggestions.classList.remove('active'); }
+    this.selectedSuggestionIndex = -1;
   }
 
   private renderImportModal(): string {
@@ -373,6 +431,79 @@ class TallyApp {
     qtyInput?.addEventListener('input', updateTotal);
     priceInput?.addEventListener('input', updateTotal);
     feeInput?.addEventListener('input', updateTotal);
+
+    // Stock search autocomplete
+    const tickerInput = document.getElementById('trade-ticker') as HTMLInputElement | null;
+    const suggestionsEl = document.getElementById('search-suggestions') as HTMLElement | null;
+    if (tickerInput && suggestionsEl) {
+      tickerInput.addEventListener('input', () => {
+        const query = tickerInput.value.trim().toUpperCase();
+        this.selectedSuggestionIndex = -1;
+        if (query.length === 0) {
+          suggestionsEl.innerHTML = '';
+          suggestionsEl.classList.remove('active');
+          return;
+        }
+        const matches = this.stockList
+          .filter(s => s.ticker.includes(query) || s.name.toUpperCase().includes(query))
+          .sort((a, b) => {
+            // Exact ticker start first, then name match
+            const aStartsTicker = a.ticker.startsWith(query) ? 0 : 1;
+            const bStartsTicker = b.ticker.startsWith(query) ? 0 : 1;
+            if (aStartsTicker !== bStartsTicker) return aStartsTicker - bStartsTicker;
+            return a.ticker.localeCompare(b.ticker);
+          })
+          .slice(0, 8);
+
+        if (matches.length === 0) {
+          suggestionsEl.innerHTML = '<div class="suggestion-empty">Ingen treff. Du kan skrive inn ticker manuelt.</div>';
+          suggestionsEl.classList.add('active');
+          return;
+        }
+
+        suggestionsEl.innerHTML = matches.map((s, i) =>
+          '<button class="suggestion-item' + (i === this.selectedSuggestionIndex ? ' selected' : '') + '" data-index="' + i + '" type="button">'
+          + '<span class="suggestion-ticker">' + s.ticker + '</span>'
+          + '<span class="suggestion-name">' + s.name + '</span>'
+          + (s.currentPrice ? '<span class="suggestion-price">' + s.currentPrice.toFixed(2) + '</span>' : '')
+          + '</button>'
+        ).join('');
+        suggestionsEl.classList.add('active');
+
+        suggestionsEl.querySelectorAll('.suggestion-item').forEach(item => {
+          item.addEventListener('click', () => {
+            const idx = parseInt((item as HTMLElement).dataset.index || '0');
+            this.selectStock(matches[idx]);
+          });
+        });
+      });
+
+      tickerInput.addEventListener('keydown', (e) => {
+        const items = suggestionsEl.querySelectorAll('.suggestion-item');
+        if (items.length === 0) return;
+
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          this.selectedSuggestionIndex = Math.min(this.selectedSuggestionIndex + 1, items.length - 1);
+          this.updateSuggestionHighlight(items);
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          this.selectedSuggestionIndex = Math.max(this.selectedSuggestionIndex - 1, 0);
+          this.updateSuggestionHighlight(items);
+        } else if (e.key === 'Enter' && this.selectedSuggestionIndex >= 0) {
+          e.preventDefault();
+          (items[this.selectedSuggestionIndex] as HTMLElement).click();
+        }
+      });
+
+      // Close suggestions when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!(e.target as HTMLElement).closest('.search-wrapper')) {
+          suggestionsEl.innerHTML = '';
+          suggestionsEl.classList.remove('active');
+        }
+      });
+    }
 
     // Close modals on backdrop click
     document.getElementById('import-modal')?.addEventListener('click', (e) => {
