@@ -632,12 +632,22 @@ class TallyApp {
       const instType = (document.getElementById('trade-instrument-type') as HTMLInputElement)?.value;
       const unitLabel = instType === 'FUND' ? 'andeler' : 'aksjer';
 
-      if (source === 'total' && t > 0 && p > 0 && qtyInput) {
-        qtyInput.value = (t / p).toFixed(4).replace(/\.?0+$/, '');
-        if (calcHint) calcHint.textContent = formatCurrency(t) + ' ÷ ' + formatCurrency(p, 2) + ' = ' + qtyInput.value + ' ' + unitLabel;
-      } else if (source === 'qty' && q > 0 && p > 0 && totalInput) {
-        totalInput.value = (q * p).toFixed(2);
-        if (calcHint) calcHint.textContent = '';
+      if (source === 'total' && t > 0) {
+        if (p > 0 && qtyInput) {
+          qtyInput.value = (t / p).toFixed(4).replace(/\.?0+$/, '');
+          if (calcHint) calcHint.textContent = formatCurrency(t) + ' ÷ ' + formatCurrency(p, 2) + ' = ' + qtyInput.value + ' ' + unitLabel;
+        } else if (q > 0 && priceInput) {
+          priceInput.value = (t / q).toFixed(4).replace(/\.?0+$/, '');
+          if (calcHint) calcHint.textContent = formatCurrency(t) + ' ÷ ' + q + ' ' + unitLabel + ' = ' + formatCurrency(parseFloat(priceInput.value), 2) + ' per andel';
+        }
+      } else if (source === 'qty' && q > 0) {
+        if (p > 0 && totalInput) {
+          totalInput.value = (q * p).toFixed(2);
+          if (calcHint) calcHint.textContent = '';
+        } else if (t > 0 && priceInput) {
+          priceInput.value = (t / q).toFixed(4).replace(/\.?0+$/, '');
+          if (calcHint) calcHint.textContent = formatCurrency(t) + ' ÷ ' + q + ' ' + unitLabel + ' = ' + formatCurrency(parseFloat(priceInput.value), 2) + ' per andel';
+        }
       } else if (source === 'price' && p > 0) {
         if (q > 0 && totalInput) {
           totalInput.value = (q * p).toFixed(2);
