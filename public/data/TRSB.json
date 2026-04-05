@@ -4,6 +4,12 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 112.2,
+  "previousClose": 116.5,
+  "dayHigh": 112.24,
+  "dayLow": 109.8,
+  "volume": 2935,
+  "fiftyTwoWeekHigh": 120,
+  "fiftyTwoWeekLow": 103,
   "prices": [
     {
       "date": "2024-12-18",
@@ -1296,5 +1302,23 @@
       "amount": 5
     }
   ],
-  "lastUpdated": "2026-04-05T11:40:22.043Z"
+  "lastUpdated": "2026-04-05T16:53:47.555Z",
+  "fundamentals": {
+    "trailingPE": 7.637849,
+    "forwardPE": 12.881744,
+    "marketCap": 536507296,
+    "dividendYield": 0.0446,
+    "dividendRate": 5,
+    "payoutRatio": 0.32689998,
+    "beta": null,
+    "priceToBook": 0.50122845,
+    "enterpriseToEbitda": null,
+    "profitMargins": 0.22344999,
+    "returnOnEquity": 0.06284,
+    "revenueGrowth": 0.032,
+    "earningsGrowth": null,
+    "grossMargins": null,
+    "totalRevenue": 314183008,
+    "ebitda": null
+  }
 }

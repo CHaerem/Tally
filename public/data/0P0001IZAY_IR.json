@@ -4,6 +4,12 @@
   "currency": "NOK",
   "exchange": "ISE",
   "currentPrice": 158.366,
+  "previousClose": 157.745,
+  "dayHigh": null,
+  "dayLow": null,
+  "volume": null,
+  "fiftyTwoWeekHigh": 181.415,
+  "fiftyTwoWeekLow": 140.421,
   "prices": [
     {
       "date": "2022-03-07",
@@ -3875,5 +3881,23 @@
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-04-05T11:40:52.353Z"
+  "lastUpdated": "2026-04-05T16:54:33.171Z",
+  "fundamentals": {
+    "trailingPE": 21.613087,
+    "forwardPE": null,
+    "marketCap": null,
+    "dividendYield": null,
+    "dividendRate": null,
+    "payoutRatio": null,
+    "beta": null,
+    "priceToBook": null,
+    "enterpriseToEbitda": null,
+    "profitMargins": null,
+    "returnOnEquity": null,
+    "revenueGrowth": null,
+    "earningsGrowth": null,
+    "grossMargins": null,
+    "totalRevenue": null,
+    "ebitda": null
+  }
 }
