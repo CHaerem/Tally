@@ -183,7 +183,7 @@ class TallyApp {
   private stockList: StockSuggestion[] = [];
   private selectedSuggestionIndex = -1;
   private tradeModalMode: 'simple' | 'full' = 'simple';
-  private exploreCategory = 'OBX';
+  // exploreCategory removed
   private watchlist: Array<{ ticker: string; name: string; type: 'STOCK' | 'FUND' }> = [];
   private obxPrice: number | null = null;
   private portfolioHistory: {
@@ -1048,16 +1048,17 @@ class TallyApp {
   }
 
   private renderMarketSection(): string {
-    // Market overview
     const obxDisplay = this.obxPrice !== null ? this.obxPrice.toFixed(2) : '...';
-    // Watchlist items (including OBX as first item)
+
+    // Watchlist items — expandable with detail view
     const watchlistItems = this.watchlist.map(w => {
       const stock = this.stockList.find(s => s.ticker === w.ticker);
       const price = stock?.currentPrice;
       const isFund = w.type === 'FUND';
       const label = isFund ? w.name : w.ticker;
       const sublabel = isFund ? 'Fond' : w.name;
-      return '<div class="watchlist-item" data-ticker="' + w.ticker + '">'
+      return '<div class="watchlist-card" data-ticker="' + w.ticker + '">'
+        + '<div class="watchlist-item">'
         + '<div class="watchlist-info">'
         + '<div class="watchlist-ticker">' + label + '</div>'
         + '<div class="watchlist-name">' + sublabel + '</div>'
@@ -1066,95 +1067,133 @@ class TallyApp {
         + (price ? '<div class="watchlist-price">' + price.toFixed(2) + '</div>' : '<div class="watchlist-price text-muted">—</div>')
         + '</div>'
         + '<button class="watchlist-remove" data-ticker="' + w.ticker + '" aria-label="Fjern">×</button>'
+        + '</div>'
+        + '<div class="watchlist-detail" id="wdetail-' + w.ticker.replace(/\./g, '_') + '">'
+        + '<div class="watchlist-chart-area" id="wchart-' + w.ticker.replace(/\./g, '_') + '"><div class="sparkline-placeholder">Laster graf...</div></div>'
+        + '</div>'
         + '</div>';
     }).join('');
 
-    return '<div class="card-header"><h2>Marked</h2><button class="btn btn-small btn-outline" id="add-watchlist">+ Følg</button></div>'
-      // OBX + watchlist in one card
+    // Popular suggestions when watchlist is empty
+    const POPULAR = ['EQNR', 'DNB', 'MOWI', 'YAR', 'TEL', 'ORK'];
+    const suggestions = this.watchlist.length === 0 && this.stockList.length > 0
+      ? '<div class="watchlist-suggestions">'
+        + '<div class="suggestions-label">Populære aksjer</div>'
+        + '<div class="suggestions-chips">'
+        + POPULAR.map(t => {
+          const s = this.stockList.find(x => x.ticker === t);
+          return s ? '<button class="suggestion-chip" data-ticker="' + t + '">' + t + '</button>' : '';
+        }).join('')
+        + '</div></div>'
+      : '';
+
+    return '<div class="card-header"><h2>Følgeliste</h2><button class="btn btn-small btn-outline" id="add-watchlist">+ Legg til</button></div>'
       + '<div class="card watchlist-list">'
       + '<div class="watchlist-item obx-item">'
       + '<div class="watchlist-info"><div class="watchlist-ticker">OBX</div><div class="watchlist-name">Oslo Børs</div></div>'
       + '<div class="watchlist-values"><div class="watchlist-price" id="obx-price">' + obxDisplay + '</div></div>'
       + '</div>'
       + watchlistItems
+      + (this.watchlist.length === 0 ? '<div class="watchlist-empty-hint">Søk og legg til aksjer eller fond du vil følge med på</div>' : '')
       + '</div>'
+      + suggestions
       // Inline search
       + '<div class="watchlist-search" id="watchlist-search" style="display:none">'
       + '<div class="search-wrapper"><input type="text" id="watchlist-ticker" class="form-control" placeholder="Søk etter aksje eller fond..." autocapitalize="characters" autocorrect="off" spellcheck="false" autocomplete="off">'
-      + '<div class="search-suggestions" id="watchlist-suggestions"></div></div></div>'
-      + this.renderExplore();
+      + '<div class="search-suggestions" id="watchlist-suggestions"></div></div></div>';
   }
 
-  private renderExplore(): string {
-    if (this.stockList.length === 0) return '';
+  private renderWatchlistChart(safeTicker: string, prices: Array<{ date: string; close: number }>): void {
+    const area = document.getElementById('wchart-' + safeTicker);
+    if (!area || prices.length < 2) return;
 
-    const OBX = ['EQNR', 'DNB', 'TEL', 'MOWI', 'YAR', 'ORK', 'NHY', 'AKRBP', 'GJF', 'SALM', 'STB', 'KOG', 'SUBC', 'FRO', 'GOGL', 'NAS', 'AKER', 'BAKKA', 'LSG', 'SCATC', 'TOM', 'AUSS', 'GSF', 'VOW', 'HAFNI'];
-    const ENERGY = ['EQNR', 'AKRBP', 'AKER', 'AKSO', 'VAR', 'BWO', 'BORR', 'SOFF', 'DOFG', 'FLNG', 'BWLPG'];
-    const SEAFOOD = ['MOWI', 'SALM', 'BAKKA', 'LSG', 'GSF', 'AUSS', 'AKVA'];
-    const TECH = ['ATEA', 'LINK', 'CRAYN', 'NEL', 'HEX', 'SCATC'];
+    const data = prices;
+    const first = data[0].close, last = data[data.length - 1].close;
+    const isPos = last >= first;
+    const color = isPos ? '#3d8b37' : '#c0392b';
+    const pct = first > 0 ? ((last - first) / first * 100) : 0;
 
-    // Popular funds by provider
-    const POP_FUNDS = [
-      '0P0000PS3U.IR', '0P0001Q8AD.IR', '0P00000MVB.IR', // DNB
-      '0P0000A82Y.IR', '0P00012AVM.IR', '0P00000O5V.IR', // Storebrand
-      '0P00001BVT.IR', '0P0001OPC5.IR', '0P00018V9L.IR', // KLP
-      '0P000134K7.IR', '0P0001K6NJ.IR',                   // Nordnet
-      '0P00013OX2.IR', '0P00013OX3.IR',                   // Skagen
-      '0P00000SVG.IR', '0P00000O88.IR',                   // ODIN
-    ];
+    // Add info + crosshair
+    const detail = area.parentElement;
+    if (detail) {
+      const sign = pct >= 0 ? '+' : '';
+      const infoHtml = '<div class="watchlist-chart-info" id="winfo-' + safeTicker + '">'
+        + '<span class="' + (isPos ? 'text-success' : 'text-danger') + '">' + sign + pct.toFixed(1) + '% siden ' + formatDateShort(data[0].date) + '</span></div>';
+      area.insertAdjacentHTML('beforebegin', infoHtml);
+    }
 
-    const categories: Array<{ id: string; label: string; filter: (s: StockSuggestion) => boolean }> = [
-      { id: 'OBX', label: 'OBX 25', filter: s => s.type === 'STOCK' && OBX.includes(s.ticker) },
-      { id: 'FOND', label: 'Fond', filter: s => s.type === 'FUND' && POP_FUNDS.includes(s.ticker) },
-      { id: 'ENERGI', label: 'Energi', filter: s => s.type === 'STOCK' && ENERGY.includes(s.ticker) },
-      { id: 'SJØMAT', label: 'Sjømat', filter: s => s.type === 'STOCK' && SEAFOOD.includes(s.ticker) },
-      { id: 'TECH', label: 'Teknologi', filter: s => s.type === 'STOCK' && TECH.includes(s.ticker) },
-    ];
+    area.innerHTML = '<canvas id="wcanvas-' + safeTicker + '"></canvas>'
+      + '<div class="chart-crosshair" id="wcross-' + safeTicker + '"></div>';
 
-    const tabs = categories.map(c =>
-      '<button class="explore-tab' + (this.exploreCategory === c.id ? ' active' : '') + '" data-cat="' + c.id + '">' + c.label + '</button>'
-    ).join('');
+    const canvas = document.getElementById('wcanvas-' + safeTicker) as HTMLCanvasElement;
+    if (!canvas) return;
 
-    const cat = categories.find(c => c.id === this.exploreCategory);
-    const items = cat
-      ? this.stockList
-          .filter(cat.filter)
-          .sort((a, b) => {
-            // Sort by price if available, then by name
-            if (a.currentPrice && b.currentPrice) return b.currentPrice - a.currentPrice;
-            if (a.currentPrice) return -1;
-            if (b.currentPrice) return 1;
-            return a.name.localeCompare(b.name);
-          })
-          .slice(0, 5)
-      : [];
+    const rect = area.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
 
-    const rows = items.map(s => {
-      const isFund = s.type === 'FUND';
-      const label = isFund ? s.name : s.ticker;
-      const sublabel = isFund ? '' : '<div class="explore-name">' + s.name + '</div>';
-      const inWatchlist = this.watchlist.some(w => w.ticker === s.ticker);
-      const isHeld = this.ledger.instruments.some(i => i.ticker === s.ticker) && this.holdings.some(h => {
-        const inst = this.ledger.instruments.find(ii => ii.ticker === s.ticker);
-        return inst && h.isin === inst.isin;
-      });
-      const actionBtn = isHeld
-        ? '<span class="explore-badge">Eid</span>'
-        : inWatchlist
-          ? '<span class="explore-badge">Følger</span>'
-          : '<button class="explore-add" data-ticker="' + s.ticker + '">+</button>';
-      return '<div class="explore-item">'
-        + '<div class="explore-info"><div class="explore-ticker">' + label + '</div>' + sublabel + '</div>'
-        + (s.currentPrice ? '<div class="explore-price">' + s.currentPrice.toFixed(2) + '</div>' : '')
-        + actionBtn
-        + '</div>';
-    }).join('');
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    ctx.scale(dpr, dpr);
 
-    return '<div class="card explore-card">'
-      + '<div class="explore-header">Utforsk</div>'
-      + '<div class="explore-tabs">' + tabs + '</div>'
-      + '<div class="explore-list">' + (rows || '<div class="watchlist-empty"><span class="text-muted text-small">Ingen data</span></div>') + '</div>'
-      + '</div>';
+    const w = rect.width, h = rect.height;
+    const closes = data.map(d => d.close);
+    const minV = Math.min(...closes), maxV = Math.max(...closes);
+    const pad = (maxV - minV) * 0.08 || 1;
+    const rMin = minV - pad, rMax = maxV + pad, range = rMax - rMin;
+
+    const toX = (i: number) => (i / (data.length - 1)) * w;
+    const toY = (v: number) => 10 + (1 - (v - rMin) / range) * (h - 20);
+
+    const pts = data.map((d, i) => ({ x: toX(i), y: toY(d.close) }));
+    const tension = 0.3;
+    const drawSmooth = (close: boolean) => {
+      ctx.moveTo(pts[0].x, pts[0].y);
+      for (let i = 0; i < pts.length - 1; i++) {
+        const p0 = pts[Math.max(0, i - 1)], p1 = pts[i], p2 = pts[i + 1], p3 = pts[Math.min(pts.length - 1, i + 2)];
+        ctx.bezierCurveTo(p1.x + (p2.x - p0.x) * tension, p1.y + (p2.y - p0.y) * tension, p2.x - (p3.x - p1.x) * tension, p2.y - (p3.y - p1.y) * tension, p2.x, p2.y);
+      }
+      if (close) { ctx.lineTo(pts[pts.length - 1].x, h); ctx.lineTo(pts[0].x, h); ctx.closePath(); }
+    };
+
+    const grad = ctx.createLinearGradient(0, toY(maxV), 0, h);
+    grad.addColorStop(0, color + '25'); grad.addColorStop(1, color + '02');
+    ctx.beginPath(); drawSmooth(true); ctx.fillStyle = grad; ctx.fill();
+    ctx.beginPath(); drawSmooth(false); ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.stroke();
+
+    const lastPt = pts[pts.length - 1];
+    ctx.beginPath(); ctx.arc(lastPt.x, lastPt.y, 3, 0, Math.PI * 2); ctx.fillStyle = color; ctx.fill();
+    ctx.beginPath(); ctx.arc(lastPt.x, lastPt.y, 1.5, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill();
+
+    // Touch interaction
+    const crosshair = document.getElementById('wcross-' + safeTicker);
+    const infoEl = document.getElementById('winfo-' + safeTicker);
+    const defaultInfo = infoEl?.innerHTML || '';
+
+    const handleMove = (clientX: number) => {
+      const r = area.getBoundingClientRect();
+      const x = Math.max(0, Math.min(clientX - r.left, r.width));
+      const idx = Math.round((x / r.width) * (data.length - 1));
+      const point = data[Math.max(0, Math.min(idx, data.length - 1))];
+      if (crosshair) { crosshair.style.left = x + 'px'; crosshair.style.display = 'block'; }
+      if (infoEl) {
+        infoEl.innerHTML = '<span class="scrub-date">' + formatDateShort(point.date) + '</span>'
+          + '<span class="scrub-value">' + formatCurrency(point.close, 2) + '</span>';
+      }
+    };
+    const handleEnd = () => {
+      if (crosshair) crosshair.style.display = 'none';
+      if (infoEl) infoEl.innerHTML = defaultInfo;
+    };
+
+    area.addEventListener('touchstart', (e) => { e.preventDefault(); handleMove(e.touches[0].clientX); }, { passive: false });
+    area.addEventListener('touchmove', (e) => { e.preventDefault(); handleMove(e.touches[0].clientX); }, { passive: false });
+    area.addEventListener('touchend', handleEnd);
+    area.addEventListener('mousemove', (e) => handleMove(e.clientX));
+    area.addEventListener('mouseleave', handleEnd);
   }
 
   private renderFooter(): string {
@@ -1673,21 +1712,36 @@ class TallyApp {
       });
     });
 
-    // Explore tabs
-    document.querySelectorAll('.explore-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        this.exploreCategory = (tab as HTMLElement).dataset.cat || 'OBX';
-        this.render();
-        this.attachEventListeners();
-        this.computePortfolioHistory();
+    // Watchlist cards — click to expand detail with chart
+    document.querySelectorAll('.watchlist-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).classList.contains('watchlist-remove')) return;
+        const ticker = (card as HTMLElement).dataset.ticker || '';
+        const safeTicker = ticker.replace(/\./g, '_');
+        const detail = document.getElementById('wdetail-' + safeTicker);
+        if (!detail) return;
+        detail.classList.toggle('active');
+        // Load chart on first expand
+        if (detail.classList.contains('active') && !detail.querySelector('canvas')) {
+          const chartArea = document.getElementById('wchart-' + safeTicker);
+          if (chartArea) {
+            fetchPriceHistory(ticker).then(prices => {
+              if (!detail.classList.contains('active')) return;
+              if (prices.length >= 2) {
+                this.renderWatchlistChart(safeTicker, prices);
+              } else {
+                chartArea.innerHTML = '<span class="text-muted text-small">Ingen prishistorikk</span>';
+              }
+            });
+          }
+        }
       });
     });
 
-    // Explore add-to-watchlist
-    document.querySelectorAll('.explore-add').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const ticker = (btn as HTMLElement).dataset.ticker;
+    // Popular suggestion chips
+    document.querySelectorAll('.suggestion-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const ticker = (chip as HTMLElement).dataset.ticker;
         const stock = this.stockList.find(s => s.ticker === ticker);
         if (stock) this.addToWatchlist(stock);
       });

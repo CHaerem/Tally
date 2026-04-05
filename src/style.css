@@ -873,131 +873,88 @@ header h1 {
   color: var(--danger);
 }
 
+/* Watchlist expandable detail */
+.watchlist-card {
+  cursor: pointer;
+}
+
+.watchlist-detail {
+  display: none;
+  padding: 0 16px 12px;
+}
+
+.watchlist-detail.active {
+  display: block;
+}
+
+.watchlist-chart-info {
+  font-size: 13px;
+  padding: 4px 0;
+}
+
+.watchlist-chart-area {
+  position: relative;
+  height: 80px;
+  cursor: crosshair;
+  touch-action: none;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.watchlist-chart-area canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.watchlist-empty-hint {
+  padding: 16px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Popular suggestions */
+.watchlist-suggestions {
+  padding: 12px 0 4px;
+}
+
+.suggestions-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.suggestions-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.suggestion-chip {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.suggestion-chip:active {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .watchlist-search {
   padding: 8px 16px 12px;
 }
 
 .watchlist-search .search-wrapper {
   position: relative;
-}
-
-/* Explore section */
-.explore-card {
-  margin-top: 12px;
-}
-
-.explore-header {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  color: var(--text-muted);
-  font-weight: 500;
-  padding: 14px 16px 8px;
-}
-
-.explore-tabs {
-  display: flex;
-  gap: 16px;
-  padding: 0 16px 8px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-  border-bottom: 1px solid var(--border);
-}
-
-.explore-tabs::-webkit-scrollbar { display: none; }
-
-.explore-tab {
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  padding: 6px 0;
-  font-size: 13px;
-  font-family: inherit;
-  color: var(--text-muted);
-  cursor: pointer;
-  white-space: nowrap;
-  font-weight: 400;
-  margin-bottom: -1px;
-}
-
-.explore-tab.active {
-  color: var(--text);
-  border-bottom-color: var(--text);
-  font-weight: 600;
-}
-
-.explore-list {
-  padding: 0;
-}
-
-.explore-item {
-  display: flex;
-  align-items: center;
-  padding: 10px 16px;
-  border-bottom: 1px solid var(--border);
-  gap: 10px;
-}
-
-.explore-item:last-child { border-bottom: none; }
-
-.explore-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.explore-ticker {
-  font-weight: 500;
-  font-size: 13px;
-}
-
-.explore-name {
-  font-size: 11px;
-  color: var(--text-muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.explore-price {
-  font-weight: 500;
-  font-size: 13px;
-  font-variant-numeric: tabular-nums;
-  min-width: 60px;
-  text-align: right;
-  color: var(--text-secondary);
-}
-
-.explore-add {
-  background: none;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: var(--text-muted);
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  font-family: inherit;
-  line-height: 1;
-}
-
-.explore-add:active {
-  background: var(--accent-dim);
-  color: var(--accent);
-  border-color: var(--accent);
-}
-
-.explore-badge {
-  font-size: 11px;
-  color: var(--text-muted);
-  background: var(--bg-elevated);
-  padding: 4px 8px;
-  border-radius: 12px;
-  white-space: nowrap;
 }
 
 .dividend-list {
