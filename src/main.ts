@@ -667,14 +667,31 @@ class TallyApp {
           suggestionsEl.classList.remove('active');
           return;
         }
+        const queryWords = query.split(/\s+/).filter(w => w.length > 0);
+        const fuzzyScore = (s: StockSuggestion): number => {
+          const ticker = s.ticker.toUpperCase();
+          const name = s.name.toUpperCase();
+          const combined = ticker + ' ' + name;
+          // All query words must match somewhere (fuzzy: substring match in combined text)
+          const allMatch = queryWords.every(w => combined.includes(w));
+          if (!allMatch) return -1;
+          // Score: exact ticker start = best, then name start, then position-based
+          if (ticker.startsWith(query)) return 100;
+          if (ticker.includes(query)) return 90;
+          if (name.startsWith(query)) return 80;
+          if (name.includes(query)) return 70;
+          // Multi-word: bonus if words match at word boundaries
+          const nameWords = name.split(/\s+/);
+          const boundaryMatches = queryWords.filter(qw =>
+            nameWords.some(nw => nw.startsWith(qw))
+          ).length;
+          return 50 + (boundaryMatches * 5);
+        };
         const matches = this.stockList
-          .filter(s => s.ticker.toUpperCase().includes(query) || s.name.toUpperCase().includes(query))
-          .sort((a, b) => {
-            const aStartsTicker = a.ticker.toUpperCase().startsWith(query) ? 0 : 1;
-            const bStartsTicker = b.ticker.toUpperCase().startsWith(query) ? 0 : 1;
-            if (aStartsTicker !== bStartsTicker) return aStartsTicker - bStartsTicker;
-            return a.name.localeCompare(b.name);
-          })
+          .map(s => ({ stock: s, score: fuzzyScore(s) }))
+          .filter(r => r.score >= 0)
+          .sort((a, b) => b.score - a.score || a.stock.name.localeCompare(b.stock.name))
+          .map(r => r.stock)
           .slice(0, 8);
 
         if (matches.length === 0) {
