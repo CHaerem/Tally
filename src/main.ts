@@ -493,7 +493,8 @@ class TallyApp {
         : this.renderEmptyState())
       + '</main>'
       + this.renderTradeModal()
-      + this.renderImportModal();
+      + this.renderImportModal()
+      + '<div class="modal" id="stock-detail-modal"><div class="modal-sheet" id="stock-detail-sheet"><div class="modal-handle"></div><div id="stock-detail-content"></div></div></div>';
 
     // Prevent body scroll when modal is open
     document.querySelectorAll('.modal').forEach(modal => {
@@ -1068,9 +1069,6 @@ class TallyApp {
         + '</div>'
         + '<button class="watchlist-remove" data-ticker="' + w.ticker + '" aria-label="Fjern">×</button>'
         + '</div>'
-        + '<div class="watchlist-detail" id="wdetail-' + w.ticker.replace(/\./g, '_') + '">'
-        + '<div class="watchlist-chart-area" id="wchart-' + w.ticker.replace(/\./g, '_') + '"><div class="sparkline-placeholder">Laster graf...</div></div>'
-        + '</div>'
         + '</div>';
     }).join('');
 
@@ -1103,97 +1101,156 @@ class TallyApp {
       + '<div class="search-suggestions" id="watchlist-suggestions"></div></div></div>';
   }
 
-  private renderWatchlistChart(safeTicker: string, prices: Array<{ date: string; close: number }>): void {
-    const area = document.getElementById('wchart-' + safeTicker);
-    if (!area || prices.length < 2) return;
+  private showStockDetail(ticker: string): void {
+    const stock = this.stockList.find(s => s.ticker === ticker);
+    if (!stock) return;
 
-    const data = prices;
-    const first = data[0].close, last = data[data.length - 1].close;
-    const isPos = last >= first;
-    const color = isPos ? '#3d8b37' : '#c0392b';
-    const pct = first > 0 ? ((last - first) / first * 100) : 0;
+    const modal = document.getElementById('stock-detail-modal');
+    const content = document.getElementById('stock-detail-content');
+    if (!modal || !content) return;
 
-    // Add info + crosshair
-    const detail = area.parentElement;
-    if (detail) {
+    const isFund = stock.type === 'FUND';
+    const label = isFund ? stock.name : stock.ticker;
+    const sublabel = isFund ? 'Fond' : stock.name;
+    const price = stock.currentPrice;
+    const inWatchlist = this.watchlist.some(w => w.ticker === ticker);
+    const isHeld = this.holdings.some(h => {
+      const inst = this.ledger.instruments.find(i => i.ticker === ticker);
+      return inst && h.isin === inst.isin;
+    });
+
+    const safeTicker = ticker.replace(/\./g, '_');
+    const actions = isHeld
+      ? '<span class="detail-badge">I din portefølje</span>'
+      : '<div class="detail-actions">'
+        + (inWatchlist
+          ? '<button class="btn btn-small btn-outline" id="detail-unwatch" data-ticker="' + ticker + '">Fjern fra følgeliste</button>'
+          : '<button class="btn btn-small btn-outline" id="detail-watch" data-ticker="' + ticker + '">+ Følg</button>')
+        + '<button class="btn btn-small btn-primary" id="detail-buy" data-ticker="' + ticker + '">Kjøp</button>'
+        + '</div>';
+
+    content.innerHTML = '<div class="detail-header">'
+      + '<div class="detail-label">' + label + '</div>'
+      + '<div class="detail-sublabel">' + sublabel + '</div>'
+      + (price ? '<div class="detail-price">' + price.toFixed(2) + ' kr</div>' : '')
+      + '</div>'
+      + '<div class="detail-chart-info" id="sdetail-info-' + safeTicker + '"></div>'
+      + '<div class="detail-chart-area" id="sdetail-chart-' + safeTicker + '"><div class="sparkline-placeholder">Laster graf...</div></div>'
+      + actions;
+
+    modal.classList.add('active');
+
+    // Close on backdrop
+    modal.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).id === 'stock-detail-modal') modal.classList.remove('active');
+    }, { once: true });
+
+    // Load chart
+    fetchPriceHistory(ticker).then(prices => {
+      const chartArea = document.getElementById('sdetail-chart-' + safeTicker);
+      const infoEl = document.getElementById('sdetail-info-' + safeTicker);
+      if (!chartArea || prices.length < 2) {
+        if (chartArea) chartArea.innerHTML = '<span class="text-muted text-small">Ingen prishistorikk</span>';
+        return;
+      }
+
+      const data = prices;
+      const first = data[0].close, last = data[data.length - 1].close;
+      const isPos = last >= first;
+      const color = isPos ? '#3d8b37' : '#c0392b';
+      const pct = first > 0 ? ((last - first) / first * 100) : 0;
       const sign = pct >= 0 ? '+' : '';
-      const infoHtml = '<div class="watchlist-chart-info" id="winfo-' + safeTicker + '">'
-        + '<span class="' + (isPos ? 'text-success' : 'text-danger') + '">' + sign + pct.toFixed(1) + '% siden ' + formatDateShort(data[0].date) + '</span></div>';
-      area.insertAdjacentHTML('beforebegin', infoHtml);
-    }
 
-    area.innerHTML = '<canvas id="wcanvas-' + safeTicker + '"></canvas>'
-      + '<div class="chart-crosshair" id="wcross-' + safeTicker + '"></div>';
-
-    const canvas = document.getElementById('wcanvas-' + safeTicker) as HTMLCanvasElement;
-    if (!canvas) return;
-
-    const rect = area.getBoundingClientRect();
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    canvas.style.width = rect.width + 'px';
-    canvas.style.height = rect.height + 'px';
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-    ctx.scale(dpr, dpr);
-
-    const w = rect.width, h = rect.height;
-    const closes = data.map(d => d.close);
-    const minV = Math.min(...closes), maxV = Math.max(...closes);
-    const pad = (maxV - minV) * 0.08 || 1;
-    const rMin = minV - pad, rMax = maxV + pad, range = rMax - rMin;
-
-    const toX = (i: number) => (i / (data.length - 1)) * w;
-    const toY = (v: number) => 10 + (1 - (v - rMin) / range) * (h - 20);
-
-    const pts = data.map((d, i) => ({ x: toX(i), y: toY(d.close) }));
-    const tension = 0.3;
-    const drawSmooth = (close: boolean) => {
-      ctx.moveTo(pts[0].x, pts[0].y);
-      for (let i = 0; i < pts.length - 1; i++) {
-        const p0 = pts[Math.max(0, i - 1)], p1 = pts[i], p2 = pts[i + 1], p3 = pts[Math.min(pts.length - 1, i + 2)];
-        ctx.bezierCurveTo(p1.x + (p2.x - p0.x) * tension, p1.y + (p2.y - p0.y) * tension, p2.x - (p3.x - p1.x) * tension, p2.y - (p3.y - p1.y) * tension, p2.x, p2.y);
-      }
-      if (close) { ctx.lineTo(pts[pts.length - 1].x, h); ctx.lineTo(pts[0].x, h); ctx.closePath(); }
-    };
-
-    const grad = ctx.createLinearGradient(0, toY(maxV), 0, h);
-    grad.addColorStop(0, color + '25'); grad.addColorStop(1, color + '02');
-    ctx.beginPath(); drawSmooth(true); ctx.fillStyle = grad; ctx.fill();
-    ctx.beginPath(); drawSmooth(false); ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.stroke();
-
-    const lastPt = pts[pts.length - 1];
-    ctx.beginPath(); ctx.arc(lastPt.x, lastPt.y, 3, 0, Math.PI * 2); ctx.fillStyle = color; ctx.fill();
-    ctx.beginPath(); ctx.arc(lastPt.x, lastPt.y, 1.5, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill();
-
-    // Touch interaction
-    const crosshair = document.getElementById('wcross-' + safeTicker);
-    const infoEl = document.getElementById('winfo-' + safeTicker);
-    const defaultInfo = infoEl?.innerHTML || '';
-
-    const handleMove = (clientX: number) => {
-      const r = area.getBoundingClientRect();
-      const x = Math.max(0, Math.min(clientX - r.left, r.width));
-      const idx = Math.round((x / r.width) * (data.length - 1));
-      const point = data[Math.max(0, Math.min(idx, data.length - 1))];
-      if (crosshair) { crosshair.style.left = x + 'px'; crosshair.style.display = 'block'; }
       if (infoEl) {
-        infoEl.innerHTML = '<span class="scrub-date">' + formatDateShort(point.date) + '</span>'
-          + '<span class="scrub-value">' + formatCurrency(point.close, 2) + '</span>';
+        infoEl.innerHTML = '<span class="' + (isPos ? 'text-success' : 'text-danger') + '">' + sign + pct.toFixed(1) + '% siden ' + formatDateShort(data[0].date) + '</span>';
       }
-    };
-    const handleEnd = () => {
-      if (crosshair) crosshair.style.display = 'none';
-      if (infoEl) infoEl.innerHTML = defaultInfo;
-    };
 
-    area.addEventListener('touchstart', (e) => { e.preventDefault(); handleMove(e.touches[0].clientX); }, { passive: false });
-    area.addEventListener('touchmove', (e) => { e.preventDefault(); handleMove(e.touches[0].clientX); }, { passive: false });
-    area.addEventListener('touchend', handleEnd);
-    area.addEventListener('mousemove', (e) => handleMove(e.clientX));
-    area.addEventListener('mouseleave', handleEnd);
+      chartArea.innerHTML = '<canvas id="sdetail-canvas-' + safeTicker + '"></canvas>'
+        + '<div class="chart-crosshair" id="sdetail-cross-' + safeTicker + '"></div>';
+
+      const canvas = document.getElementById('sdetail-canvas-' + safeTicker) as HTMLCanvasElement;
+      if (!canvas) return;
+
+      const rect = chartArea.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr; canvas.height = rect.height * dpr;
+      canvas.style.width = rect.width + 'px'; canvas.style.height = rect.height + 'px';
+
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+      ctx.scale(dpr, dpr);
+
+      const w = rect.width, h = rect.height;
+      const closes = data.map(d => d.close);
+      const minV = Math.min(...closes), maxV = Math.max(...closes);
+      const valPad = (maxV - minV) * 0.08 || 1;
+      const rMin = minV - valPad, range = (maxV + valPad) - rMin;
+      const toX = (i: number) => (i / (data.length - 1)) * w;
+      const toY = (v: number) => 10 + (1 - (v - rMin) / range) * (h - 20);
+
+      const pts = data.map((d, i) => ({ x: toX(i), y: toY(d.close) }));
+      const tension = 0.3;
+      const drawSmooth = (close: boolean) => {
+        ctx.moveTo(pts[0].x, pts[0].y);
+        for (let i = 0; i < pts.length - 1; i++) {
+          const p0 = pts[Math.max(0, i - 1)], p1 = pts[i], p2 = pts[i + 1], p3 = pts[Math.min(pts.length - 1, i + 2)];
+          ctx.bezierCurveTo(p1.x + (p2.x - p0.x) * tension, p1.y + (p2.y - p0.y) * tension, p2.x - (p3.x - p1.x) * tension, p2.y - (p3.y - p1.y) * tension, p2.x, p2.y);
+        }
+        if (close) { ctx.lineTo(pts[pts.length - 1].x, h); ctx.lineTo(pts[0].x, h); ctx.closePath(); }
+      };
+
+      const grad = ctx.createLinearGradient(0, toY(maxV), 0, h);
+      grad.addColorStop(0, color + '25'); grad.addColorStop(1, color + '02');
+      ctx.beginPath(); drawSmooth(true); ctx.fillStyle = grad; ctx.fill();
+      ctx.beginPath(); drawSmooth(false); ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.stroke();
+      const lp = pts[pts.length - 1];
+      ctx.beginPath(); ctx.arc(lp.x, lp.y, 3, 0, Math.PI * 2); ctx.fillStyle = color; ctx.fill();
+      ctx.beginPath(); ctx.arc(lp.x, lp.y, 1.5, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill();
+
+      // Touch
+      const crosshair = document.getElementById('sdetail-cross-' + safeTicker);
+      const defaultInfo = infoEl?.innerHTML || '';
+      const handleMove = (clientX: number) => {
+        const r = chartArea.getBoundingClientRect();
+        const x = Math.max(0, Math.min(clientX - r.left, r.width));
+        const idx = Math.round((x / r.width) * (data.length - 1));
+        const point = data[Math.max(0, Math.min(idx, data.length - 1))];
+        if (crosshair) { crosshair.style.left = x + 'px'; crosshair.style.display = 'block'; }
+        if (infoEl) {
+          infoEl.innerHTML = '<span class="scrub-date">' + formatDateShort(point.date) + '</span>'
+            + '<span class="scrub-value">' + formatCurrency(point.close, 2) + '</span>';
+        }
+      };
+      const handleEnd = () => {
+        if (crosshair) crosshair.style.display = 'none';
+        if (infoEl) infoEl.innerHTML = defaultInfo;
+      };
+      chartArea.addEventListener('touchstart', (e) => { e.preventDefault(); handleMove(e.touches[0].clientX); }, { passive: false });
+      chartArea.addEventListener('touchmove', (e) => { e.preventDefault(); handleMove(e.touches[0].clientX); }, { passive: false });
+      chartArea.addEventListener('touchend', handleEnd);
+      chartArea.addEventListener('mousemove', (e) => handleMove(e.clientX));
+      chartArea.addEventListener('mouseleave', handleEnd);
+    });
+
+    // Action button listeners
+    document.getElementById('detail-watch')?.addEventListener('click', () => {
+      if (stock) this.addToWatchlist(stock);
+      modal.classList.remove('active');
+    });
+    document.getElementById('detail-unwatch')?.addEventListener('click', () => {
+      this.removeFromWatchlist(ticker);
+      modal.classList.remove('active');
+    });
+    document.getElementById('detail-buy')?.addEventListener('click', () => {
+      modal.classList.remove('active');
+      const inst = this.ledger.instruments.find(i => i.ticker === ticker);
+      this.showTradeModal('full', {
+        ticker: stock.ticker,
+        name: stock.name,
+        isin: inst?.isin || '',
+        instrumentType: stock.type,
+      });
+    });
   }
 
   private renderFooter(): string {
@@ -1712,38 +1769,20 @@ class TallyApp {
       });
     });
 
-    // Watchlist cards — click to expand detail with chart
+    // Watchlist cards — click to open detail modal
     document.querySelectorAll('.watchlist-card').forEach(card => {
       card.addEventListener('click', (e) => {
         if ((e.target as HTMLElement).classList.contains('watchlist-remove')) return;
         const ticker = (card as HTMLElement).dataset.ticker || '';
-        const safeTicker = ticker.replace(/\./g, '_');
-        const detail = document.getElementById('wdetail-' + safeTicker);
-        if (!detail) return;
-        detail.classList.toggle('active');
-        // Load chart on first expand
-        if (detail.classList.contains('active') && !detail.querySelector('canvas')) {
-          const chartArea = document.getElementById('wchart-' + safeTicker);
-          if (chartArea) {
-            fetchPriceHistory(ticker).then(prices => {
-              if (!detail.classList.contains('active')) return;
-              if (prices.length >= 2) {
-                this.renderWatchlistChart(safeTicker, prices);
-              } else {
-                chartArea.innerHTML = '<span class="text-muted text-small">Ingen prishistorikk</span>';
-              }
-            });
-          }
-        }
+        this.showStockDetail(ticker);
       });
     });
 
-    // Popular suggestion chips
+    // Popular suggestion chips — open detail modal
     document.querySelectorAll('.suggestion-chip').forEach(chip => {
       chip.addEventListener('click', () => {
         const ticker = (chip as HTMLElement).dataset.ticker;
-        const stock = this.stockList.find(s => s.ticker === ticker);
-        if (stock) this.addToWatchlist(stock);
+        if (ticker) this.showStockDetail(ticker);
       });
     });
 
