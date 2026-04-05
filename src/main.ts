@@ -494,7 +494,7 @@ class TallyApp {
       + '</main>'
       + this.renderTradeModal()
       + this.renderImportModal()
-      + '<div class="modal" id="stock-detail-modal"><div class="modal-sheet" id="stock-detail-sheet"><div class="modal-handle"></div><div id="stock-detail-content"></div></div></div>';
+;
 
     // Prevent body scroll when modal is open
     document.querySelectorAll('.modal').forEach(modal => {
@@ -1058,6 +1058,7 @@ class TallyApp {
       const isFund = w.type === 'FUND';
       const label = isFund ? w.name : w.ticker;
       const sublabel = isFund ? 'Fond' : w.name;
+      const safeTicker = w.ticker.replace(/\./g, '_');
       return '<div class="watchlist-card" data-ticker="' + w.ticker + '">'
         + '<div class="watchlist-item">'
         + '<div class="watchlist-info">'
@@ -1067,22 +1068,30 @@ class TallyApp {
         + '<div class="watchlist-values">'
         + (price ? '<div class="watchlist-price">' + price.toFixed(2) + '</div>' : '<div class="watchlist-price text-muted">—</div>')
         + '</div>'
-        + '<button class="watchlist-remove" data-ticker="' + w.ticker + '" aria-label="Fjern">×</button>'
+        + '</div>'
+        // Expandable detail section
+        + '<div class="stock-detail" id="sdetail-' + safeTicker + '">'
+        + '<div class="stock-detail-chart-info" id="sdinfo-' + safeTicker + '"></div>'
+        + '<div class="stock-detail-chart" id="sdchart-' + safeTicker + '"><div class="sparkline-placeholder">Laster graf...</div></div>'
+        + '<div class="stock-detail-actions">'
+        + '<button class="btn btn-small btn-outline watchlist-remove" data-ticker="' + w.ticker + '">Fjern</button>'
+        + '<button class="btn btn-small btn-primary stock-buy" data-ticker="' + w.ticker + '">Kjøp</button>'
+        + '</div>'
         + '</div>'
         + '</div>';
     }).join('');
 
-    // Popular suggestions when watchlist is empty
+    // Popular suggestions when watchlist is small
     const POPULAR = ['EQNR', 'DNB', 'MOWI', 'YAR', 'TEL', 'ORK'];
-    const suggestions = this.watchlist.length === 0 && this.stockList.length > 0
-      ? '<div class="watchlist-suggestions">'
-        + '<div class="suggestions-label">Populære aksjer</div>'
+    const suggestTickers = POPULAR.filter(t => !this.watchlist.some(w => w.ticker === t));
+    const suggestions = suggestTickers.length > 0 && this.stockList.length > 0
+      ? '<div class="suggestions-label">Populære</div>'
         + '<div class="suggestions-chips">'
-        + POPULAR.map(t => {
+        + suggestTickers.slice(0, 4).map(t => {
           const s = this.stockList.find(x => x.ticker === t);
           return s ? '<button class="suggestion-chip" data-ticker="' + t + '">' + t + '</button>' : '';
         }).join('')
-        + '</div></div>'
+        + '</div>'
       : '';
 
     return '<div class="card-header"><h2>Følgeliste</h2><button class="btn btn-small btn-outline" id="add-watchlist">+ Legg til</button></div>'
@@ -1101,56 +1110,14 @@ class TallyApp {
       + '<div class="search-suggestions" id="watchlist-suggestions"></div></div></div>';
   }
 
-  private showStockDetail(ticker: string): void {
-    const stock = this.stockList.find(s => s.ticker === ticker);
-    if (!stock) return;
+  private loadStockDetailChart(ticker: string, safeTicker: string): void {
+    const chartArea = document.getElementById('sdchart-' + safeTicker);
+    const infoEl = document.getElementById('sdinfo-' + safeTicker);
+    if (!chartArea) return;
 
-    const modal = document.getElementById('stock-detail-modal');
-    const content = document.getElementById('stock-detail-content');
-    if (!modal || !content) return;
-
-    const isFund = stock.type === 'FUND';
-    const label = isFund ? stock.name : stock.ticker;
-    const sublabel = isFund ? 'Fond' : stock.name;
-    const price = stock.currentPrice;
-    const inWatchlist = this.watchlist.some(w => w.ticker === ticker);
-    const isHeld = this.holdings.some(h => {
-      const inst = this.ledger.instruments.find(i => i.ticker === ticker);
-      return inst && h.isin === inst.isin;
-    });
-
-    const safeTicker = ticker.replace(/\./g, '_');
-    const actions = isHeld
-      ? '<span class="detail-badge">I din portefølje</span>'
-      : '<div class="detail-actions">'
-        + (inWatchlist
-          ? '<button class="btn btn-small btn-outline" id="detail-unwatch" data-ticker="' + ticker + '">Fjern fra følgeliste</button>'
-          : '<button class="btn btn-small btn-outline" id="detail-watch" data-ticker="' + ticker + '">+ Følg</button>')
-        + '<button class="btn btn-small btn-primary" id="detail-buy" data-ticker="' + ticker + '">Kjøp</button>'
-        + '</div>';
-
-    content.innerHTML = '<div class="detail-header">'
-      + '<div class="detail-label">' + label + '</div>'
-      + '<div class="detail-sublabel">' + sublabel + '</div>'
-      + (price ? '<div class="detail-price">' + price.toFixed(2) + ' kr</div>' : '')
-      + '</div>'
-      + '<div class="detail-chart-info" id="sdetail-info-' + safeTicker + '"></div>'
-      + '<div class="detail-chart-area" id="sdetail-chart-' + safeTicker + '"><div class="sparkline-placeholder">Laster graf...</div></div>'
-      + actions;
-
-    modal.classList.add('active');
-
-    // Close on backdrop
-    modal.addEventListener('click', (e) => {
-      if ((e.target as HTMLElement).id === 'stock-detail-modal') modal.classList.remove('active');
-    }, { once: true });
-
-    // Load chart
     fetchPriceHistory(ticker).then(prices => {
-      const chartArea = document.getElementById('sdetail-chart-' + safeTicker);
-      const infoEl = document.getElementById('sdetail-info-' + safeTicker);
-      if (!chartArea || prices.length < 2) {
-        if (chartArea) chartArea.innerHTML = '<span class="text-muted text-small">Ingen prishistorikk</span>';
+      if (prices.length < 2) {
+        chartArea.innerHTML = '<span class="text-muted text-small">Ingen prishistorikk</span>';
         return;
       }
 
@@ -1165,10 +1132,10 @@ class TallyApp {
         infoEl.innerHTML = '<span class="' + (isPos ? 'text-success' : 'text-danger') + '">' + sign + pct.toFixed(1) + '% siden ' + formatDateShort(data[0].date) + '</span>';
       }
 
-      chartArea.innerHTML = '<canvas id="sdetail-canvas-' + safeTicker + '"></canvas>'
-        + '<div class="chart-crosshair" id="sdetail-cross-' + safeTicker + '"></div>';
+      chartArea.innerHTML = '<canvas id="sdcanvas-' + safeTicker + '"></canvas>'
+        + '<div class="chart-crosshair" id="sdcross-' + safeTicker + '"></div>';
 
-      const canvas = document.getElementById('sdetail-canvas-' + safeTicker) as HTMLCanvasElement;
+      const canvas = document.getElementById('sdcanvas-' + safeTicker) as HTMLCanvasElement;
       if (!canvas) return;
 
       const rect = chartArea.getBoundingClientRect();
@@ -1186,7 +1153,7 @@ class TallyApp {
       const valPad = (maxV - minV) * 0.08 || 1;
       const rMin = minV - valPad, range = (maxV + valPad) - rMin;
       const toX = (i: number) => (i / (data.length - 1)) * w;
-      const toY = (v: number) => 10 + (1 - (v - rMin) / range) * (h - 20);
+      const toY = (v: number) => 8 + (1 - (v - rMin) / range) * (h - 16);
 
       const pts = data.map((d, i) => ({ x: toX(i), y: toY(d.close) }));
       const tension = 0.3;
@@ -1207,8 +1174,8 @@ class TallyApp {
       ctx.beginPath(); ctx.arc(lp.x, lp.y, 3, 0, Math.PI * 2); ctx.fillStyle = color; ctx.fill();
       ctx.beginPath(); ctx.arc(lp.x, lp.y, 1.5, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill();
 
-      // Touch
-      const crosshair = document.getElementById('sdetail-cross-' + safeTicker);
+      // Touch interaction
+      const crosshair = document.getElementById('sdcross-' + safeTicker);
       const defaultInfo = infoEl?.innerHTML || '';
       const handleMove = (clientX: number) => {
         const r = chartArea.getBoundingClientRect();
@@ -1230,26 +1197,6 @@ class TallyApp {
       chartArea.addEventListener('touchend', handleEnd);
       chartArea.addEventListener('mousemove', (e) => handleMove(e.clientX));
       chartArea.addEventListener('mouseleave', handleEnd);
-    });
-
-    // Action button listeners
-    document.getElementById('detail-watch')?.addEventListener('click', () => {
-      if (stock) this.addToWatchlist(stock);
-      modal.classList.remove('active');
-    });
-    document.getElementById('detail-unwatch')?.addEventListener('click', () => {
-      this.removeFromWatchlist(ticker);
-      modal.classList.remove('active');
-    });
-    document.getElementById('detail-buy')?.addEventListener('click', () => {
-      modal.classList.remove('active');
-      const inst = this.ledger.instruments.find(i => i.ticker === ticker);
-      this.showTradeModal('full', {
-        ticker: stock.ticker,
-        name: stock.name,
-        isin: inst?.isin || '',
-        instrumentType: stock.type,
-      });
     });
   }
 
@@ -1769,20 +1716,42 @@ class TallyApp {
       });
     });
 
-    // Watchlist cards — click to open detail modal
+    // Watchlist cards — click to expand inline detail
     document.querySelectorAll('.watchlist-card').forEach(card => {
       card.addEventListener('click', (e) => {
-        if ((e.target as HTMLElement).classList.contains('watchlist-remove')) return;
+        const target = e.target as HTMLElement;
+        if (target.classList.contains('watchlist-remove') || target.classList.contains('stock-buy')) return;
         const ticker = (card as HTMLElement).dataset.ticker || '';
-        this.showStockDetail(ticker);
+        const safeTicker = ticker.replace(/\./g, '_');
+        const detail = document.getElementById('sdetail-' + safeTicker);
+        if (!detail) return;
+        detail.classList.toggle('active');
+        // Load chart on first expand
+        if (detail.classList.contains('active') && !detail.querySelector('canvas')) {
+          this.loadStockDetailChart(ticker, safeTicker);
+        }
       });
     });
 
-    // Popular suggestion chips — open detail modal
+    // Buy buttons in stock detail
+    document.querySelectorAll('.stock-buy').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const ticker = (btn as HTMLElement).dataset.ticker;
+        const stock = this.stockList.find(s => s.ticker === ticker);
+        if (stock) {
+          const inst = this.ledger.instruments.find(i => i.ticker === ticker);
+          this.showTradeModal('full', { ticker: stock.ticker, name: stock.name, isin: inst?.isin || '', instrumentType: stock.type });
+        }
+      });
+    });
+
+    // Popular suggestion chips — add to watchlist
     document.querySelectorAll('.suggestion-chip').forEach(chip => {
       chip.addEventListener('click', () => {
         const ticker = (chip as HTMLElement).dataset.ticker;
-        if (ticker) this.showStockDetail(ticker);
+        const stock = this.stockList.find(s => s.ticker === ticker);
+        if (stock) this.addToWatchlist(stock);
       });
     });
 
