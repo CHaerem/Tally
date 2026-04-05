@@ -46,6 +46,9 @@ jobs:
             echo "mode=incremental" >> $GITHUB_OUTPUT
           fi
 
+      - name: Install dependencies
+        run: npm ci
+
       - name: Fetch stock data from Yahoo Finance
         run: |
           MODE="${{ steps.mode.outputs.mode }}"
