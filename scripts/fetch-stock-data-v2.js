@@ -30,10 +30,35 @@ const FUND_SYMBOLS = [
   // DNB
   '0P0000PS3U.IR',  // DNB Norge Indeks
   '0P00000NKJ.IR',  // DNB Norge
-  '0P0000PS3V.IR',  // DNB Global Indeks
+  '0P0001EFNB.IR',  // DNB Norge A
+  '0P0001EFNG.IR',  // DNB Norge Selektiv
+  '0P0001Q8AD.IR',  // DNB Global Indeks
+  '0P00000MUA.IR',  // DNB Global Emerging Markets
   '0P00000MVB.IR',  // DNB Teknologi
-  '0P00000MUY.IR',  // DNB Health Care
+  '0P0001BJ8T.IR',  // DNB Miljøinvest
+  '0P0001CTL0.IR',  // DNB Norden Indeks
+  '0P0001EFN5.IR',  // DNB Norden
+  '0P0001BJ8N.IR',  // DNB Finans
+  '0P00000O4C.IR',  // DNB Barnefond
+  '0P0001EFNK.IR',  // DNB Obligasjon
+  '0P0001EFNN.IR',  // DNB Obligasjon 20
+  '0P00017AUH.IR',  // DNB Global Treasury
+  '0P0001F1IM.IR',  // DNB AM Norske Aksjer
+  // Storebrand
+  '0P0001HAP0.IR',  // Storebrand Norge
+  '0P00012AVM.IR',  // Storebrand Indeks Norge
+  '0P0001ACQT.IR',  // Storebrand Norge Horisont
+  '0P0000A82Y.IR',  // Storebrand Global Indeks
+  '0P0001BL9W.IR',  // Storebrand Global Optimised
+  '0P00007ZI2.IR',  // Storebrand Global Multifactor
+  '0P0001M3YC.IR',  // Storebrand Indeks - Norden
+  '0P00000O5V.IR',  // Storebrand Verdi
+  '0P0001KO95.IR',  // Storebrand Vekst
+  '0P00000O4T.IR',  // Storebrand Aksje Innland
+  '0P0000TNI3.IR',  // Storebrand Forsiktig
+  '0P0001HAOZ.IR',  // Storebrand Likviditet
   // KLP
+  '0P00001BVT.IR',  // KLP AksjeNorge Indeks
   '0P0001OPC5.IR',  // KLP AksjeVerden Indeks
   '0P00018V9L.IR',  // KLP AksjeGlobal Indeks
   '0P0001OPBV.IR',  // KLP AksjeNorden Indeks
@@ -41,48 +66,122 @@ const FUND_SYMBOLS = [
   '0P0001OPBA.IR',  // KLP AksjeEuropa Indeks
   '0P0001OPBE.IR',  // KLP AksjeFremvoksende Markeder Indeks
   '0P0001OPBN.IR',  // KLP AksjeGlobal Mer Samfunnsansvar
+  '0P0001OPBH.IR',  // KLP AksjeGlobal Flerfaktor
+  '0P0001BWAQ.IR',  // KLP AksjeGlobal Small Cap Indeks
+  '0P00006D9Q.IR',  // KLP AksjeAsia Indeks
+  '0P00000MY9.IR',  // KLP Obligasjon 5 år
+  '0P0001IFZZ.IR',  // KLP Obligasjon 1 år Mer Samfunnsansvar
+  '0P00002C94.IR',  // KLP Obligasjon Global
+  '0P00000MYB.IR',  // KLP Likviditet
+  '0P00019ADK.IR',  // KLP Framtid
   // Nordnet
   '0P000134K7.IR',  // Nordnet Indeksfond Norge
   '0P0001K6NJ.IR',  // Nordnet Indeksfond Global
+  '0P0001RMV1.IR',  // Nordnet Global Indeks 125
   '0P0001M5YQ.IR',  // Nordnet Indeksfond Teknologi
   '0P0001K6NB.IR',  // Nordnet Indeksfond Emerging Markets
-  // Storebrand
-  '0P0001HAP0.IR',  // Storebrand Norge
-  '0P0000A82Y.IR',  // Storebrand Global Indeks
-  '0P0000TJH9.IR',  // Storebrand Indeks - Alle Markeder
-  '0P0000TJH8.IR',  // Storebrand Indeks - Nye Markeder
-  // Nordea
-  '0P0001WACD.IR',  // Nordea Norge Verdi
-  '0P0001SQMA.IR',  // Nordea Norge Indeks
   // ODIN
   '0P000161CO.IR',  // ODIN Aksje
   '0P00000SVG.IR',  // ODIN Norge
   '0P00000SVE.IR',  // ODIN Norden
+  '0P00000O88.IR',  // ODIN Global
+  '0P00000SVP.IR',  // ODIN Eiendom
+  '0P0001J3OK.IR',  // ODIN Small Cap
+  '0P00000OC2.IR',  // ODIN Norsk Obligasjon
+  // Nordea
+  '0P0001SQM9.IR',  // Nordea Norge Verdi
+  '0P0001SQMA.IR',  // Nordea Norge Pluss
+  '0P0001TPW6.IR',  // Nordea Stabile Aksjer Global
+  '0P0001TPW7.IR',  // Nordea Avkastning
+  '0P0001CKST.IR',  // Nordea Global Enhanced
   // Skagen
   '0P00013OX2.IR',  // Skagen Global
   '0P00013OX3.IR',  // Skagen Kon-Tiki
+  '0P00013OX6.IR',  // Skagen Vekst
   '0P00015YSS.IR',  // Skagen Focus
   // Holberg
   '0P00000OCZ.IR',  // Holberg Norge
-  '0P00000OCV.IR',  // Holberg Norden
   '0P00000OCX.IR',  // Holberg Global
+  '0P0001IZAY.IR',  // Holberg Global Valutasikret
+  '0P00000NXT.IR',  // Holberg Obligasjon Norden
+  '0P00000OCR.IR',  // Holberg Likviditet
   // Delphi
   '0P00000HCS.IR',  // Delphi Norge
   '0P00005UKR.IR',  // Delphi Global
-  '0P00000HCU.IR',  // Delphi Nordic
+  '0P0001A1QS.IR',  // Delphi Global Valutasikret
+  '0P00000HCV.IR',  // Delphi Kombinasjon
   // Alfred Berg
-  '0P00000MT3.IR',  // Alfred Berg Norge Classic
+  '0P00000MT3.IR',  // Alfred Berg Norge
   '0P00000MVR.IR',  // Alfred Berg Gambak
+  '0P00000O9F.IR',  // Alfred Berg Gambak Global
+  '0P0001EUC3.IR',  // Alfred Berg Gambak Nordic
+  '0P00000MSP.IR',  // Alfred Berg Aktiv
+  '0P000015PZ.IR',  // Alfred Berg Indeks
+  // Arctic
+  '0P0000S1O6.IR',  // Arctic Norwegian Equities
+  '0P000195U2.IR',  // Arctic Norwegian Value Creation
+  '0P00015EZF.IR',  // Arctic Return
+  '0P0000RUOV.IR',  // Arctic Nordic Corporate Bond
+  '0P0000RUOU.IR',  // Arctic Nordic Investment Grade
   // Handelsbanken
   '0P0001CW9F.IR',  // Handelsbanken Norge
+  '0P0001A1QL.IR',  // Handelsbanken Norge A1
   // Pareto
   '0P00000NY6.IR',  // Pareto Aksje Norge
+  '0P00001BTH.IR',  // Pareto Global
+  '0P00000OAI.IR',  // Pareto Obligasjon
+  '0P0000YT99.IR',  // Pareto Nordic Corporate Bond
+  // Landkreditt
+  '0P00001E5D.IR',  // Landkreditt Aksje Global
+  '0P0000Y66P.IR',  // Landkreditt Utbytte
+  '0P0001FTOL.IR',  // Landkreditt Norden Utbytte
+  '0P00001E5H.IR',  // Landkreditt Høyrente
+  '0P0000X9XC.IR',  // Landkreditt Extra
+  // PLUSS (Fondsforvaltning)
+  '0P00000MXR.IR',  // PLUSS Aksje
+  '0P00000MXH.IR',  // PLUSS Markedsverdi
+  '0P00000MX1.IR',  // PLUSS Utland Aksje
+  '0P0001T9DH.IR',  // PLUSS Obligasjon
+  '0P00000MXL.IR',  // PLUSS Likviditet
+  // C WorldWide
+  '0P00000O6S.IR',  // C WorldWide Norge
+  '0P00000SV3.IR',  // C WorldWide Stabile Aksjer
+  // Norne
+  '0P0001LR0Y.IR',  // Norne Aksje Norge
+  '0P0001J97B.IR',  // Norne Aksje Classic
+  '0P0001KDPB.IR',  // Norne Rente
+  '0P0001LR14.IR',  // Norne Kombi 80
+  '0P0001LRWP.IR',  // Norne Kombi 20
+  '0P0001LRWQ.IR',  // Norne Kombi 50
   // Fondsfinans
   '0P00000L92.IR',  // Fondsfinans Norge
+  '0P00000HII.IR',  // Fondsfinans Aktiv 60/40
+  '0P00000HIN.IR',  // Fondsfinans Fornybar Energi
+  '0P0001IEW6.IR',  // Fondsfinans Utbytte
+  '0P00016NF4.IR',  // Fondsfinans Norden Utbytte
+  '0P000131AW.IR',  // Fondsfinans High Yield
+  '0P00017UZ2.IR',  // Fondsfinans Obligasjon
   // Eika
   '0P00000HD4.IR',  // Eika Norge
   '0P00000ODT.IR',  // Eika Global
-  '0P00000KET.IR',  // Eika Spar
+  '0P00000NYF.IR',  // Eika Balansert
+  // SpareBank 1
+  '0P0001PMGR.IR',  // SpareBank 1 Indeks Global
+  '0P0001MLUK.IR',  // SpareBank 1 Norge Verdi
+  '0P0001LLD4.IR',  // SpareBank 1 Aksjer Svanemerket
+  '0P0000X18D.IR',  // SpareBank 1 Indeks Moderat 50
+  '0P0000Z0FJ.IR',  // SpareBank 1 Indeks Forsiktig 25
+  // Danske Invest
+  '0P0000ZSIB.IR',  // Danske Invest Norsk Kort Obligasjon
+  '0P00016RIB.IR',  // Danske Invest Norske Aksjer Inst
+  // Carnegie
+  '0P0001RTTV.IR',  // Carnegie Global Resilient Small Cap
+  // FIRST
+  '0P0001IBOU.IR',  // FIRST Veritas
+  // Sbanken
+  '0P00017BQO.IR',  // Sbanken Framgang Sammen
+  // Gjensidige
+  '0P0000J7K8.IR',  // Gjensidige Likviditet
 ];
 
 // Norwegian stocks on Oslo Børs (OBX, main list, Euronext Growth)
