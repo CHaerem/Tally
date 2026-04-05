@@ -1954,7 +1954,18 @@ class TallyApp {
     let result;
     if (isVPSFile(file)) {
       const buffer = await file.arrayBuffer();
-      result = parseVPSExport(buffer, this.ledger.accounts[0]?.id || 'default');
+      // Resolve ticker from stock list by matching security name
+      const tickerLookup = (name: string) => {
+        const upper = name.toUpperCase();
+        const match = this.stockList.find(s =>
+          s.name.toUpperCase() === upper
+          || s.name.toUpperCase().includes(upper)
+          || upper.includes(s.name.toUpperCase())
+          || upper.includes(s.ticker)
+        );
+        return match ? { ticker: match.ticker, type: match.type } : null;
+      };
+      result = parseVPSExport(buffer, this.ledger.accounts[0]?.id || 'default', tickerLookup);
       if (result.errors.length > 0 && result.events.length === 0) {
         alert('Feil i filen:\n\n' + result.errors.map(e => e.message).join('\n'));
         return;

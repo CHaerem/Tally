@@ -11,7 +11,11 @@ import type { CSVParseResult } from './csv-parser';
  *   Volume, Fees, Amount, Price, Currency code, Transaction type,
  *   Transfer type, VPS serial number, Security, Settled, Security group
  */
-export function parseVPSExport(buffer: ArrayBuffer, accountId: string): CSVParseResult {
+export function parseVPSExport(
+  buffer: ArrayBuffer,
+  accountId: string,
+  tickerLookup?: (name: string) => { ticker: string; type: 'STOCK' | 'FUND' } | null
+): CSVParseResult {
   const result: CSVParseResult = {
     events: [], instruments: [], warnings: [], errors: [],
     stats: { totalRows: 0, parsedRows: 0, skippedRows: 0, tradeEvents: 0, dividendEvents: 0, cashEvents: 0 }
@@ -80,12 +84,14 @@ export function parseVPSExport(buffer: ArrayBuffer, accountId: string): CSVParse
       const isBuy = volume > 0;
       const absVolume = Math.abs(volume);
 
-      // Track instruments
+      // Track instruments — resolve ticker from stock list by name
       if (!seenInstruments.has(isin)) {
-        const instrumentType = securityGroup.includes('fund') ? 'FUND' as const : 'STOCK' as const;
+        const resolved = tickerLookup ? tickerLookup(name) : null;
+        const instrumentType = resolved?.type
+          || (securityGroup.includes('fund') ? 'FUND' as const : 'STOCK' as const);
         seenInstruments.set(isin, {
           isin,
-          ticker: isin.substring(0, 12),
+          ticker: resolved?.ticker || name.split(' ')[0].toUpperCase(),
           name,
           instrumentType,
           currency: 'NOK',
