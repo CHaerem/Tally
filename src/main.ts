@@ -1,7 +1,8 @@
 import './style.css';
 import { LedgerStorage } from './ledger';
 import { parseCSV, validateCSV, parseVPSExport, isVPSFile } from './import';
-import { deriveHoldings, derivePortfolioMetrics, formatXIRRPercent, formatCurrency, formatPercent, formatDateShort } from './calculations';
+import { deriveHoldings, derivePortfolioMetrics, formatXIRRPercent, formatCurrency, formatPercent, formatDateShort, calculatePeriodXIRR, getPeriodStartDate, deriveDividendSummary } from './calculations';
+import type { ReturnPeriod, DividendSummary } from './calculations';
 import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate, fetchPriceHistory, fetchLivePrice, fetchStockQuote, fetchFundamentals, fetchMarketData } from './api';
 import type { StockQuote, Fundamentals } from './api';
 import type { LedgerState, Holding, PortfolioMetrics } from './types';
@@ -187,6 +188,8 @@ class TallyApp {
   // exploreCategory removed
   private watchlist: Array<{ ticker: string; name: string; type: 'STOCK' | 'FUND' }> = [];
   private obxPrice: number | null = null;
+  private selectedPeriod: ReturnPeriod = 'total';
+  private dividendSummary: DividendSummary | null = null;
   private quoteCache = new Map<string, StockQuote>();
   private portfolioHistory: {
     series: Array<{ date: string; value: number; costBasis: number }>;
@@ -349,6 +352,7 @@ class TallyApp {
   private updateDerivedData(): void {
     this.holdings = deriveHoldings(this.ledger.events, this.ledger.instruments, this.currentPrices);
     this.metrics = derivePortfolioMetrics(this.ledger.events, this.holdings);
+    this.dividendSummary = deriveDividendSummary(this.ledger.events, this.ledger.instruments, this.holdings);
     this.portfolioHistory = null;
   }
 
@@ -471,10 +475,39 @@ class TallyApp {
         container.innerHTML = '';
       }
       const divList = document.getElementById('portfolio-dividend-list');
-      if (divList) divList.innerHTML = this.renderDividendList();
+      if (divList) {
+        divList.innerHTML = this.renderDividendList();
+        this.attachDividendToggle();
+      }
 
     } finally {
       this.isLoadingChart = false;
+    }
+  }
+
+  private reattachChartIfNeeded(): void {
+    if (!this.portfolioHistory) return;
+    const container = document.getElementById('portfolio-chart-container');
+    if (container && this.portfolioHistory.series.length >= 2) {
+      container.innerHTML = this.renderPortfolioChartSVG();
+      this.drawPortfolioChart();
+      this.attachChartInteraction();
+    }
+    const divList = document.getElementById('portfolio-dividend-list');
+    if (divList) {
+      divList.innerHTML = this.renderDividendList();
+      this.attachDividendToggle();
+    }
+  }
+
+  private attachDividendToggle(): void {
+    const toggle = document.getElementById('div-txn-toggle');
+    const list = document.getElementById('div-txn-list');
+    if (toggle && list) {
+      toggle.addEventListener('click', () => {
+        const isActive = list.classList.toggle('active');
+        toggle.textContent = isActive ? 'Skjul transaksjoner' : 'Vis transaksjoner';
+      });
     }
   }
 
@@ -536,10 +569,47 @@ class TallyApp {
     if (!this.metrics) return '';
 
     const m = this.metrics;
-    const xirrClass = (m.xirrPercent || 0) >= 0 ? 'text-success' : 'text-danger';
     const unrealizedGain = this.holdings.reduce((sum, h) => sum + h.unrealizedGain, 0);
     const totalReturn = unrealizedGain + m.totalDividends;
     const totalReturnClass = totalReturn >= 0 ? 'text-success' : 'text-danger';
+
+    // Calculate period XIRR
+    const series = this.portfolioHistory?.series || null;
+    const periodXIRR = calculatePeriodXIRR(this.ledger.events, this.selectedPeriod, m.currentValue, series);
+    const periodPercent = periodXIRR !== null ? periodXIRR * 100 : null;
+    const xirrClass = (periodPercent || 0) >= 0 ? 'text-success' : 'text-danger';
+
+    // Determine if period has enough history
+    const firstEventDate = this.ledger.events.length > 0
+      ? this.ledger.events.reduce((min, e) => e.date < min ? e.date : min, this.ledger.events[0].date)
+      : null;
+
+    const periods: Array<{ key: ReturnPeriod; label: string }> = [
+      { key: 'ytd', label: 'HiÅ' },
+      { key: '1y', label: '1 år' },
+      { key: '3y', label: '3 år' },
+      { key: '5y', label: '5 år' },
+      { key: 'total', label: 'Total' },
+    ];
+
+    // Only show periods where the portfolio existed at the start
+    const availablePeriods = periods.filter(p => {
+      if (p.key === 'total') return true;
+      if (!firstEventDate) return false;
+      const start = getPeriodStartDate(p.key);
+      return start !== null && firstEventDate <= start.toISOString().slice(0, 10);
+    });
+
+    // XIRR label varies by period
+    const xirrLabel = this.selectedPeriod === 'total'
+      ? 'årlig (XIRR)'
+      : this.selectedPeriod === 'ytd' ? 'hittil i år' : 'siste ' + periods.find(p => p.key === this.selectedPeriod)?.label;
+
+    const periodPills = availablePeriods.length > 1
+      ? '<div class="period-selector">' + availablePeriods.map(p =>
+          '<button class="period-pill' + (p.key === this.selectedPeriod ? ' active' : '') + '" data-period="' + p.key + '">' + p.label + '</button>'
+        ).join('') + '</div>'
+      : '';
 
     // Calculate invested from trades (buy - sell) if no CASH_IN events
     const totalCostBasis = this.holdings.reduce((sum, h) => sum + h.costBasis, 0);
@@ -563,7 +633,9 @@ class TallyApp {
 
     return '<div class="card">'
       + '<div class="summary-hero"><div class="label">Markedsverdi</div><div class="value">' + formatCurrency(m.currentValue) + '</div>'
-      + '<div class="sub-value ' + xirrClass + '">' + formatXIRRPercent(m.xirr) + ' årlig (XIRR)</div></div>'
+      + '<div class="sub-value ' + xirrClass + '">' + formatXIRRPercent(periodXIRR) + ' ' + xirrLabel + '</div>'
+      + periodPills
+      + '</div>'
       + '<div id="portfolio-chart-container" class="portfolio-chart-container"><div class="chart-placeholder">Laster graf...</div></div>'
       + '<div id="portfolio-dividend-list"></div>'
       // Compact 3-column stats
@@ -1136,15 +1208,43 @@ class TallyApp {
   }
 
   private renderDividendList(): string {
+    if (!this.dividendSummary || this.dividendSummary.totalAllTime === 0) return '';
+    const ds = this.dividendSummary;
+
+    // Year bars — visual bar chart
+    const maxYear = Math.max(...ds.byYear.map(y => y.total));
+    const yearBars = ds.byYear.map(y => {
+      const pct = maxYear > 0 ? (y.total / maxYear) * 100 : 0;
+      return '<div class="div-year-row">'
+        + '<span class="div-year-label">' + y.year + '</span>'
+        + '<div class="div-year-bar-bg"><div class="div-year-bar" style="width:' + pct.toFixed(1) + '%"></div></div>'
+        + '<span class="div-year-amount">' + formatCurrency(y.total) + '</span>'
+        + '</div>';
+    }).join('');
+
+    // Per holding — compact list with yield on cost
+    const holdingRows = ds.byHolding.map(h => {
+      const inst = this.ledger.instruments.find(i => i.isin === h.isin);
+      const isFund = inst?.instrumentType === 'FUND';
+      const label = isFund ? h.name : h.ticker;
+      const yoc = h.yieldOnCost !== null ? h.yieldOnCost.toFixed(1) + '%' : '—';
+      return '<div class="div-holding-row">'
+        + '<span class="div-holding-name">' + label + '</span>'
+        + '<span class="div-holding-yoc">' + yoc + '</span>'
+        + '<span class="div-holding-amount">' + formatCurrency(h.total) + '</span>'
+        + '</div>';
+    }).join('');
+
+    // Individual transactions (collapsed by default)
     const dividends = this.ledger.events
       .filter(e => e.type === 'DIVIDEND')
       .sort((a, b) => b.date.localeCompare(a.date));
-    if (dividends.length === 0) return '';
 
-    const rows = dividends.map(e => {
+    const txnRows = dividends.map(e => {
       const de = e as unknown as { isin: string };
       const inst = this.ledger.instruments.find(i => i.isin === de.isin);
-      const name = inst?.name || de.isin;
+      const isFund = inst?.instrumentType === 'FUND';
+      const name = isFund ? inst?.name || de.isin : inst?.ticker || de.isin;
       return '<div class="txn-row">'
         + '<span class="txn-date">' + formatDateShort(e.date) + '</span>'
         + '<span class="txn-type txn-type-dividend">' + name + '</span>'
@@ -1154,7 +1254,21 @@ class TallyApp {
 
     return '<div class="dividend-list">'
       + '<div class="txn-header">Utbytter</div>'
-      + rows + '</div>';
+      // By year
+      + '<div class="div-year-chart">' + yearBars + '</div>'
+      // By holding
+      + (ds.byHolding.length > 1
+        ? '<div class="div-by-holding">'
+          + '<div class="div-holding-header">'
+          + '<span>Beholdning</span><span>YoC</span><span>Totalt</span>'
+          + '</div>'
+          + holdingRows
+          + '</div>'
+        : '')
+      // Transactions (expandable)
+      + '<div class="div-txn-toggle" id="div-txn-toggle">Vis transaksjoner</div>'
+      + '<div class="div-txn-list" id="div-txn-list">' + txnRows + '</div>'
+      + '</div>';
   }
 
   private renderMarketSection(): string {
@@ -1748,6 +1862,23 @@ class TallyApp {
     // Close import modal on backdrop click
     document.getElementById('import-modal')?.addEventListener('click', (e) => {
       if ((e.target as HTMLElement).id === 'import-modal') this.hideModal();
+    });
+
+    // Period selector pills
+    document.querySelectorAll('.period-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        const period = (pill as HTMLElement).dataset.period as ReturnPeriod;
+        if (period && period !== this.selectedPeriod) {
+          this.selectedPeriod = period;
+          // Update only the summary hero without full re-render
+          const summaryCard = document.querySelector('.summary-hero');
+          if (summaryCard) {
+            this.render();
+            this.attachEventListeners();
+            this.reattachChartIfNeeded();
+          }
+        }
+      });
     });
 
     // Holding cards — click to expand details
