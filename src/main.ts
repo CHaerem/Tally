@@ -1069,13 +1069,17 @@ class TallyApp {
         + (price ? '<div class="watchlist-price">' + price.toFixed(2) + '</div>' : '<div class="watchlist-price text-muted">—</div>')
         + '</div>'
         + '</div>'
-        // Expandable detail section
-        + '<div class="stock-detail" id="sdetail-' + safeTicker + '">'
-        + '<div class="stock-detail-chart-info" id="sdinfo-' + safeTicker + '"></div>'
-        + '<div class="stock-detail-chart" id="sdchart-' + safeTicker + '"><div class="sparkline-placeholder">Laster graf...</div></div>'
-        + '<div class="stock-detail-actions">'
-        + '<button class="btn btn-small btn-outline watchlist-remove" data-ticker="' + w.ticker + '">Fjern</button>'
-        + '<button class="btn btn-small btn-primary stock-buy" data-ticker="' + w.ticker + '">Kjøp</button>'
+        // Expandable detail — same layout as holding details
+        + '<div class="holding-details" id="sdetail-' + safeTicker + '">'
+        + '<div class="holding-chart-wrap">'
+        + '<div class="holding-chart-info" id="sdinfo-' + safeTicker + '"></div>'
+        + '<div class="holding-chart-area" id="sdchart-' + safeTicker + '"><div class="sparkline-placeholder">Laster graf...</div></div>'
+        + '</div>'
+        + '<div class="holding-detail"><div class="label">Kurs</div><div class="value">' + (price ? formatCurrency(price, 2) : '—') + '</div></div>'
+        + '<div class="holding-detail"><div class="label">Type</div><div class="value">' + (isFund ? 'Fond' : 'Aksje') + '</div></div>'
+        + '<div class="holding-actions">'
+        + '<button class="btn btn-small holding-add-trade stock-buy" data-ticker="' + w.ticker + '">+ Kjøp</button>'
+        + '<button class="btn btn-small watchlist-remove-link" data-ticker="' + w.ticker + '">Fjern fra følgeliste</button>'
         + '</div>'
         + '</div>'
         + '</div>';
@@ -1720,20 +1724,19 @@ class TallyApp {
     document.querySelectorAll('.watchlist-card').forEach(card => {
       card.addEventListener('click', (e) => {
         const target = e.target as HTMLElement;
-        if (target.classList.contains('watchlist-remove') || target.classList.contains('stock-buy')) return;
+        if (target.classList.contains('watchlist-remove-link') || target.classList.contains('stock-buy')) return;
         const ticker = (card as HTMLElement).dataset.ticker || '';
         const safeTicker = ticker.replace(/\./g, '_');
         const detail = document.getElementById('sdetail-' + safeTicker);
         if (!detail) return;
         detail.classList.toggle('active');
-        // Load chart on first expand
         if (detail.classList.contains('active') && !detail.querySelector('canvas')) {
           this.loadStockDetailChart(ticker, safeTicker);
         }
       });
     });
 
-    // Buy buttons in stock detail
+    // Buy buttons in watchlist detail
     document.querySelectorAll('.stock-buy').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -1743,6 +1746,15 @@ class TallyApp {
           const inst = this.ledger.instruments.find(i => i.ticker === ticker);
           this.showTradeModal('full', { ticker: stock.ticker, name: stock.name, isin: inst?.isin || '', instrumentType: stock.type });
         }
+      });
+    });
+
+    // Remove from watchlist (text link inside detail)
+    document.querySelectorAll('.watchlist-remove-link').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const ticker = (btn as HTMLElement).dataset.ticker;
+        if (ticker) this.removeFromWatchlist(ticker);
       });
     });
 
