@@ -537,7 +537,10 @@ class TallyApp {
           + '<div class="holding-gain ' + gainClass + '">' + gainSign + formatPercent(h.unrealizedGainPercent) + '</div>'
           + '</div></div>'
           + '<div class="holding-details" id="details-' + h.isin + '">'
-          + '<div class="holding-sparkline" data-ticker="' + (inst?.ticker || h.ticker) + '"><div class="sparkline-placeholder">Laster graf...</div></div>'
+          + '<div class="holding-chart-wrap" data-ticker="' + (inst?.ticker || h.ticker) + '" data-isin="' + h.isin + '" data-cost="' + h.averageCostPerShare.toFixed(2) + '">'
+          + '<div class="holding-chart-info" id="hcinfo-' + h.isin + '"></div>'
+          + '<div class="holding-chart-area" id="hcarea-' + h.isin + '"><div class="sparkline-placeholder">Laster graf...</div></div>'
+          + '</div>'
           + '<div class="holding-detail"><div class="label">Antall</div><div class="value">' + qty + '</div></div>'
           + '<div class="holding-detail"><div class="label">Snittpris</div><div class="value">' + formatCurrency(h.averageCostPerShare, 2) + '</div></div>'
           + '<div class="holding-detail"><div class="label">Kurs</div><input type="number" class="price-input" data-isin="' + h.isin + '" value="' + priceValue + '" placeholder="—" step="0.01" min="0"></div>'
@@ -571,33 +574,190 @@ class TallyApp {
       + rows + '</div>';
   }
 
-  private renderSparklineSVG(prices: Array<{ date: string; close: number }>): string {
-    const data = prices.slice(-90);
-    if (data.length < 2) return '';
-    const width = 300;
-    const height = 60;
-    const pad = 4;
-    const min = Math.min(...data.map(p => p.close));
-    const max = Math.max(...data.map(p => p.close));
-    const range = max - min || 1;
-    const points = data.map((p, i) => {
-      const x = (i / (data.length - 1)) * width;
-      const y = pad + (1 - (p.close - min) / range) * (height - 2 * pad);
-      return x.toFixed(1) + ',' + y.toFixed(1);
-    });
-    const isPositive = data[data.length - 1].close >= data[0].close;
+  private renderHoldingChart(
+    isin: string,
+    _ticker: string,
+    prices: Array<{ date: string; close: number }>,
+    avgCost: number
+  ): void {
+    const area = document.getElementById('hcarea-' + isin);
+    const infoEl = document.getElementById('hcinfo-' + isin);
+    if (!area) return;
+
+    const data = prices;
+    const firstPrice = data[0].close;
+    const lastPrice = data[data.length - 1].close;
+    const isPositive = lastPrice >= firstPrice;
     const color = isPositive ? '#3d8b37' : '#c0392b';
-    const gradId = 'sg' + Math.random().toString(36).slice(2, 8);
-    const polyPoints = points.join(' ');
-    const fillPoints = '0,' + height + ' ' + polyPoints + ' ' + width + ',' + height;
-    return '<svg viewBox="0 0 ' + width + ' ' + height + '" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">'
-      + '<defs><linearGradient id="' + gradId + '" x1="0" y1="0" x2="0" y2="1">'
-      + '<stop offset="0%" stop-color="' + color + '" stop-opacity="0.25"/>'
-      + '<stop offset="100%" stop-color="' + color + '" stop-opacity="0.02"/>'
-      + '</linearGradient></defs>'
-      + '<polygon points="' + fillPoints + '" fill="url(#' + gradId + ')"/>'
-      + '<polyline points="' + polyPoints + '" fill="none" stroke="' + color + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>'
-      + '</svg>';
+    const returnPct = firstPrice > 0 ? ((lastPrice - firstPrice) / firstPrice * 100) : 0;
+
+    // Get events for this holding
+    const holdingEvents = this.ledger.events
+      .filter(e => 'isin' in e && (e as unknown as { isin: string }).isin === isin)
+      .sort((a, b) => a.date.localeCompare(b.date));
+
+    // Setup area HTML
+    area.innerHTML = '<canvas id="hcanvas-' + isin + '"></canvas>'
+      + '<div class="chart-crosshair" id="hcross-' + isin + '"></div>'
+      + '<div class="chart-tooltip" id="htip-' + isin + '"></div>';
+
+    // Default info
+    if (infoEl) {
+      const sign = returnPct >= 0 ? '+' : '';
+      infoEl.innerHTML = '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '">'
+        + sign + returnPct.toFixed(1) + '% siden ' + formatDateShort(data[0].date) + '</span>';
+    }
+
+    // Draw chart
+    const canvas = document.getElementById('hcanvas-' + isin) as HTMLCanvasElement;
+    if (!canvas) return;
+
+    const rect = area.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    ctx.scale(dpr, dpr);
+
+    const w = rect.width, h = rect.height;
+    const pad = { top: 10, bottom: 10, left: 0, right: 0 };
+    const cw = w - pad.left - pad.right;
+    const ch = h - pad.top - pad.bottom;
+
+    const closes = data.map(d => d.close);
+    const minVal = Math.min(...closes);
+    const maxVal = Math.max(...closes);
+    const valPad = (maxVal - minVal) * 0.08 || 1;
+    const rangeMin = minVal - valPad;
+    const rangeMax = maxVal + valPad;
+    const range = rangeMax - rangeMin;
+
+    const toX = (i: number) => pad.left + (i / (data.length - 1)) * cw;
+    const toY = (v: number) => pad.top + (1 - (v - rangeMin) / range) * ch;
+
+    // Build smooth curve points
+    const pts = data.map((d, i) => ({ x: toX(i), y: toY(d.close) }));
+    const tension = 0.3;
+    const drawSmooth = (close: boolean) => {
+      ctx.moveTo(pts[0].x, pts[0].y);
+      for (let i = 0; i < pts.length - 1; i++) {
+        const p0 = pts[Math.max(0, i - 1)];
+        const p1 = pts[i];
+        const p2 = pts[i + 1];
+        const p3 = pts[Math.min(pts.length - 1, i + 2)];
+        ctx.bezierCurveTo(
+          p1.x + (p2.x - p0.x) * tension, p1.y + (p2.y - p0.y) * tension,
+          p2.x - (p3.x - p1.x) * tension, p2.y - (p3.y - p1.y) * tension,
+          p2.x, p2.y
+        );
+      }
+      if (close) { ctx.lineTo(pts[pts.length - 1].x, h); ctx.lineTo(pts[0].x, h); ctx.closePath(); }
+    };
+
+    // Gradient fill
+    const grad = ctx.createLinearGradient(0, toY(maxVal), 0, h);
+    grad.addColorStop(0, color + '30');
+    grad.addColorStop(0.6, color + '12');
+    grad.addColorStop(1, color + '02');
+    ctx.beginPath(); drawSmooth(true); ctx.fillStyle = grad; ctx.fill();
+
+    // Average cost line (dashed)
+    if (avgCost > 0 && avgCost >= rangeMin && avgCost <= rangeMax) {
+      const costY = toY(avgCost);
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(0, costY);
+      ctx.lineTo(w, costY);
+      ctx.strokeStyle = '#9c959088';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    // Smooth line
+    ctx.beginPath(); drawSmooth(false);
+    ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.lineJoin = 'round'; ctx.lineCap = 'round'; ctx.stroke();
+
+    // End dot
+    const last = pts[pts.length - 1];
+    ctx.beginPath(); ctx.arc(last.x, last.y, 3.5, 0, Math.PI * 2); ctx.fillStyle = color; ctx.fill();
+    ctx.beginPath(); ctx.arc(last.x, last.y, 1.5, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill();
+
+    // Event markers
+    for (const ev of holdingEvents) {
+      const idx = data.findIndex(d => d.date >= ev.date);
+      if (idx < 0) continue;
+      const dotColor = ev.type === 'TRADE_BUY' ? '#5a9a6e' : ev.type === 'TRADE_SELL' ? '#c75450' : '#da7756';
+      const x = pts[idx].x, y = pts[idx].y;
+      ctx.beginPath(); ctx.arc(x, y, 5, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill();
+      ctx.beginPath(); ctx.arc(x, y, 3.5, 0, Math.PI * 2); ctx.fillStyle = dotColor; ctx.fill();
+    }
+
+    // Touch interaction
+    const crosshair = document.getElementById('hcross-' + isin);
+    const tooltip = document.getElementById('htip-' + isin);
+
+    const handleMove = (clientX: number) => {
+      const r = area.getBoundingClientRect();
+      const x = Math.max(0, Math.min(clientX - r.left, r.width));
+      const idx = Math.round((x / r.width) * (data.length - 1));
+      const point = data[Math.max(0, Math.min(idx, data.length - 1))];
+
+      if (crosshair) { crosshair.style.left = x + 'px'; crosshair.style.display = 'block'; }
+
+      const pctFromCost = avgCost > 0 ? ((point.close - avgCost) / avgCost * 100) : 0;
+      const pctSign = pctFromCost >= 0 ? '+' : '';
+      const pctClass = pctFromCost >= 0 ? 'text-success' : 'text-danger';
+
+      // Check for events at this date
+      const eventsHere = holdingEvents.filter(e => {
+        const eIdx = data.findIndex(d => d.date >= e.date);
+        return eIdx === idx;
+      });
+      let eventInfo = '';
+      for (const ev of eventsHere) {
+        const tl = ev.type === 'TRADE_BUY' ? 'Kjøp' : ev.type === 'TRADE_SELL' ? 'Salg' : 'Utbytte';
+        eventInfo += '<div class="tooltip-event">' + tl + ': ' + formatCurrency(ev.amount) + '</div>';
+      }
+
+      if (tooltip) {
+        tooltip.innerHTML = '<div class="tooltip-date">' + formatDateShort(point.date) + '</div>'
+          + '<div class="tooltip-value">' + formatCurrency(point.close, 2) + '</div>'
+          + '<div class="tooltip-return ' + pctClass + '">' + pctSign + pctFromCost.toFixed(1) + '% vs snittpris</div>'
+          + eventInfo;
+        const tw = 140;
+        let tx = x - tw / 2;
+        if (tx < 0) tx = 0;
+        if (tx + tw > r.width) tx = r.width - tw;
+        tooltip.style.left = tx + 'px';
+        tooltip.style.display = 'block';
+      }
+
+      if (infoEl) {
+        infoEl.innerHTML = '<span class="chart-date-label">' + formatDateShort(point.date) + '</span>'
+          + '<span class="chart-value-label">' + formatCurrency(point.close, 2) + '</span>';
+      }
+    };
+
+    const handleEnd = () => {
+      if (crosshair) crosshair.style.display = 'none';
+      if (tooltip) tooltip.style.display = 'none';
+      if (infoEl) {
+        const sign = returnPct >= 0 ? '+' : '';
+        infoEl.innerHTML = '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '">'
+          + sign + returnPct.toFixed(1) + '% siden ' + formatDateShort(data[0].date) + '</span>';
+      }
+    };
+
+    area.addEventListener('touchstart', (e) => { e.preventDefault(); handleMove(e.touches[0].clientX); }, { passive: false });
+    area.addEventListener('touchmove', (e) => { e.preventDefault(); handleMove(e.touches[0].clientX); }, { passive: false });
+    area.addEventListener('touchend', handleEnd);
+    area.addEventListener('mousemove', (e) => handleMove(e.clientX));
+    area.addEventListener('mouseleave', handleEnd);
   }
 
   private renderPortfolioChartSVG(): string {
@@ -1287,18 +1447,21 @@ class TallyApp {
         const details = document.getElementById('details-' + isin);
         if (details) {
           details.classList.toggle('active');
-          // Load sparkline on first expand
+          // Load holding chart on first expand
           if (details.classList.contains('active')) {
-            const sparklineEl = details.querySelector('.holding-sparkline') as HTMLElement | null;
-            if (sparklineEl && !sparklineEl.querySelector('svg')) {
-              const ticker = sparklineEl.dataset.ticker;
+            const chartWrap = details.querySelector('.holding-chart-wrap') as HTMLElement | null;
+            if (chartWrap && !chartWrap.querySelector('canvas')) {
+              const ticker = chartWrap.dataset.ticker;
+              const hIsin = chartWrap.dataset.isin || '';
+              const avgCost = parseFloat(chartWrap.dataset.cost || '0');
               if (ticker) {
                 fetchPriceHistory(ticker).then(prices => {
                   if (!details.classList.contains('active')) return;
                   if (prices.length >= 2) {
-                    sparklineEl.innerHTML = this.renderSparklineSVG(prices);
+                    this.renderHoldingChart(hIsin, ticker, prices, avgCost);
                   } else {
-                    sparklineEl.innerHTML = '<span class="text-muted text-small">Ingen prishistorikk</span>';
+                    const area = chartWrap.querySelector('.holding-chart-area');
+                    if (area) area.innerHTML = '<span class="text-muted text-small">Ingen prishistorikk</span>';
                   }
                 });
               }
