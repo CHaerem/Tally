@@ -28,6 +28,7 @@ const sampleInstrument: Instrument = {
   ticker: 'EQNR',
   name: 'Equinor ASA',
   instrumentType: 'STOCK',
+  currency: 'NOK',
 };
 
 const sampleEvent: TradeEvent = {
@@ -88,6 +89,7 @@ describe('Share URL: encoding', () => {
       ticker: 'DNB',
       name: 'DNB Bank ASA',
       instrumentType: 'STOCK',
+      currency: 'NOK',
     };
     const hash = createShareUrl([sampleEvent, event2], [sampleInstrument, inst2]);
     const decoded = decodeShareUrl(hash);
@@ -147,6 +149,7 @@ describe('Share URL: decoding and import', () => {
       ticker: 'DNB',
       name: 'DNB Bank ASA',
       instrumentType: 'STOCK',
+      currency: 'NOK',
     };
     LedgerStorage.addEvents([existingEvent]);
     LedgerStorage.upsertInstrument(existingInst);
@@ -221,6 +224,7 @@ describe('Share URL: edge cases', () => {
       ticker: '0P00017YPW.IR',
       name: 'KLP AksjeAsia Indeks Valutasikret',
       instrumentType: 'FUND',
+      currency: 'NOK',
     };
     const hash = createShareUrl([], [fundInst]);
     const decoded = decodeShareUrl(hash);

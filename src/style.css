@@ -1196,6 +1196,17 @@ header h1 {
   border: 1px solid var(--border);
 }
 
+/* VPS import */
+.import-vps {
+  text-align: center;
+  padding: 8px 0 16px;
+}
+
+.import-vps-btn {
+  display: block;
+  margin-bottom: 8px;
+}
+
 /* File upload */
 .file-upload {
   display: flex;

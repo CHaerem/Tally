@@ -1,6 +1,6 @@
 import './style.css';
 import { LedgerStorage } from './ledger';
-import { parseCSV, validateCSV } from './import';
+import { parseCSV, validateCSV, parseVPSExport, isVPSFile } from './import';
 import { deriveHoldings, derivePortfolioMetrics, formatXIRRPercent, formatCurrency, formatPercent, formatDateShort } from './calculations';
 import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate, fetchPriceHistory, fetchLivePrice, fetchStockQuote, fetchFundamentals, fetchMarketData } from './api';
 import type { StockQuote, Fundamentals } from './api';
@@ -1715,8 +1715,14 @@ class TallyApp {
   }
 
   private renderImportModal(): string {
-    return '<div class="modal" id="import-modal"><div class="modal-content"><div class="modal-header"><h3>Importer transaksjoner</h3><p class="text-muted">Last opp CSV-fil fra megleren din (Nordnet, DNB, Sbanken m.fl.)</p></div>'
-      + '<div class="form-group"><label class="file-upload" id="file-upload-label"><input type="file" id="csv-file" accept=".csv,.txt"><span class="file-upload-text">Velg fil eller dra den hit</span></label></div>'
+    const today = new Date().toISOString().split('T')[0];
+    const yearAgo = new Date(Date.now() - 365 * 86400000).toISOString().split('T')[0];
+    const vpsUrl = 'https://investor.vps.no/vip/#/transactions?size=200&page=0&settledDateFrom=' + yearAgo + '&settledDateTo=' + today + '&settled=false';
+
+    return '<div class="modal" id="import-modal"><div class="modal-content"><div class="modal-header"><h3>Importer transaksjoner</h3></div>'
+      + '<div class="import-vps"><a href="' + vpsUrl + '" target="_blank" rel="noopener" class="btn btn-outline btn-large import-vps-btn">Åpne VPS Investortjenester</a>'
+      + '<p class="text-muted text-small">Logg inn med BankID → Trykk Export → Last opp filen under</p></div>'
+      + '<div class="form-group"><label class="file-upload" id="file-upload-label"><input type="file" id="csv-file" accept=".csv,.txt,.xlsx,.xls"><span class="file-upload-text">Last opp VPS-eksport (.xlsx) eller CSV</span></label></div>'
       + '<div id="import-preview" style="display:none"><div id="import-stats" class="import-stats"></div><div id="import-warnings"></div></div>'
       + '<div class="modal-footer"><button class="btn" id="cancel-import">Avbryt</button><button class="btn btn-success" id="confirm-import" disabled>Importer</button></div></div></div>';
   }
@@ -1945,11 +1951,20 @@ class TallyApp {
   }
 
   private async handleFileSelect(file: File): Promise<void> {
-    const content = await file.text();
-    const errors = validateCSV(content);
-    if (errors.length > 0) { alert('Feil i filen:\n\n' + errors.join('\n')); return; }
-
-    const result = parseCSV(content, this.ledger.accounts[0]?.id || 'default');
+    let result;
+    if (isVPSFile(file)) {
+      const buffer = await file.arrayBuffer();
+      result = parseVPSExport(buffer, this.ledger.accounts[0]?.id || 'default');
+      if (result.errors.length > 0 && result.events.length === 0) {
+        alert('Feil i filen:\n\n' + result.errors.map(e => e.message).join('\n'));
+        return;
+      }
+    } else {
+      const content = await file.text();
+      const errors = validateCSV(content);
+      if (errors.length > 0) { alert('Feil i filen:\n\n' + errors.join('\n')); return; }
+      result = parseCSV(content, this.ledger.accounts[0]?.id || 'default');
+    }
     this.pendingImport = result;
 
     const preview = document.getElementById('import-preview') as HTMLElement;
