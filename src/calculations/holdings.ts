@@ -213,3 +213,65 @@ export function derivePortfolioMetrics(events: LedgerEvent[], holdings: Holding[
     xirrPercent: xirr !== null ? xirr * 100 : null,
   };
 }
+
+export interface DividendByYear {
+  year: number;
+  total: number;
+}
+
+export interface DividendByHolding {
+  isin: string;
+  ticker: string;
+  name: string;
+  total: number;
+  yieldOnCost: number | null; // dividend / costBasis as percentage
+}
+
+export interface DividendSummary {
+  totalAllTime: number;
+  byYear: DividendByYear[];
+  byHolding: DividendByHolding[];
+}
+
+export function deriveDividendSummary(
+  events: LedgerEvent[],
+  instruments: Instrument[],
+  holdings: Holding[],
+): DividendSummary {
+  const dividends = events.filter(isDividendEvent);
+  const instrumentMap = new Map(instruments.map(i => [i.isin, i]));
+
+  // By year
+  const yearMap = new Map<number, number>();
+  let totalAllTime = 0;
+  for (const div of dividends) {
+    const year = new Date(div.date).getFullYear();
+    yearMap.set(year, (yearMap.get(year) || 0) + div.amount);
+    totalAllTime += div.amount;
+  }
+  const byYear = Array.from(yearMap.entries())
+    .map(([year, total]) => ({ year, total }))
+    .sort((a, b) => a.year - b.year);
+
+  // By holding
+  const holdingMap = new Map<string, number>();
+  for (const div of dividends) {
+    holdingMap.set(div.isin, (holdingMap.get(div.isin) || 0) + div.amount);
+  }
+  const byHolding = Array.from(holdingMap.entries())
+    .map(([isin, total]) => {
+      const inst = instrumentMap.get(isin);
+      const holding = holdings.find(h => h.isin === isin);
+      const costBasis = holding?.costBasis || 0;
+      return {
+        isin,
+        ticker: inst?.ticker || isin.substring(0, 6),
+        name: inst?.name || 'Ukjent',
+        total,
+        yieldOnCost: costBasis > 0 ? (total / costBasis) * 100 : null,
+      };
+    })
+    .sort((a, b) => b.total - a.total);
+
+  return { totalAllTime, byYear, byHolding };
+}
