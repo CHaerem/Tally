@@ -529,22 +529,12 @@ class TallyApp {
     const m = this.metrics;
     const xirrClass = (m.xirrPercent || 0) >= 0 ? 'text-success' : 'text-danger';
     const unrealizedGain = this.holdings.reduce((sum, h) => sum + h.unrealizedGain, 0);
-    const unrealizedClass = unrealizedGain >= 0 ? 'text-success' : 'text-danger';
     const totalReturn = unrealizedGain + m.totalDividends;
     const totalReturnClass = totalReturn >= 0 ? 'text-success' : 'text-danger';
 
     // Calculate invested from trades (buy - sell) if no CASH_IN events
     const totalCostBasis = this.holdings.reduce((sum, h) => sum + h.costBasis, 0);
     const invested = m.netCashFlow > 0 ? m.netCashFlow : totalCostBasis;
-
-    // Best and worst performing holdings
-    const sorted = [...this.holdings].sort((a, b) => b.unrealizedGainPercent - a.unrealizedGainPercent);
-    const best = sorted[0];
-    const worst = sorted[sorted.length - 1];
-    const bestInst = best ? this.ledger.instruments.find(i => i.isin === best.isin) : null;
-    const worstInst = worst ? this.ledger.instruments.find(i => i.isin === worst.isin) : null;
-    const bestLabel = bestInst?.instrumentType === 'FUND' ? best?.name : best?.ticker;
-    const worstLabel = worstInst?.instrumentType === 'FUND' ? worst?.name : worst?.ticker;
 
     // Allocation bar
     const totalMV = m.currentValue || 1;
@@ -561,31 +551,21 @@ class TallyApp {
     const allocationBar = allocationItems
       .map(a => '<div class="alloc-segment" style="width:' + a.pct.toFixed(1) + '%;background:' + a.color + '" title="' + a.label + ' ' + a.pct.toFixed(1) + '%"></div>')
       .join('');
-    const allocationLabels = allocationItems
-      .map(a => '<span class="alloc-label"><span class="alloc-dot" style="background:' + a.color + '"></span>' + a.label + ' ' + a.pct.toFixed(0) + '%</span>')
-      .join('');
 
     return '<div class="card">'
       + '<div class="summary-hero"><div class="label">Markedsverdi</div><div class="value">' + formatCurrency(m.currentValue) + '</div>'
       + '<div class="sub-value ' + xirrClass + '">' + formatXIRRPercent(m.xirr) + ' årlig (XIRR)</div></div>'
       + '<div id="portfolio-chart-container" class="portfolio-chart-container"><div class="chart-placeholder">Laster graf...</div></div>'
       + '<div id="portfolio-dividend-list"></div>'
-      + '<div class="summary-grid">'
-      + '<div class="summary-item"><div class="label">Total avkastning</div><div class="value ' + totalReturnClass + '">' + formatCurrency(totalReturn) + '</div></div>'
-      + '<div class="summary-item"><div class="label">Investert</div><div class="value">' + formatCurrency(invested) + '</div></div>'
-      + '<div class="summary-item"><div class="label">Urealisert</div><div class="value ' + unrealizedClass + '">' + formatCurrency(unrealizedGain) + '</div></div>'
-      + '<div class="summary-item"><div class="label">Utbytte</div><div class="value">' + formatCurrency(m.totalDividends) + '</div></div>'
+      // Compact 3-column stats
+      + '<div class="stats-row">'
+      + '<div class="stat-item"><div class="label">Investert</div><div class="stat-val">' + formatCurrency(invested) + '</div></div>'
+      + '<div class="stat-item"><div class="label">Avkastning</div><div class="stat-val ' + totalReturnClass + '">' + (totalReturn >= 0 ? '+' : '') + formatCurrency(totalReturn) + '</div></div>'
+      + '<div class="stat-item"><div class="label">Utbytte</div><div class="stat-val">' + formatCurrency(m.totalDividends) + '</div></div>'
       + '</div>'
-      // Best/worst
-      + (sorted.length >= 2
-        ? '<div class="best-worst">'
-          + '<div class="bw-item"><div class="label">Beste</div><div class="bw-value text-success">' + bestLabel + ' +' + formatPercent(best.unrealizedGainPercent) + '</div></div>'
-          + '<div class="bw-item"><div class="label">Svakeste</div><div class="bw-value ' + (worst.unrealizedGainPercent >= 0 ? 'text-success' : 'text-danger') + '">' + worstLabel + ' ' + (worst.unrealizedGainPercent >= 0 ? '+' : '') + formatPercent(worst.unrealizedGainPercent) + '</div></div>'
-          + '</div>'
-        : '')
-      // Allocation
+      // Allocation bar (compact, no labels — holdings show colors)
       + (allocationItems.length >= 2
-        ? '<div class="allocation"><div class="alloc-bar">' + allocationBar + '</div><div class="alloc-labels">' + allocationLabels + '</div></div>'
+        ? '<div class="alloc-compact"><div class="alloc-bar">' + allocationBar + '</div></div>'
         : '')
       + '</div>';
   }
@@ -605,9 +585,12 @@ class TallyApp {
     const refreshBtn = '<button class="btn btn-small btn-primary" id="refresh-prices"'
       + (this.isFetchingPrices ? ' disabled' : '') + '>' + refreshLabel + '</button>';
 
+    const allocationColors = ['#5a9a6e', '#da7756', '#4a90d9', '#9b59b6', '#e67e22', '#1abc9c', '#e74c3c', '#34495e'];
+    const totalMVH = this.holdings.reduce((s, x) => s + x.marketValue, 0) || 1;
+
     return '<div class="card-header"><h2>Beholdning</h2>' + refreshBtn + '</div>'
       + '<div class="holdings-list">'
-      + this.holdings.map(h => {
+      + this.holdings.map((h, hIdx) => {
         const gainClass = h.unrealizedGain >= 0 ? 'text-success' : 'text-danger';
         const gainSign = h.unrealizedGain >= 0 ? '+' : '';
         const inst = this.ledger.instruments.find(i => i.isin === h.isin);
@@ -616,12 +599,13 @@ class TallyApp {
         const sublabel = isFund ? 'Fond' : h.name;
         const qty = Number.isInteger(h.quantity) ? h.quantity.toString() : h.quantity.toFixed(4);
         const priceValue = h.currentPrice > 0 ? h.currentPrice.toFixed(2) : '';
+        const allocColor = allocationColors[hIdx % allocationColors.length];
 
         // Portfolio share
-        const totalMV = this.holdings.reduce((s, x) => s + x.marketValue, 0) || 1;
-        const sharePct = (h.marketValue / totalMV * 100).toFixed(1);
+        const sharePct = (h.marketValue / totalMVH * 100).toFixed(1);
 
         return '<div class="holding-card" data-isin="' + h.isin + '">'
+          + '<div class="holding-color" style="background:' + allocColor + '"></div>'
           + '<div class="holding-info">'
           + '<div class="holding-ticker">' + label + '</div>'
           + '<div class="holding-name">' + sublabel + '</div>'
@@ -1046,16 +1030,7 @@ class TallyApp {
   private renderMarketSection(): string {
     // Market overview
     const obxDisplay = this.obxPrice !== null ? this.obxPrice.toFixed(2) : '...';
-    const market = '<div class="section-divider"></div>'
-      + '<div class="card-header"><h2>Marked</h2></div>'
-      + '<div class="card market-card">'
-      + '<div class="market-row">'
-      + '<div class="market-ticker">OBX</div>'
-      + '<div class="market-name">Oslo Børs</div>'
-      + '<div class="market-price" id="obx-price">' + obxDisplay + '</div>'
-      + '</div></div>';
-
-    // Watchlist
+    // Watchlist items (including OBX as first item)
     const watchlistItems = this.watchlist.map(w => {
       const stock = this.stockList.find(s => s.ticker === w.ticker);
       const price = stock?.currentPrice;
@@ -1074,17 +1049,21 @@ class TallyApp {
         + '</div>';
     }).join('');
 
-    const watchlist = '<div class="card-header watchlist-header"><h2>Følgeliste</h2>'
-      + '<button class="btn btn-small btn-outline" id="add-watchlist">+ Legg til</button></div>'
-      + (watchlistItems
-        ? '<div class="card watchlist-list">' + watchlistItems + '</div>'
-        : '<div class="card watchlist-empty"><span class="text-muted text-small">Legg til aksjer eller fond du vil følge med på</span></div>')
-      // Search modal inline
+    return '<div class="section-divider"></div>'
+      + '<div class="card-header"><h2>Marked</h2><button class="btn btn-small btn-outline" id="add-watchlist">+ Følg</button></div>'
+      // OBX + watchlist in one card
+      + '<div class="card watchlist-list">'
+      + '<div class="watchlist-item obx-item">'
+      + '<div class="watchlist-info"><div class="watchlist-ticker">OBX</div><div class="watchlist-name">Oslo Børs</div></div>'
+      + '<div class="watchlist-values"><div class="watchlist-price" id="obx-price">' + obxDisplay + '</div></div>'
+      + '</div>'
+      + watchlistItems
+      + '</div>'
+      // Inline search
       + '<div class="watchlist-search" id="watchlist-search" style="display:none">'
       + '<div class="search-wrapper"><input type="text" id="watchlist-ticker" class="form-control" placeholder="Søk etter aksje eller fond..." autocapitalize="characters" autocorrect="off" spellcheck="false" autocomplete="off">'
-      + '<div class="search-suggestions" id="watchlist-suggestions"></div></div></div>';
-
-    return market + watchlist + this.renderExplore();
+      + '<div class="search-suggestions" id="watchlist-suggestions"></div></div></div>'
+      + this.renderExplore();
   }
 
   private renderExplore(): string {
