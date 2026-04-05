@@ -1112,7 +1112,7 @@ class TallyApp {
             if (b.currentPrice) return 1;
             return a.name.localeCompare(b.name);
           })
-          .slice(0, 12)
+          .slice(0, 5)
       : [];
 
     const rows = items.map(s => {

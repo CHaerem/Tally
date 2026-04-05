@@ -868,33 +868,34 @@ header h1 {
 
 .explore-tabs {
   display: flex;
-  gap: 6px;
-  padding: 0 16px 10px;
+  gap: 16px;
+  padding: 0 16px 8px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
+  border-bottom: 1px solid var(--border);
 }
 
 .explore-tabs::-webkit-scrollbar { display: none; }
 
 .explore-tab {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 6px 14px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 6px 0;
   font-size: 13px;
   font-family: inherit;
-  color: var(--text-secondary);
+  color: var(--text-muted);
   cursor: pointer;
   white-space: nowrap;
-  min-height: 32px;
+  font-weight: 400;
+  margin-bottom: -1px;
 }
 
 .explore-tab.active {
-  background: var(--text);
-  color: var(--bg);
-  border-color: var(--text);
-  font-weight: 500;
+  color: var(--text);
+  border-bottom-color: var(--text);
+  font-weight: 600;
 }
 
 .explore-list {
@@ -904,7 +905,7 @@ header h1 {
 .explore-item {
   display: flex;
   align-items: center;
-  padding: 12px 16px;
+  padding: 10px 16px;
   border-bottom: 1px solid var(--border);
   gap: 10px;
 }
