@@ -134,14 +134,14 @@ header h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .card-header h2 {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.5px;
   color: var(--text-muted);
 }
 
@@ -315,12 +315,12 @@ header h1 {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.3px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .stat-val {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   font-variant-numeric: tabular-nums;
   margin-top: 2px;
 }
@@ -383,10 +383,11 @@ header h1 {
 }
 
 .holding-color {
-  width: 4px;
-  border-radius: 2px;
+  width: 3px;
+  border-radius: 1.5px;
   align-self: stretch;
   flex-shrink: 0;
+  opacity: 0.7;
 }
 
 .holding-card {
@@ -721,10 +722,15 @@ header h1 {
   display: inline-block;
 }
 
-/* Section divider */
-.section-divider {
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  margin: 20px 0 12px;
+/* Section groups */
+.section-group {
+  margin-top: 8px;
+}
+
+.section-market {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Market section */
@@ -847,10 +853,23 @@ header h1 {
 }
 
 /* Explore section */
+.explore-card {
+  margin-top: 12px;
+}
+
+.explore-header {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  font-weight: 600;
+  padding: 14px 16px 8px;
+}
+
 .explore-tabs {
   display: flex;
   gap: 6px;
-  padding: 0 0 10px;
+  padding: 0 16px 10px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -873,8 +892,9 @@ header h1 {
 
 .explore-tab.active {
   background: var(--text);
-  color: #fff;
+  color: var(--bg);
   border-color: var(--text);
+  font-weight: 500;
 }
 
 .explore-list {
@@ -919,12 +939,12 @@ header h1 {
 
 .explore-add {
   background: none;
-  border: 1.5px solid var(--accent);
-  color: var(--accent);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text-muted);
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 18px;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -935,8 +955,9 @@ header h1 {
 }
 
 .explore-add:active {
-  background: var(--accent);
-  color: #fff;
+  background: var(--accent-dim);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .explore-badge {
@@ -1054,12 +1075,14 @@ header h1 {
 
 .btn-outline {
   background: transparent;
-  border: 1.5px solid var(--accent);
-  color: var(--accent);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text-secondary);
+  font-weight: 500;
 }
 
 .btn-outline:active {
   background: var(--accent-dim);
+  color: var(--accent);
 }
 
 /* Text utilities */

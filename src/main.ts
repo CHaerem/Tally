@@ -484,7 +484,13 @@ class TallyApp {
 
     app.innerHTML = this.renderHeader()
       + '<main class="container">'
-      + (hasData ? this.renderSummary() + this.renderWarnings() + this.renderHoldings() + this.renderMarketSection() + this.renderFooter() : this.renderEmptyState())
+      + (hasData
+        ? this.renderSummary()
+          + this.renderWarnings()
+          + '<section class="section-group">' + this.renderHoldings() + '</section>'
+          + '<section class="section-group section-market">' + this.renderMarketSection() + '</section>'
+          + this.renderFooter()
+        : this.renderEmptyState())
       + '</main>'
       + this.renderTradeModal()
       + this.renderImportModal();
@@ -1049,8 +1055,7 @@ class TallyApp {
         + '</div>';
     }).join('');
 
-    return '<div class="section-divider"></div>'
-      + '<div class="card-header"><h2>Marked</h2><button class="btn btn-small btn-outline" id="add-watchlist">+ Følg</button></div>'
+    return '<div class="card-header"><h2>Marked</h2><button class="btn btn-small btn-outline" id="add-watchlist">+ Følg</button></div>'
       // OBX + watchlist in one card
       + '<div class="card watchlist-list">'
       + '<div class="watchlist-item obx-item">'
@@ -1131,9 +1136,11 @@ class TallyApp {
         + '</div>';
     }).join('');
 
-    return '<div class="card-header"><h2>Utforsk</h2></div>'
+    return '<div class="card explore-card">'
+      + '<div class="explore-header">Utforsk</div>'
       + '<div class="explore-tabs">' + tabs + '</div>'
-      + '<div class="card explore-list">' + (rows || '<div class="watchlist-empty"><span class="text-muted text-small">Ingen data</span></div>') + '</div>';
+      + '<div class="explore-list">' + (rows || '<div class="watchlist-empty"><span class="text-muted text-small">Ingen data</span></div>') + '</div>'
+      + '</div>';
   }
 
   private renderFooter(): string {
