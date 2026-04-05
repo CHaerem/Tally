@@ -506,37 +506,9 @@ header h1 {
   position: relative;
 }
 
-.chart-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 4px 4px;
-  min-height: 22px;
-}
-
-.chart-info {
-  display: flex;
-  gap: 10px;
-  align-items: baseline;
-  font-size: 13px;
-  transition: opacity 0.15s;
-}
-
 .chart-return {
   font-weight: 600;
   font-size: 14px;
-}
-
-.chart-date-label {
-  color: var(--text-muted);
-  font-size: 13px;
-}
-
-.chart-value-label {
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  font-size: 15px;
-  color: var(--text);
 }
 
 .chart-area {
@@ -568,49 +540,35 @@ header h1 {
   border-radius: 1px;
 }
 
-.chart-tooltip {
-  display: none;
-  position: absolute;
-  top: 4px;
-  background: rgba(255, 255, 255, 0.92);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 10px;
-  padding: 8px 12px;
-  font-size: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  pointer-events: none;
-  z-index: 10;
-  white-space: nowrap;
-  min-width: 110px;
+/* Scrubber bar — shows info below chart on touch/hover */
+.chart-scrubber {
+  text-align: center;
+  padding: 6px 4px 2px;
+  min-height: 24px;
+  font-size: 13px;
 }
 
-.tooltip-date {
+.chart-scrubber-active {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 13px;
+}
+
+.scrub-date {
   color: var(--text-muted);
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 12px;
 }
 
-.tooltip-value {
+.scrub-value {
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  font-size: 15px;
-  margin-top: 1px;
 }
 
-.tooltip-return {
-  font-weight: 600;
-  font-size: 12px;
-}
-
-.tooltip-event {
+.scrub-event {
   font-size: 11px;
   color: var(--text-secondary);
-  margin-top: 3px;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  padding-top: 3px;
-  font-weight: 500;
 }
 
 .chart-dates {
@@ -635,6 +593,14 @@ header h1 {
   display: flex;
   align-items: center;
   gap: 3px;
+}
+
+.chart-legend-inline {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 10px;
+  color: var(--text-muted);
 }
 
 .legend-dot {

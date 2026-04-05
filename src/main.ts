@@ -633,7 +633,7 @@ class TallyApp {
           + '<div class="holding-detail"><div class="label">Kurs</div><input type="number" class="price-input" data-isin="' + h.isin + '" value="' + priceValue + '" placeholder="—" step="0.01" min="0"></div>'
           + '<div class="holding-detail"><div class="label">Gevinst</div><div class="value ' + gainClass + '">' + formatCurrency(h.unrealizedGain) + '</div></div>'
           + '<div class="holding-detail"><div class="label">Andel</div><div class="value">' + sharePct + '%</div></div>'
-          + (h.totalDividendsReceived > 0 ? '<div class="holding-detail"><div class="label">Utbytte</div><div class="value">' + formatCurrency(h.totalDividendsReceived) + '</div></div>' : '')
+          + '<div class="holding-detail"><div class="label">Utbytte</div><div class="value' + (h.totalDividendsReceived > 0 ? '' : ' text-muted') + '">' + (h.totalDividendsReceived > 0 ? formatCurrency(h.totalDividendsReceived) : '—') + '</div></div>'
           + this.renderHoldingTransactions(h.isin)
           + '<div class="holding-actions"><button class="btn btn-small btn-outline holding-add-trade" data-isin="' + h.isin + '">Legg til transaksjon</button></div>'
           + '</div>';
@@ -686,8 +686,7 @@ class TallyApp {
 
     // Setup area HTML
     area.innerHTML = '<canvas id="hcanvas-' + isin + '"></canvas>'
-      + '<div class="chart-crosshair" id="hcross-' + isin + '"></div>'
-      + '<div class="chart-tooltip" id="htip-' + isin + '"></div>';
+      + '<div class="chart-crosshair" id="hcross-' + isin + '"></div>';
 
     // Default info
     if (infoEl) {
@@ -785,9 +784,9 @@ class TallyApp {
       ctx.beginPath(); ctx.arc(x, y, 3.5, 0, Math.PI * 2); ctx.fillStyle = dotColor; ctx.fill();
     }
 
-    // Touch interaction
+    // Touch interaction — show info below chart, no floating tooltip
     const crosshair = document.getElementById('hcross-' + isin);
-    const tooltip = document.getElementById('htip-' + isin);
+    const defaultInfo = infoEl?.innerHTML || '';
 
     const handleMove = (clientX: number) => {
       const r = area.getBoundingClientRect();
@@ -801,44 +800,16 @@ class TallyApp {
       const pctSign = pctFromCost >= 0 ? '+' : '';
       const pctClass = pctFromCost >= 0 ? 'text-success' : 'text-danger';
 
-      // Check for events at this date
-      const eventsHere = holdingEvents.filter(e => {
-        const eIdx = data.findIndex(d => d.date >= e.date);
-        return eIdx === idx;
-      });
-      let eventInfo = '';
-      for (const ev of eventsHere) {
-        const tl = ev.type === 'TRADE_BUY' ? 'Kjøp' : ev.type === 'TRADE_SELL' ? 'Salg' : 'Utbytte';
-        eventInfo += '<div class="tooltip-event">' + tl + ': ' + formatCurrency(ev.amount) + '</div>';
-      }
-
-      if (tooltip) {
-        tooltip.innerHTML = '<div class="tooltip-date">' + formatDateShort(point.date) + '</div>'
-          + '<div class="tooltip-value">' + formatCurrency(point.close, 2) + '</div>'
-          + '<div class="tooltip-return ' + pctClass + '">' + pctSign + pctFromCost.toFixed(1) + '% vs snittpris</div>'
-          + eventInfo;
-        const tw = 140;
-        let tx = x - tw / 2;
-        if (tx < 0) tx = 0;
-        if (tx + tw > r.width) tx = r.width - tw;
-        tooltip.style.left = tx + 'px';
-        tooltip.style.display = 'block';
-      }
-
       if (infoEl) {
-        infoEl.innerHTML = '<span class="chart-date-label">' + formatDateShort(point.date) + '</span>'
-          + '<span class="chart-value-label">' + formatCurrency(point.close, 2) + '</span>';
+        infoEl.innerHTML = '<span class="scrub-date">' + formatDateShort(point.date) + '</span>'
+          + '<span class="scrub-value">' + formatCurrency(point.close, 2) + '</span>'
+          + '<span class="' + pctClass + '">' + pctSign + pctFromCost.toFixed(1) + '%</span>';
       }
     };
 
     const handleEnd = () => {
       if (crosshair) crosshair.style.display = 'none';
-      if (tooltip) tooltip.style.display = 'none';
-      if (infoEl) {
-        const sign = returnPct >= 0 ? '+' : '';
-        infoEl.innerHTML = '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '">'
-          + sign + returnPct.toFixed(1) + '% siden ' + formatDateShort(data[0].date) + '</span>';
-      }
+      if (infoEl) infoEl.innerHTML = defaultInfo;
     };
 
     area.addEventListener('touchstart', (e) => { e.preventDefault(); handleMove(e.touches[0].clientX); }, { passive: false });
@@ -860,18 +831,16 @@ class TallyApp {
     const returnSign = returnPct >= 0 ? '+' : '';
 
     return '<div class="portfolio-chart-wrap">'
-      + '<div class="chart-header">'
-      + '<div class="chart-info" id="chart-info">'
-      + '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '">' + returnSign + returnPct.toFixed(1) + '% total</span>'
-      + '</div>'
-      + '</div>'
       + '<div class="chart-area" id="chart-area" data-color="' + color + '">'
       + '<canvas id="portfolio-canvas" width="600" height="200"></canvas>'
       + '<div class="chart-crosshair" id="chart-crosshair"></div>'
-      + '<div class="chart-tooltip" id="chart-tooltip"></div>'
       + '</div>'
-      + '<div class="chart-dates"><span>' + formatDateShort(data[0].date) + '</span><span>' + formatDateShort(data[data.length - 1].date) + '</span></div>'
-      + '<div class="chart-legend"><span class="legend-item"><span class="legend-dot legend-buy"></span>Kjøp</span><span class="legend-item"><span class="legend-dot legend-sell"></span>Salg</span><span class="legend-item"><span class="legend-dot legend-div"></span>Utbytte</span></div>'
+      + '<div class="chart-scrubber" id="chart-scrubber">'
+      + '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '" id="chart-scrubber-text">' + returnSign + returnPct.toFixed(1) + '% total</span>'
+      + '</div>'
+      + '<div class="chart-dates"><span>' + formatDateShort(data[0].date) + '</span>'
+      + '<span class="chart-legend-inline"><span class="legend-dot legend-buy"></span>Kjøp <span class="legend-dot legend-sell"></span>Salg <span class="legend-dot legend-div"></span>Utbytte</span>'
+      + '<span>' + formatDateShort(data[data.length - 1].date) + '</span></div>'
       + '</div>';
   }
 
@@ -992,83 +961,54 @@ class TallyApp {
   private attachChartInteraction(): void {
     const chartArea = document.getElementById('chart-area');
     const crosshair = document.getElementById('chart-crosshair');
-    const tooltip = document.getElementById('chart-tooltip');
-    const chartInfo = document.getElementById('chart-info');
-    if (!chartArea || !crosshair || !tooltip || !this.portfolioHistory) return;
+    const scrubber = document.getElementById('chart-scrubber-text');
+    if (!chartArea || !crosshair || !scrubber || !this.portfolioHistory) return;
 
     const data = this.portfolioHistory.series;
     const events = this.portfolioHistory.events;
     if (data.length < 2) return;
 
+    const defaultText = scrubber.innerHTML;
+
     const handleMove = (clientX: number) => {
       const rect = chartArea.getBoundingClientRect();
       const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
-      const ratio = x / rect.width;
-      const idx = Math.round(ratio * (data.length - 1));
+      const idx = Math.round((x / rect.width) * (data.length - 1));
       const point = data[Math.max(0, Math.min(idx, data.length - 1))];
 
-      // Position crosshair
       crosshair.style.left = x + 'px';
       crosshair.style.display = 'block';
 
-      // Tooltip content
       const returnPct = point.costBasis > 0 ? ((point.value - point.costBasis) / point.costBasis * 100) : 0;
       const returnSign = returnPct >= 0 ? '+' : '';
+      const pctClass = returnPct >= 0 ? 'text-success' : 'text-danger';
 
-      // Check if there's an event on this date
+      // Check for events at this date
       const eventsOnDate = events.filter(e => {
         const eIdx = data.findIndex(d => d.date >= e.date);
         return eIdx === idx;
       });
-      let eventInfo = '';
+      let eventText = '';
       for (const ev of eventsOnDate) {
-        const typeLabel = ev.type === 'TRADE_BUY' ? 'Kjøp' : ev.type === 'TRADE_SELL' ? 'Salg' : 'Utbytte';
-        eventInfo += '<div class="tooltip-event">' + typeLabel + ': ' + formatCurrency(ev.amount) + '</div>';
+        const tl = ev.type === 'TRADE_BUY' ? 'Kjøp' : ev.type === 'TRADE_SELL' ? 'Salg' : 'Utbytte';
+        eventText += ' · ' + tl + ' ' + formatCurrency(ev.amount);
       }
 
-      tooltip.innerHTML = '<div class="tooltip-date">' + formatDateShort(point.date) + '</div>'
-        + '<div class="tooltip-value">' + formatCurrency(point.value) + '</div>'
-        + '<div class="tooltip-return ' + (returnPct >= 0 ? 'text-success' : 'text-danger') + '">' + returnSign + returnPct.toFixed(1) + '%</div>'
-        + eventInfo;
-
-      // Position tooltip
-      const tooltipW = 140;
-      let tooltipX = x - tooltipW / 2;
-      if (tooltipX < 0) tooltipX = 0;
-      if (tooltipX + tooltipW > rect.width) tooltipX = rect.width - tooltipW;
-      tooltip.style.left = tooltipX + 'px';
-      tooltip.style.display = 'block';
-
-      // Update header info
-      if (chartInfo) {
-        chartInfo.innerHTML = '<span class="chart-date-label">' + formatDateShort(point.date) + '</span>'
-          + '<span class="chart-value-label">' + formatCurrency(point.value) + '</span>';
-      }
+      scrubber.className = 'chart-scrubber-active';
+      scrubber.innerHTML = '<span class="scrub-date">' + formatDateShort(point.date) + '</span>'
+        + '<span class="scrub-value">' + formatCurrency(point.value) + '</span>'
+        + '<span class="' + pctClass + '">' + returnSign + returnPct.toFixed(1) + '%</span>'
+        + (eventText ? '<span class="scrub-event">' + eventText + '</span>' : '');
     };
 
     const handleEnd = () => {
       crosshair.style.display = 'none';
-      tooltip.style.display = 'none';
-      // Restore default header
-      if (chartInfo && this.portfolioHistory) {
-        const d = this.portfolioHistory.series;
-        const firstVal = d[0].value;
-        const lastVal = d[d.length - 1].value;
-        const isPositive = lastVal >= firstVal;
-        const returnPct = firstVal > 0 ? ((lastVal - firstVal) / firstVal * 100) : 0;
-        const returnSign = returnPct >= 0 ? '+' : '';
-        chartInfo.innerHTML = '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '">' + returnSign + returnPct.toFixed(1) + '% total</span>';
-      }
+      scrubber.className = data[data.length - 1].value >= data[0].value ? 'text-success' : 'text-danger';
+      scrubber.innerHTML = defaultText;
     };
 
-    chartArea.addEventListener('touchstart', (e) => {
-      e.preventDefault();
-      handleMove(e.touches[0].clientX);
-    }, { passive: false });
-    chartArea.addEventListener('touchmove', (e) => {
-      e.preventDefault();
-      handleMove(e.touches[0].clientX);
-    }, { passive: false });
+    chartArea.addEventListener('touchstart', (e) => { e.preventDefault(); handleMove(e.touches[0].clientX); }, { passive: false });
+    chartArea.addEventListener('touchmove', (e) => { e.preventDefault(); handleMove(e.touches[0].clientX); }, { passive: false });
     chartArea.addEventListener('touchend', handleEnd);
     chartArea.addEventListener('mousemove', (e) => handleMove(e.clientX));
     chartArea.addEventListener('mouseleave', handleEnd);
