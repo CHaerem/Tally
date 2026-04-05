@@ -61,13 +61,34 @@ export async function fetchStockData(ticker: string): Promise<StockDataFile | nu
 
 // --- Live price fallback (Yahoo Finance) ---
 
+interface YahooChartMeta {
+  regularMarketPrice: number;
+  currency: string;
+  chartPreviousClose?: number;
+  regularMarketDayHigh?: number;
+  regularMarketDayLow?: number;
+  regularMarketVolume?: number;
+  fiftyTwoWeekHigh?: number;
+  fiftyTwoWeekLow?: number;
+}
+
 interface YahooChartResult {
   chart: {
-    result: Array<{
-      meta: { regularMarketPrice: number; currency: string };
-    }> | null;
+    result: Array<{ meta: YahooChartMeta }> | null;
     error: { description: string } | null;
   };
+}
+
+export interface StockQuote {
+  price: number;
+  previousClose: number | null;
+  dayHigh: number | null;
+  dayLow: number | null;
+  volume: number | null;
+  weekHigh52: number | null;
+  weekLow52: number | null;
+  dayChange: number | null;
+  dayChangePct: number | null;
 }
 
 export async function fetchLivePrice(ticker: string): Promise<number | null> {
@@ -78,6 +99,32 @@ export async function fetchLivePrice(ticker: string): Promise<number | null> {
     if (!response.ok) return null;
     const data = await response.json() as YahooChartResult;
     return data.chart?.result?.[0]?.meta?.regularMarketPrice ?? null;
+  } catch {
+    return null;
+  }
+}
+
+export async function fetchStockQuote(ticker: string): Promise<StockQuote | null> {
+  const symbol = (ticker.includes('.')) ? ticker : ticker + '.OL';
+  try {
+    const response = await fetch(YAHOO_BASE + encodeURIComponent(symbol) + '?range=5d&interval=1d');
+    if (!response.ok) return null;
+    const data = await response.json() as YahooChartResult;
+    const meta = data.chart?.result?.[0]?.meta;
+    if (!meta) return null;
+    const prev = meta.chartPreviousClose ?? null;
+    const price = meta.regularMarketPrice;
+    return {
+      price,
+      previousClose: prev,
+      dayHigh: meta.regularMarketDayHigh ?? null,
+      dayLow: meta.regularMarketDayLow ?? null,
+      volume: meta.regularMarketVolume ?? null,
+      weekHigh52: meta.fiftyTwoWeekHigh ?? null,
+      weekLow52: meta.fiftyTwoWeekLow ?? null,
+      dayChange: prev ? price - prev : null,
+      dayChangePct: prev ? ((price - prev) / prev) * 100 : null,
+    };
   } catch {
     return null;
   }

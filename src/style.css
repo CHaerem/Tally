@@ -919,6 +919,33 @@ header h1 {
   color: var(--accent);
 }
 
+/* Market stats in expanded card */
+.market-stats {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border);
+}
+
+.market-stats-link {
+  grid-column: 1 / -1;
+  background: var(--bg-elevated);
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.market-stats-link a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.market-stats-link a:active {
+  opacity: 0.7;
+}
+
 /* Watchlist remove link */
 .watchlist-remove-link {
   background: none !important;

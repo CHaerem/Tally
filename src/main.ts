@@ -2,7 +2,8 @@ import './style.css';
 import { LedgerStorage } from './ledger';
 import { parseCSV, validateCSV } from './import';
 import { deriveHoldings, derivePortfolioMetrics, formatXIRRPercent, formatCurrency, formatPercent, formatDateShort } from './calculations';
-import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate, fetchPriceHistory, fetchLivePrice } from './api';
+import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate, fetchPriceHistory, fetchLivePrice, fetchStockQuote } from './api';
+import type { StockQuote } from './api';
 import type { LedgerState, Holding, PortfolioMetrics } from './types';
 import type { CSVParseResult } from './import';
 
@@ -186,6 +187,7 @@ class TallyApp {
   // exploreCategory removed
   private watchlist: Array<{ ticker: string; name: string; type: 'STOCK' | 'FUND' }> = [];
   private obxPrice: number | null = null;
+  private quoteCache = new Map<string, StockQuote>();
   private portfolioHistory: {
     series: Array<{ date: string; value: number; costBasis: number }>;
     events: Array<{ date: string; type: string; amount: number; name: string }>;
@@ -635,11 +637,65 @@ class TallyApp {
           + '<div class="holding-detail"><div class="label">Gevinst</div><div class="value ' + gainClass + '">' + formatCurrency(h.unrealizedGain) + '</div></div>'
           + '<div class="holding-detail"><div class="label">Andel</div><div class="value">' + sharePct + '%</div></div>'
           + '<div class="holding-detail"><div class="label">Utbytte</div><div class="value' + (h.totalDividendsReceived > 0 ? '' : ' text-muted') + '">' + (h.totalDividendsReceived > 0 ? formatCurrency(h.totalDividendsReceived) : '—') + '</div></div>'
+          + this.renderMarketStats(inst?.ticker || h.ticker)
           + this.renderHoldingTransactions(h.isin)
           + '<div class="holding-actions"><button class="btn btn-small holding-add-trade" data-isin="' + h.isin + '">+ Legg til transaksjon</button></div>'
           + '</div>';
       }).join('')
       + '</div>';
+  }
+
+  private renderMarketStats(ticker: string): string {
+    const safeTicker = ticker.replace(/\./g, '_');
+    const isStock = !ticker.includes('.IR');
+    const newswebTicker = ticker.replace('.OL', '');
+    return '<div class="market-stats" id="mstats-' + safeTicker + '">'
+      + '<div class="holding-detail"><div class="label">I dag</div><div class="value text-muted" id="mstat-day-' + safeTicker + '">...</div></div>'
+      + '<div class="holding-detail"><div class="label">Dag høy/lav</div><div class="value text-muted" id="mstat-range-' + safeTicker + '">...</div></div>'
+      + '<div class="holding-detail"><div class="label">52 uker</div><div class="value text-muted" id="mstat-52w-' + safeTicker + '">...</div></div>'
+      + '<div class="holding-detail"><div class="label">Volum</div><div class="value text-muted" id="mstat-vol-' + safeTicker + '">...</div></div>'
+      + (isStock ? '<div class="market-stats-link"><a href="https://newsweb.oslobors.no/search?issuer=' + newswebTicker + '" target="_blank" rel="noopener">Se børsmeldinger ›</a></div>' : '')
+      + '</div>';
+  }
+
+  private loadMarketStats(ticker: string): void {
+    const safeTicker = ticker.replace(/\./g, '_');
+    const cached = this.quoteCache.get(ticker);
+    if (cached) {
+      this.fillMarketStats(safeTicker, cached);
+      return;
+    }
+    fetchStockQuote(ticker).then(quote => {
+      if (!quote) return;
+      this.quoteCache.set(ticker, quote);
+      this.fillMarketStats(safeTicker, quote);
+    });
+  }
+
+  private fillMarketStats(safeTicker: string, q: StockQuote): void {
+    const dayEl = document.getElementById('mstat-day-' + safeTicker);
+    const rangeEl = document.getElementById('mstat-range-' + safeTicker);
+    const w52El = document.getElementById('mstat-52w-' + safeTicker);
+    const volEl = document.getElementById('mstat-vol-' + safeTicker);
+
+    if (dayEl && q.dayChange !== null && q.dayChangePct !== null) {
+      const sign = q.dayChange >= 0 ? '+' : '';
+      const cls = q.dayChange >= 0 ? 'text-success' : 'text-danger';
+      dayEl.className = 'value ' + cls;
+      dayEl.textContent = sign + q.dayChange.toFixed(2) + ' (' + sign + q.dayChangePct.toFixed(2) + '%)';
+    }
+    if (rangeEl && q.dayLow !== null && q.dayHigh !== null) {
+      rangeEl.className = 'value';
+      rangeEl.textContent = formatCurrency(q.dayLow, 2) + ' — ' + formatCurrency(q.dayHigh, 2);
+    }
+    if (w52El && q.weekLow52 !== null && q.weekHigh52 !== null) {
+      w52El.className = 'value';
+      w52El.textContent = formatCurrency(q.weekLow52, 2) + ' — ' + formatCurrency(q.weekHigh52, 2);
+    }
+    if (volEl && q.volume !== null) {
+      volEl.className = 'value';
+      volEl.textContent = q.volume.toLocaleString('nb-NO');
+    }
   }
 
   private renderHoldingTransactions(isin: string): string {
@@ -1077,6 +1133,7 @@ class TallyApp {
         + '</div>'
         + '<div class="holding-detail"><div class="label">Kurs</div><div class="value">' + (price ? formatCurrency(price, 2) : '—') + '</div></div>'
         + '<div class="holding-detail"><div class="label">Type</div><div class="value">' + (isFund ? 'Fond' : 'Aksje') + '</div></div>'
+        + this.renderMarketStats(w.ticker)
         + '<div class="holding-actions">'
         + '<button class="btn btn-small holding-add-trade stock-buy" data-ticker="' + w.ticker + '">+ Kjøp</button>'
         + '<button class="btn btn-small watchlist-remove-link" data-ticker="' + w.ticker + '">Fjern fra følgeliste</button>'
@@ -1662,6 +1719,13 @@ class TallyApp {
                 });
               }
             }
+            // Load market stats
+            const mstats = details.querySelector('.market-stats') as HTMLElement | null;
+            if (mstats && mstats.querySelector('.text-muted')) {
+              const chartWrap2 = details.querySelector('.holding-chart-wrap') as HTMLElement | null;
+              const t = chartWrap2?.dataset.ticker;
+              if (t) this.loadMarketStats(t);
+            }
           }
         }
       });
@@ -1730,8 +1794,9 @@ class TallyApp {
         const detail = document.getElementById('sdetail-' + safeTicker);
         if (!detail) return;
         detail.classList.toggle('active');
-        if (detail.classList.contains('active') && !detail.querySelector('canvas')) {
-          this.loadStockDetailChart(ticker, safeTicker);
+        if (detail.classList.contains('active')) {
+          if (!detail.querySelector('canvas')) this.loadStockDetailChart(ticker, safeTicker);
+          this.loadMarketStats(ticker);
         }
       });
     });
