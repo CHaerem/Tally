@@ -70,7 +70,7 @@ interface YahooChartResult {
   };
 }
 
-async function fetchLivePrice(ticker: string): Promise<number | null> {
+export async function fetchLivePrice(ticker: string): Promise<number | null> {
   // Fund tickers already have .IR suffix (Morningstar), stocks use .OL (Oslo)
   const symbol = (ticker.includes('.')) ? ticker : ticker + '.OL';
   try {

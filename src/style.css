@@ -717,6 +717,121 @@ header h1 {
   display: inline-block;
 }
 
+/* Market section */
+.market-card {
+  padding: 14px 16px;
+}
+
+.market-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.market-ticker {
+  font-weight: 700;
+  font-size: 15px;
+  min-width: 40px;
+}
+
+.market-name {
+  color: var(--text-secondary);
+  font-size: 13px;
+  flex: 1;
+}
+
+.market-price {
+  font-weight: 600;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Watchlist */
+.watchlist-header {
+  margin-top: 8px;
+}
+
+.watchlist-list {
+  padding: 0;
+}
+
+.watchlist-empty {
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.watchlist-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  gap: 8px;
+}
+
+.watchlist-item:last-child {
+  border-bottom: none;
+}
+
+.watchlist-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.watchlist-ticker {
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.watchlist-name {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.watchlist-values {
+  text-align: right;
+}
+
+.watchlist-price {
+  font-weight: 600;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
+.watchlist-remove {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 20px;
+  padding: 4px 8px;
+  cursor: pointer;
+  line-height: 1;
+  border-radius: 50%;
+  min-width: 32px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.watchlist-remove:active {
+  background: var(--accent-dim);
+  color: var(--danger);
+}
+
+.watchlist-search {
+  padding: 8px 16px 12px;
+}
+
+.watchlist-search .search-wrapper {
+  position: relative;
+}
+
 .dividend-list {
   padding: 8px 16px 4px;
   border-top: 1px solid var(--border);

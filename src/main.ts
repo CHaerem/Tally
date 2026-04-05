@@ -2,7 +2,7 @@ import './style.css';
 import { LedgerStorage } from './ledger';
 import { parseCSV, validateCSV } from './import';
 import { deriveHoldings, derivePortfolioMetrics, formatXIRRPercent, formatCurrency, formatPercent, formatDateShort } from './calculations';
-import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate, fetchPriceHistory } from './api';
+import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate, fetchPriceHistory, fetchLivePrice } from './api';
 import type { LedgerState, Holding, PortfolioMetrics } from './types';
 import type { CSVParseResult } from './import';
 
@@ -183,6 +183,8 @@ class TallyApp {
   private stockList: StockSuggestion[] = [];
   private selectedSuggestionIndex = -1;
   private tradeModalMode: 'simple' | 'full' = 'simple';
+  private watchlist: Array<{ ticker: string; name: string; type: 'STOCK' | 'FUND' }> = [];
+  private obxPrice: number | null = null;
   private portfolioHistory: {
     series: Array<{ date: string; value: number; costBasis: number }>;
     events: Array<{ date: string; type: string; amount: number; name: string }>;
@@ -192,6 +194,7 @@ class TallyApp {
   constructor() {
     this.ledger = LedgerStorage.initializeLedger();
     this.currentPrices = LedgerStorage.loadPrices();
+    this.watchlist = this.loadWatchlist();
     this.checkShareUrl();
     this.updateDerivedData();
     this.render();
@@ -199,6 +202,7 @@ class TallyApp {
     this.refreshPrices();
     this.loadStockIndex();
     this.computePortfolioHistory();
+    this.fetchOBXPrice();
   }
 
   private async loadStockIndex(): Promise<void> {
@@ -212,6 +216,41 @@ class TallyApp {
         }))
       : [];
     this.stockList = [...stocks, ...NORWEGIAN_FUNDS];
+  }
+
+  private loadWatchlist(): Array<{ ticker: string; name: string; type: 'STOCK' | 'FUND' }> {
+    try {
+      const raw = localStorage.getItem('tally_watchlist');
+      return raw ? JSON.parse(raw) : [];
+    } catch { return []; }
+  }
+
+  private saveWatchlist(): void {
+    localStorage.setItem('tally_watchlist', JSON.stringify(this.watchlist));
+  }
+
+  private addToWatchlist(stock: StockSuggestion): void {
+    if (this.watchlist.some(w => w.ticker === stock.ticker)) return;
+    this.watchlist.push({ ticker: stock.ticker, name: stock.name, type: stock.type });
+    this.saveWatchlist();
+    this.render();
+    this.attachEventListeners();
+  }
+
+  private removeFromWatchlist(ticker: string): void {
+    this.watchlist = this.watchlist.filter(w => w.ticker !== ticker);
+    this.saveWatchlist();
+    this.render();
+    this.attachEventListeners();
+  }
+
+  private async fetchOBXPrice(): Promise<void> {
+    const price = await fetchLivePrice('^OBX');
+    if (price !== null) {
+      this.obxPrice = price;
+      const el = document.getElementById('obx-price');
+      if (el) el.textContent = price.toFixed(2);
+    }
   }
 
   private checkShareUrl(): void {
@@ -438,7 +477,7 @@ class TallyApp {
 
     app.innerHTML = this.renderHeader()
       + '<main class="container">'
-      + (hasData ? this.renderSummary() + this.renderWarnings() + this.renderHoldings() + this.renderFooter() : this.renderEmptyState())
+      + (hasData ? this.renderSummary() + this.renderWarnings() + this.renderHoldings() + this.renderMarketSection() + this.renderFooter() : this.renderEmptyState())
       + '</main>'
       + this.renderTradeModal()
       + this.renderImportModal();
@@ -1057,6 +1096,49 @@ class TallyApp {
       + rows + '</div>';
   }
 
+  private renderMarketSection(): string {
+    // Market overview
+    const obxDisplay = this.obxPrice !== null ? this.obxPrice.toFixed(2) : '...';
+    const market = '<div class="card-header"><h2>Marked</h2></div>'
+      + '<div class="card market-card">'
+      + '<div class="market-row">'
+      + '<div class="market-ticker">OBX</div>'
+      + '<div class="market-name">Oslo Børs</div>'
+      + '<div class="market-price" id="obx-price">' + obxDisplay + '</div>'
+      + '</div></div>';
+
+    // Watchlist
+    const watchlistItems = this.watchlist.map(w => {
+      const stock = this.stockList.find(s => s.ticker === w.ticker);
+      const price = stock?.currentPrice;
+      const isFund = w.type === 'FUND';
+      const label = isFund ? w.name : w.ticker;
+      const sublabel = isFund ? 'Fond' : w.name;
+      return '<div class="watchlist-item" data-ticker="' + w.ticker + '">'
+        + '<div class="watchlist-info">'
+        + '<div class="watchlist-ticker">' + label + '</div>'
+        + '<div class="watchlist-name">' + sublabel + '</div>'
+        + '</div>'
+        + '<div class="watchlist-values">'
+        + (price ? '<div class="watchlist-price">' + price.toFixed(2) + '</div>' : '<div class="watchlist-price text-muted">—</div>')
+        + '</div>'
+        + '<button class="watchlist-remove" data-ticker="' + w.ticker + '" aria-label="Fjern">×</button>'
+        + '</div>';
+    }).join('');
+
+    const watchlist = '<div class="card-header watchlist-header"><h2>Følgeliste</h2>'
+      + '<button class="btn btn-small btn-outline" id="add-watchlist">+ Legg til</button></div>'
+      + (watchlistItems
+        ? '<div class="card watchlist-list">' + watchlistItems + '</div>'
+        : '<div class="card watchlist-empty"><span class="text-muted text-small">Legg til aksjer eller fond du vil følge med på</span></div>')
+      // Search modal inline
+      + '<div class="watchlist-search" id="watchlist-search" style="display:none">'
+      + '<div class="search-wrapper"><input type="text" id="watchlist-ticker" class="form-control" placeholder="Søk etter aksje eller fond..." autocapitalize="characters" autocorrect="off" spellcheck="false" autocomplete="off">'
+      + '<div class="search-suggestions" id="watchlist-suggestions"></div></div></div>';
+
+    return market + watchlist;
+  }
+
   private renderFooter(): string {
     return '<div class="footer-actions">'
       + '<span class="text-muted text-small">'
@@ -1553,6 +1635,72 @@ class TallyApp {
         this.attachEventListeners();
       });
     });
+
+    // Watchlist listeners
+    document.getElementById('add-watchlist')?.addEventListener('click', () => {
+      const searchEl = document.getElementById('watchlist-search');
+      if (searchEl) {
+        searchEl.style.display = searchEl.style.display === 'none' ? 'block' : 'none';
+        if (searchEl.style.display === 'block') {
+          document.getElementById('watchlist-ticker')?.focus();
+        }
+      }
+    });
+
+    document.querySelectorAll('.watchlist-remove').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const ticker = (btn as HTMLElement).dataset.ticker;
+        if (ticker) this.removeFromWatchlist(ticker);
+      });
+    });
+
+    // Watchlist search
+    const wInput = document.getElementById('watchlist-ticker') as HTMLInputElement | null;
+    const wSuggestions = document.getElementById('watchlist-suggestions') as HTMLElement | null;
+    if (wInput && wSuggestions) {
+      wInput.addEventListener('input', () => {
+        const query = wInput.value.trim().toUpperCase();
+        if (query.length === 0) { wSuggestions.innerHTML = ''; wSuggestions.classList.remove('active'); return; }
+        const queryWords = query.split(/\s+/).filter(w => w.length > 0);
+        const matches = this.stockList
+          .filter(s => {
+            // Exclude already-watched and already-held instruments
+            if (this.watchlist.some(w => w.ticker === s.ticker)) return false;
+            const held = this.ledger.instruments.find(i => i.ticker === s.ticker);
+            if (held && this.holdings.some(h => h.isin === held.isin)) return false;
+            const combined = (s.ticker + ' ' + s.name).toUpperCase();
+            return queryWords.every(w => combined.includes(w));
+          })
+          .slice(0, 6);
+        if (matches.length === 0) {
+          wSuggestions.innerHTML = '<div class="suggestion-empty">Ingen treff</div>';
+          wSuggestions.classList.add('active');
+          return;
+        }
+        wSuggestions.innerHTML = matches.map(s => {
+          const isFund = s.type === 'FUND';
+          const badge = isFund ? '<span class="suggestion-badge">Fond</span>' : '';
+          const label = isFund ? s.name : s.ticker;
+          const sublabel = isFund ? '' : '<span class="suggestion-name">' + s.name + '</span>';
+          return '<button class="suggestion-item" type="button">'
+            + '<span class="suggestion-ticker">' + label + '</span>'
+            + badge + sublabel
+            + (s.currentPrice ? '<span class="suggestion-price">' + s.currentPrice.toFixed(2) + '</span>' : '')
+            + '</button>';
+        }).join('');
+        wSuggestions.classList.add('active');
+        wSuggestions.querySelectorAll('.suggestion-item').forEach((item, i) => {
+          item.addEventListener('click', () => {
+            this.addToWatchlist(matches[i]);
+            wInput.value = '';
+            wSuggestions.innerHTML = '';
+            wSuggestions.classList.remove('active');
+            document.getElementById('watchlist-search')!.style.display = 'none';
+          });
+        });
+      });
+    }
   }
 
   private showModal(): void { document.getElementById('import-modal')?.classList.add('active'); }
