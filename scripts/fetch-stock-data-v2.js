@@ -69,6 +69,7 @@ const FUND_SYMBOLS = [
   '0P0001OPBH.IR',  // KLP AksjeGlobal Flerfaktor
   '0P0001BWAQ.IR',  // KLP AksjeGlobal Small Cap Indeks
   '0P00006D9Q.IR',  // KLP AksjeAsia Indeks
+  '0P00017YPW.IR',  // KLP AksjeAsia Indeks Valutasikret
   '0P00000MY9.IR',  // KLP Obligasjon 5 år
   '0P0001IFZZ.IR',  // KLP Obligasjon 1 år Mer Samfunnsansvar
   '0P00002C94.IR',  // KLP Obligasjon Global

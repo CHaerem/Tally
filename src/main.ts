@@ -57,6 +57,7 @@ const NORWEGIAN_FUNDS: StockSuggestion[] = [
   { ticker: '0P0001OPBH.IR', name: 'KLP AksjeGlobal Flerfaktor', currentPrice: null, type: 'FUND' },
   { ticker: '0P0001BWAQ.IR', name: 'KLP AksjeGlobal Small Cap Indeks', currentPrice: null, type: 'FUND' },
   { ticker: '0P00006D9Q.IR', name: 'KLP AksjeAsia Indeks', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00017YPW.IR', name: 'KLP AksjeAsia Indeks Valutasikret', currentPrice: null, type: 'FUND' },
   { ticker: '0P00000MY9.IR', name: 'KLP Obligasjon 5 år', currentPrice: null, type: 'FUND' },
   { ticker: '0P0001IFZZ.IR', name: 'KLP Obligasjon 1 år Mer Samfunnsansvar', currentPrice: null, type: 'FUND' },
   { ticker: '0P00002C94.IR', name: 'KLP Obligasjon Global', currentPrice: null, type: 'FUND' },
