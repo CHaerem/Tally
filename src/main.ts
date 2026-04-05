@@ -569,9 +569,12 @@ class TallyApp {
       + '<div class="stat-item"><div class="label">Avkastning</div><div class="stat-val ' + totalReturnClass + '">' + (totalReturn >= 0 ? '+' : '') + formatCurrency(totalReturn) + '</div></div>'
       + '<div class="stat-item"><div class="label">Utbytte</div><div class="stat-val">' + formatCurrency(m.totalDividends) + '</div></div>'
       + '</div>'
-      // Allocation bar (compact, no labels — holdings show colors)
+      // Allocation bar with inline labels
       + (allocationItems.length >= 2
-        ? '<div class="alloc-compact"><div class="alloc-bar">' + allocationBar + '</div></div>'
+        ? '<div class="alloc-compact"><div class="alloc-bar">' + allocationBar + '</div>'
+          + '<div class="alloc-inline-labels">' + allocationItems.map(a =>
+            '<span><span class="alloc-dot" style="background:' + a.color + '"></span>' + a.label + ' ' + a.pct.toFixed(0) + '%</span>'
+          ).join('') + '</div></div>'
         : '')
       + '</div>';
   }
@@ -588,7 +591,7 @@ class TallyApp {
     const refreshLabel = this.isFetchingPrices
       ? '<span class="loading"></span> Henter...'
       : 'Oppdater';
-    const refreshBtn = '<button class="btn btn-small btn-primary" id="refresh-prices"'
+    const refreshBtn = '<button class="btn btn-small btn-outline" id="refresh-prices"'
       + (this.isFetchingPrices ? ' disabled' : '') + '>' + refreshLabel + '</button>';
 
     const allocationColors = ['#5a9a6e', '#da7756', '#4a90d9', '#9b59b6', '#e67e22', '#1abc9c', '#e74c3c', '#34495e'];
@@ -598,7 +601,7 @@ class TallyApp {
       + '<div class="holdings-list">'
       + this.holdings.map((h, hIdx) => {
         const gainClass = h.unrealizedGain >= 0 ? 'text-success' : 'text-danger';
-        const gainSign = h.unrealizedGain >= 0 ? '+' : '';
+        // gainSign removed — formatPercent already adds +/-
         const inst = this.ledger.instruments.find(i => i.isin === h.isin);
         const isFund = inst?.instrumentType === 'FUND';
         const label = isFund ? h.name : h.ticker;
@@ -618,7 +621,7 @@ class TallyApp {
           + '</div>'
           + '<div class="holding-values">'
           + '<div class="holding-market-value">' + formatCurrency(h.marketValue) + '</div>'
-          + '<div class="holding-gain ' + gainClass + '">' + gainSign + formatPercent(h.unrealizedGainPercent) + '</div>'
+          + '<div class="holding-gain ' + gainClass + '">' + formatPercent(h.unrealizedGainPercent) + '</div>'
           + '</div></div>'
           + '<div class="holding-details" id="details-' + h.isin + '">'
           + '<div class="holding-chart-wrap" data-ticker="' + (inst?.ticker || h.ticker) + '" data-isin="' + h.isin + '" data-cost="' + h.averageCostPerShare.toFixed(2) + '">'
@@ -632,7 +635,7 @@ class TallyApp {
           + '<div class="holding-detail"><div class="label">Andel</div><div class="value">' + sharePct + '%</div></div>'
           + '<div class="holding-detail"><div class="label">Utbytte</div><div class="value' + (h.totalDividendsReceived > 0 ? '' : ' text-muted') + '">' + (h.totalDividendsReceived > 0 ? formatCurrency(h.totalDividendsReceived) : '—') + '</div></div>'
           + this.renderHoldingTransactions(h.isin)
-          + '<div class="holding-actions"><button class="btn btn-small btn-outline holding-add-trade" data-isin="' + h.isin + '">Legg til transaksjon</button></div>'
+          + '<div class="holding-actions"><button class="btn btn-small holding-add-trade" data-isin="' + h.isin + '">+ Legg til transaksjon</button></div>'
           + '</div>';
       }).join('')
       + '</div>';
@@ -827,6 +830,17 @@ class TallyApp {
     const returnPct = firstVal > 0 ? ((lastVal - firstVal) / firstVal * 100) : 0;
     const returnSign = returnPct >= 0 ? '+' : '';
 
+    // Build legend from actual events
+    const events = this.portfolioHistory.events;
+    const hasBuy = events.some(e => e.type === 'TRADE_BUY');
+    const hasSell = events.some(e => e.type === 'TRADE_SELL');
+    const hasDiv = events.some(e => e.type === 'DIVIDEND');
+    const legendParts: string[] = [];
+    if (hasBuy) legendParts.push('<span class="legend-dot legend-buy"></span>Kjøp');
+    if (hasSell) legendParts.push('<span class="legend-dot legend-sell"></span>Salg');
+    if (hasDiv) legendParts.push('<span class="legend-dot legend-div"></span>Utbytte');
+    const legend = legendParts.length > 0 ? '<span class="chart-legend-inline">' + legendParts.join(' ') + '</span>' : '';
+
     return '<div class="portfolio-chart-wrap">'
       + '<div class="chart-area" id="chart-area" data-color="' + color + '">'
       + '<canvas id="portfolio-canvas" width="600" height="200"></canvas>'
@@ -836,7 +850,7 @@ class TallyApp {
       + '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '" id="chart-scrubber-text">' + returnSign + returnPct.toFixed(1) + '% total</span>'
       + '</div>'
       + '<div class="chart-dates"><span>' + formatDateShort(data[0].date) + '</span>'
-      + '<span class="chart-legend-inline"><span class="legend-dot legend-buy"></span>Kjøp <span class="legend-dot legend-sell"></span>Salg <span class="legend-dot legend-div"></span>Utbytte</span>'
+      + legend
       + '<span>' + formatDateShort(data[data.length - 1].date) + '</span></div>'
       + '</div>';
   }

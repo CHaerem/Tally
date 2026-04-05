@@ -326,7 +326,22 @@ header h1 {
 }
 
 .alloc-compact {
-  padding: 10px 16px 6px;
+  padding: 10px 16px 8px;
+}
+
+.alloc-inline-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-top: 6px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.alloc-inline-labels span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .summary-grid {
@@ -582,9 +597,9 @@ header h1 {
 /* Scrubber bar — shows info below chart on touch/hover */
 .chart-scrubber {
   text-align: center;
-  padding: 6px 4px 2px;
-  min-height: 24px;
-  font-size: 13px;
+  padding: 8px 4px 4px;
+  min-height: 28px;
+  font-size: 15px;
 }
 
 .chart-scrubber-active {
@@ -728,19 +743,21 @@ header h1 {
 }
 
 .section-market {
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1.5px solid rgba(0, 0, 0, 0.06);
 }
 
 .section-market .card-header h2 {
   font-size: 11px;
   font-weight: 400;
+  color: var(--text-muted);
 }
 
 .section-market .card {
   box-shadow: none;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  background: var(--bg-elevated);
 }
 
 /* Market section */
@@ -1087,6 +1104,17 @@ header h1 {
   justify-content: center;
 }
 
+.holding-add-trade {
+  background: none !important;
+  border: none !important;
+  color: var(--accent) !important;
+  font-weight: 500;
+}
+
+.holding-add-trade:active {
+  opacity: 0.7;
+}
+
 .btn-outline {
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -1112,7 +1140,7 @@ header h1 {
   justify-content: space-between;
   align-items: center;
   padding: 20px 4px;
-  padding-bottom: calc(80px + var(--safe-bottom));
+  padding-bottom: calc(90px + var(--safe-bottom));
   flex-wrap: wrap;
   gap: 8px;
 }
