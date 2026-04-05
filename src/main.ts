@@ -487,6 +487,38 @@ class TallyApp {
     const totalReturn = unrealizedGain + m.totalDividends;
     const totalReturnClass = totalReturn >= 0 ? 'text-success' : 'text-danger';
 
+    // Calculate invested from trades (buy - sell) if no CASH_IN events
+    const totalCostBasis = this.holdings.reduce((sum, h) => sum + h.costBasis, 0);
+    const invested = m.netCashFlow > 0 ? m.netCashFlow : totalCostBasis;
+
+    // Best and worst performing holdings
+    const sorted = [...this.holdings].sort((a, b) => b.unrealizedGainPercent - a.unrealizedGainPercent);
+    const best = sorted[0];
+    const worst = sorted[sorted.length - 1];
+    const bestInst = best ? this.ledger.instruments.find(i => i.isin === best.isin) : null;
+    const worstInst = worst ? this.ledger.instruments.find(i => i.isin === worst.isin) : null;
+    const bestLabel = bestInst?.instrumentType === 'FUND' ? best?.name : best?.ticker;
+    const worstLabel = worstInst?.instrumentType === 'FUND' ? worst?.name : worst?.ticker;
+
+    // Allocation bar
+    const totalMV = m.currentValue || 1;
+    const allocationColors = ['#5a9a6e', '#da7756', '#4a90d9', '#9b59b6', '#e67e22', '#1abc9c', '#e74c3c', '#34495e'];
+    const allocationItems = this.holdings
+      .map((h, i) => {
+        const inst = this.ledger.instruments.find(ii => ii.isin === h.isin);
+        const label = inst?.instrumentType === 'FUND' ? h.name : h.ticker;
+        const pct = (h.marketValue / totalMV) * 100;
+        return { label, pct, color: allocationColors[i % allocationColors.length] };
+      })
+      .sort((a, b) => b.pct - a.pct);
+
+    const allocationBar = allocationItems
+      .map(a => '<div class="alloc-segment" style="width:' + a.pct.toFixed(1) + '%;background:' + a.color + '" title="' + a.label + ' ' + a.pct.toFixed(1) + '%"></div>')
+      .join('');
+    const allocationLabels = allocationItems
+      .map(a => '<span class="alloc-label"><span class="alloc-dot" style="background:' + a.color + '"></span>' + a.label + ' ' + a.pct.toFixed(0) + '%</span>')
+      .join('');
+
     return '<div class="card">'
       + '<div class="summary-hero"><div class="label">Markedsverdi</div><div class="value">' + formatCurrency(m.currentValue) + '</div>'
       + '<div class="sub-value ' + xirrClass + '">' + formatXIRRPercent(m.xirr) + ' årlig (XIRR)</div></div>'
@@ -494,10 +526,22 @@ class TallyApp {
       + '<div id="portfolio-dividend-list"></div>'
       + '<div class="summary-grid">'
       + '<div class="summary-item"><div class="label">Total avkastning</div><div class="value ' + totalReturnClass + '">' + formatCurrency(totalReturn) + '</div></div>'
-      + '<div class="summary-item"><div class="label">Investert</div><div class="value">' + formatCurrency(m.netCashFlow) + '</div></div>'
+      + '<div class="summary-item"><div class="label">Investert</div><div class="value">' + formatCurrency(invested) + '</div></div>'
       + '<div class="summary-item"><div class="label">Urealisert</div><div class="value ' + unrealizedClass + '">' + formatCurrency(unrealizedGain) + '</div></div>'
       + '<div class="summary-item"><div class="label">Utbytte</div><div class="value">' + formatCurrency(m.totalDividends) + '</div></div>'
-      + '</div></div>';
+      + '</div>'
+      // Best/worst
+      + (sorted.length >= 2
+        ? '<div class="best-worst">'
+          + '<div class="bw-item"><div class="label">Beste</div><div class="bw-value text-success">' + bestLabel + ' +' + formatPercent(best.unrealizedGainPercent) + '</div></div>'
+          + '<div class="bw-item"><div class="label">Svakeste</div><div class="bw-value ' + (worst.unrealizedGainPercent >= 0 ? 'text-success' : 'text-danger') + '">' + worstLabel + ' ' + (worst.unrealizedGainPercent >= 0 ? '+' : '') + formatPercent(worst.unrealizedGainPercent) + '</div></div>'
+          + '</div>'
+        : '')
+      // Allocation
+      + (allocationItems.length >= 2
+        ? '<div class="allocation"><div class="alloc-bar">' + allocationBar + '</div><div class="alloc-labels">' + allocationLabels + '</div></div>'
+        : '')
+      + '</div>';
   }
 
   private renderWarnings(): string {
@@ -527,6 +571,10 @@ class TallyApp {
         const qty = Number.isInteger(h.quantity) ? h.quantity.toString() : h.quantity.toFixed(4);
         const priceValue = h.currentPrice > 0 ? h.currentPrice.toFixed(2) : '';
 
+        // Portfolio share
+        const totalMV = this.holdings.reduce((s, x) => s + x.marketValue, 0) || 1;
+        const sharePct = (h.marketValue / totalMV * 100).toFixed(1);
+
         return '<div class="holding-card" data-isin="' + h.isin + '">'
           + '<div class="holding-info">'
           + '<div class="holding-ticker">' + label + '</div>'
@@ -545,6 +593,7 @@ class TallyApp {
           + '<div class="holding-detail"><div class="label">Snittpris</div><div class="value">' + formatCurrency(h.averageCostPerShare, 2) + '</div></div>'
           + '<div class="holding-detail"><div class="label">Kurs</div><input type="number" class="price-input" data-isin="' + h.isin + '" value="' + priceValue + '" placeholder="—" step="0.01" min="0"></div>'
           + '<div class="holding-detail"><div class="label">Gevinst</div><div class="value ' + gainClass + '">' + formatCurrency(h.unrealizedGain) + '</div></div>'
+          + '<div class="holding-detail"><div class="label">Andel</div><div class="value">' + sharePct + '%</div></div>'
           + (h.totalDividendsReceived > 0 ? '<div class="holding-detail"><div class="label">Utbytte</div><div class="value">' + formatCurrency(h.totalDividendsReceived) + '</div></div>' : '')
           + this.renderHoldingTransactions(h.isin)
           + '<div class="holding-actions"><button class="btn btn-small btn-outline holding-add-trade" data-isin="' + h.isin + '">Legg til transaksjon</button></div>'
