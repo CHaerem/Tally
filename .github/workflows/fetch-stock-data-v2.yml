@@ -72,9 +72,9 @@ jobs:
           MODE="${{ steps.mode.outputs.mode }}"
 
           if [[ "$MODE" == "full" ]]; then
-            git commit -m "Full stock data update ($CHANGED files) - $TIME"
+            git commit -m "Full stock & fund data update ($CHANGED files) - $TIME"
           else
-            git commit -m "Daily stock data update ($CHANGED files) - $TIME"
+            git commit -m "Daily stock & fund data update ($CHANGED files) - $TIME"
           fi
 
           git push

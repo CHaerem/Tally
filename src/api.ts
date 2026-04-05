@@ -48,8 +48,10 @@ export async function fetchStockIndex(): Promise<StockIndex | null> {
 }
 
 export async function fetchStockData(ticker: string): Promise<StockDataFile | null> {
+  // Fund tickers have dots (e.g. 0P0000PS3U.IR) — filenames use underscores
+  const filename = ticker.replace(/\./g, '_');
   try {
-    const res = await fetch(DATA_URL + encodeURIComponent(ticker) + '.json');
+    const res = await fetch(DATA_URL + encodeURIComponent(filename) + '.json');
     if (!res.ok) return null;
     return await res.json() as StockDataFile;
   } catch {

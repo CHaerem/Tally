@@ -16,12 +16,11 @@ interface StockSuggestion {
 // Popular Norwegian mutual funds with Yahoo Finance Morningstar IDs
 const NORWEGIAN_FUNDS: StockSuggestion[] = [
   // DNB
-  { ticker: '0P00009QQ2.IR', name: 'DNB Norge Indeks', currentPrice: null, type: 'FUND' },
-  { ticker: '0P00000G0T.IR', name: 'DNB Norge', currentPrice: null, type: 'FUND' },
-  { ticker: '0P00009QQ1.IR', name: 'DNB Global Indeks', currentPrice: null, type: 'FUND' },
-  { ticker: '0P00000G0L.IR', name: 'DNB Teknologi', currentPrice: null, type: 'FUND' },
-  { ticker: '0P00000G0R.IR', name: 'DNB Miljøinvest', currentPrice: null, type: 'FUND' },
-  { ticker: '0P00000G0P.IR', name: 'DNB Health Care', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0000PS3U.IR', name: 'DNB Norge Indeks', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000NKJ.IR', name: 'DNB Norge', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0000PS3V.IR', name: 'DNB Global Indeks', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000MVB.IR', name: 'DNB Teknologi', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000MUY.IR', name: 'DNB Health Care', currentPrice: null, type: 'FUND' },
   // KLP
   { ticker: '0P0001OPC5.IR', name: 'KLP AksjeVerden Indeks', currentPrice: null, type: 'FUND' },
   { ticker: '0P00018V9L.IR', name: 'KLP AksjeGlobal Indeks', currentPrice: null, type: 'FUND' },
@@ -32,31 +31,46 @@ const NORWEGIAN_FUNDS: StockSuggestion[] = [
   { ticker: '0P0001OPBN.IR', name: 'KLP AksjeGlobal Mer Samfunnsansvar', currentPrice: null, type: 'FUND' },
   // Nordnet
   { ticker: '0P000134K7.IR', name: 'Nordnet Indeksfond Norge', currentPrice: null, type: 'FUND' },
-  { ticker: '0P0001A8PS.IR', name: 'Nordnet Indeksfond Global', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001K6NJ.IR', name: 'Nordnet Indeksfond Global', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001M5YQ.IR', name: 'Nordnet Indeksfond Teknologi', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001K6NB.IR', name: 'Nordnet Indeksfond Emerging Markets', currentPrice: null, type: 'FUND' },
   // Storebrand
-  { ticker: '0P0000A3RB.IR', name: 'Storebrand Norge Indeks', currentPrice: null, type: 'FUND' },
-  { ticker: '0P0000A3RC.IR', name: 'Storebrand Global Indeks', currentPrice: null, type: 'FUND' },
-  { ticker: '0P0001GSHL.IR', name: 'Storebrand Global ESG Plus', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001HAP0.IR', name: 'Storebrand Norge', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0000A82Y.IR', name: 'Storebrand Global Indeks', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0000TJH9.IR', name: 'Storebrand Indeks - Alle Markeder', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0000TJH8.IR', name: 'Storebrand Indeks - Nye Markeder', currentPrice: null, type: 'FUND' },
+  // Nordea
+  { ticker: '0P0001WACD.IR', name: 'Nordea Norge Verdi', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001SQMA.IR', name: 'Nordea Norge Indeks', currentPrice: null, type: 'FUND' },
   // ODIN
   { ticker: '0P000161CO.IR', name: 'ODIN Aksje', currentPrice: null, type: 'FUND' },
-  { ticker: '0P0000061Y.IR', name: 'ODIN Norge', currentPrice: null, type: 'FUND' },
-  { ticker: '0P00000620.IR', name: 'ODIN Norden', currentPrice: null, type: 'FUND' },
-  { ticker: '0P0000061Z.IR', name: 'ODIN Europa', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000SVG.IR', name: 'ODIN Norge', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000SVE.IR', name: 'ODIN Norden', currentPrice: null, type: 'FUND' },
   // Skagen
-  { ticker: '0P00009402.IR', name: 'Skagen Global', currentPrice: null, type: 'FUND' },
-  { ticker: '0P00009404.IR', name: 'Skagen Kon-Tiki', currentPrice: null, type: 'FUND' },
-  { ticker: '0P00009403.IR', name: 'Skagen Focus', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00013OX2.IR', name: 'Skagen Global', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00013OX3.IR', name: 'Skagen Kon-Tiki', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00015YSS.IR', name: 'Skagen Focus', currentPrice: null, type: 'FUND' },
   // Holberg
-  { ticker: '0P0000B5KY.IR', name: 'Holberg Norge', currentPrice: null, type: 'FUND' },
-  { ticker: '0P0000B5L0.IR', name: 'Holberg Norden', currentPrice: null, type: 'FUND' },
-  { ticker: '0P0000B5KZ.IR', name: 'Holberg Global', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000OCZ.IR', name: 'Holberg Norge', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000OCV.IR', name: 'Holberg Norden', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000OCX.IR', name: 'Holberg Global', currentPrice: null, type: 'FUND' },
+  // Delphi
+  { ticker: '0P00000HCS.IR', name: 'Delphi Norge', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00005UKR.IR', name: 'Delphi Global', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000HCU.IR', name: 'Delphi Nordic', currentPrice: null, type: 'FUND' },
   // Alfred Berg
-  { ticker: '0P000000U2.IR', name: 'Alfred Berg Norge Classic', currentPrice: null, type: 'FUND' },
-  { ticker: '0P000000U1.IR', name: 'Alfred Berg Gambak', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000MT3.IR', name: 'Alfred Berg Norge Classic', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000MVR.IR', name: 'Alfred Berg Gambak', currentPrice: null, type: 'FUND' },
   // Handelsbanken
-  { ticker: '0P00005RWE.IR', name: 'Handelsbanken Norge', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001CW9F.IR', name: 'Handelsbanken Norge', currentPrice: null, type: 'FUND' },
   // Pareto
-  { ticker: '0P0000A50Q.IR', name: 'Pareto Aksje Norge', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000NY6.IR', name: 'Pareto Aksje Norge', currentPrice: null, type: 'FUND' },
+  // Fondsfinans
+  { ticker: '0P00000L92.IR', name: 'Fondsfinans Norge', currentPrice: null, type: 'FUND' },
+  // Eika
+  { ticker: '0P00000HD4.IR', name: 'Eika Norge', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000ODT.IR', name: 'Eika Global', currentPrice: null, type: 'FUND' },
+  { ticker: '0P00000KET.IR', name: 'Eika Spar', currentPrice: null, type: 'FUND' },
 ];
 
 class TallyApp {
