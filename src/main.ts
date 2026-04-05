@@ -183,6 +183,7 @@ class TallyApp {
   private stockList: StockSuggestion[] = [];
   private selectedSuggestionIndex = -1;
   private tradeModalMode: 'simple' | 'full' = 'simple';
+  private exploreCategory = 'OBX';
   private watchlist: Array<{ ticker: string; name: string; type: 'STOCK' | 'FUND' }> = [];
   private obxPrice: number | null = null;
   private portfolioHistory: {
@@ -216,6 +217,12 @@ class TallyApp {
         }))
       : [];
     this.stockList = [...stocks, ...NORWEGIAN_FUNDS];
+    // Re-render to show explore section now that stock data is loaded
+    if (this.stockList.length > NORWEGIAN_FUNDS.length) {
+      this.render();
+      this.attachEventListeners();
+      this.computePortfolioHistory();
+    }
   }
 
   private loadWatchlist(): Array<{ ticker: string; name: string; type: 'STOCK' | 'FUND' }> {
@@ -1039,7 +1046,8 @@ class TallyApp {
   private renderMarketSection(): string {
     // Market overview
     const obxDisplay = this.obxPrice !== null ? this.obxPrice.toFixed(2) : '...';
-    const market = '<div class="card-header"><h2>Marked</h2></div>'
+    const market = '<div class="section-divider"></div>'
+      + '<div class="card-header"><h2>Marked</h2></div>'
       + '<div class="card market-card">'
       + '<div class="market-row">'
       + '<div class="market-ticker">OBX</div>'
@@ -1076,7 +1084,77 @@ class TallyApp {
       + '<div class="search-wrapper"><input type="text" id="watchlist-ticker" class="form-control" placeholder="Søk etter aksje eller fond..." autocapitalize="characters" autocorrect="off" spellcheck="false" autocomplete="off">'
       + '<div class="search-suggestions" id="watchlist-suggestions"></div></div></div>';
 
-    return market + watchlist;
+    return market + watchlist + this.renderExplore();
+  }
+
+  private renderExplore(): string {
+    if (this.stockList.length === 0) return '';
+
+    const OBX = ['EQNR', 'DNB', 'TEL', 'MOWI', 'YAR', 'ORK', 'NHY', 'AKRBP', 'GJF', 'SALM', 'STB', 'KOG', 'SUBC', 'FRO', 'GOGL', 'NAS', 'AKER', 'BAKKA', 'LSG', 'SCATC', 'TOM', 'AUSS', 'GSF', 'VOW', 'HAFNI'];
+    const ENERGY = ['EQNR', 'AKRBP', 'AKER', 'AKSO', 'VAR', 'BWO', 'BORR', 'SOFF', 'DOFG', 'FLNG', 'BWLPG'];
+    const SEAFOOD = ['MOWI', 'SALM', 'BAKKA', 'LSG', 'GSF', 'AUSS', 'AKVA'];
+    const TECH = ['ATEA', 'LINK', 'CRAYN', 'NEL', 'HEX', 'SCATC'];
+
+    // Popular funds by provider
+    const POP_FUNDS = [
+      '0P0000PS3U.IR', '0P0001Q8AD.IR', '0P00000MVB.IR', // DNB
+      '0P0000A82Y.IR', '0P00012AVM.IR', '0P00000O5V.IR', // Storebrand
+      '0P00001BVT.IR', '0P0001OPC5.IR', '0P00018V9L.IR', // KLP
+      '0P000134K7.IR', '0P0001K6NJ.IR',                   // Nordnet
+      '0P00013OX2.IR', '0P00013OX3.IR',                   // Skagen
+      '0P00000SVG.IR', '0P00000O88.IR',                   // ODIN
+    ];
+
+    const categories: Array<{ id: string; label: string; filter: (s: StockSuggestion) => boolean }> = [
+      { id: 'OBX', label: 'OBX 25', filter: s => s.type === 'STOCK' && OBX.includes(s.ticker) },
+      { id: 'FOND', label: 'Fond', filter: s => s.type === 'FUND' && POP_FUNDS.includes(s.ticker) },
+      { id: 'ENERGI', label: 'Energi', filter: s => s.type === 'STOCK' && ENERGY.includes(s.ticker) },
+      { id: 'SJØMAT', label: 'Sjømat', filter: s => s.type === 'STOCK' && SEAFOOD.includes(s.ticker) },
+      { id: 'TECH', label: 'Teknologi', filter: s => s.type === 'STOCK' && TECH.includes(s.ticker) },
+    ];
+
+    const tabs = categories.map(c =>
+      '<button class="explore-tab' + (this.exploreCategory === c.id ? ' active' : '') + '" data-cat="' + c.id + '">' + c.label + '</button>'
+    ).join('');
+
+    const cat = categories.find(c => c.id === this.exploreCategory);
+    const items = cat
+      ? this.stockList
+          .filter(cat.filter)
+          .sort((a, b) => {
+            // Sort by price if available, then by name
+            if (a.currentPrice && b.currentPrice) return b.currentPrice - a.currentPrice;
+            if (a.currentPrice) return -1;
+            if (b.currentPrice) return 1;
+            return a.name.localeCompare(b.name);
+          })
+          .slice(0, 12)
+      : [];
+
+    const rows = items.map(s => {
+      const isFund = s.type === 'FUND';
+      const label = isFund ? s.name : s.ticker;
+      const sublabel = isFund ? '' : '<div class="explore-name">' + s.name + '</div>';
+      const inWatchlist = this.watchlist.some(w => w.ticker === s.ticker);
+      const isHeld = this.ledger.instruments.some(i => i.ticker === s.ticker) && this.holdings.some(h => {
+        const inst = this.ledger.instruments.find(ii => ii.ticker === s.ticker);
+        return inst && h.isin === inst.isin;
+      });
+      const actionBtn = isHeld
+        ? '<span class="explore-badge">Eid</span>'
+        : inWatchlist
+          ? '<span class="explore-badge">Følger</span>'
+          : '<button class="explore-add" data-ticker="' + s.ticker + '">+</button>';
+      return '<div class="explore-item">'
+        + '<div class="explore-info"><div class="explore-ticker">' + label + '</div>' + sublabel + '</div>'
+        + (s.currentPrice ? '<div class="explore-price">' + s.currentPrice.toFixed(2) + '</div>' : '')
+        + actionBtn
+        + '</div>';
+    }).join('');
+
+    return '<div class="card-header"><h2>Utforsk</h2></div>'
+      + '<div class="explore-tabs">' + tabs + '</div>'
+      + '<div class="card explore-list">' + (rows || '<div class="watchlist-empty"><span class="text-muted text-small">Ingen data</span></div>') + '</div>';
   }
 
   private renderFooter(): string {
@@ -1592,6 +1670,26 @@ class TallyApp {
         e.stopPropagation();
         const ticker = (btn as HTMLElement).dataset.ticker;
         if (ticker) this.removeFromWatchlist(ticker);
+      });
+    });
+
+    // Explore tabs
+    document.querySelectorAll('.explore-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        this.exploreCategory = (tab as HTMLElement).dataset.cat || 'OBX';
+        this.render();
+        this.attachEventListeners();
+        this.computePortfolioHistory();
+      });
+    });
+
+    // Explore add-to-watchlist
+    document.querySelectorAll('.explore-add').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const ticker = (btn as HTMLElement).dataset.ticker;
+        const stock = this.stockList.find(s => s.ticker === ticker);
+        if (stock) this.addToWatchlist(stock);
       });
     });
 
