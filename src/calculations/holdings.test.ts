@@ -44,6 +44,10 @@ const instruments: Instrument[] = [
   { isin: 'NO002', ticker: 'DNB', name: 'DNB Bank ASA', currency: 'NOK' },
 ];
 
+const fundInstruments: Instrument[] = [
+  { isin: 'MANUAL_0P00017YPW.IR', ticker: '0P00017YPW.IR', name: 'KLP AksjeAsia Indeks Valutasikret', currency: 'NOK', instrumentType: 'FUND' },
+];
+
 describe('deriveHoldings', () => {
   it('returns empty array with no events', () => {
     expect(deriveHoldings([], instruments, new Map())).toEqual([]);
@@ -120,6 +124,54 @@ describe('deriveHoldings', () => {
     // Sorted by market value desc: DNB (200*190=38000) > EQNR (50*300=15000)
     expect(holdings[0].ticker).toBe('DNB');
     expect(holdings[1].ticker).toBe('EQNR');
+  });
+
+  it('handles fund buy with fractional units (KLP AksjeAsia scenario)', () => {
+    // Matches the screenshot: Buy 38.3544 units at 2199.2044 NOK = 84349.08 NOK
+    const events = [
+      makeTrade({
+        type: 'TRADE_BUY',
+        isin: 'MANUAL_0P00017YPW.IR',
+        quantity: 38.3544,
+        pricePerShare: 2199.2044,
+        amount: 84349.08,
+        date: '2025-03-07',
+      }),
+    ];
+    const currentPrice = 2250.00; // Hypothetical current NAV
+    const prices = new Map([['MANUAL_0P00017YPW.IR', currentPrice]]);
+    const holdings = deriveHoldings(events, fundInstruments, prices);
+
+    expect(holdings).toHaveLength(1);
+    const h = holdings[0];
+    expect(h.ticker).toBe('0P00017YPW.IR');
+    expect(h.name).toBe('KLP AksjeAsia Indeks Valutasikret');
+    expect(h.quantity).toBeCloseTo(38.3544, 4);
+    expect(h.costBasis).toBeCloseTo(84349.08, 2);
+    expect(h.averageCostPerShare).toBeCloseTo(2199.2044, 2);
+    expect(h.currentPrice).toBe(2250.00);
+    expect(h.marketValue).toBeCloseTo(38.3544 * 2250.00, 2);
+    expect(h.unrealizedGain).toBeCloseTo(38.3544 * 2250.00 - 84349.08, 2);
+  });
+
+  it('handles fund with no current price (shows 0 market value)', () => {
+    const events = [
+      makeTrade({
+        type: 'TRADE_BUY',
+        isin: 'MANUAL_0P00017YPW.IR',
+        quantity: 38.3544,
+        pricePerShare: 2199.2044,
+        amount: 84349.08,
+        date: '2025-03-07',
+      }),
+    ];
+    // No current price available (common for funds without static data)
+    const holdings = deriveHoldings(events, fundInstruments, new Map());
+
+    expect(holdings).toHaveLength(1);
+    expect(holdings[0].currentPrice).toBe(0);
+    expect(holdings[0].marketValue).toBe(0);
+    expect(holdings[0].unrealizedGain).toBeCloseTo(-84349.08, 2);
   });
 });
 

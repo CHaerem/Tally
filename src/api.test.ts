@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { fetchPricesForHoldings, fetchDividendHistory, fetchPriceHistory, _resetIndexCache } from './api';
+import { fetchPricesForHoldings, fetchDividendHistory, fetchPriceHistory, fetchPriceForDate, _resetIndexCache } from './api';
 
 // Reset module state between tests (indexCache)
 beforeEach(() => {
@@ -164,5 +164,120 @@ describe('fetchPriceHistory', () => {
 
     const prices = await fetchPriceHistory('EQNR');
     expect(prices).toEqual([]);
+  });
+});
+
+describe('fetchPriceForDate', () => {
+  it('returns closest price on or before given date', async () => {
+    const mockData = {
+      ticker: 'EQNR', name: 'Equinor', currency: 'NOK', currentPrice: 300,
+      prices: [
+        { date: '2025-03-05', close: 275.0 },
+        { date: '2025-03-06', close: 278.0 },
+        { date: '2025-03-07', close: 280.5 },
+        { date: '2025-03-10', close: 282.0 },
+      ],
+      dividends: [], lastUpdated: '2025-03-10',
+    };
+
+    vi.stubGlobal('fetch', vi.fn()
+      .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve(mockData) })
+    );
+
+    const price = await fetchPriceForDate('EQNR', '2025-03-07');
+    expect(price).toBe(280.5);
+  });
+
+  it('returns closest earlier price when exact date not available', async () => {
+    const mockData = {
+      ticker: 'EQNR', name: 'Equinor', currency: 'NOK', currentPrice: 300,
+      prices: [
+        { date: '2025-03-05', close: 275.0 },
+        { date: '2025-03-07', close: 280.5 },
+        { date: '2025-03-10', close: 282.0 },
+      ],
+      dividends: [], lastUpdated: '2025-03-10',
+    };
+
+    vi.stubGlobal('fetch', vi.fn()
+      .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve(mockData) })
+    );
+
+    // Weekend date - should return Friday's price
+    const price = await fetchPriceForDate('EQNR', '2025-03-08');
+    expect(price).toBe(280.5);
+  });
+
+  it('returns null when no static data file exists (e.g. fund without data)', async () => {
+    // Simulates KLP AksjeAsia Indeks Valutasikret (0P00017YPW.IR) which has no data file
+    vi.stubGlobal('fetch', vi.fn()
+      .mockResolvedValueOnce({ ok: false }) // 404 - file not found
+    );
+
+    const price = await fetchPriceForDate('0P00017YPW.IR', '2025-03-07');
+    expect(price).toBeNull();
+  });
+
+  it('converts fund ticker dots to underscores in filename', async () => {
+    vi.stubGlobal('fetch', vi.fn()
+      .mockResolvedValueOnce({ ok: false })
+    );
+
+    await fetchPriceForDate('0P00017YPW.IR', '2025-03-07');
+
+    const calls = (fetch as any).mock.calls;
+    // Should request 0P00017YPW_IR.json (dots replaced with underscores)
+    expect(calls[0][0]).toContain('0P00017YPW_IR.json');
+  });
+});
+
+describe('fund price fetching (KLP AksjeAsia Indeks Valutasikret scenario)', () => {
+  it('fetches fund live price via Yahoo Finance with .IR suffix', async () => {
+    const mockIndex = {
+      metadata: { lastUpdated: '2025-03-07', symbolCount: 1 },
+      symbols: {}, // Fund not in index
+    };
+    const yahooResponse = {
+      chart: {
+        result: [{ meta: { regularMarketPrice: 2199.20, currency: 'NOK' } }],
+        error: null,
+      },
+    };
+
+    vi.stubGlobal('fetch', vi.fn()
+      .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve(mockIndex) })
+      .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve(yahooResponse) })
+    );
+
+    const prices = await fetchPricesForHoldings([
+      { isin: 'MANUAL_0P00017YPW.IR', ticker: '0P00017YPW.IR' },
+    ]);
+
+    expect(prices.get('MANUAL_0P00017YPW.IR')).toBe(2199.20);
+
+    // Verify Yahoo Finance was called with the .IR suffix (not .OL)
+    const calls = (fetch as any).mock.calls;
+    const yahooCall = calls.find((c: string[]) => c[0].includes('yahoo'));
+    expect(yahooCall[0]).toContain('0P00017YPW.IR');
+    expect(yahooCall[0]).not.toContain('.OL');
+  });
+
+  it('fund not in static index falls back to Yahoo Finance', async () => {
+    const mockIndex = {
+      metadata: { lastUpdated: '2025-03-07', symbolCount: 0 },
+      symbols: {}, // No funds in index
+    };
+
+    vi.stubGlobal('fetch', vi.fn()
+      .mockResolvedValueOnce({ ok: true, json: () => Promise.resolve(mockIndex) })
+      .mockResolvedValueOnce({ ok: false }) // Yahoo also fails
+    );
+
+    const prices = await fetchPricesForHoldings([
+      { isin: 'MANUAL_0P00017YPW.IR', ticker: '0P00017YPW.IR' },
+    ]);
+
+    // No price available from either source
+    expect(prices.has('MANUAL_0P00017YPW.IR')).toBe(false);
   });
 });
