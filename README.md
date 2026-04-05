@@ -6,19 +6,23 @@ Beregn din reelle investeringsavkastning basert på transaksjonshistorikk fra me
 
 ## Slik fungerer det
 
-1. Eksporter transaksjonshistorikk som CSV fra nettbanken (Nordnet, DNB, Sbanken m.fl.)
-2. Importer filen i Tally
-3. Kurser hentes automatisk — se din faktiske avkastning
+1. Legg til aksjer og fond manuelt med søk, eller importer CSV fra megleren
+2. Kurser hentes automatisk — historisk og nåværende
+3. Se din faktiske avkastning (XIRR) med utbytte inkludert
 
 ## Funksjoner
 
 - **XIRR-beregning** — årlig avkastning som tar hensyn til tidspunkt for kjøp/salg
+- **Aksjesøk** med autocomplete for 370+ norske aksjer og 32 fond
+- **Historiske kurser** — velg dato og få kurs automatisk
+- **Tre-veis kalkulator** — fyll inn kurs + antall, kurs + totalbeløp, eller antall + totalbeløp
+- **Fondstøtte** — norske fond med NAV fra Morningstar via Yahoo Finance
 - **Automatisk kurshenting** fra Yahoo Finance for Oslo Børs
 - **Utbyttesporing** inkludert i totalavkastning
 - **CSV-import** med støtte for norsk format (`;`-separator, norske datoer, desimalkomma)
-- **Datakvalitetsvarsler** — varsler om manglende kurtasje og andre avvik
+- **Del portefølje** — del via lenke eller native share
 - **Lokal lagring** — all data lagres i nettleseren, ingenting sendes til server
-- **Mobiloptimalisert** — designet primært for iPhone
+- **Mobiloptimalisert** — FAB, sticky header, store touch targets, iOS safe areas
 
 ## Utvikling
 
@@ -26,21 +30,23 @@ Beregn din reelle investeringsavkastning basert på transaksjonshistorikk fra me
 npm install          # Installer avhengigheter
 npm run dev          # Start utviklingsserver
 npm run build        # Bygg for produksjon (tsc + vite)
+npm run test         # Kjør tester (vitest, 104 tester)
 npm run type-check   # Kun TypeScript-sjekk
 ```
 
 ## Deploy
 
-Appen deployes automatisk til GitHub Pages ved push til `main` via GitHub Actions.
+Appen deployes automatisk til GitHub Pages via `gh-pages` branch ved push til `main`.
 
-Manuelt: `npm run deploy`
+PR-er får automatisk en preview-URL: `https://chaerem.github.io/Tally/pr-preview/pr-<N>/`
 
 ## Teknologi
 
 - TypeScript + Vite
-- Vanilla CSS (ingen rammeverk)
+- Vanilla CSS med Anthropic-inspirert design (Inter font, varme toner)
+- Vitest + jsdom for testing
 - LocalStorage for persistens
-- Yahoo Finance API for kurser
+- Yahoo Finance API + statisk data for kurser
 - GitHub Pages + GitHub Actions
 
 ## Personvern
@@ -49,13 +55,6 @@ Manuelt: `npm run deploy`
 - All data lagres lokalt i nettleseren
 - Ingen analytics eller sporing
 - Kursforespørsler går direkte til Yahoo Finance
-
-## Begrensninger
-
-- Kun norske aksjer (Oslo Børs, `.OL`-tickere)
-- Yahoo Finance kan blokkeres av CORS i noen nettlesere
-- Mindre aksjer har ikke alltid kursdata — manuell innfylling mulig
-- Kun NOK som valuta
 
 ## Lisens
 
