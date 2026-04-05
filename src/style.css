@@ -314,13 +314,13 @@ header h1 {
   font-size: 10px;
   color: var(--text-muted);
   text-transform: uppercase;
-  letter-spacing: 0.3px;
-  font-weight: 400;
+  letter-spacing: 0.4px;
+  font-weight: 500;
 }
 
 .stat-val {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
   margin-top: 2px;
 }
@@ -733,6 +733,16 @@ header h1 {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.section-market .card-header h2 {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.section-market .card {
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
 /* Market section */
 .market-card {
   padding: 14px 16px;
@@ -745,21 +755,22 @@ header h1 {
 }
 
 .market-ticker {
-  font-weight: 700;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 14px;
   min-width: 40px;
 }
 
 .market-name {
-  color: var(--text-secondary);
-  font-size: 13px;
+  color: var(--text-muted);
+  font-size: 12px;
   flex: 1;
 }
 
 .market-price {
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 14px;
   font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
 }
 
 /* Watchlist */
@@ -798,15 +809,15 @@ header h1 {
 }
 
 .watchlist-ticker {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 13px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .watchlist-name {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-muted);
   white-space: nowrap;
   overflow: hidden;
@@ -818,9 +829,10 @@ header h1 {
 }
 
 .watchlist-price {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 13px;
   font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
 }
 
 .watchlist-remove {
@@ -858,11 +870,11 @@ header h1 {
 }
 
 .explore-header {
-  font-size: 11px;
+  font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   color: var(--text-muted);
-  font-weight: 600;
+  font-weight: 500;
   padding: 14px 16px 8px;
 }
 
@@ -918,8 +930,8 @@ header h1 {
 }
 
 .explore-ticker {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 13px;
 }
 
 .explore-name {
@@ -931,11 +943,12 @@ header h1 {
 }
 
 .explore-price {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 13px;
   font-variant-numeric: tabular-nums;
   min-width: 60px;
   text-align: right;
+  color: var(--text-secondary);
 }
 
 .explore-add {
