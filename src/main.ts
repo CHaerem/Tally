@@ -2,7 +2,7 @@ import './style.css';
 import { LedgerStorage } from './ledger';
 import { parseCSV, validateCSV } from './import';
 import { deriveHoldings, derivePortfolioMetrics, formatXIRRPercent, formatCurrency, formatPercent, formatDateShort } from './calculations';
-import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate } from './api';
+import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate, fetchPriceHistory } from './api';
 import type { LedgerState, Holding, PortfolioMetrics } from './types';
 import type { CSVParseResult } from './import';
 
@@ -183,6 +183,11 @@ class TallyApp {
   private stockList: StockSuggestion[] = [];
   private selectedSuggestionIndex = -1;
   private tradeModalMode: 'simple' | 'full' = 'simple';
+  private portfolioHistory: {
+    series: Array<{ date: string; value: number; costBasis: number }>;
+    events: Array<{ date: string; type: string; amount: number; name: string }>;
+  } | null = null;
+  private isLoadingChart = false;
 
   constructor() {
     this.ledger = LedgerStorage.initializeLedger();
@@ -193,6 +198,7 @@ class TallyApp {
     this.attachEventListeners();
     this.refreshPrices();
     this.loadStockIndex();
+    this.computePortfolioHistory();
   }
 
   private async loadStockIndex(): Promise<void> {
@@ -289,11 +295,139 @@ class TallyApp {
     this.updateDerivedData();
     this.render();
     this.attachEventListeners();
+    this.computePortfolioHistory();
   }
 
   private updateDerivedData(): void {
     this.holdings = deriveHoldings(this.ledger.events, this.ledger.instruments, this.currentPrices);
     this.metrics = derivePortfolioMetrics(this.ledger.events, this.holdings);
+    this.portfolioHistory = null;
+  }
+
+  private async computePortfolioHistory(): Promise<void> {
+    if (this.isLoadingChart || this.ledger.events.length === 0) return;
+    this.isLoadingChart = true;
+
+    try {
+      // Collect unique ISINs and their tickers
+      const isinTickers = new Map<string, string>();
+      for (const e of this.ledger.events) {
+        if ('isin' in e) {
+          const ev = e as unknown as { isin: string };
+          const inst = this.ledger.instruments.find(i => i.isin === ev.isin);
+          if (inst) isinTickers.set(inst.isin, inst.ticker);
+        }
+      }
+
+      // Fetch price histories in parallel
+      const priceMap = new Map<string, Array<{ date: string; close: number }>>();
+      const fetches = Array.from(isinTickers.entries()).map(async ([isin, ticker]) => {
+        const prices = await fetchPriceHistory(ticker);
+        if (prices.length > 0) priceMap.set(isin, prices);
+      });
+      await Promise.allSettled(fetches);
+
+      // Build price lookup: closest price on or before date
+      const getPrice = (isin: string, date: string): number | null => {
+        const prices = priceMap.get(isin);
+        if (!prices) return null;
+        let best: number | null = null;
+        for (const p of prices) {
+          if (p.date <= date) best = p.close;
+          else break;
+        }
+        return best;
+      };
+
+      // Sort events chronologically
+      const sortedEvents = [...this.ledger.events].sort((a, b) => a.date.localeCompare(b.date));
+      if (sortedEvents.length === 0) { this.isLoadingChart = false; return; }
+
+      // Collect all unique dates from price histories (sampled weekly)
+      const allDates = new Set<string>();
+      for (const prices of priceMap.values()) {
+        for (let i = 0; i < prices.length; i += 5) { // every ~week (5 trading days)
+          allDates.add(prices[i].date);
+        }
+        // Always include last date
+        if (prices.length > 0) allDates.add(prices[prices.length - 1].date);
+      }
+      // Include event dates
+      for (const e of sortedEvents) allDates.add(e.date);
+      // Include today
+      const today = new Date().toISOString().split('T')[0];
+      allDates.add(today);
+
+      const firstEventDate = sortedEvents[0].date;
+      const sampleDates = Array.from(allDates)
+        .filter(d => d >= firstEventDate)
+        .sort();
+
+      // Replay events to compute portfolio value at each sample date
+      const quantities = new Map<string, number>();
+      let totalCostBasis = 0;
+      let eventIdx = 0;
+      const series: Array<{ date: string; value: number; costBasis: number }> = [];
+      const eventMarkers: Array<{ date: string; type: string; amount: number; name: string }> = [];
+
+      for (const date of sampleDates) {
+        // Replay events up to and including this date
+        while (eventIdx < sortedEvents.length && sortedEvents[eventIdx].date <= date) {
+          const ev = sortedEvents[eventIdx];
+          if (ev.type === 'TRADE_BUY' || ev.type === 'TRADE_SELL') {
+            const te = ev as unknown as { isin: string; quantity: number; fee?: number };
+            const prevQty = quantities.get(te.isin) || 0;
+            if (ev.type === 'TRADE_BUY') {
+              quantities.set(te.isin, prevQty + te.quantity);
+              totalCostBasis += ev.amount + (te.fee || 0);
+            } else {
+              quantities.set(te.isin, prevQty - te.quantity);
+              totalCostBasis -= ev.amount;
+            }
+            const inst = this.ledger.instruments.find(i => i.isin === te.isin);
+            eventMarkers.push({ date: ev.date, type: ev.type, amount: ev.amount, name: inst?.name || te.isin });
+          } else if (ev.type === 'DIVIDEND') {
+            const de = ev as unknown as { isin: string };
+            const inst = this.ledger.instruments.find(i => i.isin === de.isin);
+            eventMarkers.push({ date: ev.date, type: ev.type, amount: ev.amount, name: inst?.name || de.isin });
+          }
+          eventIdx++;
+        }
+
+        // Compute portfolio value at this date
+        let value = 0;
+        let hasAnyPrice = false;
+        for (const [isin, qty] of quantities) {
+          if (qty <= 0) continue;
+          const price = getPrice(isin, date);
+          if (price !== null) {
+            value += qty * price;
+            hasAnyPrice = true;
+          }
+        }
+
+        if (hasAnyPrice || value === 0) {
+          series.push({ date, value, costBasis: totalCostBasis });
+        }
+      }
+
+      this.portfolioHistory = { series, events: eventMarkers };
+
+      // Inject into DOM
+      const container = document.getElementById('portfolio-chart-container');
+      if (container && series.length >= 2) {
+        container.innerHTML = this.renderPortfolioChartSVG();
+        this.drawPortfolioChart();
+        this.attachChartInteraction();
+      } else if (container) {
+        container.innerHTML = '';
+      }
+      const divList = document.getElementById('portfolio-dividend-list');
+      if (divList) divList.innerHTML = this.renderDividendList();
+
+    } finally {
+      this.isLoadingChart = false;
+    }
   }
 
   private render(): void {
@@ -356,6 +490,8 @@ class TallyApp {
     return '<div class="card">'
       + '<div class="summary-hero"><div class="label">Markedsverdi</div><div class="value">' + formatCurrency(m.currentValue) + '</div>'
       + '<div class="sub-value ' + xirrClass + '">' + formatXIRRPercent(m.xirr) + ' årlig (XIRR)</div></div>'
+      + '<div id="portfolio-chart-container" class="portfolio-chart-container"><div class="chart-placeholder">Laster graf...</div></div>'
+      + '<div id="portfolio-dividend-list"></div>'
       + '<div class="summary-grid">'
       + '<div class="summary-item"><div class="label">Total avkastning</div><div class="value ' + totalReturnClass + '">' + formatCurrency(totalReturn) + '</div></div>'
       + '<div class="summary-item"><div class="label">Investert</div><div class="value">' + formatCurrency(m.netCashFlow) + '</div></div>'
@@ -401,14 +537,315 @@ class TallyApp {
           + '<div class="holding-gain ' + gainClass + '">' + gainSign + formatPercent(h.unrealizedGainPercent) + '</div>'
           + '</div></div>'
           + '<div class="holding-details" id="details-' + h.isin + '">'
+          + '<div class="holding-sparkline" data-ticker="' + (inst?.ticker || h.ticker) + '"><div class="sparkline-placeholder">Laster graf...</div></div>'
           + '<div class="holding-detail"><div class="label">Antall</div><div class="value">' + qty + '</div></div>'
           + '<div class="holding-detail"><div class="label">Snittpris</div><div class="value">' + formatCurrency(h.averageCostPerShare, 2) + '</div></div>'
           + '<div class="holding-detail"><div class="label">Kurs</div><input type="number" class="price-input" data-isin="' + h.isin + '" value="' + priceValue + '" placeholder="—" step="0.01" min="0"></div>'
           + '<div class="holding-detail"><div class="label">Gevinst</div><div class="value ' + gainClass + '">' + formatCurrency(h.unrealizedGain) + '</div></div>'
           + (h.totalDividendsReceived > 0 ? '<div class="holding-detail"><div class="label">Utbytte</div><div class="value">' + formatCurrency(h.totalDividendsReceived) + '</div></div>' : '')
+          + this.renderHoldingTransactions(h.isin)
+          + '<div class="holding-actions"><button class="btn btn-small btn-outline holding-add-trade" data-isin="' + h.isin + '">Legg til transaksjon</button></div>'
           + '</div>';
       }).join('')
       + '</div>';
+  }
+
+  private renderHoldingTransactions(isin: string): string {
+    const events = this.ledger.events
+      .filter(e => 'isin' in e && (e as unknown as { isin: string }).isin === isin)
+      .sort((a, b) => b.date.localeCompare(a.date));
+    if (events.length === 0) return '';
+    const typeLabels: Record<string, string> = {
+      'TRADE_BUY': 'Kjøp', 'TRADE_SELL': 'Salg', 'DIVIDEND': 'Utbytte'
+    };
+    const rows = events.map(e => {
+      const label = typeLabels[e.type] || e.type;
+      return '<div class="txn-row">'
+        + '<span class="txn-date">' + formatDateShort(e.date) + '</span>'
+        + '<span class="txn-type txn-type-' + e.type.toLowerCase() + '">' + label + '</span>'
+        + '<span class="txn-amount">' + formatCurrency(e.amount) + '</span>'
+        + '</div>';
+    }).join('');
+    return '<div class="holding-transactions">'
+      + '<div class="txn-header">Transaksjoner</div>'
+      + rows + '</div>';
+  }
+
+  private renderSparklineSVG(prices: Array<{ date: string; close: number }>): string {
+    const data = prices.slice(-90);
+    if (data.length < 2) return '';
+    const width = 300;
+    const height = 60;
+    const pad = 4;
+    const min = Math.min(...data.map(p => p.close));
+    const max = Math.max(...data.map(p => p.close));
+    const range = max - min || 1;
+    const points = data.map((p, i) => {
+      const x = (i / (data.length - 1)) * width;
+      const y = pad + (1 - (p.close - min) / range) * (height - 2 * pad);
+      return x.toFixed(1) + ',' + y.toFixed(1);
+    });
+    const isPositive = data[data.length - 1].close >= data[0].close;
+    const color = isPositive ? '#3d8b37' : '#c0392b';
+    const gradId = 'sg' + Math.random().toString(36).slice(2, 8);
+    const polyPoints = points.join(' ');
+    const fillPoints = '0,' + height + ' ' + polyPoints + ' ' + width + ',' + height;
+    return '<svg viewBox="0 0 ' + width + ' ' + height + '" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">'
+      + '<defs><linearGradient id="' + gradId + '" x1="0" y1="0" x2="0" y2="1">'
+      + '<stop offset="0%" stop-color="' + color + '" stop-opacity="0.25"/>'
+      + '<stop offset="100%" stop-color="' + color + '" stop-opacity="0.02"/>'
+      + '</linearGradient></defs>'
+      + '<polygon points="' + fillPoints + '" fill="url(#' + gradId + ')"/>'
+      + '<polyline points="' + polyPoints + '" fill="none" stroke="' + color + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>'
+      + '</svg>';
+  }
+
+  private renderPortfolioChartSVG(): string {
+    if (!this.portfolioHistory || this.portfolioHistory.series.length < 2) return '';
+    const data = this.portfolioHistory.series;
+
+    const firstVal = data[0].value;
+    const lastVal = data[data.length - 1].value;
+    const isPositive = lastVal >= firstVal;
+    const color = isPositive ? '#3d8b37' : '#c0392b';
+    const returnPct = firstVal > 0 ? ((lastVal - firstVal) / firstVal * 100) : 0;
+    const returnSign = returnPct >= 0 ? '+' : '';
+
+    return '<div class="portfolio-chart-wrap">'
+      + '<div class="chart-header">'
+      + '<div class="chart-info" id="chart-info">'
+      + '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '">' + returnSign + returnPct.toFixed(1) + '% total</span>'
+      + '</div>'
+      + '</div>'
+      + '<div class="chart-area" id="chart-area" data-color="' + color + '">'
+      + '<canvas id="portfolio-canvas" width="600" height="200"></canvas>'
+      + '<div class="chart-crosshair" id="chart-crosshair"></div>'
+      + '<div class="chart-tooltip" id="chart-tooltip"></div>'
+      + '</div>'
+      + '<div class="chart-dates"><span>' + formatDateShort(data[0].date) + '</span><span>' + formatDateShort(data[data.length - 1].date) + '</span></div>'
+      + '<div class="chart-legend"><span class="legend-item"><span class="legend-dot legend-buy"></span>Kjøp</span><span class="legend-item"><span class="legend-dot legend-sell"></span>Salg</span><span class="legend-item"><span class="legend-dot legend-div"></span>Utbytte</span></div>'
+      + '</div>';
+  }
+
+  private drawPortfolioChart(): void {
+    const canvas = document.getElementById('portfolio-canvas') as HTMLCanvasElement | null;
+    const chartArea = document.getElementById('chart-area') as HTMLElement | null;
+    if (!canvas || !chartArea || !this.portfolioHistory) return;
+
+    const data = this.portfolioHistory.series;
+    const events = this.portfolioHistory.events;
+    if (data.length < 2) return;
+
+    const rect = canvas.parentElement!.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    ctx.scale(dpr, dpr);
+
+    const w = rect.width;
+    const h = rect.height;
+    const pad = { top: 12, bottom: 12, left: 0, right: 0 };
+    const cw = w - pad.left - pad.right;
+    const ch = h - pad.top - pad.bottom;
+
+    const values = data.map(d => d.value);
+    const minVal = Math.min(...values);
+    const maxVal = Math.max(...values);
+    const valPad = (maxVal - minVal) * 0.08 || 1;
+    const rangeMin = minVal - valPad;
+    const rangeMax = maxVal + valPad;
+    const range = rangeMax - rangeMin;
+
+    const toX = (i: number) => pad.left + (i / (data.length - 1)) * cw;
+    const toY = (v: number) => pad.top + (1 - (v - rangeMin) / range) * ch;
+
+    const color = chartArea.dataset.color || '#3d8b37';
+
+    // Smooth gradient fill
+    const grad = ctx.createLinearGradient(0, toY(maxVal), 0, h);
+    grad.addColorStop(0, color + '30');
+    grad.addColorStop(0.6, color + '12');
+    grad.addColorStop(1, color + '02');
+
+    // Build smooth curve using cardinal spline
+    const pts: Array<{ x: number; y: number }> = data.map((d, i) => ({ x: toX(i), y: toY(d.value) }));
+    const tension = 0.3;
+    const drawSmoothLine = (close: boolean) => {
+      ctx.moveTo(pts[0].x, pts[0].y);
+      for (let i = 0; i < pts.length - 1; i++) {
+        const p0 = pts[Math.max(0, i - 1)];
+        const p1 = pts[i];
+        const p2 = pts[i + 1];
+        const p3 = pts[Math.min(pts.length - 1, i + 2)];
+        const cp1x = p1.x + (p2.x - p0.x) * tension;
+        const cp1y = p1.y + (p2.y - p0.y) * tension;
+        const cp2x = p2.x - (p3.x - p1.x) * tension;
+        const cp2y = p2.y - (p3.y - p1.y) * tension;
+        ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, p2.x, p2.y);
+      }
+      if (close) {
+        ctx.lineTo(pts[pts.length - 1].x, h);
+        ctx.lineTo(pts[0].x, h);
+        ctx.closePath();
+      }
+    };
+
+    // Fill area
+    ctx.beginPath();
+    drawSmoothLine(true);
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    // Smooth line
+    ctx.beginPath();
+    drawSmoothLine(false);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2.5;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+    ctx.stroke();
+
+    // Current value dot at end of line
+    const lastPt = pts[pts.length - 1];
+    ctx.beginPath();
+    ctx.arc(lastPt.x, lastPt.y, 4, 0, Math.PI * 2);
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(lastPt.x, lastPt.y, 2, 0, Math.PI * 2);
+    ctx.fillStyle = '#fff';
+    ctx.fill();
+
+    // Event markers — colored dots on the line
+    for (const ev of events) {
+      const idx = data.findIndex(d => d.date >= ev.date);
+      if (idx < 0) continue;
+      const x = pts[idx].x, y = pts[idx].y;
+      const dotColor = ev.type === 'TRADE_BUY' ? '#5a9a6e'
+        : ev.type === 'TRADE_SELL' ? '#c75450' : '#da7756';
+      // White border
+      ctx.beginPath();
+      ctx.arc(x, y, 5.5, 0, Math.PI * 2);
+      ctx.fillStyle = '#fff';
+      ctx.fill();
+      // Colored fill
+      ctx.beginPath();
+      ctx.arc(x, y, 4, 0, Math.PI * 2);
+      ctx.fillStyle = dotColor;
+      ctx.fill();
+    }
+  }
+
+  private attachChartInteraction(): void {
+    const chartArea = document.getElementById('chart-area');
+    const crosshair = document.getElementById('chart-crosshair');
+    const tooltip = document.getElementById('chart-tooltip');
+    const chartInfo = document.getElementById('chart-info');
+    if (!chartArea || !crosshair || !tooltip || !this.portfolioHistory) return;
+
+    const data = this.portfolioHistory.series;
+    const events = this.portfolioHistory.events;
+    if (data.length < 2) return;
+
+    const handleMove = (clientX: number) => {
+      const rect = chartArea.getBoundingClientRect();
+      const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+      const ratio = x / rect.width;
+      const idx = Math.round(ratio * (data.length - 1));
+      const point = data[Math.max(0, Math.min(idx, data.length - 1))];
+
+      // Position crosshair
+      crosshair.style.left = x + 'px';
+      crosshair.style.display = 'block';
+
+      // Tooltip content
+      const returnPct = point.costBasis > 0 ? ((point.value - point.costBasis) / point.costBasis * 100) : 0;
+      const returnSign = returnPct >= 0 ? '+' : '';
+
+      // Check if there's an event on this date
+      const eventsOnDate = events.filter(e => {
+        const eIdx = data.findIndex(d => d.date >= e.date);
+        return eIdx === idx;
+      });
+      let eventInfo = '';
+      for (const ev of eventsOnDate) {
+        const typeLabel = ev.type === 'TRADE_BUY' ? 'Kjøp' : ev.type === 'TRADE_SELL' ? 'Salg' : 'Utbytte';
+        eventInfo += '<div class="tooltip-event">' + typeLabel + ': ' + formatCurrency(ev.amount) + '</div>';
+      }
+
+      tooltip.innerHTML = '<div class="tooltip-date">' + formatDateShort(point.date) + '</div>'
+        + '<div class="tooltip-value">' + formatCurrency(point.value) + '</div>'
+        + '<div class="tooltip-return ' + (returnPct >= 0 ? 'text-success' : 'text-danger') + '">' + returnSign + returnPct.toFixed(1) + '%</div>'
+        + eventInfo;
+
+      // Position tooltip
+      const tooltipW = 140;
+      let tooltipX = x - tooltipW / 2;
+      if (tooltipX < 0) tooltipX = 0;
+      if (tooltipX + tooltipW > rect.width) tooltipX = rect.width - tooltipW;
+      tooltip.style.left = tooltipX + 'px';
+      tooltip.style.display = 'block';
+
+      // Update header info
+      if (chartInfo) {
+        chartInfo.innerHTML = '<span class="chart-date-label">' + formatDateShort(point.date) + '</span>'
+          + '<span class="chart-value-label">' + formatCurrency(point.value) + '</span>';
+      }
+    };
+
+    const handleEnd = () => {
+      crosshair.style.display = 'none';
+      tooltip.style.display = 'none';
+      // Restore default header
+      if (chartInfo && this.portfolioHistory) {
+        const d = this.portfolioHistory.series;
+        const firstVal = d[0].value;
+        const lastVal = d[d.length - 1].value;
+        const isPositive = lastVal >= firstVal;
+        const returnPct = firstVal > 0 ? ((lastVal - firstVal) / firstVal * 100) : 0;
+        const returnSign = returnPct >= 0 ? '+' : '';
+        chartInfo.innerHTML = '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '">' + returnSign + returnPct.toFixed(1) + '% total</span>';
+      }
+    };
+
+    chartArea.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      handleMove(e.touches[0].clientX);
+    }, { passive: false });
+    chartArea.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      handleMove(e.touches[0].clientX);
+    }, { passive: false });
+    chartArea.addEventListener('touchend', handleEnd);
+    chartArea.addEventListener('mousemove', (e) => handleMove(e.clientX));
+    chartArea.addEventListener('mouseleave', handleEnd);
+  }
+
+  private renderDividendList(): string {
+    const dividends = this.ledger.events
+      .filter(e => e.type === 'DIVIDEND')
+      .sort((a, b) => b.date.localeCompare(a.date));
+    if (dividends.length === 0) return '';
+
+    const rows = dividends.map(e => {
+      const de = e as unknown as { isin: string };
+      const inst = this.ledger.instruments.find(i => i.isin === de.isin);
+      const name = inst?.name || de.isin;
+      return '<div class="txn-row">'
+        + '<span class="txn-date">' + formatDateShort(e.date) + '</span>'
+        + '<span class="txn-type txn-type-dividend">' + name + '</span>'
+        + '<span class="txn-amount">' + formatCurrency(e.amount) + '</span>'
+        + '</div>';
+    }).join('');
+
+    return '<div class="dividend-list">'
+      + '<div class="txn-header">Utbytter</div>'
+      + rows + '</div>';
   }
 
   private renderFooter(): string {
@@ -762,13 +1199,30 @@ class TallyApp {
     });
   }
 
-  private showTradeModal(mode: 'simple' | 'full' = 'simple'): void {
+  private showTradeModal(mode: 'simple' | 'full' = 'simple', prefill?: { ticker: string; name: string; isin: string; instrumentType: 'STOCK' | 'FUND' }): void {
     this.tradeModalMode = mode;
     // Re-render modal with correct mode, then show it
     const modal = document.getElementById('trade-modal');
     if (modal) {
       modal.outerHTML = this.renderTradeModal();
       this.attachTradeModalListeners();
+      if (prefill) {
+        const tickerInput = document.getElementById('trade-ticker') as HTMLInputElement | null;
+        const nameInput = document.getElementById('trade-name') as HTMLInputElement | null;
+        const isinInput = document.getElementById('trade-isin') as HTMLInputElement | null;
+        const instrumentTypeInput = document.getElementById('trade-instrument-type') as HTMLInputElement | null;
+        if (tickerInput) { tickerInput.value = prefill.ticker; tickerInput.readOnly = true; }
+        if (nameInput) nameInput.value = prefill.name;
+        if (isinInput) isinInput.value = prefill.isin;
+        if (instrumentTypeInput) instrumentTypeInput.value = prefill.instrumentType;
+        if (prefill.instrumentType === 'FUND') {
+          const qtyLabel = document.querySelector('label[for="trade-qty"]');
+          const priceLabel = document.getElementById('trade-price-label');
+          if (qtyLabel) qtyLabel.textContent = 'Antall andeler';
+          if (priceLabel) priceLabel.textContent = 'NAV per andel';
+        }
+        this.updatePriceForSelectedStock();
+      }
       document.getElementById('trade-modal')?.classList.add('active');
     }
   }
@@ -831,7 +1285,43 @@ class TallyApp {
         if ((e.target as HTMLElement).classList.contains('price-input')) return;
         const isin = (card as HTMLElement).dataset.isin;
         const details = document.getElementById('details-' + isin);
-        if (details) details.classList.toggle('active');
+        if (details) {
+          details.classList.toggle('active');
+          // Load sparkline on first expand
+          if (details.classList.contains('active')) {
+            const sparklineEl = details.querySelector('.holding-sparkline') as HTMLElement | null;
+            if (sparklineEl && !sparklineEl.querySelector('svg')) {
+              const ticker = sparklineEl.dataset.ticker;
+              if (ticker) {
+                fetchPriceHistory(ticker).then(prices => {
+                  if (!details.classList.contains('active')) return;
+                  if (prices.length >= 2) {
+                    sparklineEl.innerHTML = this.renderSparklineSVG(prices);
+                  } else {
+                    sparklineEl.innerHTML = '<span class="text-muted text-small">Ingen prishistorikk</span>';
+                  }
+                });
+              }
+            }
+          }
+        }
+      });
+    });
+
+    // Quick-add transaction from holding detail
+    document.querySelectorAll('.holding-add-trade').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isin = (btn as HTMLElement).dataset.isin;
+        const inst = this.ledger.instruments.find(i => i.isin === isin);
+        if (inst) {
+          this.showTradeModal('full', {
+            ticker: inst.ticker,
+            name: inst.name,
+            isin: inst.isin,
+            instrumentType: inst.instrumentType || 'STOCK',
+          });
+        }
       });
     });
 
