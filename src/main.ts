@@ -194,18 +194,28 @@ class TallyApp {
       + '</main>'
       + this.renderTradeModal()
       + this.renderImportModal();
+
+    // Prevent body scroll when modal is open
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('touchmove', (e) => {
+        if ((e.target as HTMLElement).closest('.modal-content')) return;
+        e.preventDefault();
+      }, { passive: false });
+    });
   }
 
   private renderHeader(): string {
     const hasData = this.ledger.events.length > 0;
     const actions = hasData
       ? '<div class="header-actions">'
-        + '<button class="btn btn-header" id="add-trade">+ Legg til</button>'
-        + '<button class="btn btn-header" id="share-data">Del</button>'
-        + '<button class="btn btn-header" id="import-csv">Importer</button>'
+        + '<button class="btn-icon" id="share-data" aria-label="Del"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg></button>'
+        + '<button class="btn-icon" id="import-csv" aria-label="Importer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>'
         + '</div>'
       : '';
-    return '<header><div class="container header-inner"><div><h1>Tally</h1></div>' + actions + '</div></header>';
+    const fab = hasData
+      ? '<button class="fab" id="add-trade" aria-label="Legg til"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>'
+      : '';
+    return '<header><div class="container header-inner"><h1>Tally</h1>' + actions + '</div></header>' + fab;
   }
 
   private renderEmptyState(): string {
@@ -291,11 +301,11 @@ class TallyApp {
     return '<div class="footer-actions">'
       + '<span class="text-muted text-small">'
       + this.ledger.events.length + ' transaksjoner'
-      + (this.ledger.lastModified ? ' &middot; Sist oppdatert ' + formatDateShort(this.ledger.lastModified) : '')
+      + (this.ledger.lastModified ? ' &middot; ' + formatDateShort(this.ledger.lastModified) : '')
       + '</span>'
       + '<div class="footer-buttons">'
       + '<button class="btn btn-small btn-ghost" id="export-json">Eksporter</button>'
-      + '<button class="btn btn-small btn-danger-outline" id="clear-data">Slett data</button>'
+      + '<button class="btn btn-small btn-danger-outline" id="clear-data">Slett</button>'
       + '</div>'
       + '</div>';
   }
