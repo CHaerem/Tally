@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { deriveHoldings, deriveCashFlows, derivePortfolioMetrics, calculatePeriodXIRR, getPeriodStartDate, deriveDividendSummary } from './holdings';
+import { deriveHoldings, deriveCashFlows, derivePortfolioMetrics, calculatePeriodXIRR, getPeriodStartDate, deriveDividendSummary, buildMissingDividendEvents } from './holdings';
 import type { ReturnPeriod } from './holdings';
 import type { TradeEvent, DividendEvent, CashEvent, FeeEvent, Instrument } from '../types';
 
@@ -336,5 +336,89 @@ describe('deriveDividendSummary', () => {
     ];
     const result = deriveDividendSummary(events, instruments, holdings);
     expect(result.byYear.map(y => y.year)).toEqual([2022, 2024, 2025]);
+  });
+});
+
+describe('buildMissingDividendEvents', () => {
+  let idCounter = 0;
+  const genId = () => 'test_' + (++idCounter);
+
+  it('returns empty when no trades exist', () => {
+    const history = [{ date: '2024-06-15', amount: 8.7 }];
+    const result = buildMissingDividendEvents([], 'NO001', history, genId);
+    expect(result).toEqual([]);
+  });
+
+  it('creates events for dividends after first buy', () => {
+    const events = [
+      makeTrade({ type: 'TRADE_BUY', isin: 'NO001', quantity: 100, pricePerShare: 280, amount: 28000, date: '2023-01-15' }),
+    ];
+    const history = [
+      { date: '2022-06-15', amount: 8.0 },  // before buy — skip
+      { date: '2023-06-15', amount: 8.7 },  // after buy
+      { date: '2024-06-15', amount: 9.2 },  // after buy
+    ];
+    const result = buildMissingDividendEvents(events, 'NO001', history, genId);
+    expect(result).toHaveLength(2);
+    expect(result[0].date).toBe('2023-06-15');
+    expect(result[0].amount).toBe(870);   // 8.7 * 100
+    expect(result[0].quantity).toBe(100);
+    expect(result[1].date).toBe('2024-06-15');
+    expect(result[1].amount).toBe(920);   // 9.2 * 100
+  });
+
+  it('skips already existing dividend events', () => {
+    const events = [
+      makeTrade({ type: 'TRADE_BUY', isin: 'NO001', quantity: 100, pricePerShare: 280, amount: 28000, date: '2023-01-15' }),
+      makeDividend('NO001', 870, '2023-06-15'),
+    ];
+    const history = [
+      { date: '2023-06-15', amount: 8.7 },
+      { date: '2024-06-15', amount: 9.2 },
+    ];
+    const result = buildMissingDividendEvents(events, 'NO001', history, genId);
+    expect(result).toHaveLength(1);
+    expect(result[0].date).toBe('2024-06-15');
+  });
+
+  it('tracks quantity changes from buys and sells', () => {
+    const events = [
+      makeTrade({ type: 'TRADE_BUY', isin: 'NO001', quantity: 100, pricePerShare: 280, amount: 28000, date: '2023-01-01' }),
+      makeTrade({ type: 'TRADE_BUY', isin: 'NO001', quantity: 50, pricePerShare: 290, amount: 14500, date: '2023-06-01' }),
+      makeTrade({ type: 'TRADE_SELL', isin: 'NO001', quantity: 30, pricePerShare: 300, amount: 9000, date: '2024-03-01' }),
+    ];
+    const history = [
+      { date: '2023-03-15', amount: 10 },  // qty = 100
+      { date: '2023-09-15', amount: 10 },  // qty = 150
+      { date: '2024-06-15', amount: 10 },  // qty = 120
+    ];
+    const result = buildMissingDividendEvents(events, 'NO001', history, genId);
+    expect(result).toHaveLength(3);
+    expect(result[0].amount).toBe(1000);  // 10 * 100
+    expect(result[1].amount).toBe(1500);  // 10 * 150
+    expect(result[2].amount).toBe(1200);  // 10 * 120
+  });
+
+  it('skips dividends when position is fully sold', () => {
+    const events = [
+      makeTrade({ type: 'TRADE_BUY', isin: 'NO001', quantity: 100, pricePerShare: 280, amount: 28000, date: '2023-01-01' }),
+      makeTrade({ type: 'TRADE_SELL', isin: 'NO001', quantity: 100, pricePerShare: 300, amount: 30000, date: '2023-06-01' }),
+    ];
+    const history = [
+      { date: '2023-09-15', amount: 8.7 },  // no shares held
+    ];
+    const result = buildMissingDividendEvents(events, 'NO001', history, genId);
+    expect(result).toEqual([]);
+  });
+
+  it('only looks at trades for the specified ISIN', () => {
+    const events = [
+      makeTrade({ type: 'TRADE_BUY', isin: 'NO001', quantity: 100, pricePerShare: 280, amount: 28000, date: '2023-01-01' }),
+      makeTrade({ type: 'TRADE_BUY', isin: 'NO002', quantity: 50, pricePerShare: 200, amount: 10000, date: '2023-01-01' }),
+    ];
+    const history = [{ date: '2023-06-15', amount: 10 }];
+    const result = buildMissingDividendEvents(events, 'NO001', history, genId);
+    expect(result).toHaveLength(1);
+    expect(result[0].quantity).toBe(100); // only NO001 shares
   });
 });
