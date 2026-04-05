@@ -1,11 +1,11 @@
 import './style.css';
-import { LedgerStorage } from './ledger';
+import { LedgerStorage, generateEventId } from './ledger';
 import { parseCSV, validateCSV, parseVPSExport, isVPSFile } from './import';
-import { deriveHoldings, derivePortfolioMetrics, formatXIRRPercent, formatCurrency, formatPercent, formatDateShort, calculatePeriodXIRR, getPeriodStartDate, deriveDividendSummary } from './calculations';
+import { deriveHoldings, derivePortfolioMetrics, formatXIRRPercent, formatCurrency, formatPercent, formatDateShort, calculatePeriodXIRR, getPeriodStartDate, deriveDividendSummary, buildMissingDividendEvents } from './calculations';
 import type { ReturnPeriod, DividendSummary } from './calculations';
-import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate, fetchPriceHistory, fetchLivePrice, fetchStockQuote, fetchFundamentals, fetchMarketData } from './api';
+import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate, fetchPriceHistory, fetchLivePrice, fetchStockQuote, fetchFundamentals, fetchMarketData, fetchDividendHistory } from './api';
 import type { StockQuote, Fundamentals } from './api';
-import type { LedgerState, Holding, PortfolioMetrics } from './types';
+import type { LedgerState, Holding, PortfolioMetrics, DividendEvent } from './types';
 import type { CSVParseResult } from './import';
 
 interface StockSuggestion {
@@ -347,6 +347,7 @@ class TallyApp {
     this.render();
     this.attachEventListeners();
     this.computePortfolioHistory();
+    this.syncDividends();
   }
 
   private updateDerivedData(): void {
@@ -354,6 +355,38 @@ class TallyApp {
     this.metrics = derivePortfolioMetrics(this.ledger.events, this.holdings);
     this.dividendSummary = deriveDividendSummary(this.ledger.events, this.ledger.instruments, this.holdings);
     this.portfolioHistory = null;
+  }
+
+  /**
+   * Sync dividends from static data for all instruments in the ledger.
+   * Compares known dividend events with historical data and creates
+   * missing DIVIDEND events based on quantity held at each ex-date.
+   */
+  private async syncDividends(): Promise<void> {
+    const instruments = this.ledger.instruments;
+    if (instruments.length === 0) return;
+
+    const newEvents: DividendEvent[] = [];
+
+    const results = await Promise.allSettled(
+      instruments.map(async (inst) => {
+        const history = await fetchDividendHistory(inst.ticker);
+        if (history.length === 0) return;
+        const missing = buildMissingDividendEvents(
+          this.ledger.events, inst.isin, history, generateEventId,
+        );
+        newEvents.push(...missing);
+      })
+    );
+    void results;
+
+    if (newEvents.length > 0) {
+      this.ledger = LedgerStorage.addEvents(newEvents);
+      this.updateDerivedData();
+      this.render();
+      this.attachEventListeners();
+      this.reattachChartIfNeeded();
+    }
   }
 
   private async computePortfolioHistory(): Promise<void> {

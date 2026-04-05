@@ -275,3 +275,65 @@ export function deriveDividendSummary(
 
   return { totalAllTime, byYear, byHolding };
 }
+
+/**
+ * Given existing events and dividend history from static data,
+ * compute which dividend events are missing and should be created.
+ * Returns new DividendEvent objects ready to be added to the ledger.
+ */
+export function buildMissingDividendEvents(
+  events: LedgerEvent[],
+  isin: string,
+  dividendHistory: Array<{ date: string; amount: number }>,
+  generateId: () => string,
+): DividendEvent[] {
+  // Existing dividend dates for this ISIN
+  const existingKeys = new Set(
+    events.filter(isDividendEvent)
+      .filter(e => e.isin === isin)
+      .map(e => e.date)
+  );
+
+  // Trade timeline for quantity calculation
+  const trades = events
+    .filter(isTradeEvent)
+    .filter(e => e.isin === isin)
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  const firstBuy = trades.find(t => t.type === 'TRADE_BUY');
+  if (!firstBuy) return [];
+
+  const result: DividendEvent[] = [];
+  const now = new Date().toISOString();
+
+  for (const div of dividendHistory) {
+    if (div.date < firstBuy.date) continue;
+    if (existingKeys.has(div.date)) continue;
+
+    // Quantity held on dividend date
+    let qty = 0;
+    for (const trade of trades) {
+      if (trade.date > div.date) break;
+      if (trade.type === 'TRADE_BUY') qty += trade.quantity;
+      else qty -= trade.quantity;
+    }
+    if (qty <= 0) continue;
+
+    const amount = +(div.amount * qty).toFixed(2);
+    result.push({
+      id: generateId(),
+      accountId: 'default',
+      date: div.date,
+      type: 'DIVIDEND',
+      amount,
+      currency: 'NOK',
+      createdAt: now,
+      source: 'CSV_IMPORT',
+      isin,
+      quantity: qty,
+      perShare: div.amount,
+    });
+  }
+
+  return result;
+}
