@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { deriveHoldings, deriveCashFlows, derivePortfolioMetrics } from './holdings';
+import { deriveHoldings, deriveCashFlows, derivePortfolioMetrics, calculatePeriodXIRR, getPeriodStartDate } from './holdings';
+import type { ReturnPeriod } from './holdings';
 import type { TradeEvent, DividendEvent, CashEvent, FeeEvent, Instrument } from '../types';
 
 function makeTrade(overrides: Partial<TradeEvent> & Pick<TradeEvent, 'type' | 'isin' | 'quantity' | 'pricePerShare' | 'amount' | 'date'>): TradeEvent {
@@ -207,5 +208,72 @@ describe('derivePortfolioMetrics', () => {
     ];
     const metrics = derivePortfolioMetrics([], holdings);
     expect(metrics.currentValue).toBe(30000);
+  });
+});
+
+describe('getPeriodStartDate', () => {
+  it('returns null for total', () => {
+    expect(getPeriodStartDate('total')).toBeNull();
+  });
+
+  it('returns Jan 1 of current year for ytd', () => {
+    const start = getPeriodStartDate('ytd')!;
+    expect(start.getMonth()).toBe(0);
+    expect(start.getDate()).toBe(1);
+    expect(start.getFullYear()).toBe(new Date().getFullYear());
+  });
+
+  it('returns correct date for 1y, 3y, 5y', () => {
+    const now = new Date();
+    for (const [period, years] of [['1y', 1], ['3y', 3], ['5y', 5]] as [ReturnPeriod, number][]) {
+      const start = getPeriodStartDate(period)!;
+      expect(start.getFullYear()).toBe(now.getFullYear() - years);
+    }
+  });
+});
+
+describe('calculatePeriodXIRR', () => {
+  it('returns total XIRR for total period', () => {
+    const events = [
+      makeTrade({ type: 'TRADE_BUY', isin: 'NO001', quantity: 100, pricePerShare: 100, amount: 10000, date: '2023-01-01' }),
+    ];
+    const result = calculatePeriodXIRR(events, 'total', 12000, null);
+    expect(result).not.toBeNull();
+  });
+
+  it('returns null when no portfolio history for non-total period', () => {
+    const events = [
+      makeTrade({ type: 'TRADE_BUY', isin: 'NO001', quantity: 100, pricePerShare: 100, amount: 10000, date: '2023-01-01' }),
+    ];
+    const result = calculatePeriodXIRR(events, '1y', 12000, null);
+    expect(result).toBeNull();
+  });
+
+  it('calculates period XIRR with portfolio history', () => {
+    const events = [
+      makeTrade({ type: 'TRADE_BUY', isin: 'NO001', quantity: 100, pricePerShare: 100, amount: 10000, date: '2020-01-01' }),
+    ];
+    const series = [
+      { date: '2020-01-01', value: 10000 },
+      { date: '2024-01-01', value: 11000 },
+      { date: '2025-01-01', value: 12000 },
+    ];
+    const result = calculatePeriodXIRR(events, '1y', 13000, series);
+    expect(result).not.toBeNull();
+    // From 12000 to 13000 over ~1 year is ~8.3% return
+    expect(result!).toBeGreaterThan(0);
+  });
+
+  it('handles period with events in range', () => {
+    const events = [
+      makeTrade({ type: 'TRADE_BUY', isin: 'NO001', quantity: 100, pricePerShare: 100, amount: 10000, date: '2020-01-01' }),
+      makeDividend('NO001', 500, '2025-03-01'),
+    ];
+    const series = [
+      { date: '2020-01-01', value: 10000 },
+      { date: '2024-12-31', value: 11000 },
+    ];
+    const result = calculatePeriodXIRR(events, 'ytd', 11500, series);
+    expect(result).not.toBeNull();
   });
 });

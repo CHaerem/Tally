@@ -115,11 +115,27 @@ src/
 
 ## Design
 
+### Design Principles
+
+The UI follows **calm design** — an approach that respects the user's attention and avoids visual noise:
+
+- **Intuitive over clever** — every interaction should be immediately understandable. No hidden gestures, no ambiguous icons. Labels and affordances should be self-explanatory.
+- **Simple over feature-rich** — resist adding controls, options, or settings unless they serve a clear, frequent need. When in doubt, leave it out.
+- **Minimalist over decorative** — every visual element must earn its place. No gratuitous borders, shadows, dividers, or color. White space is a feature.
+- **Calm over attention-grabbing** — avoid bright colors, animations, or badges that demand attention. Use muted tones and gentle transitions. The app should feel quiet and trustworthy.
+- **Information density with clarity** — show meaningful data without clutter. Use typography hierarchy (size, weight, color) rather than boxes and borders to organize information.
+- **Progressive disclosure** — show the essential first, reveal details on interaction (tap-to-expand cards, period selectors). Don't overwhelm on first glance.
+
+### Visual Language
+
 - **Warm, Anthropic/Claude-inspired palette** — sandy background (#f5f0e8), terracotta accent (#da7756)
 - **Inter font** from Google Fonts
 - **Card-based holdings** with tap-to-expand details
 - **Sticky header** + **FAB** for mobile-optimized interaction
 - **Bottom-sheet modals** with grab handle, blur backdrop
+- **Pill selectors** for inline options (e.g., return periods) — small, muted, no border, active state uses accent-dim background
+- **Subtle transitions** (0.2s) for interactive states — never jarring or bouncy
+- **Color sparingly** — success green and danger red only for gain/loss values, everything else uses the neutral text scale
 
 ## Deployment
 

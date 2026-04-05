@@ -1,7 +1,8 @@
 import './style.css';
 import { LedgerStorage } from './ledger';
 import { parseCSV, validateCSV, parseVPSExport, isVPSFile } from './import';
-import { deriveHoldings, derivePortfolioMetrics, formatXIRRPercent, formatCurrency, formatPercent, formatDateShort } from './calculations';
+import { deriveHoldings, derivePortfolioMetrics, formatXIRRPercent, formatCurrency, formatPercent, formatDateShort, calculatePeriodXIRR, getPeriodStartDate } from './calculations';
+import type { ReturnPeriod } from './calculations';
 import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate, fetchPriceHistory, fetchLivePrice, fetchStockQuote, fetchFundamentals, fetchMarketData } from './api';
 import type { StockQuote, Fundamentals } from './api';
 import type { LedgerState, Holding, PortfolioMetrics } from './types';
@@ -187,6 +188,7 @@ class TallyApp {
   // exploreCategory removed
   private watchlist: Array<{ ticker: string; name: string; type: 'STOCK' | 'FUND' }> = [];
   private obxPrice: number | null = null;
+  private selectedPeriod: ReturnPeriod = 'total';
   private quoteCache = new Map<string, StockQuote>();
   private portfolioHistory: {
     series: Array<{ date: string; value: number; costBasis: number }>;
@@ -478,6 +480,18 @@ class TallyApp {
     }
   }
 
+  private reattachChartIfNeeded(): void {
+    if (!this.portfolioHistory) return;
+    const container = document.getElementById('portfolio-chart-container');
+    if (container && this.portfolioHistory.series.length >= 2) {
+      container.innerHTML = this.renderPortfolioChartSVG();
+      this.drawPortfolioChart();
+      this.attachChartInteraction();
+    }
+    const divList = document.getElementById('portfolio-dividend-list');
+    if (divList) divList.innerHTML = this.renderDividendList();
+  }
+
   private render(): void {
     const app = document.getElementById('app');
     if (!app) return;
@@ -536,10 +550,47 @@ class TallyApp {
     if (!this.metrics) return '';
 
     const m = this.metrics;
-    const xirrClass = (m.xirrPercent || 0) >= 0 ? 'text-success' : 'text-danger';
     const unrealizedGain = this.holdings.reduce((sum, h) => sum + h.unrealizedGain, 0);
     const totalReturn = unrealizedGain + m.totalDividends;
     const totalReturnClass = totalReturn >= 0 ? 'text-success' : 'text-danger';
+
+    // Calculate period XIRR
+    const series = this.portfolioHistory?.series || null;
+    const periodXIRR = calculatePeriodXIRR(this.ledger.events, this.selectedPeriod, m.currentValue, series);
+    const periodPercent = periodXIRR !== null ? periodXIRR * 100 : null;
+    const xirrClass = (periodPercent || 0) >= 0 ? 'text-success' : 'text-danger';
+
+    // Determine if period has enough history
+    const firstEventDate = this.ledger.events.length > 0
+      ? this.ledger.events.reduce((min, e) => e.date < min ? e.date : min, this.ledger.events[0].date)
+      : null;
+
+    const periods: Array<{ key: ReturnPeriod; label: string }> = [
+      { key: 'ytd', label: 'HiÅ' },
+      { key: '1y', label: '1 år' },
+      { key: '3y', label: '3 år' },
+      { key: '5y', label: '5 år' },
+      { key: 'total', label: 'Total' },
+    ];
+
+    // Only show periods where the portfolio existed at the start
+    const availablePeriods = periods.filter(p => {
+      if (p.key === 'total') return true;
+      if (!firstEventDate) return false;
+      const start = getPeriodStartDate(p.key);
+      return start !== null && firstEventDate <= start.toISOString().slice(0, 10);
+    });
+
+    // XIRR label varies by period
+    const xirrLabel = this.selectedPeriod === 'total'
+      ? 'årlig (XIRR)'
+      : this.selectedPeriod === 'ytd' ? 'hittil i år' : 'siste ' + periods.find(p => p.key === this.selectedPeriod)?.label;
+
+    const periodPills = availablePeriods.length > 1
+      ? '<div class="period-selector">' + availablePeriods.map(p =>
+          '<button class="period-pill' + (p.key === this.selectedPeriod ? ' active' : '') + '" data-period="' + p.key + '">' + p.label + '</button>'
+        ).join('') + '</div>'
+      : '';
 
     // Calculate invested from trades (buy - sell) if no CASH_IN events
     const totalCostBasis = this.holdings.reduce((sum, h) => sum + h.costBasis, 0);
@@ -563,7 +614,9 @@ class TallyApp {
 
     return '<div class="card">'
       + '<div class="summary-hero"><div class="label">Markedsverdi</div><div class="value">' + formatCurrency(m.currentValue) + '</div>'
-      + '<div class="sub-value ' + xirrClass + '">' + formatXIRRPercent(m.xirr) + ' årlig (XIRR)</div></div>'
+      + '<div class="sub-value ' + xirrClass + '">' + formatXIRRPercent(periodXIRR) + ' ' + xirrLabel + '</div>'
+      + periodPills
+      + '</div>'
       + '<div id="portfolio-chart-container" class="portfolio-chart-container"><div class="chart-placeholder">Laster graf...</div></div>'
       + '<div id="portfolio-dividend-list"></div>'
       // Compact 3-column stats
@@ -1748,6 +1801,23 @@ class TallyApp {
     // Close import modal on backdrop click
     document.getElementById('import-modal')?.addEventListener('click', (e) => {
       if ((e.target as HTMLElement).id === 'import-modal') this.hideModal();
+    });
+
+    // Period selector pills
+    document.querySelectorAll('.period-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        const period = (pill as HTMLElement).dataset.period as ReturnPeriod;
+        if (period && period !== this.selectedPeriod) {
+          this.selectedPeriod = period;
+          // Update only the summary hero without full re-render
+          const summaryCard = document.querySelector('.summary-hero');
+          if (summaryCard) {
+            this.render();
+            this.attachEventListeners();
+            this.reattachChartIfNeeded();
+          }
+        }
+      });
     });
 
     // Holding cards — click to expand details

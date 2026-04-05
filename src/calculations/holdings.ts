@@ -2,6 +2,91 @@ import type { LedgerEvent, TradeEvent, DividendEvent, Instrument, Holding, Portf
 import { isTradeEvent, isDividendEvent, isCashEvent, isFeeEvent } from '../types';
 import { calculateXIRR } from './xirr';
 
+export type ReturnPeriod = 'total' | 'ytd' | '1y' | '3y' | '5y';
+
+export function getPeriodStartDate(period: ReturnPeriod): Date | null {
+  if (period === 'total') return null;
+  const now = new Date();
+  if (period === 'ytd') return new Date(now.getFullYear(), 0, 1);
+  const years = period === '1y' ? 1 : period === '3y' ? 3 : 5;
+  return new Date(now.getFullYear() - years, now.getMonth(), now.getDate());
+}
+
+/**
+ * Calculate XIRR for a specific time period.
+ * Uses the portfolio value at period start as initial "investment",
+ * includes all events within the period, and current value as terminal.
+ */
+export function calculatePeriodXIRR(
+  events: LedgerEvent[],
+  period: ReturnPeriod,
+  currentValue: number,
+  portfolioSeries: Array<{ date: string; value: number }> | null,
+): number | null {
+  if (period === 'total') {
+    const cashFlows = deriveCashFlows(events, currentValue);
+    return calculateXIRR(cashFlows);
+  }
+
+  const startDate = getPeriodStartDate(period);
+  if (!startDate) return null;
+
+  const startISO = startDate.toISOString().slice(0, 10);
+
+  // Find portfolio value at period start from history
+  let startValue = 0;
+  if (portfolioSeries && portfolioSeries.length > 0) {
+    // Find closest date <= startDate
+    let closest: { date: string; value: number } | null = null;
+    for (const pt of portfolioSeries) {
+      if (pt.date <= startISO) closest = pt;
+      else break;
+    }
+    if (closest) {
+      startValue = closest.value;
+    } else {
+      // Period starts before any history — all events are within period
+      startValue = 0;
+    }
+  } else {
+    // No history available — can't compute period return
+    return null;
+  }
+
+  // Build cash flows: starting value as outflow, events in period, current value as inflow
+  const cashFlows: CashFlow[] = [];
+
+  if (startValue > 0) {
+    cashFlows.push({ date: startDate, amount: -startValue });
+  }
+
+  // Add events within the period
+  for (const event of events) {
+    const eventDate = new Date(event.date);
+    if (eventDate < startDate) continue;
+
+    const date = eventDate;
+    if (isCashEvent(event)) {
+      cashFlows.push({ date, amount: event.type === 'CASH_IN' ? -event.amount : event.amount });
+    } else if (isTradeEvent(event)) {
+      const tradeAmount = event.amount + (event.fee || 0);
+      cashFlows.push({ date, amount: event.type === 'TRADE_BUY' ? -tradeAmount : event.amount });
+    } else if (isDividendEvent(event)) {
+      cashFlows.push({ date, amount: event.amount });
+    } else if (isFeeEvent(event)) {
+      cashFlows.push({ date, amount: -event.amount });
+    }
+  }
+
+  if (currentValue > 0) {
+    cashFlows.push({ date: new Date(), amount: currentValue });
+  }
+
+  if (cashFlows.length < 2) return null;
+
+  return calculateXIRR(cashFlows);
+}
+
 export function deriveHoldings(
   events: LedgerEvent[],
   instruments: Instrument[],
