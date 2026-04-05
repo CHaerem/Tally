@@ -4,11 +4,37 @@ const YAHOO_BASE = 'https://query1.finance.yahoo.com/v8/finance/chart/';
 
 // --- Types for static data files ---
 
+export interface Fundamentals {
+  trailingPE: number | null;
+  forwardPE: number | null;
+  marketCap: number | null;
+  dividendYield: number | null;
+  dividendRate: number | null;
+  payoutRatio: number | null;
+  beta: number | null;
+  priceToBook: number | null;
+  enterpriseToEbitda: number | null;
+  profitMargins: number | null;
+  returnOnEquity: number | null;
+  revenueGrowth: number | null;
+  earningsGrowth: number | null;
+  grossMargins: number | null;
+  totalRevenue: number | null;
+  ebitda: number | null;
+}
+
 interface StockDataFile {
   ticker: string;
   name: string;
   currency: string;
   currentPrice: number | null;
+  previousClose?: number | null;
+  dayHigh?: number | null;
+  dayLow?: number | null;
+  volume?: number | null;
+  fiftyTwoWeekHigh?: number | null;
+  fiftyTwoWeekLow?: number | null;
+  fundamentals?: Fundamentals;
   prices: Array<{ date: string; close: number }>;
   dividends: Array<{ date: string; amount: number }>;
   lastUpdated: string;
@@ -182,6 +208,31 @@ export async function fetchDividendHistory(
 /**
  * Get historical prices for a ticker from static data.
  */
+export async function fetchFundamentals(ticker: string): Promise<Fundamentals | null> {
+  const data = await fetchStockData(ticker);
+  return data?.fundamentals || null;
+}
+
+export async function fetchMarketData(ticker: string): Promise<{
+  previousClose: number | null;
+  dayHigh: number | null;
+  dayLow: number | null;
+  volume: number | null;
+  fiftyTwoWeekHigh: number | null;
+  fiftyTwoWeekLow: number | null;
+} | null> {
+  const data = await fetchStockData(ticker);
+  if (!data) return null;
+  return {
+    previousClose: data.previousClose ?? null,
+    dayHigh: data.dayHigh ?? null,
+    dayLow: data.dayLow ?? null,
+    volume: data.volume ?? null,
+    fiftyTwoWeekHigh: data.fiftyTwoWeekHigh ?? null,
+    fiftyTwoWeekLow: data.fiftyTwoWeekLow ?? null,
+  };
+}
+
 export async function fetchPriceHistory(
   ticker: string
 ): Promise<Array<{ date: string; close: number }>> {

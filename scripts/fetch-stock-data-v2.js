@@ -338,10 +338,52 @@ function parseYahooResult(result) {
     currency: meta.currency || 'NOK',
     exchange: meta.exchangeName || 'OSL',
     currentPrice: meta.regularMarketPrice || null,
+    previousClose: meta.chartPreviousClose || null,
+    dayHigh: meta.regularMarketDayHigh || null,
+    dayLow: meta.regularMarketDayLow || null,
+    volume: meta.regularMarketVolume || null,
+    fiftyTwoWeekHigh: meta.fiftyTwoWeekHigh || null,
+    fiftyTwoWeekLow: meta.fiftyTwoWeekLow || null,
     prices,
     dividends,
     lastUpdated: new Date().toISOString(),
   };
+}
+
+// Fetch fundamental data via yahoo-finance2 (if available)
+async function fetchFundamentals(ticker) {
+  try {
+    const YF = require('yahoo-finance2').default;
+    const yf = new YF({ suppressNotices: ['yahooSurvey'] });
+    const symbol = ticker.includes('.') ? ticker : ticker + '.OL';
+    const r = await yf.quoteSummary(symbol, {
+      modules: ['summaryDetail', 'defaultKeyStatistics', 'financialData']
+    });
+    const sd = r.summaryDetail || {};
+    const ks = r.defaultKeyStatistics || {};
+    const fd = r.financialData || {};
+    return {
+      trailingPE: sd.trailingPE || null,
+      forwardPE: sd.forwardPE || null,
+      marketCap: sd.marketCap || null,
+      dividendYield: sd.dividendYield || null,
+      dividendRate: sd.dividendRate || null,
+      payoutRatio: sd.payoutRatio || null,
+      beta: sd.beta || null,
+      priceToBook: ks.priceToBook || null,
+      enterpriseToEbitda: ks.enterpriseToEbitda || null,
+      profitMargins: ks.profitMargins || null,
+      returnOnEquity: fd.returnOnEquity || null,
+      revenueGrowth: fd.revenueGrowth || null,
+      earningsGrowth: fd.earningsGrowth || null,
+      grossMargins: fd.grossMargins || null,
+      totalRevenue: fd.totalRevenue || null,
+      ebitda: fd.ebitda || null,
+    };
+  } catch (e) {
+    // yahoo-finance2 not installed or API error — skip fundamentals
+    return null;
+  }
 }
 
 // --- Data merging ---
@@ -451,13 +493,19 @@ async function main() {
       const result = await fetchYahooData(ticker, dividendsOnly ? '5y' : range);
       const fresh = parseYahooResult(result);
 
+      // Fetch fundamental data (P/E, market cap, etc.)
+      const fundamentals = await fetchFundamentals(ticker);
+      if (fundamentals) fresh.fundamentals = fundamentals;
+      else if (existing?.fundamentals) fresh.fundamentals = existing.fundamentals;
+
       const merged = fullUpdate ? fresh : mergeStockData(existing, fresh);
       saveStockData(ticker, merged);
       allData[ticker] = merged;
 
       const pCount = merged.prices.length;
       const dCount = merged.dividends.length;
-      console.log(`  ✓ ${ticker}: ${pCount} priser, ${dCount} utbytter, kurs ${merged.currentPrice}`);
+      const hasFund = merged.fundamentals ? ' +fundamental' : '';
+      console.log(`  ✓ ${ticker}: ${pCount} priser, ${dCount} utbytter, kurs ${merged.currentPrice}${hasFund}`);
       successCount++;
     } catch (err) {
       console.log(`  ✗ ${ticker}: ${err.message}`);

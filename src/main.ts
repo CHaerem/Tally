@@ -2,8 +2,8 @@ import './style.css';
 import { LedgerStorage } from './ledger';
 import { parseCSV, validateCSV } from './import';
 import { deriveHoldings, derivePortfolioMetrics, formatXIRRPercent, formatCurrency, formatPercent, formatDateShort } from './calculations';
-import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate, fetchPriceHistory, fetchLivePrice, fetchStockQuote } from './api';
-import type { StockQuote } from './api';
+import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate, fetchPriceHistory, fetchLivePrice, fetchStockQuote, fetchFundamentals, fetchMarketData } from './api';
+import type { StockQuote, Fundamentals } from './api';
 import type { LedgerState, Holding, PortfolioMetrics } from './types';
 import type { CSVParseResult } from './import';
 
@@ -651,30 +651,87 @@ class TallyApp {
     const newswebTicker = ticker.replace('.OL', '');
     return '<div class="market-stats" id="mstats-' + safeTicker + '">'
       + '<div class="holding-detail"><div class="label">I dag</div><div class="value text-muted" id="mstat-day-' + safeTicker + '">...</div></div>'
-      + '<div class="holding-detail"><div class="label">Dag høy/lav</div><div class="value text-muted" id="mstat-range-' + safeTicker + '">...</div></div>'
       + '<div class="holding-detail"><div class="label">52 uker</div><div class="value text-muted" id="mstat-52w-' + safeTicker + '">...</div></div>'
       + '<div class="holding-detail"><div class="label">Volum</div><div class="value text-muted" id="mstat-vol-' + safeTicker + '">...</div></div>'
+      + '<div class="holding-detail"><div class="label">P/E</div><div class="value text-muted" id="mstat-pe-' + safeTicker + '">...</div></div>'
+      + '<div class="holding-detail"><div class="label">P/B</div><div class="value text-muted" id="mstat-pb-' + safeTicker + '">...</div></div>'
+      + '<div class="holding-detail"><div class="label">Markedsverdi</div><div class="value text-muted" id="mstat-mcap-' + safeTicker + '">...</div></div>'
+      + '<div class="holding-detail"><div class="label">Utbytterate</div><div class="value text-muted" id="mstat-divy-' + safeTicker + '">...</div></div>'
+      + '<div class="holding-detail"><div class="label">Margin</div><div class="value text-muted" id="mstat-margin-' + safeTicker + '">...</div></div>'
       + (isStock ? '<div class="market-stats-link"><a href="https://newsweb.oslobors.no/search?issuer=' + newswebTicker + '" target="_blank" rel="noopener">Se børsmeldinger ›</a></div>' : '')
       + '</div>';
   }
 
   private loadMarketStats(ticker: string): void {
     const safeTicker = ticker.replace(/\./g, '_');
+
+    // 1. Load from static data first (instant, has fundamentals)
+    fetchMarketData(ticker).then(md => {
+      if (md) this.fillMarketData(safeTicker, md);
+    });
+    fetchFundamentals(ticker).then(f => {
+      if (f) this.fillFundamentals(safeTicker, f);
+    });
+
+    // 2. Then try live quote for fresh daily data
     const cached = this.quoteCache.get(ticker);
     if (cached) {
-      this.fillMarketStats(safeTicker, cached);
-      return;
+      this.fillLiveQuote(safeTicker, cached);
+    } else {
+      fetchStockQuote(ticker).then(quote => {
+        if (!quote) return;
+        this.quoteCache.set(ticker, quote);
+        this.fillLiveQuote(safeTicker, quote);
+      });
     }
-    fetchStockQuote(ticker).then(quote => {
-      if (!quote) return;
-      this.quoteCache.set(ticker, quote);
-      this.fillMarketStats(safeTicker, quote);
-    });
   }
 
-  private fillMarketStats(safeTicker: string, q: StockQuote): void {
+  private fillMarketData(safeTicker: string, md: { previousClose: number | null; dayHigh: number | null; dayLow: number | null; volume: number | null; fiftyTwoWeekHigh: number | null; fiftyTwoWeekLow: number | null }): void {
+    const w52El = document.getElementById('mstat-52w-' + safeTicker);
+    const volEl = document.getElementById('mstat-vol-' + safeTicker);
+    if (w52El && md.fiftyTwoWeekLow !== null && md.fiftyTwoWeekHigh !== null) {
+      w52El.className = 'value';
+      w52El.textContent = formatCurrency(md.fiftyTwoWeekLow, 2) + ' — ' + formatCurrency(md.fiftyTwoWeekHigh, 2);
+    }
+    if (volEl && md.volume !== null) {
+      volEl.className = 'value';
+      volEl.textContent = md.volume.toLocaleString('nb-NO');
+    }
+  }
+
+  private fillFundamentals(safeTicker: string, f: Fundamentals): void {
+    const peEl = document.getElementById('mstat-pe-' + safeTicker);
+    const pbEl = document.getElementById('mstat-pb-' + safeTicker);
+    const mcapEl = document.getElementById('mstat-mcap-' + safeTicker);
+    const divyEl = document.getElementById('mstat-divy-' + safeTicker);
+    const marginEl = document.getElementById('mstat-margin-' + safeTicker);
+
+    if (peEl) {
+      peEl.className = 'value';
+      peEl.textContent = f.trailingPE ? f.trailingPE.toFixed(1) : (f.forwardPE ? f.forwardPE.toFixed(1) + ' (fwd)' : '—');
+    }
+    if (pbEl) {
+      pbEl.className = 'value';
+      pbEl.textContent = f.priceToBook ? f.priceToBook.toFixed(2) : '—';
+    }
+    if (mcapEl && f.marketCap) {
+      mcapEl.className = 'value';
+      if (f.marketCap >= 1e12) mcapEl.textContent = (f.marketCap / 1e12).toFixed(1) + ' bill kr';
+      else if (f.marketCap >= 1e9) mcapEl.textContent = (f.marketCap / 1e9).toFixed(1) + ' mrd kr';
+      else mcapEl.textContent = (f.marketCap / 1e6).toFixed(0) + ' mill kr';
+    }
+    if (divyEl) {
+      divyEl.className = 'value';
+      divyEl.textContent = f.dividendYield ? (f.dividendYield * 100).toFixed(2) + '%' : '—';
+    }
+    if (marginEl) {
+      marginEl.className = 'value';
+      marginEl.textContent = f.profitMargins ? (f.profitMargins * 100).toFixed(1) + '%' : '—';
+    }
+  }
+
+  private fillLiveQuote(safeTicker: string, q: StockQuote): void {
     const dayEl = document.getElementById('mstat-day-' + safeTicker);
-    const rangeEl = document.getElementById('mstat-range-' + safeTicker);
     const w52El = document.getElementById('mstat-52w-' + safeTicker);
     const volEl = document.getElementById('mstat-vol-' + safeTicker);
 
@@ -683,10 +740,6 @@ class TallyApp {
       const cls = q.dayChange >= 0 ? 'text-success' : 'text-danger';
       dayEl.className = 'value ' + cls;
       dayEl.textContent = sign + q.dayChange.toFixed(2) + ' (' + sign + q.dayChangePct.toFixed(2) + '%)';
-    }
-    if (rangeEl && q.dayLow !== null && q.dayHigh !== null) {
-      rangeEl.className = 'value';
-      rangeEl.textContent = formatCurrency(q.dayLow, 2) + ' — ' + formatCurrency(q.dayHigh, 2);
     }
     if (w52El && q.weekLow52 !== null && q.weekHigh52 !== null) {
       w52El.className = 'value';
