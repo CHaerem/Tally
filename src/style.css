@@ -358,6 +358,25 @@ header h1 {
   margin-top: 2px;
 }
 
+.stats-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  border-top: 1px solid var(--border);
+}
+
+.stats-total .label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.stats-total .stat-val {
+  font-size: 15px;
+  font-weight: 600;
+}
+
 .alloc-compact {
   padding: 10px 16px 8px;
 }

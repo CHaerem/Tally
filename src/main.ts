@@ -667,6 +667,8 @@ class TallyApp {
       .map(a => '<div class="alloc-segment" style="width:' + a.pct.toFixed(1) + '%;background:' + a.color + '" title="' + a.label + ' ' + a.pct.toFixed(1) + '%"></div>')
       .join('');
 
+    const unrealizedClass = unrealizedGain >= 0 ? 'text-success' : 'text-danger';
+
     return '<div class="card">'
       + '<div class="summary-hero"><div class="label">Markedsverdi</div><div class="value">' + formatCurrency(m.currentValue) + '</div>'
       + '<div class="sub-value ' + xirrClass + '">' + formatXIRRPercent(periodXIRR) + ' ' + xirrLabel + '</div>'
@@ -674,11 +676,15 @@ class TallyApp {
       + '</div>'
       + '<div id="portfolio-chart-container" class="portfolio-chart-container"><div class="chart-placeholder">Laster graf...</div></div>'
       + '<div id="portfolio-dividend-list"></div>'
-      // Compact 3-column stats
+      // Stats: clear labels for each type of return
       + '<div class="stats-row">'
       + '<div class="stat-item"><div class="label">Investert</div><div class="stat-val">' + formatCurrency(invested) + '</div></div>'
-      + '<div class="stat-item"><div class="label">Avkastning</div><div class="stat-val ' + totalReturnClass + '">' + (totalReturn >= 0 ? '+' : '') + formatCurrency(totalReturn) + '</div></div>'
+      + '<div class="stat-item"><div class="label">Kursgevinst</div><div class="stat-val ' + unrealizedClass + '">' + (unrealizedGain >= 0 ? '+' : '') + formatCurrency(unrealizedGain) + '</div></div>'
       + '<div class="stat-item"><div class="label">Utbytte</div><div class="stat-val">' + formatCurrency(m.totalDividends) + '</div></div>'
+      + '</div>'
+      + '<div class="stats-total">'
+      + '<span class="label">Totalavkastning</span>'
+      + '<span class="stat-val ' + totalReturnClass + '">' + (totalReturn >= 0 ? '+' : '') + formatCurrency(totalReturn) + '</span>'
       + '</div>'
       // Allocation bar with inline labels
       + (allocationItems.length >= 2
@@ -740,11 +746,11 @@ class TallyApp {
           + '<div class="holding-chart-area" id="hcarea-' + h.isin + '"><div class="sparkline-placeholder">Laster graf...</div></div>'
           + '</div>'
           + '<div class="holding-detail"><div class="label">Antall</div><div class="value">' + qty + '</div></div>'
-          + '<div class="holding-detail"><div class="label">Snittpris</div><div class="value">' + formatCurrency(h.averageCostPerShare, 2) + '</div></div>'
-          + '<div class="holding-detail"><div class="label">Kurs</div><input type="number" class="price-input" data-isin="' + h.isin + '" value="' + priceValue + '" placeholder="—" step="0.01" min="0"></div>'
-          + '<div class="holding-detail"><div class="label">Gevinst</div><div class="value ' + gainClass + '">' + formatCurrency(h.unrealizedGain) + '</div></div>'
-          + '<div class="holding-detail"><div class="label">Andel</div><div class="value">' + sharePct + '%</div></div>'
-          + '<div class="holding-detail"><div class="label">Utbytte</div><div class="value' + (h.totalDividendsReceived > 0 ? '' : ' text-muted') + '">' + (h.totalDividendsReceived > 0 ? formatCurrency(h.totalDividendsReceived) : '—') + '</div></div>'
+          + '<div class="holding-detail"><div class="label">Kjøpskurs (snitt)</div><div class="value">' + formatCurrency(h.averageCostPerShare, 2) + '</div></div>'
+          + '<div class="holding-detail"><div class="label">Nåværende kurs</div><input type="number" class="price-input" data-isin="' + h.isin + '" value="' + priceValue + '" placeholder="—" step="0.01" min="0"></div>'
+          + '<div class="holding-detail"><div class="label">Kursgevinst</div><div class="value ' + gainClass + '">' + (h.unrealizedGain >= 0 ? '+' : '') + formatCurrency(h.unrealizedGain) + '</div></div>'
+          + '<div class="holding-detail"><div class="label">Mottatt utbytte</div><div class="value' + (h.totalDividendsReceived > 0 ? '' : ' text-muted') + '">' + (h.totalDividendsReceived > 0 ? formatCurrency(h.totalDividendsReceived) : '—') + '</div></div>'
+          + '<div class="holding-detail"><div class="label">Andel av portefølje</div><div class="value">' + sharePct + '%</div></div>'
           + this.renderMarketStats(inst?.ticker || h.ticker)
           + this.renderHoldingTransactions(h.isin)
           + '<div class="holding-actions"><button class="btn btn-small holding-add-trade" data-isin="' + h.isin + '">+ Legg til transaksjon</button></div>'
