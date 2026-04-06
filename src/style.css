@@ -121,6 +121,16 @@ header h1 {
   box-shadow: 0 2px 8px rgba(218, 119, 86, 0.3);
 }
 
+/* Offline banner */
+.offline-banner {
+  text-align: center;
+  padding: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--warning-bg);
+  border-bottom: 1px solid var(--warning-border);
+}
+
 /* Cards */
 .card {
   background: var(--bg-card);
@@ -240,7 +250,7 @@ header h1 {
 /* Empty state */
 .empty-state {
   text-align: center;
-  padding: 100px 20px 48px;
+  padding: 60px 20px 48px;
   background: none;
   border: none;
   box-shadow: none;
@@ -262,12 +272,89 @@ header h1 {
   line-height: 1.6;
 }
 
+.onboard-brand {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--bg-card);
+  color: var(--accent);
+  font-size: 32px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: var(--shadow);
+}
+
+.onboard-features {
+  text-align: left;
+  max-width: 300px;
+  margin: 0 auto 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.onboard-feature {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.onboard-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--accent);
+  margin-top: 2px;
+}
+
+.onboard-feature-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.onboard-feature-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-top: 1px;
+}
+
 .empty-buttons {
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-width: 280px;
   margin: 0 auto;
+}
+
+.onboard-hint {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  margin-bottom: 12px;
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.onboard-hint-dismiss {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 4px 8px;
+  flex-shrink: 0;
 }
 
 /* Summary */
@@ -1372,6 +1459,11 @@ header h1 {
   gap: 8px;
 }
 
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
 .footer-txn-link {
   background: none;
   border: none;
@@ -1384,6 +1476,78 @@ header h1 {
 }
 
 .footer-txn-link:active { opacity: 0.7; }
+
+/* Gains view */
+.gains-year {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.gains-year:last-child { border-bottom: none; }
+
+.gains-year-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.gains-year-label {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.gains-year-net {
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.gains-year-breakdown {
+  margin-top: 8px;
+}
+
+.gains-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.gains-row span:last-child {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.gains-trades {
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+
+.gains-trade {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  padding: 6px 0;
+  font-size: 13px;
+  align-items: baseline;
+}
+
+.gains-trade-name {
+  font-weight: 500;
+}
+
+.gains-trade-detail {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.gains-trade-amount {
+  margin-left: auto;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
 
 /* Transaction log modal */
 .txn-log-sheet {

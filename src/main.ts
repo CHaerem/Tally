@@ -1,7 +1,7 @@
 import './style.css';
 import { LedgerStorage, generateEventId } from './ledger';
 import { parseCSV, validateCSV, parseVPSExport, isVPSFile } from './import';
-import { deriveHoldings, derivePortfolioMetrics, formatCurrency, formatPercent, formatDateShort, getPeriodStartDate, deriveDividendSummary, buildMissingDividendEvents } from './calculations';
+import { deriveHoldings, derivePortfolioMetrics, formatCurrency, formatPercent, formatDateShort, getPeriodStartDate, deriveDividendSummary, buildMissingDividendEvents, deriveGainsByYear } from './calculations';
 import type { ReturnPeriod, DividendSummary } from './calculations';
 import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate, fetchPriceHistory, fetchLivePrice, fetchStockQuote, fetchFundamentals, fetchMarketData, fetchDividendHistory } from './api';
 import type { StockQuote, Fundamentals } from './api';
@@ -211,6 +211,18 @@ class TallyApp {
     this.refreshPrices();
     this.loadStockIndex();
     this.computePortfolioHistory();
+
+    // Offline indicator
+    window.addEventListener('online', () => {
+      document.getElementById('offline-banner')?.remove();
+      this.refreshPrices();
+    });
+    window.addEventListener('offline', () => {
+      const header = document.querySelector('header');
+      if (header && !document.getElementById('offline-banner')) {
+        header.insertAdjacentHTML('afterend', '<div id="offline-banner" class="offline-banner">Frakoblet — viser siste data</div>');
+      }
+    });
     this.fetchOBXPrice();
   }
 
@@ -559,13 +571,14 @@ class TallyApp {
         ? this.renderSummary()
           + this.renderWarnings()
           + '<section class="section-group">' + this.renderHoldings() + '</section>'
-          // Market section removed
+          + this.renderOnboardingHint()
           + this.renderFooter()
         : this.renderEmptyState())
       + '</main>'
       + this.renderTradeModal()
       + this.renderImportModal()
-      + this.renderTransactionLog();
+      + this.renderTransactionLog()
+      + this.renderGainsView();
 
     // Prevent body scroll when modal is open
     document.querySelectorAll('.modal').forEach(modal => {
@@ -592,8 +605,23 @@ class TallyApp {
 
   private renderEmptyState(): string {
     return '<div class="card empty-state">'
-      + '<h2>Velkommen til Tally</h2>'
-      + '<p>Spor investeringene dine og se din faktiske avkastning.</p>'
+      + '<div class="onboard-brand">T</div>'
+      + '<h2>Se din faktiske avkastning</h2>'
+      + '<p>Legg inn investeringene dine og se hva de virkelig har gitt i avkastning.</p>'
+      + '<div class="onboard-features">'
+      + '<div class="onboard-feature">'
+      + '<svg class="onboard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>'
+      + '<div><div class="onboard-feature-title">Faktisk avkastning</div><div class="onboard-feature-desc">Beregner din reelle avkastning basert på kjøpstidspunkt og pris</div></div>'
+      + '</div>'
+      + '<div class="onboard-feature">'
+      + '<svg class="onboard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>'
+      + '<div><div class="onboard-feature-title">Privat og trygt</div><div class="onboard-feature-desc">Alt lagres lokalt på din enhet. Ingen konto, ingen sky.</div></div>'
+      + '</div>'
+      + '<div class="onboard-feature">'
+      + '<svg class="onboard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>'
+      + '<div><div class="onboard-feature-title">Helt gratis</div><div class="onboard-feature-desc">Ingen abonnement, ingen annonser, ingen skjulte kostnader.</div></div>'
+      + '</div>'
+      + '</div>'
       + '<div class="empty-buttons">'
       + '<button class="btn btn-primary btn-large" id="add-trade">Legg til beholdning</button>'
       + '<button class="btn btn-large btn-secondary" id="import-csv">Importer fra megler</button>'
@@ -686,6 +714,15 @@ class TallyApp {
             '<span><span class="alloc-dot" style="background:' + a.color + '"></span>' + a.label + ' ' + a.pct.toFixed(0) + '%</span>'
           ).join('') + '</div></div>'
         : '')
+      + '</div>';
+  }
+
+  private renderOnboardingHint(): string {
+    if (localStorage.getItem('tally_hint_shown')) return '';
+    if (this.ledger.events.length === 0) return '';
+    return '<div class="onboard-hint" id="onboard-hint">'
+      + '<span>Trykk på en beholdning for å se graf og detaljer</span>'
+      + '<button class="onboard-hint-dismiss" id="dismiss-hint">OK</button>'
       + '</div>';
   }
 
@@ -1525,11 +1562,14 @@ class TallyApp {
   }
 
   private renderFooter(): string {
+    const hasSells = this.ledger.events.some(e => e.type === 'TRADE_SELL');
     return '<div class="footer-actions">'
+      + '<div class="footer-links">'
       + '<button class="footer-txn-link" id="show-txn-log">'
       + this.ledger.events.length + ' transaksjoner'
-      + (this.ledger.lastModified ? ' · ' + formatDateShort(this.ledger.lastModified) : '')
       + '</button>'
+      + (hasSells ? '<button class="footer-txn-link" id="show-gains">Gevinst/tap</button>' : '')
+      + '</div>'
       + '<div class="footer-buttons">'
       + '<button class="btn btn-small btn-ghost" id="export-json">Eksporter</button>'
       + '<button class="btn btn-small btn-danger-outline" id="clear-data">Slett</button>'
@@ -1589,6 +1629,48 @@ class TallyApp {
       + '<button class="btn btn-small btn-ghost" id="txn-log-close">Lukk</button>'
       + '</div>'
       + '<div class="txnlog-list">' + (rows || '<div class="text-muted text-small" style="padding:40px;text-align:center">Ingen transaksjoner ennå</div>') + '</div>'
+      + '</div></div>';
+  }
+
+  private renderGainsView(): string {
+    const years = deriveGainsByYear(this.ledger.events, this.ledger.instruments);
+    if (years.length === 0) return '';
+
+    const rows = years.map(y => {
+      const netClass = y.netGain >= 0 ? 'text-success' : 'text-danger';
+      const netSign = y.netGain >= 0 ? '+' : '';
+      const tradeRows = y.trades.map(t => {
+        const tClass = t.realizedGain >= 0 ? 'text-success' : 'text-danger';
+        const tSign = t.realizedGain >= 0 ? '+' : '';
+        return '<div class="gains-trade">'
+          + '<span class="gains-trade-name">' + t.name + '</span>'
+          + '<span class="gains-trade-detail">' + formatDateShort(t.date) + ' · ' + t.quantitySold + ' stk</span>'
+          + '<span class="gains-trade-amount ' + tClass + '">' + tSign + formatCurrency(t.realizedGain) + '</span>'
+          + '</div>';
+      }).join('');
+
+      return '<div class="gains-year">'
+        + '<div class="gains-year-header">'
+        + '<span class="gains-year-label">' + y.year + '</span>'
+        + '<span class="gains-year-net ' + netClass + '">' + netSign + formatCurrency(y.netGain) + '</span>'
+        + '</div>'
+        + '<div class="gains-year-breakdown">'
+        + (y.totalGains > 0 ? '<div class="gains-row"><span>Gevinster</span><span class="text-success">+' + formatCurrency(y.totalGains) + '</span></div>' : '')
+        + (y.totalLosses < 0 ? '<div class="gains-row"><span>Tap</span><span class="text-danger">' + formatCurrency(y.totalLosses) + '</span></div>' : '')
+        + (y.dividends > 0 ? '<div class="gains-row"><span>Utbytte</span><span>+' + formatCurrency(y.dividends) + '</span></div>' : '')
+        + '</div>'
+        + '<div class="gains-trades">' + tradeRows + '</div>'
+        + '</div>';
+    }).join('');
+
+    return '<div class="modal" id="gains-modal">'
+      + '<div class="modal-sheet txn-log-sheet">'
+      + '<div class="modal-handle"></div>'
+      + '<div class="txnlog-header">'
+      + '<h3>Realisert gevinst/tap</h3>'
+      + '<button class="btn btn-small btn-ghost" id="gains-close">Lukk</button>'
+      + '</div>'
+      + '<div class="txnlog-list">' + rows + '</div>'
       + '</div></div>';
   }
 
@@ -2073,6 +2155,21 @@ class TallyApp {
     document.getElementById('import-csv')?.addEventListener('click', () => this.showModal());
     document.getElementById('cancel-import')?.addEventListener('click', () => this.hideModal());
     document.getElementById('confirm-import')?.addEventListener('click', () => this.confirmImport());
+    document.getElementById('dismiss-hint')?.addEventListener('click', () => {
+      localStorage.setItem('tally_hint_shown', '1');
+      document.getElementById('onboard-hint')?.remove();
+    });
+    // Gains view modal
+    document.getElementById('show-gains')?.addEventListener('click', () => {
+      document.getElementById('gains-modal')?.classList.add('active');
+    });
+    document.getElementById('gains-close')?.addEventListener('click', () => {
+      document.getElementById('gains-modal')?.classList.remove('active');
+    });
+    document.getElementById('gains-modal')?.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).id === 'gains-modal') document.getElementById('gains-modal')?.classList.remove('active');
+    });
+
     document.getElementById('export-json')?.addEventListener('click', () => this.exportData());
     document.getElementById('clear-data')?.addEventListener('click', () => this.clearAllData());
     document.getElementById('share-data')?.addEventListener('click', () => this.shareData());
