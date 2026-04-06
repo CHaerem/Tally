@@ -901,40 +901,72 @@ class TallyApp {
     isin: string,
     _ticker: string,
     prices: Array<{ date: string; close: number }>,
-    avgCost: number
+    _avgCost: number
   ): void {
     const area = document.getElementById('hcarea-' + isin);
     const infoEl = document.getElementById('hcinfo-' + isin);
     if (!area) return;
 
-    const data = prices;
-    const lastPrice = data[data.length - 1].close;
+    const allPrices = prices;
 
-    // Get events for this holding
+    // Get events for this holding, sorted by date
     const holdingEvents = this.ledger.events
       .filter(e => 'isin' in e && (e as unknown as { isin: string }).isin === isin)
       .sort((a, b) => a.date.localeCompare(b.date));
 
-    // Use first buy date as reference, not first price in history
     const firstBuyDate = holdingEvents.find(e => e.type === 'TRADE_BUY')?.date;
-    const buyPrice = avgCost > 0 ? avgCost : data[0].close;
-    const isPositive = lastPrice >= buyPrice;
+    if (!firstBuyDate) return;
+
+    // Build position value over time: replay events to track qty, then qty × price
+    // Start from first buy date
+    const data: Array<{ date: string; value: number; price: number; qty: number; invested: number }> = [];
+    let qty = 0;
+    let totalInvested = 0;
+    let eventIdx = 0;
+
+    for (const p of allPrices) {
+      if (p.date < firstBuyDate) continue;
+
+      // Replay events up to this date
+      while (eventIdx < holdingEvents.length && holdingEvents[eventIdx].date <= p.date) {
+        const ev = holdingEvents[eventIdx];
+        const te = ev as unknown as { quantity?: number };
+        if (ev.type === 'TRADE_BUY' && te.quantity) {
+          qty += te.quantity;
+          totalInvested += ev.amount;
+        } else if (ev.type === 'TRADE_SELL' && te.quantity) {
+          qty -= te.quantity;
+          totalInvested -= ev.amount;
+        }
+        eventIdx++;
+      }
+
+      if (qty > 0) {
+        data.push({ date: p.date, value: qty * p.close, price: p.close, qty, invested: totalInvested });
+      }
+    }
+
+    if (data.length < 2) return;
+
+    const firstValue = data[0].invested;
+    const lastValue = data[data.length - 1].value;
+    const gain = lastValue - firstValue;
+    const isPositive = gain >= 0;
     const color = isPositive ? '#3d8b37' : '#c0392b';
-    const returnPct = buyPrice > 0 ? ((lastPrice - buyPrice) / buyPrice * 100) : 0;
-    const sinceDate = firstBuyDate || data[0].date;
+    const returnPct = firstValue > 0 ? (gain / firstValue * 100) : 0;
 
     // Setup area HTML
     area.innerHTML = '<canvas id="hcanvas-' + isin + '"></canvas>'
       + '<div class="chart-crosshair" id="hcross-' + isin + '"></div>';
 
-    // Default info — show return since YOUR first buy, not since fund inception
+    // Default info — show return since YOUR first buy
     if (infoEl) {
       const sign = returnPct >= 0 ? '+' : '';
       infoEl.innerHTML = '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '">'
-        + sign + returnPct.toFixed(1) + '% siden kjøp ' + formatDateShort(sinceDate) + '</span>';
+        + sign + returnPct.toFixed(1) + '% siden kjøp ' + formatDateShort(firstBuyDate) + '</span>';
     }
 
-    // Draw chart
+    // Draw chart — position VALUE over time, not just price
     const canvas = document.getElementById('hcanvas-' + isin) as HTMLCanvasElement;
     if (!canvas) return;
 
@@ -954,9 +986,9 @@ class TallyApp {
     const cw = w - pad.left - pad.right;
     const ch = h - pad.top - pad.bottom;
 
-    const closes = data.map(d => d.close);
-    const minVal = Math.min(...closes);
-    const maxVal = Math.max(...closes);
+    const values = data.map(d => d.value);
+    const minVal = Math.min(...values);
+    const maxVal = Math.max(...values);
     const valPad = (maxVal - minVal) * 0.08 || 1;
     const rangeMin = minVal - valPad;
     const rangeMax = maxVal + valPad;
@@ -965,8 +997,8 @@ class TallyApp {
     const toX = (i: number) => pad.left + (i / (data.length - 1)) * cw;
     const toY = (v: number) => pad.top + (1 - (v - rangeMin) / range) * ch;
 
-    // Build smooth curve points
-    const pts = data.map((d, i) => ({ x: toX(i), y: toY(d.close) }));
+    // Build smooth curve points — using position VALUE, not price
+    const pts = data.map((d, i) => ({ x: toX(i), y: toY(d.value) }));
     const tension = 0.3;
     const drawSmooth = (close: boolean) => {
       ctx.moveTo(pts[0].x, pts[0].y);
@@ -991,9 +1023,10 @@ class TallyApp {
     grad.addColorStop(1, color + '02');
     ctx.beginPath(); drawSmooth(true); ctx.fillStyle = grad; ctx.fill();
 
-    // Average cost line (dashed)
-    if (avgCost > 0 && avgCost >= rangeMin && avgCost <= rangeMax) {
-      const costY = toY(avgCost);
+    // Invested amount line (dashed) — shows your total invested for comparison
+    const currentInvested = data[data.length - 1].invested;
+    if (currentInvested > 0 && currentInvested >= rangeMin && currentInvested <= rangeMax) {
+      const costY = toY(currentInvested);
       ctx.setLineDash([4, 4]);
       ctx.beginPath();
       ctx.moveTo(0, costY);
@@ -1035,14 +1068,15 @@ class TallyApp {
 
       if (crosshair) { crosshair.style.left = x + 'px'; crosshair.style.display = 'block'; }
 
-      const pctFromCost = avgCost > 0 ? ((point.close - avgCost) / avgCost * 100) : 0;
-      const pctSign = pctFromCost >= 0 ? '+' : '';
-      const pctClass = pctFromCost >= 0 ? 'text-success' : 'text-danger';
+      const pointGain = point.value - point.invested;
+      const pointPct = point.invested > 0 ? (pointGain / point.invested * 100) : 0;
+      const pctSign = pointPct >= 0 ? '+' : '';
+      const pctClass = pointPct >= 0 ? 'text-success' : 'text-danger';
 
       if (infoEl) {
         infoEl.innerHTML = '<span class="scrub-date">' + formatDateShort(point.date) + '</span>'
-          + '<span class="scrub-value">' + formatCurrency(point.close, 2) + '</span>'
-          + '<span class="' + pctClass + '">' + pctSign + pctFromCost.toFixed(1) + '%</span>';
+          + '<span class="scrub-value">' + formatCurrency(point.value) + '</span>'
+          + '<span class="' + pctClass + '">' + pctSign + pointPct.toFixed(1) + '%</span>';
       }
     };
 
