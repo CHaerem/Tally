@@ -908,26 +908,30 @@ class TallyApp {
     if (!area) return;
 
     const data = prices;
-    const firstPrice = data[0].close;
     const lastPrice = data[data.length - 1].close;
-    const isPositive = lastPrice >= firstPrice;
-    const color = isPositive ? '#3d8b37' : '#c0392b';
-    const returnPct = firstPrice > 0 ? ((lastPrice - firstPrice) / firstPrice * 100) : 0;
 
     // Get events for this holding
     const holdingEvents = this.ledger.events
       .filter(e => 'isin' in e && (e as unknown as { isin: string }).isin === isin)
       .sort((a, b) => a.date.localeCompare(b.date));
 
+    // Use first buy date as reference, not first price in history
+    const firstBuyDate = holdingEvents.find(e => e.type === 'TRADE_BUY')?.date;
+    const buyPrice = avgCost > 0 ? avgCost : data[0].close;
+    const isPositive = lastPrice >= buyPrice;
+    const color = isPositive ? '#3d8b37' : '#c0392b';
+    const returnPct = buyPrice > 0 ? ((lastPrice - buyPrice) / buyPrice * 100) : 0;
+    const sinceDate = firstBuyDate || data[0].date;
+
     // Setup area HTML
     area.innerHTML = '<canvas id="hcanvas-' + isin + '"></canvas>'
       + '<div class="chart-crosshair" id="hcross-' + isin + '"></div>';
 
-    // Default info
+    // Default info — show return since YOUR first buy, not since fund inception
     if (infoEl) {
       const sign = returnPct >= 0 ? '+' : '';
       infoEl.innerHTML = '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '">'
-        + sign + returnPct.toFixed(1) + '% siden ' + formatDateShort(data[0].date) + '</span>';
+        + sign + returnPct.toFixed(1) + '% siden kjøp ' + formatDateShort(sinceDate) + '</span>';
     }
 
     // Draw chart
