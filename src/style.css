@@ -1195,19 +1195,46 @@ header h1 {
   border-top: 1px solid var(--border);
 }
 
+.txn-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
 .txn-row:first-of-type {
   border-top: none;
+}
+
+.txn-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.txn-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
 }
 
 .txn-date {
   color: var(--text-muted);
   font-variant-numeric: tabular-nums;
-  min-width: 70px;
+  font-size: 12px;
 }
 
 .txn-type {
   font-weight: 600;
-  flex: 1;
+}
+
+.txn-detail {
+  color: var(--text-muted);
+  font-size: 11px;
+  white-space: nowrap;
 }
 
 .txn-type-trade_buy { color: var(--success); }
@@ -1217,8 +1244,27 @@ header h1 {
 .txn-amount {
   font-weight: 600;
   font-variant-numeric: tabular-nums;
-  text-align: right;
+  font-size: 13px;
 }
+
+.txn-edit, .txn-delete {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 4px;
+  cursor: pointer;
+  line-height: 1;
+  border-radius: 4px;
+  min-width: 28px;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.txn-edit:active { color: var(--accent); }
+.txn-delete:active { color: var(--danger); }
 
 /* Holding action button */
 .holding-actions {

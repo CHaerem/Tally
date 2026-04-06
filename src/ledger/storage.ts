@@ -43,6 +43,23 @@ export class LedgerStorage {
     return ledger;
   }
 
+  static deleteEvent(eventId: string): LedgerState {
+    const ledger = this.loadLedger() || this.initializeLedger();
+    ledger.events = ledger.events.filter(e => e.id !== eventId);
+    this.saveLedger(ledger);
+    return ledger;
+  }
+
+  static updateEvent(eventId: string, updates: Partial<LedgerEvent>): LedgerState {
+    const ledger = this.loadLedger() || this.initializeLedger();
+    const idx = ledger.events.findIndex(e => e.id === eventId);
+    if (idx >= 0) {
+      ledger.events[idx] = { ...ledger.events[idx], ...updates } as LedgerEvent;
+    }
+    this.saveLedger(ledger);
+    return ledger;
+  }
+
   static upsertInstrument(instrument: Instrument): LedgerState {
     const ledger = this.loadLedger() || this.initializeLedger();
     const index = ledger.instruments.findIndex(i => i.isin === instrument.isin);

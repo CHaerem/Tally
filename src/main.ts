@@ -869,10 +869,21 @@ class TallyApp {
     };
     const rows = events.map(e => {
       const label = typeLabels[e.type] || e.type;
+      const te = e as unknown as { quantity?: number; pricePerShare?: number };
+      const detail = te.quantity && te.pricePerShare
+        ? ' · ' + te.quantity + ' × ' + te.pricePerShare.toFixed(2)
+        : '';
       return '<div class="txn-row">'
+        + '<div class="txn-main">'
         + '<span class="txn-date">' + formatDateShort(e.date) + '</span>'
         + '<span class="txn-type txn-type-' + e.type.toLowerCase() + '">' + label + '</span>'
+        + '<span class="txn-detail">' + detail + '</span>'
+        + '</div>'
+        + '<div class="txn-right">'
         + '<span class="txn-amount">' + formatCurrency(e.amount) + '</span>'
+        + '<button class="txn-edit" data-event-id="' + e.id + '" title="Rediger">✎</button>'
+        + '<button class="txn-delete" data-event-id="' + e.id + '" title="Slett">×</button>'
+        + '</div>'
         + '</div>';
     }).join('');
     return '<div class="holding-transactions">'
@@ -1537,6 +1548,14 @@ class TallyApp {
     const accountId = this.ledger.accounts[0]?.id || 'default';
     const now = new Date().toISOString();
 
+    // If editing an existing event, delete the old one first
+    const submitBtn = document.getElementById('submit-trade');
+    const replaceId = submitBtn?.dataset.replaceEventId;
+    if (replaceId) {
+      LedgerStorage.deleteEvent(replaceId);
+      delete submitBtn!.dataset.replaceEventId;
+    }
+
     // Upsert instrument
     LedgerStorage.upsertInstrument({ isin, ticker, name: name || ticker, currency: 'NOK', instrumentType });
 
@@ -1973,6 +1992,67 @@ class TallyApp {
             instrumentType: inst.instrumentType || 'STOCK',
           });
         }
+      });
+    });
+
+    // Delete transaction
+    document.querySelectorAll('.txn-delete').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const eventId = (btn as HTMLElement).dataset.eventId;
+        if (!eventId) return;
+        if (!confirm('Er du sikker på at du vil slette denne transaksjonen?')) return;
+        LedgerStorage.deleteEvent(eventId);
+        this.ledger = LedgerStorage.loadLedger() || this.ledger;
+        this.updateDerivedData();
+        this.render();
+        this.attachEventListeners();
+        this.computePortfolioHistory();
+      });
+    });
+
+    // Edit transaction — open trade modal pre-filled with event data
+    document.querySelectorAll('.txn-edit').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const eventId = (btn as HTMLElement).dataset.eventId;
+        if (!eventId) return;
+        const event = this.ledger.events.find(ev => ev.id === eventId);
+        if (!event) return;
+        const te = event as unknown as { isin?: string; quantity?: number; pricePerShare?: number; fee?: number };
+        const inst = te.isin ? this.ledger.instruments.find(i => i.isin === te.isin) : null;
+
+        // Open trade modal in full mode
+        this.showTradeModal('full', inst ? {
+          ticker: inst.ticker,
+          name: inst.name,
+          isin: inst.isin,
+          instrumentType: inst.instrumentType || 'STOCK',
+        } : undefined);
+
+        // Pre-fill the form with event data after modal renders
+        setTimeout(() => {
+          const dateInput = document.getElementById('trade-date') as HTMLInputElement;
+          const priceInput = document.getElementById('trade-price') as HTMLInputElement;
+          const qtyInput = document.getElementById('trade-qty') as HTMLInputElement;
+          const feeInput = document.getElementById('trade-fee') as HTMLInputElement;
+          const typeInput = document.getElementById('trade-type') as HTMLInputElement;
+
+          if (dateInput) dateInput.value = event.date;
+          if (priceInput && te.pricePerShare) { priceInput.value = te.pricePerShare.toString(); priceInput.dispatchEvent(new Event('input')); }
+          if (qtyInput && te.quantity) { qtyInput.value = te.quantity.toString(); qtyInput.dispatchEvent(new Event('input')); }
+          if (feeInput && te.fee) feeInput.value = te.fee.toString();
+
+          // Set trade type tab
+          if (typeInput) typeInput.value = event.type;
+          document.querySelectorAll('.trade-tab').forEach(tab => {
+            tab.classList.toggle('active', (tab as HTMLElement).dataset.type === event.type);
+          });
+
+          // Store the old event ID so submit can delete-then-add
+          const submitBtn = document.getElementById('submit-trade');
+          if (submitBtn) submitBtn.dataset.replaceEventId = eventId;
+        }, 100);
       });
     });
 
