@@ -367,6 +367,21 @@ header h1 {
   font-variant-numeric: tabular-nums;
 }
 
+.breakdown-total {
+  border-top: 1px solid var(--border);
+  margin-top: 4px;
+  padding-top: 8px;
+}
+
+.breakdown-total .breakdown-label {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.breakdown-total .breakdown-val {
+  font-size: 14px;
+}
+
 .alloc-compact {
   padding: 10px 16px 8px;
 }

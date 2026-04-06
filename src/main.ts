@@ -660,23 +660,24 @@ class TallyApp {
     const totalReturnPct = invested > 0 ? (totalReturn / invested * 100) : 0;
     const totalReturnPctSign = totalReturnPct >= 0 ? '+' : '';
 
+    // Separate unrealized (kursgevinst) % for clarity
+    const unrealizedPct = invested > 0 ? (unrealizedGain / invested * 100) : 0;
+    const unrealizedPctSign = unrealizedPct >= 0 ? '+' : '';
+
     return '<div class="card">'
       + '<div class="summary-hero">'
       + '<div class="label">Markedsverdi</div>'
       + '<div class="value">' + formatCurrency(m.currentValue) + '</div>'
-      + '<div class="hero-return ' + totalReturnClass + '">'
-      + (totalReturn >= 0 ? '+' : '') + formatCurrency(totalReturn)
-      + ' <span class="hero-return-pct">(' + totalReturnPctSign + totalReturnPct.toFixed(1) + '%)</span>'
-      + '</div>'
       + periodPills
       + '</div>'
       + '<div id="portfolio-chart-container" class="portfolio-chart-container"><div class="chart-placeholder">Laster graf...</div></div>'
       + '<div id="portfolio-dividend-list"></div>'
-      // Breakdown
+      // Breakdown — each line is self-explanatory
       + '<div class="return-breakdown">'
       + '<div class="breakdown-row"><span class="breakdown-label">Investert</span><span class="breakdown-val">' + formatCurrency(invested) + '</span></div>'
-      + '<div class="breakdown-row"><span class="breakdown-label">Kursgevinst</span><span class="breakdown-val ' + unrealizedClass + '">' + (unrealizedGain >= 0 ? '+' : '') + formatCurrency(unrealizedGain) + '</span></div>'
-      + (m.totalDividends > 0 ? '<div class="breakdown-row"><span class="breakdown-label">Mottatt utbytte</span><span class="breakdown-val text-success">+' + formatCurrency(m.totalDividends) + '</span></div>' : '')
+      + '<div class="breakdown-row"><span class="breakdown-label">Kursgevinst</span><span class="breakdown-val ' + unrealizedClass + '">' + (unrealizedGain >= 0 ? '+' : '') + formatCurrency(unrealizedGain) + ' (' + unrealizedPctSign + unrealizedPct.toFixed(1) + '%)</span></div>'
+      + '<div class="breakdown-row"><span class="breakdown-label">Mottatt utbytte</span><span class="breakdown-val">' + (m.totalDividends > 0 ? '+' + formatCurrency(m.totalDividends) : '0 kr') + '</span></div>'
+      + '<div class="breakdown-row breakdown-total"><span class="breakdown-label">Totalavkastning (inkl. utbytte)</span><span class="breakdown-val ' + totalReturnClass + '">' + (totalReturn >= 0 ? '+' : '') + formatCurrency(totalReturn) + ' (' + totalReturnPctSign + totalReturnPct.toFixed(1) + '%)</span></div>'
       + '</div>'
       // Allocation bar with inline labels
       + (allocationItems.length >= 2
