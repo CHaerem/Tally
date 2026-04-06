@@ -738,14 +738,25 @@ class TallyApp {
           + '<div class="holding-chart-info" id="hcinfo-' + h.isin + '"></div>'
           + '<div class="holding-chart-area" id="hcarea-' + h.isin + '"><div class="sparkline-placeholder">Laster graf...</div></div>'
           + '</div>'
+          // Section: Min posisjon (always visible)
           + '<div class="holding-detail"><div class="label">Antall</div><div class="value">' + qty + '</div></div>'
           + '<div class="holding-detail"><div class="label">Kjøpskurs (snitt)</div><div class="value">' + formatCurrency(h.averageCostPerShare, 2) + '</div></div>'
           + '<div class="holding-detail"><div class="label">Nåværende kurs</div><input type="number" class="price-input" data-isin="' + h.isin + '" value="' + priceValue + '" placeholder="—" step="0.01" min="0"></div>'
           + '<div class="holding-detail"><div class="label">Kursgevinst</div><div class="value ' + gainClass + '">' + (h.unrealizedGain >= 0 ? '+' : '') + formatCurrency(h.unrealizedGain) + '</div></div>'
-          + '<div class="holding-detail"><div class="label">Mottatt utbytte</div><div class="value' + (h.totalDividendsReceived > 0 ? '' : ' text-muted') + '">' + (h.totalDividendsReceived > 0 ? formatCurrency(h.totalDividendsReceived) : '—') + '</div></div>'
-          + '<div class="holding-detail"><div class="label">Andel av portefølje</div><div class="value">' + sharePct + '%</div></div>'
+          + (h.totalDividendsReceived > 0 ? '<div class="holding-detail"><div class="label">Mottatt utbytte</div><div class="value">' + formatCurrency(h.totalDividendsReceived) + '</div></div>' : '')
+          + '<div class="holding-detail"><div class="label">Andel</div><div class="value">' + sharePct + '%</div></div>'
+          // Section: Markedsdata (collapsible)
+          + '<div class="detail-section">'
+          + '<button class="detail-section-toggle" data-target="mdata-' + h.isin + '">Markedsdata ›</button>'
+          + '<div class="detail-section-body" id="mdata-' + h.isin + '">'
           + this.renderMarketStats(inst?.ticker || h.ticker)
+          + '</div></div>'
+          // Section: Transaksjoner (collapsible)
+          + '<div class="detail-section">'
+          + '<button class="detail-section-toggle" data-target="txns-' + h.isin + '">Transaksjoner ›</button>'
+          + '<div class="detail-section-body" id="txns-' + h.isin + '">'
           + this.renderHoldingTransactions(h.isin)
+          + '</div></div>'
           + '<div class="holding-actions"><button class="btn btn-small holding-add-trade" data-isin="' + h.isin + '">+ Legg til transaksjon</button></div>'
           + '</div>';
       }).join('')
@@ -2230,6 +2241,20 @@ class TallyApp {
               if (t) this.loadMarketStats(t);
             }
           }
+        }
+      });
+    });
+
+    // Collapsible detail sections
+    document.querySelectorAll('.detail-section-toggle').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetId = (btn as HTMLElement).dataset.target;
+        if (!targetId) return;
+        const body = document.getElementById(targetId);
+        if (body) {
+          body.classList.toggle('active');
+          (btn as HTMLElement).classList.toggle('open');
         }
       });
     });
