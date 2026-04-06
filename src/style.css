@@ -1355,9 +1355,16 @@ header h1 {
 
 /* Transaction log modal */
 .txn-log-sheet {
+  background: var(--bg-card);
+  border-radius: 24px 24px 0 0;
+  padding: 24px 0;
+  padding-bottom: calc(20px + var(--safe-bottom));
+  width: 100%;
+  max-width: 520px;
   max-height: 85vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .txnlog-header {
@@ -1425,27 +1432,29 @@ header h1 {
 }
 
 .txnlog-name {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 8px;
+  color: var(--text);
 }
 
 .txnlog-amount {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
+  color: var(--text);
 }
 
 .txnlog-bottom {
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .txnlog-meta {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-secondary);
 }
 
