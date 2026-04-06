@@ -1627,6 +1627,74 @@ class TallyApp {
     this.render();
     this.attachEventListeners();
     this.refreshPrices();
+
+    // Auto-register historical dividends for buy trades
+    if (type === 'TRADE_BUY') {
+      this.autoRegisterDividends(ticker, isin, date);
+    }
+  }
+
+  private async autoRegisterDividends(ticker: string, isin: string, buyDate: string): Promise<void> {
+    const dividends = await fetchDividendHistory(ticker);
+    if (!dividends || dividends.length === 0) return;
+
+    const today = new Date().toISOString().split('T')[0];
+    const accountId = this.ledger.accounts[0]?.id || 'default';
+    const now = new Date().toISOString();
+
+    // Get existing dividend event dates for this ISIN to avoid duplicates
+    const existingDivDates = new Set(
+      this.ledger.events
+        .filter(e => e.type === 'DIVIDEND' && 'isin' in e && (e as unknown as { isin: string }).isin === isin)
+        .map(e => e.date)
+    );
+
+    // For each dividend after buy date, compute qty held at that date and register
+    const newDividends: Array<{ date: string; amount: number; qty: number; perShare: number }> = [];
+
+    for (const div of dividends) {
+      if (div.date < buyDate || div.date > today) continue;
+      if (existingDivDates.has(div.date)) continue;
+
+      // Compute qty held at this dividend date by replaying all events for this ISIN
+      let qtyAtDate = 0;
+      for (const e of this.ledger.events) {
+        if (!('isin' in e) || (e as unknown as { isin: string }).isin !== isin) continue;
+        if (e.date > div.date) break;
+        const te = e as unknown as { quantity?: number };
+        if (e.type === 'TRADE_BUY' && te.quantity) qtyAtDate += te.quantity;
+        else if (e.type === 'TRADE_SELL' && te.quantity) qtyAtDate -= te.quantity;
+      }
+
+      if (qtyAtDate > 0) {
+        const amount = Math.round(qtyAtDate * div.amount * 100) / 100;
+        newDividends.push({ date: div.date, amount, qty: qtyAtDate, perShare: div.amount });
+      }
+    }
+
+    if (newDividends.length === 0) return;
+
+    // Register all dividend events
+    const events = newDividends.map(d => ({
+      id: 'evt_' + Date.now().toString(36) + '_' + Math.random().toString(36).substring(2, 8),
+      accountId,
+      date: d.date,
+      type: 'DIVIDEND' as const,
+      amount: d.amount,
+      currency: 'NOK' as const,
+      createdAt: now,
+      source: 'AUTO' as const,
+      isin,
+      quantity: d.qty,
+      perShare: d.perShare,
+    }));
+
+    LedgerStorage.addEvents(events);
+    this.ledger = LedgerStorage.loadLedger() || this.ledger;
+    this.updateDerivedData();
+    this.render();
+    this.attachEventListeners();
+    this.computePortfolioHistory();
   }
 
   private selectStock(stock: StockSuggestion): void {

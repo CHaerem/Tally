@@ -1,5 +1,5 @@
 export type EventType = 'TRADE_BUY' | 'TRADE_SELL' | 'DIVIDEND' | 'FEE' | 'CASH_IN' | 'CASH_OUT';
-export type EventSource = 'MANUAL' | 'CSV_IMPORT';
+export type EventSource = 'MANUAL' | 'CSV_IMPORT' | 'AUTO';
 
 export interface BaseEvent {
   id: string;
