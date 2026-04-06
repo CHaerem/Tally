@@ -1,7 +1,7 @@
 import './style.css';
 import { LedgerStorage, generateEventId } from './ledger';
 import { parseCSV, validateCSV, parseVPSExport, isVPSFile } from './import';
-import { deriveHoldings, derivePortfolioMetrics, formatXIRRPercent, formatCurrency, formatPercent, formatDateShort, calculatePeriodXIRR, getPeriodStartDate, deriveDividendSummary, buildMissingDividendEvents } from './calculations';
+import { deriveHoldings, derivePortfolioMetrics, formatCurrency, formatPercent, formatDateShort, getPeriodStartDate, deriveDividendSummary, buildMissingDividendEvents } from './calculations';
 import type { ReturnPeriod, DividendSummary } from './calculations';
 import { fetchPricesForHoldings, fetchStockIndex, fetchPriceForDate, fetchPriceHistory, fetchLivePrice, fetchStockQuote, fetchFundamentals, fetchMarketData, fetchDividendHistory } from './api';
 import type { StockQuote, Fundamentals } from './api';
@@ -609,13 +609,7 @@ class TallyApp {
     const totalReturn = unrealizedGain + m.totalDividends;
     const totalReturnClass = totalReturn >= 0 ? 'text-success' : 'text-danger';
 
-    // Calculate period XIRR
-    const series = this.portfolioHistory?.series || null;
-    const periodXIRR = calculatePeriodXIRR(this.ledger.events, this.selectedPeriod, m.currentValue, series);
-    const periodPercent = periodXIRR !== null ? periodXIRR * 100 : null;
-    const xirrClass = (periodPercent || 0) >= 0 ? 'text-success' : 'text-danger';
-
-    // Determine if period has enough history
+    // Period selector for chart
     const firstEventDate = this.ledger.events.length > 0
       ? this.ledger.events.reduce((min, e) => e.date < min ? e.date : min, this.ledger.events[0].date)
       : null;
@@ -628,18 +622,12 @@ class TallyApp {
       { key: 'total', label: 'Total' },
     ];
 
-    // Only show periods where the portfolio existed at the start
     const availablePeriods = periods.filter(p => {
       if (p.key === 'total') return true;
       if (!firstEventDate) return false;
       const start = getPeriodStartDate(p.key);
       return start !== null && firstEventDate <= start.toISOString().slice(0, 10);
     });
-
-    // XIRR label varies by period
-    const xirrLabel = this.selectedPeriod === 'total'
-      ? 'årlig (XIRR)'
-      : this.selectedPeriod === 'ytd' ? 'hittil i år' : 'siste ' + periods.find(p => p.key === this.selectedPeriod)?.label;
 
     const periodPills = availablePeriods.length > 1
       ? '<div class="period-selector">' + availablePeriods.map(p =>
@@ -669,22 +657,26 @@ class TallyApp {
 
     const unrealizedClass = unrealizedGain >= 0 ? 'text-success' : 'text-danger';
 
+    const totalReturnPct = invested > 0 ? (totalReturn / invested * 100) : 0;
+    const totalReturnPctSign = totalReturnPct >= 0 ? '+' : '';
+
     return '<div class="card">'
-      + '<div class="summary-hero"><div class="label">Markedsverdi</div><div class="value">' + formatCurrency(m.currentValue) + '</div>'
-      + '<div class="sub-value ' + xirrClass + '">' + formatXIRRPercent(periodXIRR) + ' ' + xirrLabel + '</div>'
+      + '<div class="summary-hero">'
+      + '<div class="label">Markedsverdi</div>'
+      + '<div class="value">' + formatCurrency(m.currentValue) + '</div>'
+      + '<div class="hero-return ' + totalReturnClass + '">'
+      + (totalReturn >= 0 ? '+' : '') + formatCurrency(totalReturn)
+      + ' <span class="hero-return-pct">(' + totalReturnPctSign + totalReturnPct.toFixed(1) + '%)</span>'
+      + '</div>'
       + periodPills
       + '</div>'
       + '<div id="portfolio-chart-container" class="portfolio-chart-container"><div class="chart-placeholder">Laster graf...</div></div>'
       + '<div id="portfolio-dividend-list"></div>'
-      // Stats: clear labels for each type of return
-      + '<div class="stats-row">'
-      + '<div class="stat-item"><div class="label">Investert</div><div class="stat-val">' + formatCurrency(invested) + '</div></div>'
-      + '<div class="stat-item"><div class="label">Kursgevinst</div><div class="stat-val ' + unrealizedClass + '">' + (unrealizedGain >= 0 ? '+' : '') + formatCurrency(unrealizedGain) + '</div></div>'
-      + '<div class="stat-item"><div class="label">Utbytte</div><div class="stat-val">' + formatCurrency(m.totalDividends) + '</div></div>'
-      + '</div>'
-      + '<div class="stats-total">'
-      + '<span class="label">Totalavkastning</span>'
-      + '<span class="stat-val ' + totalReturnClass + '">' + (totalReturn >= 0 ? '+' : '') + formatCurrency(totalReturn) + '</span>'
+      // Breakdown
+      + '<div class="return-breakdown">'
+      + '<div class="breakdown-row"><span class="breakdown-label">Investert</span><span class="breakdown-val">' + formatCurrency(invested) + '</span></div>'
+      + '<div class="breakdown-row"><span class="breakdown-label">Kursgevinst</span><span class="breakdown-val ' + unrealizedClass + '">' + (unrealizedGain >= 0 ? '+' : '') + formatCurrency(unrealizedGain) + '</span></div>'
+      + (m.totalDividends > 0 ? '<div class="breakdown-row"><span class="breakdown-label">Mottatt utbytte</span><span class="breakdown-val text-success">+' + formatCurrency(m.totalDividends) + '</span></div>' : '')
       + '</div>'
       // Allocation bar with inline labels
       + (allocationItems.length >= 2

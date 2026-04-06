@@ -331,50 +331,40 @@ header h1 {
   font-weight: 600;
 }
 
-.stats-row {
-  display: flex;
-  justify-content: space-around;
-  padding: 12px 8px 4px;
+.hero-return {
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-return-pct {
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.return-breakdown {
+  padding: 10px 16px 4px;
   border-top: 1px solid var(--border);
   margin-top: 8px;
 }
 
-.stat-item {
-  text-align: center;
-}
-
-.stat-item .label {
-  font-size: 10px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  font-weight: 500;
-}
-
-.stat-val {
-  font-size: 14px;
-  font-weight: 600;
-  font-variant-numeric: tabular-nums;
-  margin-top: 2px;
-}
-
-.stats-total {
+.breakdown-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 16px;
-  border-top: 1px solid var(--border);
+  padding: 5px 0;
 }
 
-.stats-total .label {
-  font-size: 12px;
+.breakdown-label {
+  font-size: 13px;
   color: var(--text-secondary);
-  font-weight: 500;
 }
 
-.stats-total .stat-val {
-  font-size: 15px;
+.breakdown-val {
+  font-size: 13px;
   font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
 .alloc-compact {
