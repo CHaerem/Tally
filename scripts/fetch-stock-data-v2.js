@@ -427,7 +427,15 @@ function saveStockData(ticker, data) {
 // --- Index file ---
 
 function updateIndex(allData) {
-  const symbols = {};
+  // Load existing index and merge (don't overwrite when using --symbols)
+  let existingSymbols = {};
+  if (fs.existsSync(INDEX_FILE)) {
+    try {
+      const existing = JSON.parse(fs.readFileSync(INDEX_FILE, 'utf-8'));
+      existingSymbols = existing.symbols || {};
+    } catch { /* ignore */ }
+  }
+  const symbols = { ...existingSymbols };
   for (const [ticker, data] of Object.entries(allData)) {
     symbols[ticker] = {
       name: data.name,
