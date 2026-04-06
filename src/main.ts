@@ -2079,8 +2079,8 @@ class TallyApp {
     txnModal?.addEventListener('click', (e) => {
       if ((e.target as HTMLElement).id === 'txn-log-modal') txnModal.classList.remove('active');
     });
-    // Drag handle to expand/collapse
-    const txnHandle = txnSheet?.querySelector('.modal-handle') as HTMLElement | null;
+    // Drag header area to expand/collapse (handle + header)
+    const txnHandle = txnSheet?.querySelector('.txnlog-header') as HTMLElement | null;
     if (txnHandle && txnSheet) {
       let startY = 0;
       const onStart = (y: number) => { startY = y; txnSheet.style.transition = 'none'; };

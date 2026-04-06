@@ -1375,12 +1375,13 @@ header h1 {
 }
 
 .txn-log-sheet .modal-handle {
-  width: 36px;
-  height: 4px;
+  width: 40px;
+  height: 5px;
   background: var(--text-muted);
-  border-radius: 2px;
-  margin: 10px auto 8px;
-  opacity: 0.4;
+  border-radius: 3px;
+  margin: 12px auto 6px;
+  opacity: 0.35;
+  cursor: grab;
 }
 
 .txnlog-header {
