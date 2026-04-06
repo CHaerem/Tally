@@ -173,6 +173,9 @@ const NORWEGIAN_FUNDS: StockSuggestion[] = [
   { ticker: '0P00017BQO.IR', name: 'Sbanken Framgang Sammen', currentPrice: null, type: 'FUND' },
   // Gjensidige
   { ticker: '0P0000J7K8.IR', name: 'Gjensidige Likviditet', currentPrice: null, type: 'FUND' },
+  // Heimdal
+  { ticker: '0P0001Q692.IR', name: 'Heimdal Utbytte D', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001Q690.IR', name: 'Heimdal Utbytte B', currentPrice: null, type: 'FUND' },
 ];
 
 class TallyApp {
@@ -1720,7 +1723,9 @@ class TallyApp {
     const suggestionsEl = document.getElementById('search-suggestions') as HTMLElement | null;
     if (tickerInput && suggestionsEl) {
       tickerInput.addEventListener('input', () => {
-        const query = tickerInput.value.trim().toUpperCase();
+        // Normalize: strip diacritics (ö→o, é→e etc) for matching
+        const normalize = (str: string) => str.toUpperCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        const query = normalize(tickerInput.value.trim());
         this.selectedSuggestionIndex = -1;
         if (query.length === 0) {
           suggestionsEl.innerHTML = '';
@@ -1729,8 +1734,8 @@ class TallyApp {
         }
         const queryWords = query.split(/\s+/).filter(w => w.length > 0);
         const fuzzyScore = (s: StockSuggestion): number => {
-          const ticker = s.ticker.toUpperCase();
-          const name = s.name.toUpperCase();
+          const ticker = normalize(s.ticker);
+          const name = normalize(s.name);
           const combined = ticker + ' ' + name;
           // All query words must match somewhere (fuzzy: substring match in combined text)
           const allMatch = queryWords.every(w => combined.includes(w));
