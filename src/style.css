@@ -541,6 +541,11 @@ header h1 {
   gap: 8px;
 }
 
+.holding-daily {
+  font-size: 11px;
+  text-align: right;
+}
+
 .holding-color {
   width: 3px;
   border-radius: 1.5px;

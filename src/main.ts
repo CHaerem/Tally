@@ -199,6 +199,7 @@ class TallyApp {
     events: Array<{ date: string; type: string; amount: number; name: string }>;
   } | null = null;
   private isLoadingChart = false;
+  private holdingSort: 'value' | 'gain' | 'name' = 'value';
 
   constructor() {
     this.ledger = LedgerStorage.initializeLedger();
@@ -212,6 +213,9 @@ class TallyApp {
     this.loadStockIndex();
     this.computePortfolioHistory();
 
+    this.setupPullToRefresh();
+    this.loadDailyChanges();
+
     // Offline indicator
     window.addEventListener('online', () => {
       document.getElementById('offline-banner')?.remove();
@@ -224,6 +228,40 @@ class TallyApp {
       }
     });
     this.fetchOBXPrice();
+  }
+
+  private async loadDailyChanges(): Promise<void> {
+    for (const h of this.holdings) {
+      const inst = this.ledger.instruments.find(i => i.isin === h.isin);
+      if (!inst) continue;
+      const quote = this.quoteCache.get(inst.ticker) || await fetchStockQuote(inst.ticker);
+      if (quote) {
+        this.quoteCache.set(inst.ticker, quote);
+        const el = document.getElementById('daily-' + h.isin);
+        if (el && quote.dayChangePct !== null) {
+          const sign = quote.dayChangePct >= 0 ? '+' : '';
+          const cls = quote.dayChangePct >= 0 ? 'text-success' : 'text-danger';
+          el.innerHTML = '<span class="' + cls + '">' + sign + quote.dayChangePct.toFixed(1) + '% i dag</span>';
+        }
+      }
+    }
+  }
+
+  private setupPullToRefresh(): void {
+    let startY = 0;
+    let pulling = false;
+    document.addEventListener('touchstart', (e) => {
+      if (window.scrollY === 0) { startY = e.touches[0].clientY; pulling = true; }
+    }, { passive: true });
+    document.addEventListener('touchmove', (e) => {
+      if (!pulling) return;
+      const dy = e.touches[0].clientY - startY;
+      if (dy > 80 && window.scrollY === 0) {
+        pulling = false;
+        this.refreshPrices();
+      }
+    }, { passive: true });
+    document.addEventListener('touchend', () => { pulling = false; });
   }
 
   private async loadStockIndex(): Promise<void> {
@@ -594,7 +632,7 @@ class TallyApp {
     const actions = hasData
       ? '<div class="header-actions">'
         + '<button class="btn-icon" id="share-data" aria-label="Del"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg></button>'
-        + '<button class="btn-icon" id="import-csv" aria-label="Importer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>'
+        + '<button class="btn-icon" id="import-csv" aria-label="Importer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="12" y2="12"/><line x1="15" y1="15" x2="12" y2="12"/></svg></button>'
         + '</div>'
       : '';
     const fab = hasData
@@ -683,14 +721,8 @@ class TallyApp {
       .map(a => '<div class="alloc-segment" style="width:' + a.pct.toFixed(1) + '%;background:' + a.color + '" title="' + a.label + ' ' + a.pct.toFixed(1) + '%"></div>')
       .join('');
 
-    const unrealizedClass = unrealizedGain >= 0 ? 'text-success' : 'text-danger';
-
     const totalReturnPct = invested > 0 ? (totalReturn / invested * 100) : 0;
     const totalReturnPctSign = totalReturnPct >= 0 ? '+' : '';
-
-    // Separate unrealized (kursgevinst) % for clarity
-    const unrealizedPct = invested > 0 ? (unrealizedGain / invested * 100) : 0;
-    const unrealizedPctSign = unrealizedPct >= 0 ? '+' : '';
 
     return '<div class="card">'
       + '<div class="summary-hero">'
@@ -700,12 +732,10 @@ class TallyApp {
       + '</div>'
       + '<div id="portfolio-chart-container" class="portfolio-chart-container"><div class="chart-placeholder">Laster graf...</div></div>'
       + '<div id="portfolio-dividend-list"></div>'
-      // Breakdown — each line is self-explanatory
+      // Compact breakdown
       + '<div class="return-breakdown">'
       + '<div class="breakdown-row"><span class="breakdown-label">Investert</span><span class="breakdown-val">' + formatCurrency(invested) + '</span></div>'
-      + '<div class="breakdown-row"><span class="breakdown-label">Kursgevinst</span><span class="breakdown-val ' + unrealizedClass + '">' + (unrealizedGain >= 0 ? '+' : '') + formatCurrency(unrealizedGain) + ' (' + unrealizedPctSign + unrealizedPct.toFixed(1) + '%)</span></div>'
-      + '<div class="breakdown-row"><span class="breakdown-label">Mottatt utbytte</span><span class="breakdown-val">' + (m.totalDividends > 0 ? '+' + formatCurrency(m.totalDividends) : '0 kr') + '</span></div>'
-      + '<div class="breakdown-row breakdown-total"><span class="breakdown-label">Totalavkastning (inkl. utbytte)</span><span class="breakdown-val ' + totalReturnClass + '">' + (totalReturn >= 0 ? '+' : '') + formatCurrency(totalReturn) + ' (' + totalReturnPctSign + totalReturnPct.toFixed(1) + '%)</span></div>'
+      + '<div class="breakdown-row breakdown-total"><span class="breakdown-label">Avkastning' + (m.totalDividends > 0 ? ' (inkl. utbytte)' : '') + '</span><span class="breakdown-val ' + totalReturnClass + '">' + (totalReturn >= 0 ? '+' : '') + formatCurrency(totalReturn) + ' (' + totalReturnPctSign + totalReturnPct.toFixed(1) + '%)</span></div>'
       + '</div>'
       // Allocation bar with inline labels
       + (allocationItems.length >= 2
@@ -740,9 +770,16 @@ class TallyApp {
     const allocationColors = ['#5a9a6e', '#da7756', '#4a90d9', '#9b59b6', '#e67e22', '#1abc9c', '#e74c3c', '#34495e'];
     const totalMVH = this.holdings.reduce((s, x) => s + x.marketValue, 0) || 1;
 
-    return '<div class="card-header"><h2>Beholdning</h2></div>'
+    const sortLabels: Record<string, string> = { value: 'Verdi', gain: 'Avkastning', name: 'Navn' };
+    const sortedHoldings = [...this.holdings].sort((a, b) => {
+      if (this.holdingSort === 'gain') return b.unrealizedGainPercent - a.unrealizedGainPercent;
+      if (this.holdingSort === 'name') return a.name.localeCompare(b.name);
+      return b.marketValue - a.marketValue;
+    });
+
+    return '<div class="card-header"><h2>Beholdning</h2><button class="btn btn-small btn-ghost" id="sort-holdings">' + sortLabels[this.holdingSort] + ' ↓</button></div>'
       + '<div class="holdings-list">'
-      + this.holdings.map((h, hIdx) => {
+      + sortedHoldings.map((h, hIdx) => {
         const gainClass = h.unrealizedGain >= 0 ? 'text-success' : 'text-danger';
         // gainSign removed — formatPercent already adds +/-
         const inst = this.ledger.instruments.find(i => i.isin === h.isin);
@@ -765,6 +802,7 @@ class TallyApp {
           + '<div class="holding-values">'
           + '<div class="holding-market-value">' + formatCurrency(h.marketValue) + '</div>'
           + '<div class="holding-gain ' + gainClass + '">' + formatPercent(h.unrealizedGainPercent) + '</div>'
+          + '<div class="holding-daily" id="daily-' + h.isin + '"></div>'
           + '</div></div>'
           + '<div class="holding-details" id="details-' + h.isin + '">'
           + '<div class="holding-chart-wrap" data-ticker="' + (inst?.ticker || h.ticker) + '" data-isin="' + h.isin + '" data-cost="' + h.averageCostPerShare.toFixed(2) + '">'
@@ -2269,7 +2307,15 @@ class TallyApp {
       const file = (e.target as HTMLInputElement).files?.[0];
       if (file) this.handleFileSelect(file);
     });
-    // refresh-prices button removed — auto-refresh on load
+    // Sort holdings
+    document.getElementById('sort-holdings')?.addEventListener('click', () => {
+      const order: Array<'value' | 'gain' | 'name'> = ['value', 'gain', 'name'];
+      const idx = order.indexOf(this.holdingSort);
+      this.holdingSort = order[(idx + 1) % order.length];
+      this.render();
+      this.attachEventListeners();
+      this.computePortfolioHistory();
+    });
 
     // Trade modal — open in simple mode from empty state, full mode from header
     const hasData = this.ledger.events.length > 0;
