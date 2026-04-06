@@ -52,12 +52,8 @@ export function renderHoldings(state: AppState): string {
         + '<div class="holding-detail"><div class="label">Kursgevinst</div><div class="value ' + gainClass + '">' + (h.unrealizedGain >= 0 ? '+' : '') + formatCurrency(h.unrealizedGain) + '</div></div>'
         + (h.totalDividendsReceived > 0 ? '<div class="holding-detail"><div class="label">Mottatt utbytte</div><div class="value">' + formatCurrency(h.totalDividendsReceived) + '</div></div>' : '')
         + '<div class="holding-detail"><div class="label">Andel</div><div class="value">' + sharePct + '%</div></div>'
-        // Section: Markedsdata (collapsible)
-        + '<div class="detail-section">'
-        + '<button class="detail-section-toggle" data-target="mdata-' + h.isin + '">Markedsdata ›</button>'
-        + '<div class="detail-section-body" id="mdata-' + h.isin + '">'
+        // Market stats inline (no collapse)
         + renderMarketStats(inst?.ticker || h.ticker)
-        + '</div></div>'
         // Section: Transaksjoner (collapsible)
         + '<div class="detail-section">'
         + '<button class="detail-section-toggle" data-target="txns-' + h.isin + '">Transaksjoner ›</button>'
