@@ -1,5 +1,6 @@
 import type { AppState } from '../state';
-import { formatCurrency, formatPercent } from '../calculations';
+import { formatCurrency, formatPercent, getPeriodStartDate } from '../calculations';
+import type { ReturnPeriod } from '../calculations';
 
 export function renderSummary(state: AppState): string {
   if (!state.metrics) return '';
@@ -44,11 +45,35 @@ export function renderSummary(state: AppState): string {
     .map(a => '<div class="alloc-segment" style="width:' + a.pct.toFixed(1) + '%;background:' + a.color + '"></div>')
     .join('');
 
+  // Period tabs
+  const firstEventDate = state.ledger.events.length > 0
+    ? state.ledger.events.reduce((min, e) => e.date < min ? e.date : min, state.ledger.events[0].date)
+    : null;
+  const periods: Array<{ key: ReturnPeriod; label: string }> = [
+    { key: 'ytd', label: 'HiÅ' },
+    { key: '1y', label: '1 år' },
+    { key: '3y', label: '3 år' },
+    { key: '5y', label: '5 år' },
+    { key: 'total', label: 'Totalt' },
+  ];
+  const availablePeriods = periods.filter(p => {
+    if (p.key === 'total') return true;
+    if (!firstEventDate) return false;
+    const start = getPeriodStartDate(p.key);
+    return start !== null && firstEventDate <= start.toISOString().slice(0, 10);
+  });
+  const periodTabs = availablePeriods.length > 1
+    ? '<div class="period-tabs">' + availablePeriods.map(p =>
+        '<button class="period-tab' + (p.key === state.selectedPeriod ? ' active' : '') + '" data-period="' + p.key + '">' + p.label + '</button>'
+      ).join('') + '</div>'
+    : '';
+
   return '<div class="card">'
     + '<div class="summary-hero">'
     + '<div class="label">Markedsverdi</div>'
     + '<div class="value">' + formatCurrency(m.currentValue) + '</div>'
     + '<div class="hero-return ' + totalReturnClass + '">' + (totalReturn >= 0 ? '+' : '') + formatCurrency(totalReturn) + ' (' + totalReturnPctSign + totalReturnPct.toFixed(1) + '%)</div>'
+    + periodTabs
     + '</div>'
     + '<div id="portfolio-chart-container" class="portfolio-chart-container"><div class="chart-placeholder">Laster graf...</div></div>'
     + '<div id="portfolio-dividend-list"></div>'

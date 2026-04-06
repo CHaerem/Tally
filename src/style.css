@@ -418,6 +418,32 @@ header h1 {
   font-weight: 600;
 }
 
+/* Period tabs — underline style */
+.period-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.period-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 4px 0;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.period-tab.active {
+  color: var(--text);
+  border-bottom-color: var(--text);
+  font-weight: 600;
+}
+
 .hero-return {
   font-size: 17px;
   font-weight: 600;

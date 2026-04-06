@@ -336,7 +336,7 @@ export class TallyApp {
     });
 
     // Period selector pills
-    document.querySelectorAll('.period-pill').forEach(pill => {
+    document.querySelectorAll('.period-tab').forEach(pill => {
       pill.addEventListener('click', () => {
         const period = (pill as HTMLElement).dataset.period as ReturnPeriod;
         if (period && period !== this.state.selectedPeriod) {
