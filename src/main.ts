@@ -1562,6 +1562,10 @@ class TallyApp {
         + '<span class="txnlog-meta">' + label + ' · ' + formatDateShort(e.date) + (detail ? ' · ' + detail : '') + '</span>'
         + '</div>'
         + '</div>'
+        + '<div class="txnlog-expand" id="txnlog-expand-' + e.id + '">'
+        + '<button class="btn btn-small btn-outline txnlog-edit-btn" data-event-id="' + e.id + '">Rediger</button>'
+        + '<button class="btn btn-small btn-danger-outline txnlog-delete-btn" data-event-id="' + e.id + '">Slett</button>'
+        + '</div>'
         + '</div>';
     }).join('');
 
@@ -2073,27 +2077,29 @@ class TallyApp {
         document.getElementById('txn-log-modal')?.classList.remove('active');
       }
     });
-    // Tap card to edit
+    // Tap card to expand action buttons
     document.querySelectorAll('.txnlog-card').forEach(card => {
-      card.addEventListener('click', () => {
+      card.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).closest('.txnlog-expand')) return;
         const eventId = (card as HTMLElement).dataset.eventId;
+        if (!eventId) return;
+        const expand = document.getElementById('txnlog-expand-' + eventId);
+        // Close all others
+        document.querySelectorAll('.txnlog-expand.active').forEach(el => {
+          if (el !== expand) el.classList.remove('active');
+        });
+        expand?.classList.toggle('active');
+      });
+    });
+
+    // Edit button in expanded card
+    document.querySelectorAll('.txnlog-edit-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const eventId = (btn as HTMLElement).dataset.eventId;
         if (!eventId) return;
         const event = this.ledger.events.find(ev => ev.id === eventId);
         if (!event) return;
-
-        // Show action options
-        const action = prompt('Hva vil du gjøre?\n\n1 = Rediger\n2 = Slett\n\nSkriv 1 eller 2:');
-        if (action === '2') {
-          if (!confirm('Er du sikker på at du vil slette denne transaksjonen?')) return;
-          LedgerStorage.deleteEvent(eventId);
-          this.ledger = LedgerStorage.loadLedger() || this.ledger;
-          this.updateDerivedData();
-          this.render();
-          this.attachEventListeners();
-          this.computePortfolioHistory();
-          return;
-        }
-        if (action !== '1') return;
 
         document.getElementById('txn-log-modal')?.classList.remove('active');
         const te = event as unknown as { isin?: string; quantity?: number; pricePerShare?: number; fee?: number };
@@ -2114,6 +2120,22 @@ class TallyApp {
           const submitBtn = document.getElementById('submit-trade');
           if (submitBtn) submitBtn.dataset.replaceEventId = eventId;
         }, 100);
+      });
+    });
+
+    // Delete button in expanded card
+    document.querySelectorAll('.txnlog-delete-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const eventId = (btn as HTMLElement).dataset.eventId;
+        if (!eventId) return;
+        if (!confirm('Er du sikker på at du vil slette denne transaksjonen?')) return;
+        LedgerStorage.deleteEvent(eventId);
+        this.ledger = LedgerStorage.loadLedger() || this.ledger;
+        this.updateDerivedData();
+        this.render();
+        this.attachEventListeners();
+        this.computePortfolioHistory();
       });
     });
     document.getElementById('csv-file')?.addEventListener('change', (e) => {

@@ -1382,6 +1382,7 @@ header h1 {
 .txnlog-card {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
   padding: 14px 16px;
   border-bottom: 1px solid var(--border);
@@ -1446,6 +1447,21 @@ header h1 {
 .txnlog-meta {
   font-size: 12px;
   color: var(--text-muted);
+}
+
+.txnlog-expand {
+  display: none;
+  gap: 8px;
+  padding: 8px 0 0;
+  width: 100%;
+}
+
+.txnlog-expand.active {
+  display: flex;
+}
+
+.txnlog-expand .btn {
+  flex: 1;
 }
 
 .txn-source-tag {
