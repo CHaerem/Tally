@@ -45,15 +45,28 @@ export async function loadDailyChanges(state: AppState): Promise<void> {
   for (const h of state.holdings) {
     const inst = state.ledger.instruments.find(i => i.isin === h.isin);
     if (!inst) continue;
-    const quote = state.quoteCache.get(inst.ticker) || await fetchStockQuote(inst.ticker);
-    if (quote) {
+    const el = document.getElementById('daily-' + h.isin);
+    if (!el) continue;
+
+    // Try live quote first
+    const quote = state.quoteCache.get(inst.ticker) || await fetchStockQuote(inst.ticker).catch(() => null);
+    if (quote && quote.dayChangePct !== null) {
       state.quoteCache.set(inst.ticker, quote);
-      const el = document.getElementById('daily-' + h.isin);
-      if (el && quote.dayChangePct !== null) {
-        const sign = quote.dayChangePct >= 0 ? '+' : '';
-        const cls = quote.dayChangePct >= 0 ? 'text-success' : 'text-danger';
-        el.innerHTML = '<span class="' + cls + '">' + sign + quote.dayChangePct.toFixed(1) + '% i dag</span>';
-      }
+      const sign = quote.dayChangePct >= 0 ? '+' : '';
+      const cls = quote.dayChangePct >= 0 ? 'text-success' : 'text-danger';
+      el.innerHTML = '<span class="' + cls + '">' + sign + quote.dayChangePct.toFixed(1) + '%</span>';
+      continue;
+    }
+
+    // Fallback: compare last 2 prices in static data
+    const prices = await fetchPriceHistory(inst.ticker).catch(() => []);
+    if (prices.length >= 2) {
+      const last = prices[prices.length - 1].close;
+      const prev = prices[prices.length - 2].close;
+      const pct = prev > 0 ? ((last - prev) / prev * 100) : 0;
+      const sign = pct >= 0 ? '+' : '';
+      const cls = pct >= 0 ? 'text-success' : 'text-danger';
+      el.innerHTML = '<span class="' + cls + '">' + sign + pct.toFixed(1) + '%</span>';
     }
   }
 }
