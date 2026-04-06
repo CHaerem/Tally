@@ -1540,7 +1540,6 @@ class TallyApp {
     const typeTabs = isSimple ? '' : '<div class="trade-type-tabs">'
       + '<button class="trade-tab active" data-type="TRADE_BUY">Kjøp</button>'
       + '<button class="trade-tab" data-type="TRADE_SELL">Salg</button>'
-      + '<button class="trade-tab" data-type="DIVIDEND">Utbytte</button>'
       + '</div>';
 
     const dateField = '<div class="form-group"><label for="trade-date">' + (isSimple ? 'Kjøpsdato' : 'Dato') + '</label><input type="date" id="trade-date" class="form-control" value="' + today + '"></div>';
