@@ -53,8 +53,12 @@ export function renderHoldings(state: AppState): string {
         + (h.totalDividendsReceived > 0 ? '<div class="hstat"><span class="hstat-label">Utbytte mottatt</span><span class="hstat-val">+' + formatCurrency(h.totalDividendsReceived) + '</span></div>' : '')
         + '<div class="hstat"><span class="hstat-label">Andel</span><span class="hstat-val">' + sharePct + '%</span></div>'
         + '</div>'
-        // Market data — secondary
+        // Market data — collapsible
+        + '<div class="detail-section">'
+        + '<button class="detail-section-toggle" data-target="mdata-' + h.isin + '">Markedsdata ›</button>'
+        + '<div class="detail-section-body" id="mdata-' + h.isin + '">'
         + renderMarketStats(inst?.ticker || h.ticker)
+        + '</div></div>'
         // Section: Transaksjoner (collapsible)
         + '<div class="detail-section">'
         + '<button class="detail-section-toggle" data-target="txns-' + h.isin + '">Transaksjoner ›</button>'
