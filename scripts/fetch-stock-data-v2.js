@@ -503,8 +503,15 @@ async function main() {
 
       // Fetch fundamental data (P/E, market cap, etc.)
       const fundamentals = await fetchFundamentals(ticker);
-      if (fundamentals) fresh.fundamentals = fundamentals;
-      else if (existing?.fundamentals) fresh.fundamentals = existing.fundamentals;
+      if (fundamentals) {
+        // Validate: if no actual dividend history, zero out dividend data from Yahoo
+        if (fresh.dividends.length === 0 && (!existing?.dividends || existing.dividends.length === 0)) {
+          fundamentals.dividendYield = null;
+          fundamentals.dividendRate = null;
+          fundamentals.payoutRatio = null;
+        }
+        fresh.fundamentals = fundamentals;
+      } else if (existing?.fundamentals) fresh.fundamentals = existing.fundamentals;
 
       const merged = fullUpdate ? fresh : mergeStockData(existing, fresh);
       saveStockData(ticker, merged);
