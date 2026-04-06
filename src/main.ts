@@ -565,7 +565,7 @@ class TallyApp {
       + '</main>'
       + this.renderTradeModal()
       + this.renderImportModal()
-;
+      + this.renderTransactionLog();
 
     // Prevent body scroll when modal is open
     document.querySelectorAll('.modal').forEach(modal => {
@@ -1515,15 +1515,63 @@ class TallyApp {
 
   private renderFooter(): string {
     return '<div class="footer-actions">'
-      + '<span class="text-muted text-small">'
+      + '<button class="footer-txn-link" id="show-txn-log">'
       + this.ledger.events.length + ' transaksjoner'
-      + (this.ledger.lastModified ? ' &middot; ' + formatDateShort(this.ledger.lastModified) : '')
-      + '</span>'
+      + (this.ledger.lastModified ? ' · ' + formatDateShort(this.ledger.lastModified) : '')
+      + '</button>'
       + '<div class="footer-buttons">'
       + '<button class="btn btn-small btn-ghost" id="export-json">Eksporter</button>'
       + '<button class="btn btn-small btn-danger-outline" id="clear-data">Slett</button>'
       + '</div>'
       + '</div>';
+  }
+
+  private renderTransactionLog(): string {
+    const events = [...this.ledger.events].sort((a, b) => b.date.localeCompare(a.date));
+    const typeLabels: Record<string, string> = {
+      'TRADE_BUY': 'Kjøp', 'TRADE_SELL': 'Salg', 'DIVIDEND': 'Utbytte',
+      'CASH_IN': 'Innskudd', 'CASH_OUT': 'Uttak', 'FEE': 'Gebyr',
+    };
+
+    const rows = events.map(e => {
+      const label = typeLabels[e.type] || e.type;
+      const te = e as unknown as { isin?: string; quantity?: number; pricePerShare?: number; perShare?: number };
+      const inst = te.isin ? this.ledger.instruments.find(i => i.isin === te.isin) : null;
+      const instName = inst ? (inst.instrumentType === 'FUND' ? inst.name : inst.ticker) : '';
+      const detail = te.quantity && (te.pricePerShare || te.perShare)
+        ? te.quantity + ' × ' + (te.pricePerShare || te.perShare)!.toFixed(2)
+        : '';
+      const typeClass = e.type === 'TRADE_BUY' ? 'text-success'
+        : e.type === 'TRADE_SELL' ? 'text-danger'
+        : e.type === 'DIVIDEND' ? 'txn-type-dividend' : '';
+      const sourceTag = e.source === 'AUTO' ? '<span class="txn-source-tag">auto</span>' : '';
+
+      return '<div class="txnlog-row">'
+        + '<div class="txnlog-left">'
+        + '<div class="txnlog-date">' + formatDateShort(e.date) + '</div>'
+        + '<div class="txnlog-type ' + typeClass + '">' + label + sourceTag + '</div>'
+        + '<div class="txnlog-inst">' + instName + '</div>'
+        + '<div class="txnlog-detail">' + detail + '</div>'
+        + '</div>'
+        + '<div class="txnlog-right">'
+        + '<div class="txnlog-amount">' + formatCurrency(e.amount) + '</div>'
+        + '<div class="txnlog-actions">'
+        + '<button class="txn-edit" data-event-id="' + e.id + '" title="Rediger">✎</button>'
+        + '<button class="txn-delete" data-event-id="' + e.id + '" title="Slett">×</button>'
+        + '</div>'
+        + '</div>'
+        + '</div>';
+    }).join('');
+
+    return '<div class="modal" id="txn-log-modal">'
+      + '<div class="modal-sheet txn-log-sheet">'
+      + '<div class="modal-handle"></div>'
+      + '<div class="txnlog-header">'
+      + '<h3>Transaksjonslogg</h3>'
+      + '<span class="text-muted">' + events.length + ' hendelser</span>'
+      + '</div>'
+      + '<div class="txnlog-list">' + (rows || '<div class="text-muted text-small" style="padding:20px;text-align:center">Ingen transaksjoner</div>') + '</div>'
+      + '</div></div>';
   }
 
   private renderTradeModal(): string {
@@ -2010,6 +2058,59 @@ class TallyApp {
     document.getElementById('export-json')?.addEventListener('click', () => this.exportData());
     document.getElementById('clear-data')?.addEventListener('click', () => this.clearAllData());
     document.getElementById('share-data')?.addEventListener('click', () => this.shareData());
+
+    // Transaction log modal
+    document.getElementById('show-txn-log')?.addEventListener('click', () => {
+      document.getElementById('txn-log-modal')?.classList.add('active');
+    });
+    document.getElementById('txn-log-modal')?.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).id === 'txn-log-modal') {
+        document.getElementById('txn-log-modal')?.classList.remove('active');
+      }
+    });
+    // Edit/delete in transaction log
+    document.querySelectorAll('#txn-log-modal .txn-edit').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.getElementById('txn-log-modal')?.classList.remove('active');
+        const eventId = (btn as HTMLElement).dataset.eventId;
+        if (!eventId) return;
+        const event = this.ledger.events.find(ev => ev.id === eventId);
+        if (!event) return;
+        const te = event as unknown as { isin?: string; quantity?: number; pricePerShare?: number; fee?: number };
+        const inst = te.isin ? this.ledger.instruments.find(i => i.isin === te.isin) : null;
+        this.showTradeModal('full', inst ? {
+          ticker: inst.ticker, name: inst.name, isin: inst.isin,
+          instrumentType: inst.instrumentType || 'STOCK',
+        } : undefined);
+        setTimeout(() => {
+          const dateInput = document.getElementById('trade-date') as HTMLInputElement;
+          const priceInput = document.getElementById('trade-price') as HTMLInputElement;
+          const qtyInput = document.getElementById('trade-qty') as HTMLInputElement;
+          const feeInput = document.getElementById('trade-fee') as HTMLInputElement;
+          if (dateInput) dateInput.value = event.date;
+          if (priceInput && te.pricePerShare) { priceInput.value = te.pricePerShare.toString(); priceInput.dispatchEvent(new Event('input')); }
+          if (qtyInput && te.quantity) { qtyInput.value = te.quantity.toString(); qtyInput.dispatchEvent(new Event('input')); }
+          if (feeInput && te.fee) feeInput.value = te.fee.toString();
+          const submitBtn = document.getElementById('submit-trade');
+          if (submitBtn) submitBtn.dataset.replaceEventId = eventId;
+        }, 100);
+      });
+    });
+    document.querySelectorAll('#txn-log-modal .txn-delete').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const eventId = (btn as HTMLElement).dataset.eventId;
+        if (!eventId) return;
+        if (!confirm('Slett denne transaksjonen?')) return;
+        LedgerStorage.deleteEvent(eventId);
+        this.ledger = LedgerStorage.loadLedger() || this.ledger;
+        this.updateDerivedData();
+        this.render();
+        this.attachEventListeners();
+        this.computePortfolioHistory();
+      });
+    });
     document.getElementById('csv-file')?.addEventListener('change', (e) => {
       const file = (e.target as HTMLInputElement).files?.[0];
       if (file) this.handleFileSelect(file);
