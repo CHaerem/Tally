@@ -23,6 +23,21 @@ export function renderPortfolioChartSVG(state: AppState): string {
   if (hasDiv) legendParts.push('<span class="legend-dot legend-div"></span>Utbytte');
   const legend = legendParts.length > 0 ? '<span class="chart-legend-inline">' + legendParts.join(' ') + '</span>' : '';
 
+  // Benchmark comparison text
+  const bench = state.portfolioHistory.benchmarkSeries || [];
+  let benchCompare = '';
+  if (bench.length >= 2) {
+    const lastBench = bench[bench.length - 1].value;
+    const diff = lastVal - lastBench;
+    const beating = diff >= 0;
+    benchCompare = '<div class="benchmark-compare">'
+      + '<span class="bench-line"></span>'
+      + (beating
+        ? '<span class="text-success">Du slår OSEBX med ' + formatCurrency(diff) + '</span>'
+        : '<span class="text-danger">OSEBX slår deg med ' + formatCurrency(Math.abs(diff)) + '</span>')
+      + '</div>';
+  }
+
   return '<div class="portfolio-chart-wrap">'
     + '<div class="chart-area" id="chart-area" data-color="' + color + '">'
     + '<canvas id="portfolio-canvas" width="600" height="200"></canvas>'
@@ -34,6 +49,7 @@ export function renderPortfolioChartSVG(state: AppState): string {
     + '<div class="chart-dates"><span>' + formatDateShort(data[0].date) + '</span>'
     + legend
     + '<span>' + formatDateShort(data[data.length - 1].date) + '</span></div>'
+    + benchCompare
     + '</div>';
 }
 
@@ -63,9 +79,10 @@ export function drawPortfolioChart(state: AppState): void {
   const cw = w - pad.left - pad.right;
   const ch = h - pad.top - pad.bottom;
 
-  const values = data.map(d => d.value);
-  const minVal = Math.min(...values);
-  const maxVal = Math.max(...values);
+  const bench = state.portfolioHistory.benchmarkSeries || [];
+  const allValues = [...data.map(d => d.value), ...bench.map(b => b.value)];
+  const minVal = Math.min(...allValues);
+  const maxVal = Math.max(...allValues);
   const valPad = (maxVal - minVal) * 0.08 || 1;
   const rangeMin = minVal - valPad;
   const rangeMax = maxVal + valPad;
@@ -131,6 +148,25 @@ export function drawPortfolioChart(state: AppState): void {
   ctx.fillStyle = '#fff';
   ctx.fill();
 
+  // Benchmark line (dashed, gray)
+  if (bench.length >= 2) {
+    const benchPts = bench.map((b, i) => {
+      const dataIdx = data.findIndex(d => d.date >= b.date);
+      const xi = dataIdx >= 0 ? dataIdx : i;
+      return { x: toX(xi), y: toY(b.value) };
+    });
+    ctx.beginPath();
+    ctx.setLineDash([4, 4]);
+    ctx.moveTo(benchPts[0].x, benchPts[0].y);
+    for (let i = 1; i < benchPts.length; i++) {
+      ctx.lineTo(benchPts[i].x, benchPts[i].y);
+    }
+    ctx.strokeStyle = '#9c959080';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
   // Event markers
   for (const ev of events) {
     const idx = data.findIndex(d => d.date >= ev.date);
@@ -156,7 +192,7 @@ export function attachChartInteraction(state: AppState): void {
   if (!chartArea || !crosshair || !scrubber || !state.portfolioHistory) return;
 
   const data = state.portfolioHistory.series;
-  const events = state.portfolioHistory.events;
+  const bench = state.portfolioHistory.benchmarkSeries || [];
   if (data.length < 2) return;
 
   const defaultText = scrubber.innerHTML;
@@ -174,21 +210,19 @@ export function attachChartInteraction(state: AppState): void {
     const returnSign = returnPct >= 0 ? '+' : '';
     const pctClass = returnPct >= 0 ? 'text-success' : 'text-danger';
 
-    const eventsOnDate = events.filter(e => {
-      const eIdx = data.findIndex(d => d.date >= e.date);
-      return eIdx === idx;
-    });
-    let eventText = '';
-    for (const ev of eventsOnDate) {
-      const tl = ev.type === 'TRADE_BUY' ? 'Kjøp' : ev.type === 'TRADE_SELL' ? 'Salg' : 'Utbytte';
-      eventText += ' · ' + tl + ' ' + formatCurrency(ev.amount);
+    // Find benchmark value at this date
+    let benchText = '';
+    if (bench.length > 0) {
+      const bIdx = Math.max(0, Math.min(idx, bench.length - 1));
+      const bVal = bench[bIdx]?.value;
+      if (bVal) benchText = '<span class="scrub-bench">OSEBX: ' + formatCurrency(bVal) + '</span>';
     }
 
     scrubber.className = 'chart-scrubber-active';
     scrubber.innerHTML = '<span class="scrub-date">' + formatDateShort(point.date) + '</span>'
       + '<span class="scrub-value">' + formatCurrency(point.value) + '</span>'
       + '<span class="' + pctClass + '">' + returnSign + returnPct.toFixed(1) + '%</span>'
-      + (eventText ? '<span class="scrub-event">' + eventText + '</span>' : '');
+      + benchText;
   };
 
   const handleEnd = () => {

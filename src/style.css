@@ -798,6 +798,28 @@ header h1 {
   gap: 3px;
 }
 
+.benchmark-compare {
+  text-align: center;
+  font-size: 12px;
+  padding: 4px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.bench-line {
+  display: inline-block;
+  width: 16px;
+  height: 0;
+  border-top: 2px dashed #9c959080;
+}
+
+.scrub-bench {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
 .chart-legend-inline {
   display: inline-flex;
   gap: 6px;

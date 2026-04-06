@@ -105,7 +105,47 @@ export async function computePortfolioHistory(state: AppState): Promise<void> {
       }
     }
 
-    state.portfolioHistory = { series, events: eventMarkers };
+    // Compute benchmark: "what if I put the same money in OSEBX?"
+    let benchmarkSeries: Array<{ date: string; value: number }> = [];
+    const osebxPrices = await fetchPriceHistory('OSEBX');
+    if (osebxPrices.length > 0 && series.length >= 2) {
+      const getOsebx = (date: string): number | null => {
+        let best: number | null = null;
+        for (const p of osebxPrices) {
+          if (p.date <= date) best = p.close; else break;
+        }
+        return best;
+      };
+
+      // Replay cash flows: each buy adds to benchmark, each sell removes
+      let benchUnits = 0; // "units" of OSEBX index bought
+      let evtIdx2 = 0;
+      const sortedEvts2 = [...state.ledger.events].sort((a, b) => a.date.localeCompare(b.date));
+
+      for (const pt of series) {
+        // Process events up to this date
+        while (evtIdx2 < sortedEvts2.length && sortedEvts2[evtIdx2].date <= pt.date) {
+          const ev = sortedEvts2[evtIdx2];
+          const osebxAtDate = getOsebx(ev.date);
+          if (osebxAtDate && osebxAtDate > 0) {
+            if (ev.type === 'TRADE_BUY') {
+              benchUnits += ev.amount / osebxAtDate;
+            } else if (ev.type === 'TRADE_SELL') {
+              benchUnits -= ev.amount / osebxAtDate;
+              if (benchUnits < 0) benchUnits = 0;
+            }
+          }
+          evtIdx2++;
+        }
+
+        const osebxNow = getOsebx(pt.date);
+        if (osebxNow && benchUnits > 0) {
+          benchmarkSeries.push({ date: pt.date, value: benchUnits * osebxNow });
+        }
+      }
+    }
+
+    state.portfolioHistory = { series, events: eventMarkers, benchmarkSeries };
 
     // Inject into DOM
     const container = document.getElementById('portfolio-chart-container');

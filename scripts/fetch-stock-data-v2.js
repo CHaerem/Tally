@@ -285,7 +285,7 @@ function ensureDir(dir) {
 
 async function fetchYahooData(ticker, range = '5y') {
   // Fund tickers already have .IR suffix, stocks need .OL
-  const symbol = ticker.includes('.') ? ticker : ticker + '.OL';
+  const symbol = ticker.includes('.') || ticker.startsWith('^') ? ticker : ticker + '.OL';
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}`
     + `?range=${range}&interval=1d&events=div`;
 
@@ -355,7 +355,7 @@ async function fetchFundamentals(ticker) {
   try {
     const YF = require('yahoo-finance2').default;
     const yf = new YF({ suppressNotices: ['yahooSurvey'] });
-    const symbol = ticker.includes('.') ? ticker : ticker + '.OL';
+    const symbol = ticker.includes('.') || ticker.startsWith('^') ? ticker : ticker + '.OL';
     const r = await yf.quoteSummary(symbol, {
       modules: ['summaryDetail', 'defaultKeyStatistics', 'financialData']
     });

@@ -1,7 +1,7 @@
 import type { AppState } from '../state';
 import { updateDerivedData } from '../state';
 import { LedgerStorage } from '../ledger';
-import { fetchPricesForHoldings, fetchLivePrice, fetchStockQuote, fetchMarketData, fetchFundamentals } from '../api';
+import { fetchPricesForHoldings, fetchLivePrice, fetchStockQuote, fetchMarketData, fetchFundamentals, fetchPriceHistory } from '../api';
 import type { StockQuote, Fundamentals } from '../api';
 import { formatCurrency } from '../calculations';
 
@@ -60,24 +60,70 @@ export async function loadDailyChanges(state: AppState): Promise<void> {
 
 export function loadMarketStats(state: AppState, ticker: string): void {
   const safeTicker = ticker.replace(/\./g, '_');
+  const isFund = ticker.includes('.IR');
 
-  fetchMarketData(ticker).then(md => {
-    if (md) fillMarketData(safeTicker, md);
-  });
-  fetchFundamentals(ticker).then(f => {
-    if (f) fillFundamentals(safeTicker, f);
-  });
-
-  const cached = state.quoteCache.get(ticker);
-  if (cached) {
-    fillLiveQuote(safeTicker, cached);
-  } else {
-    fetchStockQuote(ticker).then(quote => {
-      if (!quote) return;
-      state.quoteCache.set(ticker, quote);
-      fillLiveQuote(safeTicker, quote);
+  if (isFund) {
+    // Fund: load period returns from price history
+    fetchPriceHistory(ticker).then(prices => {
+      if (!prices || prices.length < 2) return;
+      fillFundReturns(safeTicker, prices);
     });
+    // Also load 52-week from market data
+    fetchMarketData(ticker).then(md => {
+      if (md) fillMarketData(safeTicker, md);
+    });
+  } else {
+    // Stock: load all market data + fundamentals + live quote
+    fetchMarketData(ticker).then(md => {
+      if (md) fillMarketData(safeTicker, md);
+    });
+    fetchFundamentals(ticker).then(f => {
+      if (f) fillFundamentals(safeTicker, f);
+    });
+    const cached = state.quoteCache.get(ticker);
+    if (cached) {
+      fillLiveQuote(safeTicker, cached);
+    } else {
+      fetchStockQuote(ticker).then(quote => {
+        if (!quote) return;
+        state.quoteCache.set(ticker, quote);
+        fillLiveQuote(safeTicker, quote);
+      });
+    }
   }
+}
+
+function fillFundReturns(safeTicker: string, prices: Array<{ date: string; close: number }>): void {
+  const last = prices[prices.length - 1];
+  const now = new Date();
+
+  const calcReturn = (yearsBack: number): number | null => {
+    const target = new Date(now);
+    target.setFullYear(target.getFullYear() - yearsBack);
+    const targetDate = target.toISOString().split('T')[0];
+    // Find closest price on or after target date
+    const p = prices.find(pr => pr.date >= targetDate);
+    if (!p) return null;
+    return ((last.close - p.close) / p.close) * 100;
+  };
+
+  const fillEl = (id: string, ret: number | null, annualize?: number) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (ret === null) { el.textContent = '—'; el.className = 'value'; return; }
+    // Annualize for multi-year
+    const display = annualize && annualize > 1
+      ? (Math.pow(1 + ret / 100, 1 / annualize) - 1) * 100
+      : ret;
+    const sign = display >= 0 ? '+' : '';
+    const cls = display >= 0 ? 'text-success' : 'text-danger';
+    el.className = 'value ' + cls;
+    el.textContent = sign + display.toFixed(1) + '%' + (annualize && annualize > 1 ? ' p.a.' : '');
+  };
+
+  fillEl('mstat-ret1y-' + safeTicker, calcReturn(1));
+  fillEl('mstat-ret3y-' + safeTicker, calcReturn(3), 3);
+  fillEl('mstat-ret5y-' + safeTicker, calcReturn(5), 5);
 }
 
 export function fillMarketData(safeTicker: string, md: { previousClose: number | null; dayHigh: number | null; dayLow: number | null; volume: number | null; fiftyTwoWeekHigh: number | null; fiftyTwoWeekLow: number | null }): void {

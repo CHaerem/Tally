@@ -9,6 +9,7 @@ import type { CSVParseResult } from './import';
 export interface PortfolioHistory {
   series: Array<{ date: string; value: number; costBasis: number }>;
   events: Array<{ date: string; type: string; amount: number; name: string }>;
+  benchmarkSeries: Array<{ date: string; value: number }>;
 }
 
 export interface AppState {

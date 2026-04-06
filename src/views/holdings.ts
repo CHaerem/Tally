@@ -72,8 +72,20 @@ export function renderHoldings(state: AppState): string {
 
 export function renderMarketStats(ticker: string): string {
   const safeTicker = ticker.replace(/\./g, '_');
-  const isStock = !ticker.includes('.IR');
+  const isFund = ticker.includes('.IR');
   const newswebTicker = ticker.replace('.OL', '');
+
+  if (isFund) {
+    // Fund-specific stats: period returns + 52-week range
+    return '<div class="market-stats" id="mstats-' + safeTicker + '">'
+      + '<div class="holding-detail"><div class="label">Avkastning 1 år</div><div class="value text-muted" id="mstat-ret1y-' + safeTicker + '">...</div></div>'
+      + '<div class="holding-detail"><div class="label">Avkastning 3 år</div><div class="value text-muted" id="mstat-ret3y-' + safeTicker + '">...</div></div>'
+      + '<div class="holding-detail"><div class="label">Avkastning 5 år</div><div class="value text-muted" id="mstat-ret5y-' + safeTicker + '">...</div></div>'
+      + '<div class="holding-detail"><div class="label">52 uker</div><div class="value text-muted" id="mstat-52w-' + safeTicker + '">...</div></div>'
+      + '</div>';
+  }
+
+  // Stock stats: fundamentals + market data
   return '<div class="market-stats" id="mstats-' + safeTicker + '">'
     + '<div class="holding-detail"><div class="label">I dag</div><div class="value text-muted" id="mstat-day-' + safeTicker + '">...</div></div>'
     + '<div class="holding-detail"><div class="label">52 uker</div><div class="value text-muted" id="mstat-52w-' + safeTicker + '">...</div></div>'
@@ -83,7 +95,7 @@ export function renderMarketStats(ticker: string): string {
     + '<div class="holding-detail"><div class="label">Markedsverdi</div><div class="value text-muted" id="mstat-mcap-' + safeTicker + '">...</div></div>'
     + '<div class="holding-detail"><div class="label">Utbytterate</div><div class="value text-muted" id="mstat-divy-' + safeTicker + '">...</div></div>'
     + '<div class="holding-detail"><div class="label">Margin</div><div class="value text-muted" id="mstat-margin-' + safeTicker + '">...</div></div>'
-    + (isStock ? '<div class="market-stats-link"><a href="https://newsweb.oslobors.no/search?issuer=' + newswebTicker + '" target="_blank" rel="noopener">Se børsmeldinger ›</a></div>' : '')
+    + '<div class="market-stats-link"><a href="https://newsweb.oslobors.no/search?issuer=' + newswebTicker + '" target="_blank" rel="noopener">Se børsmeldinger ›</a></div>'
     + '</div>';
 }
 
