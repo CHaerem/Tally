@@ -1539,7 +1539,7 @@ class TallyApp {
 
     const rows = events.map(e => {
       const label = typeLabels[e.type] || e.type;
-      const icon = typeIcons[e.type] || '';
+      void typeIcons; // kept for potential future use
       const te = e as unknown as { isin?: string; quantity?: number; pricePerShare?: number; perShare?: number };
       const inst = te.isin ? this.ledger.instruments.find(i => i.isin === te.isin) : null;
       const instName = inst ? (inst.instrumentType === 'FUND' ? inst.name : inst.ticker) : '';
@@ -1552,16 +1552,17 @@ class TallyApp {
       const sourceTag = e.source === 'AUTO' ? ' <span class="txn-source-tag">auto</span>' : '';
 
       return '<div class="txnlog-card" data-event-id="' + e.id + '">'
-        + '<div class="txnlog-icon ' + typeClass + '">' + icon + '</div>'
         + '<div class="txnlog-body">'
-        + '<div class="txnlog-top">'
-        + '<span class="txnlog-name">' + (instName || label) + sourceTag + '</span>'
-        + '<span class="txnlog-amount">' + formatCurrency(e.amount) + '</span>'
+        + '<div class="txnlog-line1">'
+        + '<span class="txnlog-label ' + typeClass + '">' + label + '</span>'
+        + '<span class="txnlog-name">' + instName + sourceTag + '</span>'
         + '</div>'
-        + '<div class="txnlog-bottom">'
-        + '<span class="txnlog-meta">' + label + ' · ' + formatDateShort(e.date) + (detail ? ' · ' + detail : '') + '</span>'
+        + '<div class="txnlog-line2">'
+        + '<span class="txnlog-date">' + formatDateShort(e.date) + '</span>'
+        + (detail ? '<span class="txnlog-detail">' + detail + '</span>' : '')
         + '</div>'
         + '</div>'
+        + '<div class="txnlog-amount">' + formatCurrency(e.amount) + '</div>'
         + '<div class="txnlog-expand" id="txnlog-expand-' + e.id + '">'
         + '<button class="btn btn-small btn-outline txnlog-edit-btn" data-event-id="' + e.id + '">Rediger</button>'
         + '<button class="btn btn-small btn-danger-outline txnlog-delete-btn" data-event-id="' + e.id + '">Slett</button>'
@@ -2066,17 +2067,39 @@ class TallyApp {
     document.getElementById('share-data')?.addEventListener('click', () => this.shareData());
 
     // Transaction log modal
+    const txnModal = document.getElementById('txn-log-modal');
+    const txnSheet = txnModal?.querySelector('.txn-log-sheet') as HTMLElement | null;
     document.getElementById('show-txn-log')?.addEventListener('click', () => {
-      document.getElementById('txn-log-modal')?.classList.add('active');
+      txnSheet?.classList.remove('fullscreen');
+      txnModal?.classList.add('active');
     });
     document.getElementById('txn-log-close')?.addEventListener('click', () => {
-      document.getElementById('txn-log-modal')?.classList.remove('active');
+      txnModal?.classList.remove('active');
     });
-    document.getElementById('txn-log-modal')?.addEventListener('click', (e) => {
-      if ((e.target as HTMLElement).id === 'txn-log-modal') {
-        document.getElementById('txn-log-modal')?.classList.remove('active');
-      }
+    txnModal?.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).id === 'txn-log-modal') txnModal.classList.remove('active');
     });
+    // Drag handle to expand/collapse
+    const txnHandle = txnSheet?.querySelector('.modal-handle') as HTMLElement | null;
+    if (txnHandle && txnSheet) {
+      let startY = 0;
+      const onStart = (y: number) => { startY = y; txnSheet.style.transition = 'none'; };
+      const onEnd = (y: number) => {
+        txnSheet.style.transition = '';
+        const dy = startY - y;
+        if (dy > 50) txnSheet.classList.add('fullscreen');
+        else if (dy < -50) {
+          if (txnSheet.classList.contains('fullscreen')) txnSheet.classList.remove('fullscreen');
+          else txnModal?.classList.remove('active');
+        }
+      };
+      txnHandle.addEventListener('touchstart', (e) => { onStart(e.touches[0].clientY); }, { passive: true });
+      txnHandle.addEventListener('touchend', (e) => { onEnd(e.changedTouches[0].clientY); });
+      txnHandle.addEventListener('mousedown', (e) => { onStart(e.clientY);
+        const up = (ev: MouseEvent) => { onEnd(ev.clientY); window.removeEventListener('mouseup', up); };
+        window.addEventListener('mouseup', up);
+      });
+    }
     // Tap card to expand action buttons
     document.querySelectorAll('.txnlog-card').forEach(card => {
       card.addEventListener('click', (e) => {

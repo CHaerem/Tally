@@ -1357,41 +1357,59 @@ header h1 {
 .txn-log-sheet {
   background: var(--bg-card);
   border-radius: 24px 24px 0 0;
-  padding: 24px 0;
+  padding: 0;
   padding-bottom: calc(20px + var(--safe-bottom));
   width: 100%;
   max-width: 520px;
-  max-height: 85vh;
+  height: 55vh;
+  max-height: 95vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.txn-log-sheet.fullscreen {
+  height: 95vh;
+  border-radius: 0;
+}
+
+.txnlog-handle {
+  width: 36px;
+  height: 4px;
+  background: var(--text-muted);
+  border-radius: 2px;
+  margin: 10px auto 8px;
+  opacity: 0.4;
 }
 
 .txnlog-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  padding: 0 20px 12px;
+  align-items: center;
+  padding: 4px 20px 12px;
+  flex-shrink: 0;
 }
 
 .txnlog-header h3 {
   margin: 0;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .txnlog-list {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   flex: 1;
-  padding: 0 4px;
+  padding: 0;
 }
 
 .txnlog-card {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
-  padding: 14px 16px;
+  gap: 10px;
+  padding: 14px 20px;
   border-bottom: 1px solid var(--border);
   cursor: pointer;
 }
@@ -1402,66 +1420,65 @@ header h1 {
 
 .txnlog-card:last-child { border-bottom: none; }
 
-.txnlog-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 600;
-  flex-shrink: 0;
-  background: var(--bg-elevated);
-  color: var(--text-muted);
-}
-
-.txnlog-icon.txnlog-buy { background: rgba(90, 154, 110, 0.12); color: var(--success); }
-.txnlog-icon.txnlog-sell { background: rgba(199, 84, 80, 0.12); color: var(--danger); }
-.txnlog-icon.txnlog-div { background: rgba(218, 119, 86, 0.12); color: var(--accent); }
-
 .txnlog-body {
   flex: 1;
   min-width: 0;
 }
 
-.txnlog-top {
+.txnlog-line1 {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
+  gap: 6px;
 }
+
+.txnlog-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.txnlog-label.txnlog-buy { color: var(--success); }
+.txnlog-label.txnlog-sell { color: var(--danger); }
+.txnlog-label.txnlog-div { color: var(--accent); }
 
 .txnlog-name {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
+  color: var(--text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-right: 8px;
-  color: var(--text);
+}
+
+.txnlog-line2 {
+  display: flex;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.txnlog-date {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.txnlog-detail {
+  font-size: 13px;
+  color: var(--text-secondary);
 }
 
 .txnlog-amount {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   flex-shrink: 0;
   color: var(--text);
 }
 
-.txnlog-bottom {
-  margin-top: 3px;
-}
-
-.txnlog-meta {
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-
 .txnlog-expand {
   display: none;
-  gap: 8px;
-  padding: 8px 0 0;
+  gap: 10px;
+  padding: 10px 0 2px;
   width: 100%;
 }
 
