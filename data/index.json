@@ -1,18 +1,4338 @@
 {
   "metadata": {
-    "lastUpdated": "2026-04-06T07:49:58.864Z",
-    "symbolCount": 2
+    "lastUpdated": "2026-04-06T08:01:43.751Z",
+    "symbolCount": 435
   },
   "symbols": {
-    "0P0001Q692.IR": {
-      "name": "0P0001Q692.IR",
-      "currentPrice": 215.074,
+    "2020": {
+      "name": "2020 BULKERS",
+      "currentPrice": 140.4,
       "currency": "NOK",
-      "priceCount": 641,
+      "priceCount": 1691,
+      "dividendCount": 72,
+      "firstDate": "2019-07-12",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:22.298Z"
+    },
+    "EQNR": {
+      "name": "EQUINOR",
+      "currentPrice": 399.1,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 40,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:04.454Z"
+    },
+    "DNB": {
+      "name": "DNB BANK ASA",
+      "currentPrice": 304.3,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:06.619Z"
+    },
+    "TEL": {
+      "name": "TELENOR",
+      "currentPrice": 170.3,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 21,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:07.214Z"
+    },
+    "MOWI": {
+      "name": "MOWI",
+      "currentPrice": 223.8,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 30,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:07.786Z"
+    },
+    "YAR": {
+      "name": "YARA INTERNATIONAL",
+      "currentPrice": 561,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 13,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:08.379Z"
+    },
+    "ORK": {
+      "name": "ORKLA",
+      "currentPrice": 122.7,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 11,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:08.971Z"
+    },
+    "NHY": {
+      "name": "NORSK HYDRO",
+      "currentPrice": 102.6,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 11,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:09.583Z"
+    },
+    "AKRBP": {
+      "name": "AKER BP",
+      "currentPrice": 340.2,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 38,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:10.171Z"
+    },
+    "GJF": {
+      "name": "GJENSIDIGE FORSIKRING",
+      "currentPrice": 254.4,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 14,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:10.739Z"
+    },
+    "SALM": {
+      "name": "SALMAR",
+      "currentPrice": 578,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:11.353Z"
+    },
+    "STB": {
+      "name": "STOREBRAND",
+      "currentPrice": 175.4,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 8,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:11.955Z"
+    },
+    "KOG": {
+      "name": "KONGSBERG GRUPPEN",
+      "currentPrice": 418.85,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 13,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:12.561Z"
+    },
+    "SUBC": {
+      "name": "SUBSEA 7",
+      "currentPrice": 293.2,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:13.147Z"
+    },
+    "FRO": {
+      "name": "FRONTLINE PLC",
+      "currentPrice": 339.3,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 23,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:13.752Z"
+    },
+    "NAS": {
+      "name": "NORWEGIAN AIR SHUTTLE",
+      "currentPrice": 14.72,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 1,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:14.687Z"
+    },
+    "AKER": {
+      "name": "AKER",
+      "currentPrice": 1066,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 15,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:15.265Z"
+    },
+    "BAKKA": {
+      "name": "BAKKAFROST",
+      "currentPrice": 458,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 9,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:16.101Z"
+    },
+    "LSG": {
+      "name": "LERØY SEAFOOD GROUP",
+      "currentPrice": 49.5,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:16.689Z"
+    },
+    "SCATC": {
+      "name": "SCATEC ASA",
+      "currentPrice": 133.2,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 8,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:17.256Z"
+    },
+    "TOM": {
+      "name": "TOMRA SYSTEMS",
+      "currentPrice": 116.4,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:17.859Z"
+    },
+    "AUSS": {
+      "name": "AUSTEVOLL SEAFOOD",
+      "currentPrice": 104.2,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:18.436Z"
+    },
+    "GSF": {
+      "name": "GRIEG SEAFOOD",
+      "currentPrice": 75.9,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 11,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:19.016Z"
+    },
+    "VOW": {
+      "name": "VOW",
+      "currentPrice": 2.44,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 1,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:19.571Z"
+    },
+    "HAFNI": {
+      "name": "HAFNIA LIMITED",
+      "currentPrice": 75.68,
+      "currency": "NOK",
+      "priceCount": 1606,
+      "dividendCount": 19,
+      "firstDate": "2019-11-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:20.135Z"
+    },
+    "AUTO": {
+      "name": "AUTOSTORE HOLDINGS LTD.",
+      "currentPrice": 9.875,
+      "currency": "NOK",
+      "priceCount": 1118,
       "dividendCount": 0,
-      "firstDate": "2023-08-03",
+      "firstDate": "2021-10-21",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:20.681Z"
+    },
+    "HAUTO": {
+      "name": "HOEGH AUTOLINERS ASA",
+      "currentPrice": 140.6,
+      "currency": "NOK",
+      "priceCount": 1091,
+      "dividendCount": 15,
+      "firstDate": "2021-11-29",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:21.232Z"
+    },
+    "VAR": {
+      "name": "Vår Energi ASA",
+      "currentPrice": 48.14,
+      "currency": "NOK",
+      "priceCount": 1036,
+      "dividendCount": 16,
+      "firstDate": "2022-02-16",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:21.790Z"
+    },
+    "DOFG": {
+      "name": "DOF GROUP ASA",
+      "currentPrice": 137.3,
+      "currency": "NOK",
+      "priceCount": 699,
+      "dividendCount": 4,
+      "firstDate": "2023-06-22",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:22.351Z"
+    },
+    "ELK": {
+      "name": "ELKEM",
+      "currentPrice": 28.14,
+      "currency": "NOK",
+      "priceCount": 2013,
+      "dividendCount": 6,
+      "firstDate": "2018-03-22",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:22.920Z"
+    },
+    "ENTRA": {
+      "name": "ENTRA",
+      "currentPrice": 106.4,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 16,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:23.488Z"
+    },
+    "EPR": {
+      "name": "EUROPRIS",
+      "currentPrice": 94,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:24.062Z"
+    },
+    "CADLR": {
+      "name": "CADELER A/S",
+      "currentPrice": 56.7,
+      "currency": "NOK",
+      "priceCount": 1342,
+      "dividendCount": 0,
+      "firstDate": "2020-11-27",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:24.617Z"
+    },
+    "MPCC": {
+      "name": "MPC CONTAINER SHIPS",
+      "currentPrice": 22.91,
+      "currency": "NOK",
+      "priceCount": 2220,
+      "dividendCount": 19,
+      "firstDate": "2017-05-31",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:25.183Z"
+    },
+    "BEWI": {
+      "name": "BEWI",
+      "currentPrice": 14,
+      "currency": "NOK",
+      "priceCount": 1406,
+      "dividendCount": 2,
+      "firstDate": "2020-08-31",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:25.745Z"
+    },
+    "BRG": {
+      "name": "BORREGAARD",
+      "currentPrice": 175.2,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:26.318Z"
+    },
+    "PROT": {
+      "name": "PROTECTOR FORSIKRING",
+      "currentPrice": 466,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 20,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:27.006Z"
+    },
+    "KID": {
+      "name": "KID",
+      "currentPrice": 126.2,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 19,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:27.590Z"
+    },
+    "WAWI": {
+      "name": "WALLENIUS WILHELMSEN",
+      "currentPrice": 125.6,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 11,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:28.170Z"
+    },
+    "LINK": {
+      "name": "LINK MOBILITY GROUP HOLDING",
+      "currentPrice": 22.5,
+      "currency": "NOK",
+      "priceCount": 1369,
+      "dividendCount": 0,
+      "firstDate": "2020-10-21",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:28.851Z"
+    },
+    "PARB": {
+      "name": "PARETO BANK",
+      "currentPrice": 85.4,
+      "currency": "NOK",
+      "priceCount": 2477,
+      "dividendCount": 9,
+      "firstDate": "2016-05-27",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:29.422Z"
+    },
+    "SOFF": {
+      "name": "SOLSTAD OFFSHORE",
+      "currentPrice": 68.1,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 1,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:30.042Z"
+    },
+    "BWO": {
+      "name": "BW OFFSHORE LIMITED",
+      "currentPrice": 51.5,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 24,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:30.626Z"
+    },
+    "BWLPG": {
+      "name": "BW LPG",
+      "currentPrice": 168.9,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 29,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:31.201Z"
+    },
+    "NEL": {
+      "name": "NEL",
+      "currentPrice": 2.14,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:32.148Z"
+    },
+    "HEX": {
+      "name": "HEXAGON COMPOSITES",
+      "currentPrice": 10.14,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 1,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:32.741Z"
+    },
+    "BORR": {
+      "name": "BORR DRILLING LIMITED",
+      "currentPrice": 56.5,
+      "currency": "NOK",
+      "priceCount": 69,
+      "dividendCount": 0,
+      "firstDate": "2025-12-19",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:33.471Z"
+    },
+    "ABG": {
+      "name": "ABG SUNDAL COLLIER HOLDING",
+      "currentPrice": 8.03,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 13,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:34.070Z"
+    },
+    "ACR": {
+      "name": "AXACTOR ASA",
+      "currentPrice": 6.68,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:34.631Z"
+    },
+    "AFG": {
+      "name": "AF GRUPPEN",
+      "currentPrice": 173.4,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 18,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:35.983Z"
+    },
+    "AFK": {
+      "name": "ARENDALS FOSSEKOMPANI",
+      "currentPrice": 161.5,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 25,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:36.584Z"
+    },
+    "AKBM": {
+      "name": "AKER BIOMARINE ASA",
+      "currentPrice": 107,
+      "currency": "NOK",
+      "priceCount": 1446,
+      "dividendCount": 1,
+      "firstDate": "2020-07-06",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:37.138Z"
+    },
+    "AKSO": {
+      "name": "AKER SOLUTIONS",
+      "currentPrice": 45.32,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 4,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:37.709Z"
+    },
+    "AKVA": {
+      "name": "AKVA GROUP",
+      "currentPrice": 107,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 12,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:38.290Z"
+    },
+    "ARCH": {
+      "name": "ARCHER",
+      "currentPrice": 28.8,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 4,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:39.255Z"
+    },
+    "ATEA": {
+      "name": "ATEA",
+      "currentPrice": 139.2,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 19,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:40.213Z"
+    },
+    "AZT": {
+      "name": "ARCTICZYMES TECHNOLOGIES",
+      "currentPrice": 19.65,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:40.766Z"
+    },
+    "BIEN": {
+      "name": "BIEN SPAREBANK ASA",
+      "currentPrice": 155,
+      "currency": "NOK",
+      "priceCount": 823,
+      "dividendCount": 2,
+      "firstDate": "2022-12-20",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:42.091Z"
+    },
+    "BMA": {
+      "name": "BYGGMA",
+      "currentPrice": 16.8,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 8,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:42.695Z"
+    },
+    "BNOR": {
+      "name": "BLUENORD ASA",
+      "currentPrice": 554,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 3,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:43.256Z"
+    },
+    "BONHR": {
+      "name": "BONHEUR",
+      "currentPrice": 243,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:43.856Z"
+    },
+    "BOUV": {
+      "name": "BOUVET",
+      "currentPrice": 50,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 16,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:44.435Z"
+    },
+    "BWE": {
+      "name": "BW ENERGY LIMITED",
+      "currentPrice": 58.3,
+      "currency": "NOK",
+      "priceCount": 1538,
+      "dividendCount": 0,
+      "firstDate": "2020-02-19",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:45.080Z"
+    },
+    "CLOUD": {
+      "name": "CLOUDBERRY CLEAN ENERGY ASA",
+      "currentPrice": 13.18,
+      "currency": "NOK",
+      "priceCount": 1507,
+      "dividendCount": 0,
+      "firstDate": "2020-04-02",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:45.639Z"
+    },
+    "CONTX": {
+      "name": "CONTEXTVISION",
+      "currentPrice": 3.5,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 2,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:46.212Z"
+    },
+    "DDRIL": {
+      "name": "DOLPHIN DRILLING AS",
+      "currentPrice": 2.53,
+      "currency": "NOK",
+      "priceCount": 860,
+      "dividendCount": 0,
+      "firstDate": "2022-10-28",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:47.152Z"
+    },
+    "DNO": {
+      "name": "DNO",
+      "currentPrice": 20.74,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 20,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:47.738Z"
+    },
+    "DVD": {
+      "name": "DEEP VALUE DRILLER AS",
+      "currentPrice": 21.15,
+      "currency": "NOK",
+      "priceCount": 1221,
+      "dividendCount": 18,
+      "firstDate": "2021-05-31",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:48.288Z"
+    },
+    "EAM": {
+      "name": "EAM SOLAR AS",
+      "currentPrice": 1.886,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:48.837Z"
+    },
+    "EIOF": {
+      "name": "EIDESVIK OFFSHORE",
+      "currentPrice": 16.5,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 2,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:49.426Z"
+    },
+    "ELMRA": {
+      "name": "ELMERA GROUP ASA",
+      "currentPrice": 35.05,
+      "currency": "NOK",
+      "priceCount": 2014,
+      "dividendCount": 7,
+      "firstDate": "2018-03-21",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:49.991Z"
+    },
+    "ELO": {
+      "name": "ELOPAK ASA",
+      "currentPrice": 36.3,
+      "currency": "NOK",
+      "priceCount": 1208,
+      "dividendCount": 5,
+      "firstDate": "2021-06-17",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:50.639Z"
+    },
+    "EMGS": {
+      "name": "ELECTROMAGNETIC GEOSERVICES",
+      "currentPrice": 0.297,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:51.189Z"
+    },
+    "ENDUR": {
+      "name": "ENDÚR",
+      "currentPrice": 104.6,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:51.739Z"
+    },
+    "EQVA": {
+      "name": "EQVA ASA",
+      "currentPrice": 3.46,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 1,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:52.301Z"
+    },
+    "GENO": {
+      "name": "GENERAL OCEANS ASA",
+      "currentPrice": 24.875,
+      "currency": "NOK",
+      "priceCount": 5,
+      "dividendCount": 0,
+      "firstDate": "2026-03-26",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:53.611Z"
+    },
+    "GENT": {
+      "name": "GENTIAN DIAGNOSTICS ASA",
+      "currentPrice": 39,
+      "currency": "NOK",
+      "priceCount": 2334,
+      "dividendCount": 1,
+      "firstDate": "2016-12-14",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:54.156Z"
+    },
+    "HAVI": {
+      "name": "HAVILA SHIPPING",
+      "currentPrice": 1.38,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:55.827Z"
+    },
+    "HBC": {
+      "name": "HOFSETH BIOCARE",
+      "currentPrice": 1.41,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:56.370Z"
+    },
+    "HDLY": {
+      "name": "HUDDLY AS",
+      "currentPrice": 24.7,
+      "currency": "NOK",
+      "priceCount": 1289,
+      "dividendCount": 0,
+      "firstDate": "2021-02-16",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:56.916Z"
+    },
+    "IDEX": {
+      "name": "IDEX BIOMETRICS",
+      "currentPrice": 9.6,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:57.854Z"
+    },
+    "ITERA": {
+      "name": "ITERA",
+      "currentPrice": 7.2,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 18,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:58.421Z"
+    },
+    "KCC": {
+      "name": "KLAVENESS COMBINATION CARRIERS",
+      "currentPrice": 94.9,
+      "currency": "NOK",
+      "priceCount": 1726,
+      "dividendCount": 28,
+      "firstDate": "2019-05-22",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:59.346Z"
+    },
+    "KIT": {
+      "name": "KITRON",
+      "currentPrice": 97.95,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 11,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:57:59.934Z"
+    },
+    "KOA": {
+      "name": "KONGSBERG AUTOMOTIVE",
+      "currentPrice": 1.956,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:00.490Z"
+    },
+    "MEDI": {
+      "name": "MEDISTIM",
+      "currentPrice": 214,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:02.009Z"
+    },
+    "MGN": {
+      "name": "MAGNORA",
+      "currentPrice": 23.75,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 12,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:02.573Z"
+    },
+    "MULTI": {
+      "name": "MULTICONSULT",
+      "currentPrice": 159,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:03.606Z"
+    },
+    "NAPA": {
+      "name": "NAPATECH",
+      "currentPrice": 30.1,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:04.246Z"
+    },
+    "NEXT": {
+      "name": "NEXT BIOMETRICS GROUP",
+      "currentPrice": 0.49,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:05.169Z"
+    },
+    "NOD": {
+      "name": "NORDIC SEMICONDUCTOR",
+      "currentPrice": 152.7,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:06.098Z"
+    },
+    "NORBT": {
+      "name": "NORBIT",
+      "currentPrice": 198.2,
+      "currency": "NOK",
+      "priceCount": 1707,
+      "dividendCount": 8,
+      "firstDate": "2019-06-20",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:06.652Z"
+    },
+    "NORCO": {
+      "name": "NORCONSULT ASA",
+      "currentPrice": 41.7,
+      "currency": "NOK",
+      "priceCount": 598,
+      "dividendCount": 2,
+      "firstDate": "2023-11-10",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:07.205Z"
+    },
+    "NRC": {
+      "name": "NRC GROUP",
+      "currentPrice": 7.65,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 2,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:07.783Z"
+    },
+    "NSKOG": {
+      "name": "NORSKE SKOG",
+      "currentPrice": 39.75,
+      "currency": "NOK",
+      "priceCount": 1621,
+      "dividendCount": 3,
+      "firstDate": "2019-10-18",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:08.335Z"
+    },
+    "OET": {
+      "name": "OKEANIS ECO TANKERS",
+      "currentPrice": 495,
+      "currency": "NOK",
+      "priceCount": 1945,
+      "dividendCount": 21,
+      "firstDate": "2018-07-04",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:08.908Z"
+    },
+    "OKEA": {
+      "name": "OKEA",
+      "currentPrice": 39.75,
+      "currency": "NOK",
+      "priceCount": 1709,
+      "dividendCount": 7,
+      "firstDate": "2019-06-18",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:09.473Z"
+    },
+    "PCIB": {
+      "name": "PCI BIOTECH HOLDING",
+      "currentPrice": 0.16,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:10.403Z"
+    },
+    "PEN": {
+      "name": "PANORO ENERGY",
+      "currentPrice": 33.5,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 13,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:10.967Z"
+    },
+    "PEXIP": {
+      "name": "PEXIP HOLDING",
+      "currentPrice": 61.4,
+      "currency": "NOK",
+      "priceCount": 1481,
+      "dividendCount": 2,
+      "firstDate": "2020-05-14",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:11.517Z"
+    },
+    "PGS": {
+      "name": "PGS.OL,0P0000AUB5,0",
+      "currentPrice": 9.022,
+      "currency": "NOK",
+      "priceCount": 2088,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2024-07-22",
+      "lastUpdated": "2026-04-06T07:58:12.097Z"
+    },
+    "PHO": {
+      "name": "PHOTOCURE",
+      "currentPrice": 59.7,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:12.644Z"
+    },
+    "POL": {
+      "name": "POLARIS MEDIA",
+      "currentPrice": 60.5,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 8,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:13.695Z"
+    },
+    "PSE": {
+      "name": "PETROLIA",
+      "currentPrice": 5.96,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:14.245Z"
+    },
+    "RECSI": {
+      "name": "REC SILICON",
+      "currentPrice": 0.276,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:15.554Z"
+    },
+    "SATS": {
+      "name": "SATS",
+      "currentPrice": 43.6,
+      "currency": "NOK",
+      "priceCount": 1581,
+      "dividendCount": 2,
+      "firstDate": "2019-12-13",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:16.881Z"
+    },
+    "SBO": {
+      "name": "SELVAAG BOLIG",
+      "currentPrice": 34.25,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 19,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:17.453Z"
+    },
+    "SEA1": {
+      "name": "Sea1 Offshore Inc.",
+      "currentPrice": 35.2,
+      "currency": "NOK",
+      "priceCount": 478,
+      "dividendCount": 2,
+      "firstDate": "2024-05-06",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:18.777Z"
+    },
+    "SKUE": {
+      "name": "SKUE SPAREBANK",
+      "currentPrice": 338,
+      "currency": "NOK",
+      "priceCount": 2513,
+      "dividendCount": 9,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:20.108Z"
+    },
+    "SMCRT": {
+      "name": "SMARTCRAFT ASA",
+      "currentPrice": 18.5,
+      "currency": "NOK",
+      "priceCount": 1196,
+      "dividendCount": 0,
+      "firstDate": "2021-06-24",
+      "lastDate": "2026-03-23",
+      "lastUpdated": "2026-04-06T07:58:20.662Z"
+    },
+    "SNI": {
+      "name": "STOLT-NIELSEN",
+      "currentPrice": 332.5,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 19,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:21.246Z"
+    },
+    "SNTIA": {
+      "name": "SENTIA ASA",
+      "currentPrice": 73.8,
+      "currency": "NOK",
+      "priceCount": 204,
+      "dividendCount": 0,
+      "firstDate": "2025-06-13",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:21.845Z"
+    },
+    "SPOL": {
+      "name": "SPAREBANK 1 ØSTLANDET",
+      "currentPrice": 200.05,
+      "currency": "NOK",
+      "priceCount": 2211,
+      "dividendCount": 10,
+      "firstDate": "2017-06-13",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:23.177Z"
+    },
+    "TECH": {
+      "name": "TECHSTEP",
+      "currentPrice": 10.65,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:25.349Z"
+    },
+    "TEKNA": {
+      "name": "TEKNA HOLDING ASA",
+      "currentPrice": 3.38,
+      "currency": "NOK",
+      "priceCount": 1259,
+      "dividendCount": 0,
+      "firstDate": "2021-03-30",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:25.902Z"
+    },
+    "TGS": {
+      "name": "TGS ASA",
+      "currentPrice": 127,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 40,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:26.729Z"
+    },
+    "VEI": {
+      "name": "VEIDEKKE",
+      "currentPrice": 189.2,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:28.165Z"
+    },
+    "VISTN": {
+      "name": "VISTIN PHARMA",
+      "currentPrice": 21.9,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 8,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:29.104Z"
+    },
+    "WBULK": {
+      "name": "",
+      "currentPrice": null,
+      "currency": "NOK",
+      "priceCount": 0,
+      "dividendCount": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "lastUpdated": "2026-04-06T07:58:30.432Z"
+    },
+    "WSTEP": {
+      "name": "WEBSTEP",
+      "currentPrice": 17.7,
+      "currency": "NOK",
+      "priceCount": 2126,
+      "dividendCount": 8,
+      "firstDate": "2017-10-11",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:30.989Z"
+    },
+    "WWI": {
+      "name": "WILH. WILHELMSEN HOLDING SER. A",
+      "currentPrice": 733,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 14,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:31.572Z"
+    },
+    "ABL": {
+      "name": "ABL GROUP ASA",
+      "currentPrice": 11.2,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 13,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:33.018Z"
+    },
+    "ABS": {
+      "name": "ARCTIC BIOSCIENCE AS",
+      "currentPrice": 3.3,
+      "currency": "NOK",
+      "priceCount": 1283,
+      "dividendCount": 0,
+      "firstDate": "2021-02-24",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:33.584Z"
+    },
+    "ABTEC": {
+      "name": "AQUA BIO TECHNOLOGY",
+      "currentPrice": 7.005,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 3,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:34.177Z"
+    },
+    "ACED": {
+      "name": "ACE DIGITAL AS",
+      "currentPrice": 0.46,
+      "currency": "NOK",
+      "priceCount": 127,
+      "dividendCount": 0,
+      "firstDate": "2025-09-30",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:34.737Z"
+    },
+    "ADS": {
+      "name": "ADS MARITIME HOLDING PLC",
+      "currentPrice": 2.44,
+      "currency": "NOK",
+      "priceCount": 1906,
+      "dividendCount": 7,
+      "firstDate": "2018-08-28",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:35.314Z"
+    },
+    "AFISH": {
+      "name": "ARCTIC FISH HOLDING AS",
+      "currentPrice": 37.8,
+      "currency": "NOK",
+      "priceCount": 1286,
+      "dividendCount": 0,
+      "firstDate": "2021-02-19",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:36.129Z"
+    },
+    "AGLX": {
+      "name": "AGILYX ASA",
+      "currentPrice": 16.18,
+      "currency": "NOK",
+      "priceCount": 1384,
+      "dividendCount": 0,
+      "firstDate": "2020-09-30",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:36.688Z"
+    },
+    "AIX": {
+      "name": "AYFIE INTERNATIONAL AS",
+      "currentPrice": 4.07,
+      "currency": "NOK",
+      "priceCount": 1445,
+      "dividendCount": 0,
+      "firstDate": "2020-07-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:37.249Z"
+    },
+    "AKH": {
+      "name": "AKER HORIZONS ASA",
+      "currentPrice": 0.0218,
+      "currency": "NOK",
+      "priceCount": 1298,
+      "dividendCount": 0,
+      "firstDate": "2021-02-03",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:37.794Z"
+    },
+    "AKOBO": {
+      "name": "AKOBO MINERALS AB (PUB)",
+      "currentPrice": 1.63,
+      "currency": "NOK",
+      "priceCount": 1189,
+      "dividendCount": 0,
+      "firstDate": "2021-07-14",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:38.454Z"
+    },
+    "ALNG": {
+      "name": "AWILCO LNG",
+      "currentPrice": 3.4,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 7,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:39.009Z"
+    },
+    "ANDF": {
+      "name": "ANDFJORD SALMON GROUP AS",
+      "currentPrice": 30.4,
+      "currency": "NOK",
+      "priceCount": 1455,
+      "dividendCount": 0,
+      "firstDate": "2020-06-23",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:39.561Z"
+    },
+    "APR": {
+      "name": "APPEAR ASA",
+      "currentPrice": 61.2,
+      "currency": "NOK",
+      "priceCount": 100,
+      "dividendCount": 0,
+      "firstDate": "2025-11-06",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:40.107Z"
+    },
+    "ARR": {
+      "name": "ARRIBATEC GROUP ASA",
+      "currentPrice": 6.87,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 4,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:40.968Z"
+    },
+    "ASA": {
+      "name": "ATLANTIC SAPPHIRE",
+      "currentPrice": 1.14,
+      "currency": "NOK",
+      "priceCount": 1980,
+      "dividendCount": 0,
+      "firstDate": "2018-05-15",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:41.518Z"
+    },
+    "AURG": {
+      "name": "AURSKOG SPAREBANK",
+      "currentPrice": 254,
+      "currency": "NOK",
+      "priceCount": 2513,
+      "dividendCount": 11,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:42.099Z"
+    },
+    "B2I": {
+      "name": "B2 Impact ASA",
+      "currentPrice": 23.75,
+      "currency": "NOK",
+      "priceCount": 2469,
+      "dividendCount": 9,
+      "firstDate": "2016-06-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:42.669Z"
+    },
+    "BALT": {
+      "name": "BALTIC SEA PROPERTIES",
+      "currentPrice": 48.8,
+      "currency": "NOK",
+      "priceCount": 2096,
+      "dividendCount": 6,
+      "firstDate": "2017-11-22",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:43.226Z"
+    },
+    "BARRA": {
+      "name": "BARRAMUNDI GROUP LTD.",
+      "currentPrice": 0.796,
+      "currency": "NOK",
+      "priceCount": 1166,
+      "dividendCount": 0,
+      "firstDate": "2021-08-16",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:43.777Z"
+    },
+    "BCS": {
+      "name": "BERGEN CARBON SOLUTIONS AS",
+      "currentPrice": 3.6,
+      "currency": "NOK",
+      "priceCount": 1248,
+      "dividendCount": 0,
+      "firstDate": "2021-04-19",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:44.328Z"
+    },
+    "BOR": {
+      "name": "BORGESTAD",
+      "currentPrice": 16.6,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 2,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:44.999Z"
+    },
+    "BRUT": {
+      "name": "BRUTON LIMITED",
+      "currentPrice": 48.6,
+      "currency": "NOK",
+      "priceCount": 334,
+      "dividendCount": 0,
+      "firstDate": "2024-11-28",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:45.555Z"
+    },
+    "BSP": {
+      "name": "BLACK SEA PROPERTY",
+      "currentPrice": 3.73,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:46.116Z"
+    },
+    "CAMBI": {
+      "name": "CAMBI ASA",
+      "currentPrice": 19.2,
+      "currency": "NOK",
+      "priceCount": 1294,
+      "dividendCount": 5,
+      "firstDate": "2021-02-09",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:46.673Z"
+    },
+    "CAPSL": {
+      "name": "CAPSOL TECHNOLOGIES ASA",
+      "currentPrice": 4.8,
+      "currency": "NOK",
+      "priceCount": 1076,
+      "dividendCount": 0,
+      "firstDate": "2021-12-20",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:47.214Z"
+    },
+    "CAPT": {
+      "name": "CAPITAL TANKERS CORP.",
+      "currentPrice": 123.54,
+      "currency": "NOK",
+      "priceCount": 8,
+      "dividendCount": 0,
+      "firstDate": "2026-03-23",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:47.773Z"
+    },
+    "CAVEN": {
+      "name": "CAVENDISH HYDROGEN ASA",
+      "currentPrice": 6.46,
+      "currency": "NOK",
+      "priceCount": 455,
+      "dividendCount": 0,
+      "firstDate": "2024-06-12",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:48.412Z"
+    },
+    "CMBTO": {
+      "name": "CMB.TECH NV",
+      "currentPrice": 121.4,
+      "currency": "NOK",
+      "priceCount": 156,
+      "dividendCount": 2,
+      "firstDate": "2025-08-20",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:48.972Z"
+    },
+    "CODE": {
+      "name": "CODELAB CAPITAL AS",
+      "currentPrice": 2.7,
+      "currency": "NOK",
+      "priceCount": 1364,
+      "dividendCount": 0,
+      "firstDate": "2020-10-23",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:49.552Z"
+    },
+    "COSH": {
+      "name": "CONSTELLATION OIL SERVICES HOLD",
+      "currentPrice": 135.96,
+      "currency": "NOK",
+      "priceCount": 269,
+      "dividendCount": 0,
+      "firstDate": "2025-03-06",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:50.285Z"
+    },
+    "CRNA": {
+      "name": "CIRCIO HOLDING ASA",
+      "currentPrice": 10.8,
+      "currency": "NOK",
+      "priceCount": 2447,
+      "dividendCount": 0,
+      "firstDate": "2016-07-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:50.839Z"
+    },
+    "CYVIZ": {
+      "name": "CYVIZ AS",
+      "currentPrice": 33.5,
+      "currency": "NOK",
+      "priceCount": 1326,
+      "dividendCount": 0,
+      "firstDate": "2020-12-21",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:51.596Z"
+    },
+    "DELIA": {
+      "name": "DELLIA GROUP",
+      "currentPrice": 393,
+      "currency": "NOK",
+      "priceCount": 128,
+      "dividendCount": 1,
+      "firstDate": "2025-09-29",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:52.147Z"
+    },
+    "DFENS": {
+      "name": "FJORD DEFENCE GROUP ASA",
+      "currentPrice": 14.6,
+      "currency": "NOK",
+      "priceCount": 1698,
+      "dividendCount": 0,
+      "firstDate": "2019-07-03",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:52.693Z"
+    },
+    "DSRT": {
+      "name": "DESERT CONTROL AS",
+      "currentPrice": 1.575,
+      "currency": "NOK",
+      "priceCount": 1251,
+      "dividendCount": 0,
+      "firstDate": "2021-04-14",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:53.237Z"
+    },
+    "ELABS": {
+      "name": "ELLIPTIC LABORATORIES ASA",
+      "currentPrice": 2.945,
+      "currency": "NOK",
+      "priceCount": 1372,
+      "dividendCount": 0,
+      "firstDate": "2020-10-16",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:54.173Z"
+    },
+    "ELIMP": {
+      "name": "ELEKTROIMPORTØREN AS",
+      "currentPrice": 14.85,
+      "currency": "NOK",
+      "priceCount": 1329,
+      "dividendCount": 3,
+      "firstDate": "2020-12-16",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:54.729Z"
+    },
+    "ELOO": {
+      "name": "Elopak ASA",
+      "currentPrice": 35.9,
+      "currency": "NOK",
+      "priceCount": 1,
+      "dividendCount": 0,
+      "firstDate": "2026-03-31",
       "lastDate": "2026-03-31",
-      "lastUpdated": "2026-04-06T07:49:56.462Z"
+      "lastUpdated": "2026-04-06T07:58:55.292Z"
+    },
+    "ENERG": {
+      "name": "ENERGEIA AS",
+      "currentPrice": 7.9,
+      "currency": "NOK",
+      "priceCount": 828,
+      "dividendCount": 0,
+      "firstDate": "2022-12-13",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:55.993Z"
+    },
+    "ENH": {
+      "name": "SED ENERGY HOLDINGS PLC",
+      "currentPrice": 8.98,
+      "currency": "NOK",
+      "priceCount": 206,
+      "dividendCount": 2,
+      "firstDate": "2025-06-11",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:56.552Z"
+    },
+    "ENSU": {
+      "name": "ENSURGE MICROPOWER ASA",
+      "currentPrice": 0.69,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:57.108Z"
+    },
+    "ENVIP": {
+      "name": "ENVIPCO HOLDING N.V.",
+      "currentPrice": 51.8,
+      "currency": "NOK",
+      "priceCount": 1287,
+      "dividendCount": 0,
+      "firstDate": "2021-02-18",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:57.658Z"
+    },
+    "EXTX": {
+      "name": "EXACT THERAPEUTICS",
+      "currentPrice": 1.6,
+      "currency": "NOK",
+      "priceCount": 1440,
+      "dividendCount": 0,
+      "firstDate": "2020-07-14",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:58.215Z"
+    },
+    "FFSB": {
+      "name": "FLEKKEFJORD SPAREBANK",
+      "currentPrice": 119,
+      "currency": "NOK",
+      "priceCount": 468,
+      "dividendCount": 2,
+      "firstDate": "2024-05-23",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:58.870Z"
+    },
+    "GEM": {
+      "name": "GREEN MINERALS AS",
+      "currentPrice": 1.5,
+      "currency": "NOK",
+      "priceCount": 1262,
+      "dividendCount": 0,
+      "firstDate": "2021-03-25",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:58:59.515Z"
+    },
+    "GEOS": {
+      "name": "GOLDEN ENERGY OFFSHORE SERVICES",
+      "currentPrice": 8.9,
+      "currency": "NOK",
+      "priceCount": 2006,
+      "dividendCount": 0,
+      "firstDate": "2018-04-05",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:00.069Z"
+    },
+    "GIGA": {
+      "name": "GIGANTE SALMON AS",
+      "currentPrice": 9.62,
+      "currency": "NOK",
+      "priceCount": 1196,
+      "dividendCount": 0,
+      "firstDate": "2021-07-05",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:00.618Z"
+    },
+    "INSTA": {
+      "name": "INSTABANK",
+      "currentPrice": 4,
+      "currency": "NOK",
+      "priceCount": 1416,
+      "dividendCount": 1,
+      "firstDate": "2020-08-17",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:01.203Z"
+    },
+    "IWS": {
+      "name": "INTEGRATED WIND SOLUTIONS ASA",
+      "currentPrice": 58.3,
+      "currency": "NOK",
+      "priceCount": 1261,
+      "dividendCount": 1,
+      "firstDate": "2021-03-26",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:01.760Z"
+    },
+    "JACK": {
+      "name": "JACKTEL AS",
+      "currentPrice": 4.485,
+      "currency": "NOK",
+      "priceCount": 6,
+      "dividendCount": 0,
+      "firstDate": "2026-03-25",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:02.315Z"
+    },
+    "MORG": {
+      "name": "SPAREBANKEN MØRE",
+      "currentPrice": 117.42,
+      "currency": "NOK",
+      "priceCount": 2513,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:02.912Z"
+    },
+    "NKR": {
+      "name": "NEKKAR",
+      "currentPrice": 13.45,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 1,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:03.484Z"
+    },
+    "NOM": {
+      "name": "NORDIC MINING",
+      "currentPrice": 11.96,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:04.037Z"
+    },
+    "NORSE": {
+      "name": "NORSE ATLANTIC ASA",
+      "currentPrice": 4.6,
+      "currency": "NOK",
+      "priceCount": 1253,
+      "dividendCount": 0,
+      "firstDate": "2021-04-12",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:04.590Z"
+    },
+    "PRS": {
+      "name": "PROSAFE",
+      "currentPrice": 3.425,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:05.551Z"
+    },
+    "PROXI": {
+      "name": "PROXIMAR SEAFOOD AS",
+      "currentPrice": 0.495,
+      "currency": "NOK",
+      "priceCount": 1298,
+      "dividendCount": 0,
+      "firstDate": "2021-02-03",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:06.105Z"
+    },
+    "SCANA": {
+      "name": "SCANA",
+      "currentPrice": 1.41,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 1,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:06.701Z"
+    },
+    "SMOP": {
+      "name": "SMARTOPTICS GROUP ASA",
+      "currentPrice": 44.4,
+      "currency": "NOK",
+      "priceCount": 1217,
+      "dividendCount": 3,
+      "firstDate": "2021-06-04",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:07.264Z"
+    },
+    "WEST": {
+      "name": "WESTERN BULK CHARTERING AS",
+      "currentPrice": 21.3,
+      "currency": "NOK",
+      "priceCount": 1141,
+      "dividendCount": 6,
+      "firstDate": "2021-09-20",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:07.831Z"
+    },
+    "AASB": {
+      "name": "AASEN SPAREBANK",
+      "currentPrice": 137.02,
+      "currency": "NOK",
+      "priceCount": 2513,
+      "dividendCount": 9,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:08.393Z"
+    },
+    "AKAST": {
+      "name": "AKASTOR",
+      "currentPrice": 15.34,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 3,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:08.988Z"
+    },
+    "AIRX": {
+      "name": "AIRTHINGS",
+      "currentPrice": 0.1315,
+      "currency": "NOK",
+      "priceCount": 1327,
+      "dividendCount": 0,
+      "firstDate": "2020-10-30",
+      "lastDate": "2026-02-11",
+      "lastUpdated": "2026-04-06T07:59:09.638Z"
+    },
+    "HPUR": {
+      "name": "HEXAGON PURUS ASA",
+      "currentPrice": 1.148,
+      "currency": "NOK",
+      "priceCount": 1331,
+      "dividendCount": 0,
+      "firstDate": "2020-12-14",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:12.582Z"
+    },
+    "INIFY": {
+      "name": "INIFY LABORATORIES AB",
+      "currentPrice": 3.64,
+      "currency": "NOK",
+      "priceCount": 954,
+      "dividendCount": 0,
+      "firstDate": "2022-06-20",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:13.906Z"
+    },
+    "KMCP": {
+      "name": "KMC PROPERTIES ASA",
+      "currentPrice": 23,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 1,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:14.850Z"
+    },
+    "LUMI": {
+      "name": "LUMI GRUPPEN AS",
+      "currentPrice": 20,
+      "currency": "NOK",
+      "priceCount": 1287,
+      "dividendCount": 1,
+      "firstDate": "2021-02-18",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:15.870Z"
+    },
+    "MORPOL": {
+      "name": "",
+      "currentPrice": null,
+      "currency": "NOK",
+      "priceCount": 0,
+      "dividendCount": 0,
+      "firstDate": null,
+      "lastDate": null,
+      "lastUpdated": "2026-04-06T07:59:16.415Z"
+    },
+    "NORAM": {
+      "name": "NORAM DRILLING AS",
+      "currentPrice": 46.5,
+      "currency": "NOK",
+      "priceCount": 875,
+      "dividendCount": 40,
+      "firstDate": "2022-10-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:17.334Z"
+    },
+    "NYKD": {
+      "name": "NYKODE THERAPEUTICS ASA",
+      "currentPrice": 3.44,
+      "currency": "NOK",
+      "priceCount": 1379,
+      "dividendCount": 1,
+      "firstDate": "2020-10-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:17.976Z"
+    },
+    "ODF": {
+      "name": "ODFJELL SER. A",
+      "currentPrice": 121,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 11,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:18.651Z"
+    },
+    "OTEC": {
+      "name": "OTELLO CORPORATION",
+      "currentPrice": 18.7,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 2,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:19.225Z"
+    },
+    "OTOVO": {
+      "name": "OTOVO ASA",
+      "currentPrice": 12.5,
+      "currency": "NOK",
+      "priceCount": 1286,
+      "dividendCount": 0,
+      "firstDate": "2021-02-19",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:19.776Z"
+    },
+    "RANA": {
+      "name": "RANA GRUBER ASA",
+      "currentPrice": 78.3,
+      "currency": "NOK",
+      "priceCount": 1281,
+      "dividendCount": 20,
+      "firstDate": "2021-02-26",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:20.330Z"
+    },
+    "RIVER": {
+      "name": "RIVER TECH",
+      "currentPrice": 1.4,
+      "currency": "NOK",
+      "priceCount": 2012,
+      "dividendCount": 3,
+      "firstDate": "2018-03-23",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:20.880Z"
+    },
+    "5PG": {
+      "name": "5TH PLANET GAMES",
+      "currentPrice": 2.09,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:22.852Z"
+    },
+    "GKP": {
+      "name": "GULF KEYSTONE PETROLEUM LTD",
+      "currentPrice": 26.57,
+      "currency": "NOK",
+      "priceCount": 31,
+      "dividendCount": 0,
+      "firstDate": "2026-02-18",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:24.635Z"
+    },
+    "GOD": {
+      "name": "GOODTECH",
+      "currentPrice": 11.1,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:25.232Z"
+    },
+    "GRONG": {
+      "name": "GRONG SPAREBANK",
+      "currentPrice": 192.9,
+      "currency": "NOK",
+      "priceCount": 2211,
+      "dividendCount": 8,
+      "firstDate": "2017-06-14",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:25.886Z"
+    },
+    "GYL": {
+      "name": "GYLDENDAL",
+      "currentPrice": 430,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 9,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:26.472Z"
+    },
+    "HAV": {
+      "name": "HAV GROUP ASA",
+      "currentPrice": 9.38,
+      "currency": "NOK",
+      "priceCount": 1276,
+      "dividendCount": 0,
+      "firstDate": "2021-03-05",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:27.023Z"
+    },
+    "HELG": {
+      "name": "SPAREBANK 1 HELGELAND",
+      "currentPrice": 164,
+      "currency": "NOK",
+      "priceCount": 2513,
+      "dividendCount": 9,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:27.698Z"
+    },
+    "HERMA": {
+      "name": "HERMANA HOLDING ASA",
+      "currentPrice": 16.9,
+      "currency": "NOK",
+      "priceCount": 451,
+      "dividendCount": 0,
+      "firstDate": "2024-06-18",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:28.387Z"
+    },
+    "HGSB": {
+      "name": "HAUGESUND SPAREBANK",
+      "currentPrice": 170,
+      "currency": "NOK",
+      "priceCount": 438,
+      "dividendCount": 1,
+      "firstDate": "2024-07-05",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:28.939Z"
+    },
+    "HKY": {
+      "name": "HAVILA KYSTRUTEN AS",
+      "currentPrice": 50.8,
+      "currency": "NOK",
+      "priceCount": 1175,
+      "dividendCount": 0,
+      "firstDate": "2021-08-03",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:29.485Z"
+    },
+    "HLNG": {
+      "name": "HLNG.OL,0P0000TLIL,0",
+      "currentPrice": 23.4,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 15,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:30.039Z"
+    },
+    "HSHP": {
+      "name": "HIMALAYA SHIPPING LTD",
+      "currentPrice": 128.4,
+      "currency": "NOK",
+      "priceCount": 1024,
+      "dividendCount": 26,
+      "firstDate": "2022-03-04",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:30.592Z"
+    },
+    "HSPG": {
+      "name": "HSPG.OL,0P0000EEEH,0",
+      "currentPrice": 158,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 9,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:31.171Z"
+    },
+    "HUDL": {
+      "name": "HUDDLESTOCK FINTECH",
+      "currentPrice": 0.554,
+      "currency": "NOK",
+      "priceCount": 1342,
+      "dividendCount": 0,
+      "firstDate": "2020-11-27",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:31.726Z"
+    },
+    "HUNT": {
+      "name": "HUNTER GROUP",
+      "currentPrice": 5.69,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 8,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:32.287Z"
+    },
+    "HYN": {
+      "name": "HYNION AS",
+      "currentPrice": 0.0196,
+      "currency": "NOK",
+      "priceCount": 1249,
+      "dividendCount": 0,
+      "firstDate": "2021-04-16",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:32.840Z"
+    },
+    "HYPRO": {
+      "name": "HYDROGENPRO ASA",
+      "currentPrice": 1.664,
+      "currency": "NOK",
+      "priceCount": 1374,
+      "dividendCount": 0,
+      "firstDate": "2020-10-14",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:33.387Z"
+    },
+    "IFISH": {
+      "name": "IFISH.OL,0P0001K2K4,0",
+      "currentPrice": 29,
+      "currency": "NOK",
+      "priceCount": 1466,
+      "dividendCount": 0,
+      "firstDate": "2020-06-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:33.926Z"
+    },
+    "INDCT": {
+      "name": "INDUCT",
+      "currentPrice": 3.22,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:34.464Z"
+    },
+    "ININ": {
+      "name": "ININ GROUP AS",
+      "currentPrice": 2.82,
+      "currency": "NOK",
+      "priceCount": 1437,
+      "dividendCount": 0,
+      "firstDate": "2020-07-17",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:35.052Z"
+    },
+    "IOX": {
+      "name": "INTEROIL EXPLORATION AND PRODUC",
+      "currentPrice": 5,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:35.591Z"
+    },
+    "ISLAX": {
+      "name": "ICELANDIC SALMON",
+      "currentPrice": 75.2,
+      "currency": "NOK",
+      "priceCount": 1365,
+      "dividendCount": 0,
+      "firstDate": "2020-10-27",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:36.148Z"
+    },
+    "JAREN": {
+      "name": "JÆREN SPAREBANK",
+      "currentPrice": 344.9,
+      "currency": "NOK",
+      "priceCount": 2513,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:36.719Z"
+    },
+    "JIN": {
+      "name": "JINHUI SHIPPING AND TRANSPORTAT",
+      "currentPrice": 5.9,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 7,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:37.317Z"
+    },
+    "KING": {
+      "name": "THE KINGFISH COMPANY",
+      "currentPrice": 2.16,
+      "currency": "NOK",
+      "priceCount": 1344,
+      "dividendCount": 0,
+      "firstDate": "2020-11-25",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:37.881Z"
+    },
+    "KLDVK": {
+      "name": "KALDVIK AS",
+      "currentPrice": 4.2,
+      "currency": "NOK",
+      "priceCount": 449,
+      "dividendCount": 0,
+      "firstDate": "2024-06-19",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:38.420Z"
+    },
+    "KOMPL": {
+      "name": "KOMPLETT ASA",
+      "currentPrice": 8.5,
+      "currency": "NOK",
+      "priceCount": 1206,
+      "dividendCount": 1,
+      "firstDate": "2021-06-21",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:38.964Z"
+    },
+    "KRAB": {
+      "name": "KRAFT BANK ASA",
+      "currentPrice": 14,
+      "currency": "NOK",
+      "priceCount": 1333,
+      "dividendCount": 4,
+      "firstDate": "2020-12-10",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:39.520Z"
+    },
+    "LIFE": {
+      "name": "LIFECARE ASA",
+      "currentPrice": 0.446,
+      "currency": "NOK",
+      "priceCount": 1941,
+      "dividendCount": 0,
+      "firstDate": "2018-07-11",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:40.070Z"
+    },
+    "LOKO": {
+      "name": "LOKOTECH GROUP AS",
+      "currentPrice": 0.904,
+      "currency": "NOK",
+      "priceCount": 609,
+      "dividendCount": 0,
+      "firstDate": "2023-10-23",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:40.616Z"
+    },
+    "LYTIX": {
+      "name": "LYTIX BIOPHARMA AS",
+      "currentPrice": 10.4,
+      "currency": "NOK",
+      "priceCount": 1211,
+      "dividendCount": 0,
+      "firstDate": "2021-06-14",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:41.162Z"
+    },
+    "MAS": {
+      "name": "MÅSØVAL AS",
+      "currentPrice": 30.9,
+      "currency": "NOK",
+      "priceCount": 1208,
+      "dividendCount": 3,
+      "firstDate": "2021-06-17",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:41.706Z"
+    },
+    "MELG": {
+      "name": "MELHUS SPAREBANK",
+      "currentPrice": 184.98,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 9,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:42.292Z"
+    },
+    "MING": {
+      "name": "SPAREBANK 1 SMN",
+      "currentPrice": 205.5,
+      "currency": "NOK",
+      "priceCount": 2513,
+      "dividendCount": 12,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:42.889Z"
+    },
+    "MORLD": {
+      "name": "MORELD ASA",
+      "currentPrice": 17.34,
+      "currency": "NOK",
+      "priceCount": 319,
+      "dividendCount": 4,
+      "firstDate": "2024-12-19",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:43.879Z"
+    },
+    "MPCES": {
+      "name": "MPC ENERGY SOLUTIONS N.V.",
+      "currentPrice": 13.25,
+      "currency": "NOK",
+      "priceCount": 1306,
+      "dividendCount": 0,
+      "firstDate": "2021-01-22",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:44.434Z"
+    },
+    "MVE": {
+      "name": "MATVAREEXPRESSEN AS",
+      "currentPrice": 199,
+      "currency": "NOK",
+      "priceCount": 624,
+      "dividendCount": 0,
+      "firstDate": "2023-09-29",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:44.985Z"
+    },
+    "MVW": {
+      "name": "M VEST WATER AS",
+      "currentPrice": 6.08,
+      "currency": "NOK",
+      "priceCount": 1209,
+      "dividendCount": 0,
+      "firstDate": "2021-06-16",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:45.543Z"
+    },
+    "NAVA": {
+      "name": "NAVAMEDIC",
+      "currentPrice": 19.8,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:46.181Z"
+    },
+    "NBX": {
+      "name": "NORWEGIAN BLOCK EXCHANGE AS",
+      "currentPrice": 0.47,
+      "currency": "NOK",
+      "priceCount": 1080,
+      "dividendCount": 0,
+      "firstDate": "2021-12-14",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:46.758Z"
+    },
+    "NCOD": {
+      "name": "NORCOD",
+      "currentPrice": 9.66,
+      "currency": "NOK",
+      "priceCount": 1373,
+      "dividendCount": 0,
+      "firstDate": "2020-10-15",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:47.304Z"
+    },
+    "NISB": {
+      "name": "NIDAROS SPAREBANK",
+      "currentPrice": 103.04,
+      "currency": "NOK",
+      "priceCount": 1711,
+      "dividendCount": 8,
+      "firstDate": "2019-06-14",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:47.868Z"
+    },
+    "NOAP": {
+      "name": "NORDIC AQUA PARTNERS AS",
+      "currentPrice": 77.4,
+      "currency": "NOK",
+      "priceCount": 1338,
+      "dividendCount": 0,
+      "firstDate": "2020-12-03",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:48.422Z"
+    },
+    "NOFIN": {
+      "name": "NORDIC FINANCIALS ASA",
+      "currentPrice": 1.8802,
+      "currency": "NOK",
+      "priceCount": 2513,
+      "dividendCount": 6,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:49.011Z"
+    },
+    "NOHAL": {
+      "name": "NORDIC HALIBUT AS",
+      "currentPrice": 21.6,
+      "currency": "NOK",
+      "priceCount": 1238,
+      "dividendCount": 0,
+      "firstDate": "2021-05-03",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:49.558Z"
+    },
+    "NOL": {
+      "name": "NORTHERN OCEAN LTD.",
+      "currentPrice": 9.1,
+      "currency": "NOK",
+      "priceCount": 1532,
+      "dividendCount": 0,
+      "firstDate": "2020-02-27",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:50.112Z"
+    },
+    "NONG": {
+      "name": "SPAREBANK 1 NORD-NORGE",
+      "currentPrice": 156.62,
+      "currency": "NOK",
+      "priceCount": 2513,
+      "dividendCount": 12,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:50.692Z"
+    },
+    "NORDH": {
+      "name": "NORDHEALTH AS A-AKSJER",
+      "currentPrice": 27.6,
+      "currency": "NOK",
+      "priceCount": 1217,
+      "dividendCount": 0,
+      "firstDate": "2021-06-04",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:51.248Z"
+    },
+    "NORTH": {
+      "name": "NORTH ENERGY",
+      "currentPrice": 2.7,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 6,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:52.019Z"
+    },
+    "NTG": {
+      "name": "NORDIC TECHNOLOGY GROUP AS",
+      "currentPrice": 1.9,
+      "currency": "NOK",
+      "priceCount": 942,
+      "dividendCount": 0,
+      "firstDate": "2022-07-06",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:53.098Z"
+    },
+    "NTI": {
+      "name": "NORSK TITANIUM AS",
+      "currentPrice": 0.883,
+      "currency": "NOK",
+      "priceCount": 1228,
+      "dividendCount": 0,
+      "firstDate": "2021-05-19",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:53.738Z"
+    },
+    "OBSRV": {
+      "name": "OBSERVE MEDICAL",
+      "currentPrice": 1.03,
+      "currency": "NOK",
+      "priceCount": 1609,
+      "dividendCount": 0,
+      "firstDate": "2019-11-05",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:54.290Z"
+    },
+    "OCEAN": {
+      "name": "OCEAN GEOLOOP AS",
+      "currentPrice": 2.96,
+      "currency": "NOK",
+      "priceCount": 1022,
+      "dividendCount": 0,
+      "firstDate": "2022-03-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:54.837Z"
+    },
+    "ODFB": {
+      "name": "ODFJELL SER. B",
+      "currentPrice": 118,
+      "currency": "NOK",
+      "priceCount": 2513,
+      "dividendCount": 11,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:55.423Z"
+    },
+    "ODL": {
+      "name": "ODFJELL DRILLING",
+      "currentPrice": 101.4,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 11,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:55.995Z"
+    },
+    "OMDA": {
+      "name": "OMDA AS",
+      "currentPrice": 40,
+      "currency": "NOK",
+      "priceCount": 630,
+      "dividendCount": 1,
+      "firstDate": "2023-09-21",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:56.552Z"
+    },
+    "ONCIN": {
+      "name": "ONCOINVENT ASA",
+      "currentPrice": 46.72,
+      "currency": "NOK",
+      "priceCount": 2253,
+      "dividendCount": 0,
+      "firstDate": "2017-04-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:57.110Z"
+    },
+    "OSUN": {
+      "name": "OCEAN SUN",
+      "currentPrice": 1.41,
+      "currency": "NOK",
+      "priceCount": 1366,
+      "dividendCount": 0,
+      "firstDate": "2020-10-26",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:57.656Z"
+    },
+    "OTL": {
+      "name": "ODFJELL TECHNOLOGY LTD",
+      "currentPrice": 73.1,
+      "currency": "NOK",
+      "priceCount": 1007,
+      "dividendCount": 12,
+      "firstDate": "2022-03-29",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:58.223Z"
+    },
+    "PLGC": {
+      "name": "PELAGIC CREDIT PLC",
+      "currentPrice": 18.75,
+      "currency": "NOK",
+      "priceCount": 18,
+      "dividendCount": 0,
+      "firstDate": "2026-03-09",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:58.767Z"
+    },
+    "PLSV": {
+      "name": "PARATUS ENERGY SERVICES LTD.",
+      "currentPrice": 46.3,
+      "currency": "NOK",
+      "priceCount": 443,
+      "dividendCount": 7,
+      "firstDate": "2024-06-28",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:59.324Z"
+    },
+    "PLT": {
+      "name": "POLIGHT",
+      "currentPrice": 5.3,
+      "currency": "NOK",
+      "priceCount": 1883,
+      "dividendCount": 0,
+      "firstDate": "2018-10-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T07:59:59.875Z"
+    },
+    "PNOR": {
+      "name": "PETRONOR E&P ASA",
+      "currentPrice": 12.96,
+      "currency": "NOK",
+      "priceCount": 1028,
+      "dividendCount": 2,
+      "firstDate": "2022-02-28",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:00.424Z"
+    },
+    "PPG": {
+      "name": "PIONEER PROPERTY GROUP",
+      "currentPrice": 103.5,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 41,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:01.009Z"
+    },
+    "PRYME": {
+      "name": "PRYME N.V.",
+      "currentPrice": 8,
+      "currency": "NOK",
+      "priceCount": 1286,
+      "dividendCount": 0,
+      "firstDate": "2021-02-19",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:01.572Z"
+    },
+    "PUBLI": {
+      "name": "PUBLIC PROPERTY INVEST ASA",
+      "currentPrice": 21.7,
+      "currency": "NOK",
+      "priceCount": 483,
+      "dividendCount": 4,
+      "firstDate": "2024-04-29",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:02.255Z"
+    },
+    "PYRUM": {
+      "name": "PYRUM INNOVATIONS AG",
+      "currentPrice": 286,
+      "currency": "NOK",
+      "priceCount": 1133,
+      "dividendCount": 0,
+      "firstDate": "2021-09-30",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:02.817Z"
+    },
+    "QEC": {
+      "name": "QUESTERRE ENERGY CORPORATION",
+      "currentPrice": 1.98,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:03.396Z"
+    },
+    "REACH": {
+      "name": "REACH SUBSEA",
+      "currentPrice": 7.09,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 6,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:04.009Z"
+    },
+    "REFL": {
+      "name": "REFUELS N.V.",
+      "currentPrice": 18,
+      "currency": "NOK",
+      "priceCount": 718,
+      "dividendCount": 0,
+      "firstDate": "2023-05-12",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:04.561Z"
+    },
+    "RING": {
+      "name": "SPAREBANK 1 RINGERIKE HADELAND",
+      "currentPrice": 446,
+      "currency": "NOK",
+      "priceCount": 2513,
+      "dividendCount": 11,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:05.176Z"
+    },
+    "ROGS": {
+      "name": "ROGALAND SPAREBANK",
+      "currentPrice": 148.8,
+      "currency": "NOK",
+      "priceCount": 424,
+      "dividendCount": 2,
+      "firstDate": "2024-07-24",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:05.740Z"
+    },
+    "ROM": {
+      "name": "ROMREAL",
+      "currentPrice": 2.7,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:06.302Z"
+    },
+    "ROMER": {
+      "name": "ROMERIKE SPAREBANK",
+      "currentPrice": 152,
+      "currency": "NOK",
+      "priceCount": 2083,
+      "dividendCount": 9,
+      "firstDate": "2017-12-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:06.870Z"
+    },
+    "SAGA": {
+      "name": "SAGA PURE",
+      "currentPrice": 1.465,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 6,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:07.447Z"
+    },
+    "SALME": {
+      "name": "SALMON EVOLUTION ASA",
+      "currentPrice": 4.925,
+      "currency": "NOK",
+      "priceCount": 1392,
+      "dividendCount": 0,
+      "firstDate": "2020-09-18",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:08.001Z"
+    },
+    "SB1NO": {
+      "name": "SpareBank 1 Sør-Norge ASA",
+      "currentPrice": 210.5,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 10,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:08.573Z"
+    },
+    "SB68": {
+      "name": "SPAREBANK 68 GRADER NORD",
+      "currentPrice": 226,
+      "currency": "NOK",
+      "priceCount": 1166,
+      "dividendCount": 6,
+      "firstDate": "2021-08-16",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:09.134Z"
+    },
+    "SBNOR": {
+      "name": "SPAREBANKEN NORGE",
+      "currentPrice": 201.75,
+      "currency": "NOK",
+      "priceCount": 238,
+      "dividendCount": 1,
+      "firstDate": "2025-04-23",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:09.702Z"
+    },
+    "SCOIN": {
+      "name": "STANDARDCOIN AS",
+      "currentPrice": 0.0002,
+      "currency": "NOK",
+      "priceCount": 917,
+      "dividendCount": 7,
+      "firstDate": "2022-08-10",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:10.253Z"
+    },
+    "SDSD": {
+      "name": "S.D. STANDARD ETC PLC",
+      "currentPrice": 1.865,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 1,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:10.816Z"
+    },
+    "SKAND": {
+      "name": "SKANDIA GREENPOWER AS",
+      "currentPrice": 1.785,
+      "currency": "NOK",
+      "priceCount": 1285,
+      "dividendCount": 2,
+      "firstDate": "2021-02-22",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:11.374Z"
+    },
+    "SNOR": {
+      "name": "SPAREBANK 1 NORDMØRE",
+      "currentPrice": 188,
+      "currency": "NOK",
+      "priceCount": 2132,
+      "dividendCount": 6,
+      "firstDate": "2017-10-02",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:11.978Z"
+    },
+    "SOAG": {
+      "name": "SPAREBANK 1 ØSTFOLD AKERSHUS",
+      "currentPrice": 442.95,
+      "currency": "NOK",
+      "priceCount": 2513,
+      "dividendCount": 12,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:12.556Z"
+    },
+    "SOFTX": {
+      "name": "SOFTOX SOLUTIONS",
+      "currentPrice": 0.113,
+      "currency": "NOK",
+      "priceCount": 1968,
+      "dividendCount": 0,
+      "firstDate": "2018-06-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:13.105Z"
+    },
+    "SOGN": {
+      "name": "SOGN SPAREBANK",
+      "currentPrice": 337.95,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 8,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:13.676Z"
+    },
+    "SOMA": {
+      "name": "SOLSTAD MARITIME ASA",
+      "currentPrice": 28.75,
+      "currency": "NOK",
+      "priceCount": 222,
+      "dividendCount": 4,
+      "firstDate": "2025-05-16",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:14.622Z"
+    },
+    "SPIR": {
+      "name": "SPIR GROUP ASA",
+      "currentPrice": 8.54,
+      "currency": "NOK",
+      "priceCount": 1420,
+      "dividendCount": 1,
+      "firstDate": "2020-07-16",
+      "lastDate": "2026-03-06",
+      "lastUpdated": "2026-04-06T08:00:15.461Z"
+    },
+    "SPOG": {
+      "name": "SPAREBANKEN ØST",
+      "currentPrice": 79.7,
+      "currency": "NOK",
+      "priceCount": 2513,
+      "dividendCount": 11,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:16.084Z"
+    },
+    "STECH": {
+      "name": "SOILTECH ASA",
+      "currentPrice": 79.8,
+      "currency": "NOK",
+      "priceCount": 390,
+      "dividendCount": 0,
+      "firstDate": "2024-09-11",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:16.642Z"
+    },
+    "STRO": {
+      "name": "STRONGPOINT",
+      "currentPrice": 10.5,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 9,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:17.244Z"
+    },
+    "STST": {
+      "name": "STAINLESS TANKERS ASA",
+      "currentPrice": 39.7,
+      "currency": "NOK",
+      "priceCount": 697,
+      "dividendCount": 12,
+      "firstDate": "2023-05-24",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:17.802Z"
+    },
+    "SWON": {
+      "name": "SOFTWAREONE HOLDING",
+      "currentPrice": 77.36,
+      "currency": "NOK",
+      "priceCount": 190,
+      "dividendCount": 0,
+      "firstDate": "2025-07-03",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:18.362Z"
+    },
+    "TIETO": {
+      "name": "Tieto Oyj",
+      "currentPrice": 209.2,
+      "currency": "NOK",
+      "priceCount": 1587,
+      "dividendCount": 13,
+      "firstDate": "2019-12-05",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:18.924Z"
+    },
+    "TINDE": {
+      "name": "TINDE SPAREBANK",
+      "currentPrice": 115.96,
+      "currency": "NOK",
+      "priceCount": 212,
+      "dividendCount": 1,
+      "firstDate": "2025-06-02",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:19.471Z"
+    },
+    "TRMED": {
+      "name": "THOR MEDICAL ASA",
+      "currentPrice": 4.89,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 0,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:20.411Z"
+    },
+    "TRSB": {
+      "name": "Trøndelag Sparebank",
+      "currentPrice": 112.2,
+      "currency": "NOK",
+      "priceCount": 320,
+      "dividendCount": 2,
+      "firstDate": "2024-12-18",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:21.062Z"
+    },
+    "VDI": {
+      "name": "Vantage Drilling International ",
+      "currentPrice": 185,
+      "currency": "NOK",
+      "priceCount": 357,
+      "dividendCount": 1,
+      "firstDate": "2024-10-28",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:21.987Z"
+    },
+    "VEND": {
+      "name": "VEND MARKETPLACES ASA",
+      "currentPrice": 241.8,
+      "currency": "NOK",
+      "priceCount": 2510,
+      "dividendCount": 12,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:22.559Z"
+    },
+    "VTURA": {
+      "name": "VENTURA OFFSHORE HOLDING LTD.",
+      "currentPrice": 27.6,
+      "currency": "NOK",
+      "priceCount": 459,
+      "dividendCount": 0,
+      "firstDate": "2024-06-05",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:23.725Z"
+    },
+    "VVL": {
+      "name": "VOSS VEKSEL- OG LANDMANDSBANK",
+      "currentPrice": 446,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 9,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:24.323Z"
+    },
+    "WWIB": {
+      "name": "WILH. WILHELMSEN HOLDING SER. B",
+      "currentPrice": 652,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 14,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:24.931Z"
+    },
+    "XPLRA": {
+      "name": "XPLORA TECHNOLOGIES",
+      "currentPrice": 51,
+      "currency": "NOK",
+      "priceCount": 1348,
+      "dividendCount": 0,
+      "firstDate": "2020-11-19",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:25.489Z"
+    },
+    "ZAL": {
+      "name": "ZALARIS",
+      "currentPrice": 98,
+      "currency": "NOK",
+      "priceCount": 2514,
+      "dividendCount": 6,
+      "firstDate": "2016-04-01",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:26.055Z"
+    },
+    "ZAP": {
+      "name": "ZAPTEC ASA",
+      "currentPrice": 28.5,
+      "currency": "NOK",
+      "priceCount": 1378,
+      "dividendCount": 0,
+      "firstDate": "2020-10-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:26.610Z"
+    },
+    "ZENA": {
+      "name": "ZENITH ENERGY",
+      "currentPrice": 0.95,
+      "currency": "NOK",
+      "priceCount": 1855,
+      "dividendCount": 0,
+      "firstDate": "2018-11-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:27.164Z"
+    },
+    "ZLNA": {
+      "name": "ZELLUNA",
+      "currentPrice": 18.78,
+      "currency": "NOK",
+      "priceCount": 1719,
+      "dividendCount": 0,
+      "firstDate": "2019-06-03",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:27.850Z"
+    },
+    "0P0000PS3U.IR": {
+      "name": "0P0000PS3U.IR",
+      "currentPrice": 575.797,
+      "currency": "NOK",
+      "priceCount": 1004,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:28.503Z"
+    },
+    "0P00000NKJ.IR": {
+      "name": "0P00000NKJ.IR",
+      "currentPrice": 17745,
+      "currency": "NOK",
+      "priceCount": 1004,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:29.063Z"
+    },
+    "0P0001EFNB.IR": {
+      "name": "0P0001EFNB.IR",
+      "currentPrice": 1401.62,
+      "currency": "NOK",
+      "priceCount": 1005,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:29.614Z"
+    },
+    "0P0001EFNG.IR": {
+      "name": "0P0001EFNG.IR",
+      "currentPrice": 2216.08,
+      "currency": "NOK",
+      "priceCount": 1005,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:30.162Z"
+    },
+    "0P0001Q8AD.IR": {
+      "name": "0P0001Q8AD.IR",
+      "currentPrice": 163.175,
+      "currency": "NOK",
+      "priceCount": 783,
+      "dividendCount": 0,
+      "firstDate": "2022-12-15",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:30.708Z"
+    },
+    "0P00000MUA.IR": {
+      "name": "0P00000MUA.IR",
+      "currentPrice": 623.204,
+      "currency": "NOK",
+      "priceCount": 968,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:31.260Z"
+    },
+    "0P00000MVB.IR": {
+      "name": "0P00000MVB.IR",
+      "currentPrice": 5712.58,
+      "currency": "NOK",
+      "priceCount": 972,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:31.808Z"
+    },
+    "0P0001BJ8T.IR": {
+      "name": "0P0001BJ8T.IR",
+      "currentPrice": 268.168,
+      "currency": "NOK",
+      "priceCount": 976,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:32.349Z"
+    },
+    "0P0001CTL0.IR": {
+      "name": "0P0001CTL0.IR",
+      "currentPrice": 230.649,
+      "currency": "NOK",
+      "priceCount": 981,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:32.912Z"
+    },
+    "0P0001EFN5.IR": {
+      "name": "0P0001EFN5.IR",
+      "currentPrice": 5135.69,
+      "currency": "NOK",
+      "priceCount": 860,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:33.476Z"
+    },
+    "0P0001BJ8N.IR": {
+      "name": "0P0001BJ8N.IR",
+      "currentPrice": 275.693,
+      "currency": "NOK",
+      "priceCount": 976,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:34.042Z"
+    },
+    "0P00000O4C.IR": {
+      "name": "0P00000O4C.IR",
+      "currentPrice": 1014.83,
+      "currency": "NOK",
+      "priceCount": 992,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:34.589Z"
+    },
+    "0P0001EFNK.IR": {
+      "name": "0P0001EFNK.IR",
+      "currentPrice": 993.522,
+      "currency": "NOK",
+      "priceCount": 1005,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:35.161Z"
+    },
+    "0P0001EFNN.IR": {
+      "name": "0P0001EFNN.IR",
+      "currentPrice": 995.495,
+      "currency": "NOK",
+      "priceCount": 1005,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:35.734Z"
+    },
+    "0P00017AUH.IR": {
+      "name": "0P00017AUH.IR",
+      "currentPrice": 979.572,
+      "currency": "NOK",
+      "priceCount": 968,
+      "dividendCount": 1,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:36.292Z"
+    },
+    "0P0001F1IM.IR": {
+      "name": "0P0001F1IM.IR",
+      "currentPrice": 239.125,
+      "currency": "NOK",
+      "priceCount": 972,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-30",
+      "lastUpdated": "2026-04-06T08:00:36.851Z"
+    },
+    "0P0001HAP0.IR": {
+      "name": "0P0001HAP0.IR",
+      "currentPrice": 2393.8,
+      "currency": "NOK",
+      "priceCount": 997,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:37.398Z"
+    },
+    "0P00012AVM.IR": {
+      "name": "0P00012AVM.IR",
+      "currentPrice": 3719.39,
+      "currency": "NOK",
+      "priceCount": 996,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:37.950Z"
+    },
+    "0P0001ACQT.IR": {
+      "name": "0P0001ACQT.IR",
+      "currentPrice": 2361.23,
+      "currency": "NOK",
+      "priceCount": 996,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:38.501Z"
+    },
+    "0P0000A82Y.IR": {
+      "name": "0P0000A82Y.IR",
+      "currentPrice": 7069.54,
+      "currency": "NOK",
+      "priceCount": 979,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:39.046Z"
+    },
+    "0P0001BL9W.IR": {
+      "name": "0P0001BL9W.IR",
+      "currentPrice": 2975.52,
+      "currency": "NOK",
+      "priceCount": 979,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:39.598Z"
+    },
+    "0P00007ZI2.IR": {
+      "name": "0P00007ZI2.IR",
+      "currentPrice": 5436.28,
+      "currency": "NOK",
+      "priceCount": 978,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:40.238Z"
+    },
+    "0P0001M3YC.IR": {
+      "name": "0P0001M3YC.IR",
+      "currentPrice": 1420.4,
+      "currency": "NOK",
+      "priceCount": 993,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:40.882Z"
+    },
+    "0P00000O5V.IR": {
+      "name": "0P00000O5V.IR",
+      "currentPrice": 1857.03,
+      "currency": "NOK",
+      "priceCount": 996,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:41.430Z"
+    },
+    "0P0001KO95.IR": {
+      "name": "0P0001KO95.IR",
+      "currentPrice": 1784.35,
+      "currency": "NOK",
+      "priceCount": 999,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:42.008Z"
+    },
+    "0P00000O4T.IR": {
+      "name": "0P00000O4T.IR",
+      "currentPrice": 1298.95,
+      "currency": "NOK",
+      "priceCount": 996,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:42.571Z"
+    },
+    "0P0000TNI3.IR": {
+      "name": "0P0000TNI3.IR",
+      "currentPrice": 269.599,
+      "currency": "NOK",
+      "priceCount": 990,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:43.300Z"
+    },
+    "0P0001HAOZ.IR": {
+      "name": "0P0001HAOZ.IR",
+      "currentPrice": 988.652,
+      "currency": "NOK",
+      "priceCount": 998,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:43.858Z"
+    },
+    "0P00001BVT.IR": {
+      "name": "0P00001BVT.IR",
+      "currentPrice": 6362.47,
+      "currency": "NOK",
+      "priceCount": 981,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:44.404Z"
+    },
+    "0P0001OPC5.IR": {
+      "name": "0P0001OPC5.IR",
+      "currentPrice": 1645.81,
+      "currency": "NOK",
+      "priceCount": 903,
+      "dividendCount": 0,
+      "firstDate": "2022-06-09",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:44.955Z"
+    },
+    "0P00018V9L.IR": {
+      "name": "0P00018V9L.IR",
+      "currentPrice": 3490,
+      "currency": "NOK",
+      "priceCount": 959,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:45.505Z"
+    },
+    "0P0001OPBV.IR": {
+      "name": "0P0001OPBV.IR",
+      "currentPrice": 1341.61,
+      "currency": "NOK",
+      "priceCount": 901,
+      "dividendCount": 0,
+      "firstDate": "2022-06-09",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:46.053Z"
+    },
+    "0P0001OPC2.IR": {
+      "name": "0P0001OPC2.IR",
+      "currentPrice": 1678.64,
+      "currency": "NOK",
+      "priceCount": 808,
+      "dividendCount": 0,
+      "firstDate": "2022-10-26",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:46.593Z"
+    },
+    "0P0001OPBA.IR": {
+      "name": "0P0001OPBA.IR",
+      "currentPrice": 1618.17,
+      "currency": "NOK",
+      "priceCount": 926,
+      "dividendCount": 0,
+      "firstDate": "2022-06-09",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:47.164Z"
+    },
+    "0P0001OPBE.IR": {
+      "name": "0P0001OPBE.IR",
+      "currentPrice": 1459,
+      "currency": "NOK",
+      "priceCount": 891,
+      "dividendCount": 0,
+      "firstDate": "2022-06-09",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:47.711Z"
+    },
+    "0P0001OPBN.IR": {
+      "name": "0P0001OPBN.IR",
+      "currentPrice": 1590.91,
+      "currency": "NOK",
+      "priceCount": 901,
+      "dividendCount": 0,
+      "firstDate": "2022-06-09",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:48.257Z"
+    },
+    "0P0001OPBH.IR": {
+      "name": "0P0001OPBH.IR",
+      "currentPrice": 1589.91,
+      "currency": "NOK",
+      "priceCount": 902,
+      "dividendCount": 0,
+      "firstDate": "2022-06-09",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:48.800Z"
+    },
+    "0P0001BWAQ.IR": {
+      "name": "0P0001BWAQ.IR",
+      "currentPrice": 2203.24,
+      "currency": "NOK",
+      "priceCount": 958,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:49.374Z"
+    },
+    "0P00006D9Q.IR": {
+      "name": "0P00006D9Q.IR",
+      "currentPrice": 3272.51,
+      "currency": "NOK",
+      "priceCount": 935,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:49.916Z"
+    },
+    "0P00017YPW.IR": {
+      "name": "0P00017YPW.IR",
+      "currentPrice": 2828.39,
+      "currency": "NOK",
+      "priceCount": 933,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:50.480Z"
+    },
+    "0P00000MY9.IR": {
+      "name": "0P00000MY9.IR",
+      "currentPrice": 1210.9,
+      "currency": "NOK",
+      "priceCount": 980,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:51.055Z"
+    },
+    "0P0001IFZZ.IR": {
+      "name": "0P0001IFZZ.IR",
+      "currentPrice": 1020.99,
+      "currency": "NOK",
+      "priceCount": 981,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:51.705Z"
+    },
+    "0P00002C94.IR": {
+      "name": "0P00002C94.IR",
+      "currentPrice": 1000.25,
+      "currency": "NOK",
+      "priceCount": 953,
+      "dividendCount": 1,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:52.432Z"
+    },
+    "0P00000MYB.IR": {
+      "name": "0P00000MYB.IR",
+      "currentPrice": 1013.78,
+      "currency": "NOK",
+      "priceCount": 980,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:53.104Z"
+    },
+    "0P00019ADK.IR": {
+      "name": "0P00019ADK.IR",
+      "currentPrice": 2674.03,
+      "currency": "NOK",
+      "priceCount": 959,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:53.651Z"
+    },
+    "0P000134K7.IR": {
+      "name": "0P000134K7.IR",
+      "currentPrice": 347.56,
+      "currency": "NOK",
+      "priceCount": 985,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:54.199Z"
+    },
+    "0P0001K6NJ.IR": {
+      "name": "0P0001K6NJ.IR",
+      "currentPrice": 201.091,
+      "currency": "NOK",
+      "priceCount": 1336,
+      "dividendCount": 0,
+      "firstDate": "2020-09-02",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:54.840Z"
+    },
+    "0P0001RMV1.IR": {
+      "name": "0P0001RMV1.IR",
+      "currentPrice": 145.347,
+      "currency": "NOK",
+      "priceCount": 594,
+      "dividendCount": 0,
+      "firstDate": "2023-10-02",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:55.387Z"
+    },
+    "0P0001M5YQ.IR": {
+      "name": "0P0001M5YQ.IR",
+      "currentPrice": 233.859,
+      "currency": "NOK",
+      "priceCount": 1159,
+      "dividendCount": 0,
+      "firstDate": "2021-05-26",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:56.195Z"
+    },
+    "0P0001K6NB.IR": {
+      "name": "0P0001K6NB.IR",
+      "currentPrice": 147.719,
+      "currency": "NOK",
+      "priceCount": 1245,
+      "dividendCount": 0,
+      "firstDate": "2020-09-02",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:56.744Z"
+    },
+    "0P000161CO.IR": {
+      "name": "0P000161CO.IR",
+      "currentPrice": 267.572,
+      "currency": "NOK",
+      "priceCount": 949,
+      "dividendCount": 0,
+      "firstDate": "2022-03-08",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:57.286Z"
+    },
+    "0P00000SVG.IR": {
+      "name": "0P00000SVG.IR",
+      "currentPrice": 8388.49,
+      "currency": "NOK",
+      "priceCount": 993,
+      "dividendCount": 0,
+      "firstDate": "2022-03-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:57.831Z"
+    },
+    "0P00000SVE.IR": {
+      "name": "0P00000SVE.IR",
+      "currentPrice": 5034.24,
+      "currency": "NOK",
+      "priceCount": 973,
+      "dividendCount": 0,
+      "firstDate": "2022-03-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:58.395Z"
+    },
+    "0P00000O88.IR": {
+      "name": "0P00000O88.IR",
+      "currentPrice": 485.942,
+      "currency": "NOK",
+      "priceCount": 957,
+      "dividendCount": 0,
+      "firstDate": "2022-03-08",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:00:58.934Z"
+    },
+    "0P00000SVP.IR": {
+      "name": "0P00000SVP.IR",
+      "currentPrice": 1334.55,
+      "currency": "NOK",
+      "priceCount": 984,
+      "dividendCount": 0,
+      "firstDate": "2022-03-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:00:59.484Z"
+    },
+    "0P0001J3OK.IR": {
+      "name": "0P0001J3OK.IR",
+      "currentPrice": 170.678,
+      "currency": "NOK",
+      "priceCount": 978,
+      "dividendCount": 0,
+      "firstDate": "2022-03-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:00.033Z"
+    },
+    "0P00000OC2.IR": {
+      "name": "0P00000OC2.IR",
+      "currentPrice": 1069.99,
+      "currency": "NOK",
+      "priceCount": 1002,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:00.610Z"
+    },
+    "0P0001SQM9.IR": {
+      "name": "0P0001SQM9.IR",
+      "currentPrice": 31275.2,
+      "currency": "NOK",
+      "priceCount": 377,
+      "dividendCount": 0,
+      "firstDate": "2024-09-23",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:01.368Z"
+    },
+    "0P0001SQMA.IR": {
+      "name": "0P0001SQMA.IR",
+      "currentPrice": 4520.4,
+      "currency": "NOK",
+      "priceCount": 464,
+      "dividendCount": 0,
+      "firstDate": "2024-05-22",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:01.911Z"
+    },
+    "0P0001TPW6.IR": {
+      "name": "0P0001TPW6.IR",
+      "currentPrice": 6188.04,
+      "currency": "NOK",
+      "priceCount": 370,
+      "dividendCount": 0,
+      "firstDate": "2024-09-23",
+      "lastDate": "2026-04-02",
+      "lastUpdated": "2026-04-06T08:01:02.456Z"
+    },
+    "0P0001TPW7.IR": {
+      "name": "0P0001TPW7.IR",
+      "currentPrice": 5072.35,
+      "currency": "NOK",
+      "priceCount": 378,
+      "dividendCount": 0,
+      "firstDate": "2024-09-23",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:02.995Z"
+    },
+    "0P0001CKST.IR": {
+      "name": "0P0001CKST.IR",
+      "currentPrice": 293.551,
+      "currency": "NOK",
+      "priceCount": 977,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-02",
+      "lastUpdated": "2026-04-06T08:01:03.545Z"
+    },
+    "0P00013OX2.IR": {
+      "name": "0P00013OX2.IR",
+      "currentPrice": 3499.3,
+      "currency": "NOK",
+      "priceCount": 969,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:04.102Z"
+    },
+    "0P00013OX3.IR": {
+      "name": "0P00013OX3.IR",
+      "currentPrice": 1648.54,
+      "currency": "NOK",
+      "priceCount": 984,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:04.642Z"
+    },
+    "0P00013OX6.IR": {
+      "name": "0P00013OX6.IR",
+      "currentPrice": 6120.42,
+      "currency": "NOK",
+      "priceCount": 997,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:05.199Z"
+    },
+    "0P00015YSS.IR": {
+      "name": "0P00015YSS.IR",
+      "currentPrice": 258.513,
+      "currency": "NOK",
+      "priceCount": 997,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:05.839Z"
+    },
+    "0P00000OCZ.IR": {
+      "name": "0P00000OCZ.IR",
+      "currentPrice": 1560.38,
+      "currency": "NOK",
+      "priceCount": 999,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:06.398Z"
+    },
+    "0P00000OCX.IR": {
+      "name": "0P00000OCX.IR",
+      "currentPrice": 593.235,
+      "currency": "NOK",
+      "priceCount": 972,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:06.957Z"
+    },
+    "0P0001IZAY.IR": {
+      "name": "0P0001IZAY.IR",
+      "currentPrice": 158.366,
+      "currency": "NOK",
+      "priceCount": 967,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:07.515Z"
+    },
+    "0P00000NXT.IR": {
+      "name": "0P00000NXT.IR",
+      "currentPrice": 102.466,
+      "currency": "NOK",
+      "priceCount": 997,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:08.072Z"
+    },
+    "0P00000OCR.IR": {
+      "name": "0P00000OCR.IR",
+      "currentPrice": 102.748,
+      "currency": "NOK",
+      "priceCount": 999,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:08.911Z"
+    },
+    "0P00000HCS.IR": {
+      "name": "0P00000HCS.IR",
+      "currentPrice": 41129.7,
+      "currency": "NOK",
+      "priceCount": 999,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:09.461Z"
+    },
+    "0P00005UKR.IR": {
+      "name": "0P00005UKR.IR",
+      "currentPrice": 8747.18,
+      "currency": "NOK",
+      "priceCount": 979,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:10.092Z"
+    },
+    "0P0001A1QS.IR": {
+      "name": "0P0001A1QS.IR",
+      "currentPrice": 2350.53,
+      "currency": "NOK",
+      "priceCount": 975,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:10.634Z"
+    },
+    "0P00000HCV.IR": {
+      "name": "0P00000HCV.IR",
+      "currentPrice": 7172.81,
+      "currency": "NOK",
+      "priceCount": 999,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:11.174Z"
+    },
+    "0P00000MT3.IR": {
+      "name": "0P00000MT3.IR",
+      "currentPrice": 2370.65,
+      "currency": "NOK",
+      "priceCount": 996,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:11.731Z"
+    },
+    "0P00000MVR.IR": {
+      "name": "0P00000MVR.IR",
+      "currentPrice": 84365.7,
+      "currency": "NOK",
+      "priceCount": 996,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:12.361Z"
+    },
+    "0P00000O9F.IR": {
+      "name": "0P00000O9F.IR",
+      "currentPrice": 1330.5,
+      "currency": "NOK",
+      "priceCount": 970,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:12.912Z"
+    },
+    "0P0001EUC3.IR": {
+      "name": "0P0001EUC3.IR",
+      "currentPrice": 235.033,
+      "currency": "NOK",
+      "priceCount": 992,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:13.455Z"
+    },
+    "0P00000MSP.IR": {
+      "name": "0P00000MSP.IR",
+      "currentPrice": 4082.61,
+      "currency": "NOK",
+      "priceCount": 991,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:13.993Z"
+    },
+    "0P000015PZ.IR": {
+      "name": "0P000015PZ.IR",
+      "currentPrice": 904.729,
+      "currency": "NOK",
+      "priceCount": 993,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:14.579Z"
+    },
+    "0P0000S1O6.IR": {
+      "name": "0P0000S1O6.IR",
+      "currentPrice": 3987.6,
+      "currency": "NOK",
+      "priceCount": 2014,
+      "dividendCount": 0,
+      "firstDate": "2018-01-02",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:15.131Z"
+    },
+    "0P000195U2.IR": {
+      "name": "0P000195U2.IR",
+      "currentPrice": 3590.9,
+      "currency": "NOK",
+      "priceCount": 2014,
+      "dividendCount": 0,
+      "firstDate": "2018-01-02",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:15.761Z"
+    },
+    "0P00015EZF.IR": {
+      "name": "0P00015EZF.IR",
+      "currentPrice": 1481.86,
+      "currency": "NOK",
+      "priceCount": 2013,
+      "dividendCount": 0,
+      "firstDate": "2018-01-02",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:16.307Z"
+    },
+    "0P0000RUOV.IR": {
+      "name": "0P0000RUOV.IR",
+      "currentPrice": 2316.15,
+      "currency": "NOK",
+      "priceCount": 2007,
+      "dividendCount": 0,
+      "firstDate": "2018-01-02",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:16.879Z"
+    },
+    "0P0000RUOU.IR": {
+      "name": "0P0000RUOU.IR",
+      "currentPrice": 1598.87,
+      "currency": "NOK",
+      "priceCount": 2014,
+      "dividendCount": 0,
+      "firstDate": "2018-01-02",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:17.424Z"
+    },
+    "0P0001CW9F.IR": {
+      "name": "0P0001CW9F.IR",
+      "currentPrice": 2531.74,
+      "currency": "NOK",
+      "priceCount": 963,
+      "dividendCount": 0,
+      "firstDate": "2022-03-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:17.964Z"
+    },
+    "0P0001A1QL.IR": {
+      "name": "0P0001A1QL.IR",
+      "currentPrice": 2298.61,
+      "currency": "NOK",
+      "priceCount": 977,
+      "dividendCount": 0,
+      "firstDate": "2022-03-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:18.509Z"
+    },
+    "0P00000NY6.IR": {
+      "name": "0P00000NY6.IR",
+      "currentPrice": 15444.4,
+      "currency": "NOK",
+      "priceCount": 1001,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:19.065Z"
+    },
+    "0P00001BTH.IR": {
+      "name": "0P00001BTH.IR",
+      "currentPrice": 4916.62,
+      "currency": "NOK",
+      "priceCount": 977,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:19.627Z"
+    },
+    "0P00000OAI.IR": {
+      "name": "0P00000OAI.IR",
+      "currentPrice": 1033.25,
+      "currency": "NOK",
+      "priceCount": 1001,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:20.201Z"
+    },
+    "0P0000YT99.IR": {
+      "name": "0P0000YT99.IR",
+      "currentPrice": 1574.65,
+      "currency": "NOK",
+      "priceCount": 980,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:20.749Z"
+    },
+    "0P00001E5D.IR": {
+      "name": "0P00001E5D.IR",
+      "currentPrice": 488.43,
+      "currency": "NOK",
+      "priceCount": 989,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:21.303Z"
+    },
+    "0P0000Y66P.IR": {
+      "name": "0P0000Y66P.IR",
+      "currentPrice": 414.862,
+      "currency": "NOK",
+      "priceCount": 991,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:22.223Z"
+    },
+    "0P0001FTOL.IR": {
+      "name": "0P0001FTOL.IR",
+      "currentPrice": 191.282,
+      "currency": "NOK",
+      "priceCount": 991,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:22.772Z"
+    },
+    "0P00001E5H.IR": {
+      "name": "0P00001E5H.IR",
+      "currentPrice": 103.235,
+      "currency": "NOK",
+      "priceCount": 986,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:23.349Z"
+    },
+    "0P0000X9XC.IR": {
+      "name": "0P0000X9XC.IR",
+      "currentPrice": 102.614,
+      "currency": "NOK",
+      "priceCount": 986,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:23.909Z"
+    },
+    "0P00000MXR.IR": {
+      "name": "0P00000MXR.IR",
+      "currentPrice": 17388.1,
+      "currency": "NOK",
+      "priceCount": 998,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:24.450Z"
+    },
+    "0P00000MXH.IR": {
+      "name": "0P00000MXH.IR",
+      "currentPrice": 23694.4,
+      "currency": "NOK",
+      "priceCount": 999,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:24.998Z"
+    },
+    "0P00000MX1.IR": {
+      "name": "0P00000MX1.IR",
+      "currentPrice": 17113,
+      "currency": "NOK",
+      "priceCount": 967,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:25.549Z"
+    },
+    "0P0001T9DH.IR": {
+      "name": "0P0001T9DH.IR",
+      "currentPrice": 1033.49,
+      "currency": "NOK",
+      "priceCount": 433,
+      "dividendCount": 2,
+      "firstDate": "2024-06-24",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:26.105Z"
+    },
+    "0P00000MXL.IR": {
+      "name": "0P00000MXL.IR",
+      "currentPrice": 1010.2,
+      "currency": "NOK",
+      "priceCount": 982,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:26.675Z"
+    },
+    "0P00000O6S.IR": {
+      "name": "0P00000O6S.IR",
+      "currentPrice": 30247,
+      "currency": "NOK",
+      "priceCount": 999,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:27.247Z"
+    },
+    "0P00000SV3.IR": {
+      "name": "0P00000SV3.IR",
+      "currentPrice": 3679.4,
+      "currency": "NOK",
+      "priceCount": 1004,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:27.888Z"
+    },
+    "0P0001LR0Y.IR": {
+      "name": "0P0001LR0Y.IR",
+      "currentPrice": 207.302,
+      "currency": "NOK",
+      "priceCount": 987,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:28.441Z"
+    },
+    "0P0001J97B.IR": {
+      "name": "0P0001J97B.IR",
+      "currentPrice": 185.293,
+      "currency": "NOK",
+      "priceCount": 981,
+      "dividendCount": 0,
+      "firstDate": "2022-03-04",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:29.102Z"
+    },
+    "0P0001KDPB.IR": {
+      "name": "0P0001KDPB.IR",
+      "currentPrice": 126.847,
+      "currency": "NOK",
+      "priceCount": 991,
+      "dividendCount": 0,
+      "firstDate": "2022-03-04",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:29.652Z"
+    },
+    "0P0001LR14.IR": {
+      "name": "0P0001LR14.IR",
+      "currentPrice": 144.188,
+      "currency": "NOK",
+      "priceCount": 994,
+      "dividendCount": 0,
+      "firstDate": "2022-03-04",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:30.198Z"
+    },
+    "0P0001LRWP.IR": {
+      "name": "0P0001LRWP.IR",
+      "currentPrice": 126.055,
+      "currency": "NOK",
+      "priceCount": 995,
+      "dividendCount": 0,
+      "firstDate": "2022-03-04",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:30.754Z"
+    },
+    "0P0001LRWQ.IR": {
+      "name": "0P0001LRWQ.IR",
+      "currentPrice": 138.436,
+      "currency": "NOK",
+      "priceCount": 996,
+      "dividendCount": 0,
+      "firstDate": "2022-03-04",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:31.311Z"
+    },
+    "0P00000L92.IR": {
+      "name": "0P00000L92.IR",
+      "currentPrice": 29691.7,
+      "currency": "NOK",
+      "priceCount": 1000,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:31.890Z"
+    },
+    "0P00000HII.IR": {
+      "name": "0P00000HII.IR",
+      "currentPrice": 93931.4,
+      "currency": "NOK",
+      "priceCount": 963,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:32.438Z"
+    },
+    "0P00000HIN.IR": {
+      "name": "0P00000HIN.IR",
+      "currentPrice": 2836.77,
+      "currency": "NOK",
+      "priceCount": 974,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:32.991Z"
+    },
+    "0P0001IEW6.IR": {
+      "name": "0P0001IEW6.IR",
+      "currentPrice": 32674.2,
+      "currency": "NOK",
+      "priceCount": 999,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:33.545Z"
+    },
+    "0P00016NF4.IR": {
+      "name": "0P00016NF4.IR",
+      "currentPrice": 33081.1,
+      "currency": "NOK",
+      "priceCount": 990,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:34.097Z"
+    },
+    "0P000131AW.IR": {
+      "name": "0P000131AW.IR",
+      "currentPrice": 10857.7,
+      "currency": "NOK",
+      "priceCount": 997,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:34.650Z"
+    },
+    "0P00017UZ2.IR": {
+      "name": "0P00017UZ2.IR",
+      "currentPrice": 10451.4,
+      "currency": "NOK",
+      "priceCount": 994,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:35.234Z"
+    },
+    "0P00000HD4.IR": {
+      "name": "0P00000HD4.IR",
+      "currentPrice": 11208.4,
+      "currency": "NOK",
+      "priceCount": 995,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:35.781Z"
+    },
+    "0P00000ODT.IR": {
+      "name": "0P00000ODT.IR",
+      "currentPrice": 3633.97,
+      "currency": "NOK",
+      "priceCount": 968,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:36.329Z"
+    },
+    "0P00000NYF.IR": {
+      "name": "0P00000NYF.IR",
+      "currentPrice": 6016.95,
+      "currency": "NOK",
+      "priceCount": 993,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:36.889Z"
+    },
+    "0P0001PMGR.IR": {
+      "name": "0P0001PMGR.IR",
+      "currentPrice": 167.414,
+      "currency": "NOK",
+      "priceCount": 853,
+      "dividendCount": 0,
+      "firstDate": "2022-09-02",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:37.440Z"
+    },
+    "0P0001MLUK.IR": {
+      "name": "0P0001MLUK.IR",
+      "currentPrice": 1903.41,
+      "currency": "NOK",
+      "priceCount": 985,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:37.999Z"
+    },
+    "0P0001LLD4.IR": {
+      "name": "0P0001LLD4.IR",
+      "currentPrice": 160.93,
+      "currency": "NOK",
+      "priceCount": 975,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:38.552Z"
+    },
+    "0P0000X18D.IR": {
+      "name": "0P0000X18D.IR",
+      "currentPrice": 24885.9,
+      "currency": "NOK",
+      "priceCount": 977,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:39.106Z"
+    },
+    "0P0000Z0FJ.IR": {
+      "name": "0P0000Z0FJ.IR",
+      "currentPrice": 17188.1,
+      "currency": "NOK",
+      "priceCount": 978,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:39.656Z"
+    },
+    "0P0000ZSIB.IR": {
+      "name": "0P0000ZSIB.IR",
+      "currentPrice": 144.7,
+      "currency": "NOK",
+      "priceCount": 968,
+      "dividendCount": 0,
+      "firstDate": "2022-03-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:40.203Z"
+    },
+    "0P00016RIB.IR": {
+      "name": "0P00016RIB.IR",
+      "currentPrice": 2813.92,
+      "currency": "NOK",
+      "priceCount": 971,
+      "dividendCount": 0,
+      "firstDate": "2022-03-08",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:40.784Z"
+    },
+    "0P0001RTTV.IR": {
+      "name": "0P0001RTTV.IR",
+      "currentPrice": 101.935,
+      "currency": "NOK",
+      "priceCount": 556,
+      "dividendCount": 0,
+      "firstDate": "2023-12-01",
+      "lastDate": "2026-04-02",
+      "lastUpdated": "2026-04-06T08:01:41.339Z"
+    },
+    "0P0001IBOU.IR": {
+      "name": "0P0001IBOU.IR",
+      "currentPrice": 2011.72,
+      "currency": "NOK",
+      "priceCount": 987,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:41.897Z"
+    },
+    "0P00017BQO.IR": {
+      "name": "0P00017BQO.IR",
+      "currentPrice": 327.025,
+      "currency": "NOK",
+      "priceCount": 995,
+      "dividendCount": 4,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-04-01",
+      "lastUpdated": "2026-04-06T08:01:42.463Z"
+    },
+    "0P0000J7K8.IR": {
+      "name": "0P0000J7K8.IR",
+      "currentPrice": 1485.17,
+      "currency": "NOK",
+      "priceCount": 972,
+      "dividendCount": 0,
+      "firstDate": "2022-03-07",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T08:01:43.018Z"
     },
     "0P0001Q690.IR": {
       "name": "0P0001Q690.IR",
@@ -23,6 +4343,16 @@
       "firstDate": "2022-12-07",
       "lastDate": "2026-03-31",
       "lastUpdated": "2026-04-06T07:49:58.395Z"
+    },
+    "0P0001Q692.IR": {
+      "name": "0P0001Q692.IR",
+      "currentPrice": 215.074,
+      "currency": "NOK",
+      "priceCount": 641,
+      "dividendCount": 0,
+      "firstDate": "2023-08-03",
+      "lastDate": "2026-03-31",
+      "lastUpdated": "2026-04-06T07:49:56.462Z"
     }
   }
 }
