@@ -45,14 +45,15 @@ export function renderHoldings(state: AppState): string {
         + '<div class="holding-chart-info" id="hcinfo-' + h.isin + '"></div>'
         + '<div class="holding-chart-area" id="hcarea-' + h.isin + '"><div class="sparkline-placeholder">Laster graf...</div></div>'
         + '</div>'
-        // Section: Min posisjon (always visible)
-        + '<div class="holding-detail"><div class="label">Antall</div><div class="value">' + qty + '</div></div>'
-        + '<div class="holding-detail"><div class="label">Kjøpskurs (snitt)</div><div class="value">' + formatCurrency(h.averageCostPerShare, 2) + '</div></div>'
-        + '<div class="holding-detail"><div class="label">Nåværende kurs</div><div class="value">' + (priceValue ? formatCurrency(h.currentPrice, 2) : '—') + '</div></div>'
-        + '<div class="holding-detail"><div class="label">Kursgevinst</div><div class="value ' + gainClass + '">' + (h.unrealizedGain >= 0 ? '+' : '') + formatCurrency(h.unrealizedGain) + '</div></div>'
-        + (h.totalDividendsReceived > 0 ? '<div class="holding-detail"><div class="label">Mottatt utbytte</div><div class="value">' + formatCurrency(h.totalDividendsReceived) + '</div></div>' : '')
-        + '<div class="holding-detail"><div class="label">Andel</div><div class="value">' + sharePct + '%</div></div>'
-        // Market stats inline (no collapse)
+        // Key stats — compact list layout
+        + '<div class="holding-stats">'
+        + '<div class="hstat"><span class="hstat-label">Kursgevinst</span><span class="hstat-val ' + gainClass + '">' + (h.unrealizedGain >= 0 ? '+' : '') + formatCurrency(h.unrealizedGain) + '</span></div>'
+        + '<div class="hstat"><span class="hstat-label">Kurs</span><span class="hstat-val">' + (priceValue ? formatCurrency(h.currentPrice, 2) : '—') + ' <span class="hstat-sub">kjøpt @ ' + formatCurrency(h.averageCostPerShare, 2) + '</span></span></div>'
+        + '<div class="hstat"><span class="hstat-label">Antall</span><span class="hstat-val">' + qty + '</span></div>'
+        + (h.totalDividendsReceived > 0 ? '<div class="hstat"><span class="hstat-label">Utbytte mottatt</span><span class="hstat-val">+' + formatCurrency(h.totalDividendsReceived) + '</span></div>' : '')
+        + '<div class="hstat"><span class="hstat-label">Andel</span><span class="hstat-val">' + sharePct + '%</span></div>'
+        + '</div>'
+        // Market data — secondary
         + renderMarketStats(inst?.ticker || h.ticker)
         // Section: Transaksjoner (collapsible)
         + '<div class="detail-section">'
