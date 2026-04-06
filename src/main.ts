@@ -735,16 +735,12 @@ class TallyApp {
 
   private renderHoldings(): string {
     if (this.holdings.length === 0) return '';
-    const refreshLabel = this.isFetchingPrices
-      ? '<span class="loading"></span> Henter...'
-      : 'Oppdater';
-    const refreshBtn = '<button class="btn btn-small btn-outline" id="refresh-prices"'
-      + (this.isFetchingPrices ? ' disabled' : '') + '>' + refreshLabel + '</button>';
+    // Refresh button removed — prices update automatically on load
 
     const allocationColors = ['#5a9a6e', '#da7756', '#4a90d9', '#9b59b6', '#e67e22', '#1abc9c', '#e74c3c', '#34495e'];
     const totalMVH = this.holdings.reduce((s, x) => s + x.marketValue, 0) || 1;
 
-    return '<div class="card-header"><h2>Beholdning</h2>' + refreshBtn + '</div>'
+    return '<div class="card-header"><h2>Beholdning</h2></div>'
       + '<div class="holdings-list">'
       + this.holdings.map((h, hIdx) => {
         const gainClass = h.unrealizedGain >= 0 ? 'text-success' : 'text-danger';
@@ -778,7 +774,7 @@ class TallyApp {
           // Section: Min posisjon (always visible)
           + '<div class="holding-detail"><div class="label">Antall</div><div class="value">' + qty + '</div></div>'
           + '<div class="holding-detail"><div class="label">Kjøpskurs (snitt)</div><div class="value">' + formatCurrency(h.averageCostPerShare, 2) + '</div></div>'
-          + '<div class="holding-detail"><div class="label">Nåværende kurs</div><input type="number" class="price-input" data-isin="' + h.isin + '" value="' + priceValue + '" placeholder="—" step="0.01" min="0"></div>'
+          + '<div class="holding-detail"><div class="label">Nåværende kurs</div><div class="value">' + (priceValue ? formatCurrency(h.currentPrice, 2) : '—') + '</div></div>'
           + '<div class="holding-detail"><div class="label">Kursgevinst</div><div class="value ' + gainClass + '">' + (h.unrealizedGain >= 0 ? '+' : '') + formatCurrency(h.unrealizedGain) + '</div></div>'
           + (h.totalDividendsReceived > 0 ? '<div class="holding-detail"><div class="label">Mottatt utbytte</div><div class="value">' + formatCurrency(h.totalDividendsReceived) + '</div></div>' : '')
           + '<div class="holding-detail"><div class="label">Andel</div><div class="value">' + sharePct + '%</div></div>'
@@ -2273,7 +2269,7 @@ class TallyApp {
       const file = (e.target as HTMLInputElement).files?.[0];
       if (file) this.handleFileSelect(file);
     });
-    document.getElementById('refresh-prices')?.addEventListener('click', () => this.refreshPrices());
+    // refresh-prices button removed — auto-refresh on load
 
     // Trade modal — open in simple mode from empty state, full mode from header
     const hasData = this.ledger.events.length > 0;
@@ -2434,22 +2430,7 @@ class TallyApp {
       });
     });
 
-    document.querySelectorAll('.price-input').forEach(input => {
-      input.addEventListener('change', (e) => {
-        const el = e.target as HTMLInputElement;
-        const isin = el.dataset.isin;
-        const price = parseFloat(el.value);
-        if (isin && !isNaN(price) && price >= 0) {
-          this.currentPrices.set(isin, price);
-        } else if (isin && el.value === '') {
-          this.currentPrices.delete(isin);
-        }
-        LedgerStorage.savePrices(this.currentPrices);
-        this.updateDerivedData();
-        this.render();
-        this.attachEventListeners();
-      });
-    });
+    // Manual price-input removed — prices update automatically
 
     // Watchlist listeners
     document.getElementById('add-watchlist')?.addEventListener('click', () => {
