@@ -1379,63 +1379,73 @@ header h1 {
   padding: 0 4px;
 }
 
-.txnlog-row {
+.txnlog-card {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px 16px;
+  gap: 12px;
+  padding: 14px 16px;
   border-bottom: 1px solid var(--border);
-  gap: 8px;
+  cursor: pointer;
 }
 
-.txnlog-row:last-child { border-bottom: none; }
+.txnlog-card:active {
+  background: var(--bg-elevated);
+}
 
-.txnlog-left {
+.txnlog-card:last-child { border-bottom: none; }
+
+.txnlog-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+  background: var(--bg-elevated);
+  color: var(--text-muted);
+}
+
+.txnlog-icon.txnlog-buy { background: rgba(90, 154, 110, 0.12); color: var(--success); }
+.txnlog-icon.txnlog-sell { background: rgba(199, 84, 80, 0.12); color: var(--danger); }
+.txnlog-icon.txnlog-div { background: rgba(218, 119, 86, 0.12); color: var(--accent); }
+
+.txnlog-body {
   flex: 1;
   min-width: 0;
+}
+
+.txnlog-top {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2px 8px;
+  justify-content: space-between;
   align-items: baseline;
 }
 
-.txnlog-date {
-  font-size: 12px;
-  color: var(--text-muted);
-  font-variant-numeric: tabular-nums;
-}
-
-.txnlog-type {
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.txnlog-inst {
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-
-.txnlog-detail {
-  font-size: 11px;
-  color: var(--text-muted);
-}
-
-.txnlog-right {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  flex-shrink: 0;
+.txnlog-name {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 8px;
 }
 
 .txnlog-amount {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
 }
 
-.txnlog-actions {
-  display: flex;
-  gap: 0;
+.txnlog-bottom {
+  margin-top: 2px;
+}
+
+.txnlog-meta {
+  font-size: 12px;
+  color: var(--text-muted);
 }
 
 .txn-source-tag {
