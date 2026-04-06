@@ -559,7 +559,7 @@ class TallyApp {
         ? this.renderSummary()
           + this.renderWarnings()
           + '<section class="section-group">' + this.renderHoldings() + '</section>'
-          + '<section class="section-group section-market">' + this.renderMarketSection() + '</section>'
+          // Market section removed
           + this.renderFooter()
         : this.renderEmptyState())
       + '</main>'
@@ -1355,6 +1355,7 @@ class TallyApp {
       + '</div>';
   }
 
+  // @ts-ignore — kept for potential future use
   private renderMarketSection(): string {
     const obxDisplay = this.obxPrice !== null ? this.obxPrice.toFixed(2) : '...';
 
