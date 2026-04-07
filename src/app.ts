@@ -389,6 +389,38 @@ export class TallyApp {
       });
     });
 
+    // Holding period tabs — re-render holding chart for selected period
+    document.querySelectorAll('.holding-period-tabs .period-tab').forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isin = (tab as HTMLElement).dataset.isin;
+        const period = (tab as HTMLElement).dataset.hperiod;
+        if (!isin || !period) return;
+        // Update active state
+        const parent = tab.closest('.holding-period-tabs');
+        parent?.querySelectorAll('.period-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        // Re-render the holding chart with filtered data
+        const chartWrap = document.querySelector('[data-isin="' + isin + '"].holding-chart-wrap') as HTMLElement;
+        if (chartWrap) {
+          chartWrap.dataset.period = period;
+          const ticker = chartWrap.dataset.ticker;
+          const cost = parseFloat(chartWrap.dataset.cost || '0');
+          if (ticker) {
+            import('./charts/holding-chart').then(mod => {
+              import('./api').then(api => {
+                api.fetchPriceHistory(ticker).then(prices => {
+                  if (prices.length >= 2) {
+                    mod.renderHoldingChart(this.state, isin, ticker, prices, cost);
+                  }
+                });
+              });
+            });
+          }
+        }
+      });
+    });
+
     // Collapsible detail sections
     document.querySelectorAll('.detail-section-toggle').forEach(btn => {
       btn.addEventListener('click', (e) => {

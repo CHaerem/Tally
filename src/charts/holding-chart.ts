@@ -1,5 +1,5 @@
 import type { AppState } from '../state';
-import { formatCurrency, formatDateShort } from '../calculations';
+import { formatCurrency, formatDateShort, getPeriodStartDate } from '../calculations';
 import { fetchPriceHistory } from '../api';
 
 export function renderHoldingChart(
@@ -12,6 +12,10 @@ export function renderHoldingChart(
   const area = document.getElementById('hcarea-' + isin);
   const infoEl = document.getElementById('hcinfo-' + isin);
   if (!area) return;
+
+  // Check for period filter from the holding period tabs
+  const chartWrap = area.closest('.holding-chart-wrap') as HTMLElement | null;
+  const periodKey = chartWrap?.dataset.period || 'total';
 
   const allPrices = prices;
 
@@ -52,8 +56,24 @@ export function renderHoldingChart(
 
   if (data.length < 2) return;
 
-  const firstValue = data[0].invested;
-  const lastValue = data[data.length - 1].value;
+  // Filter by period
+  let chartData = data;
+  let periodLabel = 'siden kjøp ' + formatDateShort(firstBuyDate);
+  if (periodKey !== 'total') {
+    const periodStart = getPeriodStartDate(periodKey as any);
+    if (periodStart) {
+      const startDate = periodStart.toISOString().split('T')[0];
+      const filtered = data.filter(d => d.date >= startDate);
+      if (filtered.length >= 2) {
+        chartData = filtered;
+        const periodLabels: Record<string, string> = { ytd: 'hittil i år', '1y': 'siste 1 år', '3y': 'siste 3 år', '5y': 'siste 5 år' };
+        periodLabel = periodLabels[periodKey] || periodKey;
+      }
+    }
+  }
+
+  const firstValue = chartData[0].invested > 0 ? chartData[0].invested : chartData[0].value;
+  const lastValue = chartData[chartData.length - 1].value;
   const gain = lastValue - firstValue;
   const isPositive = gain >= 0;
   const color = isPositive ? '#3d8b37' : '#c0392b';
@@ -65,7 +85,7 @@ export function renderHoldingChart(
   if (infoEl) {
     const sign = returnPct >= 0 ? '+' : '';
     infoEl.innerHTML = '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '">'
-      + sign + returnPct.toFixed(1) + '% siden kjøp ' + formatDateShort(firstBuyDate) + '</span>';
+      + sign + returnPct.toFixed(1) + '% ' + periodLabel + '</span>';
   }
 
   const canvas = document.getElementById('hcanvas-' + isin) as HTMLCanvasElement;
@@ -87,7 +107,7 @@ export function renderHoldingChart(
   const cw = w - pad.left - pad.right;
   const ch = h - pad.top - pad.bottom;
 
-  const values = data.map(d => d.value);
+  const values = chartData.map(d => d.value);
   const minVal = Math.min(...values);
   const maxVal = Math.max(...values);
   const valPad = (maxVal - minVal) * 0.08 || 1;
@@ -95,10 +115,10 @@ export function renderHoldingChart(
   const rangeMax = maxVal + valPad;
   const range = rangeMax - rangeMin;
 
-  const toX = (i: number) => pad.left + (i / (data.length - 1)) * cw;
+  const toX = (i: number) => pad.left + (i / (chartData.length - 1)) * cw;
   const toY = (v: number) => pad.top + (1 - (v - rangeMin) / range) * ch;
 
-  const pts = data.map((d, i) => ({ x: toX(i), y: toY(d.value) }));
+  const pts = chartData.map((d, i) => ({ x: toX(i), y: toY(d.value) }));
   const tension = 0.3;
   const drawSmooth = (close: boolean) => {
     ctx.moveTo(pts[0].x, pts[0].y);
@@ -124,7 +144,7 @@ export function renderHoldingChart(
   ctx.beginPath(); drawSmooth(true); ctx.fillStyle = grad; ctx.fill();
 
   // Invested amount line (dashed)
-  const currentInvested = data[data.length - 1].invested;
+  const currentInvested = chartData[chartData.length - 1].invested;
   if (currentInvested > 0 && currentInvested >= rangeMin && currentInvested <= rangeMax) {
     const costY = toY(currentInvested);
     ctx.setLineDash([4, 4]);
@@ -148,7 +168,7 @@ export function renderHoldingChart(
 
   // Event markers
   for (const ev of holdingEvents) {
-    const idx = data.findIndex(d => d.date >= ev.date);
+    const idx = chartData.findIndex(d => d.date >= ev.date);
     if (idx < 0) continue;
     const dotColor = ev.type === 'TRADE_BUY' ? '#5a9a6e' : ev.type === 'TRADE_SELL' ? '#c75450' : '#da7756';
     const x = pts[idx].x, y = pts[idx].y;
@@ -163,8 +183,8 @@ export function renderHoldingChart(
   const handleMove = (clientX: number) => {
     const r = area.getBoundingClientRect();
     const x = Math.max(0, Math.min(clientX - r.left, r.width));
-    const idx = Math.round((x / r.width) * (data.length - 1));
-    const point = data[Math.max(0, Math.min(idx, data.length - 1))];
+    const idx = Math.round((x / r.width) * (chartData.length - 1));
+    const point = chartData[Math.max(0, Math.min(idx, chartData.length - 1))];
 
     if (crosshair) { crosshair.style.left = x + 'px'; crosshair.style.display = 'block'; }
 

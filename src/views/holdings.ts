@@ -45,6 +45,11 @@ export function renderHoldings(state: AppState): string {
         + '<div class="holding-chart-wrap" data-ticker="' + (inst?.ticker || h.ticker) + '" data-isin="' + h.isin + '" data-cost="' + h.averageCostPerShare.toFixed(2) + '">'
         + '<div class="holding-chart-info" id="hcinfo-' + h.isin + '"></div>'
         + '<div class="holding-chart-area" id="hcarea-' + h.isin + '"><div class="sparkline-placeholder">Laster graf...</div></div>'
+        + '<div class="period-tabs holding-period-tabs" data-isin="' + h.isin + '">'
+        + '<button class="period-tab active" data-hperiod="total" data-isin="' + h.isin + '">Totalt</button>'
+        + '<button class="period-tab" data-hperiod="1y" data-isin="' + h.isin + '">1 år</button>'
+        + '<button class="period-tab" data-hperiod="ytd" data-isin="' + h.isin + '">HiÅ</button>'
+        + '</div>'
         + '</div>'
         // Key stats — compact list layout
         + '<div class="holding-stats">'
