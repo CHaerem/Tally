@@ -3,13 +3,13 @@
   "name": "Sea1 Offshore Inc.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 35.2,
-  "previousClose": 31,
-  "dayHigh": 35.5,
-  "dayLow": 34.25,
-  "volume": 251990,
+  "currentPrice": 31.35,
+  "previousClose": 30.8,
+  "dayHigh": 32.55,
+  "dayLow": 31.1,
+  "volume": 392641,
   "fiftyTwoWeekHigh": 36.35,
-  "fiftyTwoWeekLow": 15.04,
+  "fiftyTwoWeekLow": 16.16,
   "prices": [
     {
       "date": "2024-05-06",
@@ -1922,6 +1922,10 @@
     {
       "date": "2026-04-01",
       "close": 35.2
+    },
+    {
+      "date": "2026-04-07",
+      "close": 31.35
     }
   ],
   "dividends": [
@@ -1932,18 +1936,22 @@
     {
       "date": "2025-01-14",
       "amount": 7
+    },
+    {
+      "date": "2026-04-07",
+      "amount": 4
     }
   ],
-  "lastUpdated": "2026-04-06T16:17:02.967Z",
+  "lastUpdated": "2026-04-07T16:25:05.500Z",
   "fundamentals": {
-    "trailingPE": 4.882108,
-    "forwardPE": 9.205482,
-    "marketCap": 5390659584,
+    "trailingPE": 4.348128,
+    "forwardPE": 8.198632,
+    "marketCap": 4801055744,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.354,
-    "priceToBook": 1.2946726,
+    "priceToBook": 1.1530678,
     "enterpriseToEbitda": 39.609,
     "profitMargins": 0.41889998,
     "returnOnEquity": 0.27185,
