@@ -418,20 +418,20 @@ header h1 {
   font-weight: 600;
 }
 
-/* Period tabs — underline style */
+/* Period tabs — under chart */
 .period-tabs {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  margin-top: 10px;
+  gap: 4px;
+  padding: 4px 16px 8px;
 }
 
 .period-tab {
   background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  padding: 4px 0;
-  font-size: 13px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 12px;
   font-family: inherit;
   color: var(--text-muted);
   cursor: pointer;
@@ -440,8 +440,9 @@ header h1 {
 
 .period-tab.active {
   color: var(--text);
-  border-bottom-color: var(--text);
-  font-weight: 600;
+  background: var(--bg-elevated);
+  border-color: var(--border);
+  font-weight: 500;
 }
 
 .hero-return {

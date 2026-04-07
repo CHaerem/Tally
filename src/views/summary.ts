@@ -91,9 +91,9 @@ export function renderSummary(state: AppState): string {
     + '<div class="label">Markedsverdi</div>'
     + '<div class="value">' + formatCurrency(m.currentValue) + '</div>'
     + '<div class="hero-return ' + heroReturnClass + '">' + (heroReturnKr >= 0 ? '+' : '') + formatCurrency(heroReturnKr) + ' (' + heroReturnSign + heroReturnPct.toFixed(1) + '%)</div>'
-    + periodTabs
     + '</div>'
     + '<div id="portfolio-chart-container" class="portfolio-chart-container"><div class="chart-placeholder">Laster graf...</div></div>'
+    + periodTabs
     + '<div id="portfolio-dividend-list"></div>'
     // Breakdown
     + '<div class="return-breakdown">'
