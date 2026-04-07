@@ -103,7 +103,7 @@ export function renderHoldingChart(
   ctx.scale(dpr, dpr);
 
   const w = rect.width, h = rect.height;
-  const pad = { top: 10, bottom: 10, left: 0, right: 0 };
+  const pad = { top: 10, bottom: 22, left: 0, right: 0 };
   const cw = w - pad.left - pad.right;
   const ch = h - pad.top - pad.bottom;
 
@@ -174,6 +174,24 @@ export function renderHoldingChart(
     const x = pts[idx].x, y = pts[idx].y;
     ctx.beginPath(); ctx.arc(x, y, 5, 0, Math.PI * 2); ctx.fillStyle = '#fff'; ctx.fill();
     ctx.beginPath(); ctx.arc(x, y, 3.5, 0, Math.PI * 2); ctx.fillStyle = dotColor; ctx.fill();
+  }
+
+  // Date labels along bottom
+  if (chartData.length >= 2) {
+    const tickCount = Math.min(4, Math.max(3, Math.floor(w / 80)));
+    const step = Math.floor(chartData.length / (tickCount - 1));
+    ctx.font = '10px Inter, system-ui, sans-serif';
+    ctx.fillStyle = '#9c9590';
+    ctx.textBaseline = 'bottom';
+    const months = ['jan', 'feb', 'mar', 'apr', 'mai', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'des'];
+    for (let t = 0; t < tickCount; t++) {
+      const idx = t === tickCount - 1 ? chartData.length - 1 : t * step;
+      const x = toX(idx);
+      const d = new Date(chartData[idx].date);
+      const label = months[d.getMonth()] + ' ' + String(d.getFullYear()).slice(2);
+      ctx.textAlign = (t === 0 ? 'left' : t === tickCount - 1 ? 'right' : 'center') as CanvasTextAlign;
+      ctx.fillText(label, x, h - 2);
+    }
   }
 
   // Touch interaction

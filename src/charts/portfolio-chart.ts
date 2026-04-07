@@ -68,7 +68,7 @@ export function drawPortfolioChart(state: AppState): void {
 
   const w = rect.width;
   const h = rect.height;
-  const pad = { top: 12, bottom: 12, left: 0, right: 0 };
+  const pad = { top: 12, bottom: 24, left: 0, right: 0 };
   const cw = w - pad.left - pad.right;
   const ch = h - pad.top - pad.bottom;
 
@@ -155,6 +155,41 @@ export function drawPortfolioChart(state: AppState): void {
     ctx.arc(x, y, 4, 0, Math.PI * 2);
     ctx.fillStyle = dotColor;
     ctx.fill();
+  }
+
+  // Date labels along bottom
+  drawDateTicks(ctx, data, toX, h, w);
+}
+
+function drawDateTicks(
+  ctx: CanvasRenderingContext2D,
+  data: Array<{ date: string }>,
+  toX: (i: number) => number,
+  h: number,
+  w: number
+): void {
+  if (data.length < 2) return;
+
+  // Pick ~3-5 evenly spaced dates
+  const tickCount = Math.min(5, Math.max(3, Math.floor(w / 80)));
+  const step = Math.floor(data.length / (tickCount - 1));
+
+  ctx.font = '10px Inter, system-ui, sans-serif';
+  ctx.fillStyle = '#9c9590';
+  ctx.textBaseline = 'bottom';
+
+  for (let t = 0; t < tickCount; t++) {
+    const idx = t === tickCount - 1 ? data.length - 1 : t * step;
+    const x = toX(idx);
+    const date = data[idx].date;
+    // Format as "jan 25" or "mar 26"
+    const d = new Date(date);
+    const months = ['jan', 'feb', 'mar', 'apr', 'mai', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'des'];
+    const label = months[d.getMonth()] + ' ' + String(d.getFullYear()).slice(2);
+
+    const align = t === 0 ? 'left' : t === tickCount - 1 ? 'right' : 'center';
+    ctx.textAlign = align as CanvasTextAlign;
+    ctx.fillText(label, x, h - 2);
   }
 }
 
