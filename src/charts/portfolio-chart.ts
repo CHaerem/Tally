@@ -1,9 +1,18 @@
 import type { AppState } from '../state';
-import { formatCurrency, formatDateShort } from '../calculations';
+import { formatCurrency, formatDateShort, getPeriodStartDate } from '../calculations';
+
+function filterByPeriod(series: Array<{ date: string; value: number; costBasis: number }>, period: string): Array<{ date: string; value: number; costBasis: number }> {
+  if (period === 'total') return series;
+  const start = getPeriodStartDate(period as any);
+  if (!start) return series;
+  const startDate = start.toISOString().split('T')[0];
+  const filtered = series.filter(s => s.date >= startDate);
+  return filtered.length >= 2 ? filtered : series;
+}
 
 export function renderPortfolioChartSVG(state: AppState): string {
   if (!state.portfolioHistory || state.portfolioHistory.series.length < 2) return '';
-  const data = state.portfolioHistory.series;
+  const data = filterByPeriod(state.portfolioHistory.series, state.selectedPeriod);
 
   const firstVal = data[0].value;
   const lastVal = data[data.length - 1].value;
@@ -42,7 +51,7 @@ export function drawPortfolioChart(state: AppState): void {
   const chartArea = document.getElementById('chart-area') as HTMLElement | null;
   if (!canvas || !chartArea || !state.portfolioHistory) return;
 
-  const data = state.portfolioHistory.series;
+  const data = filterByPeriod(state.portfolioHistory.series, state.selectedPeriod);
   const events = state.portfolioHistory.events;
   if (data.length < 2) return;
 
@@ -155,7 +164,7 @@ export function attachChartInteraction(state: AppState): void {
   const scrubber = document.getElementById('chart-scrubber-text');
   if (!chartArea || !crosshair || !scrubber || !state.portfolioHistory) return;
 
-  const data = state.portfolioHistory.series;
+  const data = filterByPeriod(state.portfolioHistory.series, state.selectedPeriod);
   if (data.length < 2) return;
 
   const defaultText = scrubber.innerHTML;
