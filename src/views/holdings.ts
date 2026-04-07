@@ -53,10 +53,13 @@ export function renderHoldings(state: AppState): string {
         + '</div>'
         // Key stats — compact list layout
         + '<div class="holding-stats">'
-        + '<div class="hstat"><span class="hstat-label">Kursgevinst</span><span class="hstat-val ' + gainClass + '">' + (h.unrealizedGain >= 0 ? '+' : '') + formatCurrency(h.unrealizedGain) + '</span></div>'
+        + '<div class="hstat"><span class="hstat-label">Kursgevinst</span><span class="hstat-val ' + gainClass + '">' + (h.unrealizedGain >= 0 ? '+' : '') + formatCurrency(h.unrealizedGain) + ' (' + formatPercent(h.unrealizedGainPercent) + ')</span></div>'
+        + (h.totalDividendsReceived > 0
+          ? '<div class="hstat"><span class="hstat-label">Utbytte mottatt</span><span class="hstat-val text-success">+' + formatCurrency(h.totalDividendsReceived) + '</span></div>'
+            + '<div class="hstat"><span class="hstat-label">Totalavkastning</span><span class="hstat-val ' + ((h.unrealizedGain + h.totalDividendsReceived) >= 0 ? 'text-success' : 'text-danger') + '">' + ((h.unrealizedGain + h.totalDividendsReceived) >= 0 ? '+' : '') + formatCurrency(h.unrealizedGain + h.totalDividendsReceived) + '</span></div>'
+          : '')
         + '<div class="hstat"><span class="hstat-label">Kurs</span><span class="hstat-val">' + (priceValue ? formatCurrency(h.currentPrice, 2) : '—') + ' <span class="hstat-sub">kjøpt @ ' + formatCurrency(h.averageCostPerShare, 2) + '</span></span></div>'
         + '<div class="hstat"><span class="hstat-label">Antall</span><span class="hstat-val">' + qty + '</span></div>'
-        + (h.totalDividendsReceived > 0 ? '<div class="hstat"><span class="hstat-label">Utbytte mottatt</span><span class="hstat-val">+' + formatCurrency(h.totalDividendsReceived) + '</span></div>' : '')
         + '<div class="hstat"><span class="hstat-label">Andel</span><span class="hstat-val">' + sharePct + '%</span></div>'
         + '</div>'
         // Market data — collapsible

@@ -85,7 +85,7 @@ export function renderHoldingChart(
   if (infoEl) {
     const sign = returnPct >= 0 ? '+' : '';
     infoEl.innerHTML = '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '">'
-      + sign + returnPct.toFixed(1) + '% ' + periodLabel + '</span>';
+      + sign + returnPct.toFixed(1) + '% kursutvikling ' + periodLabel + '</span>';
   }
 
   const canvas = document.getElementById('hcanvas-' + isin) as HTMLCanvasElement;

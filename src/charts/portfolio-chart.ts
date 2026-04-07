@@ -38,7 +38,7 @@ export function renderPortfolioChartSVG(state: AppState): string {
     + '<div class="chart-crosshair" id="chart-crosshair"></div>'
     + '</div>'
     + '<div class="chart-scrubber" id="chart-scrubber">'
-    + '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '" id="chart-scrubber-text">' + returnSign + returnPct.toFixed(1) + '% total</span>'
+    + '<span class="chart-return ' + (isPositive ? 'text-success' : 'text-danger') + '" id="chart-scrubber-text">' + returnSign + returnPct.toFixed(1) + '% kursutvikling</span>'
     + '</div>'
     + '<div class="chart-dates"><span>' + formatDateShort(data[0].date) + '</span>'
     + legend

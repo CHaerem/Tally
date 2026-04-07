@@ -95,13 +95,14 @@ export function renderSummary(state: AppState): string {
     + '<div id="portfolio-chart-container" class="portfolio-chart-container"><div class="chart-placeholder">Laster graf...</div></div>'
     + periodTabs
     + '<div id="portfolio-dividend-list"></div>'
-    // Breakdown
+    // Breakdown — explicit labels for each type
     + '<div class="return-breakdown">'
     + '<div class="breakdown-row"><span class="breakdown-label">Investert</span><span class="breakdown-val">' + formatCurrency(invested) + '</span></div>'
     + '<div class="breakdown-row"><span class="breakdown-label">Kursgevinst</span><span class="breakdown-val ' + (unrealizedGain >= 0 ? 'text-success' : 'text-danger') + '">' + (unrealizedGain >= 0 ? '+' : '') + formatCurrency(unrealizedGain) + '</span></div>'
     + (m.totalDividends > 0
-      ? '<div class="breakdown-row"><span class="breakdown-label">Utbytte (brutto)</span><span class="breakdown-val">+' + formatCurrency(m.totalDividends) + '</span></div>'
+      ? '<div class="breakdown-row"><span class="breakdown-label">Utbytte mottatt</span><span class="breakdown-val text-success">+' + formatCurrency(m.totalDividends) + '</span></div>'
         + '<div class="breakdown-row"><span class="breakdown-label breakdown-sub">Etter skatt (~' + (TAX_RATE * 100).toFixed(0) + '%)</span><span class="breakdown-val breakdown-sub">+' + formatCurrency(dividendAfterTax) + '</span></div>'
+        + '<div class="breakdown-row breakdown-total"><span class="breakdown-label">Totalavkastning</span><span class="breakdown-val ' + (totalReturn >= 0 ? 'text-success' : 'text-danger') + '">' + (totalReturn >= 0 ? '+' : '') + formatCurrency(totalReturn) + '</span></div>'
       : '')
     + '</div>'
     // Performers
