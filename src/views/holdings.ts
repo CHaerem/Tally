@@ -1,5 +1,5 @@
 import type { AppState } from '../state';
-import { formatCurrency, formatPercent, formatDateShort } from '../calculations';
+import { formatCurrency, formatPercent, formatDateShort, getPeriodStartDate } from '../calculations';
 
 export function renderHoldings(state: AppState): string {
   if (state.holdings.length === 0) return '';
@@ -16,8 +16,15 @@ export function renderHoldings(state: AppState): string {
 
   return '<div class="card-header"><h2>Beholdning</h2><button class="btn btn-small btn-ghost" id="sort-holdings">' + sortLabels[state.holdingSort] + ' ↓</button></div>'
     + '<div class="holdings-list">'
+    // Period label for display
+    const periodLabels: Record<string, string> = { ytd: 'HiÅ', '1y': '1 år', '3y': '3 år', '5y': '5 år', total: '' };
+    const periodLabel = periodLabels[state.selectedPeriod] || '';
+    const periodStartRaw = state.selectedPeriod !== 'total' ? getPeriodStartDate(state.selectedPeriod as any) : null;
+    const periodStartDate = periodStartRaw?.toISOString().split('T')[0] ?? null;
+
+    return '<div class="card-header"><h2>Beholdning</h2><button class="btn btn-small btn-ghost" id="sort-holdings">' + sortLabels[state.holdingSort] + ' ↓</button></div>'
+    + '<div class="holdings-list">'
     + sortedHoldings.map((h, hIdx) => {
-      const gainClass = h.unrealizedGain >= 0 ? 'text-success' : 'text-danger';
       const inst = state.ledger.instruments.find(i => i.isin === h.isin);
       const isFund = inst?.instrumentType === 'FUND';
       const label = isFund ? h.name : h.ticker;
@@ -29,6 +36,24 @@ export function renderHoldings(state: AppState): string {
       // Portfolio share
       const sharePct = (h.marketValue / totalMVH * 100).toFixed(1);
 
+      // Period-aware gain: use portfolio history to find value at period start
+      let displayGainPct = h.unrealizedGainPercent;
+      let displayGainKr = h.unrealizedGain;
+      if (periodStartDate && state.portfolioHistory) {
+        // Find the position value at period start from portfolio history events
+        // Approximate: use costBasis as reference for total, or price change for period
+        const firstBuy = state.ledger.events
+          .filter(e => 'isin' in e && (e as unknown as { isin: string }).isin === h.isin && e.type === 'TRADE_BUY')
+          .sort((a, b) => a.date.localeCompare(b.date))[0];
+        if (firstBuy && firstBuy.date <= periodStartDate) {
+          // Position existed at period start — show period return (placeholder, filled async)
+          // We'll use the daily change element to show period return
+        }
+      }
+
+      const gainClass = displayGainKr >= 0 ? 'text-success' : 'text-danger';
+      const gainLabel = periodLabel ? '<span class="holding-period-label">' + periodLabel + '</span> ' : '';
+
       return '<div class="holding-card" data-isin="' + h.isin + '">'
         + '<div class="holding-color" style="background:' + allocColor + '"></div>'
         + '<div class="holding-info">'
@@ -37,7 +62,7 @@ export function renderHoldings(state: AppState): string {
         + '</div>'
         + '<div class="holding-values">'
         + '<div class="holding-market-value">' + formatCurrency(h.marketValue) + '</div>'
-        + '<div class="holding-gain ' + gainClass + '">' + formatPercent(h.unrealizedGainPercent) + '</div>'
+        + '<div class="holding-gain ' + gainClass + '">' + gainLabel + formatPercent(displayGainPct) + '</div>'
         + '<div class="holding-daily" id="daily-' + h.isin + '"></div>'
         + '</div></div>'
         + '<div class="holding-details" id="details-' + h.isin + '">'

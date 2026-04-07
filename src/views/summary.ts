@@ -8,13 +8,31 @@ export function renderSummary(state: AppState): string {
   const m = state.metrics;
   const unrealizedGain = state.holdings.reduce((sum, h) => sum + h.unrealizedGain, 0);
   const totalReturn = unrealizedGain + m.totalDividends;
-  const totalReturnClass = totalReturn >= 0 ? 'text-success' : 'text-danger';
+  // totalReturnClass/totalReturnPctSign removed — hero uses period-aware values
 
   // Invested (costBasis includes fees)
   const totalCostBasis = state.holdings.reduce((sum, h) => sum + h.costBasis, 0);
   const invested = m.netCashFlow > 0 ? m.netCashFlow : totalCostBasis;
   const totalReturnPct = invested > 0 ? (totalReturn / invested * 100) : 0;
-  const totalReturnPctSign = totalReturnPct >= 0 ? '+' : '';
+
+  // Period-specific return from portfolio history
+  let heroReturnKr = totalReturn;
+  let heroReturnPct = totalReturnPct;
+  if (state.selectedPeriod !== 'total' && state.portfolioHistory) {
+    const start = getPeriodStartDate(state.selectedPeriod as any);
+    if (start) {
+      const startDate = start.toISOString().split('T')[0];
+      const series = state.portfolioHistory.series;
+      const startPoint = series.find(s => s.date >= startDate);
+      const endPoint = series[series.length - 1];
+      if (startPoint && endPoint && startPoint.value > 0) {
+        heroReturnKr = endPoint.value - startPoint.value;
+        heroReturnPct = (heroReturnKr / startPoint.value) * 100;
+      }
+    }
+  }
+  const heroReturnClass = heroReturnKr >= 0 ? 'text-success' : 'text-danger';
+  const heroReturnSign = heroReturnPct >= 0 ? '+' : '';
 
   // Best and worst performers (by unrealized gain %)
   const sorted = [...state.holdings].sort((a, b) => b.unrealizedGainPercent - a.unrealizedGainPercent);
@@ -72,7 +90,7 @@ export function renderSummary(state: AppState): string {
     + '<div class="summary-hero">'
     + '<div class="label">Markedsverdi</div>'
     + '<div class="value">' + formatCurrency(m.currentValue) + '</div>'
-    + '<div class="hero-return ' + totalReturnClass + '">' + (totalReturn >= 0 ? '+' : '') + formatCurrency(totalReturn) + ' (' + totalReturnPctSign + totalReturnPct.toFixed(1) + '%)</div>'
+    + '<div class="hero-return ' + heroReturnClass + '">' + (heroReturnKr >= 0 ? '+' : '') + formatCurrency(heroReturnKr) + ' (' + heroReturnSign + heroReturnPct.toFixed(1) + '%)</div>'
     + periodTabs
     + '</div>'
     + '<div id="portfolio-chart-container" class="portfolio-chart-container"><div class="chart-placeholder">Laster graf...</div></div>'

@@ -592,6 +592,12 @@ header h1 {
   gap: 8px;
 }
 
+.holding-period-label {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
 .holding-daily {
   font-size: 11px;
   text-align: right;
