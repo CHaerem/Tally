@@ -3,11 +3,11 @@
   "name": "KMC PROPERTIES ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 23.54,
-  "previousClose": 26.5,
-  "dayHigh": 25,
-  "dayLow": 23.5,
-  "volume": 3524,
+  "currentPrice": 25,
+  "previousClose": 25.5,
+  "dayHigh": 25.495,
+  "dayLow": 23.01,
+  "volume": 994,
   "fiftyTwoWeekHigh": 312,
   "fiftyTwoWeekLow": 22.02,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-04-07",
       "close": 23.54
+    },
+    {
+      "date": "2026-04-08",
+      "close": 25
     }
   ],
   "dividends": [
@@ -10078,16 +10082,16 @@
       "amount": 6958.03
     }
   ],
-  "lastUpdated": "2026-04-07T16:25:58.484Z",
+  "lastUpdated": "2026-04-08T16:28:42.242Z",
   "fundamentals": {
-    "trailingPE": 0.01886218,
-    "forwardPE": 588.50006,
-    "marketCap": 22119714,
+    "trailingPE": 0.020032052,
+    "forwardPE": 625,
+    "marketCap": 23491600,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.688,
-    "priceToBook": 2.7248526,
+    "priceToBook": 2.8938534,
     "enterpriseToEbitda": null,
     "profitMargins": 3.0294101,
     "returnOnEquity": 0.56576,
