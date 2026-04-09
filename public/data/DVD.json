@@ -3,13 +3,13 @@
   "name": "DEEP VALUE DRILLER AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 21.25,
-  "previousClose": 21,
-  "dayHigh": 21.35,
-  "dayLow": 21.1,
-  "volume": 590496,
+  "currentPrice": 21.05,
+  "previousClose": 21.15,
+  "dayHigh": 21.4,
+  "dayLow": 21,
+  "volume": 79108,
   "fiftyTwoWeekHigh": 22.35,
-  "fiftyTwoWeekLow": 12.8,
+  "fiftyTwoWeekLow": 13.22,
   "prices": [
     {
       "date": "2021-05-31",
@@ -4902,6 +4902,10 @@
     {
       "date": "2026-04-08",
       "close": 21.25
+    },
+    {
+      "date": "2026-04-09",
+      "close": 21.05
     }
   ],
   "dividends": [
@@ -4976,18 +4980,22 @@
     {
       "date": "2026-03-18",
       "amount": 0.2
+    },
+    {
+      "date": "2026-04-09",
+      "amount": 0.2
     }
   ],
-  "lastUpdated": "2026-04-08T16:27:35.829Z",
+  "lastUpdated": "2026-04-09T16:30:41.874Z",
   "fundamentals": {
-    "trailingPE": 8.466135,
+    "trailingPE": 8.4538145,
     "forwardPE": null,
-    "marketCap": 1987052160,
+    "marketCap": 1968350464,
     "dividendYield": 0.1341,
     "dividendRate": 2.85,
     "payoutRatio": 1.0053,
     "beta": 0.31,
-    "priceToBook": 23.331144,
+    "priceToBook": 23.111555,
     "enterpriseToEbitda": 39.834,
     "profitMargins": 0.42907003,
     "returnOnEquity": 3.0507102,
