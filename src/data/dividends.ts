@@ -85,7 +85,7 @@ export function renderDividendList(state: AppState): string {
     + (ds.byHolding.length > 1
       ? '<div class="div-by-holding">'
         + '<div class="div-holding-header">'
-        + '<span>Beholdning</span><span>YoC</span><span>Totalt</span>'
+        + '<span>Beholdning</span><span title="Utbytte i % av kjøpskost">Utb.%</span><span>Totalt</span>'
         + '</div>'
         + holdingRows
         + '</div>'

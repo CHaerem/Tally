@@ -328,7 +328,7 @@ export function buildMissingDividendEvents(
       amount,
       currency: 'NOK',
       createdAt: now,
-      source: 'CSV_IMPORT',
+      source: 'AUTO',
       isin,
       quantity: qty,
       perShare: div.amount,
