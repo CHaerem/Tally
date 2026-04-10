@@ -3,11 +3,11 @@
   "name": "ELOPAK ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 36.3,
-  "previousClose": 37,
-  "dayHigh": 36.6,
-  "dayLow": 36.05,
-  "volume": 131552,
+  "currentPrice": 36.45,
+  "previousClose": 36.25,
+  "dayHigh": 36.55,
+  "dayLow": 36.1,
+  "volume": 173024,
   "fiftyTwoWeekHigh": 56,
   "fiftyTwoWeekLow": 34.05,
   "prices": [
@@ -4842,6 +4842,18 @@
     {
       "date": "2026-04-01",
       "close": 36.3
+    },
+    {
+      "date": "2026-04-07",
+      "close": 36.05
+    },
+    {
+      "date": "2026-04-08",
+      "close": 36.45
+    },
+    {
+      "date": "2026-04-09",
+      "close": 36.45
     }
   ],
   "dividends": [
@@ -4866,17 +4878,17 @@
       "amount": 0.94
     }
   ],
-  "lastUpdated": "2026-04-06T16:16:34.179Z",
+  "lastUpdated": "2026-04-09T16:30:43.781Z",
   "fundamentals": {
-    "trailingPE": 14.124514,
-    "forwardPE": 9.022627,
-    "marketCap": 9755141120,
-    "dividendYield": 0.0581,
+    "trailingPE": 14.127908,
+    "forwardPE": 9.104951,
+    "marketCap": 9795451904,
+    "dividendYield": 0.057800002,
     "dividendRate": 2.11,
     "payoutRatio": 0.6978,
     "beta": 0.806,
-    "priceToBook": 2.5670571,
-    "enterpriseToEbitda": 67.921,
+    "priceToBook": 2.5800376,
+    "enterpriseToEbitda": 68.191,
     "profitMargins": 0.05106,
     "returnOnEquity": 0.17559,
     "revenueGrowth": 0.115,

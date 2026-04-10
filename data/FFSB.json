@@ -3,13 +3,13 @@
   "name": "FLEKKEFJORD SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 119,
-  "previousClose": 122.7,
-  "dayHigh": 119,
-  "dayLow": 119,
-  "volume": 1556,
+  "currentPrice": 117.12,
+  "previousClose": 119,
+  "dayHigh": 118.5,
+  "dayLow": 116.2,
+  "volume": 1901,
   "fiftyTwoWeekHigh": 138,
-  "fiftyTwoWeekLow": 112.06,
+  "fiftyTwoWeekLow": 115.52,
   "prices": [
     {
       "date": "2024-05-23",
@@ -1882,6 +1882,18 @@
     {
       "date": "2026-04-01",
       "close": 119
+    },
+    {
+      "date": "2026-04-07",
+      "close": 117
+    },
+    {
+      "date": "2026-04-08",
+      "close": 118
+    },
+    {
+      "date": "2026-04-09",
+      "close": 117.12
     }
   ],
   "dividends": [
@@ -1894,16 +1906,16 @@
       "amount": 6.4
     }
   ],
-  "lastUpdated": "2026-04-06T16:17:41.524Z",
+  "lastUpdated": "2026-04-09T16:31:42.422Z",
   "fundamentals": {
-    "trailingPE": 1.4074512,
-    "forwardPE": 9.754099,
-    "marketCap": 175789424,
-    "dividendYield": 0.0538,
+    "trailingPE": 1.3852159,
+    "forwardPE": 9.6,
+    "marketCap": 173012240,
+    "dividendYield": 0.0542,
     "dividendRate": 6.4,
     "payoutRatio": 0.0544,
     "beta": null,
-    "priceToBook": 0.122779146,
+    "priceToBook": 0.12083945,
     "enterpriseToEbitda": null,
     "profitMargins": 0.3982,
     "returnOnEquity": 0.08141,

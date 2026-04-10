@@ -3,13 +3,13 @@
   "name": "SPAREBANK 1 HELGELAND",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 164,
-  "previousClose": 164.4,
-  "dayHigh": 169.48,
-  "dayLow": 164,
-  "volume": 836,
+  "currentPrice": 161.04,
+  "previousClose": 165.08,
+  "dayHigh": 163,
+  "dayLow": 159.96,
+  "volume": 6212,
   "fiftyTwoWeekHigh": 189,
-  "fiftyTwoWeekLow": 142.98,
+  "fiftyTwoWeekLow": 149.02,
   "prices": [
     {
       "date": "2016-04-01",
@@ -10062,6 +10062,18 @@
     {
       "date": "2026-04-01",
       "close": 164
+    },
+    {
+      "date": "2026-04-07",
+      "close": 163.06
+    },
+    {
+      "date": "2026-04-08",
+      "close": 163
+    },
+    {
+      "date": "2026-04-09",
+      "close": 161.04
     }
   ],
   "dividends": [
@@ -10102,16 +10114,16 @@
       "amount": 7.67
     }
   ],
-  "lastUpdated": "2026-04-06T16:18:09.968Z",
+  "lastUpdated": "2026-04-09T16:32:06.713Z",
   "fundamentals": {
-    "trailingPE": 11.705924,
-    "forwardPE": 10.88616,
-    "marketCap": 4422048256,
-    "dividendYield": 0.0468,
+    "trailingPE": 11.502856,
+    "forwardPE": 10.689678,
+    "marketCap": 4342235136,
+    "dividendYield": 0.0471,
     "dividendRate": 7.67,
     "payoutRatio": 0.6021,
     "beta": 0.117,
-    "priceToBook": 0.880414,
+    "priceToBook": 0.8645236,
     "enterpriseToEbitda": null,
     "profitMargins": 0.44799998,
     "returnOnEquity": 0.094790004,

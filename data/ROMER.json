@@ -3,13 +3,13 @@
   "name": "ROMERIKE SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 152,
-  "previousClose": 169.96,
-  "dayHigh": 157,
-  "dayLow": 152,
-  "volume": 920,
+  "currentPrice": 158.88,
+  "previousClose": 154.12,
+  "dayHigh": 158.98,
+  "dayLow": 158.88,
+  "volume": 64,
   "fiftyTwoWeekHigh": 170.72,
-  "fiftyTwoWeekLow": 130.06,
+  "fiftyTwoWeekLow": 135,
   "prices": [
     {
       "date": "2017-12-08",
@@ -8342,6 +8342,18 @@
     {
       "date": "2026-04-01",
       "close": 152
+    },
+    {
+      "date": "2026-04-07",
+      "close": 155.98
+    },
+    {
+      "date": "2026-04-08",
+      "close": 159.48
+    },
+    {
+      "date": "2026-04-09",
+      "close": 158.88
     }
   ],
   "dividends": [
@@ -8382,16 +8394,16 @@
       "amount": 10.5
     }
   ],
-  "lastUpdated": "2026-04-06T16:18:46.948Z",
+  "lastUpdated": "2026-04-09T16:32:38.850Z",
   "fundamentals": {
-    "trailingPE": 1.9061952,
-    "forwardPE": 10.284168,
-    "marketCap": 431113024,
-    "dividendYield": 0.0691,
+    "trailingPE": 1.9924756,
+    "forwardPE": 10.749662,
+    "marketCap": 450626592,
+    "dividendYield": 0.065799996,
     "dividendRate": 10.5,
     "payoutRatio": 0.1317,
     "beta": 0.034,
-    "priceToBook": 0.17843768,
+    "priceToBook": 0.18651433,
     "enterpriseToEbitda": null,
     "profitMargins": 0.45667,
     "returnOnEquity": 0.0949,

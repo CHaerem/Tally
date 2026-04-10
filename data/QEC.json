@@ -3,11 +3,11 @@
   "name": "QUESTERRE ENERGY CORPORATION",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.98,
-  "previousClose": 2.025,
-  "dayHigh": 2.005,
-  "dayLow": 1.94,
-  "volume": 879795,
+  "currentPrice": 2.005,
+  "previousClose": 2.05,
+  "dayHigh": 2.05,
+  "dayLow": 1.93,
+  "volume": 994160,
   "fiftyTwoWeekHigh": 3.36,
   "fiftyTwoWeekLow": 1.6,
   "prices": [
@@ -10066,26 +10066,38 @@
     {
       "date": "2026-04-01",
       "close": 1.98
+    },
+    {
+      "date": "2026-04-07",
+      "close": 2.02
+    },
+    {
+      "date": "2026-04-08",
+      "close": 1.93
+    },
+    {
+      "date": "2026-04-09",
+      "close": 2.01
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-04-06T16:18:43.868Z",
+  "lastUpdated": "2026-04-09T16:32:36.083Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 6,
-    "marketCap": 848461376,
+    "forwardPE": 6.0757575,
+    "marketCap": 859174336,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 0.90201956,
-    "enterpriseToEbitda": 61.744,
+    "beta": -0.479,
+    "priceToBook": 0.91340876,
+    "enterpriseToEbitda": 59.824,
     "profitMargins": -1.11564,
     "returnOnEquity": -0.73330003,
     "revenueGrowth": 3.454,
     "earningsGrowth": null,
     "grossMargins": 0.33054,
     "totalRevenue": 70753000,
-    "ebitda": 16166000
+    "ebitda": 15796000
   }
 }

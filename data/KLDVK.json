@@ -3,11 +3,11 @@
   "name": "KALDVIK AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 4.2,
-  "previousClose": 3.92,
-  "dayHigh": 4.36,
-  "dayLow": 4.2,
-  "volume": 6061,
+  "currentPrice": 3.96,
+  "previousClose": 4.2,
+  "dayHigh": 4.4,
+  "dayLow": 3.96,
+  "volume": 87167,
   "fiftyTwoWeekHigh": 21.8,
   "fiftyTwoWeekLow": 3.56,
   "prices": [
@@ -1806,20 +1806,32 @@
     {
       "date": "2026-04-01",
       "close": 4.2
+    },
+    {
+      "date": "2026-04-07",
+      "close": 4.3
+    },
+    {
+      "date": "2026-04-08",
+      "close": 4.24
+    },
+    {
+      "date": "2026-04-09",
+      "close": 3.96
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-04-06T16:18:20.458Z",
+  "lastUpdated": "2026-04-09T16:32:15.664Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 1.0940349,
-    "marketCap": 706726976,
+    "forwardPE": 1.0315187,
+    "marketCap": 666342592,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.271,
-    "priceToBook": 0.227129,
-    "enterpriseToEbitda": -50.966,
+    "priceToBook": 0.21317105,
+    "enterpriseToEbitda": -51.351,
     "profitMargins": -0.44979998,
     "returnOnEquity": -0.17556,
     "revenueGrowth": 0.031,
