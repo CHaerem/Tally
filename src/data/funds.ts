@@ -166,4 +166,5 @@ export const NORWEGIAN_FUNDS: StockSuggestion[] = [
   // Heimdal
   { ticker: '0P0001Q692.IR', name: 'Heimdal Utbytte D', currentPrice: null, type: 'FUND' },
   { ticker: '0P0001Q690.IR', name: 'Heimdal Utbytte B', currentPrice: null, type: 'FUND' },
+  { ticker: '0P0001RFXW.IR', name: 'Heimdal Utbytte N', currentPrice: null, type: 'FUND' },
 ];

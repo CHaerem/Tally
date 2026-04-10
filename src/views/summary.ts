@@ -26,7 +26,22 @@ export function renderSummary(state: AppState): string {
       const startPoint = series.find(s => s.date >= startDate);
       const endPoint = series[series.length - 1];
       if (startPoint && endPoint && startPoint.value > 0) {
-        heroReturnKr = endPoint.value - startPoint.value;
+        // Account for cash flows during the period:
+        // subtract net new investments, add dividends received
+        let netInflows = 0;
+        let periodDividends = 0;
+        for (const event of state.ledger.events) {
+          if (event.date < startDate) continue;
+          if (event.type === 'TRADE_BUY') {
+            const te = event as unknown as { fee?: number };
+            netInflows += event.amount + (te.fee || 0);
+          } else if (event.type === 'TRADE_SELL') {
+            netInflows -= event.amount;
+          } else if (event.type === 'DIVIDEND') {
+            periodDividends += event.amount;
+          }
+        }
+        heroReturnKr = (endPoint.value - startPoint.value) - netInflows + periodDividends;
         heroReturnPct = (heroReturnKr / startPoint.value) * 100;
       }
     }

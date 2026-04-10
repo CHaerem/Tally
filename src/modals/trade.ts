@@ -15,7 +15,7 @@ export function renderTradeModal(state: AppState): string {
     + '</div>';
 
   const dateField = '<div class="form-group"><label for="trade-date">' + (isSimple ? 'Kjøpsdato' : 'Dato') + '</label><input type="date" id="trade-date" class="form-control" value="' + today + '"></div>';
-  const feeField = isSimple ? '' : '<div class="form-group"><label for="trade-fee">Kurtasje (valgfritt)</label><input type="number" id="trade-fee" class="form-control" placeholder="29" step="0.01" min="0" inputmode="decimal"></div>';
+  const feeField = '<div class="form-group"><label for="trade-fee">Kurtasje (valgfritt)</label><input type="number" id="trade-fee" class="form-control" placeholder="29" step="0.01" min="0" inputmode="decimal"></div>';
 
   const modeToggle = isSimple
     ? '<button class="btn-link" id="toggle-trade-mode" type="button">Registrer en spesifikk transaksjon i stedet</button>'
@@ -420,11 +420,29 @@ export async function autoRegisterDividends(state: AppState, ticker: string, isi
   const accountId = state.ledger.accounts[0]?.id || 'default';
   const now = new Date().toISOString();
 
+  // Delete existing AUTO dividends from buyDate onwards — they'll be recreated
+  // with correct quantities based on the updated trade history
+  const autoDivsToRemove = state.ledger.events.filter(
+    e => e.type === 'DIVIDEND' && e.source === 'AUTO'
+      && 'isin' in e && (e as unknown as { isin: string }).isin === isin
+      && e.date >= buyDate
+  );
+  if (autoDivsToRemove.length > 0) {
+    for (const d of autoDivsToRemove) {
+      LedgerStorage.deleteEvent(d.id);
+    }
+    state.ledger = LedgerStorage.loadLedger() || state.ledger;
+  }
+
+  // Only skip dates with MANUAL/CSV dividends (not AUTO, since we just deleted those)
   const existingDivDates = new Set(
     state.ledger.events
       .filter(e => e.type === 'DIVIDEND' && 'isin' in e && (e as unknown as { isin: string }).isin === isin)
       .map(e => e.date)
   );
+
+  // Sort events by date for correct quantity calculation
+  const sortedEvents = [...state.ledger.events].sort((a, b) => a.date.localeCompare(b.date));
 
   const newDividends: Array<{ date: string; amount: number; qty: number; perShare: number }> = [];
 
@@ -433,7 +451,7 @@ export async function autoRegisterDividends(state: AppState, ticker: string, isi
     if (existingDivDates.has(div.date)) continue;
 
     let qtyAtDate = 0;
-    for (const e of state.ledger.events) {
+    for (const e of sortedEvents) {
       if (!('isin' in e) || (e as unknown as { isin: string }).isin !== isin) continue;
       if (e.date > div.date) break;
       const te = e as unknown as { quantity?: number };
