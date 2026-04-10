@@ -3,11 +3,11 @@
   "name": "5TH PLANET GAMES",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.1,
-  "previousClose": 2,
-  "dayHigh": 2.3,
-  "dayLow": 2.07,
-  "volume": 1711647,
+  "currentPrice": 1.945,
+  "previousClose": 2.09,
+  "dayHigh": 2.17,
+  "dayLow": 1.875,
+  "volume": 2083255,
   "fiftyTwoWeekHigh": 2.6,
   "fiftyTwoWeekLow": 0.62,
   "prices": [
@@ -10078,26 +10078,30 @@
     {
       "date": "2026-04-09",
       "close": 2.1
+    },
+    {
+      "date": "2026-04-10",
+      "close": 1.95
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-04-09T16:32:02.825Z",
+  "lastUpdated": "2026-04-10T16:20:22.367Z",
   "fundamentals": {
-    "trailingPE": 105,
+    "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 563595008,
+    "marketCap": 522579872,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": -0.742,
-    "priceToBook": 4.40189,
+    "beta": null,
+    "priceToBook": 4.0769887,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.72779,
-    "returnOnEquity": 0.03657,
-    "revenueGrowth": -0.835,
+    "profitMargins": -0.38674,
+    "returnOnEquity": -0.0175,
+    "revenueGrowth": -0.283,
     "earningsGrowth": null,
-    "grossMargins": 0.73349,
-    "totalRevenue": 4210000,
+    "grossMargins": 0.64038,
+    "totalRevenue": 3576000,
     "ebitda": null
   }
 }

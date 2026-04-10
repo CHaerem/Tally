@@ -3,11 +3,11 @@
   "name": "MATVAREEXPRESSEN AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 199,
+  "currentPrice": 200,
   "previousClose": 199,
-  "dayHigh": 199,
-  "dayLow": 193,
-  "volume": 36,
+  "dayHigh": 200,
+  "dayLow": 200,
+  "volume": 12,
   "fiftyTwoWeekHigh": 238,
   "fiftyTwoWeekLow": 71,
   "prices": [
@@ -2514,14 +2514,22 @@
     {
       "date": "2026-04-08",
       "close": 199
+    },
+    {
+      "date": "2026-04-09",
+      "close": 199
+    },
+    {
+      "date": "2026-04-10",
+      "close": 200
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-04-09T16:32:21.341Z",
+  "lastUpdated": "2026-04-10T16:20:40.148Z",
   "fundamentals": {
-    "trailingPE": 47.83654,
-    "forwardPE": 28.591953,
-    "marketCap": 241576640,
+    "trailingPE": 48.076923,
+    "forwardPE": 28.735632,
+    "marketCap": 242790592,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
