@@ -3,12 +3,12 @@
   "name": "AKVA GROUP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 122,
-  "previousClose": 104.5,
-  "dayHigh": 122.5,
-  "dayLow": 116.5,
-  "volume": 9951,
-  "fiftyTwoWeekHigh": 129.5,
+  "currentPrice": 128,
+  "previousClose": 113.5,
+  "dayHigh": 130,
+  "dayLow": 120,
+  "volume": 15588,
+  "fiftyTwoWeekHigh": 130,
   "fiftyTwoWeekLow": 61,
   "prices": [
     {
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-04-13",
       "close": 122
+    },
+    {
+      "date": "2026-04-14",
+      "close": 128
     }
   ],
   "dividends": [
@@ -10112,19 +10116,23 @@
     {
       "date": "2025-10-28",
       "amount": 1
+    },
+    {
+      "date": "2026-04-14",
+      "amount": 1
     }
   ],
-  "lastUpdated": "2026-04-13T16:27:45.517Z",
+  "lastUpdated": "2026-04-14T16:26:14.347Z",
   "fundamentals": {
-    "trailingPE": 24.063116,
-    "forwardPE": 14.769976,
-    "marketCap": 4440275968,
-    "dividendYield": 0.0166,
+    "trailingPE": 25.19685,
+    "forwardPE": 15.496367,
+    "marketCap": 4658650112,
+    "dividendYield": 0.0164,
     "dividendRate": 2,
     "payoutRatio": 0.39450002,
     "beta": -0.099,
-    "priceToBook": 3.2335012,
-    "enterpriseToEbitda": 14.064,
+    "priceToBook": 3.392526,
+    "enterpriseToEbitda": 14.199,
     "profitMargins": 0.040949997,
     "returnOnEquity": 0.13247,
     "revenueGrowth": 0.553,

@@ -3,13 +3,13 @@
   "name": "SPAREBANK 1 SMN",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 211.4,
-  "previousClose": 205.85,
-  "dayHigh": 213.5,
-  "dayLow": 211.4,
-  "volume": 154986,
+  "currentPrice": 213.25,
+  "previousClose": 207.4,
+  "dayHigh": 214.3,
+  "dayLow": 211.6,
+  "volume": 86265,
   "fiftyTwoWeekHigh": 215.3,
-  "fiftyTwoWeekLow": 173.8,
+  "fiftyTwoWeekLow": 175,
   "prices": [
     {
       "date": "2016-04-11",
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-04-13",
       "close": 211.4
+    },
+    {
+      "date": "2026-04-14",
+      "close": 213.25
     }
   ],
   "dividends": [
@@ -10106,16 +10110,16 @@
       "amount": 13.5
     }
   ],
-  "lastUpdated": "2026-04-13T16:29:39.309Z",
+  "lastUpdated": "2026-04-14T16:27:57.845Z",
   "fundamentals": {
-    "trailingPE": 11.033402,
-    "forwardPE": 10.747331,
-    "marketCap": 30451150848,
-    "dividendYield": 0.0638,
+    "trailingPE": 11.135771,
+    "forwardPE": 10.841383,
+    "marketCap": 30717634560,
+    "dividendYield": 0.0639,
     "dividendRate": 13.5,
     "payoutRatio": 0.65260005,
     "beta": 0.426,
-    "priceToBook": 1.0449672,
+    "priceToBook": 1.054112,
     "enterpriseToEbitda": null,
     "profitMargins": 0.47981998,
     "returnOnEquity": 0.13999,
