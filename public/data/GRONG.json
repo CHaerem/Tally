@@ -3,11 +3,11 @@
   "name": "GRONG SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 199.84,
-  "previousClose": 198.98,
-  "dayHigh": 199.84,
-  "dayLow": 199.82,
-  "volume": 517,
+  "currentPrice": 199.8,
+  "previousClose": 199.98,
+  "dayHigh": 199.8,
+  "dayLow": 199.8,
+  "volume": 10,
   "fiftyTwoWeekHigh": 200,
   "fiftyTwoWeekLow": 141.52,
   "prices": [
@@ -8882,6 +8882,10 @@
     {
       "date": "2026-04-15",
       "close": 199.84
+    },
+    {
+      "date": "2026-04-16",
+      "close": 199.8
     }
   ],
   "dividends": [
@@ -8922,23 +8926,23 @@
       "amount": 11
     }
   ],
-  "lastUpdated": "2026-04-15T16:25:10.597Z",
+  "lastUpdated": "2026-04-16T16:34:45.478Z",
   "fundamentals": {
-    "trailingPE": 9.575466,
-    "forwardPE": 11.016539,
-    "marketCap": 793859392,
+    "trailingPE": 9.57814,
+    "forwardPE": 11.014334,
+    "marketCap": 793700544,
     "dividendYield": 0.055,
     "dividendRate": 11,
     "payoutRatio": 0.50310004,
     "beta": 0.239,
-    "priceToBook": 0.5869223,
+    "priceToBook": 0.561583,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.43237,
-    "returnOnEquity": 0.1167,
-    "revenueGrowth": 0.35,
-    "earningsGrowth": 0.742,
+    "profitMargins": 0.47014,
+    "returnOnEquity": 0.13711001,
+    "revenueGrowth": 0.513,
+    "earningsGrowth": 1.467,
     "grossMargins": null,
-    "totalRevenue": 374524000,
+    "totalRevenue": 417136000,
     "ebitda": null
   }
 }

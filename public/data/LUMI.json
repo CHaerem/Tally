@@ -3,11 +3,11 @@
   "name": "LUMI GRUPPEN AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 19.4,
+  "currentPrice": 18.7,
   "previousClose": 19.3,
-  "dayHigh": 19.4,
+  "dayHigh": 18.7,
   "dayLow": 18.7,
-  "volume": 1702,
+  "volume": 13,
   "fiftyTwoWeekHigh": 20.4,
   "fiftyTwoWeekLow": 13,
   "prices": [
@@ -5186,6 +5186,10 @@
     {
       "date": "2026-04-15",
       "close": 19.4
+    },
+    {
+      "date": "2026-04-16",
+      "close": 18.7
     }
   ],
   "dividends": [
@@ -5194,23 +5198,23 @@
       "amount": 0.98
     }
   ],
-  "lastUpdated": "2026-04-15T16:25:02.524Z",
+  "lastUpdated": "2026-04-16T16:34:37.205Z",
   "fundamentals": {
-    "trailingPE": 38.8,
-    "forwardPE": 18.834951,
-    "marketCap": 1122112768,
+    "trailingPE": 37.4,
+    "forwardPE": 14.440156,
+    "marketCap": 1081624192,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.411,
-    "priceToBook": 2.2518864,
-    "enterpriseToEbitda": 26.551,
-    "profitMargins": 0.03748,
-    "returnOnEquity": 0.03627,
-    "revenueGrowth": 0.109,
-    "earningsGrowth": 1.217,
-    "grossMargins": 0.48421,
-    "totalRevenue": 473608000,
-    "ebitda": 57568000
+    "beta": null,
+    "priceToBook": 2.1706328,
+    "enterpriseToEbitda": 12.759,
+    "profitMargins": 0.05661,
+    "returnOnEquity": 0.056799997,
+    "revenueGrowth": 0.139,
+    "earningsGrowth": 0.958,
+    "grossMargins": 0.50499,
+    "totalRevenue": 507742016,
+    "ebitda": 119160000
   }
 }

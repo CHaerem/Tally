@@ -3,11 +3,11 @@
   "name": "ABG SUNDAL COLLIER HOLDING",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 8.03,
-  "previousClose": 8.14,
-  "dayHigh": 8.24,
-  "dayLow": 8,
-  "volume": 341430,
+  "currentPrice": 7.99,
+  "previousClose": 8.2,
+  "dayHigh": 8.2,
+  "dayLow": 7.96,
+  "volume": 349953,
   "fiftyTwoWeekHigh": 8.4,
   "fiftyTwoWeekLow": 6.4,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-04-15",
       "close": 8.03
+    },
+    {
+      "date": "2026-04-16",
+      "close": 7.99
     }
   ],
   "dividends": [
@@ -10126,23 +10130,23 @@
       "amount": 0.5
     }
   ],
-  "lastUpdated": "2026-04-15T16:23:36.363Z",
+  "lastUpdated": "2026-04-16T16:33:13.015Z",
   "fundamentals": {
-    "trailingPE": 12.166666,
+    "trailingPE": 12.10606,
     "forwardPE": null,
-    "marketCap": 4117934592,
-    "dividendYield": 0.0665,
+    "marketCap": 4097422080,
+    "dividendYield": 0.0685,
     "dividendRate": 0.55,
     "payoutRatio": 0.7576,
-    "beta": 0.629,
-    "priceToBook": 3.9056418,
+    "beta": null,
+    "priceToBook": 3.8861866,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.18324,
-    "returnOnEquity": 0.35217997,
-    "revenueGrowth": 0.187,
-    "earningsGrowth": 0.255,
+    "profitMargins": 0.17852,
+    "returnOnEquity": 0.33240002,
+    "revenueGrowth": 0.018,
+    "earningsGrowth": null,
     "grossMargins": 1,
-    "totalRevenue": 1988642944,
+    "totalRevenue": 1995842944,
     "ebitda": null
   }
 }

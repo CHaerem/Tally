@@ -3,13 +3,13 @@
   "name": "AKER HORIZONS ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.017,
-  "previousClose": 0.022,
-  "dayHigh": 0.019,
-  "dayLow": 0.0113,
-  "volume": 22773862,
+  "currentPrice": 0.015,
+  "previousClose": 0.021,
+  "dayHigh": 0.02,
+  "dayLow": 0.015,
+  "volume": 14030291,
   "fiftyTwoWeekHigh": 1.688,
-  "fiftyTwoWeekLow": 0.0113,
+  "fiftyTwoWeekLow": 0.011,
   "prices": [
     {
       "date": "2021-02-03",
@@ -5230,20 +5230,24 @@
     {
       "date": "2026-04-15",
       "close": 0.02
+    },
+    {
+      "date": "2026-04-16",
+      "close": 0.02
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-04-15T16:24:30.476Z",
+  "lastUpdated": "2026-04-16T16:34:06.620Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 11735929,
+    "marketCap": 10424266,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.829,
-    "priceToBook": 0.01462995,
-    "enterpriseToEbitda": -4.2,
+    "priceToBook": 0.012994838,
+    "enterpriseToEbitda": -4.199,
     "profitMargins": -1.1579599,
     "returnOnEquity": -0.67974,
     "revenueGrowth": null,
