@@ -3,11 +3,11 @@
   "name": "BORREGAARD",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 174.2,
-  "previousClose": 176.6,
-  "dayHigh": 175.6,
-  "dayLow": 174,
-  "volume": 51564,
+  "currentPrice": 171.2,
+  "previousClose": 175.6,
+  "dayHigh": 171.6,
+  "dayLow": 169,
+  "volume": 73717,
   "fiftyTwoWeekHigh": 212,
   "fiftyTwoWeekLow": 159.8,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-04-16",
       "close": 174.2
+    },
+    {
+      "date": "2026-04-17",
+      "close": 171.2
     }
   ],
   "dividends": [
@@ -10116,18 +10120,22 @@
     {
       "date": "2025-04-11",
       "amount": 4.25
+    },
+    {
+      "date": "2026-04-17",
+      "amount": 4.75
     }
   ],
-  "lastUpdated": "2026-04-16T16:33:07.038Z",
+  "lastUpdated": "2026-04-17T16:21:11.085Z",
   "fundamentals": {
-    "trailingPE": 28.006432,
-    "forwardPE": 15.272475,
-    "marketCap": 17410269184,
+    "trailingPE": 27.524117,
+    "forwardPE": 15.0094595,
+    "marketCap": 17110435840,
     "dividendYield": 0.0273,
     "dividendRate": 4.75,
     "payoutRatio": 0.6833,
     "beta": 0.674,
-    "priceToBook": 2.9681883,
+    "priceToBook": 2.9170713,
     "enterpriseToEbitda": 11.234,
     "profitMargins": 0.08038,
     "returnOnEquity": 0.10941,

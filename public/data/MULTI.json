@@ -3,11 +3,11 @@
   "name": "MULTICONSULT",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 167.2,
-  "previousClose": 164.6,
-  "dayHigh": 168.8,
-  "dayLow": 164,
-  "volume": 5862,
+  "currentPrice": 165.4,
+  "previousClose": 163.4,
+  "dayHigh": 167,
+  "dayLow": 162.2,
+  "volume": 19980,
   "fiftyTwoWeekHigh": 221,
   "fiftyTwoWeekLow": 150,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-04-16",
       "close": 167.2
+    },
+    {
+      "date": "2026-04-17",
+      "close": 165.4
     }
   ],
   "dividends": [
@@ -10116,19 +10120,23 @@
     {
       "date": "2025-04-11",
       "amount": 10
+    },
+    {
+      "date": "2026-04-17",
+      "amount": 5
     }
   ],
-  "lastUpdated": "2026-04-16T16:33:37.997Z",
+  "lastUpdated": "2026-04-17T16:21:39.663Z",
   "fundamentals": {
-    "trailingPE": 18.15418,
-    "forwardPE": 11.399204,
-    "marketCap": 4608431104,
-    "dividendYield": 0.030299999,
+    "trailingPE": 17.95874,
+    "forwardPE": 11.276485,
+    "marketCap": 4558818304,
+    "dividendYield": 0.0299,
     "dividendRate": 5,
     "payoutRatio": 1.0846,
     "beta": 0.138,
-    "priceToBook": 3.8818722,
-    "enterpriseToEbitda": 12.943,
+    "priceToBook": 3.8400817,
+    "enterpriseToEbitda": 13.085,
     "profitMargins": 0.044710003,
     "returnOnEquity": 0.20145,
     "revenueGrowth": 0.054,

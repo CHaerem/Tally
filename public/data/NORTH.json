@@ -3,11 +3,11 @@
   "name": "NORTH ENERGY",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.71,
+  "currentPrice": 2.7,
   "previousClose": 2.7,
-  "dayHigh": 3,
+  "dayHigh": 2.77,
   "dayLow": 2.7,
-  "volume": 2193228,
+  "volume": 312150,
   "fiftyTwoWeekHigh": 3.19,
   "fiftyTwoWeekLow": 2.4,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-04-16",
       "close": 2.71
+    },
+    {
+      "date": "2026-04-17",
+      "close": 2.7
     }
   ],
   "dividends": [
@@ -10106,17 +10110,17 @@
       "amount": 0.13
     }
   ],
-  "lastUpdated": "2026-04-16T16:35:06.390Z",
+  "lastUpdated": "2026-04-17T16:23:03.126Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -2.9139786,
-    "marketCap": 317751808,
-    "dividendYield": 0.0458,
+    "forwardPE": -2.903226,
+    "marketCap": 316579296,
+    "dividendYield": 0.048,
     "dividendRate": 0.13,
     "payoutRatio": 0.38459998,
     "beta": 0.076,
-    "priceToBook": 1.0257381,
-    "enterpriseToEbitda": -8.127,
+    "priceToBook": 1.0219531,
+    "enterpriseToEbitda": -7.598,
     "profitMargins": null,
     "returnOnEquity": -0.118669994,
     "revenueGrowth": null,
