@@ -3,8 +3,8 @@
   "name": "0P0001OPC2.IR",
   "currency": "NOK",
   "exchange": "ISE",
-  "currentPrice": 1742.77,
-  "previousClose": 1707.772,
+  "currentPrice": 1744.58,
+  "previousClose": 1000,
   "dayHigh": null,
   "dayLow": null,
   "volume": null,
@@ -3274,12 +3274,16 @@
     {
       "date": "2026-04-15",
       "close": 1742.77
+    },
+    {
+      "date": "2026-04-16",
+      "close": 1744.58
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-04-17T16:23:42.884Z",
+  "lastUpdated": "2026-04-19T01:36:29.856Z",
   "fundamentals": {
-    "trailingPE": 27.598747,
+    "trailingPE": 26.730543,
     "forwardPE": null,
     "marketCap": null,
     "dividendYield": null,
