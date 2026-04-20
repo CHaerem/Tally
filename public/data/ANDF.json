@@ -3,11 +3,11 @@
   "name": "ANDFJORD SALMON GROUP AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 28.4,
-  "previousClose": 65,
-  "dayHigh": 28.4,
-  "dayLow": 27.8,
-  "volume": 6175,
+  "currentPrice": 28.6,
+  "previousClose": 29,
+  "dayHigh": 28.8,
+  "dayLow": 28.2,
+  "volume": 2160,
   "fiftyTwoWeekHigh": 38.9,
   "fiftyTwoWeekLow": 22.7,
   "prices": [
@@ -5866,26 +5866,30 @@
     {
       "date": "2026-04-17",
       "close": 28.4
+    },
+    {
+      "date": "2026-04-20",
+      "close": 28.6
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-04-19T01:34:33.380Z",
+  "lastUpdated": "2026-04-20T16:27:35.004Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 30.320177,
-    "marketCap": 3044086784,
+    "forwardPE": 30.533699,
+    "marketCap": 3065523968,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": -0.081,
-    "priceToBook": 1.1481706,
-    "enterpriseToEbitda": -46.64,
+    "priceToBook": 1.199413,
+    "enterpriseToEbitda": -49.083,
     "profitMargins": null,
-    "returnOnEquity": -0.090579994,
-    "revenueGrowth": 15.111,
+    "returnOnEquity": -0.056560002,
+    "revenueGrowth": null,
     "earningsGrowth": null,
-    "grossMargins": null,
-    "totalRevenue": 884000,
-    "ebitda": -90286000
+    "grossMargins": 0.40613,
+    "totalRevenue": 815000,
+    "ebitda": -89314000
   }
 }

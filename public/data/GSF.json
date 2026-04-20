@@ -3,13 +3,13 @@
   "name": "GRIEG SEAFOOD",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 71.6,
-  "previousClose": 44.3,
-  "dayHigh": 73,
-  "dayLow": 71.1,
-  "volume": 1032176,
+  "currentPrice": 34.28,
+  "previousClose": 72.2,
+  "dayHigh": 37.06,
+  "dayLow": 34.28,
+  "volume": 2992766,
   "fiftyTwoWeekHigh": 81.35,
-  "fiftyTwoWeekLow": 55.1,
+  "fiftyTwoWeekLow": 34.28,
   "prices": [
     {
       "date": "2016-04-18",
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-04-17",
       "close": 71.6
+    },
+    {
+      "date": "2026-04-20",
+      "close": 34.28
     }
   ],
   "dividends": [
@@ -10104,18 +10108,22 @@
     {
       "date": "2024-06-20",
       "amount": 1.75
+    },
+    {
+      "date": "2026-04-20",
+      "amount": 37.68
     }
   ],
-  "lastUpdated": "2026-04-19T01:33:15.820Z",
+  "lastUpdated": "2026-04-20T16:26:30.681Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 19.201115,
-    "marketCap": 8036558336,
+    "forwardPE": 9.192936,
+    "marketCap": 3847670784,
     "dividendYield": 0.4977,
     "dividendRate": 35.64,
     "payoutRatio": null,
     "beta": 0.383,
-    "priceToBook": 1.7851354,
+    "priceToBook": 0.85467094,
     "enterpriseToEbitda": 10.506,
     "profitMargins": 0.2998,
     "returnOnEquity": 0.02197,
