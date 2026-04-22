@@ -3,11 +3,11 @@
   "name": "Vantage Drilling International ",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 174,
+  "currentPrice": 164,
   "previousClose": 163,
-  "dayHigh": 174,
-  "dayLow": 174,
-  "volume": 590,
+  "dayHigh": 164,
+  "dayLow": 164,
+  "volume": 25,
   "fiftyTwoWeekHigh": 260,
   "fiftyTwoWeekLow": 153,
   "prices": [
@@ -1478,6 +1478,14 @@
     {
       "date": "2026-04-20",
       "close": 174
+    },
+    {
+      "date": "2026-04-21",
+      "close": 174
+    },
+    {
+      "date": "2026-04-22",
+      "close": 164
     }
   ],
   "dividends": [
@@ -1486,16 +1494,16 @@
       "amount": 50.86
     }
   ],
-  "lastUpdated": "2026-04-21T16:27:59.796Z",
+  "lastUpdated": "2026-04-22T16:27:27.670Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 2359278336,
+    "marketCap": 2223687680,
     "dividendYield": 0.2878,
     "dividendRate": 50.07,
     "payoutRatio": null,
     "beta": -0.011,
-    "priceToBook": 0.97697216,
+    "priceToBook": 0.92082435,
     "enterpriseToEbitda": -91.741,
     "profitMargins": 0.37199003,
     "returnOnEquity": 0.15275,

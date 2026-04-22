@@ -3,13 +3,13 @@
   "name": "STOREBRAND",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 173.1,
-  "previousClose": 174.2,
-  "dayHigh": 173.1,
-  "dayLow": 171.7,
-  "volume": 483040,
+  "currentPrice": 171.5,
+  "previousClose": 174.4,
+  "dayHigh": 173.7,
+  "dayLow": 171.5,
+  "volume": 514689,
   "fiftyTwoWeekHigh": 183.3,
-  "fiftyTwoWeekLow": 118.9,
+  "fiftyTwoWeekLow": 120.6,
   "prices": [
     {
       "date": "2016-04-18",
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-04-21",
       "close": 173.1
+    },
+    {
+      "date": "2026-04-22",
+      "close": 171.5
     }
   ],
   "dividends": [
@@ -10106,17 +10110,17 @@
       "amount": 5.4
     }
   ],
-  "lastUpdated": "2026-04-21T16:25:31.578Z",
+  "lastUpdated": "2026-04-22T16:24:32.583Z",
   "fundamentals": {
-    "trailingPE": 14.820206,
-    "forwardPE": 13.547113,
-    "marketCap": 72937037824,
-    "dividendYield": 0.0313,
-    "dividendRate": 5.4,
-    "payoutRatio": 0.4021,
+    "trailingPE": 14.683219,
+    "forwardPE": 13.411084,
+    "marketCap": 72262868992,
+    "dividendYield": null,
+    "dividendRate": null,
+    "payoutRatio": null,
     "beta": 0.542,
-    "priceToBook": 2.2333755,
-    "enterpriseToEbitda": 2.727,
+    "priceToBook": 2.212732,
+    "enterpriseToEbitda": 2.735,
     "profitMargins": 0.08498,
     "returnOnEquity": 0.1529,
     "revenueGrowth": 0.35,
