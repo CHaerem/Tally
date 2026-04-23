@@ -3,11 +3,11 @@
   "name": "STOREBRAND",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 171.5,
-  "previousClose": 174.4,
-  "dayHigh": 173.7,
-  "dayLow": 171.5,
-  "volume": 514689,
+  "currentPrice": 169.5,
+  "previousClose": 174.2,
+  "dayHigh": 171.3,
+  "dayLow": 169,
+  "volume": 759399,
   "fiftyTwoWeekHigh": 183.3,
   "fiftyTwoWeekLow": 120.6,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-04-22",
       "close": 171.5
+    },
+    {
+      "date": "2026-04-23",
+      "close": 169.5
     }
   ],
   "dividends": [
@@ -10110,17 +10114,17 @@
       "amount": 5.4
     }
   ],
-  "lastUpdated": "2026-04-22T16:24:32.583Z",
+  "lastUpdated": "2026-04-23T16:33:48.963Z",
   "fundamentals": {
-    "trailingPE": 14.683219,
-    "forwardPE": 13.411084,
-    "marketCap": 72262868992,
-    "dividendYield": null,
-    "dividendRate": null,
-    "payoutRatio": null,
+    "trailingPE": 14.48718,
+    "forwardPE": 13.254686,
+    "marketCap": 71369760768,
+    "dividendYield": 0.0315,
+    "dividendRate": 5.4,
+    "payoutRatio": 0.4021,
     "beta": 0.542,
-    "priceToBook": 2.212732,
-    "enterpriseToEbitda": 2.735,
+    "priceToBook": 2.1869276,
+    "enterpriseToEbitda": 2.72,
     "profitMargins": 0.08498,
     "returnOnEquity": 0.1529,
     "revenueGrowth": 0.35,

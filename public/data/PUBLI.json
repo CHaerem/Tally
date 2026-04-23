@@ -3,11 +3,11 @@
   "name": "PUBLIC PROPERTY INVEST ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 20.45,
-  "previousClose": 21.55,
-  "dayHigh": 21.15,
-  "dayLow": 20.45,
-  "volume": 434536,
+  "currentPrice": 20.3,
+  "previousClose": 21.2,
+  "dayHigh": 20.55,
+  "dayLow": 20.2,
+  "volume": 517915,
   "fiftyTwoWeekHigh": 25.7,
   "fiftyTwoWeekLow": 18.46,
   "prices": [
@@ -1990,6 +1990,10 @@
     {
       "date": "2026-04-22",
       "close": 20.45
+    },
+    {
+      "date": "2026-04-23",
+      "close": 20.3
     }
   ],
   "dividends": [
@@ -2010,16 +2014,16 @@
       "amount": 0.15
     }
   ],
-  "lastUpdated": "2026-04-22T16:27:08.667Z",
+  "lastUpdated": "2026-04-23T16:35:54.225Z",
   "fundamentals": {
-    "trailingPE": 12.78125,
-    "forwardPE": 12.507646,
-    "marketCap": 19338911744,
-    "dividendYield": null,
-    "dividendRate": null,
-    "payoutRatio": null,
+    "trailingPE": 12.687499,
+    "forwardPE": 12.415902,
+    "marketCap": 19197061120,
+    "dividendYield": 0.048899997,
+    "dividendRate": 1,
+    "payoutRatio": 0.2188,
     "beta": null,
-    "priceToBook": 0.9037875,
+    "priceToBook": 0.8971582,
     "enterpriseToEbitda": null,
     "profitMargins": 0.47015998,
     "returnOnEquity": 0.037920002,

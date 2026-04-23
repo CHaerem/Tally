@@ -3,11 +3,11 @@
   "name": "SMARTOPTICS GROUP ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 49.8,
-  "previousClose": 49.4,
+  "currentPrice": 49.5,
+  "previousClose": 50,
   "dayHigh": 50.4,
   "dayLow": 49.2,
-  "volume": 274343,
+  "volume": 182852,
   "fiftyTwoWeekHigh": 52,
   "fiftyTwoWeekLow": 14.6,
   "prices": [
@@ -4926,6 +4926,10 @@
     {
       "date": "2026-04-22",
       "close": 49.8
+    },
+    {
+      "date": "2026-04-23",
+      "close": 49.5
     }
   ],
   "dividends": [
@@ -4942,17 +4946,17 @@
       "amount": 0.6
     }
   ],
-  "lastUpdated": "2026-04-22T16:26:18.629Z",
+  "lastUpdated": "2026-04-23T16:35:14.452Z",
   "fundamentals": {
-    "trailingPE": 110.666664,
-    "forwardPE": 35.616295,
-    "marketCap": 4882667008,
-    "dividendYield": null,
-    "dividendRate": null,
-    "payoutRatio": null,
+    "trailingPE": 110,
+    "forwardPE": 35.32716,
+    "marketCap": 4853253120,
+    "dividendYield": 0.012,
+    "dividendRate": 0.6,
+    "payoutRatio": 1.2231,
     "beta": 0.144,
-    "priceToBook": 16.6332,
-    "enterpriseToEbitda": 563.193,
+    "priceToBook": 16.533,
+    "enterpriseToEbitda": 578.309,
     "profitMargins": 0.062230002,
     "returnOnEquity": 0.15954,
     "revenueGrowth": 0.385,
