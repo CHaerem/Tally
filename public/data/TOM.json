@@ -3,13 +3,13 @@
   "name": "TOMRA SYSTEMS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 120.9,
-  "previousClose": 123.6,
-  "dayHigh": 122.2,
-  "dayLow": 119.1,
-  "volume": 1143144,
+  "currentPrice": 90,
+  "previousClose": 124.3,
+  "dayHigh": 102.6,
+  "dayLow": 90,
+  "volume": 11316567,
   "fiftyTwoWeekHigh": 171,
-  "fiftyTwoWeekLow": 106,
+  "fiftyTwoWeekLow": 90,
   "prices": [
     {
       "date": "2016-04-18",
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-04-23",
       "close": 120.9
+    },
+    {
+      "date": "2026-04-24",
+      "close": 90
     }
   ],
   "dividends": [
@@ -10116,19 +10120,23 @@
     {
       "date": "2025-05-07",
       "amount": 2.15
+    },
+    {
+      "date": "2026-04-24",
+      "amount": 2.15
     }
   ],
-  "lastUpdated": "2026-04-23T16:33:53.263Z",
+  "lastUpdated": "2026-04-24T16:21:21.967Z",
   "fundamentals": {
-    "trailingPE": 35.558823,
-    "forwardPE": 16.49444,
-    "marketCap": 35713355776,
-    "dividendYield": 0.0177,
+    "trailingPE": 26.470587,
+    "forwardPE": 11.655036,
+    "marketCap": 26585624576,
+    "dividendYield": 0.0178,
     "dividendRate": 2.15,
     "payoutRatio": 0.5863,
     "beta": 1.299,
-    "priceToBook": 5.4583073,
-    "enterpriseToEbitda": 181.128,
+    "priceToBook": 4.063256,
+    "enterpriseToEbitda": 180.249,
     "profitMargins": 0.070549995,
     "returnOnEquity": 0.15666,
     "revenueGrowth": -0.041,

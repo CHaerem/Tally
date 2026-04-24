@@ -3,11 +3,11 @@
   "name": "Vår Energi ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 45.06,
-  "previousClose": 41.75,
-  "dayHigh": 45.89,
-  "dayLow": 44.89,
-  "volume": 5843669,
+  "currentPrice": 45,
+  "previousClose": 43.2,
+  "dayHigh": 46.15,
+  "dayLow": 44.82,
+  "volume": 7889297,
   "fiftyTwoWeekHigh": 50.7,
   "fiftyTwoWeekLow": 27.04,
   "prices": [
@@ -4206,6 +4206,10 @@
     {
       "date": "2026-04-23",
       "close": 45.06
+    },
+    {
+      "date": "2026-04-24",
+      "close": 45
     }
   ],
   "dividends": [
@@ -4274,17 +4278,17 @@
       "amount": 1.21
     }
   ],
-  "lastUpdated": "2026-04-23T16:33:56.438Z",
+  "lastUpdated": "2026-04-24T16:21:25.231Z",
   "fundamentals": {
-    "trailingPE": 17.952192,
-    "forwardPE": 11.606672,
-    "marketCap": 112488071168,
-    "dividendYield": 0.1083,
+    "trailingPE": 17.857143,
+    "forwardPE": 11.566798,
+    "marketCap": 112338280448,
+    "dividendYield": 0.1073,
     "dividendRate": 4.84,
     "payoutRatio": 1.8005,
     "beta": -0.47,
     "priceToBook": null,
-    "enterpriseToEbitda": 16.241,
+    "enterpriseToEbitda": 16.376,
     "profitMargins": 0.08726,
     "returnOnEquity": 0.97445,
     "revenueGrowth": 0.45,

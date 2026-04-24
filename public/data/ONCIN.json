@@ -3,11 +3,11 @@
   "name": "ONCOINVENT ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 48.2,
-  "previousClose": 48.8,
-  "dayHigh": 49,
-  "dayLow": 47.7,
-  "volume": 6336,
+  "currentPrice": 47.3,
+  "previousClose": 49,
+  "dayHigh": 49.7,
+  "dayLow": 47.1,
+  "volume": 1492,
   "fiftyTwoWeekHigh": 137.779,
   "fiftyTwoWeekLow": 40.1,
   "prices": [
@@ -9074,26 +9074,30 @@
     {
       "date": "2026-04-23",
       "close": 48.2
+    },
+    {
+      "date": "2026-04-24",
+      "close": 47.3
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-04-23T16:35:50.683Z",
+  "lastUpdated": "2026-04-24T16:23:31.374Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -2.3313181,
-    "marketCap": 215859456,
+    "forwardPE": -2.2877872,
+    "marketCap": 211828880,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": null,
-    "priceToBook": 0.6782618,
-    "enterpriseToEbitda": 0.21,
+    "priceToBook": 0.66559714,
+    "enterpriseToEbitda": -78.359,
     "profitMargins": null,
-    "returnOnEquity": null,
-    "revenueGrowth": 177.507,
+    "returnOnEquity": -1.21787,
+    "revenueGrowth": 1.005,
     "earningsGrowth": null,
     "grossMargins": 1,
-    "totalRevenue": 19996000,
-    "ebitda": -98866000
+    "totalRevenue": 28069000,
+    "ebitda": -149795008
   }
 }
