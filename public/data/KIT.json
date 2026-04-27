@@ -3,11 +3,11 @@
   "name": "KITRON",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 108.3,
-  "previousClose": 4.69,
-  "dayHigh": 107.6,
-  "dayLow": 100.3,
-  "volume": 1654502,
+  "currentPrice": 103.5,
+  "previousClose": 97.5,
+  "dayHigh": 108,
+  "dayLow": 103,
+  "volume": 791122,
   "fiftyTwoWeekHigh": 111.6,
   "fiftyTwoWeekLow": 48.86,
   "prices": [
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-04-24",
       "close": 108.3
+    },
+    {
+      "date": "2026-04-27",
+      "close": 103.5
     }
   ],
   "dividends": [
@@ -10100,18 +10104,22 @@
     {
       "date": "2025-04-25",
       "amount": 0.35
+    },
+    {
+      "date": "2026-04-27",
+      "amount": 0.7
     }
   ],
-  "lastUpdated": "2026-04-26T01:33:28.778Z",
+  "lastUpdated": "2026-04-27T16:33:57.085Z",
   "fundamentals": {
-    "trailingPE": 36.711864,
-    "forwardPE": 23.192728,
-    "marketCap": 23685478400,
+    "trailingPE": 35.084743,
+    "forwardPE": 21.929989,
+    "marketCap": 22635704320,
     "dividendYield": 0.0064999997,
     "dividendRate": 0.7,
     "payoutRatio": 0.1096,
     "beta": 0.974,
-    "priceToBook": 6.8521895,
+    "priceToBook": 6.529122,
     "enterpriseToEbitda": 315.43,
     "profitMargins": 0.05933,
     "returnOnEquity": 0.17083,
