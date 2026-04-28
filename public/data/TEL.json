@@ -3,11 +3,11 @@
   "name": "TELENOR",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 162.2,
+  "currentPrice": 153,
   "previousClose": 162.7,
-  "dayHigh": 163.8,
-  "dayLow": 162.2,
-  "volume": 1113969,
+  "dayHigh": 153,
+  "dayLow": 145.9,
+  "volume": 4554225,
   "fiftyTwoWeekHigh": 178.7,
   "fiftyTwoWeekLow": 141.5,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-04-27",
       "close": 162.2
+    },
+    {
+      "date": "2026-04-28",
+      "close": 153
     }
   ],
   "dividends": [
@@ -10150,17 +10154,17 @@
       "amount": 4.6
     }
   ],
-  "lastUpdated": "2026-04-27T16:33:08.756Z",
+  "lastUpdated": "2026-04-28T16:36:44.606Z",
   "fundamentals": {
-    "trailingPE": 20.224438,
-    "forwardPE": 16.567451,
-    "marketCap": 221930995712,
-    "dividendYield": 0.059,
+    "trailingPE": 19.101124,
+    "forwardPE": 15.865428,
+    "marketCap": 209343053824,
+    "dividendYield": 0.0598,
     "dividendRate": 9.7,
     "payoutRatio": 1.1985,
     "beta": 0.312,
-    "priceToBook": 3.1489031,
-    "enterpriseToEbitda": 11.741,
+    "priceToBook": 2.970297,
+    "enterpriseToEbitda": 11.633,
     "profitMargins": 0.09189,
     "returnOnEquity": 0.15616,
     "revenueGrowth": 0.01,
