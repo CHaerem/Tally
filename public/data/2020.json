@@ -3,13 +3,13 @@
   "name": "2020 BULKERS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 131.8,
-  "previousClose": 129.8,
-  "dayHigh": 131.9,
-  "dayLow": 130.6,
-  "volume": 521597,
+  "currentPrice": 4.324,
+  "previousClose": 130.1,
+  "dayHigh": 5.465,
+  "dayLow": 2.56,
+  "volume": 1964462,
   "fiftyTwoWeekHigh": 152,
-  "fiftyTwoWeekLow": 108.1,
+  "fiftyTwoWeekLow": 2.56,
   "prices": [
     {
       "date": "2019-07-12",
@@ -6838,6 +6838,10 @@
     {
       "date": "2026-04-28",
       "close": 131.8
+    },
+    {
+      "date": "2026-04-29",
+      "close": 4.32
     }
   ],
   "dividends": [
@@ -7128,19 +7132,23 @@
     {
       "date": "2026-03-17",
       "amount": 0.93
+    },
+    {
+      "date": "2026-04-29",
+      "amount": 128.35
     }
   ],
-  "lastUpdated": "2026-04-28T16:38:47.138Z",
+  "lastUpdated": "2026-04-29T16:35:48.180Z",
   "fundamentals": {
-    "trailingPE": 10.965058,
-    "forwardPE": 85.63805,
-    "marketCap": 2654418432,
-    "dividendYield": 0.089099996,
+    "trailingPE": 0.35943475,
+    "forwardPE": 2.8206632,
+    "marketCap": 87084248,
+    "dividendYield": 0.0884,
     "dividendRate": 11.65,
     "payoutRatio": 1.1318,
     "beta": 0.547,
-    "priceToBook": 2.1833584,
-    "enterpriseToEbitda": 69.095,
+    "priceToBook": 0.07185571,
+    "enterpriseToEbitda": 69.608,
     "profitMargins": 0.45455003,
     "returnOnEquity": 0.1958,
     "revenueGrowth": 0.527,

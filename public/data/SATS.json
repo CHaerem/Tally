@@ -3,11 +3,11 @@
   "name": "SATS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 43.15,
+  "currentPrice": 42.25,
   "previousClose": 43.2,
-  "dayHigh": 43.6,
-  "dayLow": 43,
-  "volume": 396070,
+  "dayHigh": 43.85,
+  "dayLow": 42.25,
+  "volume": 543929,
   "fiftyTwoWeekHigh": 44.85,
   "fiftyTwoWeekLow": 33.65,
   "prices": [
@@ -6398,6 +6398,10 @@
     {
       "date": "2026-04-28",
       "close": 43.15
+    },
+    {
+      "date": "2026-04-29",
+      "close": 42.25
     }
   ],
   "dividends": [
@@ -6410,17 +6414,17 @@
       "amount": 0.67
     }
   ],
-  "lastUpdated": "2026-04-28T16:37:48.074Z",
+  "lastUpdated": "2026-04-29T16:34:49.625Z",
   "fundamentals": {
-    "trailingPE": 18.440172,
-    "forwardPE": 11.978092,
-    "marketCap": 8460079104,
-    "dividendYield": 0.030199999,
+    "trailingPE": 18.055555,
+    "forwardPE": 11.728259,
+    "marketCap": 8283622912,
+    "dividendYield": 0.0301,
     "dividendRate": 1.3,
     "payoutRatio": 0.2692,
     "beta": 0.917,
-    "priceToBook": 5.9044886,
-    "enterpriseToEbitda": 13.848,
+    "priceToBook": 5.7813354,
+    "enterpriseToEbitda": 13.876,
     "profitMargins": 0.08604,
     "returnOnEquity": 0.33868998,
     "revenueGrowth": 0.09,

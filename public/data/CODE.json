@@ -3,11 +3,11 @@
   "name": "CODELAB CAPITAL AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.3,
-  "previousClose": 2.62,
-  "dayHigh": 2.33,
-  "dayLow": 2.3,
-  "volume": 7431,
+  "currentPrice": 3.47,
+  "previousClose": 2.59,
+  "dayHigh": 3.58,
+  "dayLow": 2.78,
+  "volume": 367058,
   "fiftyTwoWeekHigh": 3.8,
   "fiftyTwoWeekLow": 1.895,
   "prices": [
@@ -5530,26 +5530,30 @@
     {
       "date": "2026-04-28",
       "close": 2.3
+    },
+    {
+      "date": "2026-04-29",
+      "close": 3.47
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-04-28T16:38:17.521Z",
+  "lastUpdated": "2026-04-29T16:35:19.034Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -9.2,
-    "marketCap": 33246304,
+    "forwardPE": -13.88,
+    "marketCap": 50158556,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.684,
-    "priceToBook": 0.8781978,
-    "enterpriseToEbitda": 0.05,
-    "profitMargins": null,
-    "returnOnEquity": -1.76425,
-    "revenueGrowth": -0.939,
+    "priceToBook": 1.3249332,
+    "enterpriseToEbitda": -1.946,
+    "profitMargins": -1.39594,
+    "returnOnEquity": -0.62703,
+    "revenueGrowth": 66.336,
     "earningsGrowth": null,
-    "grossMargins": null,
-    "totalRevenue": 161949,
-    "ebitda": -104253360
+    "grossMargins": -0.11016,
+    "totalRevenue": 10656418,
+    "ebitda": -12410499
   }
 }

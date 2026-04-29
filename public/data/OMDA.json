@@ -3,11 +3,11 @@
   "name": "OMDA AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 41.1,
-  "previousClose": 41.5,
-  "dayHigh": 41.1,
-  "dayLow": 39.6,
-  "volume": 409,
+  "currentPrice": 41.5,
+  "previousClose": 40.9,
+  "dayHigh": 42,
+  "dayLow": 41.5,
+  "volume": 600,
   "fiftyTwoWeekHigh": 57.4,
   "fiftyTwoWeekLow": 37,
   "prices": [
@@ -2594,6 +2594,10 @@
     {
       "date": "2026-04-28",
       "close": 41.1
+    },
+    {
+      "date": "2026-04-29",
+      "close": 41.5
     }
   ],
   "dividends": [
@@ -2602,17 +2606,17 @@
       "amount": 0.48
     }
   ],
-  "lastUpdated": "2026-04-28T16:39:17.348Z",
+  "lastUpdated": "2026-04-29T16:36:19.009Z",
   "fundamentals": {
-    "trailingPE": 128.4375,
-    "forwardPE": 11.048387,
-    "marketCap": 842864960,
-    "dividendYield": 0.0115,
+    "trailingPE": 129.6875,
+    "forwardPE": 11.155914,
+    "marketCap": 851068032,
+    "dividendYield": 0.0114,
     "dividendRate": 0.47,
     "payoutRatio": null,
     "beta": 0.424,
-    "priceToBook": 50.5535,
-    "enterpriseToEbitda": 14.435,
+    "priceToBook": 51.04551,
+    "enterpriseToEbitda": 14.53,
     "profitMargins": 0.0133299995,
     "returnOnEquity": 0.39195,
     "revenueGrowth": 0.168,

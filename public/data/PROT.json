@@ -3,11 +3,11 @@
   "name": "PROTECTOR FORSIKRING",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 468.8,
-  "previousClose": 487.6,
-  "dayHigh": 475.2,
-  "dayLow": 466.2,
-  "volume": 119324,
+  "currentPrice": 465.6,
+  "previousClose": 481.8,
+  "dayHigh": 473,
+  "dayLow": 465.2,
+  "volume": 96305,
   "fiftyTwoWeekHigh": 559,
   "fiftyTwoWeekLow": 360,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-04-28",
       "close": 468.8
+    },
+    {
+      "date": "2026-04-29",
+      "close": 465.6
     }
   ],
   "dividends": [
@@ -10150,23 +10154,23 @@
       "amount": 8
     }
   ],
-  "lastUpdated": "2026-04-28T16:37:02.087Z",
+  "lastUpdated": "2026-04-29T16:34:02.924Z",
   "fundamentals": {
-    "trailingPE": 19.126886,
-    "forwardPE": 16.77881,
-    "marketCap": 38645444608,
-    "dividendYield": 0.0671,
+    "trailingPE": 18.98858,
+    "forwardPE": 16.66428,
+    "marketCap": 38381654016,
+    "dividendYield": 0.0683,
     "dividendRate": 32,
     "payoutRatio": 0.5714,
     "beta": 0.419,
-    "priceToBook": 5.5413713,
-    "enterpriseToEbitda": 5.038,
-    "profitMargins": 0.14397,
-    "returnOnEquity": null,
-    "revenueGrowth": -0.047,
+    "priceToBook": 5.503546,
+    "enterpriseToEbitda": 5.224,
+    "profitMargins": 0.14422,
+    "returnOnEquity": 0.31503,
+    "revenueGrowth": -0.096,
     "earningsGrowth": -0.8,
-    "grossMargins": 0.32759,
-    "totalRevenue": 14328999936,
-    "ebitda": 3096750080
+    "grossMargins": 0.32646,
+    "totalRevenue": 14305000448,
+    "ebitda": 3081750016
   }
 }
