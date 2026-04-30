@@ -3,11 +3,11 @@
   "name": "SAGA PURE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.48,
+  "currentPrice": 1.49,
   "previousClose": 1.48,
   "dayHigh": 1.49,
-  "dayLow": 1.47,
-  "volume": 31595,
+  "dayLow": 1.475,
+  "volume": 61053,
   "fiftyTwoWeekHigh": 1.73,
   "fiftyTwoWeekLow": 1.31,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-04-29",
       "close": 1.48
+    },
+    {
+      "date": "2026-04-30",
+      "close": 1.49
     }
   ],
   "dividends": [
@@ -10098,16 +10102,16 @@
       "amount": 0.1
     }
   ],
-  "lastUpdated": "2026-04-29T16:36:28.888Z",
+  "lastUpdated": "2026-04-30T16:34:29.865Z",
   "fundamentals": {
-    "trailingPE": 148,
+    "trailingPE": 149,
     "forwardPE": null,
-    "marketCap": 998820032,
+    "marketCap": 1005568832,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.557,
-    "priceToBook": 0.8841099,
+    "priceToBook": 0.8900836,
     "enterpriseToEbitda": 76.429,
     "profitMargins": 0.2181,
     "returnOnEquity": 0.00827,

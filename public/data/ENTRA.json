@@ -3,11 +3,11 @@
   "name": "ENTRA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 105,
+  "currentPrice": 105.2,
   "previousClose": 105.4,
-  "dayHigh": 106.2,
-  "dayLow": 105.6,
-  "volume": 61615,
+  "dayHigh": 105.4,
+  "dayLow": 104.4,
+  "volume": 108293,
   "fiftyTwoWeekHigh": 135.6,
   "fiftyTwoWeekLow": 101.2,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-04-29",
       "close": 105
+    },
+    {
+      "date": "2026-04-30",
+      "close": 105.2
     }
   ],
   "dividends": [
@@ -10142,17 +10146,17 @@
       "amount": 1.1
     }
   ],
-  "lastUpdated": "2026-04-29T16:33:59.891Z",
+  "lastUpdated": "2026-04-30T16:32:27.125Z",
   "fundamentals": {
-    "trailingPE": 16.613924,
-    "forwardPE": 15.636634,
-    "marketCap": 19030904832,
-    "dividendYield": 0.0208,
+    "trailingPE": 16.645569,
+    "forwardPE": 15.611389,
+    "marketCap": 19067154432,
+    "dividendYield": 0.021,
     "dividendRate": 2.2,
     "payoutRatio": 0.1741,
     "beta": 1.229,
-    "priceToBook": 0.7704726,
-    "enterpriseToEbitda": 18.506,
+    "priceToBook": 0.7719401,
+    "enterpriseToEbitda": 18.441,
     "profitMargins": 0.36832002,
     "returnOnEquity": 0.0481,
     "revenueGrowth": 0.016,
