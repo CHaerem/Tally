@@ -3,11 +3,11 @@
   "name": "HAUGESUND SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 161.84,
-  "previousClose": 125,
-  "dayHigh": 161.84,
-  "dayLow": 161.84,
-  "volume": 40,
+  "currentPrice": 161.04,
+  "previousClose": 158,
+  "dayHigh": 164,
+  "dayLow": 161.02,
+  "volume": 441,
   "fiftyTwoWeekHigh": 194,
   "fiftyTwoWeekLow": 152,
   "prices": [
@@ -1834,6 +1834,10 @@
     {
       "date": "2026-04-30",
       "close": 161.84
+    },
+    {
+      "date": "2026-05-04",
+      "close": 161.04
     }
   ],
   "dividends": [
@@ -1846,16 +1850,16 @@
       "amount": 10.1
     }
   ],
-  "lastUpdated": "2026-05-03T01:35:09.819Z",
+  "lastUpdated": "2026-05-04T16:35:47.854Z",
   "fundamentals": {
-    "trailingPE": 17.420883,
-    "forwardPE": 14.048611,
-    "marketCap": 850281600,
+    "trailingPE": 17.334768,
+    "forwardPE": 13.979165,
+    "marketCap": 846078528,
     "dividendYield": 0.0624,
     "dividendRate": 10.1,
     "payoutRatio": 1.3455,
     "beta": null,
-    "priceToBook": 0.3287473,
+    "priceToBook": 0.32712224,
     "enterpriseToEbitda": null,
     "profitMargins": 0.41746,
     "returnOnEquity": 0.07796,

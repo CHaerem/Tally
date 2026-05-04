@@ -3,11 +3,11 @@
   "name": "VEND MARKETPLACES ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 254.8,
-  "previousClose": 169.085,
-  "dayHigh": 257,
-  "dayLow": 244.2,
-  "volume": 1931305,
+  "currentPrice": 258,
+  "previousClose": 231.2,
+  "dayHigh": 265.4,
+  "dayLow": 256,
+  "volume": 1248527,
   "fiftyTwoWeekHigh": 397.2,
   "fiftyTwoWeekLow": 223.2,
   "prices": [
@@ -10038,6 +10038,10 @@
     {
       "date": "2026-04-30",
       "close": 254.8
+    },
+    {
+      "date": "2026-05-04",
+      "close": 258
     }
   ],
   "dividends": [
@@ -10088,25 +10092,29 @@
     {
       "date": "2025-06-16",
       "amount": 2.22
+    },
+    {
+      "date": "2026-05-04",
+      "amount": 2.5
     }
   ],
-  "lastUpdated": "2026-05-03T01:35:50.696Z",
+  "lastUpdated": "2026-05-04T16:36:26.403Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 25.673788,
-    "marketCap": 53596209152,
-    "dividendYield": 0.010299999,
+    "forwardPE": 25.32401,
+    "marketCap": 54269317120,
+    "dividendYield": 0.0098,
     "dividendRate": 2.5,
     "payoutRatio": 0.35709998,
-    "beta": 0.772,
-    "priceToBook": 2.1691012,
-    "enterpriseToEbitda": 33.418,
-    "profitMargins": -0.02913,
-    "returnOnEquity": -0.023810001,
-    "revenueGrowth": -0.011,
+    "beta": 0.747,
+    "priceToBook": 2.1963427,
+    "enterpriseToEbitda": 28.848,
+    "profitMargins": -0.42242,
+    "returnOnEquity": -0.16824,
+    "revenueGrowth": 0.016,
     "earningsGrowth": null,
-    "grossMargins": 0.61786,
-    "totalRevenue": 6317000192,
-    "ebitda": 1660999936
+    "grossMargins": 0.61952,
+    "totalRevenue": 6342000128,
+    "ebitda": 1792000000
   }
 }

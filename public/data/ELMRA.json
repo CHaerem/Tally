@@ -3,11 +3,11 @@
   "name": "ELMERA GROUP ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 34.7,
-  "previousClose": 32,
-  "dayHigh": 35.4,
-  "dayLow": 34.05,
-  "volume": 126354,
+  "currentPrice": 33,
+  "previousClose": 34.65,
+  "dayHigh": 33.5,
+  "dayLow": 32.7,
+  "volume": 126180,
   "fiftyTwoWeekHigh": 42.55,
   "fiftyTwoWeekLow": 31.05,
   "prices": [
@@ -8138,6 +8138,10 @@
     {
       "date": "2026-04-30",
       "close": 34.7
+    },
+    {
+      "date": "2026-05-04",
+      "close": 33
     }
   ],
   "dividends": [
@@ -8168,18 +8172,22 @@
     {
       "date": "2025-05-02",
       "amount": 3
+    },
+    {
+      "date": "2026-05-04",
+      "amount": 2
     }
   ],
-  "lastUpdated": "2026-05-03T01:33:53.338Z",
+  "lastUpdated": "2026-05-04T16:34:34.328Z",
   "fundamentals": {
-    "trailingPE": 23.767122,
-    "forwardPE": 10.603742,
-    "marketCap": 3794517504,
+    "trailingPE": 22.60274,
+    "forwardPE": 10.0842495,
+    "marketCap": 3608619008,
     "dividendYield": 0.057600003,
     "dividendRate": 2,
     "payoutRatio": 2.0548,
-    "beta": 0.737,
-    "priceToBook": 2.792532,
+    "beta": 0.726,
+    "priceToBook": 2.655722,
     "enterpriseToEbitda": 15.484,
     "profitMargins": 0.01342,
     "returnOnEquity": 0.10538,
