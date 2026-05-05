@@ -3,11 +3,11 @@
   "name": "LUMI GRUPPEN AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 20.2,
+  "currentPrice": 20,
   "previousClose": 18.5,
-  "dayHigh": 20.2,
-  "dayLow": 19.8,
-  "volume": 3463,
+  "dayHigh": 20,
+  "dayLow": 20,
+  "volume": 20,
   "fiftyTwoWeekHigh": 22.6,
   "fiftyTwoWeekLow": 13.1,
   "prices": [
@@ -5234,6 +5234,10 @@
     {
       "date": "2026-05-04",
       "close": 20.2
+    },
+    {
+      "date": "2026-05-05",
+      "close": 20
     }
   ],
   "dividends": [
@@ -5242,17 +5246,17 @@
       "amount": 0.98
     }
   ],
-  "lastUpdated": "2026-05-04T16:35:38.009Z",
+  "lastUpdated": "2026-05-05T16:34:48.506Z",
   "fundamentals": {
-    "trailingPE": 40.4,
-    "forwardPE": 15.598456,
-    "marketCap": 1168385536,
+    "trailingPE": 40,
+    "forwardPE": 15.4440155,
+    "marketCap": 1156817280,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.4,
-    "priceToBook": 2.3447478,
-    "enterpriseToEbitda": 20.513,
+    "priceToBook": 2.3215322,
+    "enterpriseToEbitda": 20.818,
     "profitMargins": 0.056750003,
     "returnOnEquity": 0.056799997,
     "revenueGrowth": 0.138,

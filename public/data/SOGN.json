@@ -3,11 +3,11 @@
   "name": "SOGN SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 365,
-  "previousClose": 344.7,
-  "dayHigh": 368.95,
-  "dayLow": 358.1,
-  "volume": 1048,
+  "currentPrice": 360,
+  "previousClose": 342,
+  "dayHigh": 367,
+  "dayLow": 360,
+  "volume": 131,
   "fiftyTwoWeekHigh": 380,
   "fiftyTwoWeekLow": 247.1,
   "prices": [
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-05-04",
       "close": 365
+    },
+    {
+      "date": "2026-05-05",
+      "close": 360
     }
   ],
   "dividends": [
@@ -10098,16 +10102,16 @@
       "amount": 22
     }
   ],
-  "lastUpdated": "2026-05-04T16:36:20.213Z",
+  "lastUpdated": "2026-05-05T16:35:32.021Z",
   "fundamentals": {
-    "trailingPE": 16.121908,
-    "forwardPE": 20,
-    "marketCap": 230862496,
-    "dividendYield": 0.062,
+    "trailingPE": 15.908087,
+    "forwardPE": 19.726027,
+    "marketCap": 227700000,
+    "dividendYield": 0.060300004,
     "dividendRate": 22,
     "payoutRatio": 0.8842,
     "beta": null,
-    "priceToBook": 0.17237902,
+    "priceToBook": 0.17001767,
     "enterpriseToEbitda": null,
     "profitMargins": 0.43942,
     "returnOnEquity": 0.09085,
