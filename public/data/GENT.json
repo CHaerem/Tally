@@ -3,11 +3,11 @@
   "name": "GENTIAN DIAGNOSTICS ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 44.8,
-  "previousClose": 43.5,
-  "dayHigh": 45.9,
-  "dayLow": 42.1,
-  "volume": 6291,
+  "currentPrice": 39.5,
+  "previousClose": 40.6,
+  "dayHigh": 42,
+  "dayLow": 38,
+  "volume": 55964,
   "fiftyTwoWeekHigh": 65.8,
   "fiftyTwoWeekLow": 36.1,
   "prices": [
@@ -9426,25 +9426,33 @@
     {
       "date": "2026-05-05",
       "close": 44.8
+    },
+    {
+      "date": "2026-05-06",
+      "close": 39.5
     }
   ],
   "dividends": [
     {
       "date": "2025-05-07",
       "amount": 0.4
+    },
+    {
+      "date": "2026-05-06",
+      "amount": 0.6
     }
   ],
-  "lastUpdated": "2026-05-05T16:33:46.584Z",
+  "lastUpdated": "2026-05-06T16:33:51.004Z",
   "fundamentals": {
-    "trailingPE": 52.09302,
-    "forwardPE": 11.428571,
-    "marketCap": 692546368,
-    "dividendYield": 0.0137,
+    "trailingPE": 45.930233,
+    "forwardPE": 10.07653,
+    "marketCap": 610615680,
+    "dividendYield": 0.0134000005,
     "dividendRate": 0.6,
     "payoutRatio": 0.4651,
     "beta": 0.427,
-    "priceToBook": 3.3709555,
-    "enterpriseToEbitda": 20.78,
+    "priceToBook": 2.9721596,
+    "enterpriseToEbitda": 21.321,
     "profitMargins": 0.07511,
     "returnOnEquity": 0.06644,
     "revenueGrowth": 0.093,

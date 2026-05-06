@@ -3,11 +3,11 @@
   "name": "EAM SOLAR AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.905,
-  "previousClose": 1.9,
-  "dayHigh": 2.05,
-  "dayLow": 1.9,
-  "volume": 416411,
+  "currentPrice": 1.99,
+  "previousClose": 2.25,
+  "dayHigh": 2,
+  "dayLow": 1.905,
+  "volume": 209705,
   "fiftyTwoWeekHigh": 29.08,
   "fiftyTwoWeekLow": 0.66,
   "prices": [
@@ -10062,20 +10062,24 @@
     {
       "date": "2026-05-05",
       "close": 1.9
+    },
+    {
+      "date": "2026-05-06",
+      "close": 1.99
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-05T16:33:42.663Z",
+  "lastUpdated": "2026-05-06T16:33:46.942Z",
   "fundamentals": {
-    "trailingPE": 3.5277777,
+    "trailingPE": 3.685185,
     "forwardPE": null,
-    "marketCap": 38711468,
+    "marketCap": 40438752,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.062,
-    "priceToBook": 1.0404211,
-    "enterpriseToEbitda": 128.95,
+    "priceToBook": 1.0868442,
+    "enterpriseToEbitda": 124.284,
     "profitMargins": 1.11642,
     "returnOnEquity": 0.64308,
     "revenueGrowth": -0.063,

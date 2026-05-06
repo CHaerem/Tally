@@ -3,11 +3,11 @@
   "name": "ABL GROUP ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 11.55,
-  "previousClose": 10.9,
-  "dayHigh": 11.65,
-  "dayLow": 11.4,
-  "volume": 137616,
+  "currentPrice": 11.3,
+  "previousClose": 10.8,
+  "dayHigh": 11.55,
+  "dayLow": 11.3,
+  "volume": 35621,
   "fiftyTwoWeekHigh": 12.65,
   "fiftyTwoWeekLow": 8.2,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-05-05",
       "close": 11.55
+    },
+    {
+      "date": "2026-05-06",
+      "close": 11.3
     }
   ],
   "dividends": [
@@ -10118,23 +10122,23 @@
       "amount": 0.45
     }
   ],
-  "lastUpdated": "2026-05-05T16:34:17.360Z",
+  "lastUpdated": "2026-05-06T16:34:21.370Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 9.625149,
-    "marketCap": 1536283264,
-    "dividendYield": 0.0793,
+    "forwardPE": 9.430288,
+    "marketCap": 1503030400,
+    "dividendYield": 0.0779,
     "dividendRate": 0.9,
     "payoutRatio": 7.4332,
     "beta": 0.138,
-    "priceToBook": 1.8278867,
-    "enterpriseToEbitda": 113.305,
+    "priceToBook": 1.7883221,
+    "enterpriseToEbitda": 143.375,
     "profitMargins": -0.01585,
     "returnOnEquity": -0.06221,
     "revenueGrowth": 0.033,
     "earningsGrowth": null,
     "grossMargins": 1,
     "totalRevenue": 354358016,
-    "ebitda": 13496000
+    "ebitda": 10842000
   }
 }
