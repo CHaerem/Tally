@@ -3,11 +3,11 @@
   "name": "WALLENIUS WILHELMSEN",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 114.4,
-  "previousClose": 118.1,
-  "dayHigh": 118.8,
-  "dayLow": 111.2,
-  "volume": 517956,
+  "currentPrice": 111.4,
+  "previousClose": 118.6,
+  "dayHigh": 114,
+  "dayLow": 110.6,
+  "volume": 665760,
   "fiftyTwoWeekHigh": 137.1,
   "fiftyTwoWeekLow": 70.3,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-05-06",
       "close": 114.4
+    },
+    {
+      "date": "2026-05-07",
+      "close": 111.4
     }
   ],
   "dividends": [
@@ -10114,23 +10118,23 @@
       "amount": 9.36
     }
   ],
-  "lastUpdated": "2026-05-06T16:33:31.366Z",
+  "lastUpdated": "2026-05-07T16:35:41.300Z",
   "fundamentals": {
-    "trailingPE": 5.107143,
-    "forwardPE": 9.7523985,
-    "marketCap": 48367697920,
-    "dividendYield": 0.1104,
+    "trailingPE": 4.9798837,
+    "forwardPE": 9.836092,
+    "marketCap": 47099314176,
+    "dividendYield": 0.1146,
     "dividendRate": 13.11,
     "payoutRatio": 0.59419996,
-    "beta": 0.976,
-    "priceToBook": 1.5758971,
-    "enterpriseToEbitda": 34.779,
-    "profitMargins": 0.19408001,
-    "returnOnEquity": 0.33303002,
-    "revenueGrowth": -0.06,
-    "earningsGrowth": -0.413,
-    "grossMargins": 0.35419998,
-    "totalRevenue": 5240000000,
-    "ebitda": 1492999936
+    "beta": null,
+    "priceToBook": 1.534571,
+    "enterpriseToEbitda": 35.369,
+    "profitMargins": 0.18303,
+    "returnOnEquity": 0.34063998,
+    "revenueGrowth": -0.034,
+    "earningsGrowth": -0.286,
+    "grossMargins": 0.34160998,
+    "totalRevenue": 5196000256,
+    "ebitda": 1412000000
   }
 }

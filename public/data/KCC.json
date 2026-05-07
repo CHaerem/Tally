@@ -3,11 +3,11 @@
   "name": "KLAVENESS COMBINATION CARRIERS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 101.4,
-  "previousClose": 102,
-  "dayHigh": 103.8,
-  "dayLow": 101,
-  "volume": 61930,
+  "currentPrice": 99.9,
+  "previousClose": 102.6,
+  "dayHigh": 99.9,
+  "dayLow": 97.6,
+  "volume": 43575,
   "fiftyTwoWeekHigh": 104.8,
   "fiftyTwoWeekLow": 55.4,
   "prices": [
@@ -6998,6 +6998,10 @@
     {
       "date": "2026-05-06",
       "close": 101.4
+    },
+    {
+      "date": "2026-05-07",
+      "close": 99.9
     }
   ],
   "dividends": [
@@ -7112,19 +7116,23 @@
     {
       "date": "2026-02-18",
       "amount": 0.74
+    },
+    {
+      "date": "2026-05-07",
+      "amount": 2.33
     }
   ],
-  "lastUpdated": "2026-05-06T16:33:55.192Z",
+  "lastUpdated": "2026-05-07T16:36:06.528Z",
   "fundamentals": {
-    "trailingPE": 14.548064,
-    "forwardPE": 9.030802,
-    "marketCap": 6014832640,
-    "dividendYield": 0.0468,
+    "trailingPE": 14.353449,
+    "forwardPE": 8.917513,
+    "marketCap": 5925855744,
+    "dividendYield": 0.0473,
     "dividendRate": 4.8,
     "payoutRatio": 0.4786,
     "beta": 0.17,
-    "priceToBook": 1.7673557,
-    "enterpriseToEbitda": 67.709,
+    "priceToBook": 1.7412113,
+    "enterpriseToEbitda": 66.952,
     "profitMargins": 0.17403,
     "returnOnEquity": 0.123,
     "revenueGrowth": 0.341,
