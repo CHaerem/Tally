@@ -3,11 +3,11 @@
   "name": "ELEKTROIMPORTØREN AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 15.55,
-  "previousClose": 15.45,
-  "dayHigh": 16,
-  "dayLow": 15.5,
-  "volume": 3753139,
+  "currentPrice": 15.4,
+  "previousClose": 15.75,
+  "dayHigh": 15.5,
+  "dayLow": 15,
+  "volume": 55514,
   "fiftyTwoWeekHigh": 17.5,
   "fiftyTwoWeekLow": 11.75,
   "prices": [
@@ -5414,6 +5414,10 @@
     {
       "date": "2026-05-07",
       "close": 15.55
+    },
+    {
+      "date": "2026-05-08",
+      "close": 15.4
     }
   ],
   "dividends": [
@@ -5434,23 +5438,23 @@
       "amount": 0.4
     }
   ],
-  "lastUpdated": "2026-05-07T16:36:50.370Z",
+  "lastUpdated": "2026-05-08T16:32:14.101Z",
   "fundamentals": {
-    "trailingPE": 25.080645,
-    "forwardPE": 7.1268163,
-    "marketCap": 789663232,
-    "dividendYield": 0.025799999,
+    "trailingPE": 22.985073,
+    "forwardPE": 7.0580683,
+    "marketCap": 782045888,
+    "dividendYield": 0.0257,
     "dividendRate": 0.4,
     "payoutRatio": null,
-    "beta": 0.915,
-    "priceToBook": 1.0985518,
-    "enterpriseToEbitda": 13.001,
-    "profitMargins": 0.01792,
-    "returnOnEquity": 0.04561,
-    "revenueGrowth": 0.132,
-    "earningsGrowth": 0.331,
-    "grossMargins": 0.35674998,
-    "totalRevenue": 1788144000,
-    "ebitda": 96594000
+    "beta": null,
+    "priceToBook": 1.0879548,
+    "enterpriseToEbitda": 13.021,
+    "profitMargins": 0.019,
+    "returnOnEquity": 0.050300002,
+    "revenueGrowth": 0.087,
+    "earningsGrowth": null,
+    "grossMargins": 0.35810003,
+    "totalRevenue": 1823043968,
+    "ebitda": 98894000
   }
 }

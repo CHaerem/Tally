@@ -3,13 +3,13 @@
   "name": "ODFJELL SER. A",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 113.6,
-  "previousClose": 115.6,
-  "dayHigh": 116.4,
-  "dayLow": 111,
-  "volume": 76512,
+  "currentPrice": 112,
+  "previousClose": 114.4,
+  "dayHigh": 114.2,
+  "dayLow": 111.4,
+  "volume": 72878,
   "fiftyTwoWeekHigh": 140.4,
-  "fiftyTwoWeekLow": 90,
+  "fiftyTwoWeekLow": 93.1,
   "prices": [
     {
       "date": "2016-05-02",
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-05-07",
       "close": 113.6
+    },
+    {
+      "date": "2026-05-08",
+      "close": 112
     }
   ],
   "dividends": [
@@ -10118,23 +10122,23 @@
       "amount": 4.74
     }
   ],
-  "lastUpdated": "2026-05-07T16:37:09.653Z",
+  "lastUpdated": "2026-05-08T16:32:33.351Z",
   "fundamentals": {
-    "trailingPE": 6.3641453,
-    "forwardPE": 5.791671,
-    "marketCap": 8995277824,
-    "dividendYield": 0.0817,
+    "trailingPE": 6.2709966,
+    "forwardPE": 5.680989,
+    "marketCap": 8868583424,
+    "dividendYield": 0.083500005,
     "dividendRate": 9.48,
     "payoutRatio": 0.5121,
-    "beta": -0.23,
-    "priceToBook": 0.9747467,
-    "enterpriseToEbitda": 31.923,
-    "profitMargins": 0.13926,
-    "returnOnEquity": 0.16159001,
-    "revenueGrowth": -0.088,
-    "earningsGrowth": -0.247,
-    "grossMargins": 0.40693,
-    "totalRevenue": 1115385984,
-    "ebitda": 312456992
+    "beta": null,
+    "priceToBook": 0.9583589,
+    "enterpriseToEbitda": 32.92,
+    "profitMargins": 0.13854,
+    "returnOnEquity": 0.16187,
+    "revenueGrowth": -0.039,
+    "earningsGrowth": -0.057,
+    "grossMargins": 0.39923,
+    "totalRevenue": 1104585984,
+    "ebitda": 297956992
   }
 }

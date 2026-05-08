@@ -3,13 +3,13 @@
   "name": "WILH. WILHELMSEN HOLDING SER. A",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 642,
-  "previousClose": 692,
-  "dayHigh": 662,
-  "dayLow": 641,
-  "volume": 15971,
+  "currentPrice": 665,
+  "previousClose": 666,
+  "dayHigh": 669,
+  "dayLow": 642,
+  "volume": 20069,
   "fiftyTwoWeekHigh": 783,
-  "fiftyTwoWeekLow": 362.5,
+  "fiftyTwoWeekLow": 372,
   "prices": [
     {
       "date": "2016-05-02",
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-05-07",
       "close": 642
+    },
+    {
+      "date": "2026-05-08",
+      "close": 665
     }
   ],
   "dividends": [
@@ -10134,23 +10138,23 @@
       "amount": 20
     }
   ],
-  "lastUpdated": "2026-05-07T16:36:33.216Z",
+  "lastUpdated": "2026-05-08T16:31:55.145Z",
   "fundamentals": {
-    "trailingPE": 4.5896482,
-    "forwardPE": 7.4391837,
-    "marketCap": 26935654400,
-    "dividendYield": 0.042600002,
+    "trailingPE": 4.7690763,
+    "forwardPE": 7.7056966,
+    "marketCap": 27900639232,
+    "dividendYield": 0.0436,
     "dividendRate": 28,
     "payoutRatio": 0.129,
-    "beta": 0.834,
-    "priceToBook": 0.8522181,
-    "enterpriseToEbitda": 184.046,
-    "profitMargins": 0.52836,
-    "returnOnEquity": 0.22442,
-    "revenueGrowth": 0.131,
-    "earningsGrowth": 0.433,
-    "grossMargins": 0.32577,
-    "totalRevenue": 1234000000,
-    "ebitda": 151000000
+    "beta": null,
+    "priceToBook": 0.88274926,
+    "enterpriseToEbitda": 170.401,
+    "profitMargins": 0.50803,
+    "returnOnEquity": 0.20618,
+    "revenueGrowth": 0.034,
+    "earningsGrowth": -0.144,
+    "grossMargins": 0.33146,
+    "totalRevenue": 1246000000,
+    "ebitda": 158000000
   }
 }
