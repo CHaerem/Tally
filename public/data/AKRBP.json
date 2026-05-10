@@ -4,29 +4,13 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 333.8,
-  "previousClose": 364.3,
+  "previousClose": 70.6,
   "dayHigh": 334,
   "dayLow": 328.7,
   "volume": 1149977,
   "fiftyTwoWeekHigh": 373.8,
-  "fiftyTwoWeekLow": 229,
+  "fiftyTwoWeekLow": 229.3,
   "prices": [
-    {
-      "date": "2016-05-02",
-      "close": 71.1
-    },
-    {
-      "date": "2016-05-03",
-      "close": 70.75
-    },
-    {
-      "date": "2016-05-04",
-      "close": 70.55
-    },
-    {
-      "date": "2016-05-06",
-      "close": 70.6
-    },
     {
       "date": "2016-05-09",
       "close": 71.6
@@ -10079,23 +10063,23 @@
   "dividends": [
     {
       "date": "2016-11-29",
-      "amount": 1.71
+      "amount": 1.7
     },
     {
       "date": "2017-02-09",
-      "amount": 1.71
+      "amount": 1.7
     },
     {
       "date": "2017-05-10",
-      "amount": 1.71
+      "amount": 1.7
     },
     {
       "date": "2017-08-01",
-      "amount": 1.71
+      "amount": 1.7
     },
     {
       "date": "2017-11-01",
-      "amount": 1.71
+      "amount": 1.7
     },
     {
       "date": "2018-02-06",
@@ -10230,23 +10214,23 @@
       "amount": 6.29
     }
   ],
-  "lastUpdated": "2026-05-08T16:30:48.036Z",
+  "lastUpdated": "2026-05-10T01:33:44.835Z",
   "fundamentals": {
-    "trailingPE": 39.643703,
+    "trailingPE": 39.36321,
     "forwardPE": 13.405085,
     "marketCap": 210874220544,
-    "dividendYield": 0.075100005,
-    "dividendRate": 24.51,
+    "dividendYield": 0.0752,
+    "dividendRate": 25.12,
     "payoutRatio": 2.7985,
-    "beta": null,
+    "beta": -0.094,
     "priceToBook": 2.0303004,
-    "enterpriseToEbitda": 23.564,
-    "profitMargins": 0.05325,
+    "enterpriseToEbitda": 24.094,
+    "profitMargins": 0.05313,
     "returnOnEquity": 0.04749,
-    "revenueGrowth": -0.055,
+    "revenueGrowth": -0.047,
     "earningsGrowth": 1.398,
-    "grossMargins": 0.8951,
-    "totalRevenue": 10778600448,
-    "ebitda": 9076899840
+    "grossMargins": 0.89553,
+    "totalRevenue": 10804500480,
+    "ebitda": 9068099584
   }
 }

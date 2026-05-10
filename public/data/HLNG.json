@@ -4,29 +4,13 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 23.4,
-  "previousClose": 23.4,
+  "previousClose": 93,
   "dayHigh": 23.45,
   "dayLow": 23.4,
   "volume": 227078,
   "fiftyTwoWeekHigh": 23.45,
   "fiftyTwoWeekLow": 23.4,
   "prices": [
-    {
-      "date": "2016-05-02",
-      "close": 91.25
-    },
-    {
-      "date": "2016-05-03",
-      "close": 89.5
-    },
-    {
-      "date": "2016-05-04",
-      "close": 93
-    },
-    {
-      "date": "2016-05-06",
-      "close": 93
-    },
     {
       "date": "2016-05-09",
       "close": 92.5
@@ -10070,32 +10054,36 @@
     {
       "date": "2026-05-07",
       "close": 23.4
+    },
+    {
+      "date": "2026-05-08",
+      "close": 23.4
     }
   ],
   "dividends": [
     {
       "date": "2016-06-08",
-      "amount": 0.93
+      "amount": 0.92
     },
     {
       "date": "2016-09-08",
-      "amount": 0.93
+      "amount": 0.92
     },
     {
       "date": "2016-12-08",
-      "amount": 0.93
+      "amount": 0.92
     },
     {
       "date": "2017-03-08",
-      "amount": 1.16
+      "amount": 1.15
     },
     {
       "date": "2017-06-08",
-      "amount": 1.16
+      "amount": 1.15
     },
     {
       "date": "2017-12-07",
-      "amount": 1.16
+      "amount": 1.15
     },
     {
       "date": "2018-03-07",
@@ -10134,5 +10122,5 @@
       "amount": 0.23
     }
   ],
-  "lastUpdated": "2026-05-08T16:32:42.421Z"
+  "lastUpdated": "2026-05-10T01:35:34.284Z"
 }
