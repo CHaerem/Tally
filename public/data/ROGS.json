@@ -3,11 +3,11 @@
   "name": "ROGALAND SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 147,
-  "previousClose": 99,
-  "dayHigh": 148.92,
-  "dayLow": 145.22,
-  "volume": 4925,
+  "currentPrice": 146.2,
+  "previousClose": 149.16,
+  "dayHigh": 150,
+  "dayLow": 146.24,
+  "volume": 4229,
   "fiftyTwoWeekHigh": 162.98,
   "fiftyTwoWeekLow": 130.02,
   "prices": [
@@ -1798,6 +1798,10 @@
     {
       "date": "2026-05-08",
       "close": 147
+    },
+    {
+      "date": "2026-05-11",
+      "close": 146.2
     }
   ],
   "dividends": [
@@ -1810,23 +1814,23 @@
       "amount": 11.7
     }
   ],
-  "lastUpdated": "2026-05-10T01:36:02.013Z",
+  "lastUpdated": "2026-05-11T16:56:16.881Z",
   "fundamentals": {
-    "trailingPE": 12.883436,
-    "forwardPE": 12.44357,
-    "marketCap": 3392476672,
+    "trailingPE": 12.813321,
+    "forwardPE": 12.37585,
+    "marketCap": 3374013952,
     "dividendYield": 0.0796,
     "dividendRate": 11.7,
     "payoutRatio": 1.0263,
-    "beta": 0.12,
-    "priceToBook": 0.77692276,
+    "beta": null,
+    "priceToBook": 0.7726946,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.47784,
-    "returnOnEquity": 0.10859,
-    "revenueGrowth": -0.041,
-    "earningsGrowth": -0.136,
+    "profitMargins": 0.45571998,
+    "returnOnEquity": 0.10574,
+    "revenueGrowth": -0.153,
+    "earningsGrowth": null,
     "grossMargins": null,
-    "totalRevenue": 969203968,
+    "totalRevenue": 932660992,
     "ebitda": null
   }
 }

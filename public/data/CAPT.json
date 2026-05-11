@@ -3,11 +3,11 @@
   "name": "CAPITAL TANKERS CORP.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 123.64,
-  "previousClose": 122,
-  "dayHigh": 123.98,
-  "dayLow": 122,
-  "volume": 167142,
+  "currentPrice": 123,
+  "previousClose": 127.9,
+  "dayHigh": 125.96,
+  "dayLow": 123.04,
+  "volume": 209551,
   "fiftyTwoWeekHigh": 137.44,
   "fiftyTwoWeekLow": 118.4,
   "prices": [
@@ -134,14 +134,18 @@
     {
       "date": "2026-05-08",
       "close": 123.64
+    },
+    {
+      "date": "2026-05-11",
+      "close": 123
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-10T01:35:02.228Z",
+  "lastUpdated": "2026-05-11T16:55:15.293Z",
   "fundamentals": {
-    "trailingPE": 116.64152,
-    "forwardPE": 12.224034,
-    "marketCap": 16529752064,
+    "trailingPE": 116.03774,
+    "forwardPE": 12.074212,
+    "marketCap": 16444188672,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,

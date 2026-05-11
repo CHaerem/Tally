@@ -3,11 +3,11 @@
   "name": "GYLDENDAL",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 428,
-  "previousClose": 255,
-  "dayHigh": 428,
-  "dayLow": 428,
-  "volume": 879,
+  "currentPrice": 400,
+  "previousClose": 428,
+  "dayHigh": 406,
+  "dayLow": 400,
+  "volume": 54,
   "fiftyTwoWeekHigh": 500,
   "fiftyTwoWeekLow": 390,
   "prices": [
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-05-08",
       "close": 428
+    },
+    {
+      "date": "2026-05-11",
+      "close": 400
     }
   ],
   "dividends": [
@@ -10098,16 +10102,16 @@
       "amount": 3.5
     }
   ],
-  "lastUpdated": "2026-05-10T01:35:31.566Z",
+  "lastUpdated": "2026-05-11T16:55:46.449Z",
   "fundamentals": {
-    "trailingPE": 12.152185,
+    "trailingPE": 11.357183,
     "forwardPE": null,
-    "marketCap": 987452096,
+    "marketCap": 922852416,
     "dividendYield": 0.0082,
     "dividendRate": 3.5,
     "payoutRatio": 0.0994,
     "beta": 0.252,
-    "priceToBook": 1.0212116,
+    "priceToBook": 0.9544034,
     "enterpriseToEbitda": 6.809,
     "profitMargins": 0.02786,
     "returnOnEquity": 0.07695,
