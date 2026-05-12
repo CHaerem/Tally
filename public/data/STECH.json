@@ -3,11 +3,11 @@
   "name": "SOILTECH ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 81.8,
-  "previousClose": 83,
+  "currentPrice": 81.6,
+  "previousClose": 83.2,
   "dayHigh": 82,
-  "dayLow": 81,
-  "volume": 13962,
+  "dayLow": 79,
+  "volume": 63727,
   "fiftyTwoWeekHigh": 93,
   "fiftyTwoWeekLow": 48.5,
   "prices": [
@@ -1666,14 +1666,18 @@
     {
       "date": "2026-05-11",
       "close": 81.8
+    },
+    {
+      "date": "2026-05-12",
+      "close": 81.6
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-11T16:56:25.595Z",
+  "lastUpdated": "2026-05-12T16:47:09.299Z",
   "fundamentals": {
-    "trailingPE": 21.526318,
-    "forwardPE": 13.273016,
-    "marketCap": 716410752,
+    "trailingPE": 21.473684,
+    "forwardPE": 13.240562,
+    "marketCap": 714659072,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,

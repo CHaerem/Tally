@@ -3,11 +3,11 @@
   "name": "Trøndelag Sparebank",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 113.98,
+  "currentPrice": 111.2,
   "previousClose": 115,
-  "dayHigh": 116.58,
-  "dayLow": 113.98,
-  "volume": 270,
+  "dayHigh": 114,
+  "dayLow": 114,
+  "volume": 1324,
   "fiftyTwoWeekHigh": 120,
   "fiftyTwoWeekLow": 105,
   "prices": [
@@ -1386,6 +1386,10 @@
     {
       "date": "2026-05-11",
       "close": 113.98
+    },
+    {
+      "date": "2026-05-12",
+      "close": 111.2
     }
   ],
   "dividends": [
@@ -1398,16 +1402,16 @@
       "amount": 5
     }
   ],
-  "lastUpdated": "2026-05-11T16:56:29.055Z",
+  "lastUpdated": "2026-05-12T16:47:12.914Z",
   "fundamentals": {
-    "trailingPE": 7.764305,
-    "forwardPE": 12.937571,
-    "marketCap": 545018752,
-    "dividendYield": 0.0429,
+    "trailingPE": 7.5749316,
+    "forwardPE": 12.62202,
+    "marketCap": 531725568,
+    "dividendYield": 0.043899998,
     "dividendRate": 5,
     "payoutRatio": 0.32689998,
     "beta": null,
-    "priceToBook": 0.50918025,
+    "priceToBook": 0.4967612,
     "enterpriseToEbitda": null,
     "profitMargins": 0.22344999,
     "returnOnEquity": 0.06284,

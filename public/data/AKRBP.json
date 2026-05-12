@@ -3,11 +3,11 @@
   "name": "AKER BP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 340.6,
-  "previousClose": 366.6,
-  "dayHigh": 343,
-  "dayLow": 336.1,
-  "volume": 1024597,
+  "currentPrice": 344.9,
+  "previousClose": 339.8,
+  "dayHigh": 348.7,
+  "dayLow": 339,
+  "volume": 922033,
   "fiftyTwoWeekHigh": 373.8,
   "fiftyTwoWeekLow": 229.3,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-05-11",
       "close": 340.6
+    },
+    {
+      "date": "2026-05-12",
+      "close": 344.9
     }
   ],
   "dividends": [
@@ -10216,19 +10220,23 @@
     {
       "date": "2026-02-16",
       "amount": 6.29
+    },
+    {
+      "date": "2026-05-12",
+      "amount": 6.13
     }
   ],
-  "lastUpdated": "2026-05-11T16:53:55.971Z",
+  "lastUpdated": "2026-05-12T16:44:48.223Z",
   "fundamentals": {
-    "trailingPE": 40.165096,
-    "forwardPE": 13.477291,
-    "marketCap": 215170056192,
-    "dividendYield": 0.0752,
+    "trailingPE": 41.157516,
+    "forwardPE": 13.514699,
+    "marketCap": 217886507008,
+    "dividendYield": 0.073699996,
     "dividendRate": 25.12,
     "payoutRatio": 2.7985,
     "beta": -0.094,
-    "priceToBook": 2.0716608,
-    "enterpriseToEbitda": 24.094,
+    "priceToBook": 2.044121,
+    "enterpriseToEbitda": 24.568,
     "profitMargins": 0.05313,
     "returnOnEquity": 0.04749,
     "revenueGrowth": -0.047,
