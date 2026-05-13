@@ -3,11 +3,11 @@
   "name": "AQUA BIO TECHNOLOGY",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 5.1,
-  "previousClose": 5.1,
-  "dayHigh": 5.26,
-  "dayLow": 5,
-  "volume": 15579,
+  "currentPrice": 4.94,
+  "previousClose": 5.08,
+  "dayHigh": 5.24,
+  "dayLow": 4.98,
+  "volume": 21979,
   "fiftyTwoWeekHigh": 123,
   "fiftyTwoWeekLow": 4.6,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-05-12",
       "close": 5.1
+    },
+    {
+      "date": "2026-05-13",
+      "close": 4.94
     }
   ],
   "dividends": [
@@ -10082,23 +10086,23 @@
       "amount": 49.69
     }
   ],
-  "lastUpdated": "2026-05-12T16:45:52.893Z",
+  "lastUpdated": "2026-05-13T16:48:44.376Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 78980560,
+    "marketCap": 76502744,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.096,
-    "priceToBook": 1.5260323,
-    "enterpriseToEbitda": -1.139,
-    "profitMargins": -1.42553,
+    "beta": null,
+    "priceToBook": null,
+    "enterpriseToEbitda": -24.569,
+    "profitMargins": 12.97153,
     "returnOnEquity": null,
-    "revenueGrowth": 0.063,
+    "revenueGrowth": null,
     "earningsGrowth": null,
-    "grossMargins": 0.00484,
-    "totalRevenue": 101508080,
-    "ebitda": -102850384
+    "grossMargins": 0.85219,
+    "totalRevenue": 7532495,
+    "ebitda": -4976871
   }
 }

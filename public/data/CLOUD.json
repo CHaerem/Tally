@@ -3,11 +3,11 @@
   "name": "CLOUDBERRY CLEAN ENERGY ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 12.8,
-  "previousClose": 13,
-  "dayHigh": 12.9,
-  "dayLow": 12.54,
-  "volume": 351216,
+  "currentPrice": 12.94,
+  "previousClose": 12.9,
+  "dayHigh": 13,
+  "dayLow": 12.6,
+  "volume": 98282,
   "fiftyTwoWeekHigh": 13.94,
   "fiftyTwoWeekLow": 11.12,
   "prices": [
@@ -6138,26 +6138,30 @@
     {
       "date": "2026-05-12",
       "close": 12.8
+    },
+    {
+      "date": "2026-05-13",
+      "close": 12.94
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-12T16:45:14.820Z",
+  "lastUpdated": "2026-05-13T16:47:57.491Z",
   "fundamentals": {
-    "trailingPE": 60.952385,
-    "forwardPE": 279.11035,
-    "marketCap": 4301886976,
+    "trailingPE": 61.61905,
+    "forwardPE": 282.1631,
+    "marketCap": 4348938752,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.522,
-    "priceToBook": 0.8572194,
-    "enterpriseToEbitda": 46.318,
-    "profitMargins": 0.13112001,
-    "returnOnEquity": 0.01666,
-    "revenueGrowth": 0.655,
+    "beta": null,
+    "priceToBook": 0.8439864,
+    "enterpriseToEbitda": 37.84,
+    "profitMargins": 0.30137,
+    "returnOnEquity": 0.037720002,
+    "revenueGrowth": 0.702,
     "earningsGrowth": null,
-    "grossMargins": 0.89237,
-    "totalRevenue": 511000000,
-    "ebitda": 156000000
+    "grossMargins": 0.89041,
+    "totalRevenue": 584000000,
+    "ebitda": 202000000
   }
 }

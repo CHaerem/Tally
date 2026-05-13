@@ -3,11 +3,11 @@
   "name": "HEXAGON PURUS ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.316,
-  "previousClose": 1.4,
-  "dayHigh": 1.478,
-  "dayLow": 1.3,
-  "volume": 983294,
+  "currentPrice": 1.26,
+  "previousClose": 1.5,
+  "dayHigh": 1.31,
+  "dayLow": 1.236,
+  "volume": 1098560,
   "fiftyTwoWeekHigh": 2.8,
   "fiftyTwoWeekLow": 0.981,
   "prices": [
@@ -5434,26 +5434,30 @@
     {
       "date": "2026-05-12",
       "close": 1.32
+    },
+    {
+      "date": "2026-05-13",
+      "close": 1.26
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-12T16:46:21.385Z",
+  "lastUpdated": "2026-05-13T16:49:19.199Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -1.0061239,
-    "marketCap": 563887744,
+    "forwardPE": -0.9633101,
+    "marketCap": 539892480,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 1.315,
-    "priceToBook": 1.2196478,
-    "enterpriseToEbitda": -4.315,
-    "profitMargins": -1.31301,
-    "returnOnEquity": -1.13229,
-    "revenueGrowth": 0.181,
+    "beta": null,
+    "priceToBook": 1.1677479,
+    "enterpriseToEbitda": -6.223,
+    "profitMargins": -0.97679,
+    "returnOnEquity": -1.36363,
+    "revenueGrowth": 0.762,
     "earningsGrowth": null,
-    "grossMargins": 0.38417998,
-    "totalRevenue": 1143891968,
-    "ebitda": -646001024
+    "grossMargins": 0.45404997,
+    "totalRevenue": 1319154048,
+    "ebitda": -402392000
   }
 }
