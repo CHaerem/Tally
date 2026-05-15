@@ -3,11 +3,11 @@
   "name": "PARETO BANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 65.7,
-  "previousClose": 65.2,
-  "dayHigh": 66.6,
-  "dayLow": 65.8,
-  "volume": 95649,
+  "currentPrice": 66.8,
+  "previousClose": 64.9,
+  "dayHigh": 67,
+  "dayLow": 66.3,
+  "volume": 70267,
   "fiftyTwoWeekHigh": 97.1,
   "fiftyTwoWeekLow": 64.2,
   "prices": [
@@ -10022,6 +10022,10 @@
     {
       "date": "2026-05-13",
       "close": 65.7
+    },
+    {
+      "date": "2026-05-15",
+      "close": 66.8
     }
   ],
   "dividends": [
@@ -10066,16 +10070,16 @@
       "amount": 8
     }
   ],
-  "lastUpdated": "2026-05-14T16:40:40.607Z",
+  "lastUpdated": "2026-05-15T16:36:03.907Z",
   "fundamentals": {
-    "trailingPE": 9.647576,
-    "forwardPE": 7.9919415,
-    "marketCap": 5044604928,
+    "trailingPE": 9.809105,
+    "forwardPE": 8.12575,
+    "marketCap": 5129065984,
     "dividendYield": 0.121800005,
     "dividendRate": 8,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 0.971836,
+    "beta": 0.434,
+    "priceToBook": 1.050711,
     "enterpriseToEbitda": null,
     "profitMargins": 0.58562,
     "returnOnEquity": 0.100609995,

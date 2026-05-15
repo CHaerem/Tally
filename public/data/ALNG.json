@@ -3,11 +3,11 @@
   "name": "AWILCO LNG",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 3.35,
-  "previousClose": 3.66,
-  "dayHigh": 3.5,
-  "dayLow": 3.3,
-  "volume": 314415,
+  "currentPrice": 3.38,
+  "previousClose": 3.62,
+  "dayHigh": 3.38,
+  "dayLow": 3.28,
+  "volume": 208244,
   "fiftyTwoWeekHigh": 5.75,
   "fiftyTwoWeekLow": 2.3,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-05-13",
       "close": 3.35
+    },
+    {
+      "date": "2026-05-15",
+      "close": 3.38
     }
   ],
   "dividends": [
@@ -10102,23 +10106,23 @@
       "amount": 0.25
     }
   ],
-  "lastUpdated": "2026-05-14T16:41:45.490Z",
+  "lastUpdated": "2026-05-15T16:36:56.288Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -16.502968,
-    "marketCap": 703033024,
+    "forwardPE": -16.650755,
+    "marketCap": 709328896,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": -0.295,
-    "priceToBook": 0.3834535,
-    "enterpriseToEbitda": 558.441,
-    "profitMargins": -0.26882,
-    "returnOnEquity": -0.08487,
-    "revenueGrowth": -0.063,
+    "beta": null,
+    "priceToBook": 0.3867452,
+    "enterpriseToEbitda": -315.483,
+    "profitMargins": -0.36119998,
+    "returnOnEquity": -0.11261,
+    "revenueGrowth": -0.198,
     "earningsGrowth": null,
-    "grossMargins": 0.80833,
-    "totalRevenue": 41567000,
-    "ebitda": 1089000
+    "grossMargins": 0.79580003,
+    "totalRevenue": 39549000,
+    "ebitda": -1862000
   }
 }

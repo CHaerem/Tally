@@ -3,13 +3,13 @@
   "name": "ARCTIC BIOSCIENCE AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 3.3,
-  "previousClose": 3.29,
-  "dayHigh": 3.38,
-  "dayLow": 3.1,
-  "volume": 4454,
+  "currentPrice": 3.04,
+  "previousClose": 3.44,
+  "dayHigh": 3.39,
+  "dayLow": 3.01,
+  "volume": 12523,
   "fiftyTwoWeekHigh": 4.8,
-  "fiftyTwoWeekLow": 2.65,
+  "fiftyTwoWeekLow": 2.82,
   "prices": [
     {
       "date": "2021-02-24",
@@ -5246,26 +5246,30 @@
     {
       "date": "2026-05-13",
       "close": 3.3
+    },
+    {
+      "date": "2026-05-15",
+      "close": 3.04
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-14T16:41:40.932Z",
+  "lastUpdated": "2026-05-15T16:36:52.728Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -16.5,
-    "marketCap": 88955640,
+    "forwardPE": -15.2,
+    "marketCap": 81947016,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 0.51927614,
-    "enterpriseToEbitda": -5.305,
-    "profitMargins": -0.96255,
+    "beta": 1.089,
+    "priceToBook": 0.4723431,
+    "enterpriseToEbitda": -4.903,
+    "profitMargins": -0.96266,
     "returnOnEquity": -0.21356001,
     "revenueGrowth": -0.12,
     "earningsGrowth": null,
-    "grossMargins": 0.31835,
-    "totalRevenue": 42622504,
-    "ebitda": -28325856
+    "grossMargins": 0.31827,
+    "totalRevenue": 42617504,
+    "ebitda": -30593740
   }
 }

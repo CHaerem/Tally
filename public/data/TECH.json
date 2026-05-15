@@ -3,11 +3,11 @@
   "name": "TECHSTEP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 10.8,
-  "previousClose": 11.3,
-  "dayHigh": 11.45,
-  "dayLow": 9.54,
-  "volume": 97102,
+  "currentPrice": 10.3,
+  "previousClose": 11,
+  "dayHigh": 11,
+  "dayLow": 10,
+  "volume": 27947,
   "fiftyTwoWeekHigh": 14,
   "fiftyTwoWeekLow": 9.54,
   "prices": [
@@ -10070,26 +10070,30 @@
     {
       "date": "2026-05-13",
       "close": 10.8
+    },
+    {
+      "date": "2026-05-15",
+      "close": 10.3
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-14T16:41:33.332Z",
+  "lastUpdated": "2026-05-15T16:36:46.624Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 7.714286,
-    "marketCap": 376549344,
+    "forwardPE": 7.357143,
+    "marketCap": 359116512,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.631,
-    "priceToBook": 0.75135666,
-    "enterpriseToEbitda": 4.863,
-    "profitMargins": -0.09392,
-    "returnOnEquity": -0.17650999,
-    "revenueGrowth": -0.096,
+    "beta": null,
+    "priceToBook": 0.7165716,
+    "enterpriseToEbitda": 4.906,
+    "profitMargins": -0.109799996,
+    "returnOnEquity": -0.21415001,
+    "revenueGrowth": -0.118,
     "earningsGrowth": null,
-    "grossMargins": 0.43527,
-    "totalRevenue": 1000993024,
-    "ebitda": 112753000
+    "grossMargins": 0.41622,
+    "totalRevenue": 971649024,
+    "ebitda": 92392000
   }
 }

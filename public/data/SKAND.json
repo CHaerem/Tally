@@ -3,11 +3,11 @@
   "name": "SKANDIA GREENPOWER AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.06,
-  "previousClose": 1.72,
-  "dayHigh": 2.09,
-  "dayLow": 2.06,
-  "volume": 12012,
+  "currentPrice": 1.13,
+  "previousClose": 1.77,
+  "dayHigh": 2.05,
+  "dayLow": 2.05,
+  "volume": 600,
   "fiftyTwoWeekHigh": 2.09,
   "fiftyTwoWeekLow": 1.01,
   "prices": [
@@ -5254,6 +5254,10 @@
     {
       "date": "2026-05-13",
       "close": 2.06
+    },
+    {
+      "date": "2026-05-15",
+      "close": 1.13
     }
   ],
   "dividends": [
@@ -5266,16 +5270,16 @@
       "amount": 0.05
     }
   ],
-  "lastUpdated": "2026-05-14T16:43:06.679Z",
+  "lastUpdated": "2026-05-15T16:38:03.555Z",
   "fundamentals": {
-    "trailingPE": 22.888887,
+    "trailingPE": 12.555555,
     "forwardPE": null,
-    "marketCap": 246098896,
+    "marketCap": 134996000,
     "dividendYield": 0.0378,
     "dividendRate": 0.07,
     "payoutRatio": 0.2351,
     "beta": 1.37,
-    "priceToBook": 2.5245097,
+    "priceToBook": 1.3848039,
     "enterpriseToEbitda": 3.802,
     "profitMargins": 0.01887,
     "returnOnEquity": 0.10475001,

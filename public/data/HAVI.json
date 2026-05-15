@@ -3,11 +3,11 @@
   "name": "HAVILA SHIPPING",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.2,
-  "previousClose": 1.25,
-  "dayHigh": 1.22,
-  "dayLow": 1.135,
-  "volume": 246579,
+  "currentPrice": 1.255,
+  "previousClose": 1.21,
+  "dayHigh": 1.255,
+  "dayLow": 1.2,
+  "volume": 123087,
   "fiftyTwoWeekHigh": 2.02,
   "fiftyTwoWeekLow": 0.716,
   "prices": [
@@ -10070,26 +10070,30 @@
     {
       "date": "2026-05-13",
       "close": 1.2
+    },
+    {
+      "date": "2026-05-15",
+      "close": 1.25
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-14T16:41:05.109Z",
+  "lastUpdated": "2026-05-15T16:36:23.709Z",
   "fundamentals": {
-    "trailingPE": 30.000002,
-    "forwardPE": -0.6,
-    "marketCap": 330202656,
+    "trailingPE": 31.375,
+    "forwardPE": -0.6275,
+    "marketCap": 345336928,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.375,
-    "priceToBook": 0.9811938,
-    "enterpriseToEbitda": 3.917,
-    "profitMargins": 0.01549,
-    "returnOnEquity": 0.03022,
-    "revenueGrowth": -0.071,
+    "beta": null,
+    "priceToBook": 1.0261651,
+    "enterpriseToEbitda": 4.815,
+    "profitMargins": -0.094390005,
+    "returnOnEquity": -0.17704001,
+    "revenueGrowth": -0.301,
     "earningsGrowth": null,
-    "grossMargins": 0.56176,
-    "totalRevenue": 647182016,
-    "ebitda": 295652000
+    "grossMargins": 0.52472997,
+    "totalRevenue": 594971008,
+    "ebitda": 244600000
   }
 }

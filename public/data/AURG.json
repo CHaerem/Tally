@@ -3,11 +3,11 @@
   "name": "AURSKOG SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 255.05,
-  "previousClose": 254.05,
-  "dayHigh": 255.05,
-  "dayLow": 255.05,
-  "volume": 4,
+  "currentPrice": 259.9,
+  "previousClose": 255,
+  "dayHigh": 259.95,
+  "dayLow": 255.15,
+  "volume": 250,
   "fiftyTwoWeekHigh": 273.25,
   "fiftyTwoWeekLow": 227.55,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-05-13",
       "close": 255.05
+    },
+    {
+      "date": "2026-05-15",
+      "close": 259.9
     }
   ],
   "dividends": [
@@ -10114,16 +10118,16 @@
       "amount": 17
     }
   ],
-  "lastUpdated": "2026-05-14T16:41:48.033Z",
+  "lastUpdated": "2026-05-15T16:36:58.296Z",
   "fundamentals": {
-    "trailingPE": 4.537449,
-    "forwardPE": 13.032703,
-    "marketCap": 1178994432,
+    "trailingPE": 4.6237326,
+    "forwardPE": 13.253442,
+    "marketCap": 1201414016,
     "dividendYield": 0.066700004,
     "dividendRate": 17,
     "payoutRatio": 0.26680002,
     "beta": 0.115,
-    "priceToBook": 0.5060566,
+    "priceToBook": 0.5156797,
     "enterpriseToEbitda": null,
     "profitMargins": 0.50311,
     "returnOnEquity": 0.10624,
