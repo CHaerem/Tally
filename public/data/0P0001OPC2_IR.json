@@ -4,7 +4,7 @@
   "currency": "NOK",
   "exchange": "ISE",
   "currentPrice": 1792.24,
-  "previousClose": 1797.98,
+  "previousClose": 1000,
   "dayHigh": null,
   "dayLow": null,
   "volume": null,
@@ -3342,12 +3342,16 @@
     {
       "date": "2026-05-12",
       "close": 1792.24
+    },
+    {
+      "date": "2026-05-13",
+      "close": 1802.26
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-15T16:38:28.446Z",
+  "lastUpdated": "2026-05-17T01:37:36.156Z",
   "fundamentals": {
-    "trailingPE": 27.460794,
+    "trailingPE": 27.242767,
     "forwardPE": null,
     "marketCap": null,
     "dividendYield": null,
