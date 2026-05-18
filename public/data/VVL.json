@@ -3,11 +3,11 @@
   "name": "VOSS VEKSEL- OG LANDMANDSBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 466,
-  "previousClose": 116,
-  "dayHigh": 468,
-  "dayLow": 460,
-  "volume": 125,
+  "currentPrice": 482,
+  "previousClose": 476,
+  "dayHigh": 486,
+  "dayLow": 466,
+  "volume": 265,
   "fiftyTwoWeekHigh": 530,
   "fiftyTwoWeekLow": 354,
   "prices": [
@@ -10054,6 +10054,10 @@
     {
       "date": "2026-05-15",
       "close": 466
+    },
+    {
+      "date": "2026-05-18",
+      "close": 482
     }
   ],
   "dividends": [
@@ -10094,23 +10098,23 @@
       "amount": 18.75
     }
   ],
-  "lastUpdated": "2026-05-17T01:37:15.979Z",
+  "lastUpdated": "2026-05-18T17:01:45.378Z",
   "fundamentals": {
-    "trailingPE": 12.195761,
-    "forwardPE": 9.502447,
-    "marketCap": 1026931648,
+    "trailingPE": 12.614499,
+    "forwardPE": 9.8287115,
+    "marketCap": 1062191104,
     "dividendYield": 0.0402,
     "dividendRate": 18.75,
     "payoutRatio": 0.4319,
-    "beta": 0.314,
-    "priceToBook": 1.2996467,
+    "beta": null,
+    "priceToBook": 1.3442698,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.45359,
-    "returnOnEquity": 0.11038,
-    "revenueGrowth": 0.047,
-    "earningsGrowth": 0.092,
+    "profitMargins": 0.44034,
+    "returnOnEquity": 0.10342,
+    "revenueGrowth": -0.044,
+    "earningsGrowth": null,
     "grossMargins": null,
-    "totalRevenue": 196890000,
+    "totalRevenue": 194868000,
     "ebitda": null
   }
 }

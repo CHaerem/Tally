@@ -3,11 +3,11 @@
   "name": "HOEGH AUTOLINERS ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 143.9,
-  "previousClose": 21.305,
-  "dayHigh": 144.6,
-  "dayLow": 141.2,
-  "volume": 535449,
+  "currentPrice": 143,
+  "previousClose": 137.2,
+  "dayHigh": 144,
+  "dayLow": 137.5,
+  "volume": 518248,
   "fiftyTwoWeekHigh": 144.6,
   "fiftyTwoWeekLow": 84,
   "prices": [
@@ -4482,6 +4482,10 @@
     {
       "date": "2026-05-15",
       "close": 143.9
+    },
+    {
+      "date": "2026-05-18",
+      "close": 143
     }
   ],
   "dividends": [
@@ -4544,18 +4548,22 @@
     {
       "date": "2026-03-02",
       "amount": 4.96
+    },
+    {
+      "date": "2026-05-18",
+      "amount": 4.55
     }
   ],
-  "lastUpdated": "2026-05-17T01:34:24.156Z",
+  "lastUpdated": "2026-05-18T16:58:59.525Z",
   "fundamentals": {
-    "trailingPE": 6.484903,
-    "forwardPE": 9.376722,
-    "marketCap": 27451699200,
+    "trailingPE": 6.444344,
+    "forwardPE": 9.179749,
+    "marketCap": 27280007168,
     "dividendYield": 0.1278,
     "dividendRate": 18.4,
     "payoutRatio": 0.9225,
     "beta": null,
-    "priceToBook": 2.306147,
+    "priceToBook": 2.2917237,
     "enterpriseToEbitda": 47.745,
     "profitMargins": 0.31687,
     "returnOnEquity": 0.36604,

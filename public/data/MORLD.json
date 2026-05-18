@@ -3,11 +3,11 @@
   "name": "MORELD ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 20.3,
-  "previousClose": 13.95,
-  "dayHigh": 20.1,
-  "dayLow": 19.56,
-  "volume": 828264,
+  "currentPrice": 20,
+  "previousClose": 19.74,
+  "dayHigh": 20.4,
+  "dayLow": 19.76,
+  "volume": 1311978,
   "fiftyTwoWeekHigh": 21.1,
   "fiftyTwoWeekLow": 13.1,
   "prices": [
@@ -1394,6 +1394,10 @@
     {
       "date": "2026-05-15",
       "close": 20.3
+    },
+    {
+      "date": "2026-05-18",
+      "close": 20
     }
   ],
   "dividends": [
@@ -1418,23 +1422,23 @@
       "amount": 0.5
     }
   ],
-  "lastUpdated": "2026-05-17T01:36:39.505Z",
+  "lastUpdated": "2026-05-18T17:01:09.817Z",
   "fundamentals": {
-    "trailingPE": 35.614033,
-    "forwardPE": 7.9515543,
-    "marketCap": 3603543808,
-    "dividendYield": null,
-    "dividendRate": null,
-    "payoutRatio": null,
+    "trailingPE": 35.08772,
+    "forwardPE": 7.834044,
+    "marketCap": 3550289664,
+    "dividendYield": 0.098500006,
+    "dividendRate": 2,
+    "payoutRatio": 2.9473999,
     "beta": null,
-    "priceToBook": 4.607353,
-    "enterpriseToEbitda": 4.888,
-    "profitMargins": 0.028959999,
-    "returnOnEquity": 0.38249,
-    "revenueGrowth": -0.103,
+    "priceToBook": 4.5392647,
+    "enterpriseToEbitda": 313.402,
+    "profitMargins": 0.00748,
+    "returnOnEquity": 0.14964,
+    "revenueGrowth": -0.525,
     "earningsGrowth": null,
-    "grossMargins": 0.30200002,
-    "totalRevenue": 9828694016,
-    "ebitda": 1038796992
+    "grossMargins": 0.25292,
+    "totalRevenue": 8307066880,
+    "ebitda": 20330000
   }
 }

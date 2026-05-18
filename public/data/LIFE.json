@@ -3,11 +3,11 @@
   "name": "LIFECARE ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.376,
-  "previousClose": 15.388,
-  "dayHigh": 0.39,
-  "dayLow": 0.35,
-  "volume": 11537786,
+  "currentPrice": 0.373,
+  "previousClose": 0.4,
+  "dayHigh": 0.382,
+  "dayLow": 0.356,
+  "volume": 1466779,
   "fiftyTwoWeekHigh": 23.5,
   "fiftyTwoWeekLow": 0.34,
   "prices": [
@@ -7882,26 +7882,30 @@
     {
       "date": "2026-05-15",
       "close": 0.38
+    },
+    {
+      "date": "2026-05-18",
+      "close": 0.37
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-17T01:36:35.961Z",
+  "lastUpdated": "2026-05-18T17:01:06.415Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -0.98947364,
-    "marketCap": 112093392,
+    "forwardPE": -0.9828947,
+    "marketCap": 111348088,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": -0.399,
+    "beta": null,
     "priceToBook": null,
-    "enterpriseToEbitda": -0.78,
+    "enterpriseToEbitda": -0.596,
     "profitMargins": null,
-    "returnOnEquity": -5.23184,
-    "revenueGrowth": 3.774,
+    "returnOnEquity": -3.32547,
+    "revenueGrowth": 194,
     "earningsGrowth": null,
     "grossMargins": 1,
-    "totalRevenue": 6640000,
-    "ebitda": -126536000
+    "totalRevenue": 7416000,
+    "ebitda": -120297000
   }
 }

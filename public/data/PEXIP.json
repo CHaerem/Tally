@@ -3,11 +3,11 @@
   "name": "PEXIP HOLDING",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 78.8,
-  "previousClose": 90,
-  "dayHigh": 79.8,
-  "dayLow": 77.1,
-  "volume": 193835,
+  "currentPrice": 81,
+  "previousClose": 81.1,
+  "dayHigh": 81,
+  "dayLow": 77.8,
+  "volume": 185722,
   "fiftyTwoWeekHigh": 83.4,
   "fiftyTwoWeekLow": 54.4,
   "prices": [
@@ -6042,6 +6042,10 @@
     {
       "date": "2026-05-15",
       "close": 78.8
+    },
+    {
+      "date": "2026-05-18",
+      "close": 81
     }
   ],
   "dividends": [
@@ -6058,23 +6062,23 @@
       "amount": 4
     }
   ],
-  "lastUpdated": "2026-05-17T01:35:13.445Z",
+  "lastUpdated": "2026-05-18T16:59:45.731Z",
   "fundamentals": {
-    "trailingPE": 33.675217,
-    "forwardPE": 24.51011,
-    "marketCap": 8225319424,
-    "dividendYield": 0.049000002,
+    "trailingPE": 34.615387,
+    "forwardPE": 25.194403,
+    "marketCap": 8454960128,
+    "dividendYield": 0.0508,
     "dividendRate": 4,
     "payoutRatio": 0.9442,
     "beta": 1.386,
-    "priceToBook": 5.3452725,
-    "enterpriseToEbitda": 28.329,
-    "profitMargins": 0.16915001,
-    "returnOnEquity": 0.13324,
-    "revenueGrowth": 0.003,
-    "earningsGrowth": 0.22,
-    "grossMargins": 0.4443,
-    "totalRevenue": 1228285952,
-    "ebitda": 276108000
+    "priceToBook": 5.4945054,
+    "enterpriseToEbitda": 220.684,
+    "profitMargins": 0.21054001,
+    "returnOnEquity": 0.17491,
+    "revenueGrowth": 0.296,
+    "earningsGrowth": 1.095,
+    "grossMargins": 0.48411,
+    "totalRevenue": 135432720,
+    "ebitda": 36924940
   }
 }
