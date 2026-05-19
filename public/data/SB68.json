@@ -3,11 +3,11 @@
   "name": "SPAREBANK 68 GRADER NORD",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 199.8,
-  "previousClose": 206,
-  "dayHigh": 199.9,
-  "dayLow": 199.8,
-  "volume": 4201,
+  "currentPrice": 191.98,
+  "previousClose": 200,
+  "dayHigh": 192,
+  "dayLow": 191.98,
+  "volume": 255,
   "fiftyTwoWeekHigh": 232.75,
   "fiftyTwoWeekLow": 174.52,
   "prices": [
@@ -4782,6 +4782,14 @@
     {
       "date": "2026-05-15",
       "close": 199.8
+    },
+    {
+      "date": "2026-05-18",
+      "close": 199.8
+    },
+    {
+      "date": "2026-05-19",
+      "close": 191.98
     }
   ],
   "dividends": [
@@ -4810,23 +4818,23 @@
       "amount": 13.5
     }
   ],
-  "lastUpdated": "2026-05-18T17:01:31.997Z",
+  "lastUpdated": "2026-05-19T17:01:59.734Z",
   "fundamentals": {
-    "trailingPE": 13.162055,
-    "forwardPE": 10.599469,
-    "marketCap": 595420992,
+    "trailingPE": 11.792382,
+    "forwardPE": 10.184615,
+    "marketCap": 572116736,
     "dividendYield": 0.067600004,
     "dividendRate": 13.5,
-    "payoutRatio": 0.79,
-    "beta": 0.077,
-    "priceToBook": 0.36327603,
+    "payoutRatio": 0.82919997,
+    "beta": null,
+    "priceToBook": 0.3490577,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.39468,
-    "returnOnEquity": 0.08637,
-    "revenueGrowth": -0.076,
-    "earningsGrowth": -0.423,
+    "profitMargins": 0.40523997,
+    "returnOnEquity": 0.09313,
+    "revenueGrowth": 0.238,
+    "earningsGrowth": 0.35,
     "grossMargins": null,
-    "totalRevenue": 349360000,
+    "totalRevenue": 368190016,
     "ebitda": null
   }
 }

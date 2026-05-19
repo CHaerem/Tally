@@ -3,11 +3,11 @@
   "name": "BEWI",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 17.8,
+  "currentPrice": 17.58,
   "previousClose": 18.38,
-  "dayHigh": 17.92,
-  "dayLow": 17.36,
-  "volume": 315991,
+  "dayHigh": 18.58,
+  "dayLow": 17.7,
+  "volume": 367549,
   "fiftyTwoWeekHigh": 24.5,
   "fiftyTwoWeekLow": 13.3,
   "prices": [
@@ -5746,6 +5746,10 @@
     {
       "date": "2026-05-18",
       "close": 17.8
+    },
+    {
+      "date": "2026-05-19",
+      "close": 17.58
     }
   ],
   "dividends": [
@@ -5758,17 +5762,17 @@
       "amount": 1.1
     }
   ],
-  "lastUpdated": "2026-05-18T16:59:03.546Z",
+  "lastUpdated": "2026-05-19T16:59:27.115Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 328.98917,
-    "marketCap": 4210096640,
+    "forwardPE": 324.92303,
+    "marketCap": 4158061824,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.876,
-    "priceToBook": 0.8630356,
-    "enterpriseToEbitda": 80.948,
+    "priceToBook": 0.8523689,
+    "enterpriseToEbitda": 80.459,
     "profitMargins": 0.018960001,
     "returnOnEquity": -0.09042,
     "revenueGrowth": 0.057,

@@ -3,11 +3,11 @@
   "name": "OTOVO ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 10.5,
+  "currentPrice": 10,
   "previousClose": 11.4,
-  "dayHigh": 10.9,
-  "dayLow": 10.5,
-  "volume": 26290,
+  "dayHigh": 11,
+  "dayLow": 10,
+  "volume": 24326,
   "fiftyTwoWeekHigh": 18.68,
   "fiftyTwoWeekLow": 6.01,
   "prices": [
@@ -5266,20 +5266,24 @@
     {
       "date": "2026-05-18",
       "close": 10.5
+    },
+    {
+      "date": "2026-05-19",
+      "close": 10
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-18T17:00:48.139Z",
+  "lastUpdated": "2026-05-19T17:01:13.448Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -3.887449,
-    "marketCap": 774646656,
+    "forwardPE": -3.7023325,
+    "marketCap": 737758720,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.96,
-    "priceToBook": 1.986755,
-    "enterpriseToEbitda": -1.495,
+    "priceToBook": 1.8921477,
+    "enterpriseToEbitda": -1.417,
     "profitMargins": -0.69563,
     "returnOnEquity": -1.06705,
     "revenueGrowth": -0.017,

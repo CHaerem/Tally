@@ -3,11 +3,11 @@
   "name": "AURSKOG SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 259,
+  "currentPrice": 257.95,
   "previousClose": 255,
-  "dayHigh": 259.9,
-  "dayLow": 259,
-  "volume": 10,
+  "dayHigh": 258,
+  "dayLow": 257.95,
+  "volume": 200,
   "fiftyTwoWeekHigh": 273.25,
   "fiftyTwoWeekLow": 227.55,
   "prices": [
@@ -10054,6 +10054,10 @@
     {
       "date": "2026-05-18",
       "close": 259
+    },
+    {
+      "date": "2026-05-19",
+      "close": 257.95
     }
   ],
   "dividends": [
@@ -10102,23 +10106,23 @@
       "amount": 17
     }
   ],
-  "lastUpdated": "2026-05-18T17:00:14.151Z",
+  "lastUpdated": "2026-05-19T17:00:39.153Z",
   "fundamentals": {
-    "trailingPE": 4.606901,
-    "forwardPE": 13.207547,
-    "marketCap": 1197253632,
-    "dividendYield": 0.0654,
+    "trailingPE": 4.5898576,
+    "forwardPE": 13.154003,
+    "marketCap": 1192400000,
+    "dividendYield": 0.0656,
     "dividendRate": 17,
     "payoutRatio": 0.26680002,
-    "beta": 0.115,
-    "priceToBook": 0.513894,
+    "beta": null,
+    "priceToBook": 0.51181066,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.50311,
-    "returnOnEquity": 0.10624,
-    "revenueGrowth": 0.172,
-    "earningsGrowth": 0.297,
+    "profitMargins": 0.49692002,
+    "returnOnEquity": 0.10701,
+    "revenueGrowth": 0.028,
+    "earningsGrowth": 1.679,
     "grossMargins": null,
-    "totalRevenue": 516508992,
+    "totalRevenue": 519720000,
     "ebitda": null
   }
 }
