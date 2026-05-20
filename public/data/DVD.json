@@ -3,11 +3,11 @@
   "name": "DEEP VALUE DRILLER AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 20.2,
-  "previousClose": 20.1,
-  "dayHigh": 20.6,
+  "currentPrice": 20.3,
+  "previousClose": 20,
+  "dayHigh": 20.4,
   "dayLow": 20.1,
-  "volume": 151755,
+  "volume": 203290,
   "fiftyTwoWeekHigh": 22.35,
   "fiftyTwoWeekLow": 14.82,
   "prices": [
@@ -5010,6 +5010,10 @@
     {
       "date": "2026-05-19",
       "close": 20.2
+    },
+    {
+      "date": "2026-05-20",
+      "close": 20.3
     }
   ],
   "dividends": [
@@ -5094,21 +5098,21 @@
       "amount": 0.2
     }
   ],
-  "lastUpdated": "2026-05-19T16:59:48.369Z",
+  "lastUpdated": "2026-05-20T17:04:18.668Z",
   "fundamentals": {
-    "trailingPE": 9.573461,
+    "trailingPE": 9.620853,
     "forwardPE": null,
-    "marketCap": 1888868480,
-    "dividendYield": 0.1185,
-    "dividendRate": 2.4,
-    "payoutRatio": 0.91800004,
-    "beta": null,
-    "priceToBook": 25.181885,
-    "enterpriseToEbitda": 38.424,
+    "marketCap": 1898219136,
+    "dividendYield": null,
+    "dividendRate": null,
+    "payoutRatio": null,
+    "beta": 0.291,
+    "priceToBook": 24.3503,
+    "enterpriseToEbitda": 38.453,
     "profitMargins": 0.39905,
     "returnOnEquity": 2.46259,
     "revenueGrowth": -0.178,
-    "earningsGrowth": null,
+    "earningsGrowth": -0.307,
     "grossMargins": 1,
     "totalRevenue": 53026600,
     "ebitda": 49429760

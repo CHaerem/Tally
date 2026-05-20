@@ -3,11 +3,11 @@
   "name": "DOF GROUP ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 138.9,
-  "previousClose": 139.5,
-  "dayHigh": 142.2,
+  "currentPrice": 140,
+  "previousClose": 140,
+  "dayHigh": 141,
   "dayLow": 138.9,
-  "volume": 325655,
+  "volume": 189152,
   "fiftyTwoWeekHigh": 143.7,
   "fiftyTwoWeekLow": 84.75,
   "prices": [
@@ -2922,6 +2922,10 @@
     {
       "date": "2026-05-19",
       "close": 138.9
+    },
+    {
+      "date": "2026-05-20",
+      "close": 140
     }
   ],
   "dividends": [
@@ -2942,17 +2946,17 @@
       "amount": 3.34
     }
   ],
-  "lastUpdated": "2026-05-19T16:59:24.045Z",
+  "lastUpdated": "2026-05-20T17:03:54.974Z",
   "fundamentals": {
-    "trailingPE": 7.892045,
-    "forwardPE": 8.393324,
-    "marketCap": 34208104448,
-    "dividendYield": 0.0908,
-    "dividendRate": 13.02,
-    "payoutRatio": 0.50490004,
+    "trailingPE": 7.94101,
+    "forwardPE": 8.516118,
+    "marketCap": 34479013888,
+    "dividendYield": null,
+    "dividendRate": null,
+    "payoutRatio": null,
     "beta": -0.044,
-    "priceToBook": 1.7947052,
-    "enterpriseToEbitda": 55.18,
+    "priceToBook": 1.8209615,
+    "enterpriseToEbitda": 53.506,
     "profitMargins": 0.2496,
     "returnOnEquity": 0.24475999,
     "revenueGrowth": 0.317,

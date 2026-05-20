@@ -3,11 +3,11 @@
   "name": "2020 BULKERS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 4.658,
-  "previousClose": 6.9,
-  "dayHigh": 5.435,
-  "dayLow": 4.646,
-  "volume": 1096626,
+  "currentPrice": 5.06,
+  "previousClose": 4.692,
+  "dayHigh": 5.29,
+  "dayLow": 4.6,
+  "volume": 1144823,
   "fiftyTwoWeekHigh": 152,
   "fiftyTwoWeekLow": 2.56,
   "prices": [
@@ -6890,6 +6890,10 @@
     {
       "date": "2026-05-19",
       "close": 4.66
+    },
+    {
+      "date": "2026-05-20",
+      "close": 5.06
     }
   ],
   "dividends": [
@@ -7186,23 +7190,23 @@
       "amount": 128.42
     }
   ],
-  "lastUpdated": "2026-05-19T17:01:15.920Z",
+  "lastUpdated": "2026-05-20T17:05:44.075Z",
   "fundamentals": {
-    "trailingPE": 0.38784346,
-    "forwardPE": 3.0275023,
-    "marketCap": 93810928,
-    "dividendYield": 2.4825,
+    "trailingPE": 0.42061514,
+    "forwardPE": 3.310681,
+    "marketCap": 101907104,
+    "dividendYield": 2.5005999,
     "dividendRate": 11.65,
     "payoutRatio": 1.1318,
-    "beta": -0.052,
-    "priceToBook": 0.077265844,
-    "enterpriseToEbitda": 4.398,
-    "profitMargins": 0.45455003,
-    "returnOnEquity": 0.1958,
-    "revenueGrowth": 0.527,
-    "earningsGrowth": 1.69,
-    "grossMargins": 0.75193,
-    "totalRevenue": 64900000,
-    "ebitda": 44600000
+    "beta": null,
+    "priceToBook": 0.04291142,
+    "enterpriseToEbitda": -0.749,
+    "profitMargins": 0.84438,
+    "returnOnEquity": 0.82922,
+    "revenueGrowth": 16.032,
+    "earningsGrowth": 768.671,
+    "grossMargins": 0.93094003,
+    "totalRevenue": 217200000,
+    "ebitda": 199575008
   }
 }

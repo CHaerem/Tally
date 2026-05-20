@@ -3,11 +3,11 @@
   "name": "SED ENERGY HOLDINGS PLC",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 8.92,
-  "previousClose": 8.78,
-  "dayHigh": 8.98,
-  "dayLow": 8.79,
-  "volume": 1327840,
+  "currentPrice": 8.75,
+  "previousClose": 8.96,
+  "dayHigh": 8.93,
+  "dayLow": 8.75,
+  "volume": 725057,
   "fiftyTwoWeekHigh": 10.25,
   "fiftyTwoWeekLow": 6.56,
   "prices": [
@@ -950,6 +950,10 @@
     {
       "date": "2026-05-19",
       "close": 8.92
+    },
+    {
+      "date": "2026-05-20",
+      "close": 8.75
     }
   ],
   "dividends": [
@@ -966,17 +970,17 @@
       "amount": 0.29
     }
   ],
-  "lastUpdated": "2026-05-19T17:00:52.003Z",
+  "lastUpdated": "2026-05-20T17:05:20.609Z",
   "fundamentals": {
-    "trailingPE": 19.391304,
-    "forwardPE": 9.596558,
-    "marketCap": 6522776576,
-    "dividendYield": 0.0621,
-    "dividendRate": 0.55,
-    "payoutRatio": 1.8087,
+    "trailingPE": 18.617022,
+    "forwardPE": 9.413664,
+    "marketCap": 6398463488,
+    "dividendYield": null,
+    "dividendRate": null,
+    "payoutRatio": null,
     "beta": null,
-    "priceToBook": 2.14307,
-    "enterpriseToEbitda": 63.749,
+    "priceToBook": 2.1022267,
+    "enterpriseToEbitda": 64.683,
     "profitMargins": 0.16846001,
     "returnOnEquity": 0.11865,
     "revenueGrowth": 0.484,

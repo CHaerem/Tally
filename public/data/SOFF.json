@@ -3,11 +3,11 @@
   "name": "SOLSTAD OFFSHORE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 65,
-  "previousClose": 65.5,
-  "dayHigh": 66.8,
-  "dayLow": 65,
-  "volume": 109899,
+  "currentPrice": 63.5,
+  "previousClose": 64.3,
+  "dayHigh": 65,
+  "dayLow": 62.7,
+  "volume": 139406,
   "fiftyTwoWeekHigh": 71,
   "fiftyTwoWeekLow": 37.5,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-05-19",
       "close": 65
+    },
+    {
+      "date": "2026-05-20",
+      "close": 63.5
     }
   ],
   "dividends": [
@@ -10072,19 +10076,23 @@
     {
       "date": "2026-05-18",
       "amount": 0.93
+    },
+    {
+      "date": "2026-05-20",
+      "amount": 0.93
     }
   ],
-  "lastUpdated": "2026-05-19T16:59:31.071Z",
+  "lastUpdated": "2026-05-20T17:04:02.292Z",
   "fundamentals": {
-    "trailingPE": 4.1322317,
-    "forwardPE": 4.8307385,
-    "marketCap": 7059324928,
-    "dividendYield": 0.0217,
-    "dividendRate": 1.44,
-    "payoutRatio": 0.0299,
+    "trailingPE": 4.0291877,
+    "forwardPE": 4.7192597,
+    "marketCap": 6896417280,
+    "dividendYield": null,
+    "dividendRate": null,
+    "payoutRatio": null,
     "beta": 0.772,
-    "priceToBook": 1.3565692,
-    "enterpriseToEbitda": 58.733,
+    "priceToBook": 1.3252636,
+    "enterpriseToEbitda": 57.673,
     "profitMargins": 0.47028,
     "returnOnEquity": 0.38486,
     "revenueGrowth": 0.248,

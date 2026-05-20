@@ -4,10 +4,10 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 117.26,
-  "previousClose": 117.2,
-  "dayHigh": 117.5,
+  "previousClose": 116.5,
+  "dayHigh": 117.34,
   "dayLow": 117.26,
-  "volume": 800,
+  "volume": 9227,
   "fiftyTwoWeekHigh": 130,
   "fiftyTwoWeekLow": 101.12,
   "prices": [
@@ -974,6 +974,10 @@
     {
       "date": "2026-05-19",
       "close": 117.26
+    },
+    {
+      "date": "2026-05-20",
+      "close": 117.26
     }
   ],
   "dividends": [
@@ -982,23 +986,23 @@
       "amount": 4.9
     }
   ],
-  "lastUpdated": "2026-05-19T17:02:09.303Z",
+  "lastUpdated": "2026-05-20T17:06:34.063Z",
   "fundamentals": {
     "trailingPE": 33.3125,
     "forwardPE": 10.928239,
     "marketCap": 639069504,
-    "dividendYield": 0.041500002,
+    "dividendYield": 0.0418,
     "dividendRate": 4.9,
     "payoutRatio": 1.392,
-    "beta": -0.106,
+    "beta": null,
     "priceToBook": 0.319186,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.26787,
-    "returnOnEquity": 0.05208,
-    "revenueGrowth": 0.783,
-    "earningsGrowth": -0.144,
+    "profitMargins": 0.23355,
+    "returnOnEquity": 0.048720002,
+    "revenueGrowth": 0.321,
+    "earningsGrowth": -0.733,
     "grossMargins": null,
-    "totalRevenue": 310966016,
+    "totalRevenue": 329465984,
     "ebitda": null
   }
 }
