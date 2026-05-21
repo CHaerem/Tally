@@ -3,11 +3,11 @@
   "name": "Tieto Oyj",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 221,
-  "previousClose": 206.6,
-  "dayHigh": 221,
-  "dayLow": 220.4,
-  "volume": 152,
+  "currentPrice": 220.8,
+  "previousClose": 209.6,
+  "dayHigh": 220.8,
+  "dayLow": 219,
+  "volume": 1233,
   "fiftyTwoWeekHigh": 225.6,
   "fiftyTwoWeekLow": 170,
   "prices": [
@@ -6478,6 +6478,10 @@
     {
       "date": "2026-05-20",
       "close": 221
+    },
+    {
+      "date": "2026-05-21",
+      "close": 220.8
     }
   ],
   "dividends": [
@@ -6534,16 +6538,16 @@
       "amount": 4.76
     }
   ],
-  "lastUpdated": "2026-05-20T17:06:33.615Z",
+  "lastUpdated": "2026-05-21T16:56:45.108Z",
   "fundamentals": {
-    "trailingPE": 32.357246,
+    "trailingPE": 32.327965,
     "forwardPE": null,
-    "marketCap": 25512273920,
+    "marketCap": 25489186816,
     "dividendYield": 0.045100003,
     "dividendRate": 9.97,
     "payoutRatio": 1.8889,
     "beta": 0.66,
-    "priceToBook": 2.1529074,
+    "priceToBook": 2.150959,
     "enterpriseToEbitda": 100.892,
     "profitMargins": null,
     "returnOnEquity": 0.06853,

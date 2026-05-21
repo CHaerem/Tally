@@ -3,11 +3,11 @@
   "name": "ORKLA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 107.7,
-  "previousClose": 109.3,
-  "dayHigh": 108.8,
-  "dayLow": 104.3,
-  "volume": 5061363,
+  "currentPrice": 105,
+  "previousClose": 111,
+  "dayHigh": 108.3,
+  "dayLow": 105,
+  "volume": 3063148,
   "fiftyTwoWeekHigh": 131.2,
   "fiftyTwoWeekLow": 100.6,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-05-20",
       "close": 107.7
+    },
+    {
+      "date": "2026-05-21",
+      "close": 105
     }
   ],
   "dividends": [
@@ -10114,23 +10118,23 @@
       "amount": 6
     }
   ],
-  "lastUpdated": "2026-05-20T17:03:41.647Z",
+  "lastUpdated": "2026-05-21T16:53:54.802Z",
   "fundamentals": {
-    "trailingPE": 16.880877,
-    "forwardPE": 14.920637,
-    "marketCap": 105725108224,
-    "dividendYield": 0.0349,
+    "trailingPE": 16.329704,
+    "forwardPE": 14.546582,
+    "marketCap": 103074619392,
+    "dividendYield": 0.037100002,
     "dividendRate": 4,
-    "payoutRatio": 0.62700003,
-    "beta": 0.217,
-    "priceToBook": 2.190627,
-    "enterpriseToEbitda": 14.036,
-    "profitMargins": 0.16036,
-    "returnOnEquity": 0.13402,
-    "revenueGrowth": -0.001,
-    "earningsGrowth": 0.39,
-    "grossMargins": 0.47851002,
-    "totalRevenue": 71547002880,
-    "ebitda": 9370000384
+    "payoutRatio": 0.6221,
+    "beta": null,
+    "priceToBook": 2.135709,
+    "enterpriseToEbitda": 13.511,
+    "profitMargins": 0.1584,
+    "returnOnEquity": 0.1358,
+    "revenueGrowth": 0.013,
+    "earningsGrowth": -0.045,
+    "grossMargins": 0.47679,
+    "totalRevenue": 71771996160,
+    "ebitda": 9131750400
   }
 }
