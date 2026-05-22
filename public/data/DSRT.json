@@ -3,11 +3,11 @@
   "name": "DESERT CONTROL AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.25,
-  "previousClose": 1.06,
-  "dayHigh": 1.286,
-  "dayLow": 1.16,
-  "volume": 774682,
+  "currentPrice": 1.348,
+  "previousClose": 1.36,
+  "dayHigh": 1.378,
+  "dayLow": 1.25,
+  "volume": 1402282,
   "fiftyTwoWeekHigh": 8.4,
   "fiftyTwoWeekLow": 0.82,
   "prices": [
@@ -5138,20 +5138,24 @@
     {
       "date": "2026-05-21",
       "close": 1.25
+    },
+    {
+      "date": "2026-05-22",
+      "close": 1.35
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-21T16:55:28.779Z",
+  "lastUpdated": "2026-05-22T16:46:46.236Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -1.7857143,
-    "marketCap": 151284336,
+    "forwardPE": -1.9257144,
+    "marketCap": 163145040,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 0.7631258,
-    "enterpriseToEbitda": -0.369,
+    "beta": 0.484,
+    "priceToBook": 2.0770416,
+    "enterpriseToEbitda": -1.322,
     "profitMargins": null,
     "returnOnEquity": -1.02391,
     "revenueGrowth": 2.768,

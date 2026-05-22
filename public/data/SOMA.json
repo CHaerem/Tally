@@ -3,11 +3,11 @@
   "name": "SOLSTAD MARITIME ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 28.55,
-  "previousClose": 29.2,
-  "dayHigh": 29.05,
-  "dayLow": 28.3,
-  "volume": 207450,
+  "currentPrice": 27.3,
+  "previousClose": 28.9,
+  "dayHigh": 28.3,
+  "dayLow": 27.1,
+  "volume": 252503,
   "fiftyTwoWeekHigh": 30,
   "fiftyTwoWeekLow": 16.84,
   "prices": [
@@ -1022,6 +1022,10 @@
     {
       "date": "2026-05-21",
       "close": 28.55
+    },
+    {
+      "date": "2026-05-22",
+      "close": 27.3
     }
   ],
   "dividends": [
@@ -1038,23 +1042,23 @@
       "amount": 0.8
     }
   ],
-  "lastUpdated": "2026-05-21T16:56:41.737Z",
+  "lastUpdated": "2026-05-22T16:47:58.800Z",
   "fundamentals": {
-    "trailingPE": 6.1004276,
-    "forwardPE": 6.378463,
-    "marketCap": 13285986304,
-    "dividendYield": null,
-    "dividendRate": null,
-    "payoutRatio": null,
+    "trailingPE": 5.8333335,
+    "forwardPE": 6.099196,
+    "marketCap": 12704288768,
+    "dividendYield": 0.1105,
+    "dividendRate": 3.15,
+    "payoutRatio": 0.42259997,
     "beta": null,
-    "priceToBook": 1.5581868,
-    "enterpriseToEbitda": 51.99,
-    "profitMargins": 0.36699,
-    "returnOnEquity": 0.25663,
-    "revenueGrowth": -0.011,
-    "earningsGrowth": -0.22,
-    "grossMargins": 0.7066,
-    "totalRevenue": 580254016,
-    "ebitda": 267984000
+    "priceToBook": 1.489965,
+    "enterpriseToEbitda": 47.785,
+    "profitMargins": 0.38249,
+    "returnOnEquity": 0.27075002,
+    "revenueGrowth": 0.233,
+    "earningsGrowth": null,
+    "grossMargins": 0.71307,
+    "totalRevenue": 614254016,
+    "ebitda": 288984000
   }
 }

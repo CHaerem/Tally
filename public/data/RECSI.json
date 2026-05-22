@@ -3,11 +3,11 @@
   "name": "REC SILICON",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.246,
-  "previousClose": 0.246,
-  "dayHigh": 0.245,
-  "dayLow": 0.237,
-  "volume": 890418,
+  "currentPrice": 0.245,
+  "previousClose": 0.244,
+  "dayHigh": 0.25,
+  "dayLow": 0.238,
+  "volume": 37781,
   "fiftyTwoWeekHigh": 2.914,
   "fiftyTwoWeekLow": 0.218,
   "prices": [
@@ -10070,26 +10070,30 @@
     {
       "date": "2026-05-21",
       "close": 0.25
+    },
+    {
+      "date": "2026-05-22",
+      "close": 0.25
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-21T16:54:54.936Z",
+  "lastUpdated": "2026-05-22T16:46:13.332Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -1.103139,
-    "marketCap": 1134459904,
+    "forwardPE": -1.0986547,
+    "marketCap": 1129848320,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
+    "beta": -0.112,
     "priceToBook": null,
-    "enterpriseToEbitda": -22.535,
+    "enterpriseToEbitda": -59.954,
     "profitMargins": -0.69725,
     "returnOnEquity": null,
     "revenueGrowth": -0.089,
     "earningsGrowth": null,
     "grossMargins": 0.80341005,
     "totalRevenue": 76300000,
-    "ebitda": -26100000
+    "ebitda": -27200000
   }
 }

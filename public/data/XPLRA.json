@@ -3,11 +3,11 @@
   "name": "XPLORA TECHNOLOGIES",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 46,
-  "previousClose": 51.7,
-  "dayHigh": 47.5,
-  "dayLow": 44.25,
-  "volume": 1031045,
+  "currentPrice": 45,
+  "previousClose": 50.2,
+  "dayHigh": 47,
+  "dayLow": 44.55,
+  "volume": 352857,
   "fiftyTwoWeekHigh": 60.4,
   "fiftyTwoWeekLow": 36.1,
   "prices": [
@@ -5526,26 +5526,30 @@
     {
       "date": "2026-05-21",
       "close": 46
+    },
+    {
+      "date": "2026-05-22",
+      "close": 45
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-21T16:56:50.689Z",
+  "lastUpdated": "2026-05-22T16:48:07.833Z",
   "fundamentals": {
-    "trailingPE": null,
-    "forwardPE": 10.419852,
-    "marketCap": 2196712704,
+    "trailingPE": 22.058825,
+    "forwardPE": 12.320329,
+    "marketCap": 2148958208,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.474,
-    "priceToBook": 5.9263077,
-    "enterpriseToEbitda": 15.638,
-    "profitMargins": -0.01683,
-    "returnOnEquity": -0.07269,
-    "revenueGrowth": 1.539,
-    "earningsGrowth": 66.913,
-    "grossMargins": 0.51984,
-    "totalRevenue": 1917633024,
-    "ebitda": 192452000
+    "beta": null,
+    "priceToBook": 5.797475,
+    "enterpriseToEbitda": 12.99,
+    "profitMargins": 0.048979998,
+    "returnOnEquity": 0.23127002,
+    "revenueGrowth": 0.111,
+    "earningsGrowth": null,
+    "grossMargins": 0.51681,
+    "totalRevenue": 1955154944,
+    "ebitda": 202620992
   }
 }

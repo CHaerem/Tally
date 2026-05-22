@@ -3,11 +3,11 @@
   "name": "OCEAN SUN",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.14,
-  "previousClose": 1.49,
-  "dayHigh": 2.86,
-  "dayLow": 2,
-  "volume": 225532,
+  "currentPrice": 1.85,
+  "previousClose": 1.44,
+  "dayHigh": 2.15,
+  "dayLow": 1.85,
+  "volume": 125520,
   "fiftyTwoWeekHigh": 3.2,
   "fiftyTwoWeekLow": 1,
   "prices": [
@@ -5598,20 +5598,24 @@
     {
       "date": "2026-05-21",
       "close": 2.14
+    },
+    {
+      "date": "2026-05-22",
+      "close": 1.85
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-21T16:56:26.804Z",
+  "lastUpdated": "2026-05-22T16:47:43.838Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 42.800003,
-    "marketCap": 106796320,
+    "forwardPE": 37,
+    "marketCap": 92323920,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": null,
-    "priceToBook": 6.22093,
-    "enterpriseToEbitda": -5.134,
+    "priceToBook": 5.377907,
+    "enterpriseToEbitda": -4.525,
     "profitMargins": null,
     "returnOnEquity": -1.27912,
     "revenueGrowth": null,
