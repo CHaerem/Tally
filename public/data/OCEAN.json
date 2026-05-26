@@ -3,11 +3,11 @@
   "name": "OCEAN GEOLOOP AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.8,
-  "previousClose": 0.705,
-  "dayHigh": 1.08,
-  "dayLow": 0.795,
-  "volume": 14673,
+  "currentPrice": 0.6,
+  "previousClose": 0.7,
+  "dayHigh": 0.8,
+  "dayLow": 0.515,
+  "volume": 44095,
   "fiftyTwoWeekHigh": 6.85,
   "fiftyTwoWeekLow": 0.505,
   "prices": [
@@ -4226,26 +4226,30 @@
     {
       "date": "2026-05-22",
       "close": 0.8
+    },
+    {
+      "date": "2026-05-26",
+      "close": 0.6
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-25T16:45:30.229Z",
+  "lastUpdated": "2026-05-26T17:08:12.513Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 99772384,
+    "marketCap": 74829288,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.662,
-    "priceToBook": 0.25316456,
-    "enterpriseToEbitda": -0.584,
-    "profitMargins": -0.21103,
-    "returnOnEquity": -0.33106,
-    "revenueGrowth": 0.017,
+    "priceToBook": 0.6179197,
+    "enterpriseToEbitda": -0.885,
+    "profitMargins": -0.59653,
+    "returnOnEquity": -1.0669,
+    "revenueGrowth": -0.25,
     "earningsGrowth": null,
-    "grossMargins": 0.18103,
-    "totalRevenue": 237485344,
-    "ebitda": -47006420
+    "grossMargins": 0.19207,
+    "totalRevenue": 204852992,
+    "ebitda": -52418000
   }
 }

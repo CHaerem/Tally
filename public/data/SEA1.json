@@ -3,11 +3,11 @@
   "name": "Sea1 Offshore Inc.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 27.75,
-  "previousClose": 28.5,
-  "dayHigh": 28,
-  "dayLow": 26.85,
-  "volume": 216537,
+  "currentPrice": 27.45,
+  "previousClose": 28.45,
+  "dayHigh": 27.6,
+  "dayLow": 27,
+  "volume": 87910,
   "fiftyTwoWeekHigh": 36.35,
   "fiftyTwoWeekLow": 19.36,
   "prices": [
@@ -2050,6 +2050,10 @@
     {
       "date": "2026-05-22",
       "close": 27.75
+    },
+    {
+      "date": "2026-05-26",
+      "close": 27.45
     }
   ],
   "dividends": [
@@ -2066,16 +2070,16 @@
       "amount": 4
     }
   ],
-  "lastUpdated": "2026-05-25T16:44:17.857Z",
+  "lastUpdated": "2026-05-26T17:07:02.342Z",
   "fundamentals": {
-    "trailingPE": 3.8434904,
-    "forwardPE": 7.60304,
-    "marketCap": 4260838400,
+    "trailingPE": 3.8019392,
+    "forwardPE": 7.520845,
+    "marketCap": 4214775552,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.229,
-    "priceToBook": 1.0470532,
+    "priceToBook": 1.0357338,
     "enterpriseToEbitda": 31.544,
     "profitMargins": 0.41889998,
     "returnOnEquity": 0.27185,

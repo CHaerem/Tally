@@ -3,11 +3,11 @@
   "name": "BW ENERGY LIMITED",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 58.8,
+  "currentPrice": 59.4,
   "previousClose": 55.4,
-  "dayHigh": 59.8,
-  "dayLow": 58.4,
-  "volume": 147897,
+  "dayHigh": 60.3,
+  "dayLow": 55.5,
+  "volume": 158436,
   "fiftyTwoWeekHigh": 62,
   "fiftyTwoWeekLow": 31,
   "prices": [
@@ -6290,26 +6290,30 @@
     {
       "date": "2026-05-22",
       "close": 58.8
+    },
+    {
+      "date": "2026-05-26",
+      "close": 59.4
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-25T16:43:50.957Z",
+  "lastUpdated": "2026-05-26T17:06:36.538Z",
   "fundamentals": {
-    "trailingPE": 19.864864,
-    "forwardPE": 6.2459865,
-    "marketCap": 15186236416,
+    "trailingPE": 20.067568,
+    "forwardPE": 6.309721,
+    "marketCap": 15341198336,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.32,
-    "priceToBook": 1.6408823,
-    "enterpriseToEbitda": 42.777,
-    "profitMargins": 0.17101,
-    "returnOnEquity": 0.14292,
-    "revenueGrowth": -0.508,
-    "earningsGrowth": -0.963,
-    "grossMargins": 0.507,
-    "totalRevenue": 778300032,
-    "ebitda": 364000000
+    "priceToBook": 1.657626,
+    "enterpriseToEbitda": 53.845,
+    "profitMargins": 0.123409994,
+    "returnOnEquity": 0.08748999,
+    "revenueGrowth": -0.386,
+    "earningsGrowth": -0.594,
+    "grossMargins": 0.48470002,
+    "totalRevenue": 670099968,
+    "ebitda": 293200000
   }
 }

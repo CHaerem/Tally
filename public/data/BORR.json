@@ -3,11 +3,11 @@
   "name": "BORR DRILLING LIMITED",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 51.24,
-  "previousClose": 59.96,
-  "dayHigh": 54.85,
-  "dayLow": 50.76,
-  "volume": 609553,
+  "currentPrice": 50.2,
+  "previousClose": 59.6,
+  "dayHigh": 52.7,
+  "dayLow": 50,
+  "volume": 364438,
   "fiftyTwoWeekHigh": 64.6,
   "fiftyTwoWeekLow": 39.1,
   "prices": [
@@ -414,19 +414,23 @@
     {
       "date": "2026-05-22",
       "close": 51.24
+    },
+    {
+      "date": "2026-05-26",
+      "close": 50.2
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-25T16:43:41.862Z",
+  "lastUpdated": "2026-05-26T17:06:27.742Z",
   "fundamentals": {
-    "trailingPE": 36.86331,
+    "trailingPE": 36.11511,
     "forwardPE": null,
-    "marketCap": 15817108480,
+    "marketCap": 15496073216,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 1.038,
-    "priceToBook": 1.4255018,
+    "priceToBook": 1.3965689,
     "enterpriseToEbitda": 38.537,
     "profitMargins": 0.0313,
     "returnOnEquity": 0.03029,

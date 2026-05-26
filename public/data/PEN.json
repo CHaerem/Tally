@@ -3,11 +3,11 @@
   "name": "PANORO ENERGY",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 32.7,
-  "previousClose": 35.8,
-  "dayHigh": 34.15,
-  "dayLow": 32.7,
-  "volume": 1434905,
+  "currentPrice": 32,
+  "previousClose": 36.05,
+  "dayHigh": 32.35,
+  "dayLow": 31.7,
+  "volume": 1058112,
   "fiftyTwoWeekHigh": 36.7,
   "fiftyTwoWeekLow": 18.72,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-05-22",
       "close": 32.7
+    },
+    {
+      "date": "2026-05-26",
+      "close": 32
     }
   ],
   "dividends": [
@@ -10118,23 +10122,23 @@
       "amount": 0.44
     }
   ],
-  "lastUpdated": "2026-05-25T16:44:11.369Z",
+  "lastUpdated": "2026-05-26T17:06:56.419Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 4.700385,
-    "marketCap": 4320803840,
-    "dividendYield": 0.0728,
-    "dividendRate": 2.53,
+    "forwardPE": 4.5997653,
+    "marketCap": 4228309248,
+    "dividendYield": 0.068,
+    "dividendRate": 2.22,
     "payoutRatio": 0.8756,
     "beta": -0.012,
-    "priceToBook": 1.8061345,
-    "enterpriseToEbitda": 66.661,
-    "profitMargins": -0.065689996,
-    "returnOnEquity": -0.05268,
-    "revenueGrowth": -0.44,
+    "priceToBook": 1.767471,
+    "enterpriseToEbitda": 145.13,
+    "profitMargins": -0.20117001,
+    "returnOnEquity": -0.1831,
+    "revenueGrowth": 0.835,
     "earningsGrowth": null,
-    "grossMargins": 0.46743,
-    "totalRevenue": 199356000,
-    "ebitda": 60296000
+    "grossMargins": 0.41705,
+    "totalRevenue": 215218000,
+    "ebitda": 27309000
   }
 }
