@@ -3,11 +3,11 @@
   "name": "SCANA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.5,
-  "previousClose": 1.55,
-  "dayHigh": 1.59,
-  "dayLow": 1.465,
-  "volume": 474424,
+  "currentPrice": 1.495,
+  "previousClose": 1.56,
+  "dayHigh": 1.5,
+  "dayLow": 1.47,
+  "volume": 485396,
   "fiftyTwoWeekHigh": 1.98,
   "fiftyTwoWeekLow": 1.318,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-05-26",
       "close": 1.5
+    },
+    {
+      "date": "2026-05-27",
+      "close": 1.5
     }
   ],
   "dividends": [
@@ -10074,23 +10078,23 @@
       "amount": 0.05
     }
   ],
-  "lastUpdated": "2026-05-26T17:07:37.019Z",
+  "lastUpdated": "2026-05-27T17:06:57.029Z",
   "fundamentals": {
-    "trailingPE": 150,
-    "forwardPE": 6.818182,
-    "marketCap": 692829632,
+    "trailingPE": 149.5,
+    "forwardPE": 6.7954545,
+    "marketCap": 690520192,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 1.1380881,
-    "enterpriseToEbitda": 15.597,
-    "profitMargins": 0.00182,
-    "returnOnEquity": 0.00472,
-    "revenueGrowth": 0.134,
+    "beta": 0.534,
+    "priceToBook": 1.1342944,
+    "enterpriseToEbitda": 64.554,
+    "profitMargins": -0.022739999,
+    "returnOnEquity": -0.05623,
+    "revenueGrowth": 0.004,
     "earningsGrowth": null,
-    "grossMargins": 0.5696,
-    "totalRevenue": 1645900032,
-    "ebitda": 75200000
+    "grossMargins": 0.57485,
+    "totalRevenue": 1596600064,
+    "ebitda": 17200000
   }
 }

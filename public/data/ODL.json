@@ -3,13 +3,13 @@
   "name": "ODFJELL DRILLING",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 89,
-  "previousClose": 95.2,
-  "dayHigh": 89.6,
-  "dayLow": 87.8,
-  "volume": 440262,
+  "currentPrice": 82.9,
+  "previousClose": 92.7,
+  "dayHigh": 86,
+  "dayLow": 83.2,
+  "volume": 479002,
   "fiftyTwoWeekHigh": 112,
-  "fiftyTwoWeekLow": 62.1,
+  "fiftyTwoWeekLow": 62.3,
   "prices": [
     {
       "date": "2016-05-23",
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-05-26",
       "close": 89
+    },
+    {
+      "date": "2026-05-27",
+      "close": 82.9
     }
   ],
   "dividends": [
@@ -10112,19 +10116,23 @@
     {
       "date": "2026-03-04",
       "amount": 2.23
+    },
+    {
+      "date": "2026-05-27",
+      "amount": 2.32
     }
   ],
-  "lastUpdated": "2026-05-26T17:08:13.374Z",
+  "lastUpdated": "2026-05-27T17:07:37.282Z",
   "fundamentals": {
-    "trailingPE": 11.166876,
-    "forwardPE": 8.685278,
-    "marketCap": 21342830592,
-    "dividendYield": 0.093100004,
+    "trailingPE": 10.401506,
+    "forwardPE": 8.103718,
+    "marketCap": 19880007680,
+    "dividendYield": 0.0938,
     "dividendRate": 8.35,
     "payoutRatio": 0.8957,
     "beta": 0.329,
-    "priceToBook": 1.6087826,
-    "enterpriseToEbitda": 45.761,
+    "priceToBook": 1.4985179,
+    "enterpriseToEbitda": 45.419,
     "profitMargins": 0.21312,
     "returnOnEquity": 0.14666,
     "revenueGrowth": 0.404,

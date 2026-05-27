@@ -3,13 +3,13 @@
   "name": "SUBSEA 7",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 314.2,
-  "previousClose": 342,
-  "dayHigh": 318.2,
-  "dayLow": 306.4,
-  "volume": 538230,
+  "currentPrice": 297,
+  "previousClose": 324.4,
+  "dayHigh": 313.2,
+  "dayLow": 297,
+  "volume": 705100,
   "fiftyTwoWeekHigh": 353.4,
-  "fiftyTwoWeekLow": 166.6,
+  "fiftyTwoWeekLow": 170,
   "prices": [
     {
       "date": "2016-05-23",
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-05-26",
       "close": 314.2
+    },
+    {
+      "date": "2026-05-27",
+      "close": 297
     }
   ],
   "dividends": [
@@ -10114,17 +10118,17 @@
       "amount": 13
     }
   ],
-  "lastUpdated": "2026-05-26T17:06:12.750Z",
+  "lastUpdated": "2026-05-27T17:05:25.145Z",
   "fundamentals": {
-    "trailingPE": 20.429129,
-    "forwardPE": 13.704595,
-    "marketCap": 93049634816,
-    "dividendYield": 0.0627,
+    "trailingPE": 19.285715,
+    "forwardPE": 12.9621725,
+    "marketCap": 87955890176,
+    "dividendYield": 0.0621,
     "dividendRate": 19.5,
     "payoutRatio": 0.7725,
     "beta": 0.604,
-    "priceToBook": 2.1794024,
-    "enterpriseToEbitda": 70.065,
+    "priceToBook": 2.060097,
+    "enterpriseToEbitda": 70.833,
     "profitMargins": 0.06711,
     "returnOnEquity": 0.108830005,
     "revenueGrowth": 0.17,
