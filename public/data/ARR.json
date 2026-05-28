@@ -3,11 +3,11 @@
   "name": "ARRIBATEC GROUP ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 6.88,
-  "previousClose": 7.3,
-  "dayHigh": 7,
-  "dayLow": 6.84,
-  "volume": 877475,
+  "currentPrice": 6.12,
+  "previousClose": 7.4,
+  "dayHigh": 6.24,
+  "dayLow": 5.88,
+  "volume": 903910,
   "fiftyTwoWeekHigh": 10.448,
   "fiftyTwoWeekLow": 4.65,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-05-27",
       "close": 6.88
+    },
+    {
+      "date": "2026-05-28",
+      "close": 6.12
     }
   ],
   "dividends": [
@@ -10088,18 +10092,22 @@
     {
       "date": "2020-11-24",
       "amount": 13.92
+    },
+    {
+      "date": "2026-05-28",
+      "amount": 1
     }
   ],
-  "lastUpdated": "2026-05-27T17:06:36.010Z",
+  "lastUpdated": "2026-05-28T17:16:52.240Z",
   "fundamentals": {
-    "trailingPE": 14.956522,
-    "forwardPE": 8.094117,
-    "marketCap": 460486432,
+    "trailingPE": 13.304347,
+    "forwardPE": 7.2,
+    "marketCap": 409618752,
     "dividendYield": 0.1453,
     "dividendRate": 1,
     "payoutRatio": null,
     "beta": 1.217,
-    "priceToBook": 1.5384616,
+    "priceToBook": 1.3685151,
     "enterpriseToEbitda": 9.232,
     "profitMargins": 0.049429998,
     "returnOnEquity": 0.10512,

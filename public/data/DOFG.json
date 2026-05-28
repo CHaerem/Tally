@@ -3,13 +3,13 @@
   "name": "DOF GROUP ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 119.6,
-  "previousClose": 140,
-  "dayHigh": 124.3,
-  "dayLow": 118.9,
-  "volume": 755756,
+  "currentPrice": 117.8,
+  "previousClose": 135.2,
+  "dayHigh": 120.2,
+  "dayLow": 116.4,
+  "volume": 484776,
   "fiftyTwoWeekHigh": 143.7,
-  "fiftyTwoWeekLow": 86.35,
+  "fiftyTwoWeekLow": 86.4,
   "prices": [
     {
       "date": "2023-06-22",
@@ -2942,6 +2942,10 @@
     {
       "date": "2026-05-27",
       "close": 119.6
+    },
+    {
+      "date": "2026-05-28",
+      "close": 117.8
     }
   ],
   "dividends": [
@@ -2960,19 +2964,23 @@
     {
       "date": "2026-02-25",
       "amount": 3.34
+    },
+    {
+      "date": "2026-05-28",
+      "amount": 3.42
     }
   ],
-  "lastUpdated": "2026-05-27T17:05:32.389Z",
+  "lastUpdated": "2026-05-28T17:15:36.477Z",
   "fundamentals": {
-    "trailingPE": 6.937355,
-    "forwardPE": 7.374762,
-    "marketCap": 29454927872,
-    "dividendYield": 0.1074,
+    "trailingPE": 6.844858,
+    "forwardPE": 7.2539573,
+    "marketCap": 29011625984,
+    "dividendYield": 0.1116,
     "dividendRate": 13.35,
     "payoutRatio": 0.7021,
     "beta": -0.044,
-    "priceToBook": 1.5541097,
-    "enterpriseToEbitda": 46.908,
+    "priceToBook": 1.528652,
+    "enterpriseToEbitda": 45.214,
     "profitMargins": 0.23605,
     "returnOnEquity": 0.23587,
     "revenueGrowth": 0.209,

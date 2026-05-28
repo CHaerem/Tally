@@ -3,11 +3,11 @@
   "name": "MPC CONTAINER SHIPS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 24.33,
-  "previousClose": 23.98,
-  "dayHigh": 25,
-  "dayLow": 23.19,
-  "volume": 4936998,
+  "currentPrice": 24.3,
+  "previousClose": 24.11,
+  "dayHigh": 24.82,
+  "dayLow": 23.99,
+  "volume": 2441531,
   "fiftyTwoWeekHigh": 25,
   "fiftyTwoWeekLow": 15.3,
   "prices": [
@@ -9026,6 +9026,10 @@
     {
       "date": "2026-05-27",
       "close": 24.33
+    },
+    {
+      "date": "2026-05-28",
+      "close": 24.3
     }
   ],
   "dividends": [
@@ -9106,23 +9110,23 @@
       "amount": 0.48
     }
   ],
-  "lastUpdated": "2026-05-27T17:05:34.653Z",
+  "lastUpdated": "2026-05-28T17:15:39.207Z",
   "fundamentals": {
-    "trailingPE": 4.9551935,
-    "forwardPE": 10.838966,
-    "marketCap": 10795228160,
-    "dividendYield": 0.0836,
+    "trailingPE": 5.3524227,
+    "forwardPE": 9.255321,
+    "marketCap": 10781916160,
+    "dividendYield": 0.0787,
     "dividendRate": 1.92,
-    "payoutRatio": 0.5093,
-    "beta": 0.192,
-    "priceToBook": 1.2549403,
-    "enterpriseToEbitda": 33.685,
-    "profitMargins": 0.45803002,
-    "returnOnEquity": 0.271,
-    "revenueGrowth": -0.023,
-    "earningsGrowth": -0.281,
-    "grossMargins": 0.6052,
-    "totalRevenue": 517803008,
-    "ebitda": 304489984
+    "payoutRatio": 0.4668,
+    "beta": null,
+    "priceToBook": 1.2533928,
+    "enterpriseToEbitda": 37.678,
+    "profitMargins": 0.42834,
+    "returnOnEquity": 0.24448,
+    "revenueGrowth": -0.064,
+    "earningsGrowth": -0.308,
+    "grossMargins": 0.60682,
+    "totalRevenue": 509652000,
+    "ebitda": 298070016
   }
 }
