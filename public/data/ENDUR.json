@@ -3,11 +3,11 @@
   "name": "ENDÚR",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 122.6,
-  "previousClose": 125,
-  "dayHigh": 125.2,
-  "dayLow": 122.4,
-  "volume": 108275,
+  "currentPrice": 122,
+  "previousClose": 123,
+  "dayHigh": 124,
+  "dayLow": 120.2,
+  "volume": 236119,
   "fiftyTwoWeekHigh": 126,
   "fiftyTwoWeekLow": 81.1,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-05-28",
       "close": 122.6
+    },
+    {
+      "date": "2026-05-29",
+      "close": 122
     }
   ],
   "dividends": [
@@ -10082,17 +10086,17 @@
       "amount": 0.8
     }
   ],
-  "lastUpdated": "2026-05-28T17:16:04.690Z",
+  "lastUpdated": "2026-05-29T17:09:56.082Z",
   "fundamentals": {
-    "trailingPE": 44.581818,
-    "forwardPE": 15.40201,
-    "marketCap": 6293655040,
+    "trailingPE": 44.363636,
+    "forwardPE": 15.326633,
+    "marketCap": 6262854144,
     "dividendYield": 0.0064999997,
     "dividendRate": 0.8,
     "payoutRatio": null,
     "beta": null,
-    "priceToBook": 2.5848618,
-    "enterpriseToEbitda": 12.25,
+    "priceToBook": 2.5722117,
+    "enterpriseToEbitda": 12.232,
     "profitMargins": 0.02471,
     "returnOnEquity": 0.07832,
     "revenueGrowth": 1.021,

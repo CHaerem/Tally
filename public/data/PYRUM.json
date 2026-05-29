@@ -3,11 +3,11 @@
   "name": "PYRUM INNOVATIONS AG",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 283,
+  "currentPrice": 282,
   "previousClose": 290,
-  "dayHigh": 283,
-  "dayLow": 283,
-  "volume": 94,
+  "dayHigh": 282,
+  "dayLow": 280,
+  "volume": 2640,
   "fiftyTwoWeekHigh": 414,
   "fiftyTwoWeekLow": 279,
   "prices": [
@@ -4678,19 +4678,27 @@
     {
       "date": "2026-05-27",
       "close": 283
+    },
+    {
+      "date": "2026-05-28",
+      "close": 283
+    },
+    {
+      "date": "2026-05-29",
+      "close": 282
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-28T17:18:10.497Z",
+  "lastUpdated": "2026-05-29T17:11:33.263Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 1174.2739,
-    "marketCap": 1214823936,
+    "forwardPE": 1170.1245,
+    "marketCap": 1210531200,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.023,
-    "priceToBook": 5.0841355,
+    "priceToBook": 5.06617,
     "enterpriseToEbitda": -154.129,
     "profitMargins": -1.02633,
     "returnOnEquity": -0.50279,
