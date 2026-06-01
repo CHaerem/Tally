@@ -3,11 +3,11 @@
   "name": "PRYME N.V.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 3.14,
-  "previousClose": 560.177,
-  "dayHigh": 3.1,
-  "dayLow": 2.57,
-  "volume": 3615,
+  "currentPrice": 3,
+  "previousClose": 3,
+  "dayHigh": 3.14,
+  "dayLow": 3,
+  "volume": 3116,
   "fiftyTwoWeekHigh": 27,
   "fiftyTwoWeekLow": 2.5,
   "prices": [
@@ -5298,26 +5298,30 @@
     {
       "date": "2026-05-29",
       "close": 3.14
+    },
+    {
+      "date": "2026-06-01",
+      "close": 3
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-05-31T01:42:59.793Z",
+  "lastUpdated": "2026-06-01T18:04:18.633Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -3.8292685,
-    "marketCap": 97916376,
+    "forwardPE": -3.6585367,
+    "marketCap": 93550672,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 1.55,
-    "priceToBook": 0.45576212,
-    "enterpriseToEbitda": -6.048,
+    "beta": null,
+    "priceToBook": 0.4354415,
+    "enterpriseToEbitda": -5.858,
     "profitMargins": null,
-    "returnOnEquity": -1.74078,
+    "returnOnEquity": -25.14794,
     "revenueGrowth": null,
     "earningsGrowth": null,
-    "grossMargins": 0.98690003,
+    "grossMargins": 0.95697,
     "totalRevenue": 1069000,
-    "ebitda": -9046334
+    "ebitda": -9252334
   }
 }
