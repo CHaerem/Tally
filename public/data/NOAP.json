@@ -3,11 +3,11 @@
   "name": "NORDIC AQUA PARTNERS AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 83.4,
+  "currentPrice": 83,
   "previousClose": 86,
-  "dayHigh": 84.4,
-  "dayLow": 83,
-  "volume": 522,
+  "dayHigh": 83,
+  "dayLow": 82.4,
+  "volume": 5919,
   "fiftyTwoWeekHigh": 99.6,
   "fiftyTwoWeekLow": 73,
   "prices": [
@@ -5510,20 +5510,24 @@
     {
       "date": "2026-06-01",
       "close": 83.4
+    },
+    {
+      "date": "2026-06-02",
+      "close": 83
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-01T18:04:08.883Z",
+  "lastUpdated": "2026-06-02T17:35:21.203Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 39.659496,
-    "marketCap": 1769211648,
+    "forwardPE": -48.149082,
+    "marketCap": 1760726144,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": null,
-    "priceToBook": 1.829456,
-    "enterpriseToEbitda": -1836.797,
+    "priceToBook": 1.8206816,
+    "enterpriseToEbitda": -1824.233,
     "profitMargins": -0.59354,
     "returnOnEquity": -0.09759,
     "revenueGrowth": 1.616,

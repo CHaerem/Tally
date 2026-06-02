@@ -3,11 +3,11 @@
   "name": "Vantage Drilling International ",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 167,
-  "previousClose": 170,
-  "dayHigh": 178,
-  "dayLow": 167,
-  "volume": 547,
+  "currentPrice": 171,
+  "previousClose": 166,
+  "dayHigh": 171,
+  "dayLow": 168,
+  "volume": 2166,
   "fiftyTwoWeekHigh": 252,
   "fiftyTwoWeekLow": 150,
   "prices": [
@@ -1578,6 +1578,10 @@
     {
       "date": "2026-06-01",
       "close": 167
+    },
+    {
+      "date": "2026-06-02",
+      "close": 171
     }
   ],
   "dividends": [
@@ -1586,23 +1590,23 @@
       "amount": 46.14
     }
   ],
-  "lastUpdated": "2026-06-01T18:04:33.913Z",
+  "lastUpdated": "2026-06-02T17:35:47.576Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 2264364800,
-    "dividendYield": 0.3016,
+    "marketCap": 2318601216,
+    "dividendYield": 0.2998,
     "dividendRate": 50.07,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 0.9376687,
-    "enterpriseToEbitda": -94.986,
-    "profitMargins": 0.48146,
+    "beta": 0.284,
+    "priceToBook": 0.96012783,
+    "enterpriseToEbitda": -110.604,
+    "profitMargins": 0.47909,
     "returnOnEquity": 0.23189,
-    "revenueGrowth": 0.779,
+    "revenueGrowth": 0.599,
     "earningsGrowth": null,
-    "grossMargins": -0.22363001,
-    "totalRevenue": 123726000,
+    "grossMargins": -0.21738,
+    "totalRevenue": 124338000,
     "ebitda": -19928000
   }
 }

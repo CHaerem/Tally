@@ -3,11 +3,11 @@
   "name": "ZELLUNA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 21,
+  "currentPrice": 21.1,
   "previousClose": 21.8,
-  "dayHigh": 21.7,
-  "dayLow": 20.5,
-  "volume": 25122,
+  "dayHigh": 21.4,
+  "dayLow": 20.6,
+  "volume": 11017,
   "fiftyTwoWeekHigh": 35.8,
   "fiftyTwoWeekLow": 8.204,
   "prices": [
@@ -7034,20 +7034,24 @@
     {
       "date": "2026-06-01",
       "close": 21
+    },
+    {
+      "date": "2026-06-02",
+      "close": 21.1
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-01T18:04:38.035Z",
+  "lastUpdated": "2026-06-02T17:35:51.742Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -2.6923077,
-    "marketCap": 551665792,
+    "forwardPE": -2.7051282,
+    "marketCap": 554292800,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": null,
-    "priceToBook": 6.4259486,
-    "enterpriseToEbitda": -4.151,
+    "priceToBook": 6.4565487,
+    "enterpriseToEbitda": -4.004,
     "profitMargins": null,
     "returnOnEquity": -1.3683,
     "revenueGrowth": null,

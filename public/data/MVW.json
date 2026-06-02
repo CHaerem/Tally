@@ -3,11 +3,11 @@
   "name": "M VEST WATER AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 5.45,
-  "previousClose": 5.45,
-  "dayHigh": 5.45,
-  "dayLow": 5,
-  "volume": 32084,
+  "currentPrice": 5.3,
+  "previousClose": 5.4,
+  "dayHigh": 5.3,
+  "dayLow": 5.05,
+  "volume": 17936,
   "fiftyTwoWeekHigh": 10.25,
   "fiftyTwoWeekLow": 5,
   "prices": [
@@ -4994,26 +4994,30 @@
     {
       "date": "2026-06-01",
       "close": 5.45
+    },
+    {
+      "date": "2026-06-02",
+      "close": 5.3
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-01T18:04:06.550Z",
+  "lastUpdated": "2026-06-02T17:35:19.159Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 545,
-    "marketCap": 192361360,
+    "forwardPE": 530.00006,
+    "marketCap": 187067024,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 5.9497814,
-    "enterpriseToEbitda": -11.67,
+    "beta": 0.21,
+    "priceToBook": 5.7860265,
+    "enterpriseToEbitda": -11.628,
     "profitMargins": -0.68073,
     "returnOnEquity": -0.73788,
     "revenueGrowth": 0.356,
     "earningsGrowth": null,
     "grossMargins": 0.56788,
     "totalRevenue": 28065654,
-    "ebitda": -16460637
+    "ebitda": -16925636
   }
 }
