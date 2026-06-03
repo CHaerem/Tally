@@ -3,11 +3,11 @@
   "name": "AKASTOR",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 13.66,
-  "previousClose": 13.84,
-  "dayHigh": 14.3,
-  "dayLow": 13.62,
-  "volume": 121229,
+  "currentPrice": 13.5,
+  "previousClose": 13.94,
+  "dayHigh": 13.7,
+  "dayLow": 13.48,
+  "volume": 209299,
   "fiftyTwoWeekHigh": 16.12,
   "fiftyTwoWeekLow": 10.6,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-06-02",
       "close": 13.66
+    },
+    {
+      "date": "2026-06-03",
+      "close": 13.5
     }
   ],
   "dividends": [
@@ -10086,23 +10090,23 @@
       "amount": 1.5
     }
   ],
-  "lastUpdated": "2026-06-02T17:34:51.245Z",
+  "lastUpdated": "2026-06-03T17:42:15.061Z",
   "fundamentals": {
-    "trailingPE": 29.06383,
-    "forwardPE": -45.533333,
-    "marketCap": 3723144192,
-    "dividendYield": null,
-    "dividendRate": null,
+    "trailingPE": 28.723404,
+    "forwardPE": -45,
+    "marketCap": 3679534848,
+    "dividendYield": 0.109799996,
+    "dividendRate": 1.5,
     "payoutRatio": null,
-    "beta": 0.041,
-    "priceToBook": 0.69786453,
-    "enterpriseToEbitda": 104.048,
-    "profitMargins": -0.37949002,
-    "returnOnEquity": -0.02805,
-    "revenueGrowth": 0.178,
-    "earningsGrowth": -0.913,
-    "grossMargins": 0.105129994,
-    "totalRevenue": 390000000,
-    "ebitda": 41000000
+    "beta": null,
+    "priceToBook": 0.6896904,
+    "enterpriseToEbitda": 22.075,
+    "profitMargins": 0.27823,
+    "returnOnEquity": 0.02394,
+    "revenueGrowth": 1.395,
+    "earningsGrowth": null,
+    "grossMargins": 0.32459998,
+    "totalRevenue": 496000000,
+    "ebitda": 161000000
   }
 }

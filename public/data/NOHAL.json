@@ -3,11 +3,11 @@
   "name": "NORDIC HALIBUT AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 24,
-  "previousClose": 23.8,
-  "dayHigh": 24,
-  "dayLow": 23.6,
-  "volume": 418,
+  "currentPrice": 23.8,
+  "previousClose": 23.6,
+  "dayHigh": 23.8,
+  "dayLow": 23.8,
+  "volume": 92,
   "fiftyTwoWeekHigh": 24.8,
   "fiftyTwoWeekLow": 18.8,
   "prices": [
@@ -5114,20 +5114,24 @@
     {
       "date": "2026-06-02",
       "close": 24
+    },
+    {
+      "date": "2026-06-03",
+      "close": 23.8
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-02T17:35:22.006Z",
+  "lastUpdated": "2026-06-03T17:42:45.821Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 10.762332,
-    "marketCap": 1282557184,
+    "forwardPE": 10.672646,
+    "marketCap": 1271869184,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 2.0018349,
-    "enterpriseToEbitda": -926.543,
+    "beta": 0.41,
+    "priceToBook": 1.9874737,
+    "enterpriseToEbitda": -916.778,
     "profitMargins": -0.35467,
     "returnOnEquity": -0.08023,
     "revenueGrowth": 0.114,
