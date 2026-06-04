@@ -3,11 +3,11 @@
   "name": "VOSS VEKSEL- OG LANDMANDSBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 515,
-  "previousClose": 480,
+  "currentPrice": 500,
+  "previousClose": 490,
   "dayHigh": 520,
-  "dayLow": 520,
-  "volume": 140,
+  "dayLow": 500,
+  "volume": 45,
   "fiftyTwoWeekHigh": 530,
   "fiftyTwoWeekLow": 354,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-06-03",
       "close": 515
+    },
+    {
+      "date": "2026-06-04",
+      "close": 500
     }
   ],
   "dividends": [
@@ -10110,16 +10114,16 @@
       "amount": 18.75
     }
   ],
-  "lastUpdated": "2026-06-03T17:43:11.672Z",
+  "lastUpdated": "2026-06-04T17:04:56.841Z",
   "fundamentals": {
-    "trailingPE": 14.063354,
-    "forwardPE": 13.041276,
-    "marketCap": 1134913792,
-    "dividendYield": 0.0368,
+    "trailingPE": 13.653742,
+    "forwardPE": 12.661432,
+    "marketCap": 1101858048,
+    "dividendYield": 0.0364,
     "dividendRate": 18.75,
     "payoutRatio": 0.45029998,
     "beta": 0.314,
-    "priceToBook": 1.4363048,
+    "priceToBook": 1.3944707,
     "enterpriseToEbitda": null,
     "profitMargins": 0.44034,
     "returnOnEquity": 0.10342,

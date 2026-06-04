@@ -3,11 +3,11 @@
   "name": "AF GRUPPEN",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 178.6,
-  "previousClose": 185.2,
-  "dayHigh": 181.8,
-  "dayLow": 178.6,
-  "volume": 26865,
+  "currentPrice": 180,
+  "previousClose": 185.6,
+  "dayHigh": 182,
+  "dayLow": 179,
+  "volume": 16937,
   "fiftyTwoWeekHigh": 192.4,
   "fiftyTwoWeekLow": 148.2,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-06-03",
       "close": 178.6
+    },
+    {
+      "date": "2026-06-04",
+      "close": 180
     }
   ],
   "dividends": [
@@ -10146,23 +10150,23 @@
       "amount": 6.5
     }
   ],
-  "lastUpdated": "2026-06-03T17:41:01.150Z",
+  "lastUpdated": "2026-06-04T17:02:51.181Z",
   "fundamentals": {
-    "trailingPE": 17.02574,
-    "forwardPE": 15.02942,
-    "marketCap": 20296798208,
-    "dividendYield": 0.036,
+    "trailingPE": 17.142857,
+    "forwardPE": 15.147231,
+    "marketCap": 20455899136,
+    "dividendYield": 0.0364,
     "dividendRate": 6.5,
     "payoutRatio": 0.47619998,
-    "beta": null,
-    "priceToBook": 5.591385,
-    "enterpriseToEbitda": 9.95,
+    "beta": 0.591,
+    "priceToBook": 5.635214,
+    "enterpriseToEbitda": 10.187,
     "profitMargins": 0.035269998,
     "returnOnEquity": 0.33565,
     "revenueGrowth": 0.119,
     "earningsGrowth": 0.449,
     "grossMargins": 0.34262002,
     "totalRevenue": 32800000000,
-    "ebitda": 1956999936
+    "ebitda": 1948000000
   }
 }
