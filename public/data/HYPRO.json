@@ -3,11 +3,11 @@
   "name": "HYDROGENPRO ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.5,
-  "previousClose": 2.84,
-  "dayHigh": 2.59,
-  "dayLow": 2.45,
-  "volume": 194792,
+  "currentPrice": 2.72,
+  "previousClose": 2.68,
+  "dayHigh": 2.75,
+  "dayLow": 2.5,
+  "volume": 325114,
   "fiftyTwoWeekHigh": 4.25,
   "fiftyTwoWeekLow": 1.3,
   "prices": [
@@ -5666,26 +5666,30 @@
     {
       "date": "2026-06-04",
       "close": 2.5
+    },
+    {
+      "date": "2026-06-05",
+      "close": 2.72
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-04T17:04:18.956Z",
+  "lastUpdated": "2026-06-05T16:50:36.152Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 6.3924646,
-    "marketCap": 238812224,
+    "forwardPE": 6.9550014,
+    "marketCap": 259827696,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 1.1106175,
-    "enterpriseToEbitda": -0.998,
-    "profitMargins": -2.61181,
+    "beta": 0.222,
+    "priceToBook": 1.2083519,
+    "enterpriseToEbitda": -1.092,
+    "profitMargins": -2.59516,
     "returnOnEquity": -0.79450995,
-    "revenueGrowth": -0.292,
+    "revenueGrowth": -0.275,
     "earningsGrowth": null,
-    "grossMargins": 0.21455,
-    "totalRevenue": 80120000,
-    "ebitda": -180452000
+    "grossMargins": 0.21956,
+    "totalRevenue": 80634000,
+    "ebitda": -181762000
   }
 }

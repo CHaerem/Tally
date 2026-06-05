@@ -3,11 +3,11 @@
   "name": "POLIGHT",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 7.68,
-  "previousClose": 7.65,
-  "dayHigh": 7.71,
-  "dayLow": 7.32,
-  "volume": 449664,
+  "currentPrice": 7.84,
+  "previousClose": 7.16,
+  "dayHigh": 8,
+  "dayLow": 7.6,
+  "volume": 650190,
   "fiftyTwoWeekHigh": 8.68,
   "fiftyTwoWeekLow": 3.4,
   "prices": [
@@ -7702,20 +7702,24 @@
     {
       "date": "2026-06-04",
       "close": 7.68
+    },
+    {
+      "date": "2026-06-05",
+      "close": 7.84
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-04T17:04:38.166Z",
+  "lastUpdated": "2026-06-05T16:50:55.221Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 1637265792,
+    "marketCap": 1671375488,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 1.356,
-    "priceToBook": 5.271105,
-    "enterpriseToEbitda": -11.637,
+    "beta": 1.42,
+    "priceToBook": 5.38092,
+    "enterpriseToEbitda": -11.873,
     "profitMargins": null,
     "returnOnEquity": -0.43131,
     "revenueGrowth": 1.972,

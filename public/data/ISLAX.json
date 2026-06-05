@@ -3,11 +3,11 @@
   "name": "ICELANDIC SALMON",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 72,
+  "currentPrice": 69,
   "previousClose": 73,
-  "dayHigh": 72,
-  "dayLow": 72,
-  "volume": 2763,
+  "dayHigh": 72.5,
+  "dayLow": 71.5,
+  "volume": 922,
   "fiftyTwoWeekHigh": 103,
   "fiftyTwoWeekLow": 62,
   "prices": [
@@ -5630,19 +5630,23 @@
     {
       "date": "2026-06-04",
       "close": 72
+    },
+    {
+      "date": "2026-06-05",
+      "close": 69
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-04T17:04:20.873Z",
+  "lastUpdated": "2026-06-05T16:50:38.108Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 17.239315,
-    "marketCap": 2229254400,
+    "forwardPE": 16.521011,
+    "marketCap": 2136368896,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": -0.217,
-    "priceToBook": 1.6324966,
+    "beta": -0.248,
+    "priceToBook": 1.5873411,
     "enterpriseToEbitda": -148.641,
     "profitMargins": -0.28818,
     "returnOnEquity": -0.18061,
