@@ -3,11 +3,11 @@
   "name": "NRC GROUP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 8,
-  "previousClose": 8.19,
-  "dayHigh": 8.26,
-  "dayLow": 8.01,
-  "volume": 354916,
+  "currentPrice": 8.08,
+  "previousClose": 8.15,
+  "dayHigh": 8.16,
+  "dayLow": 7.9,
+  "volume": 227163,
   "fiftyTwoWeekHigh": 10.1,
   "fiftyTwoWeekLow": 5.84,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-06-08",
       "close": 8
+    },
+    {
+      "date": "2026-06-09",
+      "close": 8.08
     }
   ],
   "dividends": [
@@ -10074,16 +10078,16 @@
       "amount": 1.53
     }
   ],
-  "lastUpdated": "2026-06-08T17:07:19.926Z",
+  "lastUpdated": "2026-06-09T16:55:32.108Z",
   "fundamentals": {
-    "trailingPE": 46.166668,
-    "forwardPE": 10.129206,
-    "marketCap": 1434283264,
+    "trailingPE": 44.888885,
+    "forwardPE": 9.848854,
+    "marketCap": 1394585728,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 0.93266,
+    "beta": -0.029,
+    "priceToBook": 0.9068462,
     "enterpriseToEbitda": null,
     "profitMargins": 0.0049799997,
     "returnOnEquity": 0.01924,

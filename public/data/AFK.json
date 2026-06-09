@@ -3,11 +3,11 @@
   "name": "ARENDALS FOSSEKOMPANI",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 174,
-  "previousClose": 178.5,
+  "currentPrice": 178,
+  "previousClose": 177.5,
   "dayHigh": 178,
-  "dayLow": 174,
-  "volume": 2372,
+  "dayLow": 172,
+  "volume": 1511,
   "fiftyTwoWeekHigh": 210,
   "fiftyTwoWeekLow": 123,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-06-08",
       "close": 174
+    },
+    {
+      "date": "2026-06-09",
+      "close": 178
     }
   ],
   "dividends": [
@@ -10166,23 +10170,23 @@
       "amount": 3
     }
   ],
-  "lastUpdated": "2026-06-08T17:06:58.541Z",
+  "lastUpdated": "2026-06-09T16:55:05.050Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 54.84375,
-    "marketCap": 9649422336,
-    "dividendYield": 0.0171,
+    "forwardPE": 55.625,
+    "marketCap": 9786878976,
+    "dividendYield": 0.0172,
     "dividendRate": 3,
     "payoutRatio": 0.2151,
-    "beta": null,
-    "priceToBook": 2.0044086,
-    "enterpriseToEbitda": 17.622,
-    "profitMargins": -0.02499,
+    "beta": 1.089,
+    "priceToBook": 2.0507858,
+    "enterpriseToEbitda": 17.361,
+    "profitMargins": -0.025009999,
     "returnOnEquity": -0.022030002,
-    "revenueGrowth": -0.038,
-    "earningsGrowth": 3.238,
-    "grossMargins": 0.58405,
-    "totalRevenue": 3659367936,
-    "ebitda": 569468992
+    "revenueGrowth": -0.046,
+    "earningsGrowth": 3.154,
+    "grossMargins": 0.58359003,
+    "totalRevenue": 3655367936,
+    "ebitda": 567468992
   }
 }

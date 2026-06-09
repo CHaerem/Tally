@@ -4,10 +4,10 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 69,
-  "previousClose": 71.9,
-  "dayHigh": 71.25,
-  "dayLow": 69,
-  "volume": 398521,
+  "previousClose": 70.45,
+  "dayHigh": 69.3,
+  "dayLow": 68.3,
+  "volume": 990365,
   "fiftyTwoWeekHigh": 86.7,
   "fiftyTwoWeekLow": 48.62,
   "prices": [
@@ -6602,6 +6602,10 @@
     {
       "date": "2026-06-08",
       "close": 69
+    },
+    {
+      "date": "2026-06-09",
+      "close": 69
     }
   ],
   "dividends": [
@@ -6683,20 +6687,20 @@
     },
     {
       "date": "2026-06-03",
-      "amount": 2.72
+      "amount": 2.74
     }
   ],
-  "lastUpdated": "2026-06-08T17:06:48.183Z",
+  "lastUpdated": "2026-06-09T16:54:51.529Z",
   "fundamentals": {
-    "trailingPE": 8.277711,
-    "forwardPE": 11.890901,
-    "marketCap": 34709811200,
-    "dividendYield": 0.1017,
-    "dividendRate": 7.06,
+    "trailingPE": 8.098591,
+    "forwardPE": 11.813855,
+    "marketCap": 34484912128,
+    "dividendYield": 0.1024,
+    "dividendRate": 7.07,
     "payoutRatio": 0.6063,
     "beta": -0.174,
-    "priceToBook": 1.4687101,
-    "enterpriseToEbitda": 62.765,
+    "priceToBook": 1.4591937,
+    "enterpriseToEbitda": 62.368,
     "profitMargins": 0.18968001,
     "returnOnEquity": 0.18931,
     "revenueGrowth": 0.225,

@@ -3,11 +3,11 @@
   "name": "AKASTOR",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 13.68,
-  "previousClose": 13.66,
-  "dayHigh": 13.8,
-  "dayLow": 13.54,
-  "volume": 206445,
+  "currentPrice": 13.5,
+  "previousClose": 13.5,
+  "dayHigh": 13.74,
+  "dayLow": 13.46,
+  "volume": 648698,
   "fiftyTwoWeekHigh": 16.12,
   "fiftyTwoWeekLow": 10.6,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-06-08",
       "close": 13.68
+    },
+    {
+      "date": "2026-06-09",
+      "close": 13.5
     }
   ],
   "dividends": [
@@ -10082,17 +10086,17 @@
       "amount": 1.5
     }
   ],
-  "lastUpdated": "2026-06-08T17:08:00.254Z",
+  "lastUpdated": "2026-06-09T16:56:22.983Z",
   "fundamentals": {
-    "trailingPE": 29.276596,
-    "forwardPE": -45.866665,
-    "marketCap": 3750400000,
-    "dividendYield": 0.109,
+    "trailingPE": 28.723404,
+    "forwardPE": -45,
+    "marketCap": 3679534848,
+    "dividendYield": 0.1096,
     "dividendRate": 1.5,
     "payoutRatio": null,
     "beta": 0.022,
-    "priceToBook": 0.70297337,
-    "enterpriseToEbitda": 22.245,
+    "priceToBook": 0.6896904,
+    "enterpriseToEbitda": 22.109,
     "profitMargins": 0.27823,
     "returnOnEquity": 0.02394,
     "revenueGrowth": 1.395,
