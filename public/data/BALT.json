@@ -4,10 +4,10 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 47.2,
-  "previousClose": 47,
+  "previousClose": 47.2,
   "dayHigh": 47.2,
-  "dayLow": 47.2,
-  "volume": 100,
+  "dayLow": 47,
+  "volume": 221,
   "fiftyTwoWeekHigh": 60.5,
   "fiftyTwoWeekLow": 43.4,
   "prices": [
@@ -8566,6 +8566,10 @@
     {
       "date": "2026-06-09",
       "close": 47.2
+    },
+    {
+      "date": "2026-06-10",
+      "close": 47.2
     }
   ],
   "dividends": [
@@ -8598,7 +8602,7 @@
       "amount": 2
     }
   ],
-  "lastUpdated": "2026-06-09T16:56:01.327Z",
+  "lastUpdated": "2026-06-10T17:06:22.651Z",
   "fundamentals": {
     "trailingPE": 8.905661,
     "forwardPE": null,

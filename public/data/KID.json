@@ -3,11 +3,11 @@
   "name": "KID",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 123.2,
-  "previousClose": 121.6,
-  "dayHigh": 124.2,
-  "dayLow": 122.2,
-  "volume": 23113,
+  "currentPrice": 121.6,
+  "previousClose": 123.2,
+  "dayHigh": 123.4,
+  "dayLow": 120.8,
+  "volume": 64976,
   "fiftyTwoWeekHigh": 158,
   "fiftyTwoWeekLow": 112,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-06-09",
       "close": 123.2
+    },
+    {
+      "date": "2026-06-10",
+      "close": 121.6
     }
   ],
   "dividends": [
@@ -10146,16 +10150,16 @@
       "amount": 2.5
     }
   ],
-  "lastUpdated": "2026-06-09T16:54:57.600Z",
+  "lastUpdated": "2026-06-10T17:05:25.307Z",
   "fundamentals": {
-    "trailingPE": 22.730627,
-    "forwardPE": 11.713765,
-    "marketCap": 5007483392,
-    "dividendYield": 0.081599995,
+    "trailingPE": 22.435423,
+    "forwardPE": 11.561639,
+    "marketCap": 4942451200,
+    "dividendYield": 0.081199996,
     "dividendRate": 10,
     "payoutRatio": 1.3838,
     "beta": 0.579,
-    "priceToBook": 3.449048,
+    "priceToBook": 3.4042552,
     "enterpriseToEbitda": null,
     "profitMargins": 0.054959998,
     "returnOnEquity": 0.15496999,
