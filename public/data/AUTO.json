@@ -3,11 +3,11 @@
   "name": "AUTOSTORE HOLDINGS LTD.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 11.42,
-  "previousClose": 12.63,
-  "dayHigh": 11.75,
-  "dayLow": 11.06,
-  "volume": 4743982,
+  "currentPrice": 11,
+  "previousClose": 12.35,
+  "dayHigh": 11.41,
+  "dayLow": 10.86,
+  "volume": 5441397,
   "fiftyTwoWeekHigh": 13.9,
   "fiftyTwoWeekLow": 5.165,
   "prices": [
@@ -4658,20 +4658,24 @@
     {
       "date": "2026-06-10",
       "close": 11.42
+    },
+    {
+      "date": "2026-06-11",
+      "close": 11
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-10T17:05:20.456Z",
+  "lastUpdated": "2026-06-11T17:14:41.643Z",
   "fundamentals": {
-    "trailingPE": 32.62857,
-    "forwardPE": 20.337624,
-    "marketCap": 38406406144,
+    "trailingPE": 31.428572,
+    "forwardPE": 19.508522,
+    "marketCap": 36993908736,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 1.961,
-    "priceToBook": 2.6425529,
-    "enterpriseToEbitda": 187.667,
+    "priceToBook": 2.5348244,
+    "enterpriseToEbitda": 185.244,
     "profitMargins": 0.2021,
     "returnOnEquity": 0.08339,
     "revenueGrowth": 0.93,

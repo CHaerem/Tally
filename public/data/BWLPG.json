@@ -3,13 +3,13 @@
   "name": "BW LPG",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 207.6,
-  "previousClose": 190.6,
-  "dayHigh": 207.4,
-  "dayLow": 200.8,
-  "volume": 296810,
+  "currentPrice": 203.8,
+  "previousClose": 195.2,
+  "dayHigh": 205.6,
+  "dayLow": 201.2,
+  "volume": 264355,
   "fiftyTwoWeekHigh": 212.2,
-  "fiftyTwoWeekLow": 110.1,
+  "fiftyTwoWeekLow": 110.8,
   "prices": [
     {
       "date": "2016-06-06",
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-06-10",
       "close": 207.6
+    },
+    {
+      "date": "2026-06-11",
+      "close": 203.8
     }
   ],
   "dividends": [
@@ -10184,19 +10188,23 @@
     {
       "date": "2026-03-12",
       "amount": 5.39
+    },
+    {
+      "date": "2026-06-11",
+      "amount": 6.38
     }
   ],
-  "lastUpdated": "2026-06-10T17:05:27.882Z",
+  "lastUpdated": "2026-06-11T17:14:49.415Z",
   "fundamentals": {
-    "trailingPE": 9.222568,
-    "forwardPE": 11.1367,
-    "marketCap": 31516712960,
-    "dividendYield": 0.0889,
+    "trailingPE": 9.049733,
+    "forwardPE": 10.887569,
+    "marketCap": 30939817984,
+    "dividendYield": 0.0861,
     "dividendRate": 17.88,
     "payoutRatio": 0.61759996,
     "beta": null,
-    "priceToBook": 1.7527069,
-    "enterpriseToEbitda": 51.893,
+    "priceToBook": 1.7206246,
+    "enterpriseToEbitda": 53.506,
     "profitMargins": 0.1013,
     "returnOnEquity": 0.20864001,
     "revenueGrowth": -0.027,

@@ -3,11 +3,11 @@
   "name": "FRONTLINE PLC",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 345.6,
-  "previousClose": 319.6,
-  "dayHigh": 346.8,
-  "dayLow": 335.4,
-  "volume": 835187,
+  "currentPrice": 348.6,
+  "previousClose": 332.2,
+  "dayHigh": 352,
+  "dayLow": 333.8,
+  "volume": 1015775,
   "fiftyTwoWeekHigh": 388.6,
   "fiftyTwoWeekLow": 162.55,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-06-10",
       "close": 345.6
+    },
+    {
+      "date": "2026-06-11",
+      "close": 348.6
     }
   ],
   "dividends": [
@@ -10164,19 +10168,23 @@
     {
       "date": "2026-03-11",
       "amount": 9.73
+    },
+    {
+      "date": "2026-06-11",
+      "amount": 14.77
     }
   ],
-  "lastUpdated": "2026-06-10T17:05:15.285Z",
+  "lastUpdated": "2026-06-11T17:14:36.438Z",
   "fundamentals": {
-    "trailingPE": 8.992974,
-    "forwardPE": 9.948406,
-    "marketCap": 76938477568,
-    "dividendYield": 0.1699,
+    "trailingPE": 9.071038,
+    "forwardPE": 8.70717,
+    "marketCap": 77606346752,
+    "dividendYield": 0.16610001,
     "dividendRate": 57.41,
     "payoutRatio": 0.4335,
     "beta": 0.022,
-    "priceToBook": 2.921123,
-    "enterpriseToEbitda": 66.161,
+    "priceToBook": 2.9464798,
+    "enterpriseToEbitda": 67.607,
     "profitMargins": 0.40192002,
     "returnOnEquity": 0.35009,
     "revenueGrowth": 0.669,
