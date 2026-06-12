@@ -3,10 +3,10 @@
   "name": "BALTIC SEA PROPERTIES",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 47.2,
+  "currentPrice": 47,
   "previousClose": 47.2,
-  "dayHigh": 47.2,
-  "dayLow": 47.2,
+  "dayHigh": 47,
+  "dayLow": 47,
   "volume": 200,
   "fiftyTwoWeekHigh": 60.5,
   "fiftyTwoWeekLow": 43.4,
@@ -8574,6 +8574,10 @@
     {
       "date": "2026-06-11",
       "close": 47.2
+    },
+    {
+      "date": "2026-06-12",
+      "close": 47
     }
   ],
   "dividends": [
@@ -8606,16 +8610,16 @@
       "amount": 2
     }
   ],
-  "lastUpdated": "2026-06-11T17:15:44.321Z",
+  "lastUpdated": "2026-06-12T17:00:59.180Z",
   "fundamentals": {
-    "trailingPE": 8.905661,
+    "trailingPE": 8.867924,
     "forwardPE": null,
-    "marketCap": 407669568,
+    "marketCap": 405942144,
     "dividendYield": 0.0424,
     "dividendRate": 2,
     "payoutRatio": 0.3774,
     "beta": -0.025,
-    "priceToBook": 0.6603431,
+    "priceToBook": 0.65754503,
     "enterpriseToEbitda": 14.456,
     "profitMargins": 0.43655998,
     "returnOnEquity": 0.075229995,

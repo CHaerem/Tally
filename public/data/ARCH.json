@@ -3,11 +3,11 @@
   "name": "ARCHER",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 24,
-  "previousClose": 24.7,
-  "dayHigh": 24.45,
-  "dayLow": 23.75,
-  "volume": 102013,
+  "currentPrice": 23.7,
+  "previousClose": 24.2,
+  "dayHigh": 24.05,
+  "dayLow": 23.7,
+  "volume": 95021,
   "fiftyTwoWeekHigh": 30.25,
   "fiftyTwoWeekLow": 20.05,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-06-11",
       "close": 24
+    },
+    {
+      "date": "2026-06-12",
+      "close": 23.7
     }
   ],
   "dividends": [
@@ -10098,17 +10102,17 @@
       "amount": 0.62
     }
   ],
-  "lastUpdated": "2026-06-11T17:14:55.410Z",
+  "lastUpdated": "2026-06-12T17:00:09.635Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 4.8248863,
-    "marketCap": 2387865600,
-    "dividendYield": 0.1046,
+    "forwardPE": 4.786476,
+    "marketCap": 2358017280,
+    "dividendYield": 0.1033,
     "dividendRate": 2.48,
     "payoutRatio": null,
     "beta": 0.321,
-    "priceToBook": 1.4215517,
-    "enterpriseToEbitda": 15.988,
+    "priceToBook": 1.4037824,
+    "enterpriseToEbitda": 16.152,
     "profitMargins": -0.02219,
     "returnOnEquity": -0.10696,
     "revenueGrowth": -0.069,
