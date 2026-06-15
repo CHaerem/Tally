@@ -3,11 +3,11 @@
   "name": "ZENITH ENERGY",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.662,
-  "previousClose": 4,
-  "dayHigh": 0.706,
-  "dayLow": 0.652,
-  "volume": 7704040,
+  "currentPrice": 0.682,
+  "previousClose": 0.645,
+  "dayHigh": 0.7,
+  "dayLow": 0.621,
+  "volume": 4855531,
   "fiftyTwoWeekHigh": 2.44,
   "fiftyTwoWeekLow": 0.3,
   "prices": [
@@ -7614,26 +7614,30 @@
     {
       "date": "2026-06-12",
       "close": 0.66
+    },
+    {
+      "date": "2026-06-15",
+      "close": 0.68
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-14T01:48:29.779Z",
+  "lastUpdated": "2026-06-15T17:41:40.441Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 473168800,
+    "marketCap": 487463904,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": -0.878,
-    "priceToBook": 0.68839896,
-    "enterpriseToEbitda": 36.912,
-    "profitMargins": -0.37273997,
-    "returnOnEquity": -0.01342,
-    "revenueGrowth": 0.196,
-    "earningsGrowth": -0.657,
-    "grossMargins": 0.07051,
-    "totalRevenue": 2326000,
-    "ebitda": 11186000
+    "beta": -0.884,
+    "priceToBook": 0.7091965,
+    "enterpriseToEbitda": -133.274,
+    "profitMargins": null,
+    "returnOnEquity": -0.25654,
+    "revenueGrowth": 0.006,
+    "earningsGrowth": null,
+    "grossMargins": 0.38432,
+    "totalRevenue": 2334000,
+    "ebitda": -3939000
   }
 }

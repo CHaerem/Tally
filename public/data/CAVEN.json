@@ -3,11 +3,11 @@
   "name": "CAVENDISH HYDROGEN ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 7.43,
-  "previousClose": 29,
-  "dayHigh": 7.43,
-  "dayLow": 7.13,
-  "volume": 24280,
+  "currentPrice": 7.2,
+  "previousClose": 7.95,
+  "dayHigh": 7.8,
+  "dayLow": 7.22,
+  "volume": 6691,
   "fiftyTwoWeekHigh": 11.5,
   "fiftyTwoWeekLow": 6.03,
   "prices": [
@@ -2014,19 +2014,23 @@
     {
       "date": "2026-06-12",
       "close": 7.43
+    },
+    {
+      "date": "2026-06-15",
+      "close": 7.2
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-14T01:47:13.894Z",
+  "lastUpdated": "2026-06-15T17:40:25.773Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -2.5707839,
-    "marketCap": 248295472,
+    "forwardPE": -2.4912038,
+    "marketCap": 240609328,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 0.5170748,
+    "beta": 1.351,
+    "priceToBook": 0.5010685,
     "enterpriseToEbitda": -13.738,
     "profitMargins": -1.54996,
     "returnOnEquity": -0.42560002,
