@@ -3,11 +3,11 @@
   "name": "BLACK SEA PROPERTY",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.7,
-  "previousClose": 3,
-  "dayHigh": 2.7,
-  "dayLow": 2.54,
-  "volume": 318,
+  "currentPrice": 2.82,
+  "previousClose": 2.7,
+  "dayHigh": 2.82,
+  "dayLow": 2.82,
+  "volume": 132,
   "fiftyTwoWeekHigh": 37.882,
   "fiftyTwoWeekLow": 2.54,
   "prices": [
@@ -10062,26 +10062,30 @@
     {
       "date": "2026-06-15",
       "close": 2.7
+    },
+    {
+      "date": "2026-06-16",
+      "close": 2.82
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-15T17:40:24.184Z",
+  "lastUpdated": "2026-06-16T17:43:59.684Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 12469615,
+    "marketCap": 13023820,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.523,
-    "priceToBook": 0.061793383,
+    "beta": null,
+    "priceToBook": 0.06453975,
     "enterpriseToEbitda": null,
-    "profitMargins": -1.5899,
-    "returnOnEquity": -0.09079,
-    "revenueGrowth": 5.257,
+    "profitMargins": null,
+    "returnOnEquity": -1.24421,
+    "revenueGrowth": -0.448,
     "earningsGrowth": null,
     "grossMargins": 1,
-    "totalRevenue": 10161000,
-    "ebitda": 6066000
+    "totalRevenue": 7257000,
+    "ebitda": 1976000
   }
 }
