@@ -3,13 +3,13 @@
   "name": "INSTABANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 3.97,
-  "previousClose": 3.93,
-  "dayHigh": 4.05,
-  "dayLow": 3.94,
-  "volume": 157544,
+  "currentPrice": 3.95,
+  "previousClose": 4,
+  "dayHigh": 3.99,
+  "dayLow": 3.93,
+  "volume": 69732,
   "fiftyTwoWeekHigh": 4.49,
-  "fiftyTwoWeekLow": 2.38,
+  "fiftyTwoWeekLow": 2.4,
   "prices": [
     {
       "date": "2020-08-17",
@@ -5874,6 +5874,10 @@
     {
       "date": "2026-06-18",
       "close": 3.97
+    },
+    {
+      "date": "2026-06-19",
+      "close": 3.95
     }
   ],
   "dividends": [
@@ -5886,16 +5890,16 @@
       "amount": 0.09
     }
   ],
-  "lastUpdated": "2026-06-18T17:04:36.375Z",
+  "lastUpdated": "2026-06-19T16:50:57.514Z",
   "fundamentals": {
-    "trailingPE": 13.233333,
-    "forwardPE": 8.068942,
-    "marketCap": 1831022592,
+    "trailingPE": 13.166666,
+    "forwardPE": 8.028293,
+    "marketCap": 1821798272,
     "dividendYield": 0.0223,
     "dividendRate": 0.09,
     "payoutRatio": 0.26639998,
     "beta": 0.389,
-    "priceToBook": 1.4143214,
+    "priceToBook": 1.4071964,
     "enterpriseToEbitda": null,
     "profitMargins": 0.30201998,
     "returnOnEquity": 0.106879994,

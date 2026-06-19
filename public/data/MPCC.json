@@ -3,11 +3,11 @@
   "name": "MPC CONTAINER SHIPS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 24.95,
-  "previousClose": 26.68,
-  "dayHigh": 25.78,
-  "dayLow": 24.57,
-  "volume": 1464068,
+  "currentPrice": 24.66,
+  "previousClose": 26.16,
+  "dayHigh": 24.81,
+  "dayLow": 24.28,
+  "volume": 1138412,
   "fiftyTwoWeekHigh": 27.45,
   "fiftyTwoWeekLow": 15.3,
   "prices": [
@@ -9090,6 +9090,10 @@
     {
       "date": "2026-06-18",
       "close": 24.95
+    },
+    {
+      "date": "2026-06-19",
+      "close": 24.66
     }
   ],
   "dividends": [
@@ -9168,18 +9172,22 @@
     {
       "date": "2026-03-20",
       "amount": 0.48
+    },
+    {
+      "date": "2026-06-19",
+      "amount": 0.39
     }
   ],
-  "lastUpdated": "2026-06-18T17:03:23.852Z",
+  "lastUpdated": "2026-06-19T16:49:45.698Z",
   "fundamentals": {
-    "trailingPE": 5.354078,
-    "forwardPE": 9.262688,
-    "marketCap": 11070322688,
+    "trailingPE": 5.291846,
+    "forwardPE": 9.155025,
+    "marketCap": 10941648896,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.165,
-    "priceToBook": 1.2578862,
+    "priceToBook": 1.2120079,
     "enterpriseToEbitda": 39.513,
     "profitMargins": 0.42834,
     "returnOnEquity": 0.24448,

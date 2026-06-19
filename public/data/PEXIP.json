@@ -3,11 +3,11 @@
   "name": "PEXIP HOLDING",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 75.4,
-  "previousClose": 75.2,
-  "dayHigh": 78.4,
+  "currentPrice": 75.2,
+  "previousClose": 77,
+  "dayHigh": 76,
   "dayLow": 74.6,
-  "volume": 137127,
+  "volume": 94288,
   "fiftyTwoWeekHigh": 83.4,
   "fiftyTwoWeekLow": 54.4,
   "prices": [
@@ -6134,6 +6134,10 @@
     {
       "date": "2026-06-18",
       "close": 75.4
+    },
+    {
+      "date": "2026-06-19",
+      "close": 75.2
     }
   ],
   "dividends": [
@@ -6150,16 +6154,16 @@
       "amount": 4
     }
   ],
-  "lastUpdated": "2026-06-18T17:03:59.234Z",
+  "lastUpdated": "2026-06-19T16:50:20.845Z",
   "fundamentals": {
-    "trailingPE": 31.157024,
-    "forwardPE": 23.452568,
-    "marketCap": 7870419968,
+    "trailingPE": 31.074377,
+    "forwardPE": 23.390358,
+    "marketCap": 7849543168,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 1.439,
-    "priceToBook": 4.9226565,
+    "priceToBook": 4.9245267,
     "enterpriseToEbitda": 216.726,
     "profitMargins": 0.21054001,
     "returnOnEquity": 0.17491,
