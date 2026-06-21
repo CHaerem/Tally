@@ -4,7 +4,7 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 45.95,
-  "previousClose": 46.65,
+  "previousClose": 60,
   "dayHigh": 46.25,
   "dayLow": 45.05,
   "volume": 137542,
@@ -1991,27 +1991,27 @@
   "dividends": [
     {
       "date": "2024-09-12",
-      "amount": 2.09
+      "amount": 2.13
     },
     {
       "date": "2024-12-03",
-      "amount": 2.09
+      "amount": 2.13
     },
     {
       "date": "2025-03-11",
-      "amount": 2.09
+      "amount": 2.13
     },
     {
       "date": "2025-06-03",
-      "amount": 2.09
+      "amount": 2.13
     },
     {
       "date": "2025-09-02",
-      "amount": 2.09
+      "amount": 2.13
     },
     {
       "date": "2025-12-02",
-      "amount": 2.09
+      "amount": 2.13
     },
     {
       "date": "2026-03-05",
@@ -2022,17 +2022,17 @@
       "amount": 2.03
     }
   ],
-  "lastUpdated": "2026-06-19T16:51:40.552Z",
+  "lastUpdated": "2026-06-21T01:50:15.097Z",
   "fundamentals": {
-    "trailingPE": 7.328549,
+    "trailingPE": 7.236221,
     "forwardPE": 7.245475,
     "marketCap": 7477676032,
-    "dividendYield": null,
-    "dividendRate": null,
-    "payoutRatio": null,
+    "dividendYield": 0.1855,
+    "dividendRate": 8.52,
+    "payoutRatio": 1.3345,
     "beta": null,
     "priceToBook": 5.8357053,
-    "enterpriseToEbitda": 78.615,
+    "enterpriseToEbitda": 77.6,
     "profitMargins": 0.55744,
     "returnOnEquity": 0.64935,
     "revenueGrowth": null,
