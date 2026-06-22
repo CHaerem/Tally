@@ -3,11 +3,11 @@
   "name": "BONHEUR",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 229,
-  "previousClose": 52,
-  "dayHigh": 229,
-  "dayLow": 223.5,
-  "volume": 44991,
+  "currentPrice": 229.5,
+  "previousClose": 228.5,
+  "dayHigh": 243,
+  "dayLow": 229,
+  "volume": 18747,
   "fiftyTwoWeekHigh": 280,
   "fiftyTwoWeekLow": 209,
   "prices": [
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-06-19",
       "close": 229
+    },
+    {
+      "date": "2026-06-22",
+      "close": 229.5
     }
   ],
   "dividends": [
@@ -10102,16 +10106,16 @@
       "amount": 7.3
     }
   ],
-  "lastUpdated": "2026-06-21T01:48:23.944Z",
+  "lastUpdated": "2026-06-22T17:32:44.471Z",
   "fundamentals": {
-    "trailingPE": 6.2585406,
-    "forwardPE": 9.419992,
-    "marketCap": 9739803648,
+    "trailingPE": 6.2722054,
+    "forwardPE": 9.440559,
+    "marketCap": 9761069056,
     "dividendYield": 0.0319,
     "dividendRate": 7.3,
     "payoutRatio": 0.1844,
     "beta": 0.543,
-    "priceToBook": 1.0888532,
+    "priceToBook": 1.0912306,
     "enterpriseToEbitda": 3.567,
     "profitMargins": 0.12495,
     "returnOnEquity": 0.1943,
