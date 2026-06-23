@@ -3,11 +3,11 @@
   "name": "VOW",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.3,
-  "previousClose": 2.3,
+  "currentPrice": 2.2,
+  "previousClose": 2.215,
   "dayHigh": 2.3,
-  "dayLow": 2.19,
-  "volume": 626780,
+  "dayLow": 2.215,
+  "volume": 243230,
   "fiftyTwoWeekHigh": 3.5,
   "fiftyTwoWeekLow": 1.45,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-06-22",
       "close": 2.3
+    },
+    {
+      "date": "2026-06-23",
+      "close": 2.2
     }
   ],
   "dividends": [
@@ -10070,17 +10074,17 @@
       "amount": 0.07
     }
   ],
-  "lastUpdated": "2026-06-22T17:32:25.616Z",
+  "lastUpdated": "2026-06-23T16:49:23.275Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 2.6329346,
-    "marketCap": 667948032,
+    "forwardPE": 2.5184593,
+    "marketCap": 638906816,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 1.506,
-    "priceToBook": 3.0913978,
-    "enterpriseToEbitda": -15.589,
+    "priceToBook": 2.9569893,
+    "enterpriseToEbitda": -15.826,
     "profitMargins": -0.23896,
     "returnOnEquity": -0.7509,
     "revenueGrowth": 0.159,
