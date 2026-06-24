@@ -3,13 +3,13 @@
   "name": "ZAPTEC ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 47.35,
-  "previousClose": 48.55,
-  "dayHigh": 47.7,
-  "dayLow": 45.95,
-  "volume": 240374,
+  "currentPrice": 46,
+  "previousClose": 46.5,
+  "dayHigh": 47.4,
+  "dayLow": 45.25,
+  "volume": 365824,
   "fiftyTwoWeekHigh": 54.2,
-  "fiftyTwoWeekLow": 19,
+  "fiftyTwoWeekLow": 19.32,
   "prices": [
     {
       "date": "2020-10-08",
@@ -5734,6 +5734,10 @@
     {
       "date": "2026-06-23",
       "close": 47.35
+    },
+    {
+      "date": "2026-06-24",
+      "close": 46
     }
   ],
   "dividends": [
@@ -5742,17 +5746,17 @@
       "amount": 2
     }
   ],
-  "lastUpdated": "2026-06-23T16:52:13.190Z",
+  "lastUpdated": "2026-06-24T16:46:49.019Z",
   "fundamentals": {
-    "trailingPE": 52.032963,
-    "forwardPE": 22.232447,
-    "marketCap": 4120434432,
-    "dividendYield": 0.0837,
+    "trailingPE": 50.54945,
+    "forwardPE": 21.598576,
+    "marketCap": 4002956544,
+    "dividendYield": 0.0845,
     "dividendRate": 4,
     "payoutRatio": null,
     "beta": 1.43,
-    "priceToBook": 5.501975,
-    "enterpriseToEbitda": 27.725,
+    "priceToBook": 5.345108,
+    "enterpriseToEbitda": 27.434,
     "profitMargins": 0.04891,
     "returnOnEquity": 0.11307,
     "revenueGrowth": 0.317,

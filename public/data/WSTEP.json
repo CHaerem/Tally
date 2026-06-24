@@ -3,11 +3,11 @@
   "name": "WEBSTEP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 13.3,
-  "previousClose": 14,
-  "dayHigh": 13.3,
-  "dayLow": 13.3,
-  "volume": 2102,
+  "currentPrice": 13.5,
+  "previousClose": 13.55,
+  "dayHigh": 14,
+  "dayLow": 13.25,
+  "volume": 18312,
   "fiftyTwoWeekHigh": 26,
   "fiftyTwoWeekLow": 12.95,
   "prices": [
@@ -8726,6 +8726,10 @@
     {
       "date": "2026-06-23",
       "close": 13.3
+    },
+    {
+      "date": "2026-06-24",
+      "close": 13.5
     }
   ],
   "dividends": [
@@ -8766,17 +8770,17 @@
       "amount": 1.49
     }
   ],
-  "lastUpdated": "2026-06-23T16:50:29.778Z",
+  "lastUpdated": "2026-06-24T16:45:18.576Z",
   "fundamentals": {
-    "trailingPE": 9.432625,
-    "forwardPE": 5.8083425,
-    "marketCap": 361423904,
-    "dividendYield": 0.1116,
+    "trailingPE": 9.574469,
+    "forwardPE": 5.8956857,
+    "marketCap": 366858848,
+    "dividendYield": 0.111999996,
     "dividendRate": 1.49,
     "payoutRatio": 1.6312,
     "beta": 0.261,
-    "priceToBook": 1.0502212,
-    "enterpriseToEbitda": 6.442,
+    "priceToBook": 1.0660139,
+    "enterpriseToEbitda": 6.417,
     "profitMargins": 0.04355,
     "returnOnEquity": 0.103599995,
     "revenueGrowth": -0.113,
