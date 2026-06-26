@@ -3,11 +3,11 @@
   "name": "NORSK TITANIUM AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.008,
-  "previousClose": 1.042,
-  "dayHigh": 1.038,
-  "dayLow": 1.002,
-  "volume": 2752816,
+  "currentPrice": 0.999,
+  "previousClose": 1.02,
+  "dayHigh": 1.02,
+  "dayLow": 0.99,
+  "volume": 2654481,
   "fiftyTwoWeekHigh": 2.215,
   "fiftyTwoWeekLow": 0.751,
   "prices": [
@@ -5142,20 +5142,24 @@
     {
       "date": "2026-06-25",
       "close": 1.01
+    },
+    {
+      "date": "2026-06-26",
+      "close": 1
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-25T16:49:26.120Z",
+  "lastUpdated": "2026-06-26T16:42:26.582Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -10.28785,
-    "marketCap": 1037706240,
+    "forwardPE": -10.1356535,
+    "marketCap": 1028441024,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": -0.638,
-    "priceToBook": 4.7234883,
-    "enterpriseToEbitda": -33.341,
+    "priceToBook": 4.6071157,
+    "enterpriseToEbitda": -33.141,
     "profitMargins": null,
     "returnOnEquity": -2.08039,
     "revenueGrowth": -0.541,
