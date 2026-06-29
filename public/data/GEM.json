@@ -3,11 +3,11 @@
   "name": "GREEN MINERALS AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.09,
-  "previousClose": 28.8,
-  "dayHigh": 1.19,
-  "dayLow": 1,
-  "volume": 15641,
+  "currentPrice": 1.005,
+  "previousClose": 1.125,
+  "dayHigh": 1.14,
+  "dayLow": 1.005,
+  "volume": 13035,
   "fiftyTwoWeekHigh": 5.4,
   "fiftyTwoWeekLow": 1,
   "prices": [
@@ -5282,19 +5282,23 @@
     {
       "date": "2026-06-26",
       "close": 1.09
+    },
+    {
+      "date": "2026-06-29",
+      "close": 1
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-28T01:42:05.832Z",
+  "lastUpdated": "2026-06-29T17:01:59.933Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -2.2708335,
-    "marketCap": 22019526,
+    "forwardPE": -2.09375,
+    "marketCap": 20302406,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.317,
-    "priceToBook": 3.0277777,
+    "priceToBook": 2.7916665,
     "enterpriseToEbitda": null,
     "profitMargins": null,
     "returnOnEquity": -1.09986,

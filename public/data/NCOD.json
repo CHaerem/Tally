@@ -3,11 +3,11 @@
   "name": "NORCOD",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 10.5,
-  "previousClose": 48.123,
-  "dayHigh": 10.6,
-  "dayLow": 10.5,
-  "volume": 40410,
+  "currentPrice": 10,
+  "previousClose": 11.05,
+  "dayHigh": 10.95,
+  "dayLow": 10,
+  "volume": 8020,
   "fiftyTwoWeekHigh": 18.8,
   "fiftyTwoWeekLow": 9,
   "prices": [
@@ -5726,19 +5726,23 @@
     {
       "date": "2026-06-26",
       "close": 10.5
+    },
+    {
+      "date": "2026-06-29",
+      "close": 10
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-28T01:42:43.543Z",
+  "lastUpdated": "2026-06-29T17:02:35.736Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 827786368,
+    "marketCap": 788368000,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.668,
-    "priceToBook": 3.1722054,
+    "priceToBook": 3.0211482,
     "enterpriseToEbitda": -15.496,
     "profitMargins": -0.72445,
     "returnOnEquity": -0.85649,
