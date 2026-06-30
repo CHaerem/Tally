@@ -3,11 +3,11 @@
   "name": "TECHSTEP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 8.1,
-  "previousClose": 7.98,
+  "currentPrice": 8.08,
+  "previousClose": 8.1,
   "dayHigh": 8.1,
-  "dayLow": 8.1,
-  "volume": 60,
+  "dayLow": 7.9,
+  "volume": 11000,
   "fiftyTwoWeekHigh": 14,
   "fiftyTwoWeekLow": 7.1,
   "prices": [
@@ -10062,19 +10062,23 @@
     {
       "date": "2026-06-29",
       "close": 8.1
+    },
+    {
+      "date": "2026-06-30",
+      "close": 8.08
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-06-29T17:01:35.376Z",
+  "lastUpdated": "2026-06-30T16:45:03.871Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 5.7857146,
-    "marketCap": 282412032,
+    "forwardPE": 5.7714286,
+    "marketCap": 281714688,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.637,
-    "priceToBook": 0.5635175,
+    "priceToBook": 0.5621261,
     "enterpriseToEbitda": 6.203,
     "profitMargins": -0.11958,
     "returnOnEquity": -0.23322001,
