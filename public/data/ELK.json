@@ -3,11 +3,11 @@
   "name": "ELKEM",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 31.98,
-  "previousClose": 31.42,
-  "dayHigh": 32.08,
-  "dayLow": 30.78,
-  "volume": 667933,
+  "currentPrice": 31.22,
+  "previousClose": 32.2,
+  "dayHigh": 31.98,
+  "dayLow": 30.56,
+  "volume": 566450,
   "fiftyTwoWeekHigh": 34.6,
   "fiftyTwoWeekLow": 21.38,
   "prices": [
@@ -8294,6 +8294,10 @@
     {
       "date": "2026-06-30",
       "close": 31.98
+    },
+    {
+      "date": "2026-07-01",
+      "close": 31.22
     }
   ],
   "dividends": [
@@ -8322,17 +8326,17 @@
       "amount": 0.3
     }
   ],
-  "lastUpdated": "2026-06-30T16:44:16.492Z",
+  "lastUpdated": "2026-07-01T16:47:42.337Z",
   "fundamentals": {
-    "trailingPE": 61.5,
-    "forwardPE": 9.011472,
-    "marketCap": 11594272768,
+    "trailingPE": 61.215687,
+    "forwardPE": 8.544505,
+    "marketCap": 11318735872,
     "dividendYield": 0.0111,
     "dividendRate": 0.3,
     "payoutRatio": 0.5801,
     "beta": 0.988,
-    "priceToBook": 0.8553318,
-    "enterpriseToEbitda": 8.462,
+    "priceToBook": 0.8350049,
+    "enterpriseToEbitda": 8.685,
     "profitMargins": -0.02631,
     "returnOnEquity": 0.01675,
     "revenueGrowth": -0.054,

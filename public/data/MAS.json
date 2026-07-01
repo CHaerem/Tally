@@ -3,11 +3,11 @@
   "name": "MÅSØVAL AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 32.5,
-  "previousClose": 33.1,
-  "dayHigh": 33.5,
+  "currentPrice": 32,
+  "previousClose": 33.3,
+  "dayHigh": 32.9,
   "dayLow": 32,
-  "volume": 6508,
+  "volume": 4976,
   "fiftyTwoWeekHigh": 34.4,
   "fiftyTwoWeekLow": 20.1,
   "prices": [
@@ -5074,6 +5074,10 @@
     {
       "date": "2026-06-30",
       "close": 32.5
+    },
+    {
+      "date": "2026-07-01",
+      "close": 32
     }
   ],
   "dividends": [
@@ -5090,17 +5094,17 @@
       "amount": 0.5
     }
   ],
-  "lastUpdated": "2026-06-30T16:46:00.302Z",
+  "lastUpdated": "2026-07-01T16:49:25.991Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 16.795866,
-    "marketCap": 3981524736,
+    "forwardPE": 16.537468,
+    "marketCap": 3920270592,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.186,
-    "priceToBook": 2.285674,
-    "enterpriseToEbitda": 38.974,
+    "priceToBook": 2.25051,
+    "enterpriseToEbitda": 38.078,
     "profitMargins": 0.0002,
     "returnOnEquity": -0.00121,
     "revenueGrowth": -0.253,
