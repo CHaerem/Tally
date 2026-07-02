@@ -3,11 +3,11 @@
   "name": "AKER",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1198,
-  "previousClose": 1140,
-  "dayHigh": 1248,
-  "dayLow": 1198,
-  "volume": 214658,
+  "currentPrice": 1186,
+  "previousClose": 1128,
+  "dayHigh": 1196,
+  "dayLow": 1156,
+  "volume": 92100,
   "fiftyTwoWeekHigh": 1334,
   "fiftyTwoWeekLow": 632,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-07-01",
       "close": 1198
+    },
+    {
+      "date": "2026-07-02",
+      "close": 1186
     }
   ],
   "dividends": [
@@ -10134,17 +10138,17 @@
       "amount": 29
     }
   ],
-  "lastUpdated": "2026-07-01T16:47:36.816Z",
+  "lastUpdated": "2026-07-02T16:35:43.568Z",
   "fundamentals": {
-    "trailingPE": 22.013966,
-    "forwardPE": 45.638096,
-    "marketCap": 88998559744,
-    "dividendYield": 0.0714,
+    "trailingPE": 21.80548,
+    "forwardPE": 45.180954,
+    "marketCap": 88107089920,
+    "dividendYield": 0.0684,
     "dividendRate": 82,
     "payoutRatio": 0.97370005,
     "beta": 0.254,
-    "priceToBook": 1.9017594,
-    "enterpriseToEbitda": 20.109,
+    "priceToBook": 1.8827101,
+    "enterpriseToEbitda": 20.687,
     "profitMargins": 0.21400999,
     "returnOnEquity": 0.04368,
     "revenueGrowth": null,

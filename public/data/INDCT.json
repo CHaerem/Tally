@@ -3,13 +3,13 @@
   "name": "INDUCT",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.95,
-  "previousClose": 1.08,
-  "dayHigh": 0.998,
-  "dayLow": 0.906,
-  "volume": 139878,
+  "currentPrice": 0.936,
+  "previousClose": 1.065,
+  "dayHigh": 0.978,
+  "dayLow": 0.9,
+  "volume": 310900,
   "fiftyTwoWeekHigh": 4.96,
-  "fiftyTwoWeekLow": 0.906,
+  "fiftyTwoWeekLow": 0.9,
   "prices": [
     {
       "date": "2016-06-27",
@@ -10070,20 +10070,24 @@
     {
       "date": "2026-07-01",
       "close": 0.95
+    },
+    {
+      "date": "2026-07-02",
+      "close": 0.94
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-07-01T16:49:20.589Z",
+  "lastUpdated": "2026-07-02T16:37:27.996Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -95,
-    "marketCap": 29743596,
+    "forwardPE": -93.6,
+    "marketCap": 29305268,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.347,
-    "priceToBook": 0.7533703,
-    "enterpriseToEbitda": -24.169,
+    "priceToBook": 0.742268,
+    "enterpriseToEbitda": -22.782,
     "profitMargins": -0.6321,
     "returnOnEquity": -0.25426,
     "revenueGrowth": -0.281,

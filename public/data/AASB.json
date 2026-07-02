@@ -3,11 +3,11 @@
   "name": "AASEN SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 132.1,
+  "currentPrice": 132.98,
   "previousClose": 134,
-  "dayHigh": 133.1,
-  "dayLow": 133,
-  "volume": 1244,
+  "dayHigh": 132.98,
+  "dayLow": 132,
+  "volume": 201,
   "fiftyTwoWeekHigh": 151.48,
   "fiftyTwoWeekLow": 118.1,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-07-01",
       "close": 132.1
+    },
+    {
+      "date": "2026-07-02",
+      "close": 132.98
     }
   ],
   "dividends": [
@@ -10106,16 +10110,16 @@
       "amount": 10
     }
   ],
-  "lastUpdated": "2026-07-01T16:49:01.190Z",
+  "lastUpdated": "2026-07-02T16:37:08.238Z",
   "fundamentals": {
-    "trailingPE": 11.933153,
-    "forwardPE": 9.909978,
-    "marketCap": 228501840,
-    "dividendYield": 0.0743,
+    "trailingPE": 12.012647,
+    "forwardPE": 9.975994,
+    "marketCap": 230024016,
+    "dividendYield": 0.0757,
     "dividendRate": 10,
     "payoutRatio": 0.9036,
     "beta": -0.017,
-    "priceToBook": 0.28062975,
+    "priceToBook": 0.2824992,
     "enterpriseToEbitda": null,
     "profitMargins": 0.41451,
     "returnOnEquity": 0.09631,
