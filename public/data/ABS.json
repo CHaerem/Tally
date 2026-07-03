@@ -3,11 +3,11 @@
   "name": "ARCTIC BIOSCIENCE AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 3.3,
+  "currentPrice": 3.14,
   "previousClose": 3.3,
-  "dayHigh": 3.3,
-  "dayLow": 3.3,
-  "volume": 100,
+  "dayHigh": 3.14,
+  "dayLow": 2.99,
+  "volume": 2820,
   "fiftyTwoWeekHigh": 4.65,
   "fiftyTwoWeekLow": 2.6,
   "prices": [
@@ -5378,19 +5378,27 @@
     {
       "date": "2026-07-01",
       "close": 3.3
+    },
+    {
+      "date": "2026-07-02",
+      "close": 3.3
+    },
+    {
+      "date": "2026-07-03",
+      "close": 3.14
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-07-02T16:36:42.720Z",
+  "lastUpdated": "2026-07-03T17:19:40.087Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -16.5,
-    "marketCap": 88955640,
+    "forwardPE": -15.700001,
+    "marketCap": 84642648,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 1.098,
-    "priceToBook": 0.51274085,
+    "beta": 1.093,
+    "priceToBook": 0.4878807,
     "enterpriseToEbitda": -4.903,
     "profitMargins": -0.96266,
     "returnOnEquity": -0.21356001,

@@ -6,8 +6,8 @@
   "currentPrice": 15.8,
   "previousClose": 15.7,
   "dayHigh": 15.8,
-  "dayLow": 15,
-  "volume": 125,
+  "dayLow": 15.8,
+  "volume": 100,
   "fiftyTwoWeekHigh": 22.4,
   "fiftyTwoWeekLow": 10.7,
   "prices": [
@@ -3150,10 +3150,14 @@
     {
       "date": "2026-07-02",
       "close": 15.8
+    },
+    {
+      "date": "2026-07-03",
+      "close": 15.8
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-07-02T16:37:49.475Z",
+  "lastUpdated": "2026-07-03T17:21:04.260Z",
   "fundamentals": {
     "trailingPE": 1.4522059,
     "forwardPE": 135.05428,
@@ -3161,9 +3165,9 @@
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": -0.5,
-    "priceToBook": 16.975246,
-    "enterpriseToEbitda": 986.167,
+    "beta": -0.473,
+    "priceToBook": 16.896988,
+    "enterpriseToEbitda": 992.447,
     "profitMargins": null,
     "returnOnEquity": 0.44803002,
     "revenueGrowth": null,
