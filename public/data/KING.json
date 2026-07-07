@@ -3,11 +3,11 @@
   "name": "THE KINGFISH COMPANY",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.87,
+  "currentPrice": 0.86,
   "previousClose": 0.83,
-  "dayHigh": 0.93,
-  "dayLow": 0.81,
-  "volume": 19360,
+  "dayHigh": 0.86,
+  "dayLow": 0.725,
+  "volume": 15583,
   "fiftyTwoWeekHigh": 6.3,
   "fiftyTwoWeekLow": 0.63,
   "prices": [
@@ -5634,20 +5634,24 @@
     {
       "date": "2026-07-06",
       "close": 0.87
+    },
+    {
+      "date": "2026-07-07",
+      "close": 0.86
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-07-06T18:08:50.180Z",
+  "lastUpdated": "2026-07-07T17:56:16.505Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -1.0681732,
-    "marketCap": 781165248,
+    "forwardPE": -1.0558953,
+    "marketCap": 772186304,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.546,
-    "priceToBook": 0.25669256,
-    "enterpriseToEbitda": -18.778,
+    "priceToBook": 0.25374207,
+    "enterpriseToEbitda": -19.013,
     "profitMargins": -1.13489,
     "returnOnEquity": -0.58814996,
     "revenueGrowth": 0.301,
