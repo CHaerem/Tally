@@ -3,11 +3,11 @@
   "name": "BLUENORD ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 487,
-  "previousClose": 488.5,
-  "dayHigh": 493.5,
-  "dayLow": 483,
-  "volume": 117478,
+  "currentPrice": 503,
+  "previousClose": 486.5,
+  "dayHigh": 504,
+  "dayLow": 494,
+  "volume": 169823,
   "fiftyTwoWeekHigh": 610,
   "fiftyTwoWeekLow": 399.5,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-07-07",
       "close": 487
+    },
+    {
+      "date": "2026-07-08",
+      "close": 503
     }
   ],
   "dividends": [
@@ -10086,17 +10090,17 @@
       "amount": 36.17
     }
   ],
-  "lastUpdated": "2026-07-07T17:54:50.418Z",
+  "lastUpdated": "2026-07-08T17:24:15.644Z",
   "fundamentals": {
-    "trailingPE": 19.433361,
-    "forwardPE": 9.463905,
-    "marketCap": 12451227648,
-    "dividendYield": 0.074200004,
-    "dividendRate": 36.17,
-    "payoutRatio": 0.7567,
+    "trailingPE": 20.095884,
+    "forwardPE": 9.774835,
+    "marketCap": 12860302336,
+    "dividendYield": null,
+    "dividendRate": null,
+    "payoutRatio": null,
     "beta": -0.196,
-    "priceToBook": 7.5005527,
-    "enterpriseToEbitda": 20.529,
+    "priceToBook": 7.7469773,
+    "enterpriseToEbitda": 20.51,
     "profitMargins": 0.07405,
     "returnOnEquity": 0.14039,
     "revenueGrowth": 0.402,

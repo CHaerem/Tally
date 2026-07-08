@@ -3,11 +3,11 @@
   "name": "VEIDEKKE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 189.6,
-  "previousClose": 187.8,
-  "dayHigh": 193.4,
-  "dayLow": 190,
-  "volume": 35847,
+  "currentPrice": 186,
+  "previousClose": 190,
+  "dayHigh": 190.2,
+  "dayLow": 185.4,
+  "volume": 113575,
   "fiftyTwoWeekHigh": 197.6,
   "fiftyTwoWeekLow": 152.6,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-07-07",
       "close": 189.6
+    },
+    {
+      "date": "2026-07-08",
+      "close": 186
     }
   ],
   "dividends": [
@@ -10110,17 +10114,17 @@
       "amount": 11.25
     }
   ],
-  "lastUpdated": "2026-07-07T17:55:25.292Z",
+  "lastUpdated": "2026-07-08T17:24:52.902Z",
   "fundamentals": {
-    "trailingPE": 16.054192,
-    "forwardPE": 15.912716,
-    "marketCap": 25587709952,
-    "dividendYield": 0.0586,
+    "trailingPE": 15.776081,
+    "forwardPE": 15.610575,
+    "marketCap": 25101867008,
+    "dividendYield": 0.059299998,
     "dividendRate": 11.25,
     "payoutRatio": 0.76269996,
     "beta": 0.765,
-    "priceToBook": 6.940987,
-    "enterpriseToEbitda": 7.148,
+    "priceToBook": 6.809196,
+    "enterpriseToEbitda": 7.038,
     "profitMargins": 0.03622,
     "returnOnEquity": 0.47542998,
     "revenueGrowth": 0.068,

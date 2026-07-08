@@ -3,11 +3,11 @@
   "name": "OBSERVE MEDICAL",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.13,
-  "previousClose": 1.125,
-  "dayHigh": 1.175,
-  "dayLow": 1.115,
-  "volume": 149639,
+  "currentPrice": 1.1,
+  "previousClose": 1.115,
+  "dayHigh": 1.18,
+  "dayLow": 1.1,
+  "volume": 24355,
   "fiftyTwoWeekHigh": 1.59,
   "fiftyTwoWeekLow": 0.525,
   "prices": [
@@ -6698,20 +6698,24 @@
     {
       "date": "2026-07-07",
       "close": 1.13
+    },
+    {
+      "date": "2026-07-08",
+      "close": 1.1
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-07-07T17:56:28.558Z",
+  "lastUpdated": "2026-07-08T17:26:00.564Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 153847712,
+    "marketCap": 149763264,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.059,
-    "priceToBook": 5.1363635,
-    "enterpriseToEbitda": -5.928,
+    "priceToBook": 5,
+    "enterpriseToEbitda": -6.047,
     "profitMargins": -2.5856698,
     "returnOnEquity": -1.90387,
     "revenueGrowth": 0.426,

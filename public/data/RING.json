@@ -3,11 +3,11 @@
   "name": "SPAREBANK 1 RINGERIKE HADELAND",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 431,
-  "previousClose": 432,
+  "currentPrice": 428,
+  "previousClose": 435,
   "dayHigh": 431,
-  "dayLow": 424,
-  "volume": 832,
+  "dayLow": 420,
+  "volume": 1778,
   "fiftyTwoWeekHigh": 488.95,
   "fiftyTwoWeekLow": 365,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-07-07",
       "close": 431
+    },
+    {
+      "date": "2026-07-08",
+      "close": 428
     }
   ],
   "dividends": [
@@ -10110,16 +10114,16 @@
       "amount": 44
     }
   ],
-  "lastUpdated": "2026-07-07T17:56:36.975Z",
+  "lastUpdated": "2026-07-08T17:26:08.984Z",
   "fundamentals": {
-    "trailingPE": 8.960499,
-    "forwardPE": 11.33763,
-    "marketCap": 6745252352,
-    "dividendYield": 0.061100002,
-    "dividendRate": 26.35,
-    "payoutRatio": 0.5478,
+    "trailingPE": 8.898129,
+    "forwardPE": 11.258714,
+    "marketCap": 6698301952,
+    "dividendYield": null,
+    "dividendRate": null,
+    "payoutRatio": null,
     "beta": 0.144,
-    "priceToBook": 1.5426298,
+    "priceToBook": 1.5318923,
     "enterpriseToEbitda": null,
     "profitMargins": 0.50709,
     "returnOnEquity": 0.15105,

@@ -3,11 +3,11 @@
   "name": "KONGSBERG GRUPPEN",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 323.5,
-  "previousClose": 307.6,
-  "dayHigh": 332.4,
-  "dayLow": 322.4,
-  "volume": 1263415,
+  "currentPrice": 321.8,
+  "previousClose": 323.5,
+  "dayHigh": 326,
+  "dayLow": 314.1,
+  "volume": 1317782,
   "fiftyTwoWeekHigh": 427,
   "fiftyTwoWeekLow": 228.5,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-07-07",
       "close": 323.5
+    },
+    {
+      "date": "2026-07-08",
+      "close": 321.8
     }
   ],
   "dividends": [
@@ -10122,17 +10126,17 @@
       "amount": 5.7
     }
   ],
-  "lastUpdated": "2026-07-07T17:54:27.926Z",
+  "lastUpdated": "2026-07-08T17:23:51.426Z",
   "fundamentals": {
-    "trailingPE": 59.576427,
-    "forwardPE": 29.572304,
-    "marketCap": 284553576448,
-    "dividendYield": 0.0066000004,
-    "dividendRate": 2.2,
-    "payoutRatio": 0.3676,
+    "trailingPE": 59.26335,
+    "forwardPE": 29.416899,
+    "marketCap": 283058241536,
+    "dividendYield": null,
+    "dividendRate": null,
+    "payoutRatio": null,
     "beta": 0.22,
-    "priceToBook": 11.954915,
-    "enterpriseToEbitda": 44.899,
+    "priceToBook": 11.892092,
+    "enterpriseToEbitda": 43.805,
     "profitMargins": 0.21993,
     "returnOnEquity": 0.20778999,
     "revenueGrowth": 0.271,

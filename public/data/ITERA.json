@@ -3,11 +3,11 @@
   "name": "ITERA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 6.28,
-  "previousClose": 6.26,
+  "currentPrice": 6.2,
+  "previousClose": 6.32,
   "dayHigh": 6.22,
-  "dayLow": 6.22,
-  "volume": 1741,
+  "dayLow": 6.16,
+  "volume": 5659,
   "fiftyTwoWeekHigh": 9.5,
   "fiftyTwoWeekLow": 5.8,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-07-07",
       "close": 6.28
+    },
+    {
+      "date": "2026-07-08",
+      "close": 6.2
     }
   ],
   "dividends": [
@@ -10142,17 +10146,17 @@
       "amount": 0.2
     }
   ],
-  "lastUpdated": "2026-07-07T17:55:01.964Z",
+  "lastUpdated": "2026-07-08T17:24:27.920Z",
   "fundamentals": {
-    "trailingPE": 24.153849,
-    "forwardPE": 7.588574,
-    "marketCap": 509864736,
-    "dividendYield": 0.0476,
+    "trailingPE": 23.846153,
+    "forwardPE": 7.491904,
+    "marketCap": 503369600,
+    "dividendYield": 0.0478,
     "dividendRate": 0.3,
     "payoutRatio": 1.1538,
     "beta": 0.166,
-    "priceToBook": 9.858712,
-    "enterpriseToEbitda": 14.422,
+    "priceToBook": 9.733124,
+    "enterpriseToEbitda": 14.379,
     "profitMargins": 0.02528,
     "returnOnEquity": 0.37910998,
     "revenueGrowth": -0.038,
