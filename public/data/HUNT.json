@@ -3,11 +3,11 @@
   "name": "HUNTER GROUP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 8.38,
-  "previousClose": 7.4,
-  "dayHigh": 8.79,
-  "dayLow": 8.11,
-  "volume": 4465006,
+  "currentPrice": 7.92,
+  "previousClose": 7.64,
+  "dayHigh": 8.52,
+  "dayLow": 7.93,
+  "volume": 2188901,
   "fiftyTwoWeekHigh": 10.9,
   "fiftyTwoWeekLow": 0.699,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-07-08",
       "close": 8.38
+    },
+    {
+      "date": "2026-07-09",
+      "close": 7.92
     }
   ],
   "dividends": [
@@ -10110,17 +10114,17 @@
       "amount": 1.25
     }
   ],
-  "lastUpdated": "2026-07-08T17:25:43.357Z",
+  "lastUpdated": "2026-07-09T17:52:26.327Z",
   "fundamentals": {
-    "trailingPE": 1.6726546,
+    "trailingPE": 1.5808383,
     "forwardPE": null,
-    "marketCap": 1129672704,
-    "dividendYield": null,
-    "dividendRate": null,
-    "payoutRatio": null,
+    "marketCap": 1067662016,
+    "dividendYield": 0.1527,
+    "dividendRate": 1.28,
+    "payoutRatio": 0.2624,
     "beta": 2.181,
-    "priceToBook": 1.9105085,
-    "enterpriseToEbitda": 25.646,
+    "priceToBook": 1.8056358,
+    "enterpriseToEbitda": 26.71,
     "profitMargins": 1.59378,
     "returnOnEquity": 1.96404,
     "revenueGrowth": null,
