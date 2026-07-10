@@ -3,11 +3,11 @@
   "name": "SPAREBANKEN ØST",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 73.82,
-  "previousClose": 73.5,
-  "dayHigh": 76.09,
-  "dayLow": 73.01,
-  "volume": 2104,
+  "currentPrice": 73.5,
+  "previousClose": 73,
+  "dayHigh": 75.5,
+  "dayLow": 73.33,
+  "volume": 2109,
   "fiftyTwoWeekHigh": 86.94,
   "fiftyTwoWeekLow": 70,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-07-09",
       "close": 73.82
+    },
+    {
+      "date": "2026-07-10",
+      "close": 73.5
     }
   ],
   "dividends": [
@@ -10114,16 +10118,16 @@
       "amount": 6.9
     }
   ],
-  "lastUpdated": "2026-07-09T17:52:59.826Z",
+  "lastUpdated": "2026-07-10T17:45:28.181Z",
   "fundamentals": {
-    "trailingPE": 9.239049,
-    "forwardPE": 13.15084,
-    "marketCap": 1530375936,
-    "dividendYield": null,
-    "dividendRate": null,
-    "payoutRatio": null,
+    "trailingPE": 9.198999,
+    "forwardPE": 13.093832,
+    "marketCap": 1523742080,
+    "dividendYield": 0.0935,
+    "dividendRate": 6.9,
+    "payoutRatio": 0.8635,
     "beta": null,
-    "priceToBook": 0.3262301,
+    "priceToBook": 0.32481593,
     "enterpriseToEbitda": null,
     "profitMargins": 0.50567,
     "returnOnEquity": 0.10941,

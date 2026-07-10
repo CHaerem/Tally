@@ -3,11 +3,11 @@
   "name": "GENERAL OCEANS ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 19.5,
-  "previousClose": 19.96,
-  "dayHigh": 20.2,
-  "dayLow": 19.22,
-  "volume": 53943,
+  "currentPrice": 19.14,
+  "previousClose": 18.96,
+  "dayHigh": 19.9,
+  "dayLow": 19.02,
+  "volume": 59703,
   "fiftyTwoWeekHigh": 33.255,
   "fiftyTwoWeekLow": 18.54,
   "prices": [
@@ -290,26 +290,30 @@
     {
       "date": "2026-07-09",
       "close": 19.5
+    },
+    {
+      "date": "2026-07-10",
+      "close": 19.14
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-07-09T17:51:04.670Z",
+  "lastUpdated": "2026-07-10T17:43:36.449Z",
   "fundamentals": {
-    "trailingPE": 25,
-    "forwardPE": 15.354331,
-    "marketCap": 3658434304,
+    "trailingPE": 24.538462,
+    "forwardPE": 15.070866,
+    "marketCap": 3590893824,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": null,
-    "priceToBook": 3.1400967,
-    "enterpriseToEbitda": 26.892,
-    "profitMargins": 0.04081,
-    "returnOnEquity": 0.058319997,
+    "priceToBook": 3.0821254,
+    "enterpriseToEbitda": 14.73,
+    "profitMargins": 0.12521,
+    "returnOnEquity": null,
     "revenueGrowth": -0.051,
     "earningsGrowth": -0.62,
-    "grossMargins": 0.66693,
-    "totalRevenue": 960214016,
-    "ebitda": 110166000
+    "grossMargins": 0.65532994,
+    "totalRevenue": 1262824960,
+    "ebitda": 202402000
   }
 }

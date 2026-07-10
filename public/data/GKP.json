@@ -3,11 +3,11 @@
   "name": "GULF KEYSTONE PETROLEUM LTD",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 22.45,
-  "previousClose": 22.75,
-  "dayHigh": 22.85,
+  "currentPrice": 22.8,
+  "previousClose": 22.65,
+  "dayHigh": 22.8,
   "dayLow": 22.45,
-  "volume": 55,
+  "volume": 42,
   "fiftyTwoWeekHigh": 29.99,
   "fiftyTwoWeekLow": 20.2,
   "prices": [
@@ -394,6 +394,10 @@
     {
       "date": "2026-07-09",
       "close": 22.45
+    },
+    {
+      "date": "2026-07-10",
+      "close": 22.8
     }
   ],
   "dividends": [
@@ -402,16 +406,16 @@
       "amount": 0.56
     }
   ],
-  "lastUpdated": "2026-07-09T17:52:19.971Z",
+  "lastUpdated": "2026-07-10T17:44:48.274Z",
   "fundamentals": {
-    "trailingPE": 33.50746,
+    "trailingPE": 34.02985,
     "forwardPE": null,
-    "marketCap": 4881604096,
+    "marketCap": 4957708800,
     "dividendYield": 0.0239,
     "dividendRate": 0.54,
     "payoutRatio": null,
     "beta": 0.118,
-    "priceToBook": 1.0253489,
+    "priceToBook": 1.0413343,
     "enterpriseToEbitda": 54.23,
     "profitMargins": 0.078379996,
     "returnOnEquity": 0.03053,

@@ -3,11 +3,11 @@
   "name": "REFUELS N.V.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 15.9,
+  "currentPrice": 15.2,
   "previousClose": 15.8,
   "dayHigh": 15.9,
-  "dayLow": 15.9,
-  "volume": 500,
+  "dayLow": 15.1,
+  "volume": 11114,
   "fiftyTwoWeekHigh": 22.4,
   "fiftyTwoWeekLow": 10.7,
   "prices": [
@@ -3170,20 +3170,24 @@
     {
       "date": "2026-07-09",
       "close": 15.9
+    },
+    {
+      "date": "2026-07-10",
+      "close": 15.2
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-07-09T17:52:50.883Z",
+  "lastUpdated": "2026-07-10T17:45:18.890Z",
   "fundamentals": {
-    "trailingPE": 1.461397,
-    "forwardPE": 135.90904,
-    "marketCap": 960496384,
+    "trailingPE": 1.3970588,
+    "forwardPE": 126.761734,
+    "marketCap": 918210432,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": -0.473,
-    "priceToBook": 17.003931,
-    "enterpriseToEbitda": 986.167,
+    "priceToBook": 0.5560805,
+    "enterpriseToEbitda": 998.726,
     "profitMargins": null,
     "returnOnEquity": 0.44803002,
     "revenueGrowth": null,

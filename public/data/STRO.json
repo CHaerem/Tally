@@ -3,11 +3,11 @@
   "name": "STRONGPOINT",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 10.5,
-  "previousClose": 10.75,
-  "dayHigh": 10.65,
-  "dayLow": 10.45,
-  "volume": 27108,
+  "currentPrice": 10.25,
+  "previousClose": 10.65,
+  "dayHigh": 10.4,
+  "dayLow": 10.25,
+  "volume": 40046,
   "fiftyTwoWeekHigh": 12.2,
   "fiftyTwoWeekLow": 9.12,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-07-09",
       "close": 10.5
+    },
+    {
+      "date": "2026-07-10",
+      "close": 10.25
     }
   ],
   "dividends": [
@@ -10110,16 +10114,16 @@
       "amount": 0.9
     }
   ],
-  "lastUpdated": "2026-07-09T17:53:00.864Z",
+  "lastUpdated": "2026-07-10T17:45:29.176Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 150,
-    "marketCap": 470169504,
+    "forwardPE": 146.42857,
+    "marketCap": 458974976,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.624,
-    "priceToBook": 1.0491606,
+    "priceToBook": 1.0241807,
     "enterpriseToEbitda": 386.133,
     "profitMargins": -0.0038,
     "returnOnEquity": -0.011460001,
