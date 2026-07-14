@@ -3,11 +3,11 @@
   "name": "MELHUS SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 184.02,
+  "currentPrice": 185,
   "previousClose": 186.98,
-  "dayHigh": 186.98,
-  "dayLow": 183,
-  "volume": 172,
+  "dayHigh": 185,
+  "dayLow": 185,
+  "volume": 2,
   "fiftyTwoWeekHigh": 206,
   "fiftyTwoWeekLow": 167,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-07-13",
       "close": 184.02
+    },
+    {
+      "date": "2026-07-14",
+      "close": 185
     }
   ],
   "dividends": [
@@ -10102,16 +10106,16 @@
       "amount": 13.5
     }
   ],
-  "lastUpdated": "2026-07-13T17:52:52.136Z",
+  "lastUpdated": "2026-07-14T17:09:38.251Z",
   "fundamentals": {
-    "trailingPE": 13.134904,
-    "forwardPE": 13.172513,
-    "marketCap": 510056896,
-    "dividendYield": 0.0722,
+    "trailingPE": 13.214286,
+    "forwardPE": 13.242662,
+    "marketCap": 512773184,
+    "dividendYield": 0.0734,
     "dividendRate": 13.5,
     "payoutRatio": 0.9636,
     "beta": 0.182,
-    "priceToBook": 0.2857223,
+    "priceToBook": 0.28724387,
     "enterpriseToEbitda": null,
     "profitMargins": 0.41462,
     "returnOnEquity": 0.08376,

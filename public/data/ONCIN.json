@@ -3,11 +3,11 @@
   "name": "ONCOINVENT ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 75.6,
+  "currentPrice": 80,
   "previousClose": 53.4,
-  "dayHigh": 75.6,
-  "dayLow": 64.4,
-  "volume": 8550,
+  "dayHigh": 82.8,
+  "dayLow": 75,
+  "volume": 26307,
   "fiftyTwoWeekHigh": 89.7,
   "fiftyTwoWeekLow": 40.1,
   "prices": [
@@ -9290,20 +9290,24 @@
     {
       "date": "2026-07-13",
       "close": 75.6
+    },
+    {
+      "date": "2026-07-14",
+      "close": 80
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-07-13T17:53:02.985Z",
+  "lastUpdated": "2026-07-14T17:09:49.548Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -2.8926725,
-    "marketCap": 338567936,
+    "forwardPE": -3.0610292,
+    "marketCap": 358272960,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": null,
-    "priceToBook": 231.19266,
-    "enterpriseToEbitda": -0.811,
+    "priceToBook": 244.64833,
+    "enterpriseToEbitda": -1.098,
     "profitMargins": null,
     "returnOnEquity": -1.21787,
     "revenueGrowth": 1.005,

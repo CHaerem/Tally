@@ -3,13 +3,13 @@
   "name": "AKER BIOMARINE ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 94,
-  "previousClose": 99.8,
-  "dayHigh": 95.4,
-  "dayLow": 92.1,
-  "volume": 20209,
+  "currentPrice": 94.5,
+  "previousClose": 99,
+  "dayHigh": 95.6,
+  "dayLow": 92.4,
+  "volume": 6807,
   "fiftyTwoWeekHigh": 118,
-  "fiftyTwoWeekLow": 70,
+  "fiftyTwoWeekLow": 74.7,
   "prices": [
     {
       "date": "2020-07-06",
@@ -6062,6 +6062,10 @@
     {
       "date": "2026-07-13",
       "close": 94
+    },
+    {
+      "date": "2026-07-14",
+      "close": 94.5
     }
   ],
   "dividends": [
@@ -6070,23 +6074,23 @@
       "amount": 45
     }
   ],
-  "lastUpdated": "2026-07-13T17:51:08.402Z",
+  "lastUpdated": "2026-07-14T17:08:03.129Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 21.191162,
-    "marketCap": 8246011392,
+    "forwardPE": 21.299086,
+    "marketCap": 8289873408,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 5.971974,
-    "enterpriseToEbitda": 390.77,
+    "beta": 0.293,
+    "priceToBook": 6.00374,
+    "enterpriseToEbitda": 350.124,
     "profitMargins": -0.05854,
     "returnOnEquity": -0.07005,
     "revenueGrowth": 0.047,
     "earningsGrowth": null,
     "grossMargins": 0.45026,
     "totalRevenue": 227200000,
-    "ebitda": 21500000
+    "ebitda": 23200000
   }
 }

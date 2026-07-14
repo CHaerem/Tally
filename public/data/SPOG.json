@@ -3,11 +3,11 @@
   "name": "SPAREBANKEN ØST",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 73,
-  "previousClose": 73.5,
-  "dayHigh": 76.99,
-  "dayLow": 72.61,
-  "volume": 14203,
+  "currentPrice": 70.7,
+  "previousClose": 73.4,
+  "dayHigh": 72.55,
+  "dayLow": 70.9,
+  "volume": 46176,
   "fiftyTwoWeekHigh": 86.94,
   "fiftyTwoWeekLow": 70,
   "prices": [
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-07-13",
       "close": 73
+    },
+    {
+      "date": "2026-07-14",
+      "close": 70.7
     }
   ],
   "dividends": [
@@ -10102,21 +10106,21 @@
       "amount": 6.9
     }
   ],
-  "lastUpdated": "2026-07-13T17:53:17.338Z",
+  "lastUpdated": "2026-07-14T17:10:03.154Z",
   "fundamentals": {
-    "trailingPE": 9.136421,
-    "forwardPE": 13.004759,
-    "marketCap": 1513376384,
-    "dividendYield": 0.0935,
+    "trailingPE": 8.84856,
+    "forwardPE": 12.595019,
+    "marketCap": 1465694592,
+    "dividendYield": 0.0945,
     "dividendRate": 6.9,
     "payoutRatio": 0.8635,
-    "beta": null,
-    "priceToBook": 0.3226063,
+    "beta": 0.269,
+    "priceToBook": 0.31244197,
     "enterpriseToEbitda": null,
     "profitMargins": 0.50567,
     "returnOnEquity": 0.10941,
     "revenueGrowth": -0.073,
-    "earningsGrowth": null,
+    "earningsGrowth": -0.145,
     "grossMargins": null,
     "totalRevenue": 1004600000,
     "ebitda": null

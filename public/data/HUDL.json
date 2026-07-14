@@ -3,11 +3,11 @@
   "name": "HUDDLESTOCK FINTECH",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.556,
-  "previousClose": 0.556,
-  "dayHigh": 0.556,
-  "dayLow": 0.534,
-  "volume": 9500,
+  "currentPrice": 0.54,
+  "previousClose": 0.54,
+  "dayHigh": 0.56,
+  "dayLow": 0.5,
+  "volume": 154374,
   "fiftyTwoWeekHigh": 0.896,
   "fiftyTwoWeekLow": 0.483,
   "prices": [
@@ -5646,20 +5646,24 @@
     {
       "date": "2026-07-13",
       "close": 0.56
+    },
+    {
+      "date": "2026-07-14",
+      "close": 0.54
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-07-13T17:52:43.798Z",
+  "lastUpdated": "2026-07-14T17:09:29.550Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -11.12,
-    "marketCap": 158145168,
+    "forwardPE": -10.8,
+    "marketCap": 153594240,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.644,
-    "priceToBook": 4.1185184,
-    "enterpriseToEbitda": -4.147,
+    "priceToBook": 4,
+    "enterpriseToEbitda": -4.3,
     "profitMargins": -2.31865,
     "returnOnEquity": -1.51773,
     "revenueGrowth": -0.354,
