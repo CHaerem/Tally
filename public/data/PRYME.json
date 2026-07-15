@@ -3,12 +3,12 @@
   "name": "PRYME N.V.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2,
-  "previousClose": 0.9,
-  "dayHigh": 1.8,
-  "dayLow": 1.8,
-  "volume": 6200,
-  "fiftyTwoWeekHigh": 21.5,
+  "currentPrice": 2.2,
+  "previousClose": 1.5,
+  "dayHigh": 2.39,
+  "dayLow": 2.2,
+  "volume": 290,
+  "fiftyTwoWeekHigh": 20.9,
   "fiftyTwoWeekLow": 0.9,
   "prices": [
     {
@@ -5426,20 +5426,24 @@
     {
       "date": "2026-07-14",
       "close": 2
+    },
+    {
+      "date": "2026-07-15",
+      "close": 2.2
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-07-14T17:09:52.796Z",
+  "lastUpdated": "2026-07-15T17:13:24.502Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -2.4390244,
-    "marketCap": 62367116,
+    "forwardPE": -2.682927,
+    "marketCap": 68603832,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 1.511,
     "priceToBook": null,
-    "enterpriseToEbitda": -4.3,
+    "enterpriseToEbitda": -5.178,
     "profitMargins": null,
     "returnOnEquity": -49.05056,
     "revenueGrowth": null,

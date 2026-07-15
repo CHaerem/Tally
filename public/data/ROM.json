@@ -3,11 +3,11 @@
   "name": "ROMREAL",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.62,
+  "currentPrice": 2.64,
   "previousClose": 2.62,
-  "dayHigh": 2.62,
-  "dayLow": 2.62,
-  "volume": 2172,
+  "dayHigh": 2.64,
+  "dayLow": 2.64,
+  "volume": 20,
   "fiftyTwoWeekHigh": 3.28,
   "fiftyTwoWeekLow": 2.12,
   "prices": [
@@ -10066,20 +10066,24 @@
     {
       "date": "2026-07-14",
       "close": 2.62
+    },
+    {
+      "date": "2026-07-15",
+      "close": 2.64
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-07-14T17:09:56.049Z",
+  "lastUpdated": "2026-07-15T17:13:28.608Z",
   "fundamentals": {
-    "trailingPE": 5.822222,
+    "trailingPE": 5.8666673,
     "forwardPE": null,
-    "marketCap": 105167648,
+    "marketCap": 105970456,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.283,
-    "priceToBook": 0.6019759,
-    "enterpriseToEbitda": 56.547,
+    "priceToBook": 0.6065712,
+    "enterpriseToEbitda": 56.093,
     "profitMargins": 0.66319,
     "returnOnEquity": 0.10604999,
     "revenueGrowth": 1.656,
