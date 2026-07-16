@@ -3,13 +3,13 @@
   "name": "INSTABANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 4.59,
-  "previousClose": 4.38,
-  "dayHigh": 4.6,
-  "dayLow": 4.4,
-  "volume": 1104979,
-  "fiftyTwoWeekHigh": 4.6,
-  "fiftyTwoWeekLow": 2.7,
+  "currentPrice": 4.66,
+  "previousClose": 4.3,
+  "dayHigh": 4.7,
+  "dayLow": 4.59,
+  "volume": 350578,
+  "fiftyTwoWeekHigh": 4.7,
+  "fiftyTwoWeekLow": 2.71,
   "prices": [
     {
       "date": "2020-08-17",
@@ -5950,6 +5950,10 @@
     {
       "date": "2026-07-15",
       "close": 4.59
+    },
+    {
+      "date": "2026-07-16",
+      "close": 4.66
     }
   ],
   "dividends": [
@@ -5962,16 +5966,16 @@
       "amount": 0.09
     }
   ],
-  "lastUpdated": "2026-07-15T17:12:27.617Z",
+  "lastUpdated": "2026-07-16T17:10:08.284Z",
   "fundamentals": {
-    "trailingPE": 15.3,
-    "forwardPE": 9.329079,
-    "marketCap": 2116975744,
-    "dividendYield": 0.020399999,
+    "trailingPE": 15.533332,
+    "forwardPE": 9.471352,
+    "marketCap": 2149260800,
+    "dividendYield": 0.0196,
     "dividendRate": 0.09,
     "payoutRatio": 0.26639998,
     "beta": 0.394,
-    "priceToBook": 1.6351979,
+    "priceToBook": 1.6601354,
     "enterpriseToEbitda": null,
     "profitMargins": 0.30201998,
     "returnOnEquity": 0.106879994,
