@@ -3,11 +3,11 @@
   "name": "NEL",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.175,
-  "previousClose": 2.2,
-  "dayHigh": 2.24,
-  "dayLow": 2.15,
-  "volume": 2345844,
+  "currentPrice": 2.12,
+  "previousClose": 2.22,
+  "dayHigh": 2.155,
+  "dayLow": 2.105,
+  "volume": 2794650,
   "fiftyTwoWeekHigh": 3.955,
   "fiftyTwoWeekLow": 1.919,
   "prices": [
@@ -10074,26 +10074,30 @@
     {
       "date": "2026-07-16",
       "close": 2.17
+    },
+    {
+      "date": "2026-07-17",
+      "close": 2.12
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-07-16T17:08:42.452Z",
+  "lastUpdated": "2026-07-17T17:06:12.355Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -10.344336,
-    "marketCap": 3997736448,
+    "forwardPE": -10.082754,
+    "marketCap": 3896644096,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 1.459,
-    "priceToBook": 1.0599415,
-    "enterpriseToEbitda": -8.923,
-    "profitMargins": -1.28623,
-    "returnOnEquity": -0.27856,
-    "revenueGrowth": -0.047,
+    "priceToBook": 1.0331383,
+    "enterpriseToEbitda": -7.288,
+    "profitMargins": -1.3763001,
+    "returnOnEquity": -0.30326,
+    "revenueGrowth": -0.118,
     "earningsGrowth": null,
-    "grossMargins": 0.57434,
-    "totalRevenue": 955872000,
-    "ebitda": -319824000
+    "grossMargins": 0.57054,
+    "totalRevenue": 935361984,
+    "ebitda": -396284992
   }
 }

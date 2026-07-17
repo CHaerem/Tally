@@ -3,11 +3,11 @@
   "name": "KITRON",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 82.8,
-  "previousClose": 91.7,
-  "dayHigh": 85.25,
-  "dayLow": 82.15,
-  "volume": 1497913,
+  "currentPrice": 82.25,
+  "previousClose": 87.5,
+  "dayHigh": 82.5,
+  "dayLow": 81,
+  "volume": 1057286,
   "fiftyTwoWeekHigh": 116.3,
   "fiftyTwoWeekLow": 55.75,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-07-16",
       "close": 82.8
+    },
+    {
+      "date": "2026-07-17",
+      "close": 82.25
     }
   ],
   "dividends": [
@@ -10122,17 +10126,17 @@
       "amount": 0.7
     }
   ],
-  "lastUpdated": "2026-07-16T17:09:10.080Z",
+  "lastUpdated": "2026-07-17T17:06:34.557Z",
   "fundamentals": {
-    "trailingPE": 22.622952,
-    "forwardPE": 16.32806,
-    "marketCap": 18108565504,
-    "dividendYield": 0.0082,
+    "trailingPE": 22.534246,
+    "forwardPE": 16.216745,
+    "marketCap": 17988278272,
+    "dividendYield": 0.0085,
     "dividendRate": 0.7,
     "payoutRatio": 0.2007,
     "beta": 0.984,
-    "priceToBook": 4.6851115,
-    "enterpriseToEbitda": 177.774,
+    "priceToBook": 4.6539903,
+    "enterpriseToEbitda": 172.774,
     "profitMargins": 0.069699995,
     "returnOnEquity": 0.23807,
     "revenueGrowth": 0.717,

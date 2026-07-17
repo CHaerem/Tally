@@ -3,11 +3,11 @@
   "name": "HAVILA KYSTRUTEN AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 57.5,
+  "currentPrice": 57,
   "previousClose": 58,
-  "dayHigh": 58,
-  "dayLow": 55,
-  "volume": 1107,
+  "dayHigh": 58.5,
+  "dayLow": 56,
+  "volume": 3953,
   "fiftyTwoWeekHigh": 69.25,
   "fiftyTwoWeekLow": 45.5,
   "prices": [
@@ -4990,20 +4990,24 @@
     {
       "date": "2026-07-16",
       "close": 57.5
+    },
+    {
+      "date": "2026-07-17",
+      "close": 57
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-07-16T17:10:36.041Z",
+  "lastUpdated": "2026-07-17T17:07:45.648Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -31.420765,
-    "marketCap": 984383552,
+    "forwardPE": -31.147541,
+    "marketCap": 975823680,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.368,
     "priceToBook": null,
-    "enterpriseToEbitda": 7.969,
+    "enterpriseToEbitda": 7.957,
     "profitMargins": -0.4887,
     "returnOnEquity": null,
     "revenueGrowth": 0.118,
