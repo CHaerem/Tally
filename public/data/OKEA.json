@@ -3,11 +3,11 @@
   "name": "OKEA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 32.15,
-  "previousClose": 21,
-  "dayHigh": 32.2,
-  "dayLow": 30.9,
-  "volume": 277958,
+  "currentPrice": 32.05,
+  "previousClose": 32,
+  "dayHigh": 33,
+  "dayLow": 31.65,
+  "volume": 286254,
   "fiftyTwoWeekHigh": 43.8,
   "fiftyTwoWeekLow": 16.9,
   "prices": [
@@ -7130,6 +7130,10 @@
     {
       "date": "2026-07-17",
       "close": 32.15
+    },
+    {
+      "date": "2026-07-20",
+      "close": 32.05
     }
   ],
   "dividends": [
@@ -7162,23 +7166,23 @@
       "amount": 1
     }
   ],
-  "lastUpdated": "2026-07-19T04:17:58.915Z",
+  "lastUpdated": "2026-07-20T17:31:29.240Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 3.6659064,
-    "marketCap": 3340718080,
+    "forwardPE": 3.6545038,
+    "marketCap": 3330326784,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": -0.343,
-    "priceToBook": 3.6135483,
-    "enterpriseToEbitda": 8.713,
-    "profitMargins": -0.0507,
-    "returnOnEquity": -0.35511002,
-    "revenueGrowth": -0.01,
-    "earningsGrowth": 0.705,
-    "grossMargins": 0.57800996,
-    "totalRevenue": 781070016,
-    "ebitda": 388351008
+    "priceToBook": 3.6023083,
+    "enterpriseToEbitda": 6.591,
+    "profitMargins": -0.00509,
+    "returnOnEquity": -0.04172,
+    "revenueGrowth": 0.597,
+    "earningsGrowth": null,
+    "grossMargins": 0.61551,
+    "totalRevenue": 898092032,
+    "ebitda": 500286016
   }
 }

@@ -3,11 +3,11 @@
   "name": "ZALARIS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 102,
-  "previousClose": 31,
-  "dayHigh": 100,
-  "dayLow": 99.8,
-  "volume": 176,
+  "currentPrice": 104,
+  "previousClose": 96,
+  "dayHigh": 100.5,
+  "dayLow": 99,
+  "volume": 1041,
   "fiftyTwoWeekHigh": 108.5,
   "fiftyTwoWeekLow": 70.8,
   "prices": [
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-07-17",
       "close": 102
+    },
+    {
+      "date": "2026-07-20",
+      "close": 104
     }
   ],
   "dividends": [
@@ -10082,16 +10086,16 @@
       "amount": 0.9
     }
   ],
-  "lastUpdated": "2026-07-19T04:19:55.999Z",
+  "lastUpdated": "2026-07-20T17:33:51.580Z",
   "fundamentals": {
-    "trailingPE": 44.347828,
-    "forwardPE": 14.676259,
-    "marketCap": 2221502976,
+    "trailingPE": 45.217392,
+    "forwardPE": 14.964029,
+    "marketCap": 2265061888,
     "dividendYield": 0.0091,
     "dividendRate": 0.9,
     "payoutRatio": 0.39130002,
     "beta": 0.339,
-    "priceToBook": 8.053691,
+    "priceToBook": 8.211607,
     "enterpriseToEbitda": 14.955,
     "profitMargins": 0.03595,
     "returnOnEquity": 0.19198999,
