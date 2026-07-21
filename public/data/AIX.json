@@ -3,11 +3,11 @@
   "name": "AYFIE INTERNATIONAL AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 3.15,
+  "currentPrice": 3.05,
   "previousClose": 3.19,
-  "dayHigh": 3.15,
-  "dayLow": 3,
-  "volume": 6013,
+  "dayHigh": 3.05,
+  "dayLow": 3.05,
+  "volume": 1000,
   "fiftyTwoWeekHigh": 6.6,
   "fiftyTwoWeekLow": 2.91,
   "prices": [
@@ -6074,14 +6074,22 @@
     {
       "date": "2026-07-17",
       "close": 3.15
+    },
+    {
+      "date": "2026-07-20",
+      "close": 3.15
+    },
+    {
+      "date": "2026-07-21",
+      "close": 3.05
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-07-20T17:32:23.481Z",
+  "lastUpdated": "2026-07-21T17:11:46.569Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 78787480,
+    "marketCap": 76286288,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
