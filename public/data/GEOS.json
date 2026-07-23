@@ -3,11 +3,11 @@
   "name": "GOLDEN ENERGY OFFSHORE SERVICES",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 11.4,
+  "currentPrice": 11.1,
   "previousClose": 10.3,
-  "dayHigh": 11.5,
-  "dayLow": 11.1,
-  "volume": 164322,
+  "dayHigh": 11.3,
+  "dayLow": 10.6,
+  "volume": 9085,
   "fiftyTwoWeekHigh": 21.7,
   "fiftyTwoWeekLow": 6.04,
   "prices": [
@@ -8330,20 +8330,29 @@
     {
       "date": "2026-07-22",
       "close": 11.4
+    },
+    {
+      "date": "2026-07-23",
+      "close": 11.1
     }
   ],
-  "dividends": [],
-  "lastUpdated": "2026-07-22T17:12:20.092Z",
+  "dividends": [
+    {
+      "date": "2026-07-23",
+      "amount": 4
+    }
+  ],
+  "lastUpdated": "2026-07-23T17:14:48.769Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 1.4430379,
-    "marketCap": 804693056,
-    "dividendYield": null,
-    "dividendRate": null,
+    "forwardPE": 1.4050633,
+    "marketCap": 783516992,
+    "dividendYield": 0.3509,
+    "dividendRate": 4,
     "payoutRatio": null,
     "beta": -0.078,
-    "priceToBook": 1.2233071,
-    "enterpriseToEbitda": 104.295,
+    "priceToBook": 1.1911149,
+    "enterpriseToEbitda": 103.895,
     "profitMargins": -0.54592,
     "returnOnEquity": -0.59334,
     "revenueGrowth": -0.807,

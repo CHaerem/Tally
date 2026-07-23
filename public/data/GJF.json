@@ -3,11 +3,11 @@
   "name": "GJENSIDIGE FORSIKRING",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 281.8,
-  "previousClose": 277.2,
-  "dayHigh": 282.2,
-  "dayLow": 277,
-  "volume": 374869,
+  "currentPrice": 277.2,
+  "previousClose": 277,
+  "dayHigh": 281.6,
+  "dayLow": 277.8,
+  "volume": 208829,
   "fiftyTwoWeekHigh": 303,
   "fiftyTwoWeekLow": 241.4,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-07-22",
       "close": 281.8
+    },
+    {
+      "date": "2026-07-23",
+      "close": 277.2
     }
   ],
   "dividends": [
@@ -10126,17 +10130,17 @@
       "amount": 14.5
     }
   ],
-  "lastUpdated": "2026-07-22T17:10:47.198Z",
+  "lastUpdated": "2026-07-23T17:13:24.215Z",
   "fundamentals": {
-    "trailingPE": 22.050077,
-    "forwardPE": 16.368816,
-    "marketCap": 140889882624,
-    "dividendYield": 0.0361,
+    "trailingPE": 21.673183,
+    "forwardPE": 16.10162,
+    "marketCap": null,
+    "dividendYield": 0.0355,
     "dividendRate": 10,
     "payoutRatio": 0.7825,
     "beta": 0.194,
-    "priceToBook": 6.571062,
-    "enterpriseToEbitda": 6.863,
+    "priceToBook": 6.463799,
+    "enterpriseToEbitda": 7.1,
     "profitMargins": 0.14229,
     "returnOnEquity": 0.27247,
     "revenueGrowth": 0.06,
