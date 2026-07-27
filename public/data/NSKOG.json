@@ -3,11 +3,11 @@
   "name": "NORSKE SKOG",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 36.25,
-  "previousClose": 38,
-  "dayHigh": 37.25,
-  "dayLow": 36.05,
-  "volume": 124553,
+  "currentPrice": 36.65,
+  "previousClose": 36.3,
+  "dayHigh": 37.15,
+  "dayLow": 36,
+  "volume": 150565,
   "fiftyTwoWeekHigh": 49.95,
   "fiftyTwoWeekLow": 14.12,
   "prices": [
@@ -6798,6 +6798,10 @@
     {
       "date": "2026-07-24",
       "close": 36.25
+    },
+    {
+      "date": "2026-07-27",
+      "close": 36.65
     }
   ],
   "dividends": [
@@ -6814,23 +6818,23 @@
       "amount": 0.67
     }
   ],
-  "lastUpdated": "2026-07-26T04:21:41.289Z",
+  "lastUpdated": "2026-07-27T17:38:53.726Z",
   "fundamentals": {
-    "trailingPE": 9.017413,
-    "forwardPE": 12.14674,
-    "marketCap": 3075385856,
+    "trailingPE": 9.116916,
+    "forwardPE": 12.280773,
+    "marketCap": 3109321216,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.34,
-    "priceToBook": 0.53014904,
-    "enterpriseToEbitda": -239.851,
+    "priceToBook": 0.535999,
+    "enterpriseToEbitda": -190.651,
     "profitMargins": 0.00985,
     "returnOnEquity": 0.01627,
     "revenueGrowth": 0.109,
     "earningsGrowth": null,
-    "grossMargins": 0.30301002,
+    "grossMargins": 0.30311,
     "totalRevenue": 9639999488,
-    "ebitda": -31000000
+    "ebitda": -39000000
   }
 }

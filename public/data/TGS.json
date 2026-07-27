@@ -3,11 +3,11 @@
   "name": "TGS ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 131.8,
-  "previousClose": 142.6,
-  "dayHigh": 136,
-  "dayLow": 128.2,
-  "volume": 965909,
+  "currentPrice": 131,
+  "previousClose": 139,
+  "dayHigh": 131.9,
+  "dayLow": 128.6,
+  "volume": 403528,
   "fiftyTwoWeekHigh": 159.9,
   "fiftyTwoWeekLow": 70.05,
   "prices": [
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-07-24",
       "close": 131.8
+    },
+    {
+      "date": "2026-07-27",
+      "close": 131
     }
   ],
   "dividends": [
@@ -10222,23 +10226,23 @@
       "amount": 1.44
     }
   ],
-  "lastUpdated": "2026-07-26T04:21:56.917Z",
+  "lastUpdated": "2026-07-27T17:39:07.883Z",
   "fundamentals": {
-    "trailingPE": 27.983015,
-    "forwardPE": 10.495563,
-    "marketCap": 25899094016,
-    "dividendYield": 0.0414,
-    "dividendRate": 6.05,
-    "payoutRatio": 6.8651,
+    "trailingPE": 27.813164,
+    "forwardPE": 10.431857,
+    "marketCap": 25741891584,
+    "dividendYield": 0.0452,
+    "dividendRate": 5.96,
+    "payoutRatio": 1.2624,
     "beta": -0.063,
-    "priceToBook": 1.3839067,
-    "enterpriseToEbitda": 46.889,
-    "profitMargins": -0.0015199999,
-    "returnOnEquity": -0.001,
-    "revenueGrowth": -0.422,
+    "priceToBook": 1.3560206,
+    "enterpriseToEbitda": 42.033,
+    "profitMargins": 0.07195,
+    "returnOnEquity": 0.04982,
+    "revenueGrowth": 0.116,
     "earningsGrowth": null,
-    "grossMargins": 0.83919,
-    "totalRevenue": 1317699968,
-    "ebitda": 624800000
+    "grossMargins": 0.84725,
+    "totalRevenue": 1356499968,
+    "ebitda": 632300032
   }
 }
