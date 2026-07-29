@@ -3,11 +3,11 @@
   "name": "SPAREBANK 1 NORDMØRE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 177.5,
+  "currentPrice": 179,
   "previousClose": 178,
   "dayHigh": 179.86,
   "dayLow": 177.5,
-  "volume": 210,
+  "volume": 3,
   "fiftyTwoWeekHigh": 211.9,
   "fiftyTwoWeekLow": 158,
   "prices": [
@@ -8850,6 +8850,10 @@
     {
       "date": "2026-07-28",
       "close": 177.5
+    },
+    {
+      "date": "2026-07-29",
+      "close": 179
     }
   ],
   "dividends": [
@@ -8882,16 +8886,16 @@
       "amount": 11
     }
   ],
-  "lastUpdated": "2026-07-28T17:24:27.746Z",
+  "lastUpdated": "2026-07-29T17:10:58.005Z",
   "fundamentals": {
-    "trailingPE": 9.790403,
-    "forwardPE": 10.816575,
-    "marketCap": 1607320960,
+    "trailingPE": 9.878587,
+    "forwardPE": 10.907983,
+    "marketCap": 1620903936,
     "dividendYield": 0.062,
     "dividendRate": 11,
     "payoutRatio": 0.4691,
     "beta": 0.162,
-    "priceToBook": 0.3783761,
+    "priceToBook": 0.38157362,
     "enterpriseToEbitda": null,
     "profitMargins": 0.45791,
     "returnOnEquity": 0.11229999,

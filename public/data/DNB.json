@@ -3,11 +3,11 @@
   "name": "DNB BANK ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 300.1,
-  "previousClose": 297.2,
-  "dayHigh": 301.6,
-  "dayLow": 299.3,
-  "volume": 1050883,
+  "currentPrice": 297.4,
+  "previousClose": 295,
+  "dayHigh": 300.7,
+  "dayLow": 296.7,
+  "volume": 833688,
   "fiftyTwoWeekHigh": 313.6,
   "fiftyTwoWeekLow": 257.4,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-07-28",
       "close": 300.1
+    },
+    {
+      "date": "2026-07-29",
+      "close": 297.4
     }
   ],
   "dividends": [
@@ -10110,16 +10114,16 @@
       "amount": 18
     }
   ],
-  "lastUpdated": "2026-07-28T17:21:59.023Z",
+  "lastUpdated": "2026-07-29T17:08:40.588Z",
   "fundamentals": {
-    "trailingPE": 10.88897,
-    "forwardPE": 10.795725,
-    "marketCap": 428986466304,
+    "trailingPE": 10.783176,
+    "forwardPE": 10.698596,
+    "marketCap": 425126854656,
     "dividendYield": 0.06,
     "dividendRate": 18,
     "payoutRatio": 0.6529,
     "beta": 0.337,
-    "priceToBook": 1.7028979,
+    "priceToBook": 1.6875769,
     "enterpriseToEbitda": null,
     "profitMargins": 0.47826,
     "returnOnEquity": 0.1507,
