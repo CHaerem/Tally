@@ -3,11 +3,11 @@
   "name": "TGS ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 125.7,
-  "previousClose": 135.9,
-  "dayHigh": 127.7,
-  "dayLow": 125.6,
-  "volume": 373515,
+  "currentPrice": 126.1,
+  "previousClose": 131.8,
+  "dayHigh": 126.9,
+  "dayLow": 123.3,
+  "volume": 281335,
   "fiftyTwoWeekHigh": 159.9,
   "fiftyTwoWeekLow": 70.05,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-07-29",
       "close": 125.7
+    },
+    {
+      "date": "2026-07-30",
+      "close": 126.1
     }
   ],
   "dividends": [
@@ -10232,18 +10236,22 @@
     {
       "date": "2026-05-08",
       "amount": 1.44
+    },
+    {
+      "date": "2026-07-30",
+      "amount": 1.49
     }
   ],
-  "lastUpdated": "2026-07-29T17:09:41.313Z",
+  "lastUpdated": "2026-07-30T17:20:25.057Z",
   "fundamentals": {
-    "trailingPE": 26.74468,
-    "forwardPE": 9.960027,
-    "marketCap": 24700426240,
+    "trailingPE": 26.603376,
+    "forwardPE": 9.970473,
+    "marketCap": 24779026432,
     "dividendYield": 0.047399998,
     "dividendRate": 5.96,
     "payoutRatio": 1.2624,
     "beta": -0.063,
-    "priceToBook": 1.3216801,
+    "priceToBook": 1.3258859,
     "enterpriseToEbitda": 40.137,
     "profitMargins": 0.07195,
     "returnOnEquity": 0.04982,
