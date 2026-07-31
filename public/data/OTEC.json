@@ -3,11 +3,11 @@
   "name": "OTELLO CORPORATION",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 16.8,
-  "previousClose": 16.88,
-  "dayHigh": 16.96,
-  "dayLow": 16.66,
-  "volume": 28348,
+  "currentPrice": 18,
+  "previousClose": 16.82,
+  "dayHigh": 17.5,
+  "dayLow": 16.98,
+  "volume": 125767,
   "fiftyTwoWeekHigh": 20.25,
   "fiftyTwoWeekLow": 12.6,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-07-30",
       "close": 16.8
+    },
+    {
+      "date": "2026-07-31",
+      "close": 18
     }
   ],
   "dividends": [
@@ -10086,16 +10090,16 @@
       "amount": 21
     }
   ],
-  "lastUpdated": "2026-07-30T17:21:03.713Z",
+  "lastUpdated": "2026-07-31T17:24:47.095Z",
   "fundamentals": {
-    "trailingPE": 2.5187404,
+    "trailingPE": 2.6946108,
     "forwardPE": null,
-    "marketCap": 1146068096,
+    "marketCap": 1227930240,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.821,
-    "priceToBook": 0.9368875,
+    "priceToBook": 1.003808,
     "enterpriseToEbitda": null,
     "profitMargins": 21.050892,
     "returnOnEquity": 0.49671,

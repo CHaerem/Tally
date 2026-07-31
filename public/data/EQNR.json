@@ -3,11 +3,11 @@
   "name": "EQUINOR",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 383.5,
-  "previousClose": 392.5,
-  "dayHigh": 395.1,
-  "dayLow": 383.5,
-  "volume": 2803282,
+  "currentPrice": 386.4,
+  "previousClose": 377.5,
+  "dayHigh": 390.2,
+  "dayLow": 378.2,
+  "volume": 2427260,
   "fiftyTwoWeekHigh": 422.3,
   "fiftyTwoWeekLow": 226.4,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-07-30",
       "close": 383.5
+    },
+    {
+      "date": "2026-07-31",
+      "close": 386.4
     }
   ],
   "dividends": [
@@ -10238,17 +10242,17 @@
       "amount": 3.6
     }
   ],
-  "lastUpdated": "2026-07-30T17:19:22.205Z",
+  "lastUpdated": "2026-07-31T17:23:05.442Z",
   "fundamentals": {
-    "trailingPE": 10.748319,
-    "forwardPE": 10.092064,
-    "marketCap": 911209922560,
-    "dividendYield": 0.037,
+    "trailingPE": 10.811415,
+    "forwardPE": 10.260678,
+    "marketCap": 918100443136,
+    "dividendYield": 0.0379,
     "dividendRate": 14.52,
     "payoutRatio": 0.4074,
     "beta": -0.75,
-    "priceToBook": 2.2155166,
-    "enterpriseToEbitda": 22.996,
+    "priceToBook": 2.2322702,
+    "enterpriseToEbitda": 22.473,
     "profitMargins": 0.0797,
     "returnOnEquity": 0.21270001,
     "revenueGrowth": 0.374,
