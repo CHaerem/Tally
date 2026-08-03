@@ -3,11 +3,11 @@
   "name": "SPAREBANK 1 ØSTFOLD AKERSHUS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 430,
-  "previousClose": 124,
-  "dayHigh": 445,
-  "dayLow": 430,
-  "volume": 110,
+  "currentPrice": 430.05,
+  "previousClose": 434.95,
+  "dayHigh": 430.05,
+  "dayLow": 430.05,
+  "volume": 80,
   "fiftyTwoWeekHigh": 476.35,
   "fiftyTwoWeekLow": 411.15,
   "prices": [
@@ -10054,6 +10054,10 @@
     {
       "date": "2026-07-31",
       "close": 430
+    },
+    {
+      "date": "2026-08-03",
+      "close": 430.05
     }
   ],
   "dividends": [
@@ -10106,16 +10110,16 @@
       "amount": 24.5
     }
   ],
-  "lastUpdated": "2026-08-02T04:22:00.088Z",
+  "lastUpdated": "2026-08-03T17:48:13.274Z",
   "fundamentals": {
-    "trailingPE": 8.540218,
-    "forwardPE": 10.190781,
-    "marketCap": 5326735360,
+    "trailingPE": 8.541211,
+    "forwardPE": 10.191966,
+    "marketCap": 5327354880,
     "dividendYield": 0.056999996,
     "dividendRate": 24.5,
     "payoutRatio": 0.4866,
     "beta": 0.077,
-    "priceToBook": 1.1148618,
+    "priceToBook": 1.1149915,
     "enterpriseToEbitda": null,
     "profitMargins": 0.48095,
     "returnOnEquity": 0.13419,
