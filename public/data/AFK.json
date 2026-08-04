@@ -3,11 +3,11 @@
   "name": "ARENDALS FOSSEKOMPANI",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 182.5,
-  "previousClose": 183.5,
+  "currentPrice": 183.5,
+  "previousClose": 182,
   "dayHigh": 184,
-  "dayLow": 181.5,
-  "volume": 1082,
+  "dayLow": 180,
+  "volume": 1158,
   "fiftyTwoWeekHigh": 210,
   "fiftyTwoWeekLow": 123.5,
   "prices": [
@@ -10056,8 +10056,16 @@
       "close": 182
     },
     {
+      "date": "2026-07-31",
+      "close": 184
+    },
+    {
       "date": "2026-08-03",
       "close": 182.5
+    },
+    {
+      "date": "2026-08-04",
+      "close": 183.5
     }
   ],
   "dividends": [
@@ -10162,17 +10170,17 @@
       "amount": 3
     }
   ],
-  "lastUpdated": "2026-08-03T17:46:15.273Z",
+  "lastUpdated": "2026-08-04T17:39:26.950Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 57.03125,
-    "marketCap": 10034299904,
-    "dividendYield": 0.0163,
+    "forwardPE": 57.34375,
+    "marketCap": 10089282560,
+    "dividendYield": 0.0164,
     "dividendRate": 3,
     "payoutRatio": 0.2151,
     "beta": 1.093,
-    "priceToBook": 2.0809343,
-    "enterpriseToEbitda": 18.33,
+    "priceToBook": 2.0923367,
+    "enterpriseToEbitda": 18.185,
     "profitMargins": -0.025009999,
     "returnOnEquity": -0.022030002,
     "revenueGrowth": -0.046,

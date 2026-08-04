@@ -3,11 +3,11 @@
   "name": "JÆREN SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 336.5,
-  "previousClose": 334.95,
-  "dayHigh": 336.5,
-  "dayLow": 336.5,
-  "volume": 100,
+  "currentPrice": 336,
+  "previousClose": 332,
+  "dayHigh": 334,
+  "dayLow": 325.1,
+  "volume": 877,
   "fiftyTwoWeekHigh": 390,
   "fiftyTwoWeekLow": 325.1,
   "prices": [
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-08-03",
       "close": 336.5
+    },
+    {
+      "date": "2026-08-04",
+      "close": 336
     }
   ],
   "dividends": [
@@ -10102,16 +10106,16 @@
       "amount": 20
     }
   ],
-  "lastUpdated": "2026-08-03T17:47:47.051Z",
+  "lastUpdated": "2026-08-04T17:41:02.136Z",
   "fundamentals": {
-    "trailingPE": 10.964483,
-    "forwardPE": 11.250418,
-    "marketCap": 1654992128,
-    "dividendYield": 0.059499998,
+    "trailingPE": 10.948192,
+    "forwardPE": 11.233701,
+    "marketCap": 1652532992,
+    "dividendYield": 0.0594,
     "dividendRate": 20,
     "payoutRatio": 1.3029,
-    "beta": 0.143,
-    "priceToBook": 0.6551702,
+    "beta": 0.14,
+    "priceToBook": 0.6541967,
     "enterpriseToEbitda": null,
     "profitMargins": 0.51659,
     "returnOnEquity": 0.11323,
