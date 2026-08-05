@@ -3,11 +3,11 @@
   "name": "HSPG.OL,0P0000EEEH,0",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 145.3,
+  "currentPrice": 152,
   "previousClose": 145.3,
-  "dayHigh": 145.3,
-  "dayLow": 145.3,
-  "volume": 1,
+  "dayHigh": 152,
+  "dayLow": 151.94,
+  "volume": 1132,
   "fiftyTwoWeekHigh": 173,
   "fiftyTwoWeekLow": 142.06,
   "prices": [
@@ -10062,6 +10062,14 @@
     {
       "date": "2026-08-03",
       "close": 145.3
+    },
+    {
+      "date": "2026-08-04",
+      "close": 145.3
+    },
+    {
+      "date": "2026-08-05",
+      "close": 152
     }
   ],
   "dividends": [
@@ -10102,16 +10110,16 @@
       "amount": 5
     }
   ],
-  "lastUpdated": "2026-08-04T17:40:57.848Z",
+  "lastUpdated": "2026-08-05T17:25:20.864Z",
   "fundamentals": {
-    "trailingPE": 27.26079,
-    "forwardPE": 19.45114,
-    "marketCap": 99951872,
+    "trailingPE": 28.517824,
+    "forwardPE": 31.865828,
+    "marketCap": 104560800,
     "dividendYield": 0.0344,
     "dividendRate": 5,
     "payoutRatio": 0.9381,
     "beta": -0.331,
-    "priceToBook": 0.10814118,
+    "priceToBook": 0.11312773,
     "enterpriseToEbitda": null,
     "profitMargins": 0.25818002,
     "returnOnEquity": 0.03893,
