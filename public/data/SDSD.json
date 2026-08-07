@@ -3,11 +3,11 @@
   "name": "S.D. STANDARD ETC PLC",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.805,
-  "previousClose": 1.8,
-  "dayHigh": 1.84,
-  "dayLow": 1.805,
-  "volume": 13966,
+  "currentPrice": 1.85,
+  "previousClose": 1.84,
+  "dayHigh": 1.855,
+  "dayLow": 1.79,
+  "volume": 105,
   "fiftyTwoWeekHigh": 1.995,
   "fiftyTwoWeekLow": 1.78,
   "prices": [
@@ -10070,6 +10070,14 @@
     {
       "date": "2026-08-05",
       "close": 1.8
+    },
+    {
+      "date": "2026-08-06",
+      "close": 1.79
+    },
+    {
+      "date": "2026-08-07",
+      "close": 1.85
     }
   ],
   "dividends": [
@@ -10078,23 +10086,23 @@
       "amount": 0.2
     }
   ],
-  "lastUpdated": "2026-08-05T17:25:47.158Z",
+  "lastUpdated": "2026-08-07T16:48:36.745Z",
   "fundamentals": {
-    "trailingPE": 6.4464283,
-    "forwardPE": 90.25,
-    "marketCap": 946691648,
+    "trailingPE": 6.3793106,
+    "forwardPE": 92.5,
+    "marketCap": 970293376,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.228,
-    "priceToBook": 0.78618795,
+    "beta": null,
+    "priceToBook": 0.8057882,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.94168997,
-    "returnOnEquity": 0.13194999,
+    "profitMargins": 0.65739995,
+    "returnOnEquity": 0.05661,
     "revenueGrowth": null,
     "earningsGrowth": null,
     "grossMargins": 1,
-    "totalRevenue": 16377000,
+    "totalRevenue": 10076000,
     "ebitda": null
   }
 }

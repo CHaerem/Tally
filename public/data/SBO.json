@@ -3,11 +3,11 @@
   "name": "SELVAAG BOLIG",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 33.5,
-  "previousClose": 33.5,
-  "dayHigh": 33.9,
+  "currentPrice": 33.35,
+  "previousClose": 33.2,
+  "dayHigh": 34,
   "dayLow": 33,
-  "volume": 4089,
+  "volume": 36094,
   "fiftyTwoWeekHigh": 38,
   "fiftyTwoWeekLow": 32,
   "prices": [
@@ -10070,6 +10070,14 @@
     {
       "date": "2026-08-05",
       "close": 33.5
+    },
+    {
+      "date": "2026-08-06",
+      "close": 33.9
+    },
+    {
+      "date": "2026-08-07",
+      "close": 33.35
     }
   ],
   "dividends": [
@@ -10150,23 +10158,23 @@
       "amount": 1
     }
   ],
-  "lastUpdated": "2026-08-05T17:24:29.448Z",
+  "lastUpdated": "2026-08-07T16:47:10.564Z",
   "fundamentals": {
-    "trailingPE": 23.263887,
-    "forwardPE": 11.512027,
-    "marketCap": 3138755072,
-    "dividendYield": 0.0299,
+    "trailingPE": 23.15972,
+    "forwardPE": 10.136778,
+    "marketCap": 3124700928,
+    "dividendYield": 0.0295,
     "dividendRate": 1,
     "payoutRatio": 0.8681,
-    "beta": 0.811,
-    "priceToBook": 1.3459761,
-    "enterpriseToEbitda": 126.159,
-    "profitMargins": 0.06627,
-    "returnOnEquity": 0.05671,
-    "revenueGrowth": -0.266,
-    "earningsGrowth": null,
-    "grossMargins": 0.15548,
-    "totalRevenue": 2035112960,
-    "ebitda": 55583000
+    "beta": null,
+    "priceToBook": 1.3399494,
+    "enterpriseToEbitda": 38.65,
+    "profitMargins": 0.06903,
+    "returnOnEquity": 0.096020006,
+    "revenueGrowth": 4.552,
+    "earningsGrowth": 46.5,
+    "grossMargins": 0.13812,
+    "totalRevenue": 3225125120,
+    "ebitda": 183511008
   }
 }

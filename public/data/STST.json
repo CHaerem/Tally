@@ -3,12 +3,12 @@
   "name": "STAINLESS TANKERS ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 44,
-  "previousClose": 40,
-  "dayHigh": 44.6,
-  "dayLow": 42.7,
-  "volume": 25147,
-  "fiftyTwoWeekHigh": 49.8,
+  "currentPrice": 42.7,
+  "previousClose": 40.7,
+  "dayHigh": 43.9,
+  "dayLow": 41.9,
+  "volume": 8170,
+  "fiftyTwoWeekHigh": 49.2,
   "fiftyTwoWeekLow": 36.3,
   "prices": [
     {
@@ -2682,6 +2682,14 @@
     {
       "date": "2026-08-05",
       "close": 44
+    },
+    {
+      "date": "2026-08-06",
+      "close": 44
+    },
+    {
+      "date": "2026-08-07",
+      "close": 42.7
     }
   ],
   "dividends": [
@@ -2728,15 +2736,19 @@
     {
       "date": "2026-05-08",
       "amount": 1.25
+    },
+    {
+      "date": "2026-08-07",
+      "amount": 1.28
     }
   ],
-  "lastUpdated": "2026-08-05T17:25:51.587Z",
+  "lastUpdated": "2026-08-07T16:48:41.808Z",
   "fundamentals": {
-    "trailingPE": 22.680412,
-    "forwardPE": 15.460296,
-    "marketCap": 594000000,
-    "dividendYield": 0.1777,
-    "dividendRate": 7.29,
+    "trailingPE": 22.124353,
+    "forwardPE": 15.003514,
+    "marketCap": 576449984,
+    "dividendYield": 0.1183,
+    "dividendRate": 5.2,
     "payoutRatio": 6.8009005,
     "beta": null,
     "priceToBook": null,

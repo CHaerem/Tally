@@ -3,11 +3,11 @@
   "name": "POLARIS MEDIA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 57.8,
-  "previousClose": 57.8,
-  "dayHigh": 57.8,
-  "dayLow": 57.8,
-  "volume": 54,
+  "currentPrice": 60,
+  "previousClose": 57.4,
+  "dayHigh": 60,
+  "dayLow": 58.8,
+  "volume": 18343,
   "fiftyTwoWeekHigh": 64,
   "fiftyTwoWeekLow": 46.8,
   "prices": [
@@ -10070,6 +10070,14 @@
     {
       "date": "2026-08-05",
       "close": 57.8
+    },
+    {
+      "date": "2026-08-06",
+      "close": 58
+    },
+    {
+      "date": "2026-08-07",
+      "close": 60
     }
   ],
   "dividends": [
@@ -10106,17 +10114,17 @@
       "amount": 3.3
     }
   ],
-  "lastUpdated": "2026-08-05T17:24:26.643Z",
+  "lastUpdated": "2026-08-07T16:47:07.490Z",
   "fundamentals": {
-    "trailingPE": 262.72726,
+    "trailingPE": 272.72726,
     "forwardPE": null,
-    "marketCap": 2831729152,
-    "dividendYield": 0.0573,
+    "marketCap": 2939511296,
+    "dividendYield": 0.056900002,
     "dividendRate": 3.3,
     "payoutRatio": 9.0909,
     "beta": -0.072,
-    "priceToBook": 1.5833447,
-    "enterpriseToEbitda": 21.1,
+    "priceToBook": 1.6436104,
+    "enterpriseToEbitda": 21.229,
     "profitMargins": 0.00312,
     "returnOnEquity": 0.00885,
     "revenueGrowth": 0.002,

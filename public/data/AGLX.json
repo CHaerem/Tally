@@ -3,11 +3,11 @@
   "name": "AGILYX ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 19.15,
-  "previousClose": 19.1,
-  "dayHigh": 19.25,
-  "dayLow": 19.05,
-  "volume": 1900,
+  "currentPrice": 18.5,
+  "previousClose": 19,
+  "dayHigh": 18.75,
+  "dayLow": 18.45,
+  "volume": 7937,
   "fiftyTwoWeekHigh": 26,
   "fiftyTwoWeekLow": 11.8,
   "prices": [
@@ -5882,20 +5882,28 @@
     {
       "date": "2026-08-05",
       "close": 19.15
+    },
+    {
+      "date": "2026-08-06",
+      "close": 18.6
+    },
+    {
+      "date": "2026-08-07",
+      "close": 18.5
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-05T17:24:43.416Z",
+  "lastUpdated": "2026-08-07T16:47:26.563Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 2410095360,
+    "marketCap": 2328290816,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.592,
-    "priceToBook": 11.208847,
-    "enterpriseToEbitda": -190.479,
+    "priceToBook": 10.828391,
+    "enterpriseToEbitda": -186.582,
     "profitMargins": null,
     "returnOnEquity": -1.82372,
     "revenueGrowth": 0.466,
