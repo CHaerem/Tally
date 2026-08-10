@@ -3,11 +3,11 @@
   "name": "S.D. STANDARD ETC PLC",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.85,
-  "previousClose": 1.821,
-  "dayHigh": 1.855,
-  "dayLow": 1.79,
-  "volume": 105,
+  "currentPrice": 1.82,
+  "previousClose": 1.84,
+  "dayHigh": 1.82,
+  "dayLow": 1.82,
+  "volume": 14,
   "fiftyTwoWeekHigh": 1.995,
   "fiftyTwoWeekLow": 1.78,
   "prices": [
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-08-07",
       "close": 1.85
+    },
+    {
+      "date": "2026-08-10",
+      "close": 1.82
     }
   ],
   "dividends": [
@@ -10066,16 +10070,16 @@
       "amount": 0.2
     }
   ],
-  "lastUpdated": "2026-08-09T03:00:40.533Z",
+  "lastUpdated": "2026-08-10T16:49:34.437Z",
   "fundamentals": {
-    "trailingPE": 6.3793106,
-    "forwardPE": 92.5,
-    "marketCap": 970293376,
+    "trailingPE": 6.275862,
+    "forwardPE": 91.00001,
+    "marketCap": 954558912,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 0.8057882,
+    "beta": 0.228,
+    "priceToBook": 0.7927214,
     "enterpriseToEbitda": null,
     "profitMargins": 0.65739995,
     "returnOnEquity": 0.05661,

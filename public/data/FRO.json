@@ -3,11 +3,11 @@
   "name": "FRONTLINE PLC",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 368.9,
-  "previousClose": 66.1,
-  "dayHigh": 381.8,
-  "dayLow": 367.4,
-  "volume": 675538,
+  "currentPrice": 374.1,
+  "previousClose": 374.1,
+  "dayHigh": 379,
+  "dayLow": 370.2,
+  "volume": 602731,
   "fiftyTwoWeekHigh": 424.6,
   "fiftyTwoWeekLow": 187.55,
   "prices": [
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-08-07",
       "close": 368.9
+    },
+    {
+      "date": "2026-08-10",
+      "close": 374.1
     }
   ],
   "dividends": [
@@ -10154,16 +10158,16 @@
       "amount": 14.71
     }
   ],
-  "lastUpdated": "2026-08-09T02:58:02.966Z",
+  "lastUpdated": "2026-08-10T16:47:33.328Z",
   "fundamentals": {
-    "trailingPE": 9.532299,
-    "forwardPE": 9.270349,
-    "marketCap": null,
+    "trailingPE": 9.666667,
+    "forwardPE": 9.401023,
+    "marketCap": 83283230720,
     "dividendYield": 0.16299999,
     "dividendRate": 60.14,
     "payoutRatio": 0.4335,
     "beta": 0.054,
-    "priceToBook": 3.0331712,
+    "priceToBook": 3.0807633,
     "enterpriseToEbitda": 72.041,
     "profitMargins": 0.40192002,
     "returnOnEquity": 0.35009,

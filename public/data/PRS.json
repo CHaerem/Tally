@@ -3,11 +3,11 @@
   "name": "PROSAFE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 5.91,
-  "previousClose": 50872.133,
-  "dayHigh": 6.03,
-  "dayLow": 5.85,
-  "volume": 1272350,
+  "currentPrice": 5.81,
+  "previousClose": 6.3,
+  "dayHigh": 5.97,
+  "dayLow": 5.75,
+  "volume": 787958,
   "fiftyTwoWeekHigh": 6.4,
   "fiftyTwoWeekLow": 2.91,
   "prices": [
@@ -10058,19 +10058,23 @@
     {
       "date": "2026-08-07",
       "close": 5.91
+    },
+    {
+      "date": "2026-08-10",
+      "close": 5.81
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-09T02:59:43.928Z",
+  "lastUpdated": "2026-08-10T16:48:50.224Z",
   "fundamentals": {
-    "trailingPE": 0.36914426,
-    "forwardPE": 19.048468,
-    "marketCap": null,
+    "trailingPE": 0.36289817,
+    "forwardPE": 18.72616,
+    "marketCap": 2048245504,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.473,
-    "priceToBook": 1.5529263,
+    "priceToBook": 1.5266501,
     "enterpriseToEbitda": 46.435,
     "profitMargins": 0.77005994,
     "returnOnEquity": 2.75595,

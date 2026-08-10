@@ -3,11 +3,11 @@
   "name": "HEXAGON COMPOSITES",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 13.78,
-  "previousClose": 17.914,
-  "dayHigh": 14.3,
-  "dayLow": 13.5,
-  "volume": 4706400,
+  "currentPrice": 14.05,
+  "previousClose": 12.4,
+  "dayHigh": 14.14,
+  "dayLow": 13.75,
+  "volume": 2588467,
   "fiftyTwoWeekHigh": 20,
   "fiftyTwoWeekLow": 6.3,
   "prices": [
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-08-07",
       "close": 13.78
+    },
+    {
+      "date": "2026-08-10",
+      "close": 14.05
     }
   ],
   "dividends": [
@@ -10066,23 +10070,23 @@
       "amount": 0.29
     }
   ],
-  "lastUpdated": "2026-08-09T02:58:20.590Z",
+  "lastUpdated": "2026-08-10T16:47:46.062Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 63.59902,
-    "marketCap": null,
+    "forwardPE": 55.461258,
+    "marketCap": 4678381568,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 1.3106334,
-    "enterpriseToEbitda": 112.489,
-    "profitMargins": -0.24258,
-    "returnOnEquity": -0.23597,
-    "revenueGrowth": -0.07,
+    "beta": 0.729,
+    "priceToBook": 1.3363135,
+    "enterpriseToEbitda": 30.73,
+    "profitMargins": -0.24330999,
+    "returnOnEquity": -0.23603001,
+    "revenueGrowth": -0.078,
     "earningsGrowth": null,
-    "grossMargins": 0.53712004,
-    "totalRevenue": 2663895040,
-    "ebitda": 170787008
+    "grossMargins": 0.53595,
+    "totalRevenue": 2656596992,
+    "ebitda": 165464000
   }
 }
