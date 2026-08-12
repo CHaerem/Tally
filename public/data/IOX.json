@@ -3,11 +3,11 @@
   "name": "INTEROIL EXPLORATION AND PRODUC",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.86,
-  "previousClose": 2.79,
-  "dayHigh": 3.01,
-  "dayLow": 2.71,
-  "volume": 389230,
+  "currentPrice": 3.02,
+  "previousClose": 2.74,
+  "dayHigh": 3.09,
+  "dayLow": 3,
+  "volume": 231503,
   "fiftyTwoWeekHigh": 9,
   "fiftyTwoWeekLow": 0.501,
   "prices": [
@@ -10066,20 +10066,24 @@
     {
       "date": "2026-08-11",
       "close": 2.86
+    },
+    {
+      "date": "2026-08-12",
+      "close": 3.02
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-11T16:54:29.840Z",
+  "lastUpdated": "2026-08-12T16:53:38.332Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": null,
-    "marketCap": null,
+    "forwardPE": 302,
+    "marketCap": 60805972,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": -3.962,
     "priceToBook": null,
-    "enterpriseToEbitda": -18.236,
+    "enterpriseToEbitda": -18.162,
     "profitMargins": -1.32327,
     "returnOnEquity": null,
     "revenueGrowth": -0.27,

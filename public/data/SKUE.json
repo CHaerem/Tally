@@ -3,11 +3,11 @@
   "name": "SKUE SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 334,
-  "previousClose": 334.75,
-  "dayHigh": 334,
-  "dayLow": 330,
-  "volume": 52,
+  "currentPrice": 330,
+  "previousClose": 334.9,
+  "dayHigh": 335.95,
+  "dayLow": 335,
+  "volume": 24,
   "fiftyTwoWeekHigh": 363.95,
   "fiftyTwoWeekLow": 304.95,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-08-11",
       "close": 334
+    },
+    {
+      "date": "2026-08-12",
+      "close": 330
     }
   ],
   "dividends": [
@@ -10102,16 +10106,16 @@
       "amount": 22.27
     }
   ],
-  "lastUpdated": "2026-08-11T16:53:32.368Z",
+  "lastUpdated": "2026-08-12T16:52:41.678Z",
   "fundamentals": {
-    "trailingPE": 15.725047,
-    "forwardPE": 10.918601,
-    "marketCap": 1930092160,
-    "dividendYield": 0.0665,
+    "trailingPE": 15.536723,
+    "forwardPE": 10.787839,
+    "marketCap": 1906977280,
+    "dividendYield": 0.066700004,
     "dividendRate": 22.27,
     "payoutRatio": 1.048,
     "beta": 0.188,
-    "priceToBook": 0.51027036,
+    "priceToBook": 0.50415933,
     "enterpriseToEbitda": null,
     "profitMargins": 0.42038,
     "returnOnEquity": 0.08502,

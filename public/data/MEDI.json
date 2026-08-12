@@ -3,11 +3,11 @@
   "name": "MEDISTIM",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 231,
-  "previousClose": 228,
+  "currentPrice": 228,
+  "previousClose": 225,
   "dayHigh": 231,
-  "dayLow": 225,
-  "volume": 9663,
+  "dayLow": 227,
+  "volume": 12293,
   "fiftyTwoWeekHigh": 292,
   "fiftyTwoWeekLow": 186.5,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-08-11",
       "close": 231
+    },
+    {
+      "date": "2026-08-12",
+      "close": 228
     }
   ],
   "dividends": [
@@ -10110,17 +10114,17 @@
       "amount": 8
     }
   ],
-  "lastUpdated": "2026-08-11T16:53:17.972Z",
+  "lastUpdated": "2026-08-12T16:52:27.037Z",
   "fundamentals": {
-    "trailingPE": 27.049181,
-    "forwardPE": 23.58346,
-    "marketCap": 4223337984,
-    "dividendYield": 0.0354,
+    "trailingPE": 26.666666,
+    "forwardPE": 23.277182,
+    "marketCap": 4168489472,
+    "dividendYield": 0.0346,
     "dividendRate": 8,
     "payoutRatio": 0.7026,
     "beta": 0.994,
-    "priceToBook": 8.338748,
-    "enterpriseToEbitda": 19.685,
+    "priceToBook": 8.230453,
+    "enterpriseToEbitda": 20.14,
     "profitMargins": 0.21681,
     "returnOnEquity": 0.32077,
     "revenueGrowth": 0.111,
