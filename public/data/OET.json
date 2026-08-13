@@ -3,13 +3,13 @@
   "name": "OKEANIS ECO TANKERS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 594,
-  "previousClose": 609,
-  "dayHigh": 595,
-  "dayLow": 581,
-  "volume": 109176,
+  "currentPrice": 568,
+  "previousClose": 587,
+  "dayHigh": 568,
+  "dayLow": 544,
+  "volume": 121827,
   "fiftyTwoWeekHigh": 609,
-  "fiftyTwoWeekLow": 255.5,
+  "fiftyTwoWeekLow": 259,
   "prices": [
     {
       "date": "2018-07-04",
@@ -8146,6 +8146,10 @@
     {
       "date": "2026-08-12",
       "close": 594
+    },
+    {
+      "date": "2026-08-13",
+      "close": 568
     }
   ],
   "dividends": [
@@ -8236,19 +8240,23 @@
     {
       "date": "2026-05-27",
       "amount": 18.98
+    },
+    {
+      "date": "2026-08-13",
+      "amount": 49.9
     }
   ],
-  "lastUpdated": "2026-08-12T16:52:32.465Z",
+  "lastUpdated": "2026-08-13T16:51:25.731Z",
   "fundamentals": {
-    "trailingPE": 5.7934265,
-    "forwardPE": 9.134352,
-    "marketCap": 23192524800,
+    "trailingPE": 5.543627,
+    "forwardPE": 8.735361,
+    "marketCap": 22177363968,
     "dividendYield": 0.3474,
     "dividendRate": 200.44,
     "payoutRatio": 0.4634,
     "beta": null,
-    "priceToBook": 2.783435,
-    "enterpriseToEbitda": 531.153,
+    "priceToBook": 2.6618538,
+    "enterpriseToEbitda": 546.463,
     "profitMargins": -0.0864,
     "returnOnEquity": null,
     "revenueGrowth": 2.394,

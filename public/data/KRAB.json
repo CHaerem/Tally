@@ -3,11 +3,11 @@
   "name": "KRAFT BANK ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 13.8,
-  "previousClose": 13.95,
-  "dayHigh": 14.15,
-  "dayLow": 14,
-  "volume": 18094,
+  "currentPrice": 13.4,
+  "previousClose": 13.85,
+  "dayHigh": 13.7,
+  "dayLow": 12,
+  "volume": 104522,
   "fiftyTwoWeekHigh": 15,
   "fiftyTwoWeekLow": 10.6,
   "prices": [
@@ -5698,6 +5698,10 @@
     {
       "date": "2026-08-12",
       "close": 13.8
+    },
+    {
+      "date": "2026-08-13",
+      "close": 13.4
     }
   ],
   "dividends": [
@@ -5718,16 +5722,16 @@
       "amount": 0.76
     }
   ],
-  "lastUpdated": "2026-08-12T16:53:41.327Z",
+  "lastUpdated": "2026-08-13T16:52:42.334Z",
   "fundamentals": {
-    "trailingPE": 8.625,
-    "forwardPE": 7.666667,
-    "marketCap": 564081408,
+    "trailingPE": 8.375,
+    "forwardPE": 7.4444447,
+    "marketCap": 547731200,
     "dividendYield": 0.0545,
     "dividendRate": 0.76,
     "payoutRatio": 0.475,
     "beta": 0.455,
-    "priceToBook": 1.102765,
+    "priceToBook": 1.0708007,
     "enterpriseToEbitda": null,
     "profitMargins": 0.35046002,
     "returnOnEquity": 0.14265001,
