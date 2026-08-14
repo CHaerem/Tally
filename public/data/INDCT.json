@@ -3,13 +3,13 @@
   "name": "INDUCT",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.814,
+  "currentPrice": 0.8,
   "previousClose": 0.896,
-  "dayHigh": 0.88,
-  "dayLow": 0.82,
-  "volume": 208654,
+  "dayHigh": 0.82,
+  "dayLow": 0.8,
+  "volume": 123000,
   "fiftyTwoWeekHigh": 4.8,
-  "fiftyTwoWeekLow": 0.82,
+  "fiftyTwoWeekLow": 0.8,
   "prices": [
     {
       "date": "2016-08-08",
@@ -10074,26 +10074,30 @@
     {
       "date": "2026-08-13",
       "close": 0.81
+    },
+    {
+      "date": "2026-08-14",
+      "close": 0.8
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-13T16:52:38.006Z",
+  "lastUpdated": "2026-08-14T16:50:46.225Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -7.4,
-    "marketCap": 26054796,
+    "forwardPE": -7.2727275,
+    "marketCap": 25606678,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.34,
-    "priceToBook": 0.64551944,
-    "enterpriseToEbitda": -21.592,
-    "profitMargins": -0.6321,
-    "returnOnEquity": -0.25426,
-    "revenueGrowth": -0.281,
+    "beta": null,
+    "priceToBook": 0.61349696,
+    "enterpriseToEbitda": -4.419,
+    "profitMargins": -0.73413,
+    "returnOnEquity": -0.24901,
+    "revenueGrowth": -0.195,
     "earningsGrowth": null,
-    "grossMargins": 0.96747,
-    "totalRevenue": 13740000,
-    "ebitda": -1579443
+    "grossMargins": 0.64872,
+    "totalRevenue": 13233364,
+    "ebitda": -6853470
   }
 }
