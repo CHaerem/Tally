@@ -4,33 +4,13 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 199.2,
-  "previousClose": 186,
+  "previousClose": 117.5,
   "dayHigh": 203.5,
   "dayLow": 193.4,
   "volume": 229225,
   "fiftyTwoWeekHigh": 203.5,
   "fiftyTwoWeekLow": 152.6,
   "prices": [
-    {
-      "date": "2016-08-08",
-      "close": 108
-    },
-    {
-      "date": "2016-08-09",
-      "close": 107.5
-    },
-    {
-      "date": "2016-08-10",
-      "close": 109.5
-    },
-    {
-      "date": "2016-08-11",
-      "close": 115.5
-    },
-    {
-      "date": "2016-08-12",
-      "close": 117.5
-    },
     {
       "date": "2016-08-15",
       "close": 117.5
@@ -10122,23 +10102,23 @@
       "amount": 11.25
     }
   ],
-  "lastUpdated": "2026-08-14T16:49:54.747Z",
+  "lastUpdated": "2026-08-16T02:16:33.904Z",
   "fundamentals": {
-    "trailingPE": 16.867062,
-    "forwardPE": 16.54485,
-    "marketCap": 26883289088,
-    "dividendYield": 0.059699997,
+    "trailingPE": 16.895674,
+    "forwardPE": 15.923261,
+    "marketCap": 26902052864,
+    "dividendYield": 0.056500003,
     "dividendRate": 11.25,
     "payoutRatio": 0.76269996,
-    "beta": 0.765,
+    "beta": null,
     "priceToBook": 7.2924294,
-    "enterpriseToEbitda": 6.993,
-    "profitMargins": 0.03622,
-    "returnOnEquity": 0.47542998,
-    "revenueGrowth": 0.068,
-    "earningsGrowth": null,
-    "grossMargins": 0.37377998,
-    "totalRevenue": 43761000448,
-    "ebitda": 2624999936
+    "enterpriseToEbitda": 8.55,
+    "profitMargins": 0.03766,
+    "returnOnEquity": 0.68488,
+    "revenueGrowth": 0.089,
+    "earningsGrowth": 0.276,
+    "grossMargins": 0.36751997,
+    "totalRevenue": 44770000896,
+    "ebitda": 2724000000
   }
 }

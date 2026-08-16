@@ -4,33 +4,13 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 162.8,
-  "previousClose": 146.7,
+  "previousClose": 19.6,
   "dayHigh": 162.4,
   "dayLow": 158.2,
   "volume": 472901,
-  "fiftyTwoWeekHigh": 162.4,
+  "fiftyTwoWeekHigh": 162.8,
   "fiftyTwoWeekLow": 75,
   "prices": [
-    {
-      "date": "2016-08-08",
-      "close": 19.6
-    },
-    {
-      "date": "2016-08-09",
-      "close": 19.4
-    },
-    {
-      "date": "2016-08-10",
-      "close": 19.5
-    },
-    {
-      "date": "2016-08-11",
-      "close": 19.4
-    },
-    {
-      "date": "2016-08-12",
-      "close": 19.6
-    },
     {
       "date": "2016-08-15",
       "close": 19.5
@@ -10000,10 +9980,6 @@
       "close": 137.7
     },
     {
-      "date": "2026-07-20",
-      "close": 137.8
-    },
-    {
       "date": "2026-07-21",
       "close": 141
     },
@@ -10034,10 +10010,6 @@
     {
       "date": "2026-07-30",
       "close": 147.4
-    },
-    {
-      "date": "2026-07-31",
-      "close": 147.7
     },
     {
       "date": "2026-08-03",
@@ -10099,7 +10071,7 @@
     },
     {
       "date": "2023-04-27",
-      "amount": 4.84
+      "amount": 4.81
     },
     {
       "date": "2023-11-09",
@@ -10123,26 +10095,26 @@
     },
     {
       "date": "2026-03-10",
-      "amount": 9.58
+      "amount": 9.53
     }
   ],
-  "lastUpdated": "2026-08-14T16:49:05.620Z",
+  "lastUpdated": "2026-08-16T02:15:42.508Z",
   "fundamentals": {
     "trailingPE": 7.1122766,
-    "forwardPE": 10.954749,
+    "forwardPE": 10.941534,
     "marketCap": 68843421696,
-    "dividendYield": 0.056500003,
+    "dividendYield": 0.0539,
     "dividendRate": 8.78,
     "payoutRatio": 0.59419996,
-    "beta": 0.903,
+    "beta": null,
     "priceToBook": 2.3727436,
-    "enterpriseToEbitda": 52.374,
-    "profitMargins": 0.18303,
-    "returnOnEquity": 0.34063998,
-    "revenueGrowth": -0.034,
-    "earningsGrowth": -0.29,
-    "grossMargins": 0.34160998,
-    "totalRevenue": 5196000256,
-    "ebitda": 1328000000
+    "enterpriseToEbitda": 55.57,
+    "profitMargins": 0.13512,
+    "returnOnEquity": 0.21915,
+    "revenueGrowth": -0.033,
+    "earningsGrowth": -0.677,
+    "grossMargins": 0.32071,
+    "totalRevenue": 5151000064,
+    "ebitda": 1288999936
   }
 }
