@@ -3,12 +3,12 @@
   "name": "SpareBank 1 Sør-Norge ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 218.5,
-  "previousClose": 38.4,
-  "dayHigh": 221,
+  "currentPrice": 221.5,
+  "previousClose": 207.5,
+  "dayHigh": 222,
   "dayLow": 218,
-  "volume": 168982,
-  "fiftyTwoWeekHigh": 221.5,
+  "volume": 137984,
+  "fiftyTwoWeekHigh": 222,
   "fiftyTwoWeekLow": 169.2,
   "prices": [
     {
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-08-14",
       "close": 218.5
+    },
+    {
+      "date": "2026-08-17",
+      "close": 221.5
     }
   ],
   "dividends": [
@@ -10102,23 +10106,23 @@
       "amount": 12
     }
   ],
-  "lastUpdated": "2026-08-16T02:17:54.376Z",
+  "lastUpdated": "2026-08-17T16:22:26.835Z",
   "fundamentals": {
-    "trailingPE": 13.021454,
-    "forwardPE": 11.967357,
-    "marketCap": 81196785664,
+    "trailingPE": 13.200238,
+    "forwardPE": 12.131669,
+    "marketCap": 82311618560,
     "dividendYield": 0.054899998,
     "dividendRate": 12,
     "payoutRatio": 0.7147,
-    "beta": null,
-    "priceToBook": 1.5503381,
+    "beta": 0.535,
+    "priceToBook": 1.5716243,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.48916,
+    "profitMargins": 0.48911998,
     "returnOnEquity": 0.12397,
-    "revenueGrowth": -0.024,
+    "revenueGrowth": -0.025,
     "earningsGrowth": 0.024,
     "grossMargins": null,
-    "totalRevenue": 13422999552,
+    "totalRevenue": 13424000000,
     "ebitda": null
   }
 }

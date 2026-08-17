@@ -3,12 +3,12 @@
   "name": "INSTABANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 5.06,
-  "previousClose": 1.4,
-  "dayHigh": 5.06,
-  "dayLow": 4.86,
-  "volume": 346655,
-  "fiftyTwoWeekHigh": 5.14,
+  "currentPrice": 5.12,
+  "previousClose": 4.88,
+  "dayHigh": 5.16,
+  "dayLow": 5,
+  "volume": 4196536,
+  "fiftyTwoWeekHigh": 5.16,
   "fiftyTwoWeekLow": 2.81,
   "prices": [
     {
@@ -6030,6 +6030,10 @@
     {
       "date": "2026-08-14",
       "close": 5.06
+    },
+    {
+      "date": "2026-08-17",
+      "close": 5.12
     }
   ],
   "dividends": [
@@ -6042,23 +6046,23 @@
       "amount": 0.09
     }
   ],
-  "lastUpdated": "2026-08-16T02:16:59.680Z",
+  "lastUpdated": "2026-08-17T16:21:29.211Z",
   "fundamentals": {
-    "trailingPE": 14.457143,
-    "forwardPE": 10.244367,
-    "marketCap": 2333746688,
+    "trailingPE": 14.6285715,
+    "forwardPE": 10.365841,
+    "marketCap": 2361419520,
     "dividendYield": 0.0178,
     "dividendRate": 0.09,
     "payoutRatio": 0.2571,
-    "beta": 0.412,
-    "priceToBook": 1.8026363,
+    "beta": null,
+    "priceToBook": 1.8665694,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.30201998,
-    "returnOnEquity": 0.106879994,
-    "revenueGrowth": 0.27,
-    "earningsGrowth": 0.167,
+    "profitMargins": 0.32255,
+    "returnOnEquity": 0.12382,
+    "revenueGrowth": 0.53,
+    "earningsGrowth": null,
     "grossMargins": null,
-    "totalRevenue": 438419008,
+    "totalRevenue": 487814016,
     "ebitda": null
   }
 }

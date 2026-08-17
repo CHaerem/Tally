@@ -3,11 +3,11 @@
   "name": "MORELD ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 22.4,
-  "previousClose": 13.95,
-  "dayHigh": 22.8,
-  "dayLow": 22.25,
-  "volume": 270568,
+  "currentPrice": 21.8,
+  "previousClose": 22,
+  "dayHigh": 22.6,
+  "dayLow": 21.5,
+  "volume": 301059,
   "fiftyTwoWeekHigh": 22.8,
   "fiftyTwoWeekLow": 15.48,
   "prices": [
@@ -1650,6 +1650,10 @@
     {
       "date": "2026-08-14",
       "close": 22.4
+    },
+    {
+      "date": "2026-08-17",
+      "close": 21.8
     }
   ],
   "dividends": [
@@ -1672,18 +1676,22 @@
     {
       "date": "2026-05-11",
       "amount": 0.5
+    },
+    {
+      "date": "2026-08-17",
+      "amount": 0.5
     }
   ],
-  "lastUpdated": "2026-08-16T02:17:34.184Z",
+  "lastUpdated": "2026-08-17T16:22:06.809Z",
   "fundamentals": {
-    "trailingPE": 40,
-    "forwardPE": 8.33811,
-    "marketCap": 3972862208,
+    "trailingPE": 38.92857,
+    "forwardPE": 8.114768,
+    "marketCap": 3866446080,
     "dividendYield": 0.08930001,
     "dividendRate": 2,
     "payoutRatio": 3.1429,
     "beta": null,
-    "priceToBook": 9.150327,
+    "priceToBook": 8.905229,
     "enterpriseToEbitda": -45.159,
     "profitMargins": 0.01223,
     "returnOnEquity": 0.13508001,
