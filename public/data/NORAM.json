@@ -3,13 +3,13 @@
   "name": "NORAM DRILLING AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 45.35,
-  "previousClose": 44.55,
-  "dayHigh": 45.95,
-  "dayLow": 45,
-  "volume": 88126,
+  "currentPrice": 44.5,
+  "previousClose": 44.8,
+  "dayHigh": 45.35,
+  "dayLow": 44.3,
+  "volume": 71343,
   "fiftyTwoWeekHigh": 53.5,
-  "fiftyTwoWeekLow": 24.5,
+  "fiftyTwoWeekLow": 24.9,
   "prices": [
     {
       "date": "2022-10-07",
@@ -3878,6 +3878,10 @@
     {
       "date": "2026-08-17",
       "close": 45.35
+    },
+    {
+      "date": "2026-08-18",
+      "close": 44.5
     }
   ],
   "dividends": [
@@ -4056,19 +4060,23 @@
     {
       "date": "2026-07-15",
       "amount": 0.44
+    },
+    {
+      "date": "2026-08-18",
+      "amount": 0.42
     }
   ],
-  "lastUpdated": "2026-08-17T16:21:43.383Z",
+  "lastUpdated": "2026-08-18T16:25:27.449Z",
   "fundamentals": {
-    "trailingPE": 13.618618,
-    "forwardPE": 8.242457,
-    "marketCap": 1966283264,
-    "dividendYield": 0.112799995,
+    "trailingPE": 13.363363,
+    "forwardPE": 8.087968,
+    "marketCap": 1929428992,
+    "dividendYield": 0.113199994,
     "dividendRate": 5.13,
     "payoutRatio": 1.1194,
     "beta": -0.19,
-    "priceToBook": 3.831731,
-    "enterpriseToEbitda": 112.036,
+    "priceToBook": 3.7599125,
+    "enterpriseToEbitda": 111.665,
     "profitMargins": 0.12045,
     "returnOnEquity": 0.21664,
     "revenueGrowth": 0.015,

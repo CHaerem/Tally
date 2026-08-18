@@ -3,11 +3,11 @@
   "name": "SED ENERGY HOLDINGS PLC",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 7.91,
-  "previousClose": 8.16,
-  "dayHigh": 8.08,
-  "dayLow": 7.9,
-  "volume": 2069246,
+  "currentPrice": 7.86,
+  "previousClose": 8.06,
+  "dayHigh": 7.99,
+  "dayLow": 7.87,
+  "volume": 1703628,
   "fiftyTwoWeekHigh": 10.25,
   "fiftyTwoWeekLow": 7.47,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-08-17",
       "close": 7.91
+    },
+    {
+      "date": "2026-08-18",
+      "close": 7.86
     }
   ],
   "dividends": [
@@ -10088,19 +10092,23 @@
     {
       "date": "2026-05-18",
       "amount": 0.29
+    },
+    {
+      "date": "2026-08-17",
+      "amount": 0.32
     }
   ],
-  "lastUpdated": "2026-08-17T16:21:25.049Z",
+  "lastUpdated": "2026-08-18T16:25:09.060Z",
   "fundamentals": {
-    "trailingPE": 13.8771925,
-    "forwardPE": 7.625345,
-    "marketCap": 5784210944,
-    "dividendYield": 0.066599995,
+    "trailingPE": 13.7894745,
+    "forwardPE": 7.577145,
+    "marketCap": 5747648512,
+    "dividendYield": 0.0694,
     "dividendRate": 0.55,
     "payoutRatio": 1.3756,
     "beta": null,
-    "priceToBook": 1.843205,
-    "enterpriseToEbitda": 57.023,
+    "priceToBook": 1.8315539,
+    "enterpriseToEbitda": 54.755,
     "profitMargins": 0.19285999,
     "returnOnEquity": 0.14575,
     "revenueGrowth": 0.317,
