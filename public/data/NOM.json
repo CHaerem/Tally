@@ -3,13 +3,13 @@
   "name": "NORDIC MINING",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.44,
-  "previousClose": 2.735,
-  "dayHigh": 2.78,
-  "dayLow": 2.22,
-  "volume": 1320075,
+  "currentPrice": 2.14,
+  "previousClose": 2.67,
+  "dayHigh": 2.44,
+  "dayLow": 2.14,
+  "volume": 835207,
   "fiftyTwoWeekHigh": 18.88,
-  "fiftyTwoWeekLow": 2.2,
+  "fiftyTwoWeekLow": 2.14,
   "prices": [
     {
       "date": "2016-08-15",
@@ -10066,26 +10066,30 @@
     {
       "date": "2026-08-18",
       "close": 2.44
+    },
+    {
+      "date": "2026-08-19",
+      "close": 2.14
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-18T16:25:15.544Z",
+  "lastUpdated": "2026-08-19T16:25:00.569Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 1.7428572,
-    "marketCap": 305190816,
+    "forwardPE": 1.5285715,
+    "marketCap": 267667360,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.142,
-    "priceToBook": 0.3003077,
-    "enterpriseToEbitda": -3.444,
+    "beta": null,
+    "priceToBook": 0.26338464,
+    "enterpriseToEbitda": -3.581,
     "profitMargins": null,
-    "returnOnEquity": -0.5042,
-    "revenueGrowth": null,
+    "returnOnEquity": -0.70538,
+    "revenueGrowth": -0.994,
     "earningsGrowth": null,
     "grossMargins": null,
-    "totalRevenue": 9080000,
-    "ebitda": -412151008
+    "totalRevenue": 6395000,
+    "ebitda": -459707008
   }
 }

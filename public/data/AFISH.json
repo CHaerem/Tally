@@ -3,11 +3,11 @@
   "name": "ARCTIC FISH HOLDING AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 27.2,
+  "currentPrice": 25.6,
   "previousClose": 25.2,
-  "dayHigh": 27.4,
-  "dayLow": 24.2,
-  "volume": 997,
+  "dayHigh": 26,
+  "dayLow": 25.8,
+  "volume": 845,
   "fiftyTwoWeekHigh": 50,
   "fiftyTwoWeekLow": 23,
   "prices": [
@@ -5526,26 +5526,30 @@
     {
       "date": "2026-08-18",
       "close": 27.2
+    },
+    {
+      "date": "2026-08-19",
+      "close": 25.6
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-18T16:24:52.156Z",
+  "lastUpdated": "2026-08-19T16:24:38.815Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 12.352407,
-    "marketCap": 1224134784,
+    "forwardPE": 11.625795,
+    "marketCap": 1152126848,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": -0.567,
-    "priceToBook": 1.2415525,
-    "enterpriseToEbitda": null,
-    "profitMargins": -0.16761999,
-    "returnOnEquity": -0.21654,
-    "revenueGrowth": 0.752,
+    "beta": null,
+    "priceToBook": 1.16852,
+    "enterpriseToEbitda": 628.703,
+    "profitMargins": -0.15098,
+    "returnOnEquity": -0.26383,
+    "revenueGrowth": 1.578,
     "earningsGrowth": null,
-    "grossMargins": 0.42497003,
-    "totalRevenue": 105927000,
-    "ebitda": 5841250
+    "grossMargins": 0.23622,
+    "totalRevenue": 125804000,
+    "ebitda": 2143000
   }
 }

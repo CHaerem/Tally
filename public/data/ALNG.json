@@ -3,11 +3,11 @@
   "name": "ALNG ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 3.3,
-  "previousClose": 3.64,
-  "dayHigh": 3.45,
+  "currentPrice": 3.25,
+  "previousClose": 3.54,
+  "dayHigh": 3.5,
   "dayLow": 3.25,
-  "volume": 394564,
+  "volume": 177351,
   "fiftyTwoWeekHigh": 5.75,
   "fiftyTwoWeekLow": 2.515,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-08-18",
       "close": 3.3
+    },
+    {
+      "date": "2026-08-19",
+      "close": 3.25
     }
   ],
   "dividends": [
@@ -10098,23 +10102,23 @@
       "amount": 0.23
     }
   ],
-  "lastUpdated": "2026-08-18T16:24:54.518Z",
+  "lastUpdated": "2026-08-19T16:24:40.971Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -16.256655,
-    "marketCap": 722550016,
+    "forwardPE": -16.010342,
+    "marketCap": 711602304,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": -0.302,
-    "priceToBook": 0.38689664,
-    "enterpriseToEbitda": -492.27,
-    "profitMargins": -0.36119998,
-    "returnOnEquity": -0.11261,
-    "revenueGrowth": -0.198,
+    "beta": null,
+    "priceToBook": 0.3627458,
+    "enterpriseToEbitda": -164.796,
+    "profitMargins": -0.46490002,
+    "returnOnEquity": -0.12915,
+    "revenueGrowth": -0.192,
     "earningsGrowth": null,
-    "grossMargins": 0.79580003,
-    "totalRevenue": 39549000,
-    "ebitda": -1862000
+    "grossMargins": 0.78441,
+    "totalRevenue": 37804000,
+    "ebitda": -5116000
   }
 }

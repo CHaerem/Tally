@@ -3,13 +3,13 @@
   "name": "GIGANTE SALMON AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 5.78,
-  "previousClose": 6.7,
-  "dayHigh": 6.36,
-  "dayLow": 5.7,
-  "volume": 394054,
+  "currentPrice": 5.34,
+  "previousClose": 6.8,
+  "dayHigh": 5.84,
+  "dayLow": 5.34,
+  "volume": 181068,
   "fiftyTwoWeekHigh": 11,
-  "fiftyTwoWeekLow": 5.7,
+  "fiftyTwoWeekLow": 5.34,
   "prices": [
     {
       "date": "2021-07-05",
@@ -5166,26 +5166,30 @@
     {
       "date": "2026-08-18",
       "close": 5.78
+    },
+    {
+      "date": "2026-08-19",
+      "close": 5.34
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-18T16:25:12.480Z",
+  "lastUpdated": "2026-08-19T16:24:57.889Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 19.518456,
-    "marketCap": 1298170240,
+    "forwardPE": 17.8,
+    "marketCap": 1199347584,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": -0.264,
-    "priceToBook": 1.1984242,
-    "enterpriseToEbitda": -1600.293,
-    "profitMargins": -0.124359995,
-    "returnOnEquity": -0.01993,
-    "revenueGrowth": null,
+    "beta": null,
+    "priceToBook": 1.1071948,
+    "enterpriseToEbitda": 679.592,
+    "profitMargins": -0.18725,
+    "returnOnEquity": -0.02942,
+    "revenueGrowth": -0.089,
     "earningsGrowth": null,
-    "grossMargins": 0.65849996,
-    "totalRevenue": 144084000,
-    "ebitda": -1207000
+    "grossMargins": 0.61009,
+    "totalRevenue": 140126000,
+    "ebitda": 2135000
   }
 }
