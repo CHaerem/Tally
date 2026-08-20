@@ -3,11 +3,11 @@
   "name": "MOWI",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 198.3,
-  "previousClose": 203.6,
-  "dayHigh": 198.3,
-  "dayLow": 195.5,
-  "volume": 1161028,
+  "currentPrice": 197.4,
+  "previousClose": 202,
+  "dayHigh": 201.2,
+  "dayLow": 196.2,
+  "volume": 968318,
   "fiftyTwoWeekHigh": 245.8,
   "fiftyTwoWeekLow": 179.4,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-08-19",
       "close": 198.3
+    },
+    {
+      "date": "2026-08-20",
+      "close": 197.4
     }
   ],
   "dividends": [
@@ -10198,23 +10202,23 @@
       "amount": 2.3
     }
   ],
-  "lastUpdated": "2026-08-19T16:23:24.711Z",
+  "lastUpdated": "2026-08-20T16:26:56.205Z",
   "fundamentals": {
-    "trailingPE": 14.853932,
-    "forwardPE": 12.922312,
-    "marketCap": 104561729536,
-    "dividendYield": 0.0381,
+    "trailingPE": 14.830954,
+    "forwardPE": 13.46448,
+    "marketCap": 104087158784,
+    "dividendYield": 0.0383,
     "dividendRate": 7.6,
     "payoutRatio": 0.48970002,
-    "beta": null,
-    "priceToBook": 2.1160803,
-    "enterpriseToEbitda": 100.248,
+    "beta": 0.607,
+    "priceToBook": 2.1064763,
+    "enterpriseToEbitda": 108.617,
     "profitMargins": 0.104169995,
     "returnOnEquity": 0.15464,
     "revenueGrowth": 0.147,
     "earningsGrowth": null,
     "grossMargins": 0.46194,
     "totalRevenue": 6115899904,
-    "ebitda": 1088499968
+    "ebitda": 995600000
   }
 }

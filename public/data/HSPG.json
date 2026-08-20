@@ -3,13 +3,13 @@
   "name": "HSPG.OL,0P0000EEEH,0",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 149.98,
-  "previousClose": 145,
-  "dayHigh": 149.98,
-  "dayLow": 145,
-  "volume": 50,
-  "fiftyTwoWeekHigh": 170.98,
-  "fiftyTwoWeekLow": 142.06,
+  "currentPrice": 139.98,
+  "previousClose": 144,
+  "dayHigh": 139.98,
+  "dayLow": 139.98,
+  "volume": 249,
+  "fiftyTwoWeekHigh": 170.96,
+  "fiftyTwoWeekLow": 139.98,
   "prices": [
     {
       "date": "2016-08-15",
@@ -10066,6 +10066,14 @@
     {
       "date": "2026-08-18",
       "close": 149.98
+    },
+    {
+      "date": "2026-08-19",
+      "close": 149.98
+    },
+    {
+      "date": "2026-08-20",
+      "close": 139.98
     }
   ],
   "dividends": [
@@ -10106,16 +10114,16 @@
       "amount": 5
     }
   ],
-  "lastUpdated": "2026-08-19T16:25:22.584Z",
+  "lastUpdated": "2026-08-20T16:29:01.132Z",
   "fundamentals": {
-    "trailingPE": 28.191727,
-    "forwardPE": 31.442347,
-    "marketCap": 103171240,
+    "trailingPE": null,
+    "forwardPE": 29.345911,
+    "marketCap": 96292240,
     "dividendYield": 0.0347,
     "dividendRate": 5,
     "payoutRatio": 0.9381,
     "beta": -0.331,
-    "priceToBook": 0.111624315,
+    "priceToBook": 0.1041817,
     "enterpriseToEbitda": null,
     "profitMargins": 0.25818002,
     "returnOnEquity": 0.03893,

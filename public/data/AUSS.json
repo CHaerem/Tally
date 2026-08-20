@@ -3,11 +3,11 @@
   "name": "AUSTEVOLL SEAFOOD",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 83.3,
-  "previousClose": 87.6,
-  "dayHigh": 84,
-  "dayLow": 82,
-  "volume": 323154,
+  "currentPrice": 83.9,
+  "previousClose": 87,
+  "dayHigh": 85.3,
+  "dayLow": 83.1,
+  "volume": 129406,
   "fiftyTwoWeekHigh": 105.8,
   "fiftyTwoWeekLow": 76.4,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-08-19",
       "close": 83.3
+    },
+    {
+      "date": "2026-08-20",
+      "close": 83.9
     }
   ],
   "dividends": [
@@ -10114,23 +10118,23 @@
       "amount": 6.5
     }
   ],
-  "lastUpdated": "2026-08-19T16:23:33.135Z",
+  "lastUpdated": "2026-08-20T16:27:05.463Z",
   "fundamentals": {
-    "trailingPE": 18.030304,
-    "forwardPE": 7.4465027,
-    "marketCap": 16811945984,
-    "dividendYield": 0.0763,
+    "trailingPE": 22.553764,
+    "forwardPE": 7.6275573,
+    "marketCap": 16933040128,
+    "dividendYield": 0.078,
     "dividendRate": 6.5,
-    "payoutRatio": 1.4069,
+    "payoutRatio": 1.7472999,
     "beta": 0.563,
-    "priceToBook": 1.0348984,
-    "enterpriseToEbitda": 8.855,
-    "profitMargins": 0.02386,
-    "returnOnEquity": 0.053319998,
-    "revenueGrowth": 0.001,
-    "earningsGrowth": 24,
-    "grossMargins": 0.43755,
-    "totalRevenue": 39314001920,
-    "ebitda": 4384000000
+    "priceToBook": 1.0573943,
+    "enterpriseToEbitda": 10.365,
+    "profitMargins": 0.01993,
+    "returnOnEquity": 0.04388,
+    "revenueGrowth": -0.137,
+    "earningsGrowth": null,
+    "grossMargins": 0.43518,
+    "totalRevenue": 37933998080,
+    "ebitda": 3712000000
   }
 }
