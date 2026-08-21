@@ -3,11 +3,11 @@
   "name": "ENDÚR",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 113.8,
-  "previousClose": 117.4,
-  "dayHigh": 114.6,
-  "dayLow": 109,
-  "volume": 437161,
+  "currentPrice": 111.8,
+  "previousClose": 112.4,
+  "dayHigh": 113.6,
+  "dayLow": 110.8,
+  "volume": 130659,
   "fiftyTwoWeekHigh": 126,
   "fiftyTwoWeekLow": 81.1,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-08-20",
       "close": 113.8
+    },
+    {
+      "date": "2026-08-21",
+      "close": 111.8
     }
   ],
   "dividends": [
@@ -10082,23 +10086,23 @@
       "amount": 0.8
     }
   ],
-  "lastUpdated": "2026-08-20T16:27:34.443Z",
+  "lastUpdated": "2026-08-21T16:25:21.910Z",
   "fundamentals": {
-    "trailingPE": 30.673855,
-    "forwardPE": 14.609523,
-    "marketCap": 5829119488,
-    "dividendYield": 0.0072000003,
+    "trailingPE": 28.02005,
+    "forwardPE": 14.481866,
+    "marketCap": 5726674432,
+    "dividendYield": 0.0069999998,
     "dividendRate": 0.8,
-    "payoutRatio": null,
-    "beta": 0.439,
-    "priceToBook": 2.4070394,
-    "enterpriseToEbitda": 11.209,
-    "profitMargins": 0.02471,
-    "returnOnEquity": 0.07832,
-    "revenueGrowth": 1.021,
-    "earningsGrowth": null,
-    "grossMargins": 0.35009998,
-    "totalRevenue": 7298100224,
-    "ebitda": 561000000
+    "payoutRatio": 0.2005,
+    "beta": null,
+    "priceToBook": 2.4014091,
+    "enterpriseToEbitda": 11.097,
+    "profitMargins": 0.02631,
+    "returnOnEquity": 0.085710004,
+    "revenueGrowth": 0.206,
+    "earningsGrowth": 0.525,
+    "grossMargins": 0.35306,
+    "totalRevenue": 7646300160,
+    "ebitda": 608200000
   }
 }

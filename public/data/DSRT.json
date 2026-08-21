@@ -3,12 +3,12 @@
   "name": "DESERT CONTROL AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.307,
-  "previousClose": 0.345,
-  "dayHigh": 0.33,
+  "currentPrice": 0.301,
+  "previousClose": 0.34,
+  "dayHigh": 0.322,
   "dayLow": 0.296,
-  "volume": 3185282,
-  "fiftyTwoWeekHigh": 4.44,
+  "volume": 13558064,
+  "fiftyTwoWeekHigh": 3.75,
   "fiftyTwoWeekLow": 0.296,
   "prices": [
     {
@@ -5394,26 +5394,30 @@
     {
       "date": "2026-08-20",
       "close": 0.31
+    },
+    {
+      "date": "2026-08-21",
+      "close": 0.3
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-20T16:28:28.642Z",
+  "lastUpdated": "2026-08-21T16:26:13.134Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -0.43857145,
-    "marketCap": 37155436,
+    "forwardPE": -0.43,
+    "marketCap": 56842864,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.485,
-    "priceToBook": 0.47303545,
-    "enterpriseToEbitda": 0.381,
+    "beta": null,
+    "priceToBook": 0.46379045,
+    "enterpriseToEbitda": -0.274,
     "profitMargins": null,
-    "returnOnEquity": -1.02391,
-    "revenueGrowth": 2.768,
+    "returnOnEquity": -1.69093,
+    "revenueGrowth": 1.628,
     "earningsGrowth": null,
-    "grossMargins": 0.551,
-    "totalRevenue": 2608000,
-    "ebitda": -67168000
+    "grossMargins": 0.15773,
+    "totalRevenue": 1566000,
+    "ebitda": -70159000
   }
 }
