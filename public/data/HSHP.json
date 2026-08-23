@@ -4,7 +4,7 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 157,
-  "previousClose": 153.4,
+  "previousClose": 50,
   "dayHigh": 158.2,
   "dayLow": 147.6,
   "volume": 280438,
@@ -4392,6 +4392,10 @@
       "close": 142
     },
     {
+      "date": "2026-07-20",
+      "close": 143.2
+    },
+    {
       "date": "2026-07-21",
       "close": 146.8
     },
@@ -4422,6 +4426,10 @@
     {
       "date": "2026-07-30",
       "close": 144.2
+    },
+    {
+      "date": "2026-07-31",
+      "close": 149
     },
     {
       "date": "2026-08-03",
@@ -4499,31 +4507,31 @@
     },
     {
       "date": "2024-05-22",
-      "amount": 0.38
+      "amount": 0.37
     },
     {
       "date": "2024-06-14",
-      "amount": 0.38
+      "amount": 0.37
     },
     {
       "date": "2024-07-18",
-      "amount": 0.47
+      "amount": 0.46
     },
     {
       "date": "2024-08-16",
-      "amount": 0.57
+      "amount": 0.56
     },
     {
       "date": "2024-09-16",
-      "amount": 0.66
+      "amount": 0.65
     },
     {
       "date": "2024-10-17",
-      "amount": 0.94
+      "amount": 0.93
     },
     {
       "date": "2024-11-15",
-      "amount": 0.38
+      "amount": 0.37
     },
     {
       "date": "2024-12-13",
@@ -4543,11 +4551,11 @@
     },
     {
       "date": "2025-04-14",
-      "amount": 0.38
+      "amount": 0.37
     },
     {
       "date": "2025-05-19",
-      "amount": 0.24
+      "amount": 0.23
     },
     {
       "date": "2025-06-17",
@@ -4555,72 +4563,72 @@
     },
     {
       "date": "2025-07-18",
-      "amount": 0.47
+      "amount": 0.46
     },
     {
       "date": "2025-08-18",
-      "amount": 0.38
+      "amount": 0.37
     },
     {
       "date": "2025-09-15",
-      "amount": 0.94
+      "amount": 0.93
     },
     {
       "date": "2025-10-17",
-      "amount": 0.94
+      "amount": 0.93
     },
     {
       "date": "2025-11-14",
-      "amount": 0.66
+      "amount": 0.65
     },
     {
       "date": "2025-12-12",
-      "amount": 0.94
+      "amount": 0.93
     },
     {
       "date": "2026-01-19",
-      "amount": 1.23
+      "amount": 1.21
     },
     {
       "date": "2026-02-19",
-      "amount": 0.57
+      "amount": 0.56
     },
     {
       "date": "2026-03-16",
-      "amount": 0.57
+      "amount": 0.56
     },
     {
       "date": "2026-04-17",
-      "amount": 0.57
+      "amount": 0.56
     },
     {
       "date": "2026-05-18",
-      "amount": 1.41
+      "amount": 1.39
     },
     {
       "date": "2026-06-19",
-      "amount": 2.08
+      "amount": 2.04
     },
     {
       "date": "2026-07-17",
-      "amount": 2.08
+      "amount": 2.04
     },
     {
       "date": "2026-08-20",
       "amount": 2.04
     }
   ],
-  "lastUpdated": "2026-08-21T16:26:43.734Z",
+  "lastUpdated": "2026-08-23T02:20:41.292Z",
   "fundamentals": {
-    "trailingPE": 14.76952,
-    "forwardPE": 11.20108,
+    "trailingPE": 14.881516,
+    "forwardPE": 11.255979,
     "marketCap": 7401764864,
-    "dividendYield": 0.1668,
-    "dividendRate": 25.09,
+    "dividendYield": 0.157,
+    "dividendRate": 24.65,
     "payoutRatio": 1.0088,
     "beta": 0.965,
-    "priceToBook": 4.8704104,
-    "enterpriseToEbitda": 58.991,
+    "priceToBook": 4.8942804,
+    "enterpriseToEbitda": 61.364,
     "profitMargins": 0.31441,
     "returnOnEquity": 0.32619998,
     "revenueGrowth": 0.796,

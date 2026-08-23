@@ -4,33 +4,13 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 8.4,
-  "previousClose": 8.47,
+  "previousClose": 52,
   "dayHigh": 8.46,
   "dayLow": 8.1,
   "volume": 377799,
   "fiftyTwoWeekHigh": 10.1,
   "fiftyTwoWeekLow": 6.51,
   "prices": [
-    {
-      "date": "2016-08-15",
-      "close": 52
-    },
-    {
-      "date": "2016-08-16",
-      "close": 52.5
-    },
-    {
-      "date": "2016-08-17",
-      "close": 52
-    },
-    {
-      "date": "2016-08-18",
-      "close": 53
-    },
-    {
-      "date": "2016-08-19",
-      "close": 52
-    },
     {
       "date": "2016-08-22",
       "close": 54.75
@@ -9980,6 +9960,10 @@
       "close": 8.11
     },
     {
+      "date": "2026-07-20",
+      "close": 8.03
+    },
+    {
       "date": "2026-07-21",
       "close": 8.14
     },
@@ -10010,6 +9994,10 @@
     {
       "date": "2026-07-30",
       "close": 7.84
+    },
+    {
+      "date": "2026-07-31",
+      "close": 7.74
     },
     {
       "date": "2026-08-03",
@@ -10082,7 +10070,7 @@
       "amount": 1.53
     }
   ],
-  "lastUpdated": "2026-08-21T16:25:35.344Z",
+  "lastUpdated": "2026-08-23T02:19:33.439Z",
   "fundamentals": {
     "trailingPE": 93.33333,
     "forwardPE": 9.910568,
@@ -10092,7 +10080,7 @@
     "payoutRatio": null,
     "beta": -0.06,
     "priceToBook": 0.8525322,
-    "enterpriseToEbitda": 13.003,
+    "enterpriseToEbitda": 13.146,
     "profitMargins": 0.0026699998,
     "returnOnEquity": 0.00994,
     "revenueGrowth": -0.033,
