@@ -3,11 +3,11 @@
   "name": "KRAFT BANK ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 13.25,
-  "previousClose": 13.1,
-  "dayHigh": 13.3,
-  "dayLow": 13,
-  "volume": 5828,
+  "currentPrice": 13.05,
+  "previousClose": 14,
+  "dayHigh": 13.5,
+  "dayLow": 13.05,
+  "volume": 26635,
   "fiftyTwoWeekHigh": 15,
   "fiftyTwoWeekLow": 10.6,
   "prices": [
@@ -5726,6 +5726,10 @@
     {
       "date": "2026-08-21",
       "close": 13.25
+    },
+    {
+      "date": "2026-08-24",
+      "close": 13.05
     }
   ],
   "dividends": [
@@ -5750,23 +5754,23 @@
       "amount": 0.5
     }
   ],
-  "lastUpdated": "2026-08-23T02:20:49.761Z",
+  "lastUpdated": "2026-08-24T16:31:23.907Z",
   "fundamentals": {
-    "trailingPE": 8.717105,
-    "forwardPE": 7.361111,
-    "marketCap": 541599872,
-    "dividendYield": 0.092,
+    "trailingPE": 8.585526,
+    "forwardPE": 7.2500005,
+    "marketCap": 533424800,
+    "dividendYield": 0.0951,
     "dividendRate": 1.26,
     "payoutRatio": 0.5,
-    "beta": 0.455,
-    "priceToBook": 1.097854,
+    "beta": null,
+    "priceToBook": 1.0812826,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.35046002,
-    "returnOnEquity": 0.14265001,
-    "revenueGrowth": 0.316,
-    "earningsGrowth": 0.472,
+    "profitMargins": 0.33369,
+    "returnOnEquity": 0.13881999,
+    "revenueGrowth": 0.018,
+    "earningsGrowth": null,
     "grossMargins": null,
-    "totalRevenue": 202728000,
+    "totalRevenue": 203568992,
     "ebitda": null
   }
 }

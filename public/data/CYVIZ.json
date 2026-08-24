@@ -3,11 +3,11 @@
   "name": "CYVIZ AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 22.8,
-  "previousClose": 30,
+  "currentPrice": 23,
+  "previousClose": 23.5,
   "dayHigh": 23.4,
-  "dayLow": 22.8,
-  "volume": 2496,
+  "dayLow": 22.1,
+  "volume": 1840,
   "fiftyTwoWeekHigh": 41.5,
   "fiftyTwoWeekLow": 21.1,
   "prices": [
@@ -5698,19 +5698,23 @@
     {
       "date": "2026-08-21",
       "close": 22.8
+    },
+    {
+      "date": "2026-08-24",
+      "close": 23
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-23T02:20:09.487Z",
+  "lastUpdated": "2026-08-24T16:30:45.748Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 8.260869,
-    "marketCap": 296995584,
+    "forwardPE": 8.333333,
+    "marketCap": 299600832,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.412,
-    "priceToBook": 3.700698,
+    "priceToBook": 3.7331603,
     "enterpriseToEbitda": -15.54,
     "profitMargins": -0.07281,
     "returnOnEquity": -0.47712,

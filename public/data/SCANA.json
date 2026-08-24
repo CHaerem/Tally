@@ -3,11 +3,11 @@
   "name": "SCANA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.46,
-  "previousClose": 2,
-  "dayHigh": 1.5,
-  "dayLow": 1.445,
-  "volume": 186174,
+  "currentPrice": 1.475,
+  "previousClose": 1.455,
+  "dayHigh": 1.575,
+  "dayLow": 1.42,
+  "volume": 1229825,
   "fiftyTwoWeekHigh": 1.98,
   "fiftyTwoWeekLow": 1.318,
   "prices": [
@@ -10058,6 +10058,10 @@
     {
       "date": "2026-08-21",
       "close": 1.46
+    },
+    {
+      "date": "2026-08-24",
+      "close": 1.48
     }
   ],
   "dividends": [
@@ -10066,16 +10070,16 @@
       "amount": 0.05
     }
   ],
-  "lastUpdated": "2026-08-23T02:20:22.240Z",
+  "lastUpdated": "2026-08-24T16:30:57.650Z",
   "fundamentals": {
-    "trailingPE": 20.857143,
-    "forwardPE": 6.636364,
-    "marketCap": 674351296,
+    "trailingPE": 21.071428,
+    "forwardPE": 6.7045455,
+    "marketCap": 681279552,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.546,
-    "priceToBook": 1.0595065,
+    "priceToBook": 1.0703919,
     "enterpriseToEbitda": 14.89,
     "profitMargins": 0.00182,
     "returnOnEquity": 0.00472,
