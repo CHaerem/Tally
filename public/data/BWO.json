@@ -3,11 +3,11 @@
   "name": "BW OFFSHORE LIMITED",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 39.15,
-  "previousClose": 45.05,
-  "dayHigh": 40.45,
-  "dayLow": 38.35,
-  "volume": 709950,
+  "currentPrice": 38.5,
+  "previousClose": 45.45,
+  "dayHigh": 39.95,
+  "dayLow": 38.3,
+  "volume": 242870,
   "fiftyTwoWeekHigh": 54,
   "fiftyTwoWeekLow": 33.9,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-08-24",
       "close": 39.15
+    },
+    {
+      "date": "2026-08-25",
+      "close": 38.5
     }
   ],
   "dividends": [
@@ -10166,23 +10170,23 @@
       "amount": 0.58
     }
   ],
-  "lastUpdated": "2026-08-24T16:29:41.496Z",
+  "lastUpdated": "2026-08-25T16:29:19.922Z",
   "fundamentals": {
-    "trailingPE": 5.6657023,
-    "forwardPE": 11.818464,
-    "marketCap": 7094596096,
-    "dividendYield": 0.0795,
-    "dividendRate": 3.61,
+    "trailingPE": null,
+    "forwardPE": 11.622244,
+    "marketCap": 6976805376,
+    "dividendYield": 0.0912,
+    "dividendRate": 3.57,
     "payoutRatio": 0.44259998,
-    "beta": 0.601,
-    "priceToBook": 0.65690434,
-    "enterpriseToEbitda": 41.071,
-    "profitMargins": 0.26358998,
-    "returnOnEquity": 0.10569,
-    "revenueGrowth": -0.061,
-    "earningsGrowth": -0.341,
-    "grossMargins": 0.68204004,
-    "totalRevenue": 509500000,
-    "ebitda": 233900000
+    "beta": null,
+    "priceToBook": 0.72310525,
+    "enterpriseToEbitda": 43.85,
+    "profitMargins": -0.05905,
+    "returnOnEquity": -0.0255,
+    "revenueGrowth": 0.148,
+    "earningsGrowth": null,
+    "grossMargins": 0.59337,
+    "totalRevenue": 521600000,
+    "ebitda": 195900000
   }
 }

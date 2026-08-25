@@ -3,13 +3,13 @@
   "name": "NORSE ATLANTIC ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.2935,
-  "previousClose": 0.3875,
-  "dayHigh": 0.3,
-  "dayLow": 0.287,
-  "volume": 10106678,
-  "fiftyTwoWeekHigh": 9.85,
-  "fiftyTwoWeekLow": 0.287,
+  "currentPrice": 0.305,
+  "previousClose": 0.3735,
+  "dayHigh": 0.327,
+  "dayLow": 0.288,
+  "volume": 12801818,
+  "fiftyTwoWeekHigh": 9.74,
+  "fiftyTwoWeekLow": 0.288,
   "prices": [
     {
       "date": "2021-04-12",
@@ -5410,26 +5410,30 @@
     {
       "date": "2026-08-24",
       "close": 0.29
+    },
+    {
+      "date": "2026-08-25",
+      "close": 0.31
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-24T16:30:55.854Z",
+  "lastUpdated": "2026-08-25T16:30:35.313Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 6.268496,
-    "marketCap": 868215808,
+    "forwardPE": 6.5002522,
+    "marketCap": 902234496,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
+    "beta": 0.065,
     "priceToBook": null,
-    "enterpriseToEbitda": -13.18,
-    "profitMargins": -0.19429001,
+    "enterpriseToEbitda": -53.697,
+    "profitMargins": -0.18662001,
     "returnOnEquity": null,
     "revenueGrowth": -0.348,
     "earningsGrowth": null,
-    "grossMargins": 0.13081999,
-    "totalRevenue": 698492992,
-    "ebitda": -59694000
+    "grossMargins": 0.16514999,
+    "totalRevenue": 727219008,
+    "ebitda": -29713000
   }
 }

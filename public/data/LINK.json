@@ -3,11 +3,11 @@
   "name": "LINK MOBILITY GROUP HOLDING",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 25.86,
-  "previousClose": 26.72,
-  "dayHigh": 25.88,
-  "dayLow": 24.76,
-  "volume": 1247298,
+  "currentPrice": 25.7,
+  "previousClose": 26.18,
+  "dayHigh": 26.24,
+  "dayLow": 25.6,
+  "volume": 830635,
   "fiftyTwoWeekHigh": 36,
   "fiftyTwoWeekLow": 19.79,
   "prices": [
@@ -5874,26 +5874,30 @@
     {
       "date": "2026-08-24",
       "close": 25.86
+    },
+    {
+      "date": "2026-08-25",
+      "close": 25.7
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-24T16:29:40.137Z",
+  "lastUpdated": "2026-08-25T16:29:18.581Z",
   "fundamentals": {
-    "trailingPE": 58.772728,
-    "forwardPE": 15.0348835,
-    "marketCap": 7300780544,
+    "trailingPE": 61.19048,
+    "forwardPE": 14.94186,
+    "marketCap": 7255609344,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 1.155,
-    "priceToBook": 1.468067,
-    "enterpriseToEbitda": 11.074,
-    "profitMargins": 0.0175,
-    "returnOnEquity": 0.024719998,
-    "revenueGrowth": 0.215,
-    "earningsGrowth": 1.131,
-    "grossMargins": 0.17701,
-    "totalRevenue": 7437203968,
-    "ebitda": 844412992
+    "priceToBook": 1.3834312,
+    "enterpriseToEbitda": 10.453,
+    "profitMargins": 0.03041,
+    "returnOnEquity": 0.03325,
+    "revenueGrowth": 0.166,
+    "earningsGrowth": null,
+    "grossMargins": 0.17928,
+    "totalRevenue": 7729355776,
+    "ebitda": 904798016
   }
 }
