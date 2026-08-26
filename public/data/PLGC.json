@@ -3,11 +3,11 @@
   "name": "PELAGIC CREDIT PLC",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 17,
-  "previousClose": 17.2,
+  "currentPrice": 16.5,
+  "previousClose": 17,
   "dayHigh": 17,
-  "dayLow": 17,
-  "volume": 85015,
+  "dayLow": 16.5,
+  "volume": 175,
   "fiftyTwoWeekHigh": 20,
   "fiftyTwoWeekLow": 14.6,
   "prices": [
@@ -466,6 +466,18 @@
     {
       "date": "2026-08-21",
       "close": 17
+    },
+    {
+      "date": "2026-08-24",
+      "close": 17
+    },
+    {
+      "date": "2026-08-25",
+      "close": 17
+    },
+    {
+      "date": "2026-08-26",
+      "close": 16.5
     }
   ],
   "dividends": [
@@ -474,16 +486,16 @@
       "amount": 0.38
     }
   ],
-  "lastUpdated": "2026-08-25T16:31:18.293Z",
+  "lastUpdated": "2026-08-26T16:45:50.610Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 9.610726,
-    "marketCap": 629000000,
+    "forwardPE": 9.334832,
+    "marketCap": 610499968,
     "dividendYield": 0.0224,
     "dividendRate": 0.38,
     "payoutRatio": null,
     "beta": null,
-    "priceToBook": 0.90015125,
+    "priceToBook": 0.8736762,
     "enterpriseToEbitda": null,
     "profitMargins": 0.37515998,
     "returnOnEquity": null,

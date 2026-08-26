@@ -3,11 +3,11 @@
   "name": "OBSERVE MEDICAL",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.998,
-  "previousClose": 0.918,
-  "dayHigh": 1.165,
-  "dayLow": 0.97,
-  "volume": 1214198,
+  "currentPrice": 0.98,
+  "previousClose": 0.99,
+  "dayHigh": 1.01,
+  "dayLow": 0.928,
+  "volume": 355402,
   "fiftyTwoWeekHigh": 1.39,
   "fiftyTwoWeekLow": 0.525,
   "prices": [
@@ -6838,26 +6838,30 @@
     {
       "date": "2026-08-25",
       "close": 1
+    },
+    {
+      "date": "2026-08-26",
+      "close": 0.98
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-25T16:31:14.682Z",
+  "lastUpdated": "2026-08-26T16:45:46.790Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 135876128,
+    "marketCap": 133425448,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.047,
-    "priceToBook": 4.5363636,
-    "enterpriseToEbitda": -5.904,
-    "profitMargins": -2.5856698,
-    "returnOnEquity": -1.90387,
-    "revenueGrowth": 0.426,
+    "beta": null,
+    "priceToBook": 4.4545455,
+    "enterpriseToEbitda": -5.763,
+    "profitMargins": -1.09681,
+    "returnOnEquity": -1.45473,
+    "revenueGrowth": 0.274,
     "earningsGrowth": null,
-    "grossMargins": 0.2498,
-    "totalRevenue": 18811000,
-    "ebitda": -28624000
+    "grossMargins": 0.2734,
+    "totalRevenue": 21909000,
+    "ebitda": -30058000
   }
 }

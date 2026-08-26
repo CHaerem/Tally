@@ -3,11 +3,11 @@
   "name": "SPAREBANK 68 GRADER NORD",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 218.2,
+  "currentPrice": 215,
   "previousClose": 210,
-  "dayHigh": 218.2,
-  "dayLow": 218.15,
-  "volume": 102,
+  "dayHigh": 215,
+  "dayLow": 215,
+  "volume": 25,
   "fiftyTwoWeekHigh": 232.75,
   "fiftyTwoWeekLow": 180.04,
   "prices": [
@@ -5062,6 +5062,14 @@
     {
       "date": "2026-08-24",
       "close": 218.2
+    },
+    {
+      "date": "2026-08-25",
+      "close": 218.2
+    },
+    {
+      "date": "2026-08-26",
+      "close": 215
     }
   ],
   "dividends": [
@@ -5090,16 +5098,16 @@
       "amount": 13.5
     }
   ],
-  "lastUpdated": "2026-08-25T16:31:26.535Z",
+  "lastUpdated": "2026-08-26T16:45:59.264Z",
   "fundamentals": {
-    "trailingPE": 18.382477,
-    "forwardPE": 11.10998,
-    "marketCap": 650254528,
+    "trailingPE": 17.437145,
+    "forwardPE": 10.947047,
+    "marketCap": 640718272,
     "dividendYield": 0.0619,
     "dividendRate": 13.5,
     "payoutRatio": 1.0949,
     "beta": null,
-    "priceToBook": 0.39673087,
+    "priceToBook": 0.39091265,
     "enterpriseToEbitda": null,
     "profitMargins": 0.39731997,
     "returnOnEquity": 0.09455,

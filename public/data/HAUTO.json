@@ -3,11 +3,11 @@
   "name": "HOEGH AUTOLINERS ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 174,
-  "previousClose": 192.3,
-  "dayHigh": 175.7,
-  "dayLow": 170.5,
-  "volume": 535719,
+  "currentPrice": 169.5,
+  "previousClose": 169.5,
+  "dayHigh": 174.1,
+  "dayLow": 167.5,
+  "volume": 9433813,
   "fiftyTwoWeekHigh": 195.9,
   "fiftyTwoWeekLow": 84,
   "prices": [
@@ -4766,6 +4766,10 @@
     {
       "date": "2026-08-25",
       "close": 174
+    },
+    {
+      "date": "2026-08-26",
+      "close": 169.5
     }
   ],
   "dividends": [
@@ -4838,23 +4842,23 @@
       "amount": 0.79
     }
   ],
-  "lastUpdated": "2026-08-25T16:29:12.739Z",
+  "lastUpdated": "2026-08-26T16:43:35.405Z",
   "fundamentals": {
-    "trailingPE": 8.516887,
-    "forwardPE": 9.299497,
-    "marketCap": 33193854976,
-    "dividendYield": 0.018,
+    "trailingPE": 8.200291,
+    "forwardPE": 9.065571,
+    "marketCap": 32335392768,
+    "dividendYield": 0.018099999,
     "dividendRate": 3.15,
     "payoutRatio": 0.8536,
-    "beta": null,
-    "priceToBook": 2.8000054,
-    "enterpriseToEbitda": 62.786,
+    "beta": 0.248,
+    "priceToBook": 2.7275915,
+    "enterpriseToEbitda": 63.323,
     "profitMargins": 0.28951,
     "returnOnEquity": 0.34216,
     "revenueGrowth": 0.023,
     "earningsGrowth": -0.297,
     "grossMargins": 0.40486,
     "totalRevenue": 1464556032,
-    "ebitda": 543134016
+    "ebitda": 536148992
   }
 }

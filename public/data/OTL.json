@@ -3,11 +3,11 @@
   "name": "ODFJELL TECHNOLOGY LTD",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 58.9,
-  "previousClose": 59.7,
-  "dayHigh": 59.4,
-  "dayLow": 58.5,
-  "volume": 49130,
+  "currentPrice": 58,
+  "previousClose": 62.6,
+  "dayHigh": 58.9,
+  "dayLow": 57.6,
+  "volume": 46322,
   "fiftyTwoWeekHigh": 75.4,
   "fiftyTwoWeekLow": 52.6,
   "prices": [
@@ -4430,6 +4430,10 @@
     {
       "date": "2026-08-25",
       "close": 58.9
+    },
+    {
+      "date": "2026-08-26",
+      "close": 58
     }
   ],
   "dividends": [
@@ -4482,23 +4486,23 @@
       "amount": 1.52
     }
   ],
-  "lastUpdated": "2026-08-25T16:31:17.868Z",
+  "lastUpdated": "2026-08-26T16:45:50.146Z",
   "fundamentals": {
-    "trailingPE": 7.5416136,
-    "forwardPE": 5.219318,
-    "marketCap": 2324421888,
-    "dividendYield": 0.1029,
+    "trailingPE": 7.712766,
+    "forwardPE": 5.139566,
+    "marketCap": 2288904448,
+    "dividendYield": 0.103199996,
     "dividendRate": 6.08,
     "payoutRatio": 0.6064,
-    "beta": null,
-    "priceToBook": 1.8234167,
-    "enterpriseToEbitda": 5.555,
+    "beta": 0.751,
+    "priceToBook": 1.7955545,
+    "enterpriseToEbitda": 5.656,
     "profitMargins": 0.05368,
     "returnOnEquity": 0.2387,
     "revenueGrowth": 0.015,
     "earningsGrowth": 0.04,
     "grossMargins": 1,
     "totalRevenue": 5598499840,
-    "ebitda": 686400000
+    "ebitda": 672600000
   }
 }

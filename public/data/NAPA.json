@@ -3,11 +3,11 @@
   "name": "NAPATECH",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 40.25,
-  "previousClose": 41.3,
-  "dayHigh": 43.15,
-  "dayLow": 36.2,
-  "volume": 900411,
+  "currentPrice": 40.75,
+  "previousClose": 42.45,
+  "dayHigh": 42.6,
+  "dayLow": 38.75,
+  "volume": 446212,
   "fiftyTwoWeekHigh": 60,
   "fiftyTwoWeekLow": 20.4,
   "prices": [
@@ -10066,26 +10066,30 @@
     {
       "date": "2026-08-25",
       "close": 40.25
+    },
+    {
+      "date": "2026-08-26",
+      "close": 40.75
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-25T16:29:46.961Z",
+  "lastUpdated": "2026-08-26T16:44:12.675Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 28.825155,
-    "marketCap": 4442758144,
+    "forwardPE": 28.63866,
+    "marketCap": 4497947648,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.699,
-    "priceToBook": 16.270975,
-    "enterpriseToEbitda": -67.185,
-    "profitMargins": -0.40957,
-    "returnOnEquity": -0.42714,
-    "revenueGrowth": 0.534,
+    "beta": null,
+    "priceToBook": 16.473099,
+    "enterpriseToEbitda": -80.432,
+    "profitMargins": -0.26792,
+    "returnOnEquity": -0.23815,
+    "revenueGrowth": 0.523,
     "earningsGrowth": null,
-    "grossMargins": 0.67999,
-    "totalRevenue": 159348000,
-    "ebitda": -66914000
+    "grossMargins": 0.68195,
+    "totalRevenue": 175864000,
+    "ebitda": -53893000
   }
 }

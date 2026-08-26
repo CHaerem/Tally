@@ -3,11 +3,11 @@
   "name": "KONGSBERG AUTOMOTIVE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.02,
-  "previousClose": 2.05,
-  "dayHigh": 2.035,
-  "dayLow": 1.996,
-  "volume": 1505282,
+  "currentPrice": 2.01,
+  "previousClose": 2.015,
+  "dayHigh": 2.03,
+  "dayLow": 2,
+  "volume": 1660367,
   "fiftyTwoWeekHigh": 2.395,
   "fiftyTwoWeekLow": 1.57,
   "prices": [
@@ -10066,20 +10066,24 @@
     {
       "date": "2026-08-25",
       "close": 2.02
+    },
+    {
+      "date": "2026-08-26",
+      "close": 2.01
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-25T16:29:44.088Z",
+  "lastUpdated": "2026-08-26T16:44:09.581Z",
   "fundamentals": {
-    "trailingPE": 18.363636,
-    "forwardPE": 9.204573,
-    "marketCap": 1885059584,
+    "trailingPE": 18.272728,
+    "forwardPE": 9.176105,
+    "marketCap": 1875727616,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.715,
-    "priceToBook": 0.48495042,
-    "enterpriseToEbitda": 23.394,
+    "priceToBook": 0.48254967,
+    "enterpriseToEbitda": 23.693,
     "profitMargins": 0.02089,
     "returnOnEquity": 0.07912,
     "revenueGrowth": 0.006,

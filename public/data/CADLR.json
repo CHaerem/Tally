@@ -3,11 +3,11 @@
   "name": "CADELER A/S",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 60.4,
-  "previousClose": 55.05,
-  "dayHigh": 61.15,
-  "dayLow": 57.6,
-  "volume": 944595,
+  "currentPrice": 59.65,
+  "previousClose": 56.3,
+  "dayHigh": 60.85,
+  "dayLow": 59.05,
+  "volume": 1376260,
   "fiftyTwoWeekHigh": 69.1,
   "fiftyTwoWeekLow": 39.64,
   "prices": [
@@ -5770,26 +5770,30 @@
     {
       "date": "2026-08-25",
       "close": 60.4
+    },
+    {
+      "date": "2026-08-26",
+      "close": 59.65
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-25T16:29:15.431Z",
+  "lastUpdated": "2026-08-26T16:43:38.262Z",
   "fundamentals": {
-    "trailingPE": 7.374848,
-    "forwardPE": 4.4079823,
-    "marketCap": 23307397120,
+    "trailingPE": 10.16184,
+    "forwardPE": 4.4317193,
+    "marketCap": 23017984000,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.708,
-    "priceToBook": 1.1614927,
-    "enterpriseToEbitda": 47.863,
-    "profitMargins": 0.39925998,
-    "returnOnEquity": 0.18666,
-    "revenueGrowth": 0.905,
-    "earningsGrowth": null,
-    "grossMargins": 0.56808996,
-    "totalRevenue": 679606976,
-    "ebitda": 446214016
+    "beta": null,
+    "priceToBook": 1.1470702,
+    "enterpriseToEbitda": 59.507,
+    "profitMargins": 0.2747,
+    "returnOnEquity": 0.12743,
+    "revenueGrowth": 0.213,
+    "earningsGrowth": -0.279,
+    "grossMargins": 0.47027,
+    "totalRevenue": 729347968,
+    "ebitda": 409276000
   }
 }

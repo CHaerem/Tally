@@ -3,11 +3,11 @@
   "name": "IDEX BIOMETRICS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 7.52,
-  "previousClose": 8.1,
-  "dayHigh": 7.72,
-  "dayLow": 7.54,
-  "volume": 47391,
+  "currentPrice": 7.4,
+  "previousClose": 7.5,
+  "dayHigh": 7.7,
+  "dayLow": 7.28,
+  "volume": 262995,
   "fiftyTwoWeekHigh": 12.8,
   "fiftyTwoWeekLow": 2.49,
   "prices": [
@@ -10066,26 +10066,30 @@
     {
       "date": "2026-08-25",
       "close": 7.52
+    },
+    {
+      "date": "2026-08-26",
+      "close": 7.4
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-25T16:29:41.861Z",
+  "lastUpdated": "2026-08-26T16:44:07.236Z",
   "fundamentals": {
-    "trailingPE": 150.4,
+    "trailingPE": 148,
     "forwardPE": null,
-    "marketCap": 581363136,
+    "marketCap": 572086080,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": null,
-    "enterpriseToEbitda": null,
+    "beta": 1.101,
+    "priceToBook": 34.584385,
+    "enterpriseToEbitda": -6.782,
     "profitMargins": null,
-    "returnOnEquity": null,
-    "revenueGrowth": 0.994,
+    "returnOnEquity": -1.8559101,
+    "revenueGrowth": 0.973,
     "earningsGrowth": null,
-    "grossMargins": -0.65325,
-    "totalRevenue": 4046508,
-    "ebitda": -81819576
+    "grossMargins": -1.1397899,
+    "totalRevenue": 3099101,
+    "ebitda": -81523656
   }
 }
