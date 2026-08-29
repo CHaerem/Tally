@@ -3,11 +3,11 @@
   "name": "EAM SOLAR AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.792,
-  "previousClose": 0.762,
-  "dayHigh": 0.81,
-  "dayLow": 0.76,
-  "volume": 1355451,
+  "currentPrice": 0.682,
+  "previousClose": 0.78,
+  "dayHigh": 0.854,
+  "dayLow": 0.682,
+  "volume": 5403360,
   "fiftyTwoWeekHigh": 5.42,
   "fiftyTwoWeekLow": 0.544,
   "prices": [
@@ -10070,26 +10070,30 @@
     {
       "date": "2026-08-26",
       "close": 0.77
+    },
+    {
+      "date": "2026-08-27",
+      "close": 0.79
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-28T00:43:37.775Z",
+  "lastUpdated": "2026-08-29T00:20:09.468Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 43985492,
+    "marketCap": 37876392,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": -0.013,
-    "priceToBook": 0.43203667,
-    "enterpriseToEbitda": 55.039,
-    "profitMargins": 1.11642,
-    "returnOnEquity": 0.64308,
-    "revenueGrowth": -0.063,
+    "beta": null,
+    "priceToBook": 0.37203157,
+    "enterpriseToEbitda": 7.007,
+    "profitMargins": 1.33975,
+    "returnOnEquity": 0.7028,
+    "revenueGrowth": -0.094,
     "earningsGrowth": null,
-    "grossMargins": 0.84300005,
-    "totalRevenue": 1203880,
-    "ebitda": 326629
+    "grossMargins": 0.82917,
+    "totalRevenue": 1169896,
+    "ebitda": 3015675
   }
 }

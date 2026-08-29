@@ -3,11 +3,11 @@
   "name": "FJORD DEFENCE GROUP ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 15.55,
-  "previousClose": 15.95,
-  "dayHigh": 16.3,
-  "dayLow": 15.55,
-  "volume": 1262796,
+  "currentPrice": 15,
+  "previousClose": 16.1,
+  "dayHigh": 15.9,
+  "dayLow": 14.95,
+  "volume": 765925,
   "fiftyTwoWeekHigh": 20.6,
   "fiftyTwoWeekLow": 11.56,
   "prices": [
@@ -9730,6 +9730,10 @@
     {
       "date": "2026-08-26",
       "close": 16.7
+    },
+    {
+      "date": "2026-08-27",
+      "close": 15.55
     }
   ],
   "dividends": [
@@ -9742,23 +9746,23 @@
       "amount": 6015.95
     }
   ],
-  "lastUpdated": "2026-08-28T00:44:33.155Z",
+  "lastUpdated": "2026-08-29T00:20:58.494Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 11.961539,
-    "marketCap": 1555748224,
+    "forwardPE": 11.538462,
+    "marketCap": 1737216896,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.825,
-    "priceToBook": 1.2029086,
-    "enterpriseToEbitda": -26.36,
-    "profitMargins": -1.612,
-    "returnOnEquity": -0.23369,
-    "revenueGrowth": null,
+    "beta": null,
+    "priceToBook": 1.160362,
+    "enterpriseToEbitda": -26.997,
+    "profitMargins": -1.20945,
+    "returnOnEquity": -0.15262,
+    "revenueGrowth": 3.451,
     "earningsGrowth": null,
-    "grossMargins": 0.30909002,
-    "totalRevenue": 72817000,
-    "ebitda": -40926000
+    "grossMargins": 0.37562,
+    "totalRevenue": 116562000,
+    "ebitda": -29898000
   }
 }
