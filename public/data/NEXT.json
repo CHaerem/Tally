@@ -3,11 +3,11 @@
   "name": "NEXT BIOMETRICS GROUP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.262,
-  "previousClose": 1154.263,
-  "dayHigh": 0.29,
-  "dayLow": 0.255,
-  "volume": 365866,
+  "currentPrice": 0.264,
+  "previousClose": 0.272,
+  "dayHigh": 0.264,
+  "dayLow": 0.251,
+  "volume": 202713,
   "fiftyTwoWeekHigh": 39.4,
   "fiftyTwoWeekLow": 0.212,
   "prices": [
@@ -10054,26 +10054,34 @@
     {
       "date": "2026-08-27",
       "close": 0.27
+    },
+    {
+      "date": "2026-08-28",
+      "close": 0.26
+    },
+    {
+      "date": "2026-08-31",
+      "close": 0.26
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-30T06:06:08.860Z",
+  "lastUpdated": "2026-08-31T21:16:37.155Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -1.048,
-    "marketCap": 16240342,
+    "forwardPE": -1.056,
+    "marketCap": 16364314,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 0.46869406,
-    "enterpriseToEbitda": 0.075,
+    "beta": 0.716,
+    "priceToBook": 0.4722719,
+    "enterpriseToEbitda": -0.044,
     "profitMargins": null,
-    "returnOnEquity": -2.7916698,
-    "revenueGrowth": 1.008,
+    "returnOnEquity": -2.71944,
+    "revenueGrowth": -0.502,
     "earningsGrowth": null,
-    "grossMargins": -0.94573,
-    "totalRevenue": 13156000,
-    "ebitda": -102368000
+    "grossMargins": -1.4805901,
+    "totalRevenue": 10071000,
+    "ebitda": -99734000
   }
 }

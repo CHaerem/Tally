@@ -3,11 +3,11 @@
   "name": "SPAREBANKEN MØRE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 111.7,
-  "previousClose": 38,
-  "dayHigh": 112.24,
-  "dayLow": 111,
-  "volume": 6671,
+  "currentPrice": 111.68,
+  "previousClose": 111,
+  "dayHigh": 112.3,
+  "dayLow": 111.02,
+  "volume": 4132,
   "fiftyTwoWeekHigh": 123.66,
   "fiftyTwoWeekLow": 98.8,
   "prices": [
@@ -10050,6 +10050,14 @@
     {
       "date": "2026-08-27",
       "close": 111.28
+    },
+    {
+      "date": "2026-08-28",
+      "close": 111.7
+    },
+    {
+      "date": "2026-08-31",
+      "close": 111.68
     }
   ],
   "dividends": [
@@ -10098,16 +10106,16 @@
       "amount": 7
     }
   ],
-  "lastUpdated": "2026-08-30T06:06:54.326Z",
+  "lastUpdated": "2026-08-31T21:17:25.619Z",
   "fundamentals": {
-    "trailingPE": 5.6700506,
-    "forwardPE": 11.491769,
-    "marketCap": 5538019328,
-    "dividendYield": 0.0629,
+    "trailingPE": 5.6921506,
+    "forwardPE": 11.489712,
+    "marketCap": 5537028096,
+    "dividendYield": 0.0627,
     "dividendRate": 7,
     "payoutRatio": 0.3554,
     "beta": 0.179,
-    "priceToBook": 0.6614125,
+    "priceToBook": 0.66129404,
     "enterpriseToEbitda": null,
     "profitMargins": 0.44185,
     "returnOnEquity": 0.11585,

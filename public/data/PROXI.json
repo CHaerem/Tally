@@ -3,11 +3,11 @@
   "name": "PROXIMAR SEAFOOD AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.447,
-  "previousClose": 17.729,
-  "dayHigh": 0.45,
-  "dayLow": 0.435,
-  "volume": 110355,
+  "currentPrice": 0.45,
+  "previousClose": 0.45,
+  "dayHigh": 0.455,
+  "dayLow": 0.44,
+  "volume": 82473,
   "fiftyTwoWeekHigh": 1.15,
   "fiftyTwoWeekLow": 0.415,
   "prices": [
@@ -5602,26 +5602,34 @@
     {
       "date": "2026-08-27",
       "close": 0.44
+    },
+    {
+      "date": "2026-08-28",
+      "close": 0.45
+    },
+    {
+      "date": "2026-08-31",
+      "close": 0.45
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-30T06:06:57.008Z",
+  "lastUpdated": "2026-08-31T21:17:28.255Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 4.933775,
-    "marketCap": 233947408,
+    "forwardPE": 4.9668875,
+    "marketCap": 235517520,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": -0.303,
-    "priceToBook": 0.54512197,
-    "enterpriseToEbitda": -12.274,
-    "profitMargins": -2.15199,
-    "returnOnEquity": -0.64818,
-    "revenueGrowth": 0.192,
+    "beta": null,
+    "priceToBook": 0.5487805,
+    "enterpriseToEbitda": -18.406,
+    "profitMargins": -1.523,
+    "returnOnEquity": -0.88994,
+    "revenueGrowth": 0.907,
     "earningsGrowth": null,
-    "grossMargins": 0.55226004,
-    "totalRevenue": 104873000,
-    "ebitda": -96290000
+    "grossMargins": 0.52024,
+    "totalRevenue": 151054000,
+    "ebitda": -65760000
   }
 }

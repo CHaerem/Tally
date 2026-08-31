@@ -3,11 +3,11 @@
   "name": "NORDIC FINANCIALS ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.41,
-  "previousClose": 43.009,
-  "dayHigh": 1.56,
+  "currentPrice": 1.42,
+  "previousClose": 1.53,
+  "dayHigh": 1.42,
   "dayLow": 1.4,
-  "volume": 191429,
+  "volume": 1659,
   "fiftyTwoWeekHigh": 2.328,
   "fiftyTwoWeekLow": 1.4,
   "prices": [
@@ -10050,6 +10050,14 @@
     {
       "date": "2026-08-27",
       "close": 1.5
+    },
+    {
+      "date": "2026-08-28",
+      "close": 1.41
+    },
+    {
+      "date": "2026-08-31",
+      "close": 1.42
     }
   ],
   "dividends": [
@@ -10070,23 +10078,23 @@
       "amount": 12.23
     }
   ],
-  "lastUpdated": "2026-08-30T06:07:31.458Z",
+  "lastUpdated": "2026-08-31T21:18:04.730Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 27768610,
+    "marketCap": 27965550,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": -0.473,
-    "priceToBook": 1.0262009,
+    "beta": null,
+    "priceToBook": 1.0334789,
     "enterpriseToEbitda": null,
     "profitMargins": null,
-    "returnOnEquity": -0.9239,
+    "returnOnEquity": -0.69272006,
     "revenueGrowth": null,
     "earningsGrowth": null,
     "grossMargins": 1,
-    "totalRevenue": 1431000,
+    "totalRevenue": 1080000,
     "ebitda": null
   }
 }

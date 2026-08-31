@@ -3,11 +3,11 @@
   "name": "VENTURA OFFSHORE HOLDING LTD.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 29,
-  "previousClose": 28.645,
-  "dayHigh": 30.7,
-  "dayLow": 28.8,
-  "volume": 285034,
+  "currentPrice": 30,
+  "previousClose": 29,
+  "dayHigh": 30.2,
+  "dayLow": 29.5,
+  "volume": 130237,
   "fiftyTwoWeekHigh": 34.9,
   "fiftyTwoWeekLow": 17.5,
   "prices": [
@@ -2242,26 +2242,34 @@
     {
       "date": "2026-08-27",
       "close": 29
+    },
+    {
+      "date": "2026-08-28",
+      "close": 29
+    },
+    {
+      "date": "2026-08-31",
+      "close": 30
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-30T06:07:58.790Z",
+  "lastUpdated": "2026-08-31T21:18:35.419Z",
   "fundamentals": {
-    "trailingPE": 3.3799534,
-    "forwardPE": 4.0394363,
-    "marketCap": 3072114176,
+    "trailingPE": 3.4883718,
+    "forwardPE": 4.178727,
+    "marketCap": 3178049280,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.327,
-    "priceToBook": 0.86954594,
-    "enterpriseToEbitda": 19.05,
-    "profitMargins": 0.32224998,
-    "returnOnEquity": 0.28189,
-    "revenueGrowth": 0.004,
-    "earningsGrowth": 0.146,
+    "beta": null,
+    "priceToBook": 0.8995303,
+    "enterpriseToEbitda": 19.636,
+    "profitMargins": 0.27241,
+    "returnOnEquity": 0.25539,
+    "revenueGrowth": 0.494,
+    "earningsGrowth": -0.108,
     "grossMargins": 1,
-    "totalRevenue": 309767008,
-    "ebitda": 166432000
+    "totalRevenue": 352968992,
+    "ebitda": 161000992
   }
 }

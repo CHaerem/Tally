@@ -3,11 +3,11 @@
   "name": "PROSAFE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 5.44,
-  "previousClose": 33553.96,
-  "dayHigh": 5.62,
-  "dayLow": 5.17,
-  "volume": 2784315,
+  "currentPrice": 5.35,
+  "previousClose": 5.33,
+  "dayHigh": 5.49,
+  "dayLow": 5.35,
+  "volume": 1152583,
   "fiftyTwoWeekHigh": 6.4,
   "fiftyTwoWeekLow": 2.91,
   "prices": [
@@ -10054,26 +10054,34 @@
     {
       "date": "2026-08-27",
       "close": 5.36
+    },
+    {
+      "date": "2026-08-28",
+      "close": 5.44
+    },
+    {
+      "date": "2026-08-31",
+      "close": 5.35
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-30T06:06:56.568Z",
+  "lastUpdated": "2026-08-31T21:17:27.813Z",
   "fundamentals": {
-    "trailingPE": 0.34738186,
-    "forwardPE": 17.892113,
-    "marketCap": null,
+    "trailingPE": 0.3405474,
+    "forwardPE": 17.49258,
+    "marketCap": 1886077952,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.473,
-    "priceToBook": 1.4618912,
-    "enterpriseToEbitda": 42.51,
-    "profitMargins": 0.77005994,
-    "returnOnEquity": 2.75595,
-    "revenueGrowth": 0.458,
+    "beta": null,
+    "priceToBook": 1.4273853,
+    "enterpriseToEbitda": 34.03,
+    "profitMargins": 0.79652,
+    "returnOnEquity": 4.16249,
+    "revenueGrowth": 0.505,
     "earningsGrowth": null,
-    "grossMargins": 0.83849996,
-    "totalRevenue": 203100000,
-    "ebitda": 49400000
+    "grossMargins": 0.80887,
+    "totalRevenue": 218700000,
+    "ebitda": 56000000
   }
 }

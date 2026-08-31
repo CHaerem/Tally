@@ -3,11 +3,11 @@
   "name": "SPAREBANK 1 NORD-NORGE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 171.18,
-  "previousClose": 41.6,
-  "dayHigh": 171.78,
-  "dayLow": 170.22,
-  "volume": 35866,
+  "currentPrice": 170.4,
+  "previousClose": 170.22,
+  "dayHigh": 171.98,
+  "dayLow": 169.78,
+  "volume": 84045,
   "fiftyTwoWeekHigh": 172,
   "fiftyTwoWeekLow": 134,
   "prices": [
@@ -10050,6 +10050,14 @@
     {
       "date": "2026-08-27",
       "close": 170.62
+    },
+    {
+      "date": "2026-08-28",
+      "close": 171.18
+    },
+    {
+      "date": "2026-08-31",
+      "close": 170.4
     }
   ],
   "dividends": [
@@ -10102,16 +10110,16 @@
       "amount": 8.5
     }
   ],
-  "lastUpdated": "2026-08-30T06:07:32.887Z",
+  "lastUpdated": "2026-08-31T21:18:07.370Z",
   "fundamentals": {
-    "trailingPE": 11.904033,
-    "forwardPE": 11.015444,
-    "marketCap": 17186131968,
-    "dividendYield": 0.0498,
+    "trailingPE": 11.849791,
+    "forwardPE": 10.965251,
+    "marketCap": 17107821568,
+    "dividendYield": 0.0497,
     "dividendRate": 8.5,
     "payoutRatio": 0.5911,
     "beta": 0.351,
-    "priceToBook": 0.91698,
+    "priceToBook": 0.91280174,
     "enterpriseToEbitda": null,
     "profitMargins": 0.52025,
     "returnOnEquity": 0.16409999,

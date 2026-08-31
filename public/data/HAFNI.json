@@ -3,11 +3,11 @@
   "name": "HAFNIA LIMITED",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 77.65,
-  "previousClose": 25.45,
-  "dayHigh": 79.45,
-  "dayLow": 76,
-  "volume": 1194574,
+  "currentPrice": 78.9,
+  "previousClose": 76.1,
+  "dayHigh": 79.9,
+  "dayLow": 77.9,
+  "volume": 1025118,
   "fiftyTwoWeekHigh": 86.7,
   "fiftyTwoWeekLow": 51.7,
   "prices": [
@@ -6834,6 +6834,14 @@
     {
       "date": "2026-08-27",
       "close": 76.65
+    },
+    {
+      "date": "2026-08-28",
+      "close": 77.65
+    },
+    {
+      "date": "2026-08-31",
+      "close": 78.9
     }
   ],
   "dividends": [
@@ -6918,23 +6926,23 @@
       "amount": 2.69
     }
   ],
-  "lastUpdated": "2026-08-30T06:05:31.344Z",
+  "lastUpdated": "2026-08-31T21:15:55.228Z",
   "fundamentals": {
-    "trailingPE": 9.255065,
-    "forwardPE": 12.658538,
-    "marketCap": 38808018944,
-    "dividendYield": 0.0936,
+    "trailingPE": 6.4884872,
+    "forwardPE": 12.862313,
+    "marketCap": 39432744960,
+    "dividendYield": 0.0924,
     "dividendRate": 7.17,
-    "payoutRatio": 0.6063,
-    "beta": -0.155,
-    "priceToBook": 1.6398821,
-    "enterpriseToEbitda": 69.992,
-    "profitMargins": 0.18968001,
-    "returnOnEquity": 0.18931,
-    "revenueGrowth": 0.225,
-    "earningsGrowth": 1.841,
-    "grossMargins": 0.29339,
-    "totalRevenue": 2405221120,
-    "ebitda": 565675008
+    "payoutRatio": 0.56299996,
+    "beta": null,
+    "priceToBook": 1.6609093,
+    "enterpriseToEbitda": null,
+    "profitMargins": 0.32746,
+    "returnOnEquity": null,
+    "revenueGrowth": -0.087,
+    "earningsGrowth": null,
+    "grossMargins": 0.38426998,
+    "totalRevenue": 2098444032,
+    "ebitda": 791992000
   }
 }

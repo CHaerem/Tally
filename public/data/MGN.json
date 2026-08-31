@@ -3,11 +3,11 @@
   "name": "MAGNORA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 22.3,
-  "previousClose": 20.8,
-  "dayHigh": 22.65,
-  "dayLow": 22.15,
-  "volume": 291142,
+  "currentPrice": 22.6,
+  "previousClose": 23.25,
+  "dayHigh": 23.15,
+  "dayLow": 22.2,
+  "volume": 831191,
   "fiftyTwoWeekHigh": 33.7,
   "fiftyTwoWeekLow": 18.42,
   "prices": [
@@ -10054,6 +10054,14 @@
     {
       "date": "2026-08-27",
       "close": 22.25
+    },
+    {
+      "date": "2026-08-28",
+      "close": 22.3
+    },
+    {
+      "date": "2026-08-31",
+      "close": 22.6
     }
   ],
   "dividends": [
@@ -10106,23 +10114,23 @@
       "amount": 0.19
     }
   ],
-  "lastUpdated": "2026-08-30T06:06:06.744Z",
+  "lastUpdated": "2026-08-31T21:16:35.051Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 13.589569,
-    "marketCap": 2202979584,
+    "forwardPE": 13.772389,
+    "marketCap": 2239844352,
     "dividendYield": 0.0318,
     "dividendRate": 0.75,
     "payoutRatio": 1.8507,
-    "beta": null,
-    "priceToBook": 4.354618,
-    "enterpriseToEbitda": -14.426,
-    "profitMargins": -1.17806,
-    "returnOnEquity": -0.12336001,
-    "revenueGrowth": null,
+    "beta": 0.285,
+    "priceToBook": 4.413201,
+    "enterpriseToEbitda": -12.159,
+    "profitMargins": -1.4929299,
+    "returnOnEquity": -0.12307999,
+    "revenueGrowth": -0.304,
     "earningsGrowth": null,
-    "grossMargins": 0.8744,
-    "totalRevenue": 62900000,
-    "ebitda": -71900000
+    "grossMargins": 0.8404,
+    "totalRevenue": 49500000,
+    "ebitda": -85300000
   }
 }

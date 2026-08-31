@@ -3,11 +3,11 @@
   "name": "HAVILA KYSTRUTEN AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 52,
-  "previousClose": 969.424,
-  "dayHigh": 52,
+  "currentPrice": 51,
+  "previousClose": 53,
+  "dayHigh": 52.5,
   "dayLow": 51,
-  "volume": 1294,
+  "volume": 1600,
   "fiftyTwoWeekHigh": 66.5,
   "fiftyTwoWeekLow": 45.5,
   "prices": [
@@ -5110,26 +5110,34 @@
     {
       "date": "2026-08-27",
       "close": 52.5
+    },
+    {
+      "date": "2026-08-28",
+      "close": 52
+    },
+    {
+      "date": "2026-08-31",
+      "close": 51
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-30T06:07:15.526Z",
+  "lastUpdated": "2026-08-31T21:17:47.946Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -6.396064,
-    "marketCap": 890225152,
+    "forwardPE": -6.2730627,
+    "marketCap": 873105408,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.367,
     "priceToBook": null,
-    "enterpriseToEbitda": 7.841,
-    "profitMargins": -0.4887,
+    "enterpriseToEbitda": 7.778,
+    "profitMargins": -0.38863,
     "returnOnEquity": null,
-    "revenueGrowth": 0.118,
+    "revenueGrowth": 0.151,
     "earningsGrowth": null,
-    "grossMargins": 0.84565,
-    "totalRevenue": 1816631040,
-    "ebitda": 735076992
+    "grossMargins": 0.84369004,
+    "totalRevenue": 1879484032,
+    "ebitda": 756001984
   }
 }

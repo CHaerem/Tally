@@ -3,11 +3,11 @@
   "name": "LUMI EDUCATION GROUP AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 18.6,
-  "previousClose": 55.719,
-  "dayHigh": 19.9,
-  "dayLow": 19.2,
-  "volume": 5800,
+  "currentPrice": 18.5,
+  "previousClose": 19.2,
+  "dayHigh": 18.7,
+  "dayLow": 18.5,
+  "volume": 516,
   "fiftyTwoWeekHigh": 22.6,
   "fiftyTwoWeekLow": 15.6,
   "prices": [
@@ -5558,6 +5558,14 @@
     {
       "date": "2026-08-27",
       "close": 18.6
+    },
+    {
+      "date": "2026-08-28",
+      "close": 18.6
+    },
+    {
+      "date": "2026-08-31",
+      "close": 18.5
     }
   ],
   "dividends": [
@@ -5566,23 +5574,23 @@
       "amount": 0.98
     }
   ],
-  "lastUpdated": "2026-08-30T06:07:04.873Z",
+  "lastUpdated": "2026-08-31T21:17:36.524Z",
   "fundamentals": {
-    "trailingPE": 37.2,
-    "forwardPE": 16.90909,
-    "marketCap": 1075840128,
+    "trailingPE": 24.342106,
+    "forwardPE": 16.818182,
+    "marketCap": 1070056000,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.388,
-    "priceToBook": 2.067126,
-    "enterpriseToEbitda": 19.599,
-    "profitMargins": 0.056750003,
-    "returnOnEquity": 0.056799997,
-    "revenueGrowth": 0.138,
-    "earningsGrowth": 0.984,
-    "grossMargins": 0.50381,
-    "totalRevenue": 506532992,
-    "ebitda": 75911000
+    "beta": null,
+    "priceToBook": 2.0560124,
+    "enterpriseToEbitda": 15.984,
+    "profitMargins": 0.079380006,
+    "returnOnEquity": 0.08359,
+    "revenueGrowth": 0.17,
+    "earningsGrowth": 2.474,
+    "grossMargins": 0.52164,
+    "totalRevenue": 547555008,
+    "ebitda": 97455000
   }
 }
