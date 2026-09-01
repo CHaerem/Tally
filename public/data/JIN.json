@@ -3,11 +3,11 @@
   "name": "JINHUI SHIPPING AND TRANSPORTAT",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 6.62,
-  "previousClose": 6.76,
-  "dayHigh": 7,
-  "dayLow": 6.6,
-  "volume": 45107,
+  "currentPrice": 6.66,
+  "previousClose": 7.36,
+  "dayHigh": 6.78,
+  "dayLow": 6.54,
+  "volume": 43834,
   "fiftyTwoWeekHigh": 7.5,
   "fiftyTwoWeekLow": 5.22,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-08-31",
       "close": 6.62
+    },
+    {
+      "date": "2026-09-01",
+      "close": 6.66
     }
   ],
   "dividends": [
@@ -10098,23 +10102,23 @@
       "amount": 0.17
     }
   ],
-  "lastUpdated": "2026-08-31T21:17:54.926Z",
+  "lastUpdated": "2026-09-01T19:10:35.965Z",
   "fundamentals": {
-    "trailingPE": 11.033333,
-    "forwardPE": 31.52381,
-    "marketCap": 723294208,
+    "trailingPE": 11.099999,
+    "forwardPE": null,
+    "marketCap": null,
     "dividendYield": 0.026400002,
     "dividendRate": 0.17,
     "payoutRatio": 0.28129998,
-    "beta": null,
-    "priceToBook": 0.20342612,
-    "enterpriseToEbitda": 32.046,
-    "profitMargins": 0.05465,
+    "beta": 0.529,
+    "priceToBook": 0.20465527,
+    "enterpriseToEbitda": 19.118,
+    "profitMargins": 0.047470003,
     "returnOnEquity": 0.018229999,
-    "revenueGrowth": -0.002,
+    "revenueGrowth": -0.094,
     "earningsGrowth": null,
-    "grossMargins": 0.34513,
-    "totalRevenue": 127869000,
-    "ebitda": 23943000
+    "grossMargins": 0.43111,
+    "totalRevenue": 147195008,
+    "ebitda": 39957000
   }
 }

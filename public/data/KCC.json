@@ -3,11 +3,11 @@
   "name": "KLAVENESS COMBINATION CARRIERS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 108.6,
-  "previousClose": 105.4,
-  "dayHigh": 109.6,
-  "dayLow": 106.4,
-  "volume": 82586,
+  "currentPrice": 105,
+  "previousClose": 106.2,
+  "dayHigh": 107,
+  "dayLow": 103.6,
+  "volume": 33455,
   "fiftyTwoWeekHigh": 109.6,
   "fiftyTwoWeekLow": 70,
   "prices": [
@@ -7322,6 +7322,10 @@
     {
       "date": "2026-08-31",
       "close": 108.6
+    },
+    {
+      "date": "2026-09-01",
+      "close": 105
     }
   ],
   "dividends": [
@@ -7440,18 +7444,22 @@
     {
       "date": "2026-05-07",
       "amount": 2.33
+    },
+    {
+      "date": "2026-09-01",
+      "amount": 2.8
     }
   ],
-  "lastUpdated": "2026-08-31T21:16:32.363Z",
+  "lastUpdated": "2026-09-01T19:09:20.970Z",
   "fundamentals": {
-    "trailingPE": 11.855895,
-    "forwardPE": 10.2870035,
-    "marketCap": 6441921024,
+    "trailingPE": 11.425463,
+    "forwardPE": 9.957378,
+    "marketCap": 6228377088,
     "dividendYield": 0.066599995,
     "dividendRate": 7.08,
     "payoutRatio": 0.5098,
     "beta": 0.163,
-    "priceToBook": 1.8397907,
+    "priceToBook": 1.7788031,
     "enterpriseToEbitda": 59.796,
     "profitMargins": 0.21062,
     "returnOnEquity": 0.15953,

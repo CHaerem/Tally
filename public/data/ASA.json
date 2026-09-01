@@ -3,12 +3,12 @@
   "name": "ATLANTIC SAPPHIRE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.76,
-  "previousClose": 0.875,
-  "dayHigh": 0.83,
-  "dayLow": 0.752,
-  "volume": 30280,
-  "fiftyTwoWeekHigh": 9.999,
+  "currentPrice": 0.8,
+  "previousClose": 0.84,
+  "dayHigh": 0.849,
+  "dayLow": 0.77,
+  "volume": 266532,
+  "fiftyTwoWeekHigh": 9.299,
   "fiftyTwoWeekLow": 0.75,
   "prices": [
     {
@@ -8338,26 +8338,30 @@
     {
       "date": "2026-08-31",
       "close": 0.76
+    },
+    {
+      "date": "2026-09-01",
+      "close": 0.8
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-08-31T21:17:08.282Z",
+  "lastUpdated": "2026-09-01T19:09:53.333Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 27249074,
+    "marketCap": 28683236,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 3.216,
-    "priceToBook": 0.24606603,
-    "enterpriseToEbitda": -2.73,
+    "beta": null,
+    "priceToBook": 0.2569229,
+    "enterpriseToEbitda": -3.963,
     "profitMargins": null,
-    "returnOnEquity": -1.7813201,
-    "revenueGrowth": 0.871,
+    "returnOnEquity": -2.57325,
+    "revenueGrowth": 0.229,
     "earningsGrowth": null,
-    "grossMargins": -0.79697,
-    "totalRevenue": 43290000,
-    "ebitda": -51327000
+    "grossMargins": -0.55502,
+    "totalRevenue": 48227000,
+    "ebitda": -40966000
   }
 }

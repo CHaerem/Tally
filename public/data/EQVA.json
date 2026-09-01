@@ -3,11 +3,11 @@
   "name": "EQVA ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 3.12,
-  "previousClose": 3.06,
-  "dayHigh": 3.2,
-  "dayLow": 2.99,
-  "volume": 376346,
+  "currentPrice": 3.07,
+  "previousClose": 2.87,
+  "dayHigh": 3.15,
+  "dayLow": 3.07,
+  "volume": 62497,
   "fiftyTwoWeekHigh": 5.04,
   "fiftyTwoWeekLow": 2.74,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-08-31",
       "close": 3.12
+    },
+    {
+      "date": "2026-09-01",
+      "close": 3.07
     }
   ],
   "dividends": [
@@ -10070,16 +10074,16 @@
       "amount": 0.2
     }
   ],
-  "lastUpdated": "2026-08-31T21:16:22.779Z",
+  "lastUpdated": "2026-09-01T19:09:15.333Z",
   "fundamentals": {
-    "trailingPE": 14.181818,
+    "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 277648800,
+    "marketCap": 273199328,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.501,
-    "priceToBook": 0.66881025,
+    "priceToBook": 0.65809214,
     "enterpriseToEbitda": 10.466,
     "profitMargins": -0.00778,
     "returnOnEquity": 0.01653,

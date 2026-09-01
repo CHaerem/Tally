@@ -3,11 +3,11 @@
   "name": "AF GRUPPEN",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 196.4,
-  "previousClose": 193.6,
-  "dayHigh": 204,
-  "dayLow": 197,
-  "volume": 44245,
+  "currentPrice": 193.2,
+  "previousClose": 194.8,
+  "dayHigh": 197.2,
+  "dayLow": 192,
+  "volume": 42761,
   "fiftyTwoWeekHigh": 204,
   "fiftyTwoWeekLow": 160.2,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-08-31",
       "close": 196.4
+    },
+    {
+      "date": "2026-09-01",
+      "close": 193.2
     }
   ],
   "dividends": [
@@ -10138,23 +10142,23 @@
       "amount": 6.5
     }
   ],
-  "lastUpdated": "2026-08-31T21:16:08.553Z",
+  "lastUpdated": "2026-09-01T19:09:02.732Z",
   "fundamentals": {
-    "trailingPE": 19.1423,
-    "forwardPE": 14.992366,
-    "marketCap": 22297126912,
-    "dividendYield": 0.0325,
+    "trailingPE": 17.563637,
+    "forwardPE": 15.260663,
+    "marketCap": 21933834240,
+    "dividendYield": 0.033099998,
     "dividendRate": 6.5,
-    "payoutRatio": 0.47619998,
-    "beta": null,
-    "priceToBook": 7.4535103,
-    "enterpriseToEbitda": 11.119,
+    "payoutRatio": 0.5909,
+    "beta": 0.58,
+    "priceToBook": 7.058823,
+    "enterpriseToEbitda": 11.129,
     "profitMargins": 0.03592,
     "returnOnEquity": 0.39897,
     "revenueGrowth": 0.159,
     "earningsGrowth": 0.201,
     "grossMargins": 0.34405,
     "totalRevenue": 34044000256,
-    "ebitda": 2146000000
+    "ebitda": 2118000000
   }
 }

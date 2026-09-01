@@ -3,11 +3,11 @@
   "name": "EIDESVIK OFFSHORE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 17.4,
+  "currentPrice": 17.25,
   "previousClose": 17.15,
   "dayHigh": 17.4,
-  "dayLow": 17.15,
-  "volume": 6542,
+  "dayLow": 17.1,
+  "volume": 10304,
   "fiftyTwoWeekHigh": 18,
   "fiftyTwoWeekLow": 12.25,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-08-31",
       "close": 17.4
+    },
+    {
+      "date": "2026-09-01",
+      "close": 17.25
     }
   ],
   "dividends": [
@@ -10078,16 +10082,16 @@
       "amount": 0.2
     }
   ],
-  "lastUpdated": "2026-08-31T21:16:20.489Z",
+  "lastUpdated": "2026-09-01T19:09:12.975Z",
   "fundamentals": {
-    "trailingPE": 23.199999,
-    "forwardPE": -3.7991266,
-    "marketCap": 1269910016,
+    "trailingPE": 23,
+    "forwardPE": -3.7663755,
+    "marketCap": 1258962560,
     "dividendYield": 0.0115,
     "dividendRate": 0.2,
     "payoutRatio": 0.6667,
     "beta": 0.322,
-    "priceToBook": 0.7645663,
+    "priceToBook": 0.7579752,
     "enterpriseToEbitda": 10.263,
     "profitMargins": 0.07022,
     "returnOnEquity": 0.05683,
