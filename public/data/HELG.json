@@ -3,11 +3,11 @@
   "name": "SPAREBANK 1 HELGELAND",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 173,
-  "previousClose": 155.98,
-  "dayHigh": 173,
-  "dayLow": 171,
-  "volume": 2573,
+  "currentPrice": 173.02,
+  "previousClose": 176.98,
+  "dayHigh": 176,
+  "dayLow": 171.02,
+  "volume": 3806,
   "fiftyTwoWeekHigh": 185.98,
   "fiftyTwoWeekLow": 150,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-09-01",
       "close": 173
+    },
+    {
+      "date": "2026-09-02",
+      "close": 173.02
     }
   ],
   "dividends": [
@@ -10102,23 +10106,23 @@
       "amount": 7.67
     }
   ],
-  "lastUpdated": "2026-09-01T19:10:28.865Z",
+  "lastUpdated": "2026-09-02T19:10:58.582Z",
   "fundamentals": {
-    "trailingPE": 12.824314,
-    "forwardPE": 11.849315,
-    "marketCap": 4664750080,
-    "dividendYield": 0.044,
+    "trailingPE": 12.825797,
+    "forwardPE": 11.850685,
+    "marketCap": 4665289216,
+    "dividendYield": 0.044299997,
     "dividendRate": 7.67,
     "payoutRatio": 0.56810004,
-    "beta": null,
-    "priceToBook": 0.9287294,
+    "beta": 0.125,
+    "priceToBook": 0.9288368,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.46866,
+    "profitMargins": 0.44709998,
     "returnOnEquity": null,
-    "revenueGrowth": -0.201,
-    "earningsGrowth": 1.11,
+    "revenueGrowth": -0.033,
+    "earningsGrowth": 0.01,
     "grossMargins": null,
-    "totalRevenue": 1037000000,
+    "totalRevenue": 1087000064,
     "ebitda": null
   }
 }

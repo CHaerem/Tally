@@ -3,11 +3,11 @@
   "name": "PIONEER PROPERTY GROUP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 107.5,
-  "previousClose": 108,
+  "currentPrice": 108,
+  "previousClose": 107.5,
   "dayHigh": 108,
   "dayLow": 107,
-  "volume": 2397,
+  "volume": 2542,
   "fiftyTwoWeekHigh": 108,
   "fiftyTwoWeekLow": 97.4,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-09-01",
       "close": 107.5
+    },
+    {
+      "date": "2026-09-02",
+      "close": 108
     }
   ],
   "dividends": [
@@ -10234,16 +10238,16 @@
       "amount": 2.5
     }
   ],
-  "lastUpdated": "2026-09-01T19:10:53.642Z",
+  "lastUpdated": "2026-09-02T19:11:23.240Z",
   "fundamentals": {
-    "trailingPE": 5.997211,
+    "trailingPE": 6.025105,
     "forwardPE": null,
     "marketCap": null,
     "dividendYield": 0.093,
     "dividendRate": 10,
     "payoutRatio": null,
     "beta": null,
-    "priceToBook": 0.9234601,
+    "priceToBook": 0.9277553,
     "enterpriseToEbitda": null,
     "profitMargins": 0.74446,
     "returnOnEquity": 0.09779,

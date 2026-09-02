@@ -3,11 +3,11 @@
   "name": "ARRIBATEC GROUP ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 5.66,
-  "previousClose": 6.22,
-  "dayHigh": 5.94,
-  "dayLow": 5.6,
-  "volume": 322834,
+  "currentPrice": 5.64,
+  "previousClose": 5.72,
+  "dayHigh": 5.88,
+  "dayLow": 5.52,
+  "volume": 277020,
   "fiftyTwoWeekHigh": 10.448,
   "fiftyTwoWeekLow": 5.1,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-09-01",
       "close": 5.66
+    },
+    {
+      "date": "2026-09-02",
+      "close": 5.64
     }
   ],
   "dividends": [
@@ -10086,23 +10090,23 @@
       "amount": 1
     }
   ],
-  "lastUpdated": "2026-09-01T19:09:52.567Z",
+  "lastUpdated": "2026-09-02T19:10:22.802Z",
   "fundamentals": {
-    "trailingPE": 13.804878,
-    "forwardPE": 6.902439,
-    "marketCap": 390419264,
-    "dividendYield": 0.17729999,
+    "trailingPE": 13.756098,
+    "forwardPE": 6.875114,
+    "marketCap": 389039712,
+    "dividendYield": 0.1767,
     "dividendRate": 1,
-    "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 1.6250359,
-    "enterpriseToEbitda": 8.213,
+    "payoutRatio": 2.4164999,
+    "beta": 1.214,
+    "priceToBook": 1.6192937,
+    "enterpriseToEbitda": 7.976,
     "profitMargins": 0.04897,
     "returnOnEquity": 0.11351,
     "revenueGrowth": -0.024,
-    "earningsGrowth": -0.088,
+    "earningsGrowth": -0.348,
     "grossMargins": 0.74174005,
     "totalRevenue": 581364992,
-    "ebitda": 46153000
+    "ebitda": 47092000
   }
 }

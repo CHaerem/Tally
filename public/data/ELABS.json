@@ -3,11 +3,11 @@
   "name": "ELLIPTIC LABORATORIES ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.92,
-  "previousClose": 2.74,
-  "dayHigh": 3.085,
-  "dayLow": 2.92,
-  "volume": 233504,
+  "currentPrice": 2.95,
+  "previousClose": 2.5,
+  "dayHigh": 3.05,
+  "dayLow": 2.9,
+  "volume": 273427,
   "fiftyTwoWeekHigh": 10.88,
   "fiftyTwoWeekLow": 2.35,
   "prices": [
@@ -5910,26 +5910,30 @@
     {
       "date": "2026-09-01",
       "close": 2.92
+    },
+    {
+      "date": "2026-09-02",
+      "close": 2.95
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-09-01T19:10:03.092Z",
+  "lastUpdated": "2026-09-02T19:10:33.391Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -132.00723,
-    "marketCap": 368903360,
+    "forwardPE": -133.36346,
+    "marketCap": 372693472,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 1.6349385,
-    "enterpriseToEbitda": -4.832,
-    "profitMargins": -1.93416,
+    "beta": 0.815,
+    "priceToBook": 1.6517358,
+    "enterpriseToEbitda": -5.032,
+    "profitMargins": -1.9197301,
     "returnOnEquity": -0.59319997,
     "revenueGrowth": -0.475,
     "earningsGrowth": null,
-    "grossMargins": -0.069970004,
-    "totalRevenue": 79294000,
-    "ebitda": -61089000
+    "grossMargins": -0.06199,
+    "totalRevenue": 79890000,
+    "ebitda": -64181000
   }
 }

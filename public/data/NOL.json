@@ -3,11 +3,11 @@
   "name": "NORTHERN OCEAN LTD.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 7.46,
-  "previousClose": 7.48,
-  "dayHigh": 7.48,
-  "dayLow": 7.46,
-  "volume": 325856,
+  "currentPrice": 7.44,
+  "previousClose": 7.46,
+  "dayHigh": 7.46,
+  "dayLow": 7.44,
+  "volume": 176264,
   "fiftyTwoWeekHigh": 10.88,
   "fiftyTwoWeekLow": 5.52,
   "prices": [
@@ -6550,26 +6550,30 @@
     {
       "date": "2026-09-01",
       "close": 7.46
+    },
+    {
+      "date": "2026-09-02",
+      "close": 7.44
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-09-01T19:10:45.759Z",
+  "lastUpdated": "2026-09-02T19:11:15.408Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -7.8691983,
-    "marketCap": 2261986816,
+    "forwardPE": -7.848101,
+    "marketCap": 2255922432,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 0.61851287,
-    "enterpriseToEbitda": -173.937,
-    "profitMargins": -0.48844,
+    "beta": 0.255,
+    "priceToBook": 0.7575279,
+    "enterpriseToEbitda": -210.672,
+    "profitMargins": -0.47639,
     "returnOnEquity": -0.27617002,
-    "revenueGrowth": -0.303,
+    "revenueGrowth": -0.306,
     "earningsGrowth": null,
-    "grossMargins": -0.03624,
-    "totalRevenue": 208779008,
+    "grossMargins": -0.010670001,
+    "totalRevenue": 214062000,
     "ebitda": -11274000
   }
 }

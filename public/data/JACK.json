@@ -3,11 +3,11 @@
   "name": "JACKTEL AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 5.97,
-  "previousClose": 5.9,
-  "dayHigh": 6.02,
-  "dayLow": 5.87,
-  "volume": 538467,
+  "currentPrice": 5.8,
+  "previousClose": 5.84,
+  "dayHigh": 5.82,
+  "dayLow": 5.7,
+  "volume": 116810,
   "fiftyTwoWeekHigh": 6.13,
   "fiftyTwoWeekLow": 4.1,
   "prices": [
@@ -442,6 +442,14 @@
     {
       "date": "2026-08-31",
       "close": 5.97
+    },
+    {
+      "date": "2026-09-01",
+      "close": 5.67
+    },
+    {
+      "date": "2026-09-02",
+      "close": 5.8
     }
   ],
   "dividends": [
@@ -452,19 +460,23 @@
     {
       "date": "2026-06-01",
       "amount": 0.23
+    },
+    {
+      "date": "2026-09-01",
+      "amount": 0.28
     }
   ],
-  "lastUpdated": "2026-08-31T21:17:25.138Z",
+  "lastUpdated": "2026-09-02T19:10:39.209Z",
   "fundamentals": {
-    "trailingPE": 4.357664,
-    "forwardPE": 8.282323,
-    "marketCap": 1238960512,
-    "dividendYield": 0.1191,
+    "trailingPE": 4.1134753,
+    "forwardPE": 7.9419556,
+    "marketCap": 1203680256,
+    "dividendYield": 0.123100005,
     "dividendRate": 0.7,
-    "payoutRatio": null,
+    "payoutRatio": 0.2987,
     "beta": -0.386,
-    "priceToBook": 1.2893032,
-    "enterpriseToEbitda": 26.191,
+    "priceToBook": 1.2525895,
+    "enterpriseToEbitda": 25.413,
     "profitMargins": 0.45637,
     "returnOnEquity": 0.345,
     "revenueGrowth": 0.202,

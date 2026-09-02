@@ -5086,6 +5086,10 @@
     {
       "date": "2026-09-01",
       "close": 220
+    },
+    {
+      "date": "2026-09-02",
+      "close": 220
     }
   ],
   "dividends": [
@@ -5114,23 +5118,23 @@
       "amount": 13.5
     }
   ],
-  "lastUpdated": "2026-09-01T19:10:59.686Z",
+  "lastUpdated": "2026-09-02T19:11:28.963Z",
   "fundamentals": {
     "trailingPE": 17.857143,
     "forwardPE": 11.20163,
     "marketCap": 655618688,
-    "dividendYield": 0.062800005,
+    "dividendYield": 0.0614,
     "dividendRate": 13.5,
     "payoutRatio": 1.0949,
-    "beta": null,
+    "beta": 0.056,
     "priceToBook": 0.40000364,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.39731997,
+    "profitMargins": 0.39981997,
     "returnOnEquity": 0.09455,
-    "revenueGrowth": 0.209,
-    "earningsGrowth": null,
+    "revenueGrowth": 0.143,
+    "earningsGrowth": -0.014,
     "grossMargins": null,
-    "totalRevenue": 387353984,
+    "totalRevenue": 384940000,
     "ebitda": null
   }
 }

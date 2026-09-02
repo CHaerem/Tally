@@ -3,12 +3,12 @@
   "name": "WEBSTEP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 13.9,
-  "previousClose": 14.6,
-  "dayHigh": 14.4,
-  "dayLow": 13.9,
-  "volume": 7482,
-  "fiftyTwoWeekHigh": 23.6,
+  "currentPrice": 13.1,
+  "previousClose": 14.1,
+  "dayHigh": 13.8,
+  "dayLow": 13.25,
+  "volume": 38602,
+  "fiftyTwoWeekHigh": 23,
   "fiftyTwoWeekLow": 12.95,
   "prices": [
     {
@@ -8922,6 +8922,14 @@
     {
       "date": "2026-08-31",
       "close": 13.9
+    },
+    {
+      "date": "2026-09-01",
+      "close": 13.5
+    },
+    {
+      "date": "2026-09-02",
+      "close": 13.1
     }
   ],
   "dividends": [
@@ -8962,17 +8970,17 @@
       "amount": 1.49
     }
   ],
-  "lastUpdated": "2026-08-31T21:16:59.467Z",
+  "lastUpdated": "2026-09-02T19:10:15.997Z",
   "fundamentals": {
-    "trailingPE": 11.209677,
-    "forwardPE": 6.0703726,
-    "marketCap": 377728736,
-    "dividendYield": 0.106400006,
+    "trailingPE": 10.564516,
+    "forwardPE": 5.720999,
+    "marketCap": 355988960,
+    "dividendYield": 0.1104,
     "dividendRate": 1.49,
     "payoutRatio": 1.2016001,
     "beta": 0.264,
-    "priceToBook": 1.1022998,
-    "enterpriseToEbitda": 8.808,
+    "priceToBook": 1.038858,
+    "enterpriseToEbitda": 8.528,
     "profitMargins": 0.03886,
     "returnOnEquity": 0.101110004,
     "revenueGrowth": -0.114,
