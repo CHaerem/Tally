@@ -3,11 +3,11 @@
   "name": "THOR MEDICAL ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 5.55,
-  "previousClose": 6.79,
-  "dayHigh": 5.7,
-  "dayLow": 5.37,
-  "volume": 5053201,
+  "currentPrice": 5.47,
+  "previousClose": 6.01,
+  "dayHigh": 5.52,
+  "dayLow": 5.35,
+  "volume": 3530472,
   "fiftyTwoWeekHigh": 7.12,
   "fiftyTwoWeekLow": 3.175,
   "prices": [
@@ -10070,20 +10070,24 @@
     {
       "date": "2026-09-02",
       "close": 5.55
+    },
+    {
+      "date": "2026-09-03",
+      "close": 5.47
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-09-02T19:11:37.232Z",
+  "lastUpdated": "2026-09-03T19:04:02.485Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -46.250004,
-    "marketCap": 1998010240,
+    "forwardPE": -45.583332,
+    "marketCap": 1969209856,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 4.309006,
-    "enterpriseToEbitda": -37.478,
+    "beta": -0.236,
+    "priceToBook": 4.2468944,
+    "enterpriseToEbitda": -36.259,
     "profitMargins": null,
     "returnOnEquity": -0.18789,
     "revenueGrowth": 8,

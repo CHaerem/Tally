@@ -3,11 +3,11 @@
   "name": "PARATUS ENERGY SERVICES LTD.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 50.3,
-  "previousClose": 51,
-  "dayHigh": 51.6,
-  "dayLow": 50.1,
-  "volume": 354132,
+  "currentPrice": 47.75,
+  "previousClose": 49.3,
+  "dayHigh": 48.9,
+  "dayLow": 47.85,
+  "volume": 262431,
   "fiftyTwoWeekHigh": 52.5,
   "fiftyTwoWeekLow": 37.92,
   "prices": [
@@ -2198,6 +2198,10 @@
     {
       "date": "2026-09-02",
       "close": 50.3
+    },
+    {
+      "date": "2026-09-03",
+      "close": 47.75
     }
   ],
   "dividends": [
@@ -2232,19 +2236,23 @@
     {
       "date": "2026-06-04",
       "amount": 2.03
+    },
+    {
+      "date": "2026-09-03",
+      "amount": 2.05
     }
   ],
-  "lastUpdated": "2026-09-02T19:11:22.012Z",
+  "lastUpdated": "2026-09-03T19:03:46.929Z",
   "fundamentals": {
-    "trailingPE": 8.793707,
-    "forwardPE": 8.776113,
-    "marketCap": 8185573376,
-    "dividendYield": 0.1666,
+    "trailingPE": 8.377193,
+    "forwardPE": 8.3436575,
+    "marketCap": 7770598912,
+    "dividendYield": 0.1672,
     "dividendRate": 8.41,
     "payoutRatio": 1.4427,
     "beta": 0.707,
-    "priceToBook": 6.8173184,
-    "enterpriseToEbitda": 90.131,
+    "priceToBook": 8.777727,
+    "enterpriseToEbitda": 89.799,
     "profitMargins": 0.54373,
     "returnOnEquity": 0.76353997,
     "revenueGrowth": null,

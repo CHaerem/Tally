@@ -3,11 +3,11 @@
   "name": "HAV GROUP ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 13.7,
-  "previousClose": 13.65,
+  "currentPrice": 13.65,
+  "previousClose": 13.5,
   "dayHigh": 13.85,
-  "dayLow": 13.5,
-  "volume": 58564,
+  "dayLow": 13.3,
+  "volume": 35712,
   "fiftyTwoWeekHigh": 18.3,
   "fiftyTwoWeekLow": 5.4,
   "prices": [
@@ -5530,19 +5530,23 @@
     {
       "date": "2026-09-02",
       "close": 13.7
+    },
+    {
+      "date": "2026-09-03",
+      "close": 13.65
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-09-02T19:10:58.153Z",
+  "lastUpdated": "2026-09-03T19:03:23.067Z",
   "fundamentals": {
-    "trailingPE": 31.860464,
-    "forwardPE": 5.4365077,
-    "marketCap": 479500000,
+    "trailingPE": 31.744184,
+    "forwardPE": 5.4166665,
+    "marketCap": 477749984,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 1.143,
-    "priceToBook": 5.438666,
+    "priceToBook": 4.7280912,
     "enterpriseToEbitda": 8.16,
     "profitMargins": 0.01559,
     "returnOnEquity": 0.16182,
