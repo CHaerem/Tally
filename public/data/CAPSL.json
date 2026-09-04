@@ -3,11 +3,11 @@
   "name": "CAPSOL TECHNOLOGIES ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 5.18,
-  "previousClose": 5,
+  "currentPrice": 5.2,
+  "previousClose": 5.26,
   "dayHigh": 5.26,
   "dayLow": 5.1,
-  "volume": 2423,
+  "volume": 500,
   "fiftyTwoWeekHigh": 8.46,
   "fiftyTwoWeekLow": 3.85,
   "prices": [
@@ -4730,19 +4730,27 @@
     {
       "date": "2026-09-02",
       "close": 5.18
+    },
+    {
+      "date": "2026-09-03",
+      "close": 5.18
+    },
+    {
+      "date": "2026-09-04",
+      "close": 5.2
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-09-03T19:02:53.353Z",
+  "lastUpdated": "2026-09-04T18:46:54.487Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -139.02307,
-    "marketCap": 388750688,
+    "forwardPE": -139.55984,
+    "marketCap": 390251680,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.23,
-    "priceToBook": 5.853107,
+    "beta": 0.227,
+    "priceToBook": 5.875706,
     "enterpriseToEbitda": -6.234,
     "profitMargins": -2.08131,
     "returnOnEquity": -1.20712,

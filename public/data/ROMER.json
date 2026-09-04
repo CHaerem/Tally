@@ -3,11 +3,11 @@
   "name": "ROMERIKE SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 150.94,
-  "previousClose": 150.98,
+  "currentPrice": 144.14,
+  "previousClose": 150.94,
   "dayHigh": 150.94,
-  "dayLow": 150.94,
-  "volume": 20,
+  "dayLow": 144.14,
+  "volume": 382,
   "fiftyTwoWeekHigh": 170.72,
   "fiftyTwoWeekLow": 136,
   "prices": [
@@ -8762,6 +8762,10 @@
     {
       "date": "2026-09-03",
       "close": 150.94
+    },
+    {
+      "date": "2026-09-04",
+      "close": 144.14
     }
   ],
   "dividends": [
@@ -8802,16 +8806,16 @@
       "amount": 10.5
     }
   ],
-  "lastUpdated": "2026-09-03T19:03:52.476Z",
+  "lastUpdated": "2026-09-04T18:48:14.169Z",
   "fundamentals": {
-    "trailingPE": 2.0987208,
-    "forwardPE": 11.247392,
-    "marketCap": 1198770688,
+    "trailingPE": 2.0044498,
+    "forwardPE": 10.740685,
+    "marketCap": 1144764800,
     "dividendYield": 0.0696,
     "dividendRate": 10.5,
     "payoutRatio": 0.146,
-    "beta": 0.061,
-    "priceToBook": 0.18546095,
+    "beta": 0.056,
+    "priceToBook": 0.17710575,
     "enterpriseToEbitda": null,
     "profitMargins": 0.42815,
     "returnOnEquity": 0.0866,
