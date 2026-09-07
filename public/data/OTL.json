@@ -3,11 +3,11 @@
   "name": "ODFJELL TECHNOLOGY LTD",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 61.1,
-  "previousClose": 21.35,
-  "dayHigh": 61.6,
-  "dayLow": 59.7,
-  "volume": 42054,
+  "currentPrice": 60,
+  "previousClose": 58.7,
+  "dayHigh": 61.5,
+  "dayLow": 59.6,
+  "volume": 31350,
   "fiftyTwoWeekHigh": 75.4,
   "fiftyTwoWeekLow": 52.6,
   "prices": [
@@ -4462,6 +4462,10 @@
     {
       "date": "2026-09-04",
       "close": 61.1
+    },
+    {
+      "date": "2026-09-07",
+      "close": 60
     }
   ],
   "dividends": [
@@ -4514,16 +4518,16 @@
       "amount": 1.52
     }
   ],
-  "lastUpdated": "2026-09-06T05:21:42.168Z",
+  "lastUpdated": "2026-09-07T19:34:48.078Z",
   "fundamentals": {
-    "trailingPE": 8.125,
-    "forwardPE": 5.4142666,
-    "marketCap": 2411242240,
+    "trailingPE": 7.9787235,
+    "forwardPE": 5.3167925,
+    "marketCap": 2367832064,
     "dividendYield": 0.1005,
     "dividendRate": 6.08,
     "payoutRatio": 0.6064,
     "beta": 0.75,
-    "priceToBook": 1.8915238,
+    "priceToBook": 1.8574703,
     "enterpriseToEbitda": 5.785,
     "profitMargins": 0.05368,
     "returnOnEquity": 0.2387,
