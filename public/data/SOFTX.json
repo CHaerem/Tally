@@ -3,11 +3,11 @@
   "name": "SOFTOX SOLUTIONS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.1044,
-  "previousClose": 0.0939,
-  "dayHigh": 0.113,
-  "dayLow": 0.095,
-  "volume": 29005674,
+  "currentPrice": 0.113,
+  "previousClose": 0.091,
+  "dayHigh": 0.1144,
+  "dayLow": 0.1,
+  "volume": 57639115,
   "fiftyTwoWeekHigh": 0.1658,
   "fiftyTwoWeekLow": 0.049,
   "prices": [
@@ -8310,20 +8310,24 @@
     {
       "date": "2026-09-07",
       "close": 0.1
+    },
+    {
+      "date": "2026-09-08",
+      "close": 0.11
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-09-07T19:35:01.130Z",
+  "lastUpdated": "2026-09-08T19:14:08.439Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 277699392,
+    "marketCap": 300574976,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.965,
-    "priceToBook": 10.440001,
-    "enterpriseToEbitda": -15.164,
+    "priceToBook": 11.3,
+    "enterpriseToEbitda": -16.627,
     "profitMargins": -1.0982801,
     "returnOnEquity": -0.27838,
     "revenueGrowth": 0.213,

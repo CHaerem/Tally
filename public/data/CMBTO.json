@@ -3,11 +3,11 @@
   "name": "CMB.TECH NV",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 181.4,
-  "previousClose": 172,
-  "dayHigh": 185,
-  "dayLow": 179,
-  "volume": 289837,
+  "currentPrice": 179.6,
+  "previousClose": 173.2,
+  "dayHigh": 184.4,
+  "dayLow": 179.2,
+  "volume": 636070,
   "fiftyTwoWeekHigh": 185,
   "fiftyTwoWeekLow": 89,
   "prices": [
@@ -1062,6 +1062,10 @@
     {
       "date": "2026-09-07",
       "close": 181.4
+    },
+    {
+      "date": "2026-09-08",
+      "close": 179.6
     }
   ],
   "dividends": [
@@ -1082,23 +1086,23 @@
       "amount": 5.96
     }
   ],
-  "lastUpdated": "2026-09-07T19:33:47.177Z",
+  "lastUpdated": "2026-09-08T19:13:04.596Z",
   "fundamentals": {
-    "trailingPE": 6.5724635,
+    "trailingPE": 6.519057,
     "forwardPE": null,
-    "marketCap": 52636790784,
-    "dividendYield": 0.047,
+    "marketCap": 52114489344,
+    "dividendYield": 0.047199998,
     "dividendRate": 8.57,
     "payoutRatio": 0.3041,
     "beta": 0.166,
-    "priceToBook": 1.8113184,
-    "enterpriseToEbitda": 50.104,
+    "priceToBook": 1.7945641,
+    "enterpriseToEbitda": 49.885,
     "profitMargins": 0.37151,
     "returnOnEquity": 0.29594,
     "revenueGrowth": 0.815,
     "earningsGrowth": 30.397,
     "grossMargins": 0.55969,
     "totalRevenue": 2266800896,
-    "ebitda": 1161981056
+    "ebitda": 1161261056
   }
 }
