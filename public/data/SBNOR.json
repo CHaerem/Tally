@@ -3,13 +3,13 @@
   "name": "SPAREBANKEN NORGE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 204.95,
-  "previousClose": 204.5,
-  "dayHigh": 207.35,
-  "dayLow": 204.55,
-  "volume": 42736,
+  "currentPrice": 202.5,
+  "previousClose": 205.15,
+  "dayHigh": 204.2,
+  "dayLow": 200.6,
+  "volume": 80585,
   "fiftyTwoWeekHigh": 212,
-  "fiftyTwoWeekLow": 165.44,
+  "fiftyTwoWeekLow": 166.96,
   "prices": [
     {
       "date": "2016-09-05",
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-09-08",
       "close": 204.95
+    },
+    {
+      "date": "2026-09-09",
+      "close": 202.5
     }
   ],
   "dividends": [
@@ -10114,16 +10118,16 @@
       "amount": 12
     }
   ],
-  "lastUpdated": "2026-09-08T19:14:05.849Z",
+  "lastUpdated": "2026-09-09T19:03:02.277Z",
   "fundamentals": {
-    "trailingPE": 12.729814,
-    "forwardPE": 12.25411,
-    "marketCap": 35469156352,
-    "dividendYield": 0.0581,
+    "trailingPE": 12.569832,
+    "forwardPE": 12.107623,
+    "marketCap": 35045154816,
+    "dividendYield": 0.0586,
     "dividendRate": 12,
     "payoutRatio": 0.7453,
     "beta": 0.401,
-    "priceToBook": 0.7453676,
+    "priceToBook": 0.73645735,
     "enterpriseToEbitda": null,
     "profitMargins": 0.54605997,
     "returnOnEquity": 0.14015001,
