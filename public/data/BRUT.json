@@ -3,11 +3,11 @@
   "name": "BRUTON LIMITED",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 46.6,
-  "previousClose": 45,
-  "dayHigh": 48,
-  "dayLow": 46.5,
-  "volume": 160443,
+  "currentPrice": 46.7,
+  "previousClose": 46,
+  "dayHigh": 47.1,
+  "dayLow": 46.2,
+  "volume": 172004,
   "fiftyTwoWeekHigh": 80,
   "fiftyTwoWeekLow": 37.9,
   "prices": [
@@ -1654,19 +1654,28 @@
     {
       "date": "2026-09-09",
       "close": 46.6
+    },
+    {
+      "date": "2026-09-10",
+      "close": 46.7
     }
   ],
-  "dividends": [],
-  "lastUpdated": "2026-09-09T19:01:36.230Z",
+  "dividends": [
+    {
+      "date": "2026-09-10",
+      "amount": 0.23
+    }
+  ],
+  "lastUpdated": "2026-09-10T18:54:02.162Z",
   "fundamentals": {
-    "trailingPE": 245.26315,
-    "forwardPE": 15.831492,
-    "marketCap": 2885649408,
-    "dividendYield": null,
-    "dividendRate": null,
+    "trailingPE": 245.78947,
+    "forwardPE": 14.172989,
+    "marketCap": 2891841792,
+    "dividendYield": 0.01,
+    "dividendRate": 0.47,
     "payoutRatio": null,
     "beta": null,
-    "priceToBook": 1.3312835,
+    "priceToBook": 1.3341403,
     "enterpriseToEbitda": null,
     "profitMargins": null,
     "returnOnEquity": 0.00511,

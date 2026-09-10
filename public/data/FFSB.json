@@ -3,11 +3,11 @@
   "name": "FLEKKEFJORD SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 118.5,
+  "currentPrice": 118.44,
   "previousClose": 116,
-  "dayHigh": 118.5,
-  "dayLow": 118.48,
-  "volume": 2063,
+  "dayHigh": 118.44,
+  "dayLow": 115.6,
+  "volume": 121,
   "fiftyTwoWeekHigh": 130,
   "fiftyTwoWeekLow": 113,
   "prices": [
@@ -2314,6 +2314,10 @@
     {
       "date": "2026-09-09",
       "close": 118.5
+    },
+    {
+      "date": "2026-09-10",
+      "close": 118.44
     }
   ],
   "dividends": [
@@ -2326,16 +2330,16 @@
       "amount": 6.4
     }
   ],
-  "lastUpdated": "2026-09-09T19:01:49.207Z",
+  "lastUpdated": "2026-09-10T18:54:13.349Z",
   "fundamentals": {
-    "trailingPE": 1.4234234,
-    "forwardPE": 11.350575,
-    "marketCap": 175050800,
+    "trailingPE": 1.4227028,
+    "forwardPE": 11.344829,
+    "marketCap": 174962176,
     "dividendYield": 0.054,
     "dividendRate": 6.4,
     "payoutRatio": 0.0769,
     "beta": 0.207,
-    "priceToBook": 0.120413855,
+    "priceToBook": 0.12035289,
     "enterpriseToEbitda": null,
     "profitMargins": 0.38716,
     "returnOnEquity": 0.08059,
