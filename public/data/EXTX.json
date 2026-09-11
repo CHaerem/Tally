@@ -3,11 +3,11 @@
   "name": "EXACT THERAPEUTICS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.72,
-  "previousClose": 0.765,
-  "dayHigh": 0.725,
-  "dayLow": 0.72,
-  "volume": 36998,
+  "currentPrice": 0.605,
+  "previousClose": 0.72,
+  "dayHigh": 0.79,
+  "dayLow": 0.605,
+  "volume": 137407,
   "fiftyTwoWeekHigh": 2.78,
   "fiftyTwoWeekLow": 0.58,
   "prices": [
@@ -6210,20 +6210,24 @@
     {
       "date": "2026-09-10",
       "close": 0.72
+    },
+    {
+      "date": "2026-09-11",
+      "close": 0.61
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-09-10T18:54:12.934Z",
+  "lastUpdated": "2026-09-11T18:57:13.700Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 80311728,
+    "marketCap": 67484160,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 1.2203391,
-    "enterpriseToEbitda": -0.417,
+    "beta": 0.087,
+    "priceToBook": 0.5806142,
+    "enterpriseToEbitda": 0.047,
     "profitMargins": null,
     "returnOnEquity": -1.13455,
     "revenueGrowth": null,

@@ -3,11 +3,11 @@
   "name": "TINDE SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 111,
+  "currentPrice": 111.18,
   "previousClose": 112,
-  "dayHigh": 111,
-  "dayLow": 111,
-  "volume": 20000,
+  "dayHigh": 111.2,
+  "dayLow": 110,
+  "volume": 1146,
   "fiftyTwoWeekHigh": 125,
   "fiftyTwoWeekLow": 101.12,
   "prices": [
@@ -6426,6 +6426,10 @@
     {
       "date": "2026-09-10",
       "close": 111
+    },
+    {
+      "date": "2026-09-11",
+      "close": 111.18
     }
   ],
   "dividends": [
@@ -6454,16 +6458,16 @@
       "amount": 4.9
     }
   ],
-  "lastUpdated": "2026-09-10T18:55:17.808Z",
+  "lastUpdated": "2026-09-11T18:58:35.076Z",
   "fundamentals": {
-    "trailingPE": 24.832216,
-    "forwardPE": 11.490684,
-    "marketCap": 604952320,
-    "dividendYield": 0.044499997,
+    "trailingPE": 24.872484,
+    "forwardPE": 11.509317,
+    "marketCap": 605933312,
+    "dividendYield": 0.044099998,
     "dividendRate": 4.9,
     "payoutRatio": 1.0962,
     "beta": -0.12,
-    "priceToBook": 0.3060752,
+    "priceToBook": 0.3065715,
     "enterpriseToEbitda": null,
     "profitMargins": 0.23656,
     "returnOnEquity": 0.03813,

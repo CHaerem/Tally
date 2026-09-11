@@ -3,11 +3,11 @@
   "name": "AQUA BIO TECHNOLOGY",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 5.2,
-  "previousClose": 5.2,
-  "dayHigh": 5.28,
-  "dayLow": 5.14,
-  "volume": 815,
+  "currentPrice": 5.02,
+  "previousClose": 5.36,
+  "dayHigh": 5.14,
+  "dayLow": 5,
+  "volume": 7380,
   "fiftyTwoWeekHigh": 37.45,
   "fiftyTwoWeekLow": 4,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-09-10",
       "close": 5.2
+    },
+    {
+      "date": "2026-09-11",
+      "close": 5.02
     }
   ],
   "dividends": [
@@ -10086,16 +10090,16 @@
       "amount": 49.69
     }
   ],
-  "lastUpdated": "2026-09-10T18:53:53.344Z",
+  "lastUpdated": "2026-09-11T18:56:50.353Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 80529208,
+    "marketCap": 77741656,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.227,
-    "priceToBook": 1.8786128,
+    "priceToBook": 1.8135839,
     "enterpriseToEbitda": -17.024,
     "profitMargins": null,
     "returnOnEquity": -1.15139,
