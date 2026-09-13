@@ -4,12 +4,12 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 185.98,
-  "previousClose": 186.98,
+  "previousClose": 116,
   "dayHigh": 185.98,
   "dayLow": 182,
   "volume": 676,
   "fiftyTwoWeekHigh": 211.9,
-  "fiftyTwoWeekLow": 164,
+  "fiftyTwoWeekLow": 164.68,
   "prices": [
     {
       "date": "2017-10-02",
@@ -8964,10 +8964,6 @@
       "close": 185
     },
     {
-      "date": "2026-09-07",
-      "close": 184.92
-    },
-    {
       "date": "2026-09-08",
       "close": 186.98
     },
@@ -8977,6 +8973,10 @@
     },
     {
       "date": "2026-09-10",
+      "close": 185.98
+    },
+    {
+      "date": "2026-09-11",
       "close": 185.98
     }
   ],
@@ -9010,7 +9010,7 @@
       "amount": 11
     }
   ],
-  "lastUpdated": "2026-09-11T18:58:28.237Z",
+  "lastUpdated": "2026-09-13T05:32:28.367Z",
   "fundamentals": {
     "trailingPE": 10.258136,
     "forwardPE": 9.431035,
