@@ -3,11 +3,11 @@
   "name": "NEL",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.08,
-  "previousClose": 2.644,
-  "dayHigh": 2.105,
-  "dayLow": 2.07,
-  "volume": 1607504,
+  "currentPrice": 2.07,
+  "previousClose": 2.1,
+  "dayHigh": 2.085,
+  "dayLow": 2.025,
+  "volume": 3938234,
   "fiftyTwoWeekHigh": 3.955,
   "fiftyTwoWeekLow": 1.919,
   "prices": [
@@ -10054,19 +10054,23 @@
     {
       "date": "2026-09-11",
       "close": 2.08
+    },
+    {
+      "date": "2026-09-14",
+      "close": 2.07
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-09-13T05:30:24.053Z",
+  "lastUpdated": "2026-09-14T20:07:00.083Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -10.837849,
-    "marketCap": 3823122688,
+    "forwardPE": -10.785744,
+    "marketCap": 3804742400,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 1.458,
-    "priceToBook": 1.0612245,
+    "priceToBook": 1.0561224,
     "enterpriseToEbitda": -6.847,
     "profitMargins": -1.3763001,
     "returnOnEquity": -0.30326,
