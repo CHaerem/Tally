@@ -3,11 +3,11 @@
   "name": "SpareBank 1 Sør-Norge ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 226.5,
-  "previousClose": 224.5,
-  "dayHigh": 227,
-  "dayLow": 221,
-  "volume": 185152,
+  "currentPrice": 226,
+  "previousClose": 223.5,
+  "dayHigh": 229,
+  "dayLow": 225.5,
+  "volume": 150902,
   "fiftyTwoWeekHigh": 229,
   "fiftyTwoWeekLow": 169.2,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-09-15",
       "close": 226.5
+    },
+    {
+      "date": "2026-09-16",
+      "close": 226
     }
   ],
   "dividends": [
@@ -10106,16 +10110,16 @@
       "amount": 12
     }
   ],
-  "lastUpdated": "2026-09-15T19:28:10.547Z",
+  "lastUpdated": "2026-09-16T19:20:31.426Z",
   "fundamentals": {
-    "trailingPE": 13.498212,
-    "forwardPE": 12.219465,
-    "marketCap": 84033576960,
-    "dividendYield": 0.0537,
+    "trailingPE": 13.468414,
+    "forwardPE": 12.192491,
+    "marketCap": 83848069120,
+    "dividendYield": 0.053000003,
     "dividendRate": 12,
     "payoutRatio": 0.7147,
     "beta": 0.54,
-    "priceToBook": 1.7007952,
+    "priceToBook": 1.6970407,
     "enterpriseToEbitda": null,
     "profitMargins": 0.48911998,
     "returnOnEquity": 0.12397,

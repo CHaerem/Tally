@@ -3,10 +3,10 @@
   "name": "GRONG SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 183,
-  "previousClose": 187.96,
-  "dayHigh": 183,
-  "dayLow": 183,
+  "currentPrice": 182.98,
+  "previousClose": 189.98,
+  "dayHigh": 182.98,
+  "dayLow": 182.98,
   "volume": 5,
   "fiftyTwoWeekHigh": 200,
   "fiftyTwoWeekLow": 142.02,
@@ -9302,6 +9302,10 @@
     {
       "date": "2026-09-15",
       "close": 183
+    },
+    {
+      "date": "2026-09-16",
+      "close": 182.98
     }
   ],
   "dividends": [
@@ -9342,16 +9346,16 @@
       "amount": 11
     }
   ],
-  "lastUpdated": "2026-09-15T19:27:39.077Z",
+  "lastUpdated": "2026-09-16T19:19:53.984Z",
   "fundamentals": {
-    "trailingPE": 9.551148,
-    "forwardPE": 10.777386,
-    "marketCap": 726962944,
+    "trailingPE": 9.550104,
+    "forwardPE": 10.776207,
+    "marketCap": 726883456,
     "dividendYield": 0.0586,
     "dividendRate": 11,
     "payoutRatio": 0.5741,
     "beta": 0.242,
-    "priceToBook": 0.5143628,
+    "priceToBook": 0.5143066,
     "enterpriseToEbitda": null,
     "profitMargins": 0.46263,
     "returnOnEquity": 0.13559,
