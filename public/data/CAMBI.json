@@ -3,11 +3,11 @@
   "name": "CAMBI ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 24.4,
-  "previousClose": 23.7,
-  "dayHigh": 24.5,
-  "dayLow": 23.6,
-  "volume": 56207,
+  "currentPrice": 24,
+  "previousClose": 24.4,
+  "dayHigh": 24.4,
+  "dayLow": 24,
+  "volume": 12379,
   "fiftyTwoWeekHigh": 24.7,
   "fiftyTwoWeekLow": 15,
   "prices": [
@@ -5638,6 +5638,10 @@
     {
       "date": "2026-09-16",
       "close": 24.4
+    },
+    {
+      "date": "2026-09-17",
+      "close": 24
     }
   ],
   "dividends": [
@@ -5666,17 +5670,17 @@
       "amount": 0.3
     }
   ],
-  "lastUpdated": "2026-09-16T19:19:21.135Z",
+  "lastUpdated": "2026-09-17T19:30:07.181Z",
   "fundamentals": {
-    "trailingPE": 62.564102,
-    "forwardPE": 14.175497,
-    "marketCap": 3904626944,
-    "dividendYield": 0.0124,
+    "trailingPE": 61.538464,
+    "forwardPE": 13.943112,
+    "marketCap": 3840616704,
+    "dividendYield": 0.0123000005,
     "dividendRate": 0.3,
     "payoutRatio": 0.7768,
     "beta": 0.788,
-    "priceToBook": 8.399311,
-    "enterpriseToEbitda": 28.734,
+    "priceToBook": 8.261618,
+    "enterpriseToEbitda": 29.131,
     "profitMargins": 0.06539,
     "returnOnEquity": 0.13229,
     "revenueGrowth": -0.225,
