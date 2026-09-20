@@ -4,33 +4,13 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 111.54,
-  "previousClose": 110.86,
+  "previousClose": 40.6,
   "dayHigh": 112,
   "dayLow": 110.02,
   "volume": 11823,
   "fiftyTwoWeekHigh": 123.66,
   "fiftyTwoWeekLow": 98.8,
   "prices": [
-    {
-      "date": "2016-09-12",
-      "close": 40.2
-    },
-    {
-      "date": "2016-09-13",
-      "close": 40.6
-    },
-    {
-      "date": "2016-09-14",
-      "close": 40
-    },
-    {
-      "date": "2016-09-15",
-      "close": 40.6
-    },
-    {
-      "date": "2016-09-16",
-      "close": 40.6
-    },
     {
       "date": "2016-09-19",
       "close": 40.4
@@ -10036,6 +10016,10 @@
       "close": 111.4
     },
     {
+      "date": "2026-09-07",
+      "close": 110.96
+    },
+    {
       "date": "2026-09-08",
       "close": 110.18
     },
@@ -10062,10 +10046,6 @@
     {
       "date": "2026-09-16",
       "close": 110
-    },
-    {
-      "date": "2026-09-17",
-      "close": 110.88
     },
     {
       "date": "2026-09-18",
@@ -10118,12 +10098,12 @@
       "amount": 7
     }
   ],
-  "lastUpdated": "2026-09-18T18:49:38.116Z",
+  "lastUpdated": "2026-09-20T05:34:18.142Z",
   "fundamentals": {
-    "trailingPE": 5.6648045,
+    "trailingPE": 5.6619287,
     "forwardPE": 11.475308,
     "marketCap": 5530086912,
-    "dividendYield": 0.0631,
+    "dividendYield": 0.062800005,
     "dividendRate": 7,
     "payoutRatio": 0.3554,
     "beta": 0.178,

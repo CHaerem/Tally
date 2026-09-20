@@ -4,7 +4,7 @@
   "currency": "NOK",
   "exchange": "ISE",
   "currentPrice": 223.305,
-  "previousClose": 224.639,
+  "previousClose": 100,
   "dayHigh": null,
   "dayLow": null,
   "volume": null,
@@ -5786,10 +5786,14 @@
     {
       "date": "2026-09-16",
       "close": 223.3
+    },
+    {
+      "date": "2026-09-17",
+      "close": 227.67
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-09-18T18:51:16.230Z",
+  "lastUpdated": "2026-09-20T05:35:43.191Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,

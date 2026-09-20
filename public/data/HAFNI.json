@@ -4,7 +4,7 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 93.9,
-  "previousClose": 86.9,
+  "previousClose": 25.45,
   "dayHigh": 94.4,
   "dayLow": 91.2,
   "volume": 973043,
@@ -6860,6 +6860,10 @@
       "close": 84.8
     },
     {
+      "date": "2026-09-07",
+      "close": 78.6
+    },
+    {
       "date": "2026-09-08",
       "close": 80.35
     },
@@ -6888,10 +6892,6 @@
       "close": 90.8
     },
     {
-      "date": "2026-09-17",
-      "close": 91.45
-    },
-    {
       "date": "2026-09-18",
       "close": 93.9
     }
@@ -6899,100 +6899,100 @@
   "dividends": [
     {
       "date": "2020-03-02",
-      "amount": 0.53
+      "amount": 0.54
     },
     {
       "date": "2020-05-28",
-      "amount": 1.02
+      "amount": 1.04
     },
     {
       "date": "2020-09-02",
-      "amount": 1.02
+      "amount": 1.04
     },
     {
       "date": "2022-05-27",
-      "amount": 0.19
+      "amount": 0.2
     },
     {
       "date": "2022-09-01",
-      "amount": 1.73
+      "amount": 1.75
     },
     {
       "date": "2022-11-25",
-      "amount": 2.6
+      "amount": 2.64
     },
     {
       "date": "2023-03-03",
-      "amount": 2.93
+      "amount": 2.97
     },
     {
       "date": "2023-05-25",
-      "amount": 2.82
+      "amount": 2.86
     },
     {
       "date": "2023-08-31",
-      "amount": 2.35
+      "amount": 2.38
     },
     {
       "date": "2023-11-23",
-      "amount": 1.89
+      "amount": 1.91
     },
     {
       "date": "2024-03-11",
-      "amount": 2.26
+      "amount": 2.29
     },
     {
       "date": "2024-05-22",
-      "amount": 3.19
+      "amount": 3.24
     },
     {
       "date": "2024-09-02",
-      "amount": 3.76
+      "amount": 3.81
     },
     {
       "date": "2024-12-05",
-      "amount": 3.52
+      "amount": 3.57
     },
     {
       "date": "2025-03-06",
-      "amount": 0.27
+      "amount": 0.28
     },
     {
       "date": "2025-05-22",
-      "amount": 0.94
+      "amount": 0.96
     },
     {
       "date": "2025-09-03",
-      "amount": 1.12
+      "amount": 1.14
     },
     {
       "date": "2025-12-08",
-      "amount": 1.36
+      "amount": 1.38
     },
     {
       "date": "2026-03-05",
-      "amount": 1.63
+      "amount": 1.66
     },
     {
       "date": "2026-06-03",
-      "amount": 2.67
+      "amount": 2.71
     },
     {
       "date": "2026-09-07",
-      "amount": 4.64
+      "amount": 4.71
     }
   ],
-  "lastUpdated": "2026-09-18T18:48:06.622Z",
+  "lastUpdated": "2026-09-20T05:32:57.782Z",
   "fundamentals": {
-    "trailingPE": 7.7220397,
+    "trailingPE": 7.665306,
     "forwardPE": 14.39919,
     "marketCap": 46929465344,
-    "dividendYield": 0.1158,
+    "dividendYield": 0.112799995,
     "dividendRate": 10.59,
     "payoutRatio": 0.56299996,
     "beta": -0.15,
     "priceToBook": 1.8978533,
-    "enterpriseToEbitda": 64.386,
+    "enterpriseToEbitda": 66.088,
     "profitMargins": 0.24699,
     "returnOnEquity": 0.26612,
     "revenueGrowth": 0.472,

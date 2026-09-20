@@ -4,33 +4,13 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 248,
-  "previousClose": 246,
+  "previousClose": 66,
   "dayHigh": 252,
   "dayLow": 244,
   "volume": 20334,
   "fiftyTwoWeekHigh": 292,
   "fiftyTwoWeekLow": 186.5,
   "prices": [
-    {
-      "date": "2016-09-12",
-      "close": 65.25
-    },
-    {
-      "date": "2016-09-13",
-      "close": 63
-    },
-    {
-      "date": "2016-09-14",
-      "close": 63
-    },
-    {
-      "date": "2016-09-15",
-      "close": 66
-    },
-    {
-      "date": "2016-09-16",
-      "close": 66
-    },
     {
       "date": "2016-09-19",
       "close": 63.5
@@ -10040,6 +10020,10 @@
       "close": 250
     },
     {
+      "date": "2026-09-07",
+      "close": 249
+    },
+    {
       "date": "2026-09-08",
       "close": 248
     },
@@ -10066,10 +10050,6 @@
     {
       "date": "2026-09-16",
       "close": 244
-    },
-    {
-      "date": "2026-09-17",
-      "close": 246
     },
     {
       "date": "2026-09-18",
@@ -10118,17 +10098,17 @@
       "amount": 8
     }
   ],
-  "lastUpdated": "2026-09-18T18:48:44.720Z",
+  "lastUpdated": "2026-09-20T05:33:31.473Z",
   "fundamentals": {
-    "trailingPE": 27.46401,
+    "trailingPE": 27.403315,
     "forwardPE": 23.686724,
     "marketCap": 4534146048,
-    "dividendYield": 0.0325,
+    "dividendYield": 0.0323,
     "dividendRate": 8,
     "payoutRatio": 0.885,
     "beta": 1.006,
     "priceToBook": 11.03792,
-    "enterpriseToEbitda": 21.072,
+    "enterpriseToEbitda": 21.246,
     "profitMargins": 0.21957001,
     "returnOnEquity": 0.41594002,
     "revenueGrowth": 0.195,
