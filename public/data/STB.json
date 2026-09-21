@@ -3,11 +3,11 @@
   "name": "STOREBRAND",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 198.6,
-  "previousClose": 35.52,
-  "dayHigh": 201.2,
-  "dayLow": 197.6,
-  "volume": 1426520,
+  "currentPrice": 202,
+  "previousClose": 199.2,
+  "dayHigh": 202.2,
+  "dayLow": 199.4,
+  "volume": 370444,
   "fiftyTwoWeekHigh": 208.2,
   "fiftyTwoWeekLow": 148.5,
   "prices": [
@@ -10052,8 +10052,16 @@
       "close": 200.2
     },
     {
+      "date": "2026-09-17",
+      "close": 201.2
+    },
+    {
       "date": "2026-09-18",
       "close": 198.6
+    },
+    {
+      "date": "2026-09-21",
+      "close": 202
     }
   ],
   "dividends": [
@@ -10094,16 +10102,16 @@
       "amount": 5.4
     }
   ],
-  "lastUpdated": "2026-09-20T05:32:51.294Z",
+  "lastUpdated": "2026-09-21T20:13:26.175Z",
   "fundamentals": {
-    "trailingPE": 17.390543,
-    "forwardPE": 14.677419,
-    "marketCap": 82764070912,
+    "trailingPE": 17.688267,
+    "forwardPE": 14.928694,
+    "marketCap": 84180975616,
     "dividendYield": 0.0272,
     "dividendRate": 5.4,
     "payoutRatio": 0.4729,
     "beta": 0.53,
-    "priceToBook": 2.608182,
+    "priceToBook": 2.6528335,
     "enterpriseToEbitda": 1.4,
     "profitMargins": 0.045050003,
     "returnOnEquity": 0.15183,

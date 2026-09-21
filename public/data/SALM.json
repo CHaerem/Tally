@@ -3,11 +3,11 @@
   "name": "SALMAR",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 550,
-  "previousClose": 238.4,
-  "dayHigh": 557.5,
-  "dayLow": 548,
-  "volume": 481585,
+  "currentPrice": 530,
+  "previousClose": 561,
+  "dayHigh": 550,
+  "dayLow": 530.5,
+  "volume": 238965,
   "fiftyTwoWeekHigh": 627,
   "fiftyTwoWeekLow": 448,
   "prices": [
@@ -10052,8 +10052,16 @@
       "close": 558.5
     },
     {
+      "date": "2026-09-17",
+      "close": 562.5
+    },
+    {
       "date": "2026-09-18",
       "close": 550
+    },
+    {
+      "date": "2026-09-21",
+      "close": 530
     }
   ],
   "dividends": [
@@ -10098,16 +10106,16 @@
       "amount": 10
     }
   ],
-  "lastUpdated": "2026-09-20T05:32:50.805Z",
+  "lastUpdated": "2026-09-21T20:13:25.735Z",
   "fundamentals": {
-    "trailingPE": 33.65973,
-    "forwardPE": 15.261215,
-    "marketCap": 74545987584,
+    "trailingPE": 32.43574,
+    "forwardPE": 14.706262,
+    "marketCap": 71835222016,
     "dividendYield": 0.0182,
     "dividendRate": 10,
     "payoutRatio": 0.612,
     "beta": 0.66,
-    "priceToBook": 4.257592,
+    "priceToBook": 4.1027703,
     "enterpriseToEbitda": 15.47,
     "profitMargins": 0.07322,
     "returnOnEquity": 0.119160004,

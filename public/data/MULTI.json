@@ -3,11 +3,11 @@
   "name": "MULTICONSULT",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 147,
-  "previousClose": 96.75,
+  "currentPrice": 144.4,
+  "previousClose": 146,
   "dayHigh": 147,
-  "dayLow": 145,
-  "volume": 5671,
+  "dayLow": 144.4,
+  "volume": 5985,
   "fiftyTwoWeekHigh": 182.5,
   "fiftyTwoWeekLow": 137,
   "prices": [
@@ -10052,8 +10052,16 @@
       "close": 145.4
     },
     {
+      "date": "2026-09-17",
+      "close": 147
+    },
+    {
       "date": "2026-09-18",
       "close": 147
+    },
+    {
+      "date": "2026-09-21",
+      "close": 144.4
     }
   ],
   "dividends": [
@@ -10098,16 +10106,16 @@
       "amount": 5
     }
   ],
-  "lastUpdated": "2026-09-20T05:33:32.756Z",
+  "lastUpdated": "2026-09-21T20:14:06.226Z",
   "fundamentals": {
-    "trailingPE": 14.54006,
-    "forwardPE": 10.880217,
-    "marketCap": 4051982080,
+    "trailingPE": 14.282888,
+    "forwardPE": 10.6877775,
+    "marketCap": 3980314112,
     "dividendYield": 0.034,
     "dividendRate": 5,
     "payoutRatio": 0.4941,
     "beta": 0.103,
-    "priceToBook": 3.3051531,
+    "priceToBook": 3.2466946,
     "enterpriseToEbitda": 11.535,
     "profitMargins": 0.047480002,
     "returnOnEquity": 0.22783001,

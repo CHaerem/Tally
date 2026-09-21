@@ -3,11 +3,11 @@
   "name": "NORSK HYDRO",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 86.04,
-  "previousClose": 32.95,
-  "dayHigh": 87.6,
-  "dayLow": 86.04,
-  "volume": 6797481,
+  "currentPrice": 84.76,
+  "previousClose": 84.5,
+  "dayHigh": 86.36,
+  "dayLow": 84.42,
+  "volume": 2184971,
   "fiftyTwoWeekHigh": 120.4,
   "fiftyTwoWeekLow": 65.34,
   "prices": [
@@ -10052,8 +10052,16 @@
       "close": 84.84
     },
     {
+      "date": "2026-09-17",
+      "close": 86.54
+    },
+    {
       "date": "2026-09-18",
       "close": 86.04
+    },
+    {
+      "date": "2026-09-21",
+      "close": 84.76
     }
   ],
   "dividends": [
@@ -10102,16 +10110,16 @@
       "amount": 3
     }
   ],
-  "lastUpdated": "2026-09-20T05:32:49.386Z",
+  "lastUpdated": "2026-09-21T20:13:24.389Z",
   "fundamentals": {
-    "trailingPE": 17.311872,
-    "forwardPE": 10.353143,
-    "marketCap": 169092546560,
+    "trailingPE": 17.054327,
+    "forwardPE": 10.199121,
+    "marketCap": 166576996352,
     "dividendYield": 0.0349,
     "dividendRate": 3,
     "payoutRatio": 0.6036,
     "beta": 0.697,
-    "priceToBook": 1.630441,
+    "priceToBook": 1.6061853,
     "enterpriseToEbitda": 3.698,
     "profitMargins": 0.0477,
     "returnOnEquity": 0.09432,

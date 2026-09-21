@@ -3,11 +3,11 @@
   "name": "ODFJELL SER. A",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 132.8,
-  "previousClose": 27,
-  "dayHigh": 135,
-  "dayLow": 132,
-  "volume": 86390,
+  "currentPrice": 133.6,
+  "previousClose": 126.6,
+  "dayHigh": 134.2,
+  "dayLow": 132.2,
+  "volume": 49862,
   "fiftyTwoWeekHigh": 140.4,
   "fiftyTwoWeekLow": 100.2,
   "prices": [
@@ -10052,8 +10052,16 @@
       "close": 128
     },
     {
+      "date": "2026-09-17",
+      "close": 133.2
+    },
+    {
       "date": "2026-09-18",
       "close": 132.8
+    },
+    {
+      "date": "2026-09-21",
+      "close": 133.6
     }
   ],
   "dividends": [
@@ -10106,16 +10114,16 @@
       "amount": 4.87
     }
   ],
-  "lastUpdated": "2026-09-20T05:34:30.512Z",
+  "lastUpdated": "2026-09-21T20:15:02.269Z",
   "fundamentals": {
-    "trailingPE": 6.74454,
-    "forwardPE": 7.950393,
-    "marketCap": 10516653056,
+    "trailingPE": 6.78517,
+    "forwardPE": 8.007408,
+    "marketCap": 10580006912,
     "dividendYield": 0.0733,
     "dividendRate": 9.74,
     "payoutRatio": 0.4729,
     "beta": -0.23,
-    "priceToBook": 1.0939336,
+    "priceToBook": 1.0979561,
     "enterpriseToEbitda": 36.464,
     "profitMargins": 0.14359,
     "returnOnEquity": 0.16771,

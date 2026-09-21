@@ -3,11 +3,11 @@
   "name": "ROGALAND SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 152.2,
-  "previousClose": 32.5,
-  "dayHigh": 152.4,
-  "dayLow": 151.08,
-  "volume": 3058,
+  "currentPrice": 152.32,
+  "previousClose": 152.7,
+  "dayHigh": 153.5,
+  "dayLow": 152,
+  "volume": 350,
   "fiftyTwoWeekHigh": 162.98,
   "fiftyTwoWeekLow": 133,
   "prices": [
@@ -10048,8 +10048,16 @@
       "close": 151
     },
     {
+      "date": "2026-09-17",
+      "close": 151.08
+    },
+    {
       "date": "2026-09-18",
       "close": 152.2
+    },
+    {
+      "date": "2026-09-21",
+      "close": 152.32
     }
   ],
   "dividends": [
@@ -10090,16 +10098,16 @@
       "amount": 11.7
     }
   ],
-  "lastUpdated": "2026-09-20T05:35:06.699Z",
+  "lastUpdated": "2026-09-21T20:15:36.957Z",
   "fundamentals": {
-    "trailingPE": 11.443608,
-    "forwardPE": 13.261686,
-    "marketCap": 3512541440,
+    "trailingPE": 11.452632,
+    "forwardPE": 13.272142,
+    "marketCap": 3515311104,
     "dividendYield": 0.0769,
     "dividendRate": 11.7,
     "payoutRatio": 0.8797,
     "beta": 0.127,
-    "priceToBook": 0.8344893,
+    "priceToBook": 0.8351473,
     "enterpriseToEbitda": null,
     "profitMargins": 0.49941003,
     "returnOnEquity": 0.117539994,
