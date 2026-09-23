@@ -3,11 +3,11 @@
   "name": "NORWEGIAN BLOCK EXCHANGE AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.468,
-  "previousClose": 0.447,
-  "dayHigh": 0.5,
-  "dayLow": 0.465,
-  "volume": 733259,
+  "currentPrice": 0.461,
+  "previousClose": 0.462,
+  "dayHigh": 0.488,
+  "dayLow": 0.46,
+  "volume": 725930,
   "fiftyTwoWeekHigh": 0.886,
   "fiftyTwoWeekLow": 0.3,
   "prices": [
@@ -4802,26 +4802,30 @@
     {
       "date": "2026-09-22",
       "close": 0.47
+    },
+    {
+      "date": "2026-09-23",
+      "close": 0.46
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-09-22T19:31:12.997Z",
+  "lastUpdated": "2026-09-23T19:25:26.849Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 171484112,
+    "marketCap": 169205216,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 1.2786885,
-    "enterpriseToEbitda": -3.784,
-    "profitMargins": -1.74668,
+    "beta": 0.943,
+    "priceToBook": 1.2595628,
+    "enterpriseToEbitda": -4.601,
+    "profitMargins": -1.5363901,
     "returnOnEquity": -0.27078,
-    "revenueGrowth": -0.533,
+    "revenueGrowth": -0.346,
     "earningsGrowth": null,
-    "grossMargins": -0.27805,
-    "totalRevenue": 13435385,
-    "ebitda": -24063250
+    "grossMargins": -0.12417,
+    "totalRevenue": 15274385,
+    "ebitda": -26488250
   }
 }

@@ -3,11 +3,11 @@
   "name": "BORGESTAD",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 17.3,
-  "previousClose": 17.8,
-  "dayHigh": 17.3,
-  "dayLow": 17.2,
-  "volume": 2260,
+  "currentPrice": 17.45,
+  "previousClose": 17.45,
+  "dayHigh": 17.45,
+  "dayLow": 17,
+  "volume": 4773,
   "fiftyTwoWeekHigh": 19.95,
   "fiftyTwoWeekLow": 15,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-09-22",
       "close": 17.3
+    },
+    {
+      "date": "2026-09-23",
+      "close": 17.45
     }
   ],
   "dividends": [
@@ -10078,17 +10082,17 @@
       "amount": 0.5
     }
   ],
-  "lastUpdated": "2026-09-22T19:30:27.482Z",
+  "lastUpdated": "2026-09-23T19:24:41.105Z",
   "fundamentals": {
-    "trailingPE": 19.010988,
-    "forwardPE": 19.010988,
-    "marketCap": 603459840,
-    "dividendYield": 0.058000002,
+    "trailingPE": 19.175825,
+    "forwardPE": 19.175825,
+    "marketCap": 608692160,
+    "dividendYield": 0.057800002,
     "dividendRate": 1,
     "payoutRatio": 0.5495,
     "beta": -0.08,
-    "priceToBook": 0.8965589,
-    "enterpriseToEbitda": 12.217,
+    "priceToBook": 0.9043326,
+    "enterpriseToEbitda": 12.237,
     "profitMargins": 0.02894,
     "returnOnEquity": 0.06105,
     "revenueGrowth": -0.018,
