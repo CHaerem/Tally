@@ -3,11 +3,11 @@
   "name": "PETRONOR E&P ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 12.16,
-  "previousClose": 12.62,
-  "dayHigh": 12.54,
-  "dayLow": 12,
-  "volume": 311824,
+  "currentPrice": 12.5,
+  "previousClose": 12.6,
+  "dayHigh": 12.72,
+  "dayLow": 12.2,
+  "volume": 446231,
   "fiftyTwoWeekHigh": 18.58,
   "fiftyTwoWeekLow": 9.65,
   "prices": [
@@ -4598,6 +4598,10 @@
     {
       "date": "2026-09-23",
       "close": 12.16
+    },
+    {
+      "date": "2026-09-24",
+      "close": 12.5
     }
   ],
   "dividends": [
@@ -4614,17 +4618,17 @@
       "amount": 3.25
     }
   ],
-  "lastUpdated": "2026-09-23T19:25:37.337Z",
+  "lastUpdated": "2026-09-24T19:45:18.543Z",
   "fundamentals": {
-    "trailingPE": 4.8446217,
-    "forwardPE": 3.359116,
-    "marketCap": 1731059200,
-    "dividendYield": 0.2579,
+    "trailingPE": 4.9603176,
+    "forwardPE": 3.4530387,
+    "marketCap": 1779460608,
+    "dividendYield": 0.2673,
     "dividendRate": 3.25,
     "payoutRatio": 1.3185,
     "beta": -0.325,
-    "priceToBook": 1.3877293,
-    "enterpriseToEbitda": 13.817,
+    "priceToBook": 1.426531,
+    "enterpriseToEbitda": 13.315,
     "profitMargins": 0.17024,
     "returnOnEquity": 0.29733,
     "revenueGrowth": 10.119,

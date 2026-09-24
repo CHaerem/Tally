@@ -3,11 +3,11 @@
   "name": "LYTIX BIOPHARMA ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 8.5,
-  "previousClose": 8.46,
-  "dayHigh": 8.5,
-  "dayLow": 8.24,
-  "volume": 7473,
+  "currentPrice": 8.46,
+  "previousClose": 8.4,
+  "dayHigh": 8.46,
+  "dayLow": 7.62,
+  "volume": 250,
   "fiftyTwoWeekHigh": 11.9,
   "fiftyTwoWeekLow": 6.68,
   "prices": [
@@ -5330,20 +5330,24 @@
     {
       "date": "2026-09-23",
       "close": 8.5
+    },
+    {
+      "date": "2026-09-24",
+      "close": 8.46
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-09-23T19:25:22.588Z",
+  "lastUpdated": "2026-09-24T19:45:03.920Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -6.25,
-    "marketCap": 653650048,
+    "forwardPE": -6.220588,
+    "marketCap": 650574080,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": -0.498,
-    "priceToBook": 7.5488453,
-    "enterpriseToEbitda": -5.712,
+    "priceToBook": 7.5133214,
+    "enterpriseToEbitda": -5.696,
     "profitMargins": null,
     "returnOnEquity": -1.07126,
     "revenueGrowth": null,
