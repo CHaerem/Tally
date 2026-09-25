@@ -3,11 +3,11 @@
   "name": "IDEX BIOMETRICS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 5.52,
-  "previousClose": 5.8,
-  "dayHigh": 5.66,
+  "currentPrice": 5.68,
+  "previousClose": 5.56,
+  "dayHigh": 6,
   "dayLow": 5.4,
-  "volume": 57124,
+  "volume": 73142,
   "fiftyTwoWeekHigh": 12.8,
   "fiftyTwoWeekLow": 2.601,
   "prices": [
@@ -10074,20 +10074,24 @@
     {
       "date": "2026-09-24",
       "close": 5.52
+    },
+    {
+      "date": "2026-09-25",
+      "close": 5.68
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-09-24T19:43:45.630Z",
+  "lastUpdated": "2026-09-25T19:46:15.234Z",
   "fundamentals": {
-    "trailingPE": 110.4,
+    "trailingPE": 113.6,
     "forwardPE": null,
-    "marketCap": 426745280,
+    "marketCap": 424914688,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 1.098,
-    "priceToBook": 5.3333335,
-    "enterpriseToEbitda": -4.942,
+    "priceToBook": 5.4879227,
+    "enterpriseToEbitda": -4.885,
     "profitMargins": null,
     "returnOnEquity": -1.8559101,
     "revenueGrowth": 0.973,
