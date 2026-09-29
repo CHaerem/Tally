@@ -3,11 +3,11 @@
   "name": "SENTIA ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 85.8,
-  "previousClose": 85.1,
-  "dayHigh": 86.5,
-  "dayLow": 84.9,
-  "volume": 102868,
+  "currentPrice": 86.2,
+  "previousClose": 85.5,
+  "dayHigh": 86.7,
+  "dayLow": 84.6,
+  "volume": 52564,
   "fiftyTwoWeekHigh": 88.2,
   "fiftyTwoWeekLow": 58.5,
   "prices": [
@@ -1314,6 +1314,10 @@
     {
       "date": "2026-09-28",
       "close": 85.8
+    },
+    {
+      "date": "2026-09-29",
+      "close": 86.2
     }
   ],
   "dividends": [
@@ -1322,16 +1326,16 @@
       "amount": 5.5
     }
   ],
-  "lastUpdated": "2026-09-28T21:31:52.975Z",
+  "lastUpdated": "2026-09-29T20:24:42.255Z",
   "fundamentals": {
-    "trailingPE": 14.08867,
-    "forwardPE": 14.002791,
-    "marketCap": 8618616832,
-    "dividendYield": 0.1285,
+    "trailingPE": 14.15435,
+    "forwardPE": 14.068071,
+    "marketCap": 8658796544,
+    "dividendYield": 0.1282,
     "dividendRate": 11,
     "payoutRatio": 0.90309995,
     "beta": null,
-    "priceToBook": 6.0833807,
+    "priceToBook": 6.111741,
     "enterpriseToEbitda": 7.938,
     "profitMargins": 0.048649997,
     "returnOnEquity": 0.44124,

@@ -3,11 +3,11 @@
   "name": "BW ENERGY LIMITED",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 58.8,
-  "previousClose": 56.6,
-  "dayHigh": 58.8,
-  "dayLow": 57.1,
-  "volume": 63719,
+  "currentPrice": 58,
+  "previousClose": 56.4,
+  "dayHigh": 58.2,
+  "dayLow": 57,
+  "volume": 54435,
   "fiftyTwoWeekHigh": 62.2,
   "fiftyTwoWeekLow": 34.95,
   "prices": [
@@ -6650,19 +6650,23 @@
     {
       "date": "2026-09-28",
       "close": 58.8
+    },
+    {
+      "date": "2026-09-29",
+      "close": 58
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-09-28T21:31:21.564Z",
+  "lastUpdated": "2026-09-29T20:24:10.111Z",
   "fundamentals": {
-    "trailingPE": 16.752136,
-    "forwardPE": 5.1984663,
-    "marketCap": 15193969664,
+    "trailingPE": 16.477272,
+    "forwardPE": 5.127739,
+    "marketCap": 14988029952,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.365,
-    "priceToBook": 1.3977597,
+    "priceToBook": 1.3765131,
     "enterpriseToEbitda": 52.851,
     "profitMargins": 0.12214,
     "returnOnEquity": 0.09477,

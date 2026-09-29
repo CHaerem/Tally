@@ -3,11 +3,11 @@
   "name": "PETROLIA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 6.1,
+  "currentPrice": 6.25,
   "previousClose": 6.25,
-  "dayHigh": 6.4,
-  "dayLow": 6.15,
-  "volume": 16466,
+  "dayHigh": 6.15,
+  "dayLow": 5.9,
+  "volume": 69487,
   "fiftyTwoWeekHigh": 7,
   "fiftyTwoWeekLow": 4.21,
   "prices": [
@@ -10062,6 +10062,10 @@
     {
       "date": "2026-09-28",
       "close": 6.1
+    },
+    {
+      "date": "2026-09-29",
+      "close": 6.25
     }
   ],
   "dividends": [
@@ -10070,16 +10074,16 @@
       "amount": 0.19
     }
   ],
-  "lastUpdated": "2026-09-28T21:31:46.372Z",
+  "lastUpdated": "2026-09-29T20:24:35.497Z",
   "fundamentals": {
-    "trailingPE": 7.3493977,
+    "trailingPE": 7.530121,
     "forwardPE": null,
-    "marketCap": 360106080,
-    "dividendYield": 0.0301,
+    "marketCap": 368961152,
+    "dividendYield": 0.030299999,
     "dividendRate": 0.19,
     "payoutRatio": 0.2289,
     "beta": -0.331,
-    "priceToBook": 0.79915214,
+    "priceToBook": 0.8188034,
     "enterpriseToEbitda": 70.93,
     "profitMargins": 0.08182,
     "returnOnEquity": 0.10375,
