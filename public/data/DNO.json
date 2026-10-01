@@ -3,11 +3,11 @@
   "name": "DNO",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 19.04,
-  "previousClose": 19.7,
-  "dayHigh": 19.3,
-  "dayLow": 18.87,
-  "volume": 2564481,
+  "currentPrice": 19.15,
+  "previousClose": 19.28,
+  "dayHigh": 19.15,
+  "dayLow": 18.6,
+  "volume": 1974501,
   "fiftyTwoWeekHigh": 21.96,
   "fiftyTwoWeekLow": 12.44,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-09-30",
       "close": 19.04
+    },
+    {
+      "date": "2026-10-01",
+      "close": 19.15
     }
   ],
   "dividends": [
@@ -10162,17 +10166,17 @@
       "amount": 0.38
     }
   ],
-  "lastUpdated": "2026-09-30T20:27:58.617Z",
+  "lastUpdated": "2026-10-01T20:44:30.318Z",
   "fundamentals": {
-    "trailingPE": 25.052633,
-    "forwardPE": 5.4675055,
-    "marketCap": 18564001792,
-    "dividendYield": 0.078,
+    "trailingPE": 25.197369,
+    "forwardPE": 5.4990926,
+    "marketCap": 18671249408,
+    "dividendYield": 0.0788,
     "dividendRate": 1.5,
     "payoutRatio": 1.9275999,
     "beta": -0.154,
-    "priceToBook": 2.005668,
-    "enterpriseToEbitda": 12.453,
+    "priceToBook": 2.017255,
+    "enterpriseToEbitda": 12.328,
     "profitMargins": 0.04958,
     "returnOnEquity": 0.08564,
     "revenueGrowth": 1.948,

@@ -3,11 +3,11 @@
   "name": "BIEN SPAREBANK ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 147,
+  "currentPrice": 144,
   "previousClose": 144,
-  "dayHigh": 147,
-  "dayLow": 143,
-  "volume": 175,
+  "dayHigh": 144,
+  "dayLow": 144,
+  "volume": 10,
   "fiftyTwoWeekHigh": 165,
   "fiftyTwoWeekLow": 129,
   "prices": [
@@ -3794,6 +3794,14 @@
     {
       "date": "2026-09-29",
       "close": 147
+    },
+    {
+      "date": "2026-09-30",
+      "close": 147
+    },
+    {
+      "date": "2026-10-01",
+      "close": 144
     }
   ],
   "dividends": [
@@ -3810,16 +3818,16 @@
       "amount": 5.74
     }
   ],
-  "lastUpdated": "2026-09-30T20:27:54.432Z",
+  "lastUpdated": "2026-10-01T20:44:25.817Z",
   "fundamentals": {
-    "trailingPE": 14.425908,
-    "forwardPE": 12.25,
-    "marketCap": 834989120,
+    "trailingPE": 14.131502,
+    "forwardPE": 12,
+    "marketCap": 817948544,
     "dividendYield": 0.039,
     "dividendRate": 5.74,
     "payoutRatio": 0.56369996,
     "beta": -0.546,
-    "priceToBook": 1.1547798,
+    "priceToBook": 1.1312128,
     "enterpriseToEbitda": null,
     "profitMargins": 0.37208998,
     "returnOnEquity": 0.08281,

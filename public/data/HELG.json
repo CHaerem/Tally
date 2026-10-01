@@ -3,11 +3,11 @@
   "name": "SPAREBANK 1 HELGELAND",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 175,
-  "previousClose": 173,
-  "dayHigh": 176,
-  "dayLow": 172.02,
-  "volume": 828,
+  "currentPrice": 172,
+  "previousClose": 174.98,
+  "dayHigh": 172,
+  "dayLow": 172,
+  "volume": 3,
   "fiftyTwoWeekHigh": 185.98,
   "fiftyTwoWeekLow": 150,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-09-30",
       "close": 175
+    },
+    {
+      "date": "2026-10-01",
+      "close": 172
     }
   ],
   "dividends": [
@@ -10106,16 +10110,16 @@
       "amount": 7.67
     }
   ],
-  "lastUpdated": "2026-09-30T20:29:14.418Z",
+  "lastUpdated": "2026-10-01T20:45:47.997Z",
   "fundamentals": {
-    "trailingPE": 12.962963,
-    "forwardPE": 11.986301,
-    "marketCap": 4718677504,
-    "dividendYield": 0.0436,
+    "trailingPE": 12.750186,
+    "forwardPE": 11.780822,
+    "marketCap": 4637786112,
+    "dividendYield": 0.0438,
     "dividendRate": 7.67,
     "payoutRatio": 0.56810004,
     "beta": 0.134,
-    "priceToBook": 0.9390427,
+    "priceToBook": 0.92294484,
     "enterpriseToEbitda": null,
     "profitMargins": 0.44709998,
     "returnOnEquity": null,
