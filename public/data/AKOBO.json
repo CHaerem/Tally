@@ -3,11 +3,11 @@
   "name": "AKOBO MINERALS AB (PUB)",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.785,
-  "previousClose": 1.68,
-  "dayHigh": 1.8,
-  "dayLow": 1.7,
-  "volume": 277704,
+  "currentPrice": 1.81,
+  "previousClose": 1.7,
+  "dayHigh": 1.83,
+  "dayLow": 1.775,
+  "volume": 450337,
   "fiftyTwoWeekHigh": 2.7,
   "fiftyTwoWeekLow": 1.305,
   "prices": [
@@ -5266,25 +5266,29 @@
     {
       "date": "2026-10-01",
       "close": 1.78
+    },
+    {
+      "date": "2026-10-02",
+      "close": 1.81
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-10-01T20:45:10.276Z",
+  "lastUpdated": "2026-10-02T20:18:08.772Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 409689600,
+    "marketCap": 415427552,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
+    "beta": 0.963,
     "priceToBook": null,
     "enterpriseToEbitda": null,
-    "profitMargins": -1.03293,
+    "profitMargins": -2.58397,
     "returnOnEquity": null,
     "revenueGrowth": null,
     "earningsGrowth": null,
-    "grossMargins": 1.00438,
+    "grossMargins": 1.01096,
     "totalRevenue": null,
     "ebitda": 39993164
   }
