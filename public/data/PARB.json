@@ -5,9 +5,9 @@
   "exchange": "OSL",
   "currentPrice": 52.5,
   "previousClose": 54,
-  "dayHigh": 53.5,
+  "dayHigh": 53.1,
   "dayLow": 52.1,
-  "volume": 74248,
+  "volume": 43952,
   "fiftyTwoWeekHigh": 94,
   "fiftyTwoWeekLow": 52.1,
   "prices": [
@@ -10058,6 +10058,14 @@
     {
       "date": "2026-10-02",
       "close": 52.9
+    },
+    {
+      "date": "2026-10-05",
+      "close": 52.5
+    },
+    {
+      "date": "2026-10-06",
+      "close": 52.5
     }
   ],
   "dividends": [
@@ -10102,12 +10110,12 @@
       "amount": 8
     }
   ],
-  "lastUpdated": "2026-10-05T22:17:30.988Z",
+  "lastUpdated": "2026-10-06T20:44:01.950Z",
   "fundamentals": {
     "trailingPE": 11.24197,
     "forwardPE": 8.039914,
     "marketCap": 4031077376,
-    "dividendYield": 0.1512,
+    "dividendYield": 0.1524,
     "dividendRate": 8,
     "payoutRatio": 1.7094,
     "beta": 0.429,

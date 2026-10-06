@@ -3,11 +3,11 @@
   "name": "CMB.TECH NV",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 189.2,
-  "previousClose": 181.4,
-  "dayHigh": 195.4,
-  "dayLow": 188.8,
-  "volume": 403463,
+  "currentPrice": 189,
+  "previousClose": 184.2,
+  "dayHigh": 193.4,
+  "dayLow": 187,
+  "volume": 224848,
   "fiftyTwoWeekHigh": 196.2,
   "fiftyTwoWeekLow": 89,
   "prices": [
@@ -1138,6 +1138,14 @@
     {
       "date": "2026-10-02",
       "close": 188.4
+    },
+    {
+      "date": "2026-10-05",
+      "close": 189.2
+    },
+    {
+      "date": "2026-10-06",
+      "close": 189
     }
   ],
   "dividends": [
@@ -1158,16 +1166,16 @@
       "amount": 6.15
     }
   ],
-  "lastUpdated": "2026-10-05T22:18:43.163Z",
+  "lastUpdated": "2026-10-06T20:45:15.347Z",
   "fundamentals": {
-    "trailingPE": 6.4905663,
+    "trailingPE": 6.483705,
     "forwardPE": null,
-    "marketCap": 54900117504,
-    "dividendYield": 0.0428,
+    "marketCap": 54842085376,
+    "dividendYield": 0.042600002,
     "dividendRate": 8.06,
     "payoutRatio": 0.3041,
     "beta": 0.202,
-    "priceToBook": 1.8282005,
+    "priceToBook": 1.8256705,
     "enterpriseToEbitda": 51.834,
     "profitMargins": 0.37151,
     "returnOnEquity": 0.29594,

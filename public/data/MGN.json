@@ -3,11 +3,11 @@
   "name": "MAGNORA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 22.55,
-  "previousClose": 21.8,
-  "dayHigh": 22.85,
-  "dayLow": 21.65,
-  "volume": 991477,
+  "currentPrice": 22.65,
+  "previousClose": 21.45,
+  "dayHigh": 23,
+  "dayLow": 22.5,
+  "volume": 545043,
   "fiftyTwoWeekHigh": 33.7,
   "fiftyTwoWeekLow": 18.42,
   "prices": [
@@ -10058,6 +10058,14 @@
     {
       "date": "2026-10-02",
       "close": 21.4
+    },
+    {
+      "date": "2026-10-05",
+      "close": 22.55
+    },
+    {
+      "date": "2026-10-06",
+      "close": 22.65
     }
   ],
   "dividends": [
@@ -10110,16 +10118,16 @@
       "amount": 0.19
     }
   ],
-  "lastUpdated": "2026-10-05T22:18:01.871Z",
+  "lastUpdated": "2026-10-06T20:44:33.251Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 13.705784,
-    "marketCap": 1604394880,
+    "forwardPE": 13.76206,
+    "marketCap": 1611509760,
     "dividendYield": null,
     "dividendRate": 0.75,
     "payoutRatio": 1.87,
     "beta": 0.323,
-    "priceToBook": 2.1821172,
+    "priceToBook": 2.1917942,
     "enterpriseToEbitda": -12.364,
     "profitMargins": -1.4929299,
     "returnOnEquity": -0.12307999,

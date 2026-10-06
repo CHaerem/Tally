@@ -3,11 +3,11 @@
   "name": "BOUVET",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 46.85,
-  "previousClose": 46.8,
-  "dayHigh": 47.5,
-  "dayLow": 46.7,
-  "volume": 47650,
+  "currentPrice": 46.8,
+  "previousClose": 47.5,
+  "dayHigh": 48.1,
+  "dayLow": 46.95,
+  "volume": 138361,
   "fiftyTwoWeekHigh": 66.7,
   "fiftyTwoWeekLow": 42.15,
   "prices": [
@@ -10058,6 +10058,14 @@
     {
       "date": "2026-10-02",
       "close": 47.25
+    },
+    {
+      "date": "2026-10-05",
+      "close": 46.85
+    },
+    {
+      "date": "2026-10-06",
+      "close": 46.8
     }
   ],
   "dividends": [
@@ -10126,16 +10134,16 @@
       "amount": 3
     }
   ],
-  "lastUpdated": "2026-10-05T22:17:44.946Z",
+  "lastUpdated": "2026-10-06T20:44:15.976Z",
   "fundamentals": {
-    "trailingPE": 14.640624,
-    "forwardPE": 12.79733,
-    "marketCap": 4795708928,
-    "dividendYield": 0.0635,
+    "trailingPE": 14.625,
+    "forwardPE": 12.783672,
+    "marketCap": 4790590976,
+    "dividendYield": 0.064,
     "dividendRate": 3,
     "payoutRatio": 0.9346,
     "beta": 0.35,
-    "priceToBook": 17.840822,
+    "priceToBook": 17.821783,
     "enterpriseToEbitda": 10.62,
     "profitMargins": 0.08557,
     "returnOnEquity": 1.14377,
