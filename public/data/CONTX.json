@@ -3,11 +3,11 @@
   "name": "CONTEXTVISION",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 5.34,
-  "previousClose": 5.48,
+  "currentPrice": 5.1,
+  "previousClose": 5.3,
   "dayHigh": 5.38,
-  "dayLow": 5.12,
-  "volume": 159503,
+  "dayLow": 4.98,
+  "volume": 218566,
   "fiftyTwoWeekHigh": 5.78,
   "fiftyTwoWeekLow": 2.7,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-10-06",
       "close": 5.34
+    },
+    {
+      "date": "2026-10-07",
+      "close": 5.1
     }
   ],
   "dividends": [
@@ -10078,16 +10082,16 @@
       "amount": 0.14
     }
   ],
-  "lastUpdated": "2026-10-06T20:44:17.481Z",
+  "lastUpdated": "2026-10-07T20:57:11.833Z",
   "fundamentals": {
-    "trailingPE": 28.105265,
-    "forwardPE": 28.105265,
-    "marketCap": 394769792,
+    "trailingPE": 26.842106,
+    "forwardPE": 26.842106,
+    "marketCap": 377027328,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.123,
-    "priceToBook": 4.487395,
+    "priceToBook": 4.285714,
     "enterpriseToEbitda": null,
     "profitMargins": 0.11061,
     "returnOnEquity": 0.13829,
