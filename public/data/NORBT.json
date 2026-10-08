@@ -3,13 +3,13 @@
   "name": "NORBIT",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 156.8,
-  "previousClose": 159.3,
-  "dayHigh": 161.8,
-  "dayLow": 156.3,
-  "volume": 111067,
+  "currentPrice": 156.6,
+  "previousClose": 162.7,
+  "dayHigh": 157.4,
+  "dayLow": 153.8,
+  "volume": 76063,
   "fiftyTwoWeekHigh": 244.8,
-  "fiftyTwoWeekLow": 156,
+  "fiftyTwoWeekLow": 153.8,
   "prices": [
     {
       "date": "2019-06-20",
@@ -7354,6 +7354,10 @@
     {
       "date": "2026-10-07",
       "close": 156.8
+    },
+    {
+      "date": "2026-10-08",
+      "close": 156.6
     }
   ],
   "dividends": [
@@ -7394,16 +7398,16 @@
       "amount": 5
     }
   ],
-  "lastUpdated": "2026-10-07T20:57:28.786Z",
+  "lastUpdated": "2026-10-08T20:59:02.947Z",
   "fundamentals": {
-    "trailingPE": 22.272728,
-    "forwardPE": 16.151928,
-    "marketCap": 10032244736,
-    "dividendYield": 0.0315,
+    "trailingPE": 22.24432,
+    "forwardPE": 16.131327,
+    "marketCap": 10019448832,
+    "dividendYield": 0.0319,
     "dividendRate": 5,
     "payoutRatio": 0.71019995,
     "beta": 0.476,
-    "priceToBook": 8.598848,
+    "priceToBook": 8.58788,
     "enterpriseToEbitda": 15.64,
     "profitMargins": 0.15779,
     "returnOnEquity": 0.38233003,

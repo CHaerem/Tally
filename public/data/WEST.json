@@ -3,13 +3,13 @@
   "name": "WESTERN BULK CHARTERING AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 22,
+  "currentPrice": 22.4,
   "previousClose": 22.4,
-  "dayHigh": 22,
-  "dayLow": 22,
-  "volume": 302,
+  "dayHigh": 22.4,
+  "dayLow": 21.4,
+  "volume": 11747,
   "fiftyTwoWeekHigh": 24.7,
-  "fiftyTwoWeekLow": 14.55,
+  "fiftyTwoWeekLow": 14.6,
   "prices": [
     {
       "date": "2021-09-20",
@@ -5090,6 +5090,10 @@
     {
       "date": "2026-10-07",
       "close": 22
+    },
+    {
+      "date": "2026-10-08",
+      "close": 22.4
     }
   ],
   "dividends": [
@@ -5118,17 +5122,17 @@
       "amount": 1.21
     }
   ],
-  "lastUpdated": "2026-10-07T20:58:16.562Z",
+  "lastUpdated": "2026-10-08T20:59:54.743Z",
   "fundamentals": {
-    "trailingPE": 104.76191,
-    "forwardPE": 12.304251,
-    "marketCap": 719974272,
-    "dividendYield": 0.0543,
+    "trailingPE": 112,
+    "forwardPE": 12.527964,
+    "marketCap": 733064704,
+    "dividendYield": 0.055,
     "dividendRate": 1.21,
     "payoutRatio": 5.7268,
     "beta": 0.899,
-    "priceToBook": 1.5029887,
-    "enterpriseToEbitda": -213.967,
+    "priceToBook": 1.5303158,
+    "enterpriseToEbitda": -211.02,
     "profitMargins": 0.0008,
     "returnOnEquity": 0.01949,
     "revenueGrowth": 0.129,
