@@ -3,11 +3,11 @@
   "name": "VENTURA OFFSHORE HOLDING LTD.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 32,
+  "currentPrice": 32.2,
   "previousClose": 32,
-  "dayHigh": 32.9,
-  "dayLow": 31.8,
-  "volume": 36763,
+  "dayHigh": 32.2,
+  "dayLow": 31.9,
+  "volume": 77583,
   "fiftyTwoWeekHigh": 38.9,
   "fiftyTwoWeekLow": 17.5,
   "prices": [
@@ -2366,19 +2366,27 @@
     {
       "date": "2026-10-09",
       "close": 32.3
+    },
+    {
+      "date": "2026-10-12",
+      "close": 32
+    },
+    {
+      "date": "2026-10-13",
+      "close": 32.2
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-10-12T22:44:10.267Z",
+  "lastUpdated": "2026-10-13T20:58:50.676Z",
   "fundamentals": {
-    "trailingPE": 3.6951501,
-    "forwardPE": 4.782811,
-    "marketCap": 3389919232,
+    "trailingPE": 3.718245,
+    "forwardPE": 4.812704,
+    "marketCap": 3411106304,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.241,
-    "priceToBook": 0.83386505,
+    "priceToBook": 0.8390767,
     "enterpriseToEbitda": 21.651,
     "profitMargins": 0.31702998,
     "returnOnEquity": 0.25539,

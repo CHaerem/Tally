@@ -3,12 +3,12 @@
   "name": "ACE DIGITAL AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.392,
-  "previousClose": 0.49,
-  "dayHigh": 0.46,
+  "currentPrice": 0.4,
+  "previousClose": 0.428,
+  "dayHigh": 0.456,
   "dayLow": 0.392,
-  "volume": 25285,
-  "fiftyTwoWeekHigh": 1.15,
+  "volume": 82660,
+  "fiftyTwoWeekHigh": 1.1,
   "fiftyTwoWeekLow": 0.248,
   "prices": [
     {
@@ -1026,19 +1026,27 @@
     {
       "date": "2026-10-09",
       "close": 0.38
+    },
+    {
+      "date": "2026-10-12",
+      "close": 0.39
+    },
+    {
+      "date": "2026-10-13",
+      "close": 0.4
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-10-12T22:42:36.348Z",
+  "lastUpdated": "2026-10-13T20:57:24.601Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 49331240,
+    "marketCap": 50338000,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": null,
-    "priceToBook": 1.4254545,
+    "priceToBook": 1.4545455,
     "enterpriseToEbitda": null,
     "profitMargins": -0.38373002,
     "returnOnEquity": null,

@@ -3,11 +3,11 @@
   "name": "ENERGEIA AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 7.98,
-  "previousClose": 7.96,
-  "dayHigh": 7.98,
-  "dayLow": 6.8,
-  "volume": 2742,
+  "currentPrice": 7.94,
+  "previousClose": 8,
+  "dayHigh": 7.94,
+  "dayLow": 6.96,
+  "volume": 551,
   "fiftyTwoWeekHigh": 10.625,
   "fiftyTwoWeekLow": 5.5,
   "prices": [
@@ -3846,20 +3846,28 @@
     {
       "date": "2026-10-09",
       "close": 8
+    },
+    {
+      "date": "2026-10-12",
+      "close": 7.98
+    },
+    {
+      "date": "2026-10-13",
+      "close": 7.94
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-10-12T22:42:54.170Z",
+  "lastUpdated": "2026-10-13T20:57:40.743Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -88.666664,
-    "marketCap": 74225624,
+    "forwardPE": -88.22222,
+    "marketCap": 73853568,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.951,
-    "priceToBook": 0.6599951,
-    "enterpriseToEbitda": -12.367,
+    "priceToBook": 0.65668684,
+    "enterpriseToEbitda": -12.328,
     "profitMargins": -0.41412,
     "returnOnEquity": -0.23671,
     "revenueGrowth": 0.009,

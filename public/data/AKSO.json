@@ -3,11 +3,11 @@
   "name": "AKER SOLUTIONS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 41.48,
-  "previousClose": 40,
-  "dayHigh": 41.96,
-  "dayLow": 41,
-  "volume": 389846,
+  "currentPrice": 41.36,
+  "previousClose": 40.64,
+  "dayHigh": 42.02,
+  "dayLow": 41.34,
+  "volume": 293176,
   "fiftyTwoWeekHigh": 48.48,
   "fiftyTwoWeekLow": 25.92,
   "prices": [
@@ -10058,6 +10058,14 @@
     {
       "date": "2026-10-09",
       "close": 41.26
+    },
+    {
+      "date": "2026-10-12",
+      "close": 41.48
+    },
+    {
+      "date": "2026-10-13",
+      "close": 41.36
     }
   ],
   "dividends": [
@@ -10082,16 +10090,16 @@
       "amount": 8.6
     }
   ],
-  "lastUpdated": "2026-10-12T22:41:44.017Z",
+  "lastUpdated": "2026-10-13T20:56:37.919Z",
   "fundamentals": {
-    "trailingPE": 6.209581,
-    "forwardPE": 11.40143,
-    "marketCap": 20178720768,
-    "dividendYield": 0.087299995,
+    "trailingPE": 6.191617,
+    "forwardPE": 11.368446,
+    "marketCap": 20120346624,
+    "dividendYield": 0.0868,
     "dividendRate": 3.6,
     "payoutRatio": 0.5389,
     "beta": -0.103,
-    "priceToBook": 2.2992072,
+    "priceToBook": 2.2925558,
     "enterpriseToEbitda": 5.648,
     "profitMargins": 0.05468,
     "returnOnEquity": 0.35653,

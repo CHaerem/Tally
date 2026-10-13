@@ -4,12 +4,12 @@
   "currency": "NOK",
   "exchange": "OSL",
   "currentPrice": 858,
-  "previousClose": 853,
-  "dayHigh": 865,
-  "dayLow": 847,
-  "volume": 11789,
+  "previousClose": 825,
+  "dayHigh": 862,
+  "dayLow": 853,
+  "volume": 4221,
   "fiftyTwoWeekHigh": 896,
-  "fiftyTwoWeekLow": 443.5,
+  "fiftyTwoWeekLow": 450,
   "prices": [
     {
       "date": "2016-10-10",
@@ -10058,6 +10058,14 @@
     {
       "date": "2026-10-09",
       "close": 849
+    },
+    {
+      "date": "2026-10-12",
+      "close": 858
+    },
+    {
+      "date": "2026-10-13",
+      "close": 858
     }
   ],
   "dividends": [
@@ -10118,16 +10126,16 @@
       "amount": 20
     }
   ],
-  "lastUpdated": "2026-10-12T22:44:11.264Z",
+  "lastUpdated": "2026-10-13T20:58:51.671Z",
   "fundamentals": {
-    "trailingPE": 6.941186,
+    "trailingPE": 7.0143886,
     "forwardPE": 13.58885,
     "marketCap": 35604336640,
-    "dividendYield": 0.023599999,
+    "dividendYield": 0.0233,
     "dividendRate": 20,
     "payoutRatio": 0.22049999,
     "beta": 0.744,
-    "priceToBook": 1.0803639,
+    "priceToBook": 1.0534595,
     "enterpriseToEbitda": 216.013,
     "profitMargins": 0.42273998,
     "returnOnEquity": null,

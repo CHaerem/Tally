@@ -3,11 +3,11 @@
   "name": "PHOTOCURE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 49.5,
-  "previousClose": 48.2,
-  "dayHigh": 50.4,
+  "currentPrice": 49.05,
+  "previousClose": 49.5,
+  "dayHigh": 50,
   "dayLow": 48.8,
-  "volume": 40090,
+  "volume": 33669,
   "fiftyTwoWeekHigh": 79.8,
   "fiftyTwoWeekLow": 46.25,
   "prices": [
@@ -10058,19 +10058,27 @@
     {
       "date": "2026-10-09",
       "close": 49.4
+    },
+    {
+      "date": "2026-10-12",
+      "close": 49.5
+    },
+    {
+      "date": "2026-10-13",
+      "close": 49.05
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-10-12T22:42:16.064Z",
+  "lastUpdated": "2026-10-13T20:57:06.361Z",
   "fundamentals": {
-    "trailingPE": 17.01031,
-    "forwardPE": 33.90411,
-    "marketCap": 1332372224,
+    "trailingPE": 16.855669,
+    "forwardPE": 33.59589,
+    "marketCap": 1320259712,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.319,
-    "priceToBook": 2.195901,
+    "priceToBook": 2.1759381,
     "enterpriseToEbitda": 9.093,
     "profitMargins": 0.116009995,
     "returnOnEquity": 0.14494,
