@@ -3,11 +3,11 @@
   "name": "VISTIN PHARMA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 18,
-  "previousClose": 18.25,
+  "currentPrice": 18.4,
+  "previousClose": 18.1,
   "dayHigh": 18.4,
-  "dayLow": 18,
-  "volume": 9180,
+  "dayLow": 17.8,
+  "volume": 22176,
   "fiftyTwoWeekHigh": 23.5,
   "fiftyTwoWeekLow": 17.7,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-10-13",
       "close": 18
+    },
+    {
+      "date": "2026-10-14",
+      "close": 18.4
     }
   ],
   "dividends": [
@@ -10102,16 +10106,16 @@
       "amount": 1
     }
   ],
-  "lastUpdated": "2026-10-13T20:57:20.126Z",
+  "lastUpdated": "2026-10-14T19:56:44.796Z",
   "fundamentals": {
-    "trailingPE": 11.392405,
+    "trailingPE": 11.572327,
     "forwardPE": null,
-    "marketCap": 798202624,
+    "marketCap": 815940480,
     "dividendYield": 0.0556,
-    "dividendRate": 1,
+    "dividendRate": null,
     "payoutRatio": 0.6298,
     "beta": 0.578,
-    "priceToBook": 2.4937656,
+    "priceToBook": 2.5491827,
     "enterpriseToEbitda": 7.843,
     "profitMargins": 0.16252,
     "returnOnEquity": 0.22856002,

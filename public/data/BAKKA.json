@@ -3,11 +3,11 @@
   "name": "BAKKAFROST",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 441.4,
-  "previousClose": 432.4,
-  "dayHigh": 444,
-  "dayLow": 429,
-  "volume": 78737,
+  "currentPrice": 442.2,
+  "previousClose": 433.8,
+  "dayHigh": 445.6,
+  "dayLow": 439,
+  "volume": 60723,
   "fiftyTwoWeekHigh": 526,
   "fiftyTwoWeekLow": 390.8,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-10-13",
       "close": 441.4
+    },
+    {
+      "date": "2026-10-14",
+      "close": 442.2
     }
   ],
   "dividends": [
@@ -10106,17 +10110,17 @@
       "amount": 5.06
     }
   ],
-  "lastUpdated": "2026-10-13T20:56:20.650Z",
+  "lastUpdated": "2026-10-14T19:55:33.728Z",
   "fundamentals": {
-    "trailingPE": 20.93928,
-    "forwardPE": 13.326537,
-    "marketCap": 26140915712,
-    "dividendYield": 0.0117,
-    "dividendRate": 5.06,
+    "trailingPE": 20.97723,
+    "forwardPE": 13.391692,
+    "marketCap": 26188294144,
+    "dividendYield": 0.0115,
+    "dividendRate": null,
     "payoutRatio": 0.2375,
     "beta": 0.549,
-    "priceToBook": 1.6656544,
-    "enterpriseToEbitda": 16.226,
+    "priceToBook": 1.6737981,
+    "enterpriseToEbitda": 16.472,
     "profitMargins": 0.10941,
     "returnOnEquity": 0.0761,
     "revenueGrowth": 0.159,

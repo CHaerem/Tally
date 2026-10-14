@@ -3,11 +3,11 @@
   "name": "AKVA GROUP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 157.5,
+  "currentPrice": 158,
   "previousClose": 157.5,
   "dayHigh": 158,
-  "dayLow": 157.5,
-  "volume": 46994,
+  "dayLow": 157,
+  "volume": 12037,
   "fiftyTwoWeekHigh": 158.5,
   "fiftyTwoWeekLow": 80,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-10-13",
       "close": 157.5
+    },
+    {
+      "date": "2026-10-14",
+      "close": 158
     }
   ],
   "dividends": [
@@ -10122,16 +10126,16 @@
       "amount": 1
     }
   ],
-  "lastUpdated": "2026-10-13T20:56:38.354Z",
+  "lastUpdated": "2026-10-14T19:55:54.824Z",
   "fundamentals": {
-    "trailingPE": 26.831347,
-    "forwardPE": 18.922714,
-    "marketCap": 5745933312,
+    "trailingPE": 26.916525,
+    "forwardPE": 18.982786,
+    "marketCap": 5764174336,
     "dividendYield": 0.0127,
-    "dividendRate": 2,
+    "dividendRate": null,
     "payoutRatio": 0.3344,
     "beta": 0.135,
-    "priceToBook": 4.026074,
+    "priceToBook": 4.038855,
     "enterpriseToEbitda": 18.159,
     "profitMargins": 0.047930002,
     "returnOnEquity": 0.1571,

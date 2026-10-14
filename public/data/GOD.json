@@ -3,12 +3,12 @@
   "name": "GOODTECH",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 17.1,
-  "previousClose": 15.75,
-  "dayHigh": 18.05,
-  "dayLow": 16.95,
-  "volume": 238334,
-  "fiftyTwoWeekHigh": 18.05,
+  "currentPrice": 17.4,
+  "previousClose": 16.5,
+  "dayHigh": 17.55,
+  "dayLow": 16.5,
+  "volume": 255849,
+  "fiftyTwoWeekHigh": 18.2,
   "fiftyTwoWeekLow": 8.24,
   "prices": [
     {
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-10-13",
       "close": 17.1
+    },
+    {
+      "date": "2026-10-14",
+      "close": 17.4
     }
   ],
   "dividends": [
@@ -10074,16 +10078,16 @@
       "amount": 0.5
     }
   ],
-  "lastUpdated": "2026-10-13T20:58:04.946Z",
+  "lastUpdated": "2026-10-14T19:57:36.617Z",
   "fundamentals": {
-    "trailingPE": 13.255815,
-    "forwardPE": 14.016394,
-    "marketCap": 513246400,
-    "dividendYield": 0.0279,
-    "dividendRate": 0.5,
+    "trailingPE": 13.488372,
+    "forwardPE": 11.225806,
+    "marketCap": 522250688,
+    "dividendYield": 0.0292,
+    "dividendRate": null,
     "payoutRatio": 0.39810002,
     "beta": 0.405,
-    "priceToBook": 1.787768,
+    "priceToBook": 1.8191323,
     "enterpriseToEbitda": 9.792,
     "profitMargins": 0.053590003,
     "returnOnEquity": 0.13981,
