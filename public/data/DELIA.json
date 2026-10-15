@@ -3,11 +3,11 @@
   "name": "DELLIA GROUP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 18.8,
-  "previousClose": 18.76,
-  "dayHigh": 19.5,
-  "dayLow": 18.52,
-  "volume": 53504,
+  "currentPrice": 18.52,
+  "previousClose": 19.14,
+  "dayHigh": 19.3,
+  "dayLow": 18.62,
+  "volume": 48158,
   "fiftyTwoWeekHigh": 58.063,
   "fiftyTwoWeekLow": 17.56,
   "prices": [
@@ -1058,6 +1058,10 @@
     {
       "date": "2026-10-14",
       "close": 18.8
+    },
+    {
+      "date": "2026-10-15",
+      "close": 18.52
     }
   ],
   "dividends": [
@@ -1066,17 +1070,17 @@
       "amount": 0.57
     }
   ],
-  "lastUpdated": "2026-10-14T19:57:05.879Z",
+  "lastUpdated": "2026-10-15T19:39:30.414Z",
   "fundamentals": {
-    "trailingPE": 14.461538,
-    "forwardPE": 11.196541,
-    "marketCap": 867839424,
-    "dividendYield": 0.1173,
+    "trailingPE": 14.246155,
+    "forwardPE": 11.029784,
+    "marketCap": 854914176,
+    "dividendYield": 0.1223,
     "dividendRate": null,
     "payoutRatio": 0.4573,
     "beta": null,
-    "priceToBook": 2.129829,
-    "enterpriseToEbitda": 7.955,
+    "priceToBook": 2.0981083,
+    "enterpriseToEbitda": 7.562,
     "profitMargins": 0.067090005,
     "returnOnEquity": 0.21991,
     "revenueGrowth": 0.054,
