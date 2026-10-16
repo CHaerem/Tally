@@ -3,11 +3,11 @@
   "name": "NORCONSULT ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 37,
-  "previousClose": 37.25,
-  "dayHigh": 37.75,
-  "dayLow": 36.9,
-  "volume": 285788,
+  "currentPrice": 37.75,
+  "previousClose": 37.1,
+  "dayHigh": 38.2,
+  "dayLow": 37,
+  "volume": 228413,
   "fiftyTwoWeekHigh": 49.15,
   "fiftyTwoWeekLow": 33.7,
   "prices": [
@@ -2942,6 +2942,10 @@
     {
       "date": "2026-10-15",
       "close": 37
+    },
+    {
+      "date": "2026-10-16",
+      "close": 37.75
     }
   ],
   "dividends": [
@@ -2958,17 +2962,17 @@
       "amount": 1.8
     }
   ],
-  "lastUpdated": "2026-10-15T19:38:53.127Z",
+  "lastUpdated": "2026-10-16T19:12:50.098Z",
   "fundamentals": {
-    "trailingPE": 18.974358,
-    "forwardPE": 12.813409,
-    "marketCap": 11581245440,
-    "dividendYield": 0.0477,
-    "dividendRate": null,
+    "trailingPE": 19.358974,
+    "forwardPE": 13.07314,
+    "marketCap": 11816000512,
+    "dividendYield": 0.048600003,
+    "dividendRate": 1.8,
     "payoutRatio": 0.9231,
     "beta": -0.064,
-    "priceToBook": 3.9353328,
-    "enterpriseToEbitda": 13.096,
+    "priceToBook": 4.015103,
+    "enterpriseToEbitda": 12.871,
     "profitMargins": 0.04903,
     "returnOnEquity": 0.22402,
     "revenueGrowth": 0.169,

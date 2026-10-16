@@ -3,11 +3,11 @@
   "name": "ATEA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 162,
-  "previousClose": 164,
-  "dayHigh": 166.4,
-  "dayLow": 161.6,
-  "volume": 162984,
+  "currentPrice": 164.4,
+  "previousClose": 163,
+  "dayHigh": 166,
+  "dayLow": 163.4,
+  "volume": 170937,
   "fiftyTwoWeekHigh": 179,
   "fiftyTwoWeekLow": 134.4,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-10-15",
       "close": 162
+    },
+    {
+      "date": "2026-10-16",
+      "close": 164.4
     }
   ],
   "dividends": [
@@ -10154,17 +10158,17 @@
       "amount": 3.75
     }
   ],
-  "lastUpdated": "2026-10-15T19:38:30.027Z",
+  "lastUpdated": "2026-10-16T19:12:28.311Z",
   "fundamentals": {
-    "trailingPE": 15.743441,
-    "forwardPE": 13.893654,
-    "marketCap": 18072719360,
-    "dividendYield": 0.045100003,
-    "dividendRate": null,
+    "trailingPE": 15.976676,
+    "forwardPE": 14.099485,
+    "marketCap": 18340462592,
+    "dividendYield": 0.0463,
+    "dividendRate": 7.5,
     "payoutRatio": 0.7066,
     "beta": 0.687,
-    "priceToBook": 4.508767,
-    "enterpriseToEbitda": 12.695,
+    "priceToBook": 4.5755634,
+    "enterpriseToEbitda": 12.418,
     "profitMargins": 0.02933,
     "returnOnEquity": 0.29125,
     "revenueGrowth": 0.141,

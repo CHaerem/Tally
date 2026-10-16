@@ -3,11 +3,11 @@
   "name": "SELVAAG BOLIG",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 30.3,
-  "previousClose": 29.95,
-  "dayHigh": 31.2,
-  "dayLow": 30.3,
-  "volume": 12027,
+  "currentPrice": 30.25,
+  "previousClose": 30.05,
+  "dayHigh": 30.6,
+  "dayLow": 30.25,
+  "volume": 12305,
   "fiftyTwoWeekHigh": 38,
   "fiftyTwoWeekLow": 29.7,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-10-15",
       "close": 30.3
+    },
+    {
+      "date": "2026-10-16",
+      "close": 30.25
     }
   ],
   "dividends": [
@@ -10150,17 +10154,17 @@
       "amount": 1
     }
   ],
-  "lastUpdated": "2026-10-15T19:39:01.690Z",
+  "lastUpdated": "2026-10-16T19:12:58.079Z",
   "fundamentals": {
-    "trailingPE": 12.78481,
-    "forwardPE": 9.711538,
-    "marketCap": 2838933760,
-    "dividendYield": 0.033099998,
-    "dividendRate": null,
+    "trailingPE": 12.763714,
+    "forwardPE": 9.695513,
+    "marketCap": 2834248960,
+    "dividendYield": 0.033,
+    "dividendRate": 1,
     "payoutRatio": 0.42189997,
     "beta": 0.799,
-    "priceToBook": 1.2011893,
-    "enterpriseToEbitda": 36.754,
+    "priceToBook": 1.1992071,
+    "enterpriseToEbitda": 36.806,
     "profitMargins": 0.06903,
     "returnOnEquity": 0.096020006,
     "revenueGrowth": 4.552,
