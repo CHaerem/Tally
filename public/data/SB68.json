@@ -6,8 +6,8 @@
   "currentPrice": 210,
   "previousClose": 204.95,
   "dayHigh": 210,
-  "dayLow": 203.95,
-  "volume": 216,
+  "dayLow": 210,
+  "volume": 162,
   "fiftyTwoWeekHigh": 232.75,
   "fiftyTwoWeekLow": 186.02,
   "prices": [
@@ -5226,6 +5226,10 @@
     {
       "date": "2026-10-20",
       "close": 210
+    },
+    {
+      "date": "2026-10-21",
+      "close": 210
     }
   ],
   "dividends": [
@@ -5254,12 +5258,12 @@
       "amount": 13.5
     }
   ],
-  "lastUpdated": "2026-10-20T19:49:37.074Z",
+  "lastUpdated": "2026-10-21T19:55:07.686Z",
   "fundamentals": {
     "trailingPE": 17.07317,
     "forwardPE": 10.830325,
     "marketCap": 625817856,
-    "dividendYield": 0.0672,
+    "dividendYield": 0.0643,
     "dividendRate": 13.5,
     "payoutRatio": 1.0979,
     "beta": 0.075,
