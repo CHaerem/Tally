@@ -3,13 +3,13 @@
   "name": "WEBSTEP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 12.3,
-  "previousClose": 12.4,
-  "dayHigh": 12.55,
-  "dayLow": 12.3,
-  "volume": 9862,
+  "currentPrice": 12.25,
+  "previousClose": 12.45,
+  "dayHigh": 12.25,
+  "dayLow": 12,
+  "volume": 26269,
   "fiftyTwoWeekHigh": 21,
-  "fiftyTwoWeekLow": 12.05,
+  "fiftyTwoWeekLow": 12,
   "prices": [
     {
       "date": "2017-10-11",
@@ -9070,6 +9070,10 @@
     {
       "date": "2026-10-21",
       "close": 12.3
+    },
+    {
+      "date": "2026-10-22",
+      "close": 12.25
     }
   ],
   "dividends": [
@@ -9110,17 +9114,17 @@
       "amount": 1.49
     }
   ],
-  "lastUpdated": "2026-10-21T19:53:43.424Z",
+  "lastUpdated": "2026-10-22T19:41:55.810Z",
   "fundamentals": {
-    "trailingPE": 10.336134,
-    "forwardPE": 5.371625,
-    "marketCap": 334249184,
-    "dividendYield": 0.1216,
+    "trailingPE": 10.294117,
+    "forwardPE": 5.349789,
+    "marketCap": 332890432,
+    "dividendYield": 0.12109999,
     "dividendRate": 1.49,
     "payoutRatio": 1.2521,
     "beta": 0.302,
-    "priceToBook": 1.0698444,
-    "enterpriseToEbitda": 7.831,
+    "priceToBook": 1.0654954,
+    "enterpriseToEbitda": 7.859,
     "profitMargins": 0.03886,
     "returnOnEquity": 0.101110004,
     "revenueGrowth": -0.114,

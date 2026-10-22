@@ -3,11 +3,11 @@
   "name": "DNB BANK ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 314.7,
-  "previousClose": 305,
-  "dayHigh": 314.7,
-  "dayLow": 307.4,
-  "volume": 2384797,
+  "currentPrice": 313.7,
+  "previousClose": 306.9,
+  "dayHigh": 316,
+  "dayLow": 310.3,
+  "volume": 1792232,
   "fiftyTwoWeekHigh": 325.8,
   "fiftyTwoWeekLow": 257.4,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-10-21",
       "close": 314.7
+    },
+    {
+      "date": "2026-10-22",
+      "close": 313.7
     }
   ],
   "dividends": [
@@ -10114,23 +10118,23 @@
       "amount": 18
     }
   ],
-  "lastUpdated": "2026-10-21T19:52:29.560Z",
+  "lastUpdated": "2026-10-22T19:40:48.130Z",
   "fundamentals": {
-    "trailingPE": 11.414581,
-    "forwardPE": 11.189362,
-    "marketCap": 447392677888,
-    "dividendYield": 0.059,
+    "trailingPE": 11.567109,
+    "forwardPE": 11.031736,
+    "marketCap": 445971038208,
+    "dividendYield": 0.0572,
     "dividendRate": 18,
-    "payoutRatio": 0.6529,
+    "payoutRatio": 0.66370004,
     "beta": 0.373,
-    "priceToBook": 1.7857447,
+    "priceToBook": 1.7244034,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.47826,
-    "returnOnEquity": 0.1507,
-    "revenueGrowth": 0.008,
-    "earningsGrowth": -0.043,
+    "profitMargins": 0.47180998,
+    "returnOnEquity": 0.14436,
+    "revenueGrowth": -0.031,
+    "earningsGrowth": -0.059,
     "grossMargins": null,
-    "totalRevenue": 87684997120,
+    "totalRevenue": 87024001024,
     "ebitda": null
   }
 }
