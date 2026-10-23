@@ -3,11 +3,11 @@
   "name": "KOMPLETT ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 6.16,
-  "previousClose": 6.96,
-  "dayHigh": 6.52,
-  "dayLow": 5.98,
-  "volume": 979714,
+  "currentPrice": 6.04,
+  "previousClose": 6.82,
+  "dayHigh": 6.5,
+  "dayLow": 6.04,
+  "volume": 154593,
   "fiftyTwoWeekHigh": 15.3,
   "fiftyTwoWeekLow": 5.9,
   "prices": [
@@ -5394,26 +5394,30 @@
     {
       "date": "2026-10-22",
       "close": 6.16
+    },
+    {
+      "date": "2026-10-23",
+      "close": 6.04
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-10-22T19:42:48.282Z",
+  "lastUpdated": "2026-10-23T19:45:30.744Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 13.488953,
-    "marketCap": 1077180416,
+    "forwardPE": 19.483871,
+    "marketCap": 1056196416,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 1.575,
-    "priceToBook": 0.58829147,
-    "enterpriseToEbitda": 143.054,
-    "profitMargins": -0.03749,
-    "returnOnEquity": -0.26875,
-    "revenueGrowth": 0.042,
+    "beta": null,
+    "priceToBook": 0.0021510492,
+    "enterpriseToEbitda": 7.799,
+    "profitMargins": -0.03797,
+    "returnOnEquity": -0.28184998,
+    "revenueGrowth": -0.052,
     "earningsGrowth": null,
-    "grossMargins": 0.05353,
-    "totalRevenue": 15578999808,
-    "ebitda": 17000000
+    "grossMargins": 0.05234,
+    "totalRevenue": 15379000320,
+    "ebitda": 151000000
   }
 }

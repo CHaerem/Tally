@@ -3,11 +3,11 @@
   "name": "YARA INTERNATIONAL",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 399.4,
-  "previousClose": 412.1,
-  "dayHigh": 400.2,
-  "dayLow": 383.3,
-  "volume": 642153,
+  "currentPrice": 402.9,
+  "previousClose": 408,
+  "dayHigh": 404.4,
+  "dayLow": 395.1,
+  "volume": 442274,
   "fiftyTwoWeekHigh": 599.4,
   "fiftyTwoWeekLow": 353.4,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-10-22",
       "close": 399.4
+    },
+    {
+      "date": "2026-10-23",
+      "close": 402.9
     }
   ],
   "dividends": [
@@ -10130,23 +10134,23 @@
       "amount": 22
     }
   ],
-  "lastUpdated": "2026-10-22T19:40:49.519Z",
+  "lastUpdated": "2026-10-23T19:43:09.457Z",
   "fundamentals": {
-    "trailingPE": 6.753466,
-    "forwardPE": 8.8732815,
-    "marketCap": 101714165760,
-    "dividendYield": 0.0547,
+    "trailingPE": 7.5055885,
+    "forwardPE": 9.231186,
+    "marketCap": 102605504512,
+    "dividendYield": 0.0551,
     "dividendRate": 22,
-    "payoutRatio": 0.37080002,
-    "beta": 0.259,
-    "priceToBook": 1.1997802,
-    "enterpriseToEbitda": 35.34,
-    "profitMargins": 0.09255999,
-    "returnOnEquity": 0.17942,
-    "revenueGrowth": 0.081,
-    "earningsGrowth": 0.318,
-    "grossMargins": 0.30004,
-    "totalRevenue": 16540999680,
-    "ebitda": 2984999936
+    "payoutRatio": 0.4023,
+    "beta": null,
+    "priceToBook": 1.178811,
+    "enterpriseToEbitda": 32.541,
+    "profitMargins": 0.08239,
+    "returnOnEquity": 0.15948,
+    "revenueGrowth": 0.09,
+    "earningsGrowth": -0.382,
+    "grossMargins": 0.29621,
+    "totalRevenue": 17112999936,
+    "ebitda": 3217999872
   }
 }

@@ -3,11 +3,11 @@
   "name": "NORDIC SEMICONDUCTOR",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 168.5,
-  "previousClose": 169.6,
-  "dayHigh": 178.5,
-  "dayLow": 168.5,
-  "volume": 2820211,
+  "currentPrice": 167,
+  "previousClose": 171.6,
+  "dayHigh": 175.7,
+  "dayLow": 164.5,
+  "volume": 1427842,
   "fiftyTwoWeekHigh": 211,
   "fiftyTwoWeekLow": 123.7,
   "prices": [
@@ -10074,26 +10074,30 @@
     {
       "date": "2026-10-22",
       "close": 168.5
+    },
+    {
+      "date": "2026-10-23",
+      "close": 167
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-10-22T19:41:35.575Z",
+  "lastUpdated": "2026-10-23T19:44:04.208Z",
   "fundamentals": {
-    "trailingPE": 106.64557,
-    "forwardPE": 34.985725,
-    "marketCap": 33328486400,
+    "trailingPE": 59.642857,
+    "forwardPE": 35.815777,
+    "marketCap": 33031792640,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.921,
-    "priceToBook": 5.0308137,
-    "enterpriseToEbitda": 628.07,
-    "profitMargins": 0.04235,
-    "returnOnEquity": 0.05032,
-    "revenueGrowth": 0.332,
-    "earningsGrowth": 0.577,
-    "grossMargins": 0.5298,
-    "totalRevenue": 759484032,
-    "ebitda": 55214000
+    "priceToBook": 4.8135586,
+    "enterpriseToEbitda": 423.694,
+    "profitMargins": 0.07129,
+    "returnOnEquity": 0.082720004,
+    "revenueGrowth": 0.316,
+    "earningsGrowth": 32.25,
+    "grossMargins": 0.53174,
+    "totalRevenue": 815987008,
+    "ebitda": 78569000
   }
 }
