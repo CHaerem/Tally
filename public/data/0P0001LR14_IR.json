@@ -3,8 +3,8 @@
   "name": "0P0001LR14.IR",
   "currency": "NOK",
   "exchange": "ISE",
-  "currentPrice": 151.516,
-  "previousClose": 152.35,
+  "currentPrice": 150.234,
+  "previousClose": 95.648,
   "dayHigh": null,
   "dayLow": null,
   "volume": null,
@@ -4400,8 +4400,16 @@
       "close": 155.01
     },
     {
+      "date": "2026-09-02",
+      "close": 154.48
+    },
+    {
       "date": "2026-09-03",
       "close": 155.27
+    },
+    {
+      "date": "2026-09-04",
+      "close": 155.71
     },
     {
       "date": "2026-09-07",
@@ -4526,10 +4534,14 @@
     {
       "date": "2026-10-21",
       "close": 152.29
+    },
+    {
+      "date": "2026-10-22",
+      "close": 150.23
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-10-23T19:47:13.421Z",
+  "lastUpdated": "2026-10-25T05:34:50.714Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
