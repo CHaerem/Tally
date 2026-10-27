@@ -3,11 +3,11 @@
   "name": "NAVAMEDIC",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 13.4,
-  "previousClose": 12.85,
+  "currentPrice": 13.05,
+  "previousClose": 13,
   "dayHigh": 13.4,
-  "dayLow": 12.7,
-  "volume": 15585,
+  "dayLow": 13,
+  "volume": 17322,
   "fiftyTwoWeekHigh": 26.5,
   "fiftyTwoWeekLow": 12.5,
   "prices": [
@@ -10062,20 +10062,24 @@
     {
       "date": "2026-10-26",
       "close": 13.4
+    },
+    {
+      "date": "2026-10-27",
+      "close": 13.05
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-10-26T20:52:24.001Z",
+  "lastUpdated": "2026-10-27T20:24:00.177Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 32.289158,
-    "marketCap": 321350464,
+    "forwardPE": 31.445784,
+    "marketCap": 312956992,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.242,
-    "priceToBook": 1.0505683,
-    "enterpriseToEbitda": 9.519,
+    "priceToBook": 1.0231282,
+    "enterpriseToEbitda": 9.57,
     "profitMargins": -0.04033,
     "returnOnEquity": -0.088640004,
     "revenueGrowth": 0.022,

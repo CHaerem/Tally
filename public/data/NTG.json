@@ -3,11 +3,11 @@
   "name": "NORDIC TECHNOLOGY GROUP AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.18,
-  "previousClose": 1.13,
-  "dayHigh": 1.18,
-  "dayLow": 1.09,
-  "volume": 30858,
+  "currentPrice": 1.17,
+  "previousClose": 1.11,
+  "dayHigh": 1.17,
+  "dayLow": 1.17,
+  "volume": 100,
   "fiftyTwoWeekHigh": 2.34,
   "fiftyTwoWeekLow": 0.9,
   "prices": [
@@ -4346,19 +4346,23 @@
     {
       "date": "2026-10-26",
       "close": 1.18
+    },
+    {
+      "date": "2026-10-27",
+      "close": 1.17
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-10-26T20:52:30.120Z",
+  "lastUpdated": "2026-10-27T20:24:05.325Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 231362400,
+    "marketCap": 229401712,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.284,
-    "priceToBook": 1.5691489,
+    "priceToBook": 1.5558511,
     "enterpriseToEbitda": -3.185,
     "profitMargins": null,
     "returnOnEquity": -0.70186996,
