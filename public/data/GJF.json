@@ -3,11 +3,11 @@
   "name": "GJENSIDIGE FORSIKRING",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 263.4,
-  "previousClose": 271.2,
-  "dayHigh": 263.4,
-  "dayLow": 257.4,
-  "volume": 577481,
+  "currentPrice": 260.4,
+  "previousClose": 270.4,
+  "dayHigh": 264,
+  "dayLow": 260.4,
+  "volume": 327870,
   "fiftyTwoWeekHigh": 303,
   "fiftyTwoWeekLow": 241.4,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-10-27",
       "close": 263.4
+    },
+    {
+      "date": "2026-10-28",
+      "close": 260.4
     }
   ],
   "dividends": [
@@ -10122,23 +10126,23 @@
       "amount": 14.5
     }
   ],
-  "lastUpdated": "2026-10-27T20:21:56.610Z",
+  "lastUpdated": "2026-10-28T20:43:30.597Z",
   "fundamentals": {
-    "trailingPE": 19.045553,
-    "forwardPE": 15.076887,
-    "marketCap": null,
-    "dividendYield": 0.0381,
+    "trailingPE": 18.828632,
+    "forwardPE": 14.905169,
+    "marketCap": 130190655488,
+    "dividendYield": 0.038,
     "dividendRate": 10,
     "payoutRatio": 0.72309995,
     "beta": 0.211,
-    "priceToBook": 5.813286,
-    "enterpriseToEbitda": 5.867,
+    "priceToBook": 5.7470756,
+    "enterpriseToEbitda": 5.911,
     "profitMargins": 0.15362,
     "returnOnEquity": 0.27165002,
     "revenueGrowth": -0.035,
     "earningsGrowth": 0.304,
     "grossMargins": 0.38297,
     "totalRevenue": 47141199872,
-    "ebitda": 10278400000
+    "ebitda": 10288300032
   }
 }

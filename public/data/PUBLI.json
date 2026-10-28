@@ -3,11 +3,11 @@
   "name": "PPI PUBLIC PROPERTY INVEST AB (",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 16.64,
-  "previousClose": 16.45,
-  "dayHigh": 16.75,
-  "dayLow": 16.07,
-  "volume": 432026,
+  "currentPrice": 16.5,
+  "previousClose": 16.28,
+  "dayHigh": 16.8,
+  "dayLow": 16.05,
+  "volume": 491485,
   "fiftyTwoWeekHigh": 24.65,
   "fiftyTwoWeekLow": 15.2,
   "prices": [
@@ -2514,6 +2514,10 @@
     {
       "date": "2026-10-27",
       "close": 16.64
+    },
+    {
+      "date": "2026-10-28",
+      "close": 16.5
     }
   ],
   "dividends": [
@@ -2542,22 +2546,22 @@
       "amount": 0.23
     }
   ],
-  "lastUpdated": "2026-10-27T20:24:12.492Z",
+  "lastUpdated": "2026-10-28T20:45:45.812Z",
   "fundamentals": {
-    "trailingPE": 23.771427,
-    "forwardPE": 9.544951,
-    "marketCap": 15497554944,
-    "dividendYield": 0.0478,
+    "trailingPE": 41.25,
+    "forwardPE": 9.464645,
+    "marketCap": 15348293632,
+    "dividendYield": 0.0477,
     "dividendRate": 0.79,
-    "payoutRatio": 1.1889,
+    "payoutRatio": 3.1135998,
     "beta": null,
-    "priceToBook": 0.73540455,
+    "priceToBook": 0.7292173,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.16765,
-    "returnOnEquity": 0.029849999,
-    "revenueGrowth": 3.05,
+    "profitMargins": 0.10774,
+    "returnOnEquity": 0.024300002,
+    "revenueGrowth": 2.611,
     "earningsGrowth": null,
-    "grossMargins": 0.83044,
+    "grossMargins": 0.82574,
     "totalRevenue": null,
     "ebitda": null
   }
