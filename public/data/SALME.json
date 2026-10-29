@@ -3,13 +3,13 @@
   "name": "SALMON EVOLUTION ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.86,
-  "previousClose": 3.135,
-  "dayHigh": 3.09,
-  "dayLow": 2.88,
-  "volume": 3557419,
+  "currentPrice": 2.65,
+  "previousClose": 3.1,
+  "dayHigh": 2.92,
+  "dayLow": 2.63,
+  "volume": 3666778,
   "fiftyTwoWeekHigh": 5.47,
-  "fiftyTwoWeekLow": 2.88,
+  "fiftyTwoWeekLow": 2.63,
   "prices": [
     {
       "date": "2020-09-18",
@@ -6154,26 +6154,30 @@
     {
       "date": "2026-10-28",
       "close": 2.86
+    },
+    {
+      "date": "2026-10-29",
+      "close": 2.65
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-10-28T20:45:50.330Z",
+  "lastUpdated": "2026-10-29T20:49:55.446Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -42.496284,
-    "marketCap": 1584449408,
+    "forwardPE": -59.927635,
+    "marketCap": 1468108928,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.187,
-    "priceToBook": 0.6555123,
-    "enterpriseToEbitda": -82.32,
-    "profitMargins": -0.31371,
-    "returnOnEquity": -0.05668,
-    "revenueGrowth": -0.268,
+    "beta": null,
+    "priceToBook": 0.57961506,
+    "enterpriseToEbitda": -135.157,
+    "profitMargins": -0.25127,
+    "returnOnEquity": -0.04823,
+    "revenueGrowth": 0.213,
     "earningsGrowth": null,
-    "grossMargins": 0.49625,
-    "totalRevenue": 404136000,
-    "ebitda": -45197000
+    "grossMargins": 0.53363,
+    "totalRevenue": 422513984,
+    "ebitda": -27758000
   }
 }

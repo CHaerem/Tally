@@ -3,11 +3,11 @@
   "name": "PHOTOCURE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 47.5,
-  "previousClose": 49.3,
-  "dayHigh": 50.7,
-  "dayLow": 47.2,
-  "volume": 252066,
+  "currentPrice": 46.7,
+  "previousClose": 49,
+  "dayHigh": 47.9,
+  "dayLow": 46.4,
+  "volume": 154399,
   "fiftyTwoWeekHigh": 79.8,
   "fiftyTwoWeekLow": 46.25,
   "prices": [
@@ -10070,26 +10070,30 @@
     {
       "date": "2026-10-28",
       "close": 47.5
+    },
+    {
+      "date": "2026-10-29",
+      "close": 46.7
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-10-28T20:44:20.294Z",
+  "lastUpdated": "2026-10-29T20:48:16.339Z",
   "fundamentals": {
-    "trailingPE": 16.323023,
-    "forwardPE": 32.834026,
-    "marketCap": 1278539008,
+    "trailingPE": 25.801105,
+    "forwardPE": 32.281033,
+    "marketCap": 1257005696,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.319,
-    "priceToBook": 2.1071777,
-    "enterpriseToEbitda": 9.197,
-    "profitMargins": 0.116009995,
-    "returnOnEquity": 0.14494,
-    "revenueGrowth": 0.051,
+    "beta": null,
+    "priceToBook": 2.1627378,
+    "enterpriseToEbitda": 8.853,
+    "profitMargins": 0.0709,
+    "returnOnEquity": 0.09074,
+    "revenueGrowth": 0.044,
     "earningsGrowth": null,
-    "grossMargins": 0.93587995,
-    "totalRevenue": 678716032,
-    "ebitda": 129700000
+    "grossMargins": 0.93934,
+    "totalRevenue": 684689984,
+    "ebitda": 126634000
   }
 }

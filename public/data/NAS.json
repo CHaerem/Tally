@@ -3,11 +3,11 @@
   "name": "NORWEGIAN AIR SHUTTLE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 11.39,
-  "previousClose": 11.01,
-  "dayHigh": 11.66,
-  "dayLow": 10.915,
-  "volume": 13458565,
+  "currentPrice": 11.475,
+  "previousClose": 10.79,
+  "dayHigh": 11.52,
+  "dayLow": 11.2,
+  "volume": 9020353,
   "fiftyTwoWeekHigh": 18.075,
   "fiftyTwoWeekLow": 10.755,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-10-28",
       "close": 11.39
+    },
+    {
+      "date": "2026-10-29",
+      "close": 11.48
     }
   ],
   "dividends": [
@@ -10082,23 +10086,23 @@
       "amount": 0.8
     }
   ],
-  "lastUpdated": "2026-10-28T20:43:33.685Z",
+  "lastUpdated": "2026-10-29T20:47:26.015Z",
   "fundamentals": {
-    "trailingPE": 7.5430465,
-    "forwardPE": 6.81375,
-    "marketCap": 11989352448,
-    "dividendYield": 0.0716,
+    "trailingPE": 13.343023,
+    "forwardPE": 7.550783,
+    "marketCap": 12078825472,
+    "dividendYield": 0.070199996,
     "dividendRate": 0.8,
-    "payoutRatio": 1.1333001,
-    "beta": 1.074,
-    "priceToBook": 1.7982318,
-    "enterpriseToEbitda": 5.671,
-    "profitMargins": 0.04246,
-    "returnOnEquity": 0.2572,
-    "revenueGrowth": 0.012,
-    "earningsGrowth": null,
-    "grossMargins": 0.19770999,
-    "totalRevenue": 38087000064,
-    "ebitda": 3040000000
+    "payoutRatio": 0.96389997,
+    "beta": null,
+    "priceToBook": 1.3087364,
+    "enterpriseToEbitda": 5.493,
+    "profitMargins": 0.02333,
+    "returnOnEquity": 0.107259996,
+    "revenueGrowth": 0.062,
+    "earningsGrowth": -0.274,
+    "grossMargins": 0.18619,
+    "totalRevenue": 38832001024,
+    "ebitda": 3280999936
   }
 }

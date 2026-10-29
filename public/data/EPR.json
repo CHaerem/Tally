@@ -3,12 +3,12 @@
   "name": "EUROPRIS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 85.3,
-  "previousClose": 84.1,
-  "dayHigh": 86.3,
-  "dayLow": 84.5,
-  "volume": 183016,
-  "fiftyTwoWeekHigh": 103,
+  "currentPrice": 83,
+  "previousClose": 82.8,
+  "dayHigh": 84,
+  "dayLow": 81,
+  "volume": 839371,
+  "fiftyTwoWeekHigh": 102.2,
   "fiftyTwoWeekLow": 79.6,
   "prices": [
     {
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-10-28",
       "close": 85.3
+    },
+    {
+      "date": "2026-10-29",
+      "close": 83
     }
   ],
   "dividends": [
@@ -10114,16 +10118,16 @@
       "amount": 3.75
     }
   ],
-  "lastUpdated": "2026-10-28T20:43:40.674Z",
+  "lastUpdated": "2026-10-29T20:47:33.639Z",
   "fundamentals": {
-    "trailingPE": 16.185959,
-    "forwardPE": 12.483719,
-    "marketCap": 13960157184,
+    "trailingPE": 15.689981,
+    "forwardPE": 12.147112,
+    "marketCap": 13583739904,
     "dividendYield": 0.044,
     "dividendRate": 3.75,
     "payoutRatio": 0.7143,
     "beta": 0.494,
-    "priceToBook": 3.5565379,
+    "priceToBook": 3.4606404,
     "enterpriseToEbitda": 12.487,
     "profitMargins": 0.05685,
     "returnOnEquity": 0.22374001,

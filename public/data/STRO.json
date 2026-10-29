@@ -3,11 +3,11 @@
   "name": "STRONGPOINT",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 10.35,
-  "previousClose": 9.92,
-  "dayHigh": 10.5,
-  "dayLow": 10,
-  "volume": 51831,
+  "currentPrice": 10.2,
+  "previousClose": 10,
+  "dayHigh": 10.25,
+  "dayLow": 10.1,
+  "volume": 17293,
   "fiftyTwoWeekHigh": 11.2,
   "fiftyTwoWeekLow": 9.12,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-10-28",
       "close": 10.35
+    },
+    {
+      "date": "2026-10-29",
+      "close": 10.2
     }
   ],
   "dividends": [
@@ -10106,23 +10110,23 @@
       "amount": 0.9
     }
   ],
-  "lastUpdated": "2026-10-28T20:45:57.382Z",
+  "lastUpdated": "2026-10-29T20:50:03.607Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 94.09091,
-    "marketCap": 464008128,
+    "forwardPE": 78.46154,
+    "marketCap": 457283328,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.609,
-    "priceToBook": 1.0491638,
-    "enterpriseToEbitda": -526.234,
-    "profitMargins": -0.00772,
-    "returnOnEquity": -0.02319,
-    "revenueGrowth": -0.023,
+    "beta": null,
+    "priceToBook": 1.1147541,
+    "enterpriseToEbitda": 231.147,
+    "profitMargins": -0.021440001,
+    "returnOnEquity": -0.0672,
+    "revenueGrowth": 0.14,
     "earningsGrowth": null,
-    "grossMargins": 0.15057999,
-    "totalRevenue": 1346482944,
-    "ebitda": -1048000
+    "grossMargins": 0.14893,
+    "totalRevenue": 1391099008,
+    "ebitda": 2707000
   }
 }
