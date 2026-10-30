@@ -3,11 +3,11 @@
   "name": "3030 DVD AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 2.6,
-  "previousClose": 2.505,
-  "dayHigh": 3.15,
-  "dayLow": 2.63,
-  "volume": 14530393,
+  "currentPrice": 2.525,
+  "previousClose": 2.885,
+  "dayHigh": 2.685,
+  "dayLow": 2.515,
+  "volume": 3526691,
   "fiftyTwoWeekHigh": 22.35,
   "fiftyTwoWeekLow": 1.91,
   "prices": [
@@ -5474,6 +5474,10 @@
     {
       "date": "2026-10-29",
       "close": 2.6
+    },
+    {
+      "date": "2026-10-30",
+      "close": 2.53
     }
   ],
   "dividends": [
@@ -5566,23 +5570,23 @@
       "amount": 20.6
     }
   ],
-  "lastUpdated": "2026-10-29T20:47:55.120Z",
+  "lastUpdated": "2026-10-30T20:18:45.346Z",
   "fundamentals": {
-    "trailingPE": 1.3471502,
+    "trailingPE": 0.11064856,
     "forwardPE": null,
-    "marketCap": 243121664,
-    "dividendYield": 0.54580003,
+    "marketCap": 236108560,
+    "dividendYield": 0.5962,
     "dividendRate": 1.55,
-    "payoutRatio": 0.9636,
-    "beta": 0.295,
-    "priceToBook": 3.8553305,
-    "enterpriseToEbitda": 5.883,
-    "profitMargins": 0.34983003,
-    "returnOnEquity": 2.10655,
-    "revenueGrowth": -0.186,
-    "earningsGrowth": -0.458,
-    "grossMargins": 1,
-    "totalRevenue": 50186368,
-    "ebitda": 46557744
+    "payoutRatio": 0.0674,
+    "beta": null,
+    "priceToBook": 3.1346116,
+    "enterpriseToEbitda": 0.107,
+    "profitMargins": 0.84567,
+    "returnOnEquity": 22.162891,
+    "revenueGrowth": 15.149,
+    "earningsGrowth": null,
+    "grossMargins": 0.98372,
+    "totalRevenue": 259247984,
+    "ebitda": 248873696
   }
 }

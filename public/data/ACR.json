@@ -3,11 +3,11 @@
   "name": "AXACTOR ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 4.12,
-  "previousClose": 4.33,
-  "dayHigh": 4.265,
-  "dayLow": 3.98,
-  "volume": 1535302,
+  "currentPrice": 4.225,
+  "previousClose": 4.335,
+  "dayHigh": 4.4,
+  "dayLow": 4.14,
+  "volume": 333918,
   "fiftyTwoWeekHigh": 8.6,
   "fiftyTwoWeekLow": 3.905,
   "prices": [
@@ -10074,26 +10074,30 @@
     {
       "date": "2026-10-29",
       "close": 4.12
+    },
+    {
+      "date": "2026-10-30",
+      "close": 4.22
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-10-29T20:47:42.755Z",
+  "lastUpdated": "2026-10-30T20:18:35.630Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 7.206695,
-    "marketCap": 3319377920,
+    "forwardPE": 7.5289383,
+    "marketCap": 3403973888,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.63,
-    "priceToBook": 1.201042,
-    "enterpriseToEbitda": -20.293,
+    "beta": null,
+    "priceToBook": 0.3299246,
+    "enterpriseToEbitda": -23.117,
     "profitMargins": null,
-    "returnOnEquity": -0.81207,
-    "revenueGrowth": null,
-    "earningsGrowth": null,
+    "returnOnEquity": -0.8022,
+    "revenueGrowth": -0.071,
+    "earningsGrowth": -0.969,
     "grossMargins": null,
-    "totalRevenue": -77309000,
-    "ebitda": -206771008
+    "totalRevenue": -83491000,
+    "ebitda": -212960992
   }
 }
