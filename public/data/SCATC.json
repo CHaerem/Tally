@@ -3,11 +3,11 @@
   "name": "SCATEC ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 84.1,
-  "previousClose": 83.1,
-  "dayHigh": 85.4,
-  "dayLow": 82.9,
-  "volume": 1454208,
+  "currentPrice": 85.1,
+  "previousClose": 82.9,
+  "dayHigh": 86.9,
+  "dayLow": 83.4,
+  "volume": 1120199,
   "fiftyTwoWeekHigh": 137.6,
   "fiftyTwoWeekLow": 76.05,
   "prices": [
@@ -10058,6 +10058,14 @@
     {
       "date": "2026-10-30",
       "close": 84.65
+    },
+    {
+      "date": "2026-11-02",
+      "close": 84.1
+    },
+    {
+      "date": "2026-11-03",
+      "close": 85.1
     }
   ],
   "dividends": [
@@ -10090,23 +10098,23 @@
       "amount": 1.94
     }
   ],
-  "lastUpdated": "2026-11-02T23:16:38.148Z",
+  "lastUpdated": "2026-11-03T21:25:49.337Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 11.640139,
-    "marketCap": 13441464320,
+    "forwardPE": 13.301032,
+    "marketCap": 13601291264,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 1.202,
-    "priceToBook": 1.3327205,
-    "enterpriseToEbitda": 18.987,
-    "profitMargins": -0.072569996,
-    "returnOnEquity": -0.037019998,
-    "revenueGrowth": 0.278,
+    "beta": 1.23,
+    "priceToBook": 1.6239527,
+    "enterpriseToEbitda": 17.566,
+    "profitMargins": -0.29417,
+    "returnOnEquity": -0.14182,
+    "revenueGrowth": 0.504,
     "earningsGrowth": null,
-    "grossMargins": 0.93953,
-    "totalRevenue": 3886000128,
-    "ebitda": 2312999936
+    "grossMargins": 0.89904,
+    "totalRevenue": 4358000128,
+    "ebitda": 2537999872
   }
 }

@@ -3,12 +3,12 @@
   "name": "ININ GROUP AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 3.5,
+  "currentPrice": 3.42,
   "previousClose": 3.28,
-  "dayHigh": 3.5,
-  "dayLow": 3.4,
-  "volume": 49693,
-  "fiftyTwoWeekHigh": 3.8,
+  "dayHigh": 3.9,
+  "dayLow": 3.42,
+  "volume": 1602,
+  "fiftyTwoWeekHigh": 3.9,
   "fiftyTwoWeekLow": 2.57,
   "prices": [
     {
@@ -6342,19 +6342,27 @@
     {
       "date": "2026-10-30",
       "close": 3.3
+    },
+    {
+      "date": "2026-11-02",
+      "close": 3.5
+    },
+    {
+      "date": "2026-11-03",
+      "close": 3.42
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-02T23:18:25.042Z",
+  "lastUpdated": "2026-11-03T21:28:05.000Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 35,
-    "marketCap": 456064896,
+    "forwardPE": 34.2,
+    "marketCap": 445640576,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.473,
-    "priceToBook": 1.1471648,
+    "priceToBook": 1.1209439,
     "enterpriseToEbitda": -29.678,
     "profitMargins": 0.30177,
     "returnOnEquity": -0.21484,

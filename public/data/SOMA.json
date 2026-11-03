@@ -3,11 +3,11 @@
   "name": "SOLSTAD MARITIME ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 27.3,
-  "previousClose": 29,
-  "dayHigh": 27.65,
-  "dayLow": 27,
-  "volume": 197884,
+  "currentPrice": 27.85,
+  "previousClose": 28.9,
+  "dayHigh": 28.25,
+  "dayLow": 26.55,
+  "volume": 194366,
   "fiftyTwoWeekHigh": 30.4,
   "fiftyTwoWeekLow": 17.3,
   "prices": [
@@ -1482,6 +1482,14 @@
     {
       "date": "2026-10-30",
       "close": 27.95
+    },
+    {
+      "date": "2026-11-02",
+      "close": 27.3
+    },
+    {
+      "date": "2026-11-03",
+      "close": 27.85
     }
   ],
   "dividends": [
@@ -1510,16 +1518,16 @@
       "amount": 0.97
     }
   ],
-  "lastUpdated": "2026-11-02T23:18:55.559Z",
+  "lastUpdated": "2026-11-03T21:28:44.382Z",
   "fundamentals": {
-    "trailingPE": 5.0369,
-    "forwardPE": 6.0092444,
-    "marketCap": 12704288768,
-    "dividendYield": 0.1392,
+    "trailingPE": 5.138376,
+    "forwardPE": 6.13031,
+    "marketCap": 12960236544,
+    "dividendYield": 0.1425,
     "dividendRate": 3.89,
     "payoutRatio": 0.3839,
     "beta": null,
-    "priceToBook": 1.4238544,
+    "priceToBook": 1.45254,
     "enterpriseToEbitda": 44.155,
     "profitMargins": 0.39678,
     "returnOnEquity": 0.28438,

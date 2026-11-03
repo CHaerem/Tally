@@ -3,11 +3,11 @@
   "name": "POLIGHT",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 13.46,
-  "previousClose": 16.12,
-  "dayHigh": 13.74,
-  "dayLow": 12.42,
-  "volume": 1737430,
+  "currentPrice": 13.22,
+  "previousClose": 15.8,
+  "dayHigh": 13.76,
+  "dayLow": 12.78,
+  "volume": 1208972,
   "fiftyTwoWeekHigh": 17.9,
   "fiftyTwoWeekLow": 5,
   "prices": [
@@ -8126,26 +8126,34 @@
     {
       "date": "2026-10-30",
       "close": 12.96
+    },
+    {
+      "date": "2026-11-02",
+      "close": 13.46
+    },
+    {
+      "date": "2026-11-03",
+      "close": 13.22
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-02T23:18:44.382Z",
+  "lastUpdated": "2026-11-03T21:28:29.742Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 2893207296,
+    "marketCap": 2841619712,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 1.259,
-    "priceToBook": 8.444166,
-    "enterpriseToEbitda": -13.343,
+    "beta": null,
+    "priceToBook": 10.525477,
+    "enterpriseToEbitda": -21.635,
     "profitMargins": null,
-    "returnOnEquity": -0.36661,
-    "revenueGrowth": 2.057,
+    "returnOnEquity": -0.36246,
+    "revenueGrowth": -0.028,
     "earningsGrowth": null,
-    "grossMargins": 0.59097,
-    "totalRevenue": 34220000,
-    "ebitda": -124414000
+    "grossMargins": 0.56331,
+    "totalRevenue": 34081000,
+    "ebitda": -124871000
   }
 }

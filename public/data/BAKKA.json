@@ -3,11 +3,11 @@
   "name": "BAKKAFROST",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 434.4,
-  "previousClose": 466,
+  "currentPrice": 426.2,
+  "previousClose": 464.8,
   "dayHigh": 437,
-  "dayLow": 425,
-  "volume": 173015,
+  "dayLow": 423.8,
+  "volume": 171537,
   "fiftyTwoWeekHigh": 526,
   "fiftyTwoWeekLow": 390.8,
   "prices": [
@@ -10058,6 +10058,14 @@
     {
       "date": "2026-10-30",
       "close": 454.2
+    },
+    {
+      "date": "2026-11-02",
+      "close": 434.4
+    },
+    {
+      "date": "2026-11-03",
+      "close": 426.2
     }
   ],
   "dividends": [
@@ -10098,23 +10106,23 @@
       "amount": 5.06
     }
   ],
-  "lastUpdated": "2026-11-02T23:16:37.245Z",
+  "lastUpdated": "2026-11-03T21:25:48.210Z",
   "fundamentals": {
-    "trailingPE": 20.60721,
-    "forwardPE": 13.428737,
-    "marketCap": 25726355456,
-    "dividendYield": 0.0111,
+    "trailingPE": 18.07464,
+    "forwardPE": 13.279966,
+    "marketCap": 25240731648,
+    "dividendYield": 0.0116,
     "dividendRate": 5.06,
-    "payoutRatio": 0.2375,
-    "beta": 0.439,
-    "priceToBook": 1.6697365,
-    "enterpriseToEbitda": 16.252,
-    "profitMargins": 0.10941,
-    "returnOnEquity": 0.0761,
-    "revenueGrowth": 0.159,
-    "earningsGrowth": null,
-    "grossMargins": 0.6941,
-    "totalRevenue": 7472531968,
-    "ebitda": 1882482048
+    "payoutRatio": 0.2078,
+    "beta": null,
+    "priceToBook": 1.607354,
+    "enterpriseToEbitda": 14.787,
+    "profitMargins": 0.12473,
+    "returnOnEquity": 0.08585,
+    "revenueGrowth": -0.003,
+    "earningsGrowth": 1.488,
+    "grossMargins": 0.73489,
+    "totalRevenue": 7467075072,
+    "ebitda": 2074286976
   }
 }

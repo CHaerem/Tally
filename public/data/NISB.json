@@ -3,11 +3,11 @@
   "name": "NIDAROS SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 101.6,
+  "currentPrice": 102.02,
   "previousClose": 105.5,
-  "dayHigh": 101.6,
-  "dayLow": 100,
-  "volume": 461,
+  "dayHigh": 102.02,
+  "dayLow": 101,
+  "volume": 102,
   "fiftyTwoWeekHigh": 114,
   "fiftyTwoWeekLow": 99.21,
   "prices": [
@@ -7438,6 +7438,14 @@
     {
       "date": "2026-10-30",
       "close": 105.98
+    },
+    {
+      "date": "2026-11-02",
+      "close": 101.6
+    },
+    {
+      "date": "2026-11-03",
+      "close": 102.02
     }
   ],
   "dividends": [
@@ -7474,16 +7482,16 @@
       "amount": 5.75
     }
   ],
-  "lastUpdated": "2026-11-02T23:18:35.255Z",
+  "lastUpdated": "2026-11-03T21:28:18.061Z",
   "fundamentals": {
-    "trailingPE": 19.728155,
-    "forwardPE": 9.530957,
-    "marketCap": 114662808,
-    "dividendYield": 0.0543,
+    "trailingPE": 19.809708,
+    "forwardPE": 9.570356,
+    "marketCap": 115136808,
+    "dividendYield": 0.056599997,
     "dividendRate": 5.75,
     "payoutRatio": 1.1155,
     "beta": 0.204,
-    "priceToBook": 0.20118134,
+    "priceToBook": 0.202013,
     "enterpriseToEbitda": null,
     "profitMargins": 0.26258,
     "returnOnEquity": null,
