@@ -3,11 +3,11 @@
   "name": "APPEAR ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 37,
-  "previousClose": 36,
-  "dayHigh": 38,
-  "dayLow": 36.5,
-  "volume": 91411,
+  "currentPrice": 37.1,
+  "previousClose": 36.3,
+  "dayHigh": 37.6,
+  "dayLow": 36.7,
+  "volume": 159101,
   "fiftyTwoWeekHigh": 89.19,
   "fiftyTwoWeekLow": 30.2,
   "prices": [
@@ -1002,26 +1002,30 @@
     {
       "date": "2026-11-03",
       "close": 37
+    },
+    {
+      "date": "2026-11-04",
+      "close": 37.1
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-03T21:27:11.450Z",
+  "lastUpdated": "2026-11-04T21:41:21.560Z",
   "fundamentals": {
-    "trailingPE": 26.618706,
-    "forwardPE": 12.191103,
-    "marketCap": 1502044416,
+    "trailingPE": 26.690647,
+    "forwardPE": 12.224051,
+    "marketCap": 1506103936,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": null,
-    "priceToBook": 2.3769755,
-    "enterpriseToEbitda": 11.578,
+    "priceToBook": 2.3833997,
+    "enterpriseToEbitda": 13.564,
     "profitMargins": 0.073189996,
     "returnOnEquity": 0.11196,
     "revenueGrowth": -0.062,
     "earningsGrowth": null,
     "grossMargins": 0.35081002,
     "totalRevenue": 777625984,
-    "ebitda": 100403000
+    "ebitda": 87203000
   }
 }
