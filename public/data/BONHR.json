@@ -3,11 +3,11 @@
   "name": "BONHEUR",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 263.5,
-  "previousClose": 254,
-  "dayHigh": 267,
-  "dayLow": 261,
-  "volume": 20219,
+  "currentPrice": 262,
+  "previousClose": 265,
+  "dayHigh": 264.5,
+  "dayLow": 260,
+  "volume": 34884,
   "fiftyTwoWeekHigh": 280,
   "fiftyTwoWeekLow": 209,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-11-04",
       "close": 263.5
+    },
+    {
+      "date": "2026-11-05",
+      "close": 262
     }
   ],
   "dividends": [
@@ -10114,23 +10118,23 @@
       "amount": 7.3
     }
   ],
-  "lastUpdated": "2026-11-04T21:40:41.218Z",
+  "lastUpdated": "2026-11-05T21:44:23.490Z",
   "fundamentals": {
-    "trailingPE": 10.6680155,
-    "forwardPE": 8.569106,
-    "marketCap": 11207153664,
-    "dividendYield": 0.0275,
+    "trailingPE": 10.607287,
+    "forwardPE": 8.520326,
+    "marketCap": 11143355392,
+    "dividendYield": 0.0277,
     "dividendRate": 7.3,
-    "payoutRatio": 0.3174,
-    "beta": 0.519,
-    "priceToBook": 1.2659931,
-    "enterpriseToEbitda": 4.354,
-    "profitMargins": 0.080129996,
-    "returnOnEquity": 0.13991,
-    "revenueGrowth": -0.066,
-    "earningsGrowth": -0.656,
-    "grossMargins": 0.91219,
-    "totalRevenue": 12249382912,
-    "ebitda": 3440871936
+    "payoutRatio": 0.2967,
+    "beta": 0.454,
+    "priceToBook": 1.2020886,
+    "enterpriseToEbitda": 4.015,
+    "profitMargins": 0.08409,
+    "returnOnEquity": 0.1408,
+    "revenueGrowth": 0.061,
+    "earningsGrowth": 0.141,
+    "grossMargins": 0.90602994,
+    "totalRevenue": 12457382912,
+    "ebitda": 3631872000
   }
 }
