@@ -3,11 +3,11 @@
   "name": "NORCOD",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 18.85,
-  "previousClose": 23,
-  "dayHigh": 24,
-  "dayLow": 15,
-  "volume": 449144,
+  "currentPrice": 19.25,
+  "previousClose": 23.3,
+  "dayHigh": 20.5,
+  "dayLow": 17,
+  "volume": 107851,
   "fiftyTwoWeekHigh": 29,
   "fiftyTwoWeekLow": 9,
   "prices": [
@@ -6102,26 +6102,30 @@
     {
       "date": "2026-11-05",
       "close": 18.85
+    },
+    {
+      "date": "2026-11-06",
+      "close": 19.25
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-05T21:46:15.246Z",
+  "lastUpdated": "2026-11-06T21:14:46.090Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 1493390848,
+    "marketCap": 1525080832,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.539,
-    "priceToBook": 5.6948643,
-    "enterpriseToEbitda": -47.763,
-    "profitMargins": -0.74252,
-    "returnOnEquity": -0.77345,
-    "revenueGrowth": -0.378,
+    "beta": null,
+    "priceToBook": 5.81571,
+    "enterpriseToEbitda": 47.923,
+    "profitMargins": -0.34534,
+    "returnOnEquity": -0.49978,
+    "revenueGrowth": 1.431,
     "earningsGrowth": null,
-    "grossMargins": 0.6106,
-    "totalRevenue": 247207008,
-    "ebitda": -48008000
+    "grossMargins": 0.82421,
+    "totalRevenue": 299867008,
+    "ebitda": 43703000
   }
 }

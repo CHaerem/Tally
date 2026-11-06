@@ -3,11 +3,11 @@
   "name": "TEKNA HOLDING ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 6.2,
-  "previousClose": 6.28,
-  "dayHigh": 7,
-  "dayLow": 6.06,
-  "volume": 87835,
+  "currentPrice": 5.9,
+  "previousClose": 6.2,
+  "dayHigh": 6.1,
+  "dayLow": 5.78,
+  "volume": 135417,
   "fiftyTwoWeekHigh": 7.68,
   "fiftyTwoWeekLow": 2.91,
   "prices": [
@@ -5646,26 +5646,30 @@
     {
       "date": "2026-11-05",
       "close": 6.2
+    },
+    {
+      "date": "2026-11-06",
+      "close": 5.9
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-05T21:45:02.068Z",
+  "lastUpdated": "2026-11-06T21:13:49.890Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -61.999996,
-    "marketCap": 1410265856,
+    "forwardPE": -59,
+    "marketCap": 1342027264,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 1.148,
-    "priceToBook": 3.8894281,
-    "enterpriseToEbitda": 1506.365,
-    "profitMargins": -0.12529,
-    "returnOnEquity": -0.13270001,
-    "revenueGrowth": 0.181,
+    "beta": null,
+    "priceToBook": 5.5287127,
+    "enterpriseToEbitda": 760.94,
+    "profitMargins": -0.16285999,
+    "returnOnEquity": -0.20847,
+    "revenueGrowth": 0.623,
     "earningsGrowth": null,
-    "grossMargins": 0.57094,
-    "totalRevenue": 38799000,
-    "ebitda": 989000
+    "grossMargins": 0.55415,
+    "totalRevenue": 44264000,
+    "ebitda": 2585000
   }
 }

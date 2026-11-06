@@ -3,11 +3,11 @@
   "name": "INTEGRATED WIND SOLUTIONS ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 62.8,
+  "currentPrice": 62,
   "previousClose": 62.4,
-  "dayHigh": 64.6,
-  "dayLow": 62.8,
-  "volume": 7490,
+  "dayHigh": 62.8,
+  "dayLow": 62,
+  "volume": 2030,
   "fiftyTwoWeekHigh": 66,
   "fiftyTwoWeekLow": 40,
   "prices": [
@@ -5654,6 +5654,10 @@
     {
       "date": "2026-11-05",
       "close": 62.8
+    },
+    {
+      "date": "2026-11-06",
+      "close": 62
     }
   ],
   "dividends": [
@@ -5670,17 +5674,17 @@
       "amount": 1
     }
   ],
-  "lastUpdated": "2026-11-05T21:45:33.826Z",
+  "lastUpdated": "2026-11-06T21:14:13.916Z",
   "fundamentals": {
-    "trailingPE": 10.519263,
-    "forwardPE": 9.575111,
-    "marketCap": 2509177600,
-    "dividendYield": 0.078600004,
+    "trailingPE": 10.38526,
+    "forwardPE": 9.370753,
+    "marketCap": 2477213440,
+    "dividendYield": 0.0796,
     "dividendRate": 5,
     "payoutRatio": 0.65949994,
-    "beta": 0.43,
-    "priceToBook": 1.4370648,
-    "enterpriseToEbitda": 61.254,
+    "beta": 0.427,
+    "priceToBook": 1.4187582,
+    "enterpriseToEbitda": 60.539,
     "profitMargins": 0.16792999,
     "returnOnEquity": 0.13623999,
     "revenueGrowth": 0.273,

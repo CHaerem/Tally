@@ -3,13 +3,13 @@
   "name": "HUDDLY AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 16,
-  "previousClose": 21.4,
-  "dayHigh": 19.8,
-  "dayLow": 16,
-  "volume": 23870,
+  "currentPrice": 15,
+  "previousClose": 20.4,
+  "dayHigh": 17,
+  "dayLow": 14.3,
+  "volume": 71136,
   "fiftyTwoWeekHigh": 36,
-  "fiftyTwoWeekLow": 10.05,
+  "fiftyTwoWeekLow": 10.5,
   "prices": [
     {
       "date": "2021-02-16",
@@ -5766,26 +5766,30 @@
     {
       "date": "2026-11-05",
       "close": 16
+    },
+    {
+      "date": "2026-11-06",
+      "close": 15
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-05T21:44:35.330Z",
+  "lastUpdated": "2026-11-06T21:13:28.485Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 37.2093,
-    "marketCap": 566307648,
+    "forwardPE": 34.88372,
+    "marketCap": 530913408,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.829,
-    "priceToBook": 1.5151515,
-    "enterpriseToEbitda": -5.761,
-    "profitMargins": -0.72452,
-    "returnOnEquity": -0.45111,
-    "revenueGrowth": -0.112,
+    "beta": null,
+    "priceToBook": 1.3842746,
+    "enterpriseToEbitda": -4.302,
+    "profitMargins": -0.77392,
+    "returnOnEquity": -0.44765,
+    "revenueGrowth": -0.071,
     "earningsGrowth": null,
-    "grossMargins": 0.46324003,
-    "totalRevenue": 208136992,
-    "ebitda": -115773000
+    "grossMargins": 0.4605,
+    "totalRevenue": 204944992,
+    "ebitda": -125250000
   }
 }

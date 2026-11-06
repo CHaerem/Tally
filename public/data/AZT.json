@@ -3,12 +3,12 @@
   "name": "ARCTICZYMES TECHNOLOGIES",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 21,
-  "previousClose": 21.5,
-  "dayHigh": 23,
-  "dayLow": 20.6,
-  "volume": 208710,
-  "fiftyTwoWeekHigh": 28.5,
+  "currentPrice": 20.7,
+  "previousClose": 21.6,
+  "dayHigh": 21,
+  "dayLow": 20,
+  "volume": 60953,
+  "fiftyTwoWeekHigh": 26.6,
   "fiftyTwoWeekLow": 18.3,
   "prices": [
     {
@@ -10074,26 +10074,30 @@
     {
       "date": "2026-11-05",
       "close": 21
+    },
+    {
+      "date": "2026-11-06",
+      "close": 20.7
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-05T21:44:20.540Z",
+  "lastUpdated": "2026-11-06T21:13:16.514Z",
   "fundamentals": {
-    "trailingPE": 70,
-    "forwardPE": 39.308914,
-    "marketCap": 1072499200,
+    "trailingPE": 76.666664,
+    "forwardPE": 38.747356,
+    "marketCap": 1057177856,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.607,
-    "priceToBook": 3.091873,
-    "enterpriseToEbitda": 52.896,
-    "profitMargins": 0.115439996,
-    "returnOnEquity": 0.045739997,
-    "revenueGrowth": 0.174,
-    "earningsGrowth": 0.65,
-    "grossMargins": 0.95421,
-    "totalRevenue": 133406000,
-    "ebitda": 15539000
+    "beta": null,
+    "priceToBook": 2.6960146,
+    "enterpriseToEbitda": 53.313,
+    "profitMargins": 0.10188,
+    "returnOnEquity": 0.040960003,
+    "revenueGrowth": 0.111,
+    "earningsGrowth": -0.5,
+    "grossMargins": 0.94391996,
+    "totalRevenue": 136696992,
+    "ebitda": 14669000
   }
 }
