@@ -3,11 +3,11 @@
   "name": "NRC GROUP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 9.15,
-  "previousClose": 9.93,
-  "dayHigh": 9.37,
-  "dayLow": 9,
-  "volume": 321078,
+  "currentPrice": 9.08,
+  "previousClose": 10.06,
+  "dayHigh": 9.22,
+  "dayLow": 9.06,
+  "volume": 326349,
   "fiftyTwoWeekHigh": 11.7,
   "fiftyTwoWeekLow": 6.51,
   "prices": [
@@ -10058,6 +10058,14 @@
     {
       "date": "2026-11-06",
       "close": 9.12
+    },
+    {
+      "date": "2026-11-09",
+      "close": 9.15
+    },
+    {
+      "date": "2026-11-10",
+      "close": 9.08
     }
   ],
   "dividends": [
@@ -10070,23 +10078,23 @@
       "amount": 1.53
     }
   ],
-  "lastUpdated": "2026-11-09T23:56:35.992Z",
+  "lastUpdated": "2026-11-10T21:37:17.775Z",
   "fundamentals": {
-    "trailingPE": 114.375,
-    "forwardPE": 11.831947,
-    "marketCap": 1579264768,
+    "trailingPE": 39.47826,
+    "forwardPE": 11.74143,
+    "marketCap": 1567182976,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.043,
-    "priceToBook": 0.8861985,
-    "enterpriseToEbitda": 13.897,
-    "profitMargins": 0.0026699998,
-    "returnOnEquity": 0.00994,
-    "revenueGrowth": -0.033,
-    "earningsGrowth": -0.5,
-    "grossMargins": 0.22129999,
-    "totalRevenue": 6367000064,
-    "ebitda": 173000000
+    "beta": 0.044,
+    "priceToBook": 0.92473775,
+    "enterpriseToEbitda": null,
+    "profitMargins": 0.00657,
+    "returnOnEquity": 0.024349999,
+    "revenueGrowth": 0.012,
+    "earningsGrowth": 0.824,
+    "grossMargins": 0.22323,
+    "totalRevenue": 6387999744,
+    "ebitda": 190000000
   }
 }

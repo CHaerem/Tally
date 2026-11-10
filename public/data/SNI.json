@@ -3,11 +3,11 @@
   "name": "STOLT-NIELSEN",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 326.5,
+  "currentPrice": 321,
   "previousClose": 334.5,
-  "dayHigh": 326.5,
-  "dayLow": 317,
-  "volume": 23225,
+  "dayHigh": 327.5,
+  "dayLow": 318.5,
+  "volume": 31116,
   "fiftyTwoWeekHigh": 375,
   "fiftyTwoWeekLow": 281.5,
   "prices": [
@@ -10058,6 +10058,14 @@
     {
       "date": "2026-11-06",
       "close": 316
+    },
+    {
+      "date": "2026-11-09",
+      "close": 326.5
+    },
+    {
+      "date": "2026-11-10",
+      "close": 321
     }
   ],
   "dividends": [
@@ -10138,16 +10146,16 @@
       "amount": 9.45
     }
   ],
-  "lastUpdated": "2026-11-09T23:56:46.551Z",
+  "lastUpdated": "2026-11-10T21:37:29.716Z",
   "fundamentals": {
-    "trailingPE": 7.330489,
-    "forwardPE": 8.225134,
-    "marketCap": null,
-    "dividendYield": 0.0586,
+    "trailingPE": 7.207005,
+    "forwardPE": 8.086579,
+    "marketCap": 21314719744,
+    "dividendYield": 0.056700002,
     "dividendRate": 18.5,
     "payoutRatio": 0.4376,
     "beta": -0.587,
-    "priceToBook": 0.70701826,
+    "priceToBook": 0.6951083,
     "enterpriseToEbitda": 32.281,
     "profitMargins": 0.083129995,
     "returnOnEquity": 0.09616999,

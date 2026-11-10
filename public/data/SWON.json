@@ -3,11 +3,11 @@
   "name": "SOFTWAREONE HOLDING",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 101.4,
-  "previousClose": 104.6,
-  "dayHigh": 103.6,
-  "dayLow": 99.3,
-  "volume": 53869,
+  "currentPrice": 105,
+  "previousClose": 105,
+  "dayHigh": 106,
+  "dayLow": 102,
+  "volume": 43393,
   "fiftyTwoWeekHigh": 116.98,
   "fiftyTwoWeekLow": 70.3,
   "prices": [
@@ -1374,6 +1374,14 @@
     {
       "date": "2026-11-06",
       "close": 101
+    },
+    {
+      "date": "2026-11-09",
+      "close": 101.4
+    },
+    {
+      "date": "2026-11-10",
+      "close": 105
     }
   ],
   "dividends": [
@@ -1382,16 +1390,16 @@
       "amount": 1.73
     }
   ],
-  "lastUpdated": "2026-11-09T23:58:14.392Z",
+  "lastUpdated": "2026-11-10T21:39:06.103Z",
   "fundamentals": {
-    "trailingPE": 45.47085,
+    "trailingPE": 47.0852,
     "forwardPE": null,
-    "marketCap": 21778518016,
+    "marketCap": 22551719936,
     "dividendYield": 0.0175,
     "dividendRate": 1.77,
     "payoutRatio": 0.8333,
     "beta": 1.185,
-    "priceToBook": 1.9441419,
+    "priceToBook": 2.0131645,
     "enterpriseToEbitda": 108.006,
     "profitMargins": 0.02863,
     "returnOnEquity": 0.06102,

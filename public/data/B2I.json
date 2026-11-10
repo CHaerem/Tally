@@ -3,11 +3,11 @@
   "name": "B2 Impact ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 24.2,
-  "previousClose": 23.05,
-  "dayHigh": 24.25,
-  "dayLow": 23.7,
-  "volume": 493499,
+  "currentPrice": 24.6,
+  "previousClose": 23.55,
+  "dayHigh": 24.95,
+  "dayLow": 24.35,
+  "volume": 1245945,
   "fiftyTwoWeekHigh": 27.45,
   "fiftyTwoWeekLow": 16.12,
   "prices": [
@@ -10058,6 +10058,14 @@
     {
       "date": "2026-11-06",
       "close": 23.7
+    },
+    {
+      "date": "2026-11-09",
+      "close": 24.2
+    },
+    {
+      "date": "2026-11-10",
+      "close": 24.6
     }
   ],
   "dividends": [
@@ -10102,16 +10110,16 @@
       "amount": 1.9
     }
   ],
-  "lastUpdated": "2026-11-09T23:57:02.304Z",
+  "lastUpdated": "2026-11-10T21:37:47.149Z",
   "fundamentals": {
-    "trailingPE": 13.081081,
-    "forwardPE": 9.391968,
-    "marketCap": 8975066112,
-    "dividendYield": 0.0802,
+    "trailingPE": 11.770335,
+    "forwardPE": 9.547207,
+    "marketCap": 9123414016,
+    "dividendYield": 0.0785,
     "dividendRate": 1.9,
     "payoutRatio": 0.90910006,
     "beta": null,
-    "priceToBook": 1.7378815,
+    "priceToBook": 1.7666068,
     "enterpriseToEbitda": null,
     "profitMargins": 0.27005,
     "returnOnEquity": 0.14479999,
