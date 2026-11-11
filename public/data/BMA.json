@@ -3,11 +3,11 @@
   "name": "BYGGMA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 23.2,
+  "currentPrice": 24.2,
   "previousClose": 23,
-  "dayHigh": 23.2,
-  "dayLow": 22.8,
-  "volume": 1066,
+  "dayHigh": 24.2,
+  "dayLow": 24.2,
+  "volume": 325,
   "fiftyTwoWeekHigh": 27.8,
   "fiftyTwoWeekLow": 12.1,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-11-10",
       "close": 23.2
+    },
+    {
+      "date": "2026-11-11",
+      "close": 24.2
     }
   ],
   "dividends": [
@@ -10098,16 +10102,16 @@
       "amount": 1
     }
   ],
-  "lastUpdated": "2026-11-10T21:36:56.096Z",
+  "lastUpdated": "2026-11-11T22:25:52.679Z",
   "fundamentals": {
-    "trailingPE": 32.67606,
+    "trailingPE": 34.08451,
     "forwardPE": null,
-    "marketCap": 1619807488,
+    "marketCap": 1689626880,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.53,
-    "priceToBook": 1.5826455,
+    "priceToBook": 1.6508629,
     "enterpriseToEbitda": 13.218,
     "profitMargins": 0.02708,
     "returnOnEquity": 0.06146,

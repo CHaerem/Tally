@@ -3,13 +3,13 @@
   "name": "ARENDALS FOSSEKOMPANI",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 190.5,
-  "previousClose": 186.5,
-  "dayHigh": 192,
-  "dayLow": 190,
-  "volume": 15962,
+  "currentPrice": 193,
+  "previousClose": 187,
+  "dayHigh": 194.5,
+  "dayLow": 191,
+  "volume": 4203,
   "fiftyTwoWeekHigh": 210,
-  "fiftyTwoWeekLow": 130,
+  "fiftyTwoWeekLow": 130.5,
   "prices": [
     {
       "date": "2016-11-07",
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-11-10",
       "close": 190.5
+    },
+    {
+      "date": "2026-11-11",
+      "close": 193
     }
   ],
   "dividends": [
@@ -10170,23 +10174,23 @@
       "amount": 3
     }
   ],
-  "lastUpdated": "2026-11-10T21:36:50.822Z",
+  "lastUpdated": "2026-11-11T22:25:47.051Z",
   "fundamentals": {
-    "trailingPE": 21.721777,
-    "forwardPE": 59.53125,
-    "marketCap": 10474159104,
-    "dividendYield": 0.0159,
+    "trailingPE": 22.00684,
+    "forwardPE": 60.3125,
+    "marketCap": 10611615744,
+    "dividendYield": 0.015700001,
     "dividendRate": 3,
     "payoutRatio": 0.3421,
-    "beta": 1.05,
-    "priceToBook": 2.2641912,
-    "enterpriseToEbitda": 15.934,
-    "profitMargins": -0.041840002,
-    "returnOnEquity": -0.03542,
-    "revenueGrowth": -0.013,
-    "earningsGrowth": null,
-    "grossMargins": 0.59347,
-    "totalRevenue": 3643367936,
-    "ebitda": 680468992
+    "beta": null,
+    "priceToBook": 2.2286632,
+    "enterpriseToEbitda": 12.526,
+    "profitMargins": -0.20773001,
+    "returnOnEquity": -0.14468001,
+    "revenueGrowth": 0.046,
+    "earningsGrowth": -0.837,
+    "grossMargins": 0.59205,
+    "totalRevenue": 3694368000,
+    "ebitda": 825468992
   }
 }
