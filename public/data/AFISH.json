@@ -3,11 +3,11 @@
   "name": "ARCTIC FISH HOLDING AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 22.6,
-  "previousClose": 23.6,
-  "dayHigh": 22.6,
-  "dayLow": 21.2,
-  "volume": 4124,
+  "currentPrice": 21.4,
+  "previousClose": 21.2,
+  "dayHigh": 21.4,
+  "dayLow": 21.4,
+  "volume": 60,
   "fiftyTwoWeekHigh": 39.8,
   "fiftyTwoWeekLow": 20.4,
   "prices": [
@@ -5770,19 +5770,23 @@
     {
       "date": "2026-11-11",
       "close": 22.6
+    },
+    {
+      "date": "2026-11-12",
+      "close": 21.4
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-11T22:26:43.720Z",
+  "lastUpdated": "2026-11-12T22:01:14.038Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 16.635996,
-    "marketCap": 1017111936,
+    "forwardPE": 15.752668,
+    "marketCap": 963105984,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 1.2168648,
+    "beta": -0.571,
+    "priceToBook": 1.1522526,
     "enterpriseToEbitda": null,
     "profitMargins": -0.15706,
     "returnOnEquity": -0.21445999,

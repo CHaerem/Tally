@@ -3,11 +3,11 @@
   "name": "ENVIPCO HOLDING N.V.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 39.9,
-  "previousClose": 39.75,
-  "dayHigh": 41.55,
-  "dayLow": 39.05,
-  "volume": 852373,
+  "currentPrice": 39.25,
+  "previousClose": 38.85,
+  "dayHigh": 40.65,
+  "dayLow": 38.95,
+  "volume": 409757,
   "fiftyTwoWeekHigh": 66.2,
   "fiftyTwoWeekLow": 31.6,
   "prices": [
@@ -5774,26 +5774,30 @@
     {
       "date": "2026-11-11",
       "close": 39.9
+    },
+    {
+      "date": "2026-11-12",
+      "close": 39.25
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-11T22:27:01.268Z",
+  "lastUpdated": "2026-11-12T22:01:31.318Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 7.4350066,
-    "marketCap": 2637006080,
+    "forwardPE": 7.242876,
+    "marketCap": 2594047232,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 1.086,
-    "priceToBook": 2.6387289,
-    "enterpriseToEbitda": -305.894,
-    "profitMargins": -0.15683,
-    "returnOnEquity": -0.18895,
-    "revenueGrowth": 0.133,
+    "beta": null,
+    "priceToBook": 2.7127862,
+    "enterpriseToEbitda": -277.611,
+    "profitMargins": -0.15236,
+    "returnOnEquity": -0.14904,
+    "revenueGrowth": 0.178,
     "earningsGrowth": null,
-    "grossMargins": 0.31486,
-    "totalRevenue": 92142000,
-    "ebitda": -9169000
+    "grossMargins": 0.3111,
+    "totalRevenue": 96151000,
+    "ebitda": -9403000
   }
 }

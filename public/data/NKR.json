@@ -3,11 +3,11 @@
   "name": "NEKKAR",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 19.7,
-  "previousClose": 18.4,
-  "dayHigh": 19.85,
-  "dayLow": 19,
-  "volume": 421755,
+  "currentPrice": 19.55,
+  "previousClose": 18.6,
+  "dayHigh": 19.8,
+  "dayLow": 19.35,
+  "volume": 271700,
   "fiftyTwoWeekHigh": 19.85,
   "fiftyTwoWeekLow": 10.85,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-11-11",
       "close": 19.7
+    },
+    {
+      "date": "2026-11-12",
+      "close": 19.55
     }
   ],
   "dividends": [
@@ -10078,17 +10082,17 @@
       "amount": 4
     }
   ],
-  "lastUpdated": "2026-11-11T22:27:06.025Z",
+  "lastUpdated": "2026-11-12T22:01:35.644Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 12.953709,
-    "marketCap": 2000638208,
+    "forwardPE": 12.855076,
+    "marketCap": 1985404672,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 6.5318303,
-    "enterpriseToEbitda": -845.096,
+    "beta": 0.442,
+    "priceToBook": 6.56922,
+    "enterpriseToEbitda": -2391.859,
     "profitMargins": -0.06257,
     "returnOnEquity": -0.08158,
     "revenueGrowth": null,

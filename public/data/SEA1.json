@@ -3,11 +3,11 @@
   "name": "Sea1 Offshore Inc.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 25.95,
-  "previousClose": 26.3,
-  "dayHigh": 25.9,
-  "dayLow": 25.05,
-  "volume": 106253,
+  "currentPrice": 25.5,
+  "previousClose": 24.55,
+  "dayHigh": 26,
+  "dayLow": 25.4,
+  "volume": 85162,
   "fiftyTwoWeekHigh": 36.35,
   "fiftyTwoWeekLow": 20.45,
   "prices": [
@@ -10066,6 +10066,10 @@
     {
       "date": "2026-11-11",
       "close": 25.95
+    },
+    {
+      "date": "2026-11-12",
+      "close": 25.5
     }
   ],
   "dividends": [
@@ -10082,23 +10086,23 @@
       "amount": 4
     }
   ],
-  "lastUpdated": "2026-11-11T22:26:28.491Z",
+  "lastUpdated": "2026-11-12T22:01:00.203Z",
   "fundamentals": {
-    "trailingPE": 4.868668,
-    "forwardPE": 6.7062836,
-    "marketCap": 3984459776,
+    "trailingPE": 4.7842402,
+    "forwardPE": 6.5899897,
+    "marketCap": 3915365120,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.402,
-    "priceToBook": 0.98734856,
-    "enterpriseToEbitda": 40.702,
-    "profitMargins": 0.27372998,
-    "returnOnEquity": 0.19038999,
-    "revenueGrowth": 0.124,
-    "earningsGrowth": -0.65,
-    "grossMargins": 0.55874,
-    "totalRevenue": 283809984,
-    "ebitda": 99095000
+    "beta": null,
+    "priceToBook": 0.9515751,
+    "enterpriseToEbitda": 40.211,
+    "profitMargins": 0.2851,
+    "returnOnEquity": 0.20094,
+    "revenueGrowth": 0.257,
+    "earningsGrowth": 0.629,
+    "grossMargins": 0.55076003,
+    "totalRevenue": 300091008,
+    "ebitda": 105694000
   }
 }

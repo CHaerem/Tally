@@ -3,11 +3,11 @@
   "name": "LERØY SEAFOOD GROUP",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 44.66,
-  "previousClose": 43.54,
-  "dayHigh": 44.96,
-  "dayLow": 44.12,
-  "volume": 690953,
+  "currentPrice": 44.44,
+  "previousClose": 42.76,
+  "dayHigh": 44.78,
+  "dayLow": 44.24,
+  "volume": 286687,
   "fiftyTwoWeekHigh": 51.75,
   "fiftyTwoWeekLow": 37.74,
   "prices": [
@@ -10070,6 +10070,10 @@
     {
       "date": "2026-11-11",
       "close": 44.66
+    },
+    {
+      "date": "2026-11-12",
+      "close": 44.44
     }
   ],
   "dividends": [
@@ -10114,23 +10118,23 @@
       "amount": 2.5
     }
   ],
-  "lastUpdated": "2026-11-11T22:25:29.992Z",
+  "lastUpdated": "2026-11-12T22:00:08.343Z",
   "fundamentals": {
-    "trailingPE": 35.444443,
-    "forwardPE": 11.80738,
-    "marketCap": 26593953792,
-    "dividendYield": 0.0579,
+    "trailingPE": 35.26984,
+    "forwardPE": 11.749215,
+    "marketCap": 26462949376,
+    "dividendYield": 0.055999998,
     "dividendRate": 2.5,
-    "payoutRatio": 2.1008,
-    "beta": 0.534,
-    "priceToBook": 1.4147686,
-    "enterpriseToEbitda": 11.93,
-    "profitMargins": 0.021170001,
-    "returnOnEquity": 0.04007,
-    "revenueGrowth": -0.106,
+    "payoutRatio": 1.9841,
+    "beta": null,
+    "priceToBook": 1.4077992,
+    "enterpriseToEbitda": 13.333,
+    "profitMargins": 0.0226,
+    "returnOnEquity": 0.04024,
+    "revenueGrowth": -0.031,
     "earningsGrowth": null,
-    "grossMargins": 0.46491,
-    "totalRevenue": 33563633664,
-    "ebitda": 3122925056
+    "grossMargins": 0.45699,
+    "totalRevenue": 33276993536,
+    "ebitda": 2800112128
   }
 }

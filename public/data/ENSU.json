@@ -3,11 +3,11 @@
   "name": "ENSURGE MICROPOWER ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.475,
-  "previousClose": 0.55,
-  "dayHigh": 0.519,
-  "dayLow": 0.46,
-  "volume": 5010786,
+  "currentPrice": 0.486,
+  "previousClose": 0.54,
+  "dayHigh": 0.493,
+  "dayLow": 0.4675,
+  "volume": 1075856,
   "fiftyTwoWeekHigh": 0.95,
   "fiftyTwoWeekLow": 0.46,
   "prices": [
@@ -10070,26 +10070,30 @@
     {
       "date": "2026-11-11",
       "close": 0.48
+    },
+    {
+      "date": "2026-11-12",
+      "close": 0.49
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-11T22:27:00.812Z",
+  "lastUpdated": "2026-11-12T22:01:30.880Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 462471136,
+    "marketCap": 472683456,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.881,
-    "priceToBook": 12.691451,
-    "enterpriseToEbitda": -33.266,
-    "profitMargins": null,
-    "returnOnEquity": -6.65656,
-    "revenueGrowth": null,
+    "beta": null,
+    "priceToBook": 8.647803,
+    "enterpriseToEbitda": -31.256,
+    "profitMargins": -2.7664402,
+    "returnOnEquity": -3.28249,
+    "revenueGrowth": 196.48,
     "earningsGrowth": null,
     "grossMargins": 1,
-    "totalRevenue": 177000,
-    "ebitda": -14075000
+    "totalRevenue": 5095000,
+    "ebitda": -11244000
   }
 }
