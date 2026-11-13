@@ -3,11 +3,11 @@
   "name": "ARCHER",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 17.08,
-  "previousClose": 16.9,
-  "dayHigh": 17.98,
-  "dayLow": 16.36,
-  "volume": 1707014,
+  "currentPrice": 17.32,
+  "previousClose": 17,
+  "dayHigh": 17.6,
+  "dayLow": 16.8,
+  "volume": 233406,
   "fiftyTwoWeekHigh": 30.25,
   "fiftyTwoWeekLow": 16.36,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-11-12",
       "close": 17.08
+    },
+    {
+      "date": "2026-11-13",
+      "close": 17.32
     }
   ],
   "dividends": [
@@ -10102,23 +10106,23 @@
       "amount": 0.62
     }
   ],
-  "lastUpdated": "2026-11-12T22:00:27.180Z",
+  "lastUpdated": "2026-11-13T21:46:09.470Z",
   "fundamentals": {
-    "trailingPE": 13.34375,
-    "forwardPE": 3.911857,
-    "marketCap": 1701279104,
+    "trailingPE": 13.53125,
+    "forwardPE": 3.9668243,
+    "marketCap": 1725184640,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.395,
-    "priceToBook": 1.0473934,
-    "enterpriseToEbitda": 12.297,
-    "profitMargins": -0.023640001,
-    "returnOnEquity": -0.117790006,
-    "revenueGrowth": -0.115,
-    "earningsGrowth": -0.675,
-    "grossMargins": 0.67636,
-    "totalRevenue": 1142000000,
-    "ebitda": 188300000
+    "beta": null,
+    "priceToBook": 1.0548403,
+    "enterpriseToEbitda": 12.016,
+    "profitMargins": -0.022839999,
+    "returnOnEquity": -0.10908,
+    "revenueGrowth": -0.102,
+    "earningsGrowth": 0.336,
+    "grossMargins": 1.06006,
+    "totalRevenue": 1112199936,
+    "ebitda": 194200000
   }
 }

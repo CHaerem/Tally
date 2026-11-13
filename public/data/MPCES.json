@@ -3,11 +3,11 @@
   "name": "MPC ENERGY SOLUTIONS N.V.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.56,
-  "previousClose": 1.55,
-  "dayHigh": 1.57,
+  "currentPrice": 1.595,
+  "previousClose": 1.51,
+  "dayHigh": 1.6,
   "dayLow": 1.51,
-  "volume": 150373,
+  "volume": 131915,
   "fiftyTwoWeekHigh": 14.6,
   "fiftyTwoWeekLow": 1.485,
   "prices": [
@@ -5854,6 +5854,10 @@
     {
       "date": "2026-11-12",
       "close": 1.56
+    },
+    {
+      "date": "2026-11-13",
+      "close": 1.6
     }
   ],
   "dividends": [
@@ -5862,23 +5866,23 @@
       "amount": 12.19
     }
   ],
-  "lastUpdated": "2026-11-12T22:02:08.774Z",
+  "lastUpdated": "2026-11-13T21:47:57.784Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -3.3310056,
-    "marketCap": 34710000,
-    "dividendYield": 8.0176,
+    "forwardPE": -3.4057398,
+    "marketCap": 35488752,
+    "dividendYield": 7.8120003,
     "dividendRate": 12.19,
     "payoutRatio": null,
-    "beta": 1.07,
-    "priceToBook": 0.09283739,
-    "enterpriseToEbitda": 241.519,
-    "profitMargins": null,
-    "returnOnEquity": -0.2611,
-    "revenueGrowth": -0.461,
+    "beta": 1.069,
+    "priceToBook": 0.3008604,
+    "enterpriseToEbitda": 25.807,
+    "profitMargins": -1.06768,
+    "returnOnEquity": -0.21841998,
+    "revenueGrowth": 0.813,
     "earningsGrowth": null,
-    "grossMargins": 0.41994998,
-    "totalRevenue": 2917000,
-    "ebitda": 216000
+    "grossMargins": 0.57436,
+    "totalRevenue": 5157000,
+    "ebitda": 2037000
   }
 }

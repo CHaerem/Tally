@@ -3,11 +3,11 @@
   "name": "PARETO BANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 49.85,
-  "previousClose": 49.5,
-  "dayHigh": 51,
-  "dayLow": 49.2,
-  "volume": 228499,
+  "currentPrice": 49.8,
+  "previousClose": 49.9,
+  "dayHigh": 50.4,
+  "dayLow": 48.8,
+  "volume": 140564,
   "fiftyTwoWeekHigh": 91.6,
   "fiftyTwoWeekLow": 46.75,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-11-12",
       "close": 49.85
+    },
+    {
+      "date": "2026-11-13",
+      "close": 49.8
     }
   ],
   "dividends": [
@@ -10118,23 +10122,23 @@
       "amount": 8
     }
   ],
-  "lastUpdated": "2026-11-12T22:00:19.119Z",
+  "lastUpdated": "2026-11-13T21:46:01.039Z",
   "fundamentals": {
-    "trailingPE": 18.260073,
-    "forwardPE": 9.734826,
-    "marketCap": 3827603712,
-    "dividendYield": 0.15810001,
+    "trailingPE": 18.241758,
+    "forwardPE": 9.725061,
+    "marketCap": 3823764736,
+    "dividendYield": 0.16049999,
     "dividendRate": 8,
     "payoutRatio": 2.9197,
     "beta": 0.425,
-    "priceToBook": 1.3855304,
+    "priceToBook": 0.7302802,
     "enterpriseToEbitda": null,
     "profitMargins": 0.47932997,
-    "returnOnEquity": 0.048,
+    "returnOnEquity": 0.048010003,
     "revenueGrowth": -0.714,
     "earningsGrowth": -0.911,
     "grossMargins": null,
-    "totalRevenue": 544318016,
+    "totalRevenue": 544323968,
     "ebitda": null
   }
 }

@@ -3,11 +3,11 @@
   "name": "CONTEXTVISION",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 4.53,
-  "previousClose": 4.6,
-  "dayHigh": 4.5,
-  "dayLow": 4.46,
-  "volume": 32238,
+  "currentPrice": 4.48,
+  "previousClose": 4.66,
+  "dayHigh": 4.53,
+  "dayLow": 4.42,
+  "volume": 15829,
   "fiftyTwoWeekHigh": 5.78,
   "fiftyTwoWeekLow": 2.7,
   "prices": [
@@ -10074,6 +10074,10 @@
     {
       "date": "2026-11-12",
       "close": 4.53
+    },
+    {
+      "date": "2026-11-13",
+      "close": 4.48
     }
   ],
   "dividends": [
@@ -10086,23 +10090,23 @@
       "amount": 0.14
     }
   ],
-  "lastUpdated": "2026-11-12T22:00:32.906Z",
+  "lastUpdated": "2026-11-13T21:46:15.478Z",
   "fundamentals": {
-    "trailingPE": 23.842106,
-    "forwardPE": 23.842106,
-    "marketCap": 332071072,
+    "trailingPE": 23.578947,
+    "forwardPE": 23.578947,
+    "marketCap": 328405824,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 3.8067226,
+    "beta": 0.167,
+    "priceToBook": 3.7647057,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.14004,
-    "returnOnEquity": 0.1843,
-    "revenueGrowth": 0.15,
+    "profitMargins": 0.14434,
+    "returnOnEquity": 0.18429,
+    "revenueGrowth": 0.115,
     "earningsGrowth": null,
-    "grossMargins": 0.47998002,
+    "grossMargins": 0.46400002,
     "totalRevenue": null,
-    "ebitda": 23266000
+    "ebitda": 20882000
   }
 }

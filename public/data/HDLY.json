@@ -3,11 +3,11 @@
   "name": "HUDDLY AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 10.75,
-  "previousClose": 15,
-  "dayHigh": 12,
-  "dayLow": 10.9,
-  "volume": 368785,
+  "currentPrice": 10.5,
+  "previousClose": 13.45,
+  "dayHigh": 11,
+  "dayLow": 10.5,
+  "volume": 59819,
   "fiftyTwoWeekHigh": 36,
   "fiftyTwoWeekLow": 10,
   "prices": [
@@ -5786,20 +5786,24 @@
     {
       "date": "2026-11-12",
       "close": 10.75
+    },
+    {
+      "date": "2026-11-13",
+      "close": 10.5
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-12T22:00:41.668Z",
+  "lastUpdated": "2026-11-13T21:46:25.017Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 25,
-    "marketCap": 380487936,
+    "forwardPE": 24.418604,
+    "marketCap": 371639392,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 0.99206346,
-    "enterpriseToEbitda": -3.085,
+    "beta": 0.823,
+    "priceToBook": 1.0377545,
+    "enterpriseToEbitda": -3.071,
     "profitMargins": -0.77392,
     "returnOnEquity": -0.44765,
     "revenueGrowth": -0.071,

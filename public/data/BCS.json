@@ -3,11 +3,11 @@
   "name": "BERGEN CARBON SOLUTIONS AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 6.5,
-  "previousClose": 6.36,
-  "dayHigh": 6.8,
-  "dayLow": 6.34,
-  "volume": 44984,
+  "currentPrice": 6.52,
+  "previousClose": 6.5,
+  "dayHigh": 6.52,
+  "dayLow": 6.14,
+  "volume": 24007,
   "fiftyTwoWeekHigh": 9.6,
   "fiftyTwoWeekLow": 2.86,
   "prices": [
@@ -5622,20 +5622,24 @@
     {
       "date": "2026-11-12",
       "close": 6.5
+    },
+    {
+      "date": "2026-11-13",
+      "close": 6.52
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-12T22:01:20.654Z",
+  "lastUpdated": "2026-11-13T21:47:06.799Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -8.333334,
-    "marketCap": 272805920,
+    "forwardPE": -8.358974,
+    "marketCap": 273645312,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 1.8688902,
-    "enterpriseToEbitda": -5.07,
+    "beta": 0.324,
+    "priceToBook": 2.2797203,
+    "enterpriseToEbitda": -5.095,
     "profitMargins": null,
     "returnOnEquity": -0.23848,
     "revenueGrowth": null,
