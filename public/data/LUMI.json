@@ -3,11 +3,11 @@
   "name": "LUMI EDUCATION GROUP AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 17.3,
+  "currentPrice": 17.1,
   "previousClose": 15.7,
-  "dayHigh": 17.3,
-  "dayLow": 17,
-  "volume": 8580,
+  "dayHigh": 17.8,
+  "dayLow": 17.5,
+  "volume": 31,
   "fiftyTwoWeekHigh": 22.6,
   "fiftyTwoWeekLow": 12.5,
   "prices": [
@@ -5790,6 +5790,14 @@
     {
       "date": "2026-11-17",
       "close": 17.3
+    },
+    {
+      "date": "2026-11-18",
+      "close": 17.3
+    },
+    {
+      "date": "2026-11-19",
+      "close": 17.1
     }
   ],
   "dividends": [
@@ -5798,17 +5806,17 @@
       "amount": 0.98
     }
   ],
-  "lastUpdated": "2026-11-18T22:50:10.398Z",
+  "lastUpdated": "2026-11-19T22:53:03.836Z",
   "fundamentals": {
-    "trailingPE": 23.066666,
-    "forwardPE": 15.377777,
-    "marketCap": 1000646912,
+    "trailingPE": 22.800001,
+    "forwardPE": 15.200001,
+    "marketCap": 989078784,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.436,
-    "priceToBook": 1.8471065,
-    "enterpriseToEbitda": 14.959,
+    "priceToBook": 1.8257527,
+    "enterpriseToEbitda": 14.843,
     "profitMargins": 0.07931,
     "returnOnEquity": 0.08359,
     "revenueGrowth": 0.177,

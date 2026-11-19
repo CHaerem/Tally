@@ -3,11 +3,11 @@
   "name": "TINDE SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 116.5,
-  "previousClose": 112,
-  "dayHigh": 116.5,
-  "dayLow": 116.5,
-  "volume": 850,
+  "currentPrice": 118,
+  "previousClose": 115,
+  "dayHigh": 118,
+  "dayLow": 117.98,
+  "volume": 5360,
   "fiftyTwoWeekHigh": 122.12,
   "fiftyTwoWeekLow": 101.12,
   "prices": [
@@ -6622,6 +6622,10 @@
     {
       "date": "2026-11-18",
       "close": 116.5
+    },
+    {
+      "date": "2026-11-19",
+      "close": 118
     }
   ],
   "dividends": [
@@ -6650,23 +6654,23 @@
       "amount": 4.9
     }
   ],
-  "lastUpdated": "2026-11-18T22:50:58.731Z",
+  "lastUpdated": "2026-11-19T22:53:52.312Z",
   "fundamentals": {
-    "trailingPE": 23.11508,
-    "forwardPE": 12.022704,
-    "marketCap": 634927424,
-    "dividendYield": 0.041500002,
+    "trailingPE": 23.412699,
+    "forwardPE": 12.177503,
+    "marketCap": 643102464,
+    "dividendYield": 0.0421,
     "dividendRate": 4.9,
     "payoutRatio": 1.0381,
-    "beta": -0.13,
-    "priceToBook": 0.3200444,
+    "beta": null,
+    "priceToBook": 0.9407338,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.23656,
-    "returnOnEquity": 0.03813,
-    "revenueGrowth": 0.067,
-    "earningsGrowth": 0.06,
+    "profitMargins": 0.25365,
+    "returnOnEquity": 0.039389998,
+    "revenueGrowth": -0.043,
+    "earningsGrowth": null,
     "grossMargins": null,
-    "totalRevenue": 334359008,
+    "totalRevenue": 330024992,
     "ebitda": null
   }
 }

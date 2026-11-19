@@ -3,11 +3,11 @@
   "name": "MÅSØVAL AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 39.1,
+  "currentPrice": 38.7,
   "previousClose": 38.6,
-  "dayHigh": 39.2,
+  "dayHigh": 39.1,
   "dayLow": 38.6,
-  "volume": 18880,
+  "volume": 5714,
   "fiftyTwoWeekHigh": 39.4,
   "fiftyTwoWeekLow": 21.5,
   "prices": [
@@ -5478,6 +5478,10 @@
     {
       "date": "2026-11-18",
       "close": 39.1
+    },
+    {
+      "date": "2026-11-19",
+      "close": 38.7
     }
   ],
   "dividends": [
@@ -5494,23 +5498,23 @@
       "amount": 0.5
     }
   ],
-  "lastUpdated": "2026-11-18T22:50:30.188Z",
+  "lastUpdated": "2026-11-19T22:53:23.639Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 24.86771,
-    "marketCap": 4790080512,
+    "forwardPE": 24.613312,
+    "marketCap": 4741077504,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.126,
-    "priceToBook": 2.6725905,
-    "enterpriseToEbitda": -79.923,
-    "profitMargins": -0.050300002,
-    "returnOnEquity": -0.07979,
-    "revenueGrowth": -0.037,
+    "beta": null,
+    "priceToBook": 2.8468442,
+    "enterpriseToEbitda": 131.819,
+    "profitMargins": -0.03203,
+    "returnOnEquity": -0.0542,
+    "revenueGrowth": 0.232,
     "earningsGrowth": null,
-    "grossMargins": 0.35281,
-    "totalRevenue": 2738522112,
-    "ebitda": -84041000
+    "grossMargins": 0.35101002,
+    "totalRevenue": 2884451072,
+    "ebitda": 53192000
   }
 }

@@ -3,11 +3,11 @@
   "name": "M VEST WATER AS",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 7,
-  "previousClose": 6.5,
-  "dayHigh": 7.15,
-  "dayLow": 6.7,
-  "volume": 13404,
+  "currentPrice": 7.05,
+  "previousClose": 6.3,
+  "dayHigh": 7.25,
+  "dayLow": 6.8,
+  "volume": 3341,
   "fiftyTwoWeekHigh": 9.2,
   "fiftyTwoWeekLow": 4.98,
   "prices": [
@@ -5482,26 +5482,30 @@
     {
       "date": "2026-11-18",
       "close": 7
+    },
+    {
+      "date": "2026-11-19",
+      "close": 7.05
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-18T22:50:33.230Z",
+  "lastUpdated": "2026-11-19T22:53:26.598Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -43.75,
-    "marketCap": 247069648,
+    "forwardPE": -37.105263,
+    "marketCap": 248834432,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": 0.189,
-    "priceToBook": 10.26393,
-    "enterpriseToEbitda": -16.464,
-    "profitMargins": -0.60665,
-    "returnOnEquity": -0.79543,
-    "revenueGrowth": 0.228,
+    "beta": null,
+    "priceToBook": 7.6965065,
+    "enterpriseToEbitda": -18.239,
+    "profitMargins": -0.49208,
+    "returnOnEquity": -0.86433,
+    "revenueGrowth": 0.517,
     "earningsGrowth": null,
-    "grossMargins": 0.59106,
-    "totalRevenue": 29898654,
-    "ebitda": -16340637
+    "grossMargins": 0.59548,
+    "totalRevenue": 33470654,
+    "ebitda": -13931637
   }
 }
