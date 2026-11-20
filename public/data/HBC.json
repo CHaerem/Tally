@@ -3,13 +3,13 @@
   "name": "HOFSETH BIOCARE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 1.05,
-  "previousClose": 1.115,
-  "dayHigh": 1.075,
-  "dayLow": 1.01,
-  "volume": 118514,
+  "currentPrice": 1.02,
+  "previousClose": 1.13,
+  "dayHigh": 1.11,
+  "dayLow": 0.96,
+  "volume": 213635,
   "fiftyTwoWeekHigh": 2.01,
-  "fiftyTwoWeekLow": 1,
+  "fiftyTwoWeekLow": 0.96,
   "prices": [
     {
       "date": "2016-11-14",
@@ -10074,20 +10074,24 @@
     {
       "date": "2026-11-19",
       "close": 1.05
+    },
+    {
+      "date": "2026-11-20",
+      "close": 1.02
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-19T22:52:02.340Z",
+  "lastUpdated": "2026-11-20T22:28:39.582Z",
   "fundamentals": {
     "trailingPE": null,
     "forwardPE": null,
-    "marketCap": 531791200,
+    "marketCap": 516597184,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.321,
     "priceToBook": null,
-    "enterpriseToEbitda": -10.894,
+    "enterpriseToEbitda": -10.792,
     "profitMargins": -0.44724998,
     "returnOnEquity": null,
     "revenueGrowth": 0.521,

@@ -3,11 +3,11 @@
   "name": "HIMALAYA SHIPPING LTD",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 146.8,
-  "previousClose": 151,
-  "dayHigh": 148.6,
-  "dayLow": 146.2,
-  "volume": 83424,
+  "currentPrice": 143.6,
+  "previousClose": 149.2,
+  "dayHigh": 146.2,
+  "dayLow": 140.4,
+  "volume": 131647,
   "fiftyTwoWeekHigh": 183.8,
   "fiftyTwoWeekLow": 82.9,
   "prices": [
@@ -4746,6 +4746,10 @@
     {
       "date": "2026-11-19",
       "close": 146.8
+    },
+    {
+      "date": "2026-11-20",
+      "close": 143.6
     }
   ],
   "dividends": [
@@ -4880,19 +4884,23 @@
     {
       "date": "2026-10-16",
       "amount": 2.68
+    },
+    {
+      "date": "2026-11-20",
+      "amount": 1.95
     }
   ],
-  "lastUpdated": "2026-11-19T22:53:15.006Z",
+  "lastUpdated": "2026-11-20T22:29:53.798Z",
   "fundamentals": {
-    "trailingPE": 9.285262,
-    "forwardPE": 9.5102,
-    "marketCap": 6924556288,
-    "dividendYield": 0.116000004,
+    "trailingPE": 9.082859,
+    "forwardPE": 9.305151,
+    "marketCap": 6773612032,
+    "dividendYield": 0.1187,
     "dividendRate": 17.42,
     "payoutRatio": 1.0061,
     "beta": 0.982,
-    "priceToBook": 4.510161,
-    "enterpriseToEbitda": 48.943,
+    "priceToBook": 4.4118466,
+    "enterpriseToEbitda": 47.965,
     "profitMargins": 0.39865002,
     "returnOnEquity": 0.47117,
     "revenueGrowth": 0.652,

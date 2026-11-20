@@ -3,11 +3,11 @@
   "name": "ROMERIKE SPAREBANK",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 152.6,
-  "previousClose": 154.96,
-  "dayHigh": 152.6,
-  "dayLow": 152.6,
-  "volume": 20,
+  "currentPrice": 153.5,
+  "previousClose": 152.6,
+  "dayHigh": 154,
+  "dayLow": 153.5,
+  "volume": 80,
   "fiftyTwoWeekHigh": 170.72,
   "fiftyTwoWeekLow": 139,
   "prices": [
@@ -8982,6 +8982,10 @@
     {
       "date": "2026-11-19",
       "close": 152.6
+    },
+    {
+      "date": "2026-11-20",
+      "close": 153.5
     }
   ],
   "dividends": [
@@ -9022,23 +9026,23 @@
       "amount": 10.5
     }
   ],
-  "lastUpdated": "2026-11-19T22:53:43.059Z",
+  "lastUpdated": "2026-11-20T22:30:22.069Z",
   "fundamentals": {
-    "trailingPE": 2.300965,
-    "forwardPE": 11.666667,
-    "marketCap": 1211954432,
-    "dividendYield": 0.0684,
+    "trailingPE": 2.3145356,
+    "forwardPE": 11.735474,
+    "marketCap": 1219102208,
+    "dividendYield": 0.0688,
     "dividendRate": 10.5,
-    "payoutRatio": 0.146,
+    "payoutRatio": 0.1583,
     "beta": 0.083,
-    "priceToBook": 0.17914204,
+    "priceToBook": 0.18019858,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.42815,
-    "returnOnEquity": 0.0866,
-    "revenueGrowth": -0.081,
-    "earningsGrowth": -0.158,
+    "profitMargins": 0.40574002,
+    "returnOnEquity": null,
+    "revenueGrowth": -0.109,
+    "earningsGrowth": null,
     "grossMargins": null,
-    "totalRevenue": 476383008,
+    "totalRevenue": 463607008,
     "ebitda": null
   }
 }

@@ -3,11 +3,11 @@
   "name": "SPAREBANK 1 ØSTLANDET",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 211.7,
-  "previousClose": 210.7,
+  "currentPrice": 210.55,
+  "previousClose": 212.4,
   "dayHigh": 211.7,
-  "dayLow": 207.45,
-  "volume": 32344,
+  "dayLow": 208.5,
+  "volume": 43704,
   "fiftyTwoWeekHigh": 215.7,
   "fiftyTwoWeekLow": 175.02,
   "prices": [
@@ -9494,6 +9494,10 @@
     {
       "date": "2026-11-19",
       "close": 211.7
+    },
+    {
+      "date": "2026-11-20",
+      "close": 210.55
     }
   ],
   "dividends": [
@@ -9538,16 +9542,16 @@
       "amount": 12.7
     }
   ],
-  "lastUpdated": "2026-11-19T22:52:23.642Z",
+  "lastUpdated": "2026-11-20T22:29:01.394Z",
   "fundamentals": {
-    "trailingPE": 12.5489025,
-    "forwardPE": 11.77583,
-    "marketCap": 28749668352,
-    "dividendYield": 0.0608,
+    "trailingPE": 12.480735,
+    "forwardPE": 11.711862,
+    "marketCap": 28588853248,
+    "dividendYield": 0.06,
     "dividendRate": 12.7,
     "payoutRatio": 0.7528,
     "beta": 0.372,
-    "priceToBook": 1.1203548,
+    "priceToBook": 1.1142689,
     "enterpriseToEbitda": null,
     "profitMargins": 0.46095002,
     "returnOnEquity": 0.12023,

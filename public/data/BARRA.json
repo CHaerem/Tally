@@ -3,11 +3,11 @@
   "name": "BARRAMUNDI GROUP LTD.",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 0.432,
-  "previousClose": 0.436,
-  "dayHigh": 0.432,
-  "dayLow": 0.428,
-  "volume": 24313,
+  "currentPrice": 0.45,
+  "previousClose": 0.432,
+  "dayHigh": 0.45,
+  "dayLow": 0.45,
+  "volume": 1000,
   "fiftyTwoWeekHigh": 1.7,
   "fiftyTwoWeekLow": 0.388,
   "prices": [
@@ -5310,20 +5310,28 @@
     {
       "date": "2026-11-18",
       "close": 0.43
+    },
+    {
+      "date": "2026-11-19",
+      "close": 0.43
+    },
+    {
+      "date": "2026-11-20",
+      "close": 0.45
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-19T22:52:39.314Z",
+  "lastUpdated": "2026-11-20T22:29:17.284Z",
   "fundamentals": {
-    "trailingPE": 0.90000004,
+    "trailingPE": 0.9375,
     "forwardPE": null,
-    "marketCap": 75773992,
+    "marketCap": 78931240,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 0.896,
-    "priceToBook": 58.90794,
-    "enterpriseToEbitda": -30.096,
+    "priceToBook": 61.36243,
+    "enterpriseToEbitda": -31.082,
     "profitMargins": 0.35502997,
     "returnOnEquity": 7.0616603,
     "revenueGrowth": -0.097,

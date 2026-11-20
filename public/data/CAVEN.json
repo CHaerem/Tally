@@ -3,11 +3,11 @@
   "name": "CAVENDISH HYDROGEN ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 4.7,
-  "previousClose": 4.7,
-  "dayHigh": 4.7,
-  "dayLow": 4.3,
-  "volume": 20487,
+  "currentPrice": 4.32,
+  "previousClose": 4.58,
+  "dayHigh": 4.695,
+  "dayLow": 4.21,
+  "volume": 4234,
   "fiftyTwoWeekHigh": 10.34,
   "fiftyTwoWeekLow": 4,
   "prices": [
@@ -2470,26 +2470,30 @@
     {
       "date": "2026-11-19",
       "close": 4.7
+    },
+    {
+      "date": "2026-11-20",
+      "close": 4.32
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-19T22:52:42.764Z",
+  "lastUpdated": "2026-11-20T22:29:20.738Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -1.6262025,
-    "marketCap": 185655312,
+    "forwardPE": -1.4947224,
+    "marketCap": 170644896,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
     "beta": 1.274,
-    "priceToBook": 0.30846643,
-    "enterpriseToEbitda": -9.212,
-    "profitMargins": -1.8320199,
-    "returnOnEquity": -0.48808998,
-    "revenueGrowth": -0.267,
+    "priceToBook": 0.2835266,
+    "enterpriseToEbitda": -11.712,
+    "profitMargins": -1.67877,
+    "returnOnEquity": -0.41742,
+    "revenueGrowth": -0.429,
     "earningsGrowth": null,
-    "grossMargins": 0.36310002,
-    "totalRevenue": 13561000,
-    "ebitda": -16317000
+    "grossMargins": 0.46969002,
+    "totalRevenue": 11761000,
+    "ebitda": -13517000
   }
 }
