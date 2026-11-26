@@ -3,11 +3,11 @@
   "name": "CONSTELLATION OIL SERVICES HOLD",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 121,
-  "previousClose": 132,
-  "dayHigh": 125,
-  "dayLow": 121,
-  "volume": 498891,
+  "currentPrice": 110,
+  "previousClose": 130,
+  "dayHigh": 117,
+  "dayLow": 110,
+  "volume": 333348,
   "fiftyTwoWeekHigh": 149,
   "fiftyTwoWeekLow": 106,
   "prices": [
@@ -1734,6 +1734,10 @@
     {
       "date": "2026-11-23",
       "close": 124
+    },
+    {
+      "date": "2026-11-24",
+      "close": 121
     }
   ],
   "dividends": [
@@ -1748,19 +1752,23 @@
     {
       "date": "2026-08-25",
       "amount": 2.76
+    },
+    {
+      "date": "2026-11-25",
+      "amount": 7.14
     }
   ],
-  "lastUpdated": "2026-11-25T00:18:15.560Z",
+  "lastUpdated": "2026-11-25T23:58:05.388Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": 9.285141,
-    "marketCap": 10544632832,
-    "dividendYield": 0.0664,
+    "forwardPE": 8.441037,
+    "marketCap": 9586030592,
+    "dividendYield": 0.0681,
     "dividendRate": 8.24,
     "payoutRatio": null,
     "beta": null,
-    "priceToBook": 0.66156214,
-    "enterpriseToEbitda": 29.057,
+    "priceToBook": 0.6014201,
+    "enterpriseToEbitda": 26.555,
     "profitMargins": -0.13137001,
     "returnOnEquity": -0.06577,
     "revenueGrowth": 0.605,

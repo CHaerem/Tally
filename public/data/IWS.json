@@ -3,11 +3,11 @@
   "name": "INTEGRATED WIND SOLUTIONS ASA",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 64.6,
-  "previousClose": 60,
-  "dayHigh": 64.6,
-  "dayLow": 63,
-  "volume": 8508,
+  "currentPrice": 63,
+  "previousClose": 61,
+  "dayHigh": 64,
+  "dayLow": 62.8,
+  "volume": 2344,
   "fiftyTwoWeekHigh": 66,
   "fiftyTwoWeekLow": 42.3,
   "prices": [
@@ -5702,6 +5702,10 @@
     {
       "date": "2026-11-23",
       "close": 63.2
+    },
+    {
+      "date": "2026-11-24",
+      "close": 64.6
     }
   ],
   "dividends": [
@@ -5716,19 +5720,23 @@
     {
       "date": "2026-09-07",
       "amount": 1
+    },
+    {
+      "date": "2026-11-25",
+      "amount": 1
     }
   ],
-  "lastUpdated": "2026-11-25T00:18:24.786Z",
+  "lastUpdated": "2026-11-25T23:58:14.117Z",
   "fundamentals": {
-    "trailingPE": 10.82077,
-    "forwardPE": 9.757822,
-    "marketCap": 2581096448,
-    "dividendYield": 0.0633,
+    "trailingPE": 10.552764,
+    "forwardPE": 9.49367,
+    "marketCap": 2517168640,
+    "dividendYield": 0.0619,
     "dividendRate": 4,
     "payoutRatio": 0.73160005,
     "beta": null,
-    "priceToBook": 1.4782544,
-    "enterpriseToEbitda": 55.084,
+    "priceToBook": 1.4077443,
+    "enterpriseToEbitda": 53.827,
     "profitMargins": 0.16943,
     "returnOnEquity": 0.14955,
     "revenueGrowth": 0.633,

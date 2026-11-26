@@ -3,11 +3,11 @@
   "name": "SPAREBANK 1 NORDMØRE",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 185.5,
-  "previousClose": 182,
-  "dayHigh": 185.5,
-  "dayLow": 185.5,
-  "volume": 16,
+  "currentPrice": 184.02,
+  "previousClose": 182.5,
+  "dayHigh": 186.98,
+  "dayLow": 183.04,
+  "volume": 1229,
   "fiftyTwoWeekHigh": 211.9,
   "fiftyTwoWeekLow": 166.38,
   "prices": [
@@ -9186,6 +9186,10 @@
     {
       "date": "2026-11-23",
       "close": 187
+    },
+    {
+      "date": "2026-11-24",
+      "close": 185.5
     }
   ],
   "dividends": [
@@ -9218,23 +9222,23 @@
       "amount": 11
     }
   ],
-  "lastUpdated": "2026-11-25T00:19:23.631Z",
+  "lastUpdated": "2026-11-25T23:59:07.925Z",
   "fundamentals": {
-    "trailingPE": 11.450617,
-    "forwardPE": 9.215102,
-    "marketCap": 1680965888,
-    "dividendYield": 0.0588,
+    "trailingPE": 11.359259,
+    "forwardPE": 9.141581,
+    "marketCap": 1667554560,
+    "dividendYield": 0.059299998,
     "dividendRate": 11,
     "payoutRatio": 0.6815,
-    "beta": null,
-    "priceToBook": 0.40262806,
+    "beta": 0.159,
+    "priceToBook": 0.3816797,
     "enterpriseToEbitda": null,
-    "profitMargins": 0.44204,
-    "returnOnEquity": 0.0983,
+    "profitMargins": 0.44129002,
+    "returnOnEquity": 0.09874,
     "revenueGrowth": -0.18,
-    "earningsGrowth": null,
+    "earningsGrowth": -0.391,
     "grossMargins": null,
-    "totalRevenue": 1018000000,
+    "totalRevenue": 1022000000,
     "ebitda": null
   }
 }

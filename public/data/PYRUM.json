@@ -3,11 +3,11 @@
   "name": "PYRUM INNOVATIONS AG",
   "currency": "NOK",
   "exchange": "OSL",
-  "currentPrice": 270,
+  "currentPrice": 273,
   "previousClose": 278,
-  "dayHigh": 270,
-  "dayLow": 265,
-  "volume": 13,
+  "dayHigh": 273,
+  "dayLow": 270,
+  "volume": 320,
   "fiftyTwoWeekHigh": 414,
   "fiftyTwoWeekLow": 260,
   "prices": [
@@ -5190,26 +5190,30 @@
     {
       "date": "2026-11-23",
       "close": 270
+    },
+    {
+      "date": "2026-11-24",
+      "close": 270
     }
   ],
   "dividends": [],
-  "lastUpdated": "2026-11-25T00:19:15.920Z",
+  "lastUpdated": "2026-11-25T23:59:01.002Z",
   "fundamentals": {
     "trailingPE": null,
-    "forwardPE": -13.0605135,
-    "marketCap": 1159019264,
+    "forwardPE": -13.20563,
+    "marketCap": 1171897216,
     "dividendYield": null,
     "dividendRate": null,
     "payoutRatio": null,
-    "beta": null,
-    "priceToBook": 3.567736,
-    "enterpriseToEbitda": -97.826,
-    "profitMargins": -1.81156,
+    "beta": 0.36,
+    "priceToBook": 3.6073775,
+    "enterpriseToEbitda": -170.538,
+    "profitMargins": -2.21415,
     "returnOnEquity": -0.57793,
-    "revenueGrowth": -0.388,
+    "revenueGrowth": null,
     "earningsGrowth": null,
-    "grossMargins": 0.55928004,
-    "totalRevenue": 6474499,
-    "ebitda": -11809406
+    "grossMargins": 0.46133,
+    "totalRevenue": 5297255,
+    "ebitda": -7056439
   }
 }
